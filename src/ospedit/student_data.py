@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any, Mapping, Sequence
+from collections import Counter
 
 import numpy as np
 
@@ -185,6 +186,7 @@ class PairDataset:
         teacher_deltas: Mapping[str, tuple[np.ndarray, np.ndarray]] | None = None,
         include_spatial_graph: bool = False,
         spatial_neighbors: int = 24,
+        family_balanced_loss: bool = False,
     ):
         if not records:
             raise ValueError("PairDataset requires at least one record")
@@ -204,6 +206,12 @@ class PairDataset:
         if spatial_neighbors <= 0:
             raise ValueError("spatial_neighbors must be positive")
         self.spatial_neighbors = int(spatial_neighbors)
+        self.family_balanced_loss = bool(family_balanced_loss)
+        family_counts = Counter(record.family_id for record in self.records)
+        self.family_weights = {
+            family: len(self.records) / (len(family_counts) * count)
+            for family, count in family_counts.items()
+        }
         if teacher_deltas is not None:
             missing = [record.pair.pair_id for record in self.records if record.pair.pair_id not in teacher_deltas]
             if missing:
@@ -225,6 +233,7 @@ class PairDataset:
             "input_mask": input_valid.astype(np.float32),
             "loss_mask": valid.astype(np.float32),
             "neighborhood_mask": mutation_neighborhood_mask(record.pair, self.neighborhood_radius),
+            "sample_weight": self.family_weights[record.family_id] if self.family_balanced_loss else 1.0,
         }
         if self.teacher_deltas is not None:
             teacher_delta, teacher_valid = self.teacher_deltas[record.pair.pair_id]
@@ -275,6 +284,7 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
     input_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     loss_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     neighborhood_mask = np.zeros((len(batch), max_length), dtype=np.float32)
+    sample_weight = np.ones(len(batch), dtype=np.float32)
     has_teacher = ["teacher_delta" in item for item in batch]
     if any(has_teacher) and not all(has_teacher):
         raise ValueError("all batch items must either contain teacher deltas or omit them")
@@ -297,6 +307,7 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         input_mask[index, :length] = item["input_mask"]
         loss_mask[index, :length] = item["loss_mask"]
         neighborhood_mask[index, :length] = item["neighborhood_mask"]
+        sample_weight[index] = item.get("sample_weight", 1.0)
         if teacher is not None and teacher_mask is not None:
             teacher[index, :length] = item["teacher_delta"]
             teacher_mask[index, :length] = item["teacher_mask"]
@@ -312,6 +323,7 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         "input_mask": input_mask,
         "loss_mask": loss_mask,
         "neighborhood_mask": neighborhood_mask,
+        "sample_weight": sample_weight,
     }
     if teacher is not None and teacher_mask is not None:
         result["teacher_delta"] = teacher

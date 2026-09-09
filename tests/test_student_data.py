@@ -202,6 +202,54 @@ def test_masked_delta_loss_supports_residue_weights():
     assert float(weighted) == pytest.approx(3.25)
 
 
+def test_family_balanced_weights_survive_single_sample_batches():
+    first = make_record("family-large-a")
+    second = make_record("family-large-b")
+    second = PairRecord(second.pair, second.parent_id, "large", second.split)
+    first = PairRecord(first.pair, first.parent_id, "large", first.split)
+    small = make_record("family-small")
+    small = PairRecord(small.pair, small.parent_id, "small", small.split)
+    dataset = PairDataset([first, second, small], family_balanced_loss=True)
+    weights = [dataset[index]["sample_weight"] for index in range(3)]
+    assert weights == pytest.approx([0.75, 0.75, 1.5])
+
+    torch = pytest.importorskip("torch")
+    from ospedit.student_training import masked_delta_loss
+
+    prediction = torch.zeros((1, 1, 6))
+    target = torch.ones_like(prediction)
+    loss = masked_delta_loss(
+        prediction,
+        target,
+        torch.ones((1, 1)),
+        sample_weights=torch.tensor([1.5]),
+    )
+    assert float(loss) == pytest.approx(1.5)
+
+
+def test_supervised_loss_normalizes_site_and_neighborhood_separately():
+    torch = pytest.importorskip("torch")
+    from ospedit.student_training import supervised_delta_loss
+
+    prediction = torch.zeros((1, 4, 6))
+    target = torch.zeros_like(prediction)
+    target[:, 1] = 2.0
+    edits = torch.zeros((1, 4, 41))
+    edits[:, 1, -1] = 1.0
+    neighborhood = torch.tensor([[0.0, 1.0, 1.0, 0.0]])
+    loss = supervised_delta_loss(
+        prediction,
+        target,
+        torch.ones((1, 4)),
+        edits,
+        neighborhood,
+        mutation_weight=4.0,
+        neighborhood_weight=1.0,
+    )
+    # Global MSE=1, mutation MSE=4, neighborhood MSE=2.
+    assert float(loss) == pytest.approx(19.0)
+
+
 def test_target_delta_scales_translation_and_rotation_channels():
     record = make_record()
     raw, mask = target_local_delta(record.pair)

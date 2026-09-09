@@ -71,6 +71,7 @@ def apply_student_delta(
     delta: np.ndarray,
     translation_scale: float = 1.0,
     rotation_scale: float = 1.0,
+    update_scale: float = 1.0,
 ) -> np.ndarray:
     """Apply one student's ``(L, 6)`` local-frame output to parent atoms."""
     delta = np.asarray(delta, dtype=float)
@@ -78,6 +79,9 @@ def apply_student_delta(
         raise ValueError(f"student delta must have shape {(pair.length, 6)}, got {delta.shape}")
     if not np.isfinite(delta).all():
         raise ValueError("student delta contains non-finite values")
+    if not np.isfinite(update_scale) or update_scale < 0:
+        raise ValueError("update_scale must be finite and non-negative")
+    delta = delta * update_scale
     return apply_local_frame_update(
         pair.parent_coords,
         pair.atom_names,
@@ -99,6 +103,7 @@ def predict_student(
     include_geometry: bool = False,
     include_spatial_graph: bool = False,
     spatial_neighbors: int = 24,
+    update_scale: float = 1.0,
 ) -> np.ndarray:
     """Run one student forward pass and return edited backbone coordinates."""
     if pair.parent_sequence == pair.mutant_sequence:
@@ -146,6 +151,7 @@ def predict_student(
         prediction[0].detach().cpu().numpy(),
         translation_scale,
         rotation_scale,
+        update_scale,
     )
 
 
@@ -160,6 +166,7 @@ def predict_student_batch(
     include_geometry: bool = False,
     include_spatial_graph: bool = False,
     spatial_neighbors: int = 24,
+    update_scale: float = 1.0,
 ) -> list[np.ndarray]:
     """Run one padded student forward for multiple residue-mapped pairs."""
     if not pairs:
@@ -220,6 +227,6 @@ def predict_student_batch(
     if prediction.ndim != 3 or prediction.shape[0] != len(pairs) or prediction.shape[-1] != 6:
         raise ValueError("student batch output must have shape (batch, length, 6)")
     return [
-        apply_student_delta(pair, prediction[index, : pair.length].detach().cpu().numpy(), translation_scale, rotation_scale)
+        apply_student_delta(pair, prediction[index, : pair.length].detach().cpu().numpy(), translation_scale, rotation_scale, update_scale)
         for index, pair in enumerate(pairs)
     ]

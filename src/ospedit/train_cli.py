@@ -10,9 +10,9 @@ import numpy as np
 from .data import json_safe, load_manifest, manifest_fingerprint, validate_manifest, verify_record_checksums
 from .experiment import evaluate_manifest_batched
 from .models import CopyParentEditor, StudentEditor
-from .student import ParentEditStudent, SpatialGraphStudent
+from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
-from .student_training import load_student_checkpoint, save_student_checkpoint, train_records, validate_student_checkpoint_config
+from .student_training import LOSS_SCHEMA_VERSION, load_student_checkpoint, save_student_checkpoint, train_records, validate_student_checkpoint_config
 from .teacher_cache import TeacherCache
 
 
@@ -27,8 +27,9 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--eval-batch-size", type=int, default=None)
     parser.add_argument("--hidden-dim", type=int, default=None)
-    parser.add_argument("--student-architecture", choices=("transformer", "spatial_graph"), default="transformer")
+    parser.add_argument("--student-architecture", choices=("transformer", "spatial_graph", "spatial_graph_global"), default="transformer")
     parser.add_argument("--spatial-neighbors", type=int, default=24)
+    parser.add_argument("--global-blocks", type=int, default=1)
     parser.add_argument("--blocks", type=int, default=None)
     parser.add_argument("--heads", type=int, default=None)
     parser.add_argument("--learning-rate", type=float, default=1e-4)
@@ -42,6 +43,7 @@ def main() -> None:
     parser.add_argument("--delta-loss-beta", type=float, default=1.0)
     parser.add_argument("--mutation-loss-weight", type=float, default=0.0, help="Extra weight for mutated residues in the supervised loss")
     parser.add_argument("--neighborhood-loss-weight", type=float, default=0.0, help="Extra weight for residues within 10 Angstrom of a mutation")
+    parser.add_argument("--family-balanced-loss", action="store_true", help="Give each training family equal total supervised weight")
     parser.add_argument("--neighborhood-radius", type=float, default=10.0, help="Radius in Angstrom used by neighborhood loss weighting")
     parser.add_argument("--teacher-cache", help="Admitted teacher cache index.json for optional delta distillation")
     parser.add_argument("--teacher-noise-level", type=float, help="Noise level to read from --teacher-cache")
@@ -113,7 +115,16 @@ def main() -> None:
             f"resume checkpoint student_architecture={architecture} does not match requested {args.student_architecture}"
         )
     model: Any
-    if architecture == "spatial_graph":
+    if architecture == "spatial_graph_global":
+        model = HybridSpatialGraphStudent(
+            parent_dim=parent_dim,
+            hidden_dim=hidden_dim,
+            graph_blocks=blocks,
+            global_blocks=args.global_blocks,
+            heads=heads,
+            max_normalized_delta=max_normalized_delta,
+        )
+    elif architecture == "spatial_graph":
         model = SpatialGraphStudent(
             parent_dim=parent_dim,
             hidden_dim=hidden_dim,
@@ -135,6 +146,14 @@ def main() -> None:
             blocks=blocks,
             heads=heads,
         )
+        saved_loss_schema = resume_config.get("loss_schema")
+        if saved_loss_schema not in {None, LOSS_SCHEMA_VERSION}:
+            raise SystemExit(f"unsupported resume loss schema: {saved_loss_schema}")
+        if saved_loss_schema is None and any(
+            float(resume_config.get(name, 0.0)) > 0
+            for name in ("mutation_loss_weight", "neighborhood_loss_weight")
+        ):
+            raise SystemExit("cannot resume a region-weighted checkpoint without a loss_schema")
         for key, requested in (("translation_scale", args.translation_scale), ("rotation_scale", args.rotation_scale)):
             saved = resume_config.get(key)
             if saved is not None and not np.isclose(float(saved), requested):
@@ -153,6 +172,17 @@ def main() -> None:
         if saved_spatial_neighbors is not None and int(saved_spatial_neighbors) != args.spatial_neighbors:
             raise SystemExit(
                 f"resume checkpoint spatial_neighbors={saved_spatial_neighbors} does not match requested {args.spatial_neighbors}"
+            )
+        saved_global_blocks = resume_config.get("global_blocks")
+        if saved_global_blocks is not None and int(saved_global_blocks) != args.global_blocks:
+            raise SystemExit(
+                f"resume checkpoint global_blocks={saved_global_blocks} does not match requested {args.global_blocks}"
+            )
+        saved_family_balanced = bool(resume_config.get("family_balanced_loss", False))
+        if saved_family_balanced != args.family_balanced_loss:
+            raise SystemExit(
+                f"resume checkpoint family_balanced_loss={saved_family_balanced} "
+                f"does not match requested {args.family_balanced_loss}"
             )
         for key, requested in (
             ("delta_norm_weight", args.delta_norm_weight),
@@ -208,8 +238,9 @@ def main() -> None:
         distill_weight=args.distill_weight,
         teacher_cache=teacher_cache,
         teacher_noise_level=args.teacher_noise_level,
-        include_spatial_graph=architecture == "spatial_graph",
+        include_spatial_graph=architecture in {"spatial_graph", "spatial_graph_global"},
         spatial_neighbors=args.spatial_neighbors,
+        family_balanced_loss=args.family_balanced_loss,
     )
     evaluation = None
     evaluation_payload: dict[str, object] | None
@@ -223,7 +254,7 @@ def main() -> None:
             raise SystemExit(f"manifest contains no records for eval split={args.eval_split!r}")
         evaluation = evaluate_manifest_batched(
             evaluation_records,
-            StudentEditor(model, device=args.device, translation_scale=args.translation_scale, rotation_scale=args.rotation_scale, include_geometry=args.geometry_features, include_spatial_graph=architecture == "spatial_graph", spatial_neighbors=args.spatial_neighbors),
+            StudentEditor(model, device=args.device, translation_scale=args.translation_scale, rotation_scale=args.rotation_scale, include_geometry=args.geometry_features, include_spatial_graph=architecture in {"spatial_graph", "spatial_graph_global"}, spatial_neighbors=args.spatial_neighbors),
             batch_size=args.eval_batch_size or args.batch_size,
             method="student",
             split=args.eval_split,
@@ -257,7 +288,7 @@ def main() -> None:
         optimizer=optimizer,
         epoch=start_epoch + args.epochs,
         history=prior_history + history,
-        config=vars(args) | {"parent_dim": parent_dim, "hidden_dim": hidden_dim, "blocks": blocks, "heads": heads, "record_count": len(selected), "manifest_fingerprint": manifest_fingerprint(records), "teacher_cache_fingerprint": teacher_cache_fingerprint, "evaluation": evaluation_payload},
+        config=vars(args) | {"loss_schema": LOSS_SCHEMA_VERSION, "parent_dim": parent_dim, "hidden_dim": hidden_dim, "blocks": blocks, "heads": heads, "record_count": len(selected), "manifest_fingerprint": manifest_fingerprint(records), "teacher_cache_fingerprint": teacher_cache_fingerprint, "evaluation": evaluation_payload},
     )
     print(json.dumps(json_safe({"output": args.output, "records": len(selected), "epochs": start_epoch + args.epochs, "final_loss": history[-1], "evaluation": evaluation_payload}), allow_nan=False))
 

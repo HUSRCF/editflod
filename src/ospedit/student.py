@@ -189,6 +189,76 @@ if nn is not None:
                 output = output * residue_mask[..., None].to(output.dtype)
             return output
 
+
+    class HybridSpatialGraphStudent(nn.Module):
+        """Spatial edge message passing followed by global residue attention."""
+
+        def __init__(
+            self,
+            parent_dim: int,
+            edit_dim: int = 41,
+            edge_dim: int = 16,
+            hidden_dim: int = 128,
+            graph_blocks: int = 2,
+            global_blocks: int = 1,
+            heads: int = 8,
+            max_normalized_delta: float | None = None,
+        ):
+            super().__init__()
+            if min(parent_dim, edit_dim, edge_dim, hidden_dim, graph_blocks, global_blocks, heads) <= 0:
+                raise ValueError("hybrid student dimensions and blocks must be positive")
+            if hidden_dim % heads:
+                raise ValueError("hidden_dim must be divisible by heads")
+            if max_normalized_delta is not None and max_normalized_delta <= 0:
+                raise ValueError("max_normalized_delta must be positive or None")
+            self.max_normalized_delta = max_normalized_delta
+            self.node_projection = nn.Linear(parent_dim + edit_dim, hidden_dim)
+            self.graph_blocks = nn.ModuleList(
+                _SpatialMessageBlock(hidden_dim, edge_dim) for _ in range(graph_blocks)
+            )
+            layer = nn.TransformerEncoderLayer(
+                d_model=hidden_dim,
+                nhead=heads,
+                dim_feedforward=4 * hidden_dim,
+                batch_first=True,
+                norm_first=True,
+            )
+            self.global_context = nn.TransformerEncoder(layer, num_layers=global_blocks)
+            self.output_projection = nn.Sequential(nn.LayerNorm(hidden_dim), nn.Linear(hidden_dim, 6))
+            nn.init.zeros_(self.output_projection[-1].weight)
+            nn.init.zeros_(self.output_projection[-1].bias)
+
+        def forward(
+            self,
+            parent_features: Tensor,
+            edit_features: Tensor,
+            residue_mask: Tensor | None = None,
+            edge_features: Tensor | None = None,
+            edge_mask: Tensor | None = None,
+        ) -> Tensor:
+            if edge_features is None or edge_mask is None:
+                raise ValueError("HybridSpatialGraphStudent requires edge_features and edge_mask")
+            if edge_features.shape[:3] != (
+                parent_features.shape[0], parent_features.shape[1], parent_features.shape[1]
+            ) or edge_mask.shape != edge_features.shape[:3]:
+                raise ValueError("spatial graph dimensions must match the node batch")
+            hidden = self.node_projection(torch.cat((parent_features, edit_features), dim=-1))
+            hidden = hidden + _sinusoidal_positions(
+                hidden.shape[1], hidden.shape[2], device=hidden.device, dtype=hidden.dtype
+            )[None]
+            for block in self.graph_blocks:
+                hidden = block(hidden, edge_features, edge_mask)
+            padding_mask = None if residue_mask is None else ~residue_mask.to(dtype=torch.bool)
+            hidden = self.global_context(hidden, src_key_padding_mask=padding_mask)
+            delta = self.output_projection(hidden)
+            if self.max_normalized_delta is not None:
+                delta = torch.tanh(delta) * self.max_normalized_delta
+            has_edit = edit_features[..., -1].abs().sum(dim=1) > 0
+            output = delta * has_edit[:, None, None].to(delta.dtype)
+            if residue_mask is not None:
+                output = output * residue_mask[..., None].to(output.dtype)
+            return output
+
 else:
 
     class ParentEditStudent:  # type: ignore[no-redef]
@@ -198,3 +268,7 @@ else:
     class SpatialGraphStudent:  # type: ignore[no-redef]
         def __init__(self, *args, **kwargs):
             raise ImportError("SpatialGraphStudent requires torch; install ospedit[torch]")
+
+    class HybridSpatialGraphStudent:  # type: ignore[no-redef]
+        def __init__(self, *args, **kwargs):
+            raise ImportError("HybridSpatialGraphStudent requires torch; install ospedit[torch]")

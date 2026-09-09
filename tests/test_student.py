@@ -1,9 +1,8 @@
-import numpy as np
 import pytest
 
 torch = pytest.importorskip("torch")
 
-from ospedit.student import ParentEditStudent, SpatialGraphStudent, encode_edit_features
+from ospedit.student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent, encode_edit_features
 
 
 def test_edit_encoder_marks_only_sequence_changes():
@@ -71,3 +70,23 @@ def test_spatial_graph_student_requires_graph_and_preserves_no_edit_identity():
     assert torch.equal(output[1], torch.zeros_like(output[1]))
     with pytest.raises(ValueError, match="requires"):
         model(parent, edits)
+
+
+def test_hybrid_spatial_graph_student_combines_graph_and_global_context():
+    model = HybridSpatialGraphStudent(
+        parent_dim=8, hidden_dim=16, graph_blocks=1, global_blocks=1, heads=4
+    )
+    parent = torch.randn(2, 3, 8)
+    edits = encode_edit_features(["AAA", "AAA"], ["AYA", "AAA"])
+    edge = torch.randn(2, 3, 3, 16)
+    edge_mask = ~torch.eye(3, dtype=torch.bool)[None].expand(2, -1, -1)
+    residue_mask = torch.ones((2, 3), dtype=torch.bool)
+    output = model(
+        parent,
+        edits,
+        residue_mask=residue_mask,
+        edge_features=edge,
+        edge_mask=edge_mask,
+    )
+    assert output.shape == (2, 3, 6)
+    assert torch.equal(output[1], torch.zeros_like(output[1]))

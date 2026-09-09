@@ -19,12 +19,14 @@ from .data import (
 from .experiment import evaluate_editor, evaluate_manifest_batched
 from .metrics import METRIC_SCHEMA_VERSION
 from .models import CopyParentEditor, StudentEditor
-from .student import ParentEditStudent, SpatialGraphStudent
+from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
 from .student_training import load_student_checkpoint, validate_student_checkpoint_config
 
 
-def _student_editor(checkpoint: str, pair: StructurePair, device: str) -> StudentEditor:
+def _student_editor(
+    checkpoint: str, pair: StructurePair, device: str, update_scale: float = 1.0
+) -> StudentEditor:
     try:
         import torch
     except ImportError as error:  # pragma: no cover
@@ -42,7 +44,16 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str) -> Studen
     validate_student_checkpoint_config(config, parent_dim=parent_local_features(pair, include_geometry=include_geometry).shape[-1])
     architecture = str(config.get("student_architecture", "transformer"))
     model: object
-    if architecture == "spatial_graph":
+    if architecture == "spatial_graph_global":
+        model = HybridSpatialGraphStudent(
+            parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
+            hidden_dim=int(config.get("hidden_dim", 128)),
+            graph_blocks=int(config.get("blocks", 2)),
+            global_blocks=int(config.get("global_blocks", 1)),
+            heads=int(config.get("heads", 8)),
+            max_normalized_delta=config.get("max_normalized_delta"),
+        )
+    elif architecture == "spatial_graph":
         model = SpatialGraphStudent(
             parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
             hidden_dim=int(config.get("hidden_dim", 128)),
@@ -65,8 +76,9 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str) -> Studen
         translation_scale=float(config.get("translation_scale", 1.0)),
         rotation_scale=float(config.get("rotation_scale", 1.0)),
         include_geometry=include_geometry,
-        include_spatial_graph=architecture == "spatial_graph",
+        include_spatial_graph=architecture in {"spatial_graph", "spatial_graph_global"},
         spatial_neighbors=int(config.get("spatial_neighbors", 24)),
+        update_scale=update_scale,
     )
 
 
@@ -79,6 +91,7 @@ def main() -> None:
     parser.add_argument("--results-output", help="Write batch evaluation JSON to this path")
     parser.add_argument("--batch-size", type=int, default=1, help="Student manifest inference batch size")
     parser.add_argument("--student-checkpoint", help="Student .pt checkpoint for --editor student")
+    parser.add_argument("--student-update-scale", type=float, default=1.0)
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--parent-structure", help="Parent PDB/mmCIF path; use with --mutant-structure")
     parser.add_argument("--mutant-structure", help="Mutant PDB/mmCIF path; use with --parent-structure")
@@ -117,7 +130,9 @@ def main() -> None:
             candidates = [record for record in records if args.eval_split is None or record.split == args.eval_split]
             if not candidates:
                 parser.error(f"manifest contains no records for eval split={args.eval_split!r}")
-            editor = _student_editor(args.student_checkpoint, candidates[0].pair, args.device)
+            editor = _student_editor(
+                args.student_checkpoint, candidates[0].pair, args.device, args.student_update_scale
+            )
         else:
             editor = CopyParentEditor()
         report = evaluate_manifest_batched(records, editor, batch_size=args.batch_size, method=args.editor, split=args.eval_split)
@@ -179,7 +194,9 @@ def main() -> None:
     if args.editor == "student":
         if not args.student_checkpoint:
             parser.error("--editor student requires --student-checkpoint")
-        editor = _student_editor(args.student_checkpoint, pair, args.device)
+        editor = _student_editor(
+            args.student_checkpoint, pair, args.device, args.student_update_scale
+        )
     else:
         editor = CopyParentEditor()
     result = evaluate_editor(pair, editor, args.editor)

@@ -6,9 +6,9 @@ from .models import ConditionalDifferenceEditor, CopyParentEditor, FieldModel, I
 from .metrics import evaluate_pair
 from .diagnostics import assess_teacher_admission, condition_response_diagnostic, condition_response_repeat_error
 from .noise import SharedNoise, make_shared_noise
-from .student import ParentEditStudent, SpatialGraphStudent, encode_edit_features
+from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent, encode_edit_features
 from .student_data import PairDataset, collate_pair_records, iter_pair_batches, parent_local_features, parent_residue_mask, parent_spatial_graph, target_local_delta
-from .student_training import load_student_checkpoint, masked_delta_loss, masked_prediction_norm_loss, save_student_checkpoint, train_records, train_student, validate_student_checkpoint_config
+from .student_training import LOSS_SCHEMA_VERSION, load_student_checkpoint, masked_delta_loss, masked_prediction_norm_loss, save_student_checkpoint, supervised_delta_loss, train_records, train_student, validate_student_checkpoint_config
 from .student_inference import ParentContextCache, apply_student_delta, predict_student, predict_student_batch
 from .oracle import oracle_local_delta, oracle_prediction
 from .adapters import FoldFlow2EndpointAdapter
@@ -46,6 +46,7 @@ __all__ = [
     "make_shared_noise",
     "ParentEditStudent",
     "SpatialGraphStudent",
+    "HybridSpatialGraphStudent",
     "encode_edit_features",
     "PairDataset",
     "collate_pair_records",
@@ -56,6 +57,8 @@ __all__ = [
     "iter_pair_batches",
     "masked_delta_loss",
     "masked_prediction_norm_loss",
+    "supervised_delta_loss",
+    "LOSS_SCHEMA_VERSION",
     "train_student",
     "train_records",
     "save_student_checkpoint",

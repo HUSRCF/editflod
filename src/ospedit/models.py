@@ -76,6 +76,7 @@ class StudentEditor:
     include_geometry: bool = False
     include_spatial_graph: bool = False
     spatial_neighbors: int = 24
+    update_scale: float = 1.0
 
     def __post_init__(self) -> None:
         if self.parent_cache is not None and self.parent_cache.include_geometry != self.include_geometry:
@@ -92,6 +93,7 @@ class StudentEditor:
             include_geometry=self.include_geometry,
             include_spatial_graph=self.include_spatial_graph,
             spatial_neighbors=self.spatial_neighbors,
+            update_scale=self.update_scale,
         )
 
     def predict_batch(self, pairs: list[StructurePair]) -> list[np.ndarray]:
@@ -105,6 +107,7 @@ class StudentEditor:
             include_geometry=self.include_geometry,
             include_spatial_graph=self.include_spatial_graph,
             spatial_neighbors=self.spatial_neighbors,
+            update_scale=self.update_scale,
         )
 
 

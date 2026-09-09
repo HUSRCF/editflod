@@ -17,6 +17,9 @@ from .student_data import PairDataset, iter_pair_batches
 from .teacher_cache import TeacherCache
 
 
+LOSS_SCHEMA_VERSION = "ospedit.student_loss.v2"
+
+
 def masked_delta_loss(
     prediction: Tensor,
     target: Tensor,
@@ -25,6 +28,7 @@ def masked_delta_loss(
     kind: str = "mse",
     beta: float = 1.0,
     residue_weights: Tensor | None = None,
+    sample_weights: Tensor | None = None,
 ) -> Tensor:
     if prediction.shape != target.shape:
         raise ValueError("prediction and target shapes must match")
@@ -32,6 +36,8 @@ def masked_delta_loss(
         raise ValueError("residue_mask must have shape (batch, length)")
     if residue_weights is not None and residue_weights.shape != residue_mask.shape:
         raise ValueError("residue_weights must have shape (batch, length)")
+    if sample_weights is not None and sample_weights.shape != prediction.shape[:1]:
+        raise ValueError("sample_weights must have shape (batch,)")
     mask = residue_mask.to(dtype=prediction.dtype)
     if residue_weights is not None:
         if (residue_weights < 0).any():
@@ -52,7 +58,14 @@ def masked_delta_loss(
     if not bool(valid_samples.any()):
         return prediction.sum() * 0.0
     per_sample = squared.sum(dim=(1, 2)) / per_sample_denominator.clamp_min(1.0)
-    return per_sample[valid_samples].mean()
+    if sample_weights is None:
+        return per_sample[valid_samples].mean()
+    weights = sample_weights.to(dtype=prediction.dtype)[valid_samples]
+    if (weights < 0).any() or float(weights.sum()) <= 0:
+        raise ValueError("valid sample weights must be non-negative with positive sum")
+    # Dataset-level weights are normalized to mean one. Do not renormalize
+    # inside a micro-batch, or batch_size=1 would erase family balancing.
+    return (per_sample[valid_samples] * weights).mean()
 
 
 def masked_prediction_norm_loss(prediction: Tensor, residue_mask: Tensor) -> Tensor:
@@ -67,6 +80,44 @@ def masked_prediction_norm_loss(prediction: Tensor, residue_mask: Tensor) -> Ten
         return prediction.sum() * 0.0
     per_sample = squared.sum(dim=(1, 2)) / per_sample_denominator.clamp_min(1.0)
     return per_sample[valid_samples].mean()
+
+
+def supervised_delta_loss(
+    prediction: Tensor,
+    target: Tensor,
+    loss_mask: Tensor,
+    edit_features: Tensor,
+    neighborhood_mask: Tensor,
+    *,
+    kind: str = "mse",
+    beta: float = 1.0,
+    mutation_weight: float = 0.0,
+    neighborhood_weight: float = 0.0,
+    sample_weights: Tensor | None = None,
+) -> Tensor:
+    """Combine independently normalized global, site, and local losses."""
+    loss = masked_delta_loss(
+        prediction, target, loss_mask, kind=kind, beta=beta, sample_weights=sample_weights
+    )
+    if mutation_weight:
+        loss = loss + mutation_weight * masked_delta_loss(
+            prediction,
+            target,
+            loss_mask * edit_features[..., -1],
+            kind=kind,
+            beta=beta,
+            sample_weights=sample_weights,
+        )
+    if neighborhood_weight:
+        loss = loss + neighborhood_weight * masked_delta_loss(
+            prediction,
+            target,
+            loss_mask * neighborhood_mask,
+            kind=kind,
+            beta=beta,
+            sample_weights=sample_weights,
+        )
+    return loss
 
 
 def train_student(
@@ -119,7 +170,7 @@ def train_student(
             loss_mask = torch.as_tensor(batch["loss_mask"], dtype=torch.float32, device=device)
             neighborhood_values = batch.get("neighborhood_mask", np.zeros(loss_mask.shape, dtype=np.float32))
             neighborhood = torch.as_tensor(neighborhood_values, dtype=torch.float32, device=device)
-            residue_weights = (1.0 + mutation_loss_weight * edit[..., -1]) * (1.0 + neighborhood_loss_weight * neighborhood)
+            sample_weights = torch.as_tensor(batch["sample_weight"], dtype=torch.float32, device=device)
             forward_parameters = inspect.signature(model.forward).parameters
             model_kwargs: dict[str, Any] = {"residue_mask": input_mask}
             if "edge_features" in forward_parameters:
@@ -132,7 +183,18 @@ def train_student(
                     batch["edge_mask"], dtype=torch.bool, device=device
                 )
             prediction = model(parent, edit, **model_kwargs)
-            loss = masked_delta_loss(prediction, target, loss_mask, kind=delta_loss_kind, beta=delta_loss_beta, residue_weights=residue_weights)
+            loss = supervised_delta_loss(
+                prediction,
+                target,
+                loss_mask,
+                edit,
+                neighborhood,
+                kind=delta_loss_kind,
+                beta=delta_loss_beta,
+                mutation_weight=mutation_loss_weight,
+                neighborhood_weight=neighborhood_loss_weight,
+                sample_weights=sample_weights,
+            )
             if distill_weight and "teacher_delta" in batch:
                 teacher = torch.as_tensor(batch["teacher_delta"], dtype=torch.float32, device=device)
                 teacher_mask = torch.as_tensor(batch["teacher_mask"], dtype=torch.float32, device=device)
@@ -183,6 +245,7 @@ def train_records(
     teacher_noise_level: float | None = None,
     include_spatial_graph: bool = False,
     spatial_neighbors: int = 24,
+    family_balanced_loss: bool = False,
 ) -> list[float]:
     """Train directly from PairRecords using the experimental target path."""
     materialized_records = list(records)
@@ -199,7 +262,7 @@ def train_records(
         raise ValueError("teacher_noise_level requires teacher_cache")
     if distill_weight and teacher_cache is None:
         raise ValueError("distill_weight requires teacher_cache")
-    dataset = PairDataset(materialized_records, translation_scale=translation_scale, rotation_scale=rotation_scale, include_geometry=include_geometry, neighborhood_radius=neighborhood_radius, teacher_deltas=teacher_deltas, include_spatial_graph=include_spatial_graph, spatial_neighbors=spatial_neighbors)
+    dataset = PairDataset(materialized_records, translation_scale=translation_scale, rotation_scale=rotation_scale, include_geometry=include_geometry, neighborhood_radius=neighborhood_radius, teacher_deltas=teacher_deltas, include_spatial_graph=include_spatial_graph, spatial_neighbors=spatial_neighbors, family_balanced_loss=family_balanced_loss)
     batches = list(iter_pair_batches(dataset, batch_size=batch_size, shuffle=shuffle, seed=seed))
     return train_student(model, batches, optimizer, epochs=epochs, device=device, gradient_clip_norm=gradient_clip_norm, grad_accumulation_steps=grad_accumulation_steps, delta_norm_weight=delta_norm_weight, delta_loss_kind=delta_loss_kind, delta_loss_beta=delta_loss_beta, mutation_loss_weight=mutation_loss_weight, neighborhood_loss_weight=neighborhood_loss_weight, distill_weight=distill_weight)
 

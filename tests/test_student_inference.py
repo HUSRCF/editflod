@@ -91,6 +91,17 @@ def test_apply_student_delta_validates_shape():
         apply_student_delta(make_pair(), np.zeros((2, 5)))
 
 
+def test_student_update_scale_interpolates_from_parent():
+    pair = make_pair()
+    full = predict_student(ShiftStudent(), pair, update_scale=1.0)
+    half = predict_student(ShiftStudent(), pair, update_scale=0.5)
+    zero = predict_student(ShiftStudent(), pair, update_scale=0.0)
+    assert np.allclose(half - pair.parent_coords, 0.5 * (full - pair.parent_coords))
+    assert np.array_equal(zero, pair.parent_coords)
+    with pytest.raises(ValueError, match="non-negative"):
+        predict_student(ShiftStudent(), pair, update_scale=-1.0)
+
+
 def test_predict_student_batch_matches_individual_inference():
     pairs = [make_pair(), make_pair()]
     model = ShiftStudent()
