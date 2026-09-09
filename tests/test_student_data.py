@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from ospedit.data import PairRecord, StructurePair
-from ospedit.student_data import PairDataset, collate_pair_records, iter_pair_batches, mutation_neighborhood_mask, parent_local_features, parent_residue_mask, target_local_delta
+from ospedit.student_data import PairDataset, collate_pair_records, iter_pair_batches, mutation_neighborhood_mask, parent_local_features, parent_residue_mask, parent_spatial_graph, target_local_delta
 
 
 def make_record(pair_id="pair", length=2):
@@ -224,6 +224,33 @@ def test_parent_geometry_features_add_invariant_context_channels():
     assert np.isfinite(enriched).all()
 
 
+def test_parent_spatial_graph_is_global_rigid_transform_invariant():
+    record = make_record("graph-invariant", length=3)
+    rotation = np.array([[0.0, -1.0, 0.0], [1.0, 0.0, 0.0], [0.0, 0.0, 1.0]])
+    shift = np.array([3.0, -2.0, 1.0])
+    transformed = StructurePair(
+        "graph-transformed",
+        record.pair.parent_sequence,
+        record.pair.mutant_sequence,
+        record.pair.parent_coords @ rotation.T + shift,
+        record.pair.mutant_coords @ rotation.T + shift,
+        record.pair.mutation_indices,
+        record.pair.atom_names,
+    )
+    original_features, original_mask = parent_spatial_graph(record.pair, spatial_neighbors=1)
+    transformed_features, transformed_mask = parent_spatial_graph(transformed, spatial_neighbors=1)
+    assert np.array_equal(original_mask, transformed_mask)
+    assert np.allclose(original_features, transformed_features, atol=1e-6)
+
+
+def test_pair_dataset_collates_spatial_graph():
+    item = PairDataset([make_record("graph", length=3)], include_spatial_graph=True, spatial_neighbors=1)[0]
+    batch = collate_pair_records([item])
+    assert batch["edge_features"].shape == (1, 3, 3, 16)
+    assert batch["edge_mask"].shape == (1, 3, 3)
+    assert not np.diag(batch["edge_mask"][0]).any()
+
+
 def test_student_training_loop_runs_one_epoch():
     torch = pytest.importorskip("torch")
     from ospedit.student import ParentEditStudent
@@ -235,6 +262,20 @@ def test_student_training_loop_runs_one_epoch():
     history = train_student(model, [batch], optimizer, epochs=1)
     assert len(history) == 1
     assert np.isfinite(history[0])
+
+
+def test_spatial_graph_student_uses_common_training_loop():
+    torch = pytest.importorskip("torch")
+    from ospedit.student import SpatialGraphStudent
+    from ospedit.student_training import train_student
+
+    batch = collate_pair_records([
+        PairDataset([make_record("graph-train", length=3)], include_spatial_graph=True)[0]
+    ])
+    model = SpatialGraphStudent(parent_dim=16, hidden_dim=16, blocks=1)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3)
+    history = train_student(model, [batch], optimizer, epochs=1)
+    assert len(history) == 1 and np.isfinite(history[0])
 
 
 def test_student_training_loop_supports_teacher_distillation():

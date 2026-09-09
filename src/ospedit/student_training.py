@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any, Iterable
+import inspect
 
 import numpy as np
 
@@ -119,7 +120,18 @@ def train_student(
             neighborhood_values = batch.get("neighborhood_mask", np.zeros(loss_mask.shape, dtype=np.float32))
             neighborhood = torch.as_tensor(neighborhood_values, dtype=torch.float32, device=device)
             residue_weights = (1.0 + mutation_loss_weight * edit[..., -1]) * (1.0 + neighborhood_loss_weight * neighborhood)
-            prediction = model(parent, edit, residue_mask=input_mask)
+            forward_parameters = inspect.signature(model.forward).parameters
+            model_kwargs: dict[str, Any] = {"residue_mask": input_mask}
+            if "edge_features" in forward_parameters:
+                if "edge_features" not in batch or "edge_mask" not in batch:
+                    raise ValueError("model requires spatial graph features")
+                model_kwargs["edge_features"] = torch.as_tensor(
+                    batch["edge_features"], dtype=torch.float32, device=device
+                )
+                model_kwargs["edge_mask"] = torch.as_tensor(
+                    batch["edge_mask"], dtype=torch.bool, device=device
+                )
+            prediction = model(parent, edit, **model_kwargs)
             loss = masked_delta_loss(prediction, target, loss_mask, kind=delta_loss_kind, beta=delta_loss_beta, residue_weights=residue_weights)
             if distill_weight and "teacher_delta" in batch:
                 teacher = torch.as_tensor(batch["teacher_delta"], dtype=torch.float32, device=device)
@@ -169,6 +181,8 @@ def train_records(
     distill_weight: float = 0.0,
     teacher_cache: TeacherCache | None = None,
     teacher_noise_level: float | None = None,
+    include_spatial_graph: bool = False,
+    spatial_neighbors: int = 24,
 ) -> list[float]:
     """Train directly from PairRecords using the experimental target path."""
     materialized_records = list(records)
@@ -185,7 +199,7 @@ def train_records(
         raise ValueError("teacher_noise_level requires teacher_cache")
     if distill_weight and teacher_cache is None:
         raise ValueError("distill_weight requires teacher_cache")
-    dataset = PairDataset(materialized_records, translation_scale=translation_scale, rotation_scale=rotation_scale, include_geometry=include_geometry, neighborhood_radius=neighborhood_radius, teacher_deltas=teacher_deltas)
+    dataset = PairDataset(materialized_records, translation_scale=translation_scale, rotation_scale=rotation_scale, include_geometry=include_geometry, neighborhood_radius=neighborhood_radius, teacher_deltas=teacher_deltas, include_spatial_graph=include_spatial_graph, spatial_neighbors=spatial_neighbors)
     batches = list(iter_pair_batches(dataset, batch_size=batch_size, shuffle=shuffle, seed=seed))
     return train_student(model, batches, optimizer, epochs=epochs, device=device, gradient_clip_norm=gradient_clip_norm, grad_accumulation_steps=grad_accumulation_steps, delta_norm_weight=delta_norm_weight, delta_loss_kind=delta_loss_kind, delta_loss_beta=delta_loss_beta, mutation_loss_weight=mutation_loss_weight, neighborhood_loss_weight=neighborhood_loss_weight, distill_weight=distill_weight)
 

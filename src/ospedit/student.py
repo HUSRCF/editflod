@@ -53,6 +53,32 @@ def encode_edit_features(parent_sequences: Sequence[str], mutant_sequences: Sequ
 
 if nn is not None:
 
+    class _SpatialMessageBlock(nn.Module):
+        def __init__(self, hidden_dim: int, edge_dim: int):
+            super().__init__()
+            self.message = nn.Sequential(
+                nn.Linear(2 * hidden_dim + edge_dim, hidden_dim),
+                nn.SiLU(),
+                nn.Linear(hidden_dim, hidden_dim),
+            )
+            self.message_norm = nn.LayerNorm(hidden_dim)
+            self.feed_forward = nn.Sequential(
+                nn.Linear(hidden_dim, 4 * hidden_dim),
+                nn.SiLU(),
+                nn.Linear(4 * hidden_dim, hidden_dim),
+            )
+            self.output_norm = nn.LayerNorm(hidden_dim)
+
+        def forward(self, hidden: Tensor, edge: Tensor, edge_mask: Tensor) -> Tensor:
+            length = hidden.shape[1]
+            source = hidden[:, :, None, :].expand(-1, -1, length, -1)
+            target = hidden[:, None, :, :].expand(-1, length, -1, -1)
+            messages = self.message(torch.cat((source, target, edge), dim=-1))
+            mask = edge_mask[..., None].to(messages.dtype)
+            aggregate = (messages * mask).sum(dim=2) / mask.sum(dim=2).clamp_min(1.0)
+            hidden = self.message_norm(hidden + aggregate)
+            return self.output_norm(hidden + self.feed_forward(hidden))
+
     class ParentEditStudent(nn.Module):
         """One-pass parent-context editor producing local-frame 6D deltas.
 
@@ -110,8 +136,65 @@ if nn is not None:
                 output = output * residue_mask[:, :, None].to(output.dtype)
             return output
 
+
+    class SpatialGraphStudent(nn.Module):
+        """One-pass editor with explicit invariant parent spatial relations."""
+
+        def __init__(
+            self,
+            parent_dim: int,
+            edit_dim: int = 41,
+            edge_dim: int = 16,
+            hidden_dim: int = 128,
+            blocks: int = 4,
+            max_normalized_delta: float | None = None,
+        ):
+            super().__init__()
+            if min(parent_dim, edit_dim, edge_dim, hidden_dim, blocks) <= 0:
+                raise ValueError("graph student dimensions and blocks must be positive")
+            if max_normalized_delta is not None and max_normalized_delta <= 0:
+                raise ValueError("max_normalized_delta must be positive or None")
+            self.max_normalized_delta = max_normalized_delta
+            self.node_projection = nn.Linear(parent_dim + edit_dim, hidden_dim)
+            self.blocks = nn.ModuleList(
+                _SpatialMessageBlock(hidden_dim, edge_dim) for _ in range(blocks)
+            )
+            self.output_projection = nn.Sequential(nn.LayerNorm(hidden_dim), nn.Linear(hidden_dim, 6))
+            nn.init.zeros_(self.output_projection[-1].weight)
+            nn.init.zeros_(self.output_projection[-1].bias)
+
+        def forward(
+            self,
+            parent_features: Tensor,
+            edit_features: Tensor,
+            residue_mask: Tensor | None = None,
+            edge_features: Tensor | None = None,
+            edge_mask: Tensor | None = None,
+        ) -> Tensor:
+            if edge_features is None or edge_mask is None:
+                raise ValueError("SpatialGraphStudent requires edge_features and edge_mask")
+            if edge_features.shape[:3] != (
+                parent_features.shape[0], parent_features.shape[1], parent_features.shape[1]
+            ) or edge_mask.shape != edge_features.shape[:3]:
+                raise ValueError("spatial graph dimensions must match the node batch")
+            hidden = self.node_projection(torch.cat((parent_features, edit_features), dim=-1))
+            for block in self.blocks:
+                hidden = block(hidden, edge_features, edge_mask)
+            delta = self.output_projection(hidden)
+            if self.max_normalized_delta is not None:
+                delta = torch.tanh(delta) * self.max_normalized_delta
+            has_edit = edit_features[..., -1].abs().sum(dim=1) > 0
+            output = delta * has_edit[:, None, None].to(delta.dtype)
+            if residue_mask is not None:
+                output = output * residue_mask[..., None].to(output.dtype)
+            return output
+
 else:
 
     class ParentEditStudent:  # type: ignore[no-redef]
         def __init__(self, *args, **kwargs):
             raise ImportError("ParentEditStudent requires torch; install ospedit[torch]")
+
+    class SpatialGraphStudent:  # type: ignore[no-redef]
+        def __init__(self, *args, **kwargs):
+            raise ImportError("SpatialGraphStudent requires torch; install ospedit[torch]")

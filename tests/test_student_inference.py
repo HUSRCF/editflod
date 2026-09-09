@@ -5,6 +5,7 @@ torch = pytest.importorskip("torch")
 
 from ospedit.data import StructurePair
 from ospedit.student_inference import ParentContextCache, apply_student_delta, predict_student, predict_student_batch
+from ospedit.student import SpatialGraphStudent
 
 
 def make_pair():
@@ -146,3 +147,11 @@ def test_geometry_cached_predictions_match_uncached_and_are_order_independent():
     assert np.allclose(forward[1], expected[1])
     assert np.allclose(reverse[0], expected[1])
     assert np.allclose(reverse[1], expected[0])
+
+
+def test_spatial_graph_student_runs_single_and_batch_inference():
+    pair = make_pair()
+    model = SpatialGraphStudent(parent_dim=16, hidden_dim=16, blocks=1)
+    single = predict_student(model, pair, include_spatial_graph=True, spatial_neighbors=1)
+    batch = predict_student_batch(model, [pair], include_spatial_graph=True, spatial_neighbors=1)
+    assert np.allclose(single, batch[0])

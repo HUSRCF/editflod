@@ -19,7 +19,7 @@ from .data import (
 from .experiment import evaluate_editor, evaluate_manifest_batched
 from .metrics import METRIC_SCHEMA_VERSION
 from .models import CopyParentEditor, StudentEditor
-from .student import ParentEditStudent
+from .student import ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
 from .student_training import load_student_checkpoint, validate_student_checkpoint_config
 
@@ -40,14 +40,24 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str) -> Studen
         else False
     )
     validate_student_checkpoint_config(config, parent_dim=parent_local_features(pair, include_geometry=include_geometry).shape[-1])
-    model = ParentEditStudent(
-        parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
-        hidden_dim=int(config.get("hidden_dim", 256)),
-        blocks=int(config.get("blocks", 4)),
-        heads=int(config.get("heads", 8)),
-        max_normalized_delta=config.get("max_normalized_delta"),
-        use_positional_encoding=use_positional_encoding,
-    )
+    architecture = str(config.get("student_architecture", "transformer"))
+    model: object
+    if architecture == "spatial_graph":
+        model = SpatialGraphStudent(
+            parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
+            hidden_dim=int(config.get("hidden_dim", 128)),
+            blocks=int(config.get("blocks", 4)),
+            max_normalized_delta=config.get("max_normalized_delta"),
+        )
+    else:
+        model = ParentEditStudent(
+            parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
+            hidden_dim=int(config.get("hidden_dim", 256)),
+            blocks=int(config.get("blocks", 4)),
+            heads=int(config.get("heads", 8)),
+            max_normalized_delta=config.get("max_normalized_delta"),
+            use_positional_encoding=use_positional_encoding,
+        )
     load_student_checkpoint(model, checkpoint, map_location=device)
     return StudentEditor(
         model,
@@ -55,6 +65,8 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str) -> Studen
         translation_scale=float(config.get("translation_scale", 1.0)),
         rotation_scale=float(config.get("rotation_scale", 1.0)),
         include_geometry=include_geometry,
+        include_spatial_graph=architecture == "spatial_graph",
+        spatial_neighbors=int(config.get("spatial_neighbors", 24)),
     )
 
 
@@ -111,6 +123,7 @@ def main() -> None:
         report = evaluate_manifest_batched(records, editor, batch_size=args.batch_size, method=args.editor, split=args.eval_split)
         payload = json.dumps(
             json_safe({
+                "metric_schema": METRIC_SCHEMA_VERSION,
                 "method": report.method,
                 "split": report.split,
                 "records": report.records,

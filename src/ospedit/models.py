@@ -74,6 +74,8 @@ class StudentEditor:
     rotation_scale: float = 1.0
     parent_cache: ParentContextCache | None = None
     include_geometry: bool = False
+    include_spatial_graph: bool = False
+    spatial_neighbors: int = 24
 
     def __post_init__(self) -> None:
         if self.parent_cache is not None and self.parent_cache.include_geometry != self.include_geometry:
@@ -88,6 +90,8 @@ class StudentEditor:
             rotation_scale=self.rotation_scale,
             parent_cache=self.parent_cache,
             include_geometry=self.include_geometry,
+            include_spatial_graph=self.include_spatial_graph,
+            spatial_neighbors=self.spatial_neighbors,
         )
 
     def predict_batch(self, pairs: list[StructurePair]) -> list[np.ndarray]:
@@ -99,6 +103,8 @@ class StudentEditor:
             rotation_scale=self.rotation_scale,
             parent_cache=self.parent_cache,
             include_geometry=self.include_geometry,
+            include_spatial_graph=self.include_spatial_graph,
+            spatial_neighbors=self.spatial_neighbors,
         )
 
 

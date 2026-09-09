@@ -11,7 +11,7 @@ import numpy as np
 from .data import StructurePair
 from .geometry import apply_local_frame_update
 from .student import encode_edit_features
-from .student_data import edit_geometry_features, parent_context_features, parent_local_features, parent_residue_mask
+from .student_data import edit_geometry_features, parent_context_features, parent_local_features, parent_residue_mask, parent_spatial_graph
 
 
 @dataclass
@@ -97,6 +97,8 @@ def predict_student(
     rotation_scale: float = 1.0,
     parent_cache: ParentContextCache | None = None,
     include_geometry: bool = False,
+    include_spatial_graph: bool = False,
+    spatial_neighbors: int = 24,
 ) -> np.ndarray:
     """Run one student forward pass and return edited backbone coordinates."""
     if pair.parent_sequence == pair.mutant_sequence:
@@ -117,10 +119,23 @@ def predict_student(
     try:
         with torch.no_grad():
             residue_mask = torch.as_tensor(parent_residue_mask(pair)[None], dtype=torch.bool, device=device)
-            if "residue_mask" in inspect.signature(model.forward).parameters:
-                prediction = model(parent, edit, residue_mask=residue_mask)
-            else:
-                prediction = model(parent, edit)
+            parameters = inspect.signature(model.forward).parameters
+            kwargs: dict[str, Any] = {}
+            if "residue_mask" in parameters:
+                kwargs["residue_mask"] = residue_mask
+            if "edge_features" in parameters:
+                if not include_spatial_graph:
+                    raise ValueError("model requires include_spatial_graph=True")
+                edge_features, edge_mask = parent_spatial_graph(
+                    pair, spatial_neighbors=spatial_neighbors
+                )
+                kwargs["edge_features"] = torch.as_tensor(
+                    edge_features[None], dtype=torch.float32, device=device
+                )
+                kwargs["edge_mask"] = torch.as_tensor(
+                    edge_mask[None], dtype=torch.bool, device=device
+                )
+            prediction = model(parent, edit, **kwargs)
     finally:
         if was_training:
             model.train()
@@ -143,6 +158,8 @@ def predict_student_batch(
     rotation_scale: float = 1.0,
     parent_cache: ParentContextCache | None = None,
     include_geometry: bool = False,
+    include_spatial_graph: bool = False,
+    spatial_neighbors: int = 24,
 ) -> list[np.ndarray]:
     """Run one padded student forward for multiple residue-mapped pairs."""
     if not pairs:
@@ -162,12 +179,20 @@ def predict_student_batch(
     parent_values = np.zeros((len(pairs), max_length, feature_rows[0].shape[-1]), dtype=np.float32)
     edit_values = np.zeros((len(pairs), max_length, 41), dtype=np.float32)
     mask_values = np.zeros((len(pairs), max_length), dtype=bool)
+    edge_values = np.zeros((len(pairs), max_length, max_length, 16), dtype=np.float32) if include_spatial_graph else None
+    edge_masks = np.zeros((len(pairs), max_length, max_length), dtype=bool) if include_spatial_graph else None
     for index, (pair, features) in enumerate(zip(pairs, feature_rows, strict=True)):
         parent_values[index, :pair.length] = features
         edit_values[index, :pair.length] = encode_edit_features(
             [pair.parent_sequence], [pair.mutant_sequence]
         )[0].numpy()
         mask_values[index, :pair.length] = parent_residue_mask(pair)
+        if edge_values is not None and edge_masks is not None:
+            pair_edges, pair_edge_mask = parent_spatial_graph(
+                pair, spatial_neighbors=spatial_neighbors
+            )
+            edge_values[index, :pair.length, :pair.length] = pair_edges
+            edge_masks[index, :pair.length, :pair.length] = pair_edge_mask
     parent = torch.as_tensor(parent_values, dtype=torch.float32, device=device)
     edit = torch.as_tensor(edit_values, dtype=torch.float32, device=device)
     residue_mask = torch.as_tensor(mask_values, dtype=torch.bool, device=device)
@@ -175,10 +200,20 @@ def predict_student_batch(
     model.eval()
     try:
         with torch.no_grad():
-            if "residue_mask" in inspect.signature(model.forward).parameters:
-                prediction = model(parent, edit, residue_mask=residue_mask)
-            else:
-                prediction = model(parent, edit)
+            parameters = inspect.signature(model.forward).parameters
+            kwargs: dict[str, Any] = {}
+            if "residue_mask" in parameters:
+                kwargs["residue_mask"] = residue_mask
+            if "edge_features" in parameters:
+                if edge_values is None or edge_masks is None:
+                    raise ValueError("model requires include_spatial_graph=True")
+                kwargs["edge_features"] = torch.as_tensor(
+                    edge_values, dtype=torch.float32, device=device
+                )
+                kwargs["edge_mask"] = torch.as_tensor(
+                    edge_masks, dtype=torch.bool, device=device
+                )
+            prediction = model(parent, edit, **kwargs)
     finally:
         if was_training:
             model.train()

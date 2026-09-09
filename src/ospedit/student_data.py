@@ -92,6 +92,48 @@ def mutation_neighborhood_mask(pair: StructurePair, radius: float = 10.0) -> np.
     return (valid & (nearest <= radius)).astype(np.float32)
 
 
+def parent_spatial_graph(
+    pair: StructurePair,
+    *,
+    spatial_neighbors: int = 24,
+    sequence_window: int = 1,
+    distance_scale: float = 10.0,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Build invariant directed edges from parent residue frames.
+
+    Features are distance, local relative translation, relative rotation,
+    clipped sequence offset, and mutation markers for both edge endpoints.
+    """
+    if spatial_neighbors <= 0 or sequence_window < 0 or distance_scale <= 0:
+        raise ValueError("graph neighborhood and distance scale must be positive")
+    rotations, origins, valid = residue_frames_masked(pair.parent_coords, pair.atom_names)
+    length = pair.length
+    edge_features = np.zeros((length, length, 16), dtype=np.float32)
+    edge_mask = np.zeros((length, length), dtype=bool)
+    distances = np.linalg.norm(origins[:, None, :] - origins[None, :, :], axis=-1)
+    mutation = np.zeros(length, dtype=np.float32)
+    mutation[list(pair.mutation_indices)] = 1.0
+    for source in np.flatnonzero(valid):
+        candidates = np.flatnonzero(valid & (np.arange(length) != source))
+        nearest = candidates[np.argsort(distances[source, candidates])[:spatial_neighbors]]
+        sequential = candidates[np.abs(candidates - source) <= sequence_window]
+        for target in np.union1d(nearest, sequential):
+            edge_mask[source, target] = True
+            relative_translation = rotations[source].T @ (origins[target] - origins[source])
+            relative_rotation = rotations[source].T @ rotations[target]
+            edge_features[source, target] = np.concatenate((
+                np.asarray([distances[source, target] / distance_scale]),
+                relative_translation / distance_scale,
+                relative_rotation.reshape(-1),
+                np.asarray([
+                    np.clip((target - source) / 32.0, -1.0, 1.0),
+                    mutation[source],
+                    mutation[target],
+                ]),
+            )).astype(np.float32)
+    return edge_features, edge_mask
+
+
 def _validate_delta_scales(translation_scale: float, rotation_scale: float) -> tuple[float, float]:
     if translation_scale <= 0 or rotation_scale <= 0:
         raise ValueError("translation_scale and rotation_scale must be positive")
@@ -141,6 +183,8 @@ class PairDataset:
         include_geometry: bool = False,
         neighborhood_radius: float = 10.0,
         teacher_deltas: Mapping[str, tuple[np.ndarray, np.ndarray]] | None = None,
+        include_spatial_graph: bool = False,
+        spatial_neighbors: int = 24,
     ):
         if not records:
             raise ValueError("PairDataset requires at least one record")
@@ -156,6 +200,10 @@ class PairDataset:
             raise ValueError("neighborhood_radius must be positive")
         self.neighborhood_radius = float(neighborhood_radius)
         self.teacher_deltas = teacher_deltas
+        self.include_spatial_graph = bool(include_spatial_graph)
+        if spatial_neighbors <= 0:
+            raise ValueError("spatial_neighbors must be positive")
+        self.spatial_neighbors = int(spatial_neighbors)
         if teacher_deltas is not None:
             missing = [record.pair.pair_id for record in self.records if record.pair.pair_id not in teacher_deltas]
             if missing:
@@ -191,6 +239,10 @@ class PairDataset:
             scaled_teacher[..., 3:] /= self.rotation_scale
             item["teacher_delta"] = scaled_teacher
             item["teacher_mask"] = (teacher_valid & valid).astype(np.float32)
+        if self.include_spatial_graph:
+            item["edge_features"], item["edge_mask"] = parent_spatial_graph(
+                record.pair, spatial_neighbors=self.spatial_neighbors
+            )
         return item
 
 
@@ -228,6 +280,11 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         raise ValueError("all batch items must either contain teacher deltas or omit them")
     teacher = np.zeros((len(batch), max_length, 6), dtype=np.float32) if all(has_teacher) else None
     teacher_mask = np.zeros((len(batch), max_length), dtype=np.float32) if all(has_teacher) else None
+    has_graph = ["edge_features" in item for item in batch]
+    if any(has_graph) and not all(has_graph):
+        raise ValueError("all batch items must either contain spatial graphs or omit them")
+    edge_features = np.zeros((len(batch), max_length, max_length, 16), dtype=np.float32) if all(has_graph) else None
+    edge_mask = np.zeros((len(batch), max_length, max_length), dtype=bool) if all(has_graph) else None
     lengths = []
     pair_ids = []
     for index, item in enumerate(batch):
@@ -243,6 +300,9 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         if teacher is not None and teacher_mask is not None:
             teacher[index, :length] = item["teacher_delta"]
             teacher_mask[index, :length] = item["teacher_mask"]
+        if edge_features is not None and edge_mask is not None:
+            edge_features[index, :length, :length] = item["edge_features"]
+            edge_mask[index, :length, :length] = item["edge_mask"]
     result = {
         "pair_ids": pair_ids,
         "lengths": np.asarray(lengths, dtype=np.int64),
@@ -256,4 +316,7 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
     if teacher is not None and teacher_mask is not None:
         result["teacher_delta"] = teacher
         result["teacher_mask"] = teacher_mask
+    if edge_features is not None and edge_mask is not None:
+        result["edge_features"] = edge_features
+        result["edge_mask"] = edge_mask
     return result

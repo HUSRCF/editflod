@@ -3,13 +3,14 @@ from __future__ import annotations
 import argparse
 import json
 import random
+from typing import Any
 
 import numpy as np
 
 from .data import json_safe, load_manifest, manifest_fingerprint, validate_manifest, verify_record_checksums
 from .experiment import evaluate_manifest_batched
 from .models import CopyParentEditor, StudentEditor
-from .student import ParentEditStudent
+from .student import ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
 from .student_training import load_student_checkpoint, save_student_checkpoint, train_records, validate_student_checkpoint_config
 from .teacher_cache import TeacherCache
@@ -26,6 +27,8 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--eval-batch-size", type=int, default=None)
     parser.add_argument("--hidden-dim", type=int, default=None)
+    parser.add_argument("--student-architecture", choices=("transformer", "spatial_graph"), default="transformer")
+    parser.add_argument("--spatial-neighbors", type=int, default=24)
     parser.add_argument("--blocks", type=int, default=None)
     parser.add_argument("--heads", type=int, default=None)
     parser.add_argument("--learning-rate", type=float, default=1e-4)
@@ -104,7 +107,21 @@ def main() -> None:
     use_positional_encoding = not args.no_positional_encoding
     if args.resume and "no_positional_encoding" not in resume_config:
         use_positional_encoding = False
-    model = ParentEditStudent(parent_dim=parent_dim, hidden_dim=hidden_dim, blocks=blocks, heads=heads, max_normalized_delta=max_normalized_delta, use_positional_encoding=use_positional_encoding)
+    architecture = str(resume_config.get("student_architecture", args.student_architecture)) if args.resume else args.student_architecture
+    if args.resume and architecture != args.student_architecture:
+        raise SystemExit(
+            f"resume checkpoint student_architecture={architecture} does not match requested {args.student_architecture}"
+        )
+    model: Any
+    if architecture == "spatial_graph":
+        model = SpatialGraphStudent(
+            parent_dim=parent_dim,
+            hidden_dim=hidden_dim,
+            blocks=blocks,
+            max_normalized_delta=max_normalized_delta,
+        )
+    else:
+        model = ParentEditStudent(parent_dim=parent_dim, hidden_dim=hidden_dim, blocks=blocks, heads=heads, max_normalized_delta=max_normalized_delta, use_positional_encoding=use_positional_encoding)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate)
     start_epoch = 0
     prior_history: list[float] = []
@@ -131,6 +148,11 @@ def main() -> None:
         if saved_radius is not None and not np.isclose(float(saved_radius), args.neighborhood_radius):
             raise SystemExit(
                 f"resume checkpoint neighborhood_radius={saved_radius} does not match requested {args.neighborhood_radius}"
+            )
+        saved_spatial_neighbors = resume_config.get("spatial_neighbors")
+        if saved_spatial_neighbors is not None and int(saved_spatial_neighbors) != args.spatial_neighbors:
+            raise SystemExit(
+                f"resume checkpoint spatial_neighbors={saved_spatial_neighbors} does not match requested {args.spatial_neighbors}"
             )
         for key, requested in (
             ("delta_norm_weight", args.delta_norm_weight),
@@ -186,6 +208,8 @@ def main() -> None:
         distill_weight=args.distill_weight,
         teacher_cache=teacher_cache,
         teacher_noise_level=args.teacher_noise_level,
+        include_spatial_graph=architecture == "spatial_graph",
+        spatial_neighbors=args.spatial_neighbors,
     )
     evaluation = None
     evaluation_payload: dict[str, object] | None
@@ -199,7 +223,7 @@ def main() -> None:
             raise SystemExit(f"manifest contains no records for eval split={args.eval_split!r}")
         evaluation = evaluate_manifest_batched(
             evaluation_records,
-            StudentEditor(model, device=args.device, translation_scale=args.translation_scale, rotation_scale=args.rotation_scale, include_geometry=args.geometry_features),
+            StudentEditor(model, device=args.device, translation_scale=args.translation_scale, rotation_scale=args.rotation_scale, include_geometry=args.geometry_features, include_spatial_graph=architecture == "spatial_graph", spatial_neighbors=args.spatial_neighbors),
             batch_size=args.eval_batch_size or args.batch_size,
             method="student",
             split=args.eval_split,

@@ -3,7 +3,7 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from ospedit.student import ParentEditStudent, encode_edit_features
+from ospedit.student import ParentEditStudent, SpatialGraphStudent, encode_edit_features
 
 
 def test_edit_encoder_marks_only_sequence_changes():
@@ -58,3 +58,16 @@ def test_student_padding_mask_blocks_padded_tokens():
     padded = model(padded_parent, padded_edits, residue_mask=torch.tensor([[True, True, True, False, False]]))
     assert torch.allclose(short, padded[:, :3], atol=1e-6)
     assert torch.equal(padded[:, 3:], torch.zeros_like(padded[:, 3:]))
+
+
+def test_spatial_graph_student_requires_graph_and_preserves_no_edit_identity():
+    model = SpatialGraphStudent(parent_dim=8, hidden_dim=16, blocks=2)
+    parent = torch.randn(2, 3, 8)
+    edits = encode_edit_features(["AAA", "AAA"], ["AYA", "AAA"])
+    edge = torch.randn(2, 3, 3, 16)
+    edge_mask = ~torch.eye(3, dtype=torch.bool)[None].expand(2, -1, -1)
+    output = model(parent, edits, edge_features=edge, edge_mask=edge_mask)
+    assert output.shape == (2, 3, 6)
+    assert torch.equal(output[1], torch.zeros_like(output[1]))
+    with pytest.raises(ValueError, match="requires"):
+        model(parent, edits)
