@@ -775,6 +775,22 @@ group receives one total unit of weight. Combined with
 groups are balanced within each family. Reverse edits can therefore remain as
 directional augmentation without being counted as independent experiments.
 
+Materialize a response-independent mechanism-development probe from a frozen
+endpoint-context decision file:
+
+```bash
+python scripts/select_endpoint_context_candidates.py \
+  /path/to/protocol_v02_structure_pairs.jsonl \
+  reports/protocol_v02_endpoint_context_decisions_v1.json \
+  /tmp/protocol_v02_matched_context_probe_v1.jsonl \
+  reports/protocol_v02_matched_context_probe_v1.json
+```
+
+The coordinate-bearing subset stays outside Git; the compact report records
+the source and selected manifest fingerprints. The selector rejects manifest
+drift, split mismatches, non-matched dispositions, and any frozen-test
+selection.
+
 Add a same-manifest development evaluation after training:
 
 ```bash

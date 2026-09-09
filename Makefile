@@ -15,6 +15,7 @@ lint:
 	ruff check scripts/audit_endpoint_mutation_annotations.py
 	ruff check scripts/audit_manifest_endpoint_groups.py
 	ruff check scripts/build_endpoint_context_queue.py
+	ruff check scripts/select_endpoint_context_candidates.py
 	ruff check scripts/validate_endpoint_context_decisions.py
 	ruff check scripts/build_response_review_queue.py
 	ruff check scripts/summarize_student_replicates.py
@@ -32,6 +33,7 @@ typecheck:
 	mypy scripts/audit_endpoint_mutation_annotations.py --ignore-missing-imports
 	mypy scripts/audit_manifest_endpoint_groups.py --ignore-missing-imports
 	mypy scripts/build_endpoint_context_queue.py --ignore-missing-imports
+	mypy scripts/select_endpoint_context_candidates.py --ignore-missing-imports
 	mypy scripts/validate_endpoint_context_decisions.py --ignore-missing-imports
 	mypy scripts/build_response_review_queue.py --ignore-missing-imports
 	mypy scripts/summarize_student_replicates.py --ignore-missing-imports

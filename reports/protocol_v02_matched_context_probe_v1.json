@@ -1,0 +1,76 @@
+{
+  "decision_sha256": "52798220e03e358fa326c97f8b2fec5cccaafee6d064f191110206da4847a913",
+  "format": "ospedit.endpoint_context_candidate_selection.v1",
+  "records": [
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_260dd007d20d",
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "parent_id": "3FYW_X",
+      "split": "dev"
+    },
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_28cd4576dfdb",
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "parent_id": "5NLL_A",
+      "split": "train"
+    },
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_607a3bb0349c",
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "parent_id": "3PAZ_A",
+      "split": "train"
+    },
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I",
+      "parent_id": "1DYE_A",
+      "split": "train"
+    },
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "parent_id": "1L04_A",
+      "split": "train"
+    },
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "microminer_1L25_A_1L28_A_A86G",
+      "parent_id": "1L25_A",
+      "split": "train"
+    },
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_ea2e28f36573",
+      "pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "parent_id": "3N0H_A",
+      "split": "train"
+    },
+    {
+      "disposition": "matched_context_candidate",
+      "family_id": "v02_family_fb83dc187d83",
+      "pair_id": "microminer_1GBA_A_1GBJ_A_A216G",
+      "parent_id": "1GBA_A",
+      "split": "train"
+    }
+  ],
+  "selected_manifest_fingerprint": "c3a3591fd0503eb3e0df33409345383b2aeccac35f8c6503cdd280dfbf27aac3",
+  "selection_used_observed_response": false,
+  "source_manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "summary": {
+    "families": 6,
+    "parents": 8,
+    "records": 8,
+    "splits": {
+      "dev": 1,
+      "test": 0,
+      "train": 7
+    }
+  },
+  "usage": "mechanism_development_probe_not_generalization_benchmark"
+}

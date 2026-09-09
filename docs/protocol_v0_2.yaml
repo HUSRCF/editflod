@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: matched_context_data_gating
+  status: matched_context_representation_characterized
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -113,6 +113,9 @@ artifacts:
     rcsb_endpoint_environment: reports/protocol_v02_rcsb_endpoint_environment_v1.json
     endpoint_context_queue: reports/protocol_v02_endpoint_context_queue_v1.json
     endpoint_context_decisions: reports/protocol_v02_endpoint_context_decisions_v1.json
+    matched_context_probe: reports/protocol_v02_matched_context_probe_v1.json
+    matched_context_learnability: reports/protocol_v02_matched_context_learnability_v1.json
+    matched_context_oracle: reports/protocol_v02_matched_context_oracle_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -175,3 +178,23 @@ background_control_gate:
     reverse_direction_duplicate_groups: 1
     future_training: endpoint_group_balanced_loss
     future_evaluation: aggregate_or_bootstrap_by_endpoint_group
+  matched_context_representation_limit:
+    selection_uses_observed_response: false
+    records: {train: 7, dev: 1, test: 0}
+    families: {train: 5, dev: 1, test: 0}
+    train_family_macro_local_backbone_error_angstrom:
+      copy_parent: 0.19690072185025603
+      unbounded_oracle: 0.08582414540734543
+      recoverable_fraction: 0.575364053409188
+    dev_local_backbone_error_angstrom:
+      copy_parent: 0.2505902931521402
+      unbounded_oracle: 0.06919682029102214
+      recoverable_fraction: 0.7238647218908401
+    all_record_macro_local_backbone_error_angstrom:
+      unbounded_oracle: 0.07540903365093729
+      bounded_oracle_0_1: 0.11976608310866985
+    interpretation:
+      - residue_rigid_frames_can_recover_a_material_fraction_of_copy_error
+      - residual_intra_residue_error_remains_even_with_exact_frame_deltas
+      - normalized_component_bound_0_1_materially_reduces_recoverability
+      - probe_is_too_small_and_has_no_test_evidence_for_generalization_claims

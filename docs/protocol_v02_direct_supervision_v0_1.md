@@ -314,3 +314,26 @@ independent experimental evidence. Future student runs should use endpoint-group
 balancing, optionally nested within family balancing, and evaluation should
 aggregate or bootstrap by physical endpoint group. This changes statistical
 weighting, not the validity of learning a directional reverse edit.
+
+### Matched-context representation limit
+
+The static decisions materialize an eight-record probe (seven train, one dev;
+six families) without consulting observed response magnitude. The
+coordinate-bearing manifest remains outside Git, while the tracked selection
+report stores both source and selected manifest fingerprints.
+
+On the five train families, copy-parent local backbone error has a family-macro
+mean of 0.1969 Angstrom and the unbounded exact local-frame oracle reaches
+0.0858 Angstrom. The mean recoverable fraction is 0.575. On the single dev
+record, the corresponding values are 0.2506, 0.0692, and 0.724. The rigid-frame
+output therefore has material capacity to beat copy-parent, but it cannot
+reconstruct all residue-internal experimental differences.
+
+Across all eight records, the record-macro local error is 0.0754 Angstrom for
+the unbounded oracle and 0.1198 Angstrom after applying the student's current
+component-wise normalized bound of 0.1. The bound is therefore an active
+capacity constraint, not merely a regularizer. Initial overfit experiments
+must include an unbounded or substantially relaxed output and report the
+bounded oracle beside learned results. These numbers characterize
+representation capacity only; the probe has no reviewed test record and does
+not establish generalization.
