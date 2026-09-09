@@ -21,12 +21,13 @@ from .metrics import METRIC_SCHEMA_VERSION
 from .models import CopyParentEditor, StudentEditor
 from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
-from .student_training import load_student_checkpoint, validate_student_checkpoint_config
+from .student_training import (
+    load_student_checkpoint,
+    validate_student_checkpoint_config,
+)
 
 
-def _student_editor(
-    checkpoint: str, pair: StructurePair, device: str, update_scale: float = 1.0
-) -> StudentEditor:
+def _student_editor(checkpoint: str, pair: StructurePair, device: str, update_scale: float = 1.0) -> StudentEditor:
     try:
         import torch
     except ImportError as error:  # pragma: no cover
@@ -34,19 +35,27 @@ def _student_editor(
     payload = torch.load(checkpoint, map_location=device, weights_only=False)
     config = dict(payload.get("config", {}))
     include_geometry = bool(config.get("geometry_features", False))
+    include_biochemical = bool(config.get("biochemical_edit_features", False))
+    edit_dim = int(config.get("edit_dim", 48 if include_biochemical else 41))
     # Checkpoints written before positional encoding was introduced must keep
     # their original behavior instead of silently changing at evaluation.
-    use_positional_encoding = (
-        not bool(config["no_positional_encoding"])
-        if "no_positional_encoding" in config
-        else False
+    use_positional_encoding = not bool(config["no_positional_encoding"]) if "no_positional_encoding" in config else False
+    validate_student_checkpoint_config(
+        config,
+        parent_dim=parent_local_features(pair, include_geometry=include_geometry).shape[-1],
+        edit_dim=edit_dim,
     )
-    validate_student_checkpoint_config(config, parent_dim=parent_local_features(pair, include_geometry=include_geometry).shape[-1])
     architecture = str(config.get("student_architecture", "transformer"))
     model: object
     if architecture == "spatial_graph_global":
         model = HybridSpatialGraphStudent(
-            parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
+            parent_dim=int(
+                config.get(
+                    "parent_dim",
+                    parent_local_features(pair, include_geometry=include_geometry).shape[-1],
+                )
+            ),
+            edit_dim=edit_dim,
             hidden_dim=int(config.get("hidden_dim", 128)),
             graph_blocks=int(config.get("blocks", 2)),
             global_blocks=int(config.get("global_blocks", 1)),
@@ -55,14 +64,26 @@ def _student_editor(
         )
     elif architecture == "spatial_graph":
         model = SpatialGraphStudent(
-            parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
+            parent_dim=int(
+                config.get(
+                    "parent_dim",
+                    parent_local_features(pair, include_geometry=include_geometry).shape[-1],
+                )
+            ),
+            edit_dim=edit_dim,
             hidden_dim=int(config.get("hidden_dim", 128)),
             blocks=int(config.get("blocks", 4)),
             max_normalized_delta=config.get("max_normalized_delta"),
         )
     else:
         model = ParentEditStudent(
-            parent_dim=int(config.get("parent_dim", parent_local_features(pair, include_geometry=include_geometry).shape[-1])),
+            parent_dim=int(
+                config.get(
+                    "parent_dim",
+                    parent_local_features(pair, include_geometry=include_geometry).shape[-1],
+                )
+            ),
+            edit_dim=edit_dim,
             hidden_dim=int(config.get("hidden_dim", 256)),
             blocks=int(config.get("blocks", 4)),
             heads=int(config.get("heads", 8)),
@@ -79,6 +100,7 @@ def _student_editor(
         include_spatial_graph=architecture in {"spatial_graph", "spatial_graph_global"},
         spatial_neighbors=int(config.get("spatial_neighbors", 24)),
         update_scale=update_scale,
+        include_biochemical=include_biochemical,
     )
 
 
@@ -86,10 +108,19 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate a reference-conditioned structure editor")
     parser.add_argument("pair", nargs="?", help="JSON StructurePair file")
     parser.add_argument("--audit-manifest", help="Validate a JSON/JSONL pair manifest")
-    parser.add_argument("--verify-checksums", action="store_true", help="Verify source/target checksums during manifest audit")
+    parser.add_argument(
+        "--verify-checksums",
+        action="store_true",
+        help="Verify source/target checksums during manifest audit",
+    )
     parser.add_argument("--manifest", help="Evaluate all records in a JSON/JSONL manifest")
     parser.add_argument("--results-output", help="Write batch evaluation JSON to this path")
-    parser.add_argument("--batch-size", type=int, default=1, help="Student manifest inference batch size")
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=1,
+        help="Student manifest inference batch size",
+    )
     parser.add_argument("--student-checkpoint", help="Student .pt checkpoint for --editor student")
     parser.add_argument("--student-update-scale", type=float, default=1.0)
     parser.add_argument("--device", default="cpu")
@@ -102,11 +133,26 @@ def main() -> None:
     parser.add_argument("--family-id", default=None)
     parser.add_argument("--split", choices=("train", "dev", "test"), default="dev")
     parser.add_argument("--eval-split", choices=("train", "dev", "test"), default=None)
-    parser.add_argument("--label-source", choices=("experimental", "synthetic", "teacher"), default="experimental")
+    parser.add_argument(
+        "--label-source",
+        choices=("experimental", "synthetic", "teacher"),
+        default="experimental",
+    )
     parser.add_argument("--output", help="Output JSON path for a generated structure pair")
-    parser.add_argument("--manifest-output", help="Write generated pair as one JSON/JSONL manifest record")
-    parser.add_argument("--manifest-append", action="store_true", help="Append generated record to --manifest-output")
-    parser.add_argument("--editor", choices=("copy_source_backbone", "student"), default="copy_source_backbone")
+    parser.add_argument(
+        "--manifest-output",
+        help="Write generated pair as one JSON/JSONL manifest record",
+    )
+    parser.add_argument(
+        "--manifest-append",
+        action="store_true",
+        help="Append generated record to --manifest-output",
+    )
+    parser.add_argument(
+        "--editor",
+        choices=("copy_source_backbone", "student"),
+        default="copy_source_backbone",
+    )
     args = parser.parse_args()
     if args.manifest_append and not args.manifest_output:
         parser.error("--manifest-append requires --manifest-output")
@@ -131,27 +177,39 @@ def main() -> None:
             if not candidates:
                 parser.error(f"manifest contains no records for eval split={args.eval_split!r}")
             editor = _student_editor(
-                args.student_checkpoint, candidates[0].pair, args.device, args.student_update_scale
+                args.student_checkpoint,
+                candidates[0].pair,
+                args.device,
+                args.student_update_scale,
             )
         else:
             editor = CopyParentEditor()
-        report = evaluate_manifest_batched(records, editor, batch_size=args.batch_size, method=args.editor, split=args.eval_split)
+        report = evaluate_manifest_batched(
+            records,
+            editor,
+            batch_size=args.batch_size,
+            method=args.editor,
+            split=args.eval_split,
+        )
         payload = json.dumps(
-            json_safe({
-                "metric_schema": METRIC_SCHEMA_VERSION,
-                "method": report.method,
-                "split": report.split,
-                "records": report.records,
-                "family_summary": report.family_summary,
-                "runtime_summary": report.runtime_summary,
-                "manifest_fingerprint": report.manifest_fingerprint,
-            }),
+            json_safe(
+                {
+                    "metric_schema": METRIC_SCHEMA_VERSION,
+                    "method": report.method,
+                    "split": report.split,
+                    "records": report.records,
+                    "family_summary": report.family_summary,
+                    "runtime_summary": report.runtime_summary,
+                    "manifest_fingerprint": report.manifest_fingerprint,
+                }
+            ),
             indent=2,
             sort_keys=True,
             allow_nan=False,
         )
         if args.results_output:
             from pathlib import Path
+
             Path(args.results_output).write_text(payload + "\n")
         else:
             print(payload)
@@ -184,6 +242,7 @@ def main() -> None:
         payload = json.dumps(structure_pair_payload(pair), indent=2, allow_nan=False)
         if args.output:
             from pathlib import Path
+
             Path(args.output).write_text(payload + "\n")
         else:
             print(payload)
@@ -194,18 +253,25 @@ def main() -> None:
     if args.editor == "student":
         if not args.student_checkpoint:
             parser.error("--editor student requires --student-checkpoint")
-        editor = _student_editor(
-            args.student_checkpoint, pair, args.device, args.student_update_scale
-        )
+        editor = _student_editor(args.student_checkpoint, pair, args.device, args.student_update_scale)
     else:
         editor = CopyParentEditor()
     result = evaluate_editor(pair, editor, args.editor)
-    print(json.dumps(json_safe({
-        "metric_schema": METRIC_SCHEMA_VERSION,
-        "method": result.method,
-        "metrics": result.metrics,
-        "runtime": result.runtime.as_dict(),
-    }), indent=2, sort_keys=True, allow_nan=False))
+    print(
+        json.dumps(
+            json_safe(
+                {
+                    "metric_schema": METRIC_SCHEMA_VERSION,
+                    "method": result.method,
+                    "metrics": result.metrics,
+                    "runtime": result.runtime.as_dict(),
+                }
+            ),
+            indent=2,
+            sort_keys=True,
+            allow_nan=False,
+        )
+    )
 
 
 if __name__ == "__main__":

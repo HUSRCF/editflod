@@ -27,7 +27,7 @@ def parent_context_features(pair: StructurePair, *, include_geometry: bool = Fal
         finite = np.isfinite(pair.parent_coords[residue_index]).all(axis=-1)
         local = (pair.parent_coords[residue_index] - origins[residue_index]) @ parent_rotations[residue_index]
         features[residue_index, : 3 * len(pair.atom_names)] = np.where(finite[:, None], local, 0.0).reshape(-1)
-        features[residue_index, 3 * len(pair.atom_names):base_dim] = finite.astype(np.float32)
+        features[residue_index, 3 * len(pair.atom_names) : base_dim] = finite.astype(np.float32)
     if include_geometry:
         ca_index = pair.ca_atom_index
         ca = pair.parent_coords[:, ca_index]
@@ -41,7 +41,7 @@ def parent_context_features(pair: StructurePair, *, include_geometry: bool = Fal
             for neighbor_index in (residue_index - 1, residue_index + 1):
                 if 0 <= neighbor_index < pair.length and finite_ca[neighbor_index]:
                     relative = (ca[neighbor_index] - origin) @ rotation
-                    features[residue_index, cursor:cursor + 3] = relative.astype(np.float32)
+                    features[residue_index, cursor : cursor + 3] = relative.astype(np.float32)
                 cursor += 3
     return features
 
@@ -51,10 +51,7 @@ def edit_geometry_features(pair: StructurePair) -> np.ndarray:
     features = np.zeros((pair.length, 2), dtype=np.float32)
     ca = pair.parent_coords[:, pair.ca_atom_index]
     finite_ca = np.isfinite(ca).all(axis=-1)
-    mutation_indices = [
-        index for index in pair.mutation_indices
-        if 0 <= index < pair.length and finite_ca[index]
-    ]
+    mutation_indices = [index for index in pair.mutation_indices if 0 <= index < pair.length and finite_ca[index]]
     if not mutation_indices:
         return features
     distances = np.linalg.norm(ca[:, None, :] - ca[mutation_indices][None, :, :], axis=-1)
@@ -122,16 +119,20 @@ def parent_spatial_graph(
             edge_mask[source, target] = True
             relative_translation = rotations[source].T @ (origins[target] - origins[source])
             relative_rotation = rotations[source].T @ rotations[target]
-            edge_features[source, target] = np.concatenate((
-                np.asarray([distances[source, target] / distance_scale]),
-                relative_translation / distance_scale,
-                relative_rotation.reshape(-1),
-                np.asarray([
-                    np.clip((target - source) / 32.0, -1.0, 1.0),
-                    mutation[source],
-                    mutation[target],
-                ]),
-            )).astype(np.float32)
+            edge_features[source, target] = np.concatenate(
+                (
+                    np.asarray([distances[source, target] / distance_scale]),
+                    relative_translation / distance_scale,
+                    relative_rotation.reshape(-1),
+                    np.asarray(
+                        [
+                            np.clip((target - source) / 32.0, -1.0, 1.0),
+                            mutation[source],
+                            mutation[target],
+                        ]
+                    ),
+                )
+            ).astype(np.float32)
     return edge_features, edge_mask
 
 
@@ -187,6 +188,7 @@ class PairDataset:
         include_spatial_graph: bool = False,
         spatial_neighbors: int = 24,
         family_balanced_loss: bool = False,
+        include_biochemical: bool = False,
     ):
         if not records:
             raise ValueError("PairDataset requires at least one record")
@@ -207,11 +209,9 @@ class PairDataset:
             raise ValueError("spatial_neighbors must be positive")
         self.spatial_neighbors = int(spatial_neighbors)
         self.family_balanced_loss = bool(family_balanced_loss)
+        self.include_biochemical = bool(include_biochemical)
         family_counts = Counter(record.family_id for record in self.records)
-        self.family_weights = {
-            family: len(self.records) / (len(family_counts) * count)
-            for family, count in family_counts.items()
-        }
+        self.family_weights = {family: len(self.records) / (len(family_counts) * count) for family, count in family_counts.items()}
         if teacher_deltas is not None:
             missing = [record.pair.pair_id for record in self.records if record.pair.pair_id not in teacher_deltas]
             if missing:
@@ -222,9 +222,17 @@ class PairDataset:
 
     def __getitem__(self, index: int) -> dict[str, Any]:
         record = self.records[index]
-        target, valid = target_local_delta(record.pair, translation_scale=self.translation_scale, rotation_scale=self.rotation_scale)
+        target, valid = target_local_delta(
+            record.pair,
+            translation_scale=self.translation_scale,
+            rotation_scale=self.rotation_scale,
+        )
         input_valid = parent_residue_mask(record.pair)
-        edit = encode_edit_features([record.pair.parent_sequence], [record.pair.mutant_sequence])[0].numpy()
+        edit = encode_edit_features(
+            [record.pair.parent_sequence],
+            [record.pair.mutant_sequence],
+            include_biochemical=self.include_biochemical,
+        )[0].numpy()
         item = {
             "pair_id": record.pair.pair_id,
             "parent_features": parent_local_features(record.pair, include_geometry=self.include_geometry),
@@ -239,7 +247,10 @@ class PairDataset:
             teacher_delta, teacher_valid = self.teacher_deltas[record.pair.pair_id]
             teacher_delta = np.asarray(teacher_delta, dtype=np.float32)
             teacher_valid = np.asarray(teacher_valid, dtype=bool)
-            if teacher_delta.shape != (record.pair.length, 6) or teacher_valid.shape != (record.pair.length,):
+            if teacher_delta.shape != (
+                record.pair.length,
+                6,
+            ) or teacher_valid.shape != (record.pair.length,):
                 raise ValueError(f"teacher delta shape does not match pair {record.pair.pair_id}")
             if not np.isfinite(teacher_delta).all():
                 raise ValueError(f"teacher delta for {record.pair.pair_id} contains non-finite values")
@@ -249,9 +260,7 @@ class PairDataset:
             item["teacher_delta"] = scaled_teacher
             item["teacher_mask"] = (teacher_valid & valid).astype(np.float32)
         if self.include_spatial_graph:
-            item["edge_features"], item["edge_mask"] = parent_spatial_graph(
-                record.pair, spatial_neighbors=self.spatial_neighbors
-            )
+            item["edge_features"], item["edge_mask"] = parent_spatial_graph(record.pair, spatial_neighbors=self.spatial_neighbors)
         return item
 
 
@@ -269,7 +278,7 @@ def iter_pair_batches(
     if shuffle:
         np.random.default_rng(seed).shuffle(indices)
     for start in range(0, len(indices), batch_size):
-        yield collate_pair_records([dataset[int(index)] for index in indices[start:start + batch_size]])
+        yield collate_pair_records([dataset[int(index)] for index in indices[start : start + batch_size]])
 
 
 def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:

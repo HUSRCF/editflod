@@ -9,7 +9,11 @@ import numpy as np
 from .data import StructurePair
 from .geometry import apply_local_frame_update, local_frame_difference, residue_frames
 from .noise import SharedNoise, make_shared_noise
-from .student_inference import ParentContextCache, predict_student, predict_student_batch
+from .student_inference import (
+    ParentContextCache,
+    predict_student,
+    predict_student_batch,
+)
 
 
 class FieldModel(Protocol):
@@ -19,8 +23,7 @@ class FieldModel(Protocol):
     适配器中完成序列编码、刚体切空间转换和模型输出参数化转换。
     """
 
-    def field(self, coords: np.ndarray, sequence: str, noise_level: float, **kwargs: object) -> np.ndarray:
-        ...
+    def field(self, coords: np.ndarray, sequence: str, noise_level: float, **kwargs: object) -> np.ndarray: ...
 
 
 class EndpointModel(Protocol):
@@ -60,8 +63,7 @@ def _field(
 
 
 class Editor(Protocol):
-    def predict(self, pair: StructurePair) -> np.ndarray:
-        ...
+    def predict(self, pair: StructurePair) -> np.ndarray: ...
 
 
 @dataclass
@@ -77,6 +79,7 @@ class StudentEditor:
     include_spatial_graph: bool = False
     spatial_neighbors: int = 24
     update_scale: float = 1.0
+    include_biochemical: bool = False
 
     def __post_init__(self) -> None:
         if self.parent_cache is not None and self.parent_cache.include_geometry != self.include_geometry:
@@ -94,6 +97,7 @@ class StudentEditor:
             include_spatial_graph=self.include_spatial_graph,
             spatial_neighbors=self.spatial_neighbors,
             update_scale=self.update_scale,
+            include_biochemical=self.include_biochemical,
         )
 
     def predict_batch(self, pairs: list[StructurePair]) -> list[np.ndarray]:
@@ -108,6 +112,7 @@ class StudentEditor:
             include_spatial_graph=self.include_spatial_graph,
             spatial_neighbors=self.spatial_neighbors,
             update_scale=self.update_scale,
+            include_biochemical=self.include_biochemical,
         )
 
 
@@ -127,7 +132,13 @@ class TargetUpdateEditor:
         if pair.parent_sequence == pair.mutant_sequence:
             return pair.parent_coords.copy()
         noise_state = make_shared_noise(pair.parent_coords.shape, self.noise_level, seed=0)
-        update = _field(self.model, pair.parent_coords, pair.mutant_sequence, self.noise_level, noise_state)
+        update = _field(
+            self.model,
+            pair.parent_coords,
+            pair.mutant_sequence,
+            self.noise_level,
+            noise_state,
+        )
         return pair.parent_coords + self.step_size * update
 
 
@@ -142,8 +153,20 @@ class ConditionalDifferenceEditor:
         if pair.parent_sequence == pair.mutant_sequence:
             return pair.parent_coords.copy()
         noise_state = make_shared_noise(pair.parent_coords.shape, self.noise_level, seed=0)
-        target = _field(self.model, pair.parent_coords, pair.mutant_sequence, self.noise_level, noise_state)
-        source = _field(self.model, pair.parent_coords, pair.parent_sequence, self.noise_level, noise_state)
+        target = _field(
+            self.model,
+            pair.parent_coords,
+            pair.mutant_sequence,
+            self.noise_level,
+            noise_state,
+        )
+        source = _field(
+            self.model,
+            pair.parent_coords,
+            pair.parent_sequence,
+            self.noise_level,
+            noise_state,
+        )
         update = target - self.source_weight * source
         return pair.parent_coords + self.step_size * update
 
@@ -208,7 +231,12 @@ class LocalFrameDifferenceEditor:
         if pair.parent_sequence == pair.mutant_sequence:
             return pair.parent_coords.copy()
         return _local_frame_difference_update(
-            self.model, pair, (self.noise_level,), (1.0,), self.translation_scale, self.rotation_scale
+            self.model,
+            pair,
+            (self.noise_level,),
+            (1.0,),
+            self.translation_scale,
+            self.rotation_scale,
         )
 
 
@@ -231,8 +259,13 @@ class MutationNeighborhoodDifferenceEditor(LocalFrameDifferenceEditor):
             distances = np.linalg.norm(ca[:, None, :] - mutation_ca[None, :, :], axis=-1)
             active = np.isfinite(distances).any(axis=1) & (np.nanmin(distances, axis=1) <= self.radius)
         return _local_frame_difference_update(
-            self.model, pair, (self.noise_level,), (1.0,), self.translation_scale,
-            self.rotation_scale, active_mask=active,
+            self.model,
+            pair,
+            (self.noise_level,),
+            (1.0,),
+            self.translation_scale,
+            self.rotation_scale,
+            active_mask=active,
         )
 
 

@@ -4,7 +4,12 @@ import pytest
 torch = pytest.importorskip("torch")
 
 from ospedit.data import StructurePair
-from ospedit.student_inference import ParentContextCache, apply_student_delta, predict_student, predict_student_batch
+from ospedit.student_inference import (
+    ParentContextCache,
+    apply_student_delta,
+    predict_student,
+    predict_student_batch,
+)
 from ospedit.student import SpatialGraphStudent
 
 
@@ -20,12 +25,20 @@ def make_pair():
 
 class ZeroStudent(torch.nn.Module):
     def forward(self, parent, edit):
-        return torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+        return torch.zeros(
+            (parent.shape[0], parent.shape[1], 6),
+            dtype=parent.dtype,
+            device=parent.device,
+        )
 
 
 class ShiftStudent(torch.nn.Module):
     def forward(self, parent, edit):
-        output = torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+        output = torch.zeros(
+            (parent.shape[0], parent.shape[1], 6),
+            dtype=parent.dtype,
+            device=parent.device,
+        )
         output[:, 1, 0] = edit[:, 1, -1]
         return output
 
@@ -37,12 +50,20 @@ class MaskSpyStudent(torch.nn.Module):
 
     def forward(self, parent, edit, residue_mask=None):
         self.mask = residue_mask.detach().cpu().tolist()
-        return torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+        return torch.zeros(
+            (parent.shape[0], parent.shape[1], 6),
+            dtype=parent.dtype,
+            device=parent.device,
+        )
 
 
 class GeometryMarkerStudent(torch.nn.Module):
     def forward(self, parent, edit, residue_mask=None):
-        output = torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+        output = torch.zeros(
+            (parent.shape[0], parent.shape[1], 6),
+            dtype=parent.dtype,
+            device=parent.device,
+        )
         output[..., 0] = parent[..., -1]
         return output
 
@@ -80,7 +101,14 @@ def test_predict_student_masks_degenerate_parent_frames():
     pair = make_pair()
     broken = pair.parent_coords.copy()
     broken[0] = np.nan
-    pair = StructurePair("broken", pair.parent_sequence, pair.mutant_sequence, broken, pair.mutant_coords, pair.mutation_indices)
+    pair = StructurePair(
+        "broken",
+        pair.parent_sequence,
+        pair.mutant_sequence,
+        broken,
+        pair.mutant_coords,
+        pair.mutation_indices,
+    )
     model = MaskSpyStudent()
     predict_student(model, pair)
     assert model.mask == [[False, True]]
@@ -115,7 +143,12 @@ def test_predict_student_batch_handles_mixed_lengths():
     short = make_pair()
     long = make_pair()
     long = StructurePair(
-        "long", "AAA", "AYA", np.concatenate((long.parent_coords, long.parent_coords[:1]), axis=0), np.concatenate((long.mutant_coords, long.mutant_coords[:1]), axis=0), (1,)
+        "long",
+        "AAA",
+        "AYA",
+        np.concatenate((long.parent_coords, long.parent_coords[:1]), axis=0),
+        np.concatenate((long.mutant_coords, long.mutant_coords[:1]), axis=0),
+        (1,),
     )
     results = predict_student_batch(ShiftStudent(), [short, long])
     assert [result.shape[0] for result in results] == [2, 3]
@@ -147,12 +180,8 @@ def test_geometry_cached_predictions_match_uncached_and_are_order_independent():
     model = GeometryMarkerStudent()
     expected = predict_student_batch(model, [first, second], include_geometry=True)
 
-    forward = predict_student_batch(
-        model, [first, second], parent_cache=ParentContextCache(include_geometry=True)
-    )
-    reverse = predict_student_batch(
-        model, [second, first], parent_cache=ParentContextCache(include_geometry=True)
-    )
+    forward = predict_student_batch(model, [first, second], parent_cache=ParentContextCache(include_geometry=True))
+    reverse = predict_student_batch(model, [second, first], parent_cache=ParentContextCache(include_geometry=True))
 
     assert np.allclose(forward[0], expected[0])
     assert np.allclose(forward[1], expected[1])
@@ -165,4 +194,24 @@ def test_spatial_graph_student_runs_single_and_batch_inference():
     model = SpatialGraphStudent(parent_dim=16, hidden_dim=16, blocks=1)
     single = predict_student(model, pair, include_spatial_graph=True, spatial_neighbors=1)
     batch = predict_student_batch(model, [pair], include_spatial_graph=True, spatial_neighbors=1)
+    assert np.allclose(single, batch[0])
+
+
+def test_biochemical_spatial_graph_student_runs_single_and_batch_inference():
+    pair = make_pair()
+    model = SpatialGraphStudent(parent_dim=16, edit_dim=48, hidden_dim=16, blocks=1)
+    single = predict_student(
+        model,
+        pair,
+        include_spatial_graph=True,
+        spatial_neighbors=1,
+        include_biochemical=True,
+    )
+    batch = predict_student_batch(
+        model,
+        [pair],
+        include_spatial_graph=True,
+        spatial_neighbors=1,
+        include_biochemical=True,
+    )
     assert np.allclose(single, batch[0])

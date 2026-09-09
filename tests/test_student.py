@@ -2,13 +2,38 @@ import pytest
 
 torch = pytest.importorskip("torch")
 
-from ospedit.student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent, encode_edit_features
+from ospedit.student import (
+    BIOCHEMICAL_GROUPS,
+    EDIT_MASK_INDEX,
+    HybridSpatialGraphStudent,
+    ParentEditStudent,
+    SpatialGraphStudent,
+    encode_edit_features,
+)
 
 
 def test_edit_encoder_marks_only_sequence_changes():
     features = encode_edit_features(["AAA"], ["AYA"])
     assert features.shape == (1, 3, 41)
     assert features[0, :, -1].tolist() == [0.0, 1.0, 0.0]
+
+
+def test_edit_encoder_adds_biochemical_target_minus_source_descriptors():
+    features = encode_edit_features(["DA"], ["KA"], include_biochemical=True)
+    assert features.shape == (1, 2, 41 + len(BIOCHEMICAL_GROUPS))
+    assert features[0, :, EDIT_MASK_INDEX].tolist() == [1.0, 0.0]
+    assert features[0, 0, 41:].tolist() == [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    assert torch.equal(features[0, 1, 41:], torch.zeros(len(BIOCHEMICAL_GROUPS)))
+
+
+def test_spatial_graph_student_accepts_biochemical_edit_features():
+    model = SpatialGraphStudent(parent_dim=8, edit_dim=48, hidden_dim=16, blocks=1)
+    parent = torch.randn(1, 2, 8)
+    edits = encode_edit_features(["DA"], ["KA"], include_biochemical=True)
+    edge = torch.randn(1, 2, 2, 16)
+    edge_mask = ~torch.eye(2, dtype=torch.bool)[None]
+    output = model(parent, edits, edge_features=edge, edge_mask=edge_mask)
+    assert output.shape == (1, 2, 6)
 
 
 def test_student_has_exact_batch_identity_for_no_edit_samples():
@@ -54,7 +79,11 @@ def test_student_padding_mask_blocks_padded_tokens():
     padded_parent = torch.cat((parent, torch.randn(1, 2, 8)), dim=1)
     padded_edits = torch.cat((edits, torch.zeros(1, 2, edits.shape[-1])), dim=1)
     short = model(parent, edits, residue_mask=torch.ones((1, 3), dtype=torch.bool))
-    padded = model(padded_parent, padded_edits, residue_mask=torch.tensor([[True, True, True, False, False]]))
+    padded = model(
+        padded_parent,
+        padded_edits,
+        residue_mask=torch.tensor([[True, True, True, False, False]]),
+    )
     assert torch.allclose(short, padded[:, :3], atol=1e-6)
     assert torch.equal(padded[:, 3:], torch.zeros_like(padded[:, 3:]))
 
@@ -73,9 +102,7 @@ def test_spatial_graph_student_requires_graph_and_preserves_no_edit_identity():
 
 
 def test_hybrid_spatial_graph_student_combines_graph_and_global_context():
-    model = HybridSpatialGraphStudent(
-        parent_dim=8, hidden_dim=16, graph_blocks=1, global_blocks=1, heads=4
-    )
+    model = HybridSpatialGraphStudent(parent_dim=8, hidden_dim=16, graph_blocks=1, global_blocks=1, heads=4)
     parent = torch.randn(2, 3, 8)
     edits = encode_edit_features(["AAA", "AAA"], ["AYA", "AAA"])
     edge = torch.randn(2, 3, 3, 16)

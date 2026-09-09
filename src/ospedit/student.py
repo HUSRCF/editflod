@@ -15,21 +15,33 @@ except ImportError:  # pragma: no cover - exercised only in environments without
 
 AMINO_ACIDS = "ACDEFGHIKLMNPQRSTVWY"
 TOKEN_INDEX = {letter: index for index, letter in enumerate(AMINO_ACIDS)}
+EDIT_MASK_INDEX = 2 * len(AMINO_ACIDS)
+BIOCHEMICAL_GROUPS = (
+    frozenset("DE"),
+    frozenset("KRH"),
+    frozenset("FWY"),
+    frozenset("STNQCY"),
+    frozenset("AVILMFWY"),
+    frozenset("G"),
+    frozenset("P"),
+)
 
 
 def _sinusoidal_positions(length: int, dimension: int, *, device: object, dtype: object) -> "Tensor":
     positions = torch.arange(length, device=device, dtype=dtype)[:, None]
-    frequencies = torch.exp(
-        torch.arange(0, dimension, 2, device=device, dtype=dtype)
-        * (-np.log(10000.0) / dimension)
-    )
+    frequencies = torch.exp(torch.arange(0, dimension, 2, device=device, dtype=dtype) * (-np.log(10000.0) / dimension))
     encoding = torch.zeros((length, dimension), device=device, dtype=dtype)
     encoding[:, 0::2] = torch.sin(positions * frequencies)
     encoding[:, 1::2] = torch.cos(positions * frequencies[: encoding[:, 1::2].shape[1]])
     return encoding
 
 
-def encode_edit_features(parent_sequences: Sequence[str], mutant_sequences: Sequence[str]) -> "Tensor":
+def encode_edit_features(
+    parent_sequences: Sequence[str],
+    mutant_sequences: Sequence[str],
+    *,
+    include_biochemical: bool = False,
+) -> "Tensor":
     """Encode aligned source/target residues as source+target one-hot plus mask."""
     if torch is None:
         raise ImportError("ParentEditStudent requires torch; install ospedit[torch]")
@@ -40,14 +52,19 @@ def encode_edit_features(parent_sequences: Sequence[str], mutant_sequences: Sequ
     length = len(parent_sequences[0])
     if any(len(source) != length or len(target) != length for source, target in zip(parent_sequences, mutant_sequences, strict=True)):
         raise ValueError("all sequences in a batch must have equal length")
-    features = torch.zeros((len(parent_sequences), length, 2 * len(AMINO_ACIDS) + 1), dtype=torch.float32)
+    base_dim = 2 * len(AMINO_ACIDS) + 1
+    feature_dim = base_dim + (len(BIOCHEMICAL_GROUPS) if include_biochemical else 0)
+    features = torch.zeros((len(parent_sequences), length, feature_dim), dtype=torch.float32)
     for batch, (source, target) in enumerate(zip(parent_sequences, mutant_sequences, strict=True)):
         for residue, (source_letter, target_letter) in enumerate(zip(source, target, strict=True)):
             if source_letter not in TOKEN_INDEX or target_letter not in TOKEN_INDEX:
                 raise ValueError(f"unsupported amino-acid token at batch={batch}, residue={residue}")
             features[batch, residue, TOKEN_INDEX[source_letter]] = 1.0
             features[batch, residue, len(AMINO_ACIDS) + TOKEN_INDEX[target_letter]] = 1.0
-            features[batch, residue, -1] = float(source_letter != target_letter)
+            features[batch, residue, EDIT_MASK_INDEX] = float(source_letter != target_letter)
+            if include_biochemical:
+                for offset, group in enumerate(BIOCHEMICAL_GROUPS):
+                    features[batch, residue, base_dim + offset] = float(target_letter in group) - float(source_letter in group)
     return features
 
 
@@ -88,7 +105,16 @@ if nn is not None:
         explicit and testable.
         """
 
-        def __init__(self, parent_dim: int, edit_dim: int = 41, hidden_dim: int = 256, blocks: int = 4, heads: int = 8, max_normalized_delta: float | None = None, use_positional_encoding: bool = True):
+        def __init__(
+            self,
+            parent_dim: int,
+            edit_dim: int = 41,
+            hidden_dim: int = 256,
+            blocks: int = 4,
+            heads: int = 8,
+            max_normalized_delta: float | None = None,
+            use_positional_encoding: bool = True,
+        ):
             super().__init__()
             if parent_dim <= 0 or edit_dim <= 0:
                 raise ValueError("parent_dim and edit_dim must be positive")
@@ -113,7 +139,12 @@ if nn is not None:
             nn.init.zeros_(self.output_projection[-1].weight)
             nn.init.zeros_(self.output_projection[-1].bias)
 
-        def forward(self, parent_features: Tensor, edit_features: Tensor, residue_mask: Tensor | None = None) -> Tensor:
+        def forward(
+            self,
+            parent_features: Tensor,
+            edit_features: Tensor,
+            residue_mask: Tensor | None = None,
+        ) -> Tensor:
             if parent_features.ndim != 3 or edit_features.ndim != 3:
                 raise ValueError("student inputs must have shape (batch, length, features)")
             if parent_features.shape[:2] != edit_features.shape[:2]:
@@ -122,20 +153,25 @@ if nn is not None:
                 raise ValueError("residue_mask must have shape (batch, length)")
             hidden = self.input_projection(torch.cat((parent_features, edit_features), dim=-1))
             if self.use_positional_encoding:
-                hidden = hidden + _sinusoidal_positions(
-                    hidden.shape[1], hidden.shape[2], device=hidden.device, dtype=hidden.dtype
-                )[None]
+                hidden = (
+                    hidden
+                    + _sinusoidal_positions(
+                        hidden.shape[1],
+                        hidden.shape[2],
+                        device=hidden.device,
+                        dtype=hidden.dtype,
+                    )[None]
+                )
             padding_mask = None if residue_mask is None else ~residue_mask.to(dtype=torch.bool)
             hidden = self.context(hidden, src_key_padding_mask=padding_mask)
             delta = self.output_projection(hidden)
             if self.max_normalized_delta is not None:
                 delta = torch.tanh(delta) * self.max_normalized_delta
-            edit_mask = edit_features[..., -1].abs().sum(dim=1) > 0
+            edit_mask = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
             output = delta * edit_mask[:, None, None].to(delta.dtype)
             if residue_mask is not None:
                 output = output * residue_mask[:, :, None].to(output.dtype)
             return output
-
 
     class SpatialGraphStudent(nn.Module):
         """One-pass editor with explicit invariant parent spatial relations."""
@@ -156,9 +192,7 @@ if nn is not None:
                 raise ValueError("max_normalized_delta must be positive or None")
             self.max_normalized_delta = max_normalized_delta
             self.node_projection = nn.Linear(parent_dim + edit_dim, hidden_dim)
-            self.blocks = nn.ModuleList(
-                _SpatialMessageBlock(hidden_dim, edge_dim) for _ in range(blocks)
-            )
+            self.blocks = nn.ModuleList(_SpatialMessageBlock(hidden_dim, edge_dim) for _ in range(blocks))
             self.output_projection = nn.Sequential(nn.LayerNorm(hidden_dim), nn.Linear(hidden_dim, 6))
             nn.init.zeros_(self.output_projection[-1].weight)
             nn.init.zeros_(self.output_projection[-1].bias)
@@ -173,9 +207,15 @@ if nn is not None:
         ) -> Tensor:
             if edge_features is None or edge_mask is None:
                 raise ValueError("SpatialGraphStudent requires edge_features and edge_mask")
-            if edge_features.shape[:3] != (
-                parent_features.shape[0], parent_features.shape[1], parent_features.shape[1]
-            ) or edge_mask.shape != edge_features.shape[:3]:
+            if (
+                edge_features.shape[:3]
+                != (
+                    parent_features.shape[0],
+                    parent_features.shape[1],
+                    parent_features.shape[1],
+                )
+                or edge_mask.shape != edge_features.shape[:3]
+            ):
                 raise ValueError("spatial graph dimensions must match the node batch")
             hidden = self.node_projection(torch.cat((parent_features, edit_features), dim=-1))
             for block in self.blocks:
@@ -183,12 +223,11 @@ if nn is not None:
             delta = self.output_projection(hidden)
             if self.max_normalized_delta is not None:
                 delta = torch.tanh(delta) * self.max_normalized_delta
-            has_edit = edit_features[..., -1].abs().sum(dim=1) > 0
+            has_edit = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
             output = delta * has_edit[:, None, None].to(delta.dtype)
             if residue_mask is not None:
                 output = output * residue_mask[..., None].to(output.dtype)
             return output
-
 
     class HybridSpatialGraphStudent(nn.Module):
         """Spatial edge message passing followed by global residue attention."""
@@ -205,7 +244,18 @@ if nn is not None:
             max_normalized_delta: float | None = None,
         ):
             super().__init__()
-            if min(parent_dim, edit_dim, edge_dim, hidden_dim, graph_blocks, global_blocks, heads) <= 0:
+            if (
+                min(
+                    parent_dim,
+                    edit_dim,
+                    edge_dim,
+                    hidden_dim,
+                    graph_blocks,
+                    global_blocks,
+                    heads,
+                )
+                <= 0
+            ):
                 raise ValueError("hybrid student dimensions and blocks must be positive")
             if hidden_dim % heads:
                 raise ValueError("hidden_dim must be divisible by heads")
@@ -213,9 +263,7 @@ if nn is not None:
                 raise ValueError("max_normalized_delta must be positive or None")
             self.max_normalized_delta = max_normalized_delta
             self.node_projection = nn.Linear(parent_dim + edit_dim, hidden_dim)
-            self.graph_blocks = nn.ModuleList(
-                _SpatialMessageBlock(hidden_dim, edge_dim) for _ in range(graph_blocks)
-            )
+            self.graph_blocks = nn.ModuleList(_SpatialMessageBlock(hidden_dim, edge_dim) for _ in range(graph_blocks))
             layer = nn.TransformerEncoderLayer(
                 d_model=hidden_dim,
                 nhead=heads,
@@ -238,14 +286,26 @@ if nn is not None:
         ) -> Tensor:
             if edge_features is None or edge_mask is None:
                 raise ValueError("HybridSpatialGraphStudent requires edge_features and edge_mask")
-            if edge_features.shape[:3] != (
-                parent_features.shape[0], parent_features.shape[1], parent_features.shape[1]
-            ) or edge_mask.shape != edge_features.shape[:3]:
+            if (
+                edge_features.shape[:3]
+                != (
+                    parent_features.shape[0],
+                    parent_features.shape[1],
+                    parent_features.shape[1],
+                )
+                or edge_mask.shape != edge_features.shape[:3]
+            ):
                 raise ValueError("spatial graph dimensions must match the node batch")
             hidden = self.node_projection(torch.cat((parent_features, edit_features), dim=-1))
-            hidden = hidden + _sinusoidal_positions(
-                hidden.shape[1], hidden.shape[2], device=hidden.device, dtype=hidden.dtype
-            )[None]
+            hidden = (
+                hidden
+                + _sinusoidal_positions(
+                    hidden.shape[1],
+                    hidden.shape[2],
+                    device=hidden.device,
+                    dtype=hidden.dtype,
+                )[None]
+            )
             for block in self.graph_blocks:
                 hidden = block(hidden, edge_features, edge_mask)
             padding_mask = None if residue_mask is None else ~residue_mask.to(dtype=torch.bool)
@@ -253,7 +313,7 @@ if nn is not None:
             delta = self.output_projection(hidden)
             if self.max_normalized_delta is not None:
                 delta = torch.tanh(delta) * self.max_normalized_delta
-            has_edit = edit_features[..., -1].abs().sum(dim=1) > 0
+            has_edit = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
             output = delta * has_edit[:, None, None].to(delta.dtype)
             if residue_mask is not None:
                 output = output * residue_mask[..., None].to(output.dtype)

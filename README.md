@@ -480,6 +480,10 @@ radius; the selected radius is stored in the checkpoint configuration.
 `--geometry-features` enables optional invariant chain-context and
 mutation-distance channels; this setting is stored in the checkpoint and must
 match any parent-context cache used at inference.
+`--biochemical-edit-features` appends seven fixed target-minus-source residue
+class descriptors (acidic, basic, aromatic, polar, hydrophobic, glycine, and
+proline). The feature flag and resulting `edit_dim` are stored in checkpoints
+and restored during evaluation; resume rejects a conflicting feature setting.
 Positional encoding is enabled by default; pass `--no-positional-encoding` to
 reproduce the pre-position baseline in student or sweep runs.
 Legacy checkpoints that predate this option are evaluated with positional
@@ -722,8 +726,8 @@ Use `save_student_checkpoint` and `load_student_checkpoint` to resume local
 experiments. Checkpoints use an explicit format version and retain optimizer
 state, epoch, loss history, and the supplied configuration dictionary.
 Resume and evaluation validate the checkpoint's recorded `parent_dim`,
-`hidden_dim`, `blocks`, and `heads` against the requested/input architecture
-before loading weights.
+`edit_dim`, `hidden_dim`, `blocks`, and `heads` against the requested/input
+architecture before loading weights.
 Resume also validates the recorded target scales, neighborhood radius, loss
 kind/beta, and loss weights before continuing.
 New training checkpoints also store a deterministic `manifest_fingerprint`;

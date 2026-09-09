@@ -68,3 +68,23 @@ contains 18 connected families, dev 5, and test 4. The largest dev and test
 families contain 9/15 and 12/15 records respectively. Family-macro reporting is
 mandatory, and further gains require more cross-family signal rather than more
 per-mutation rows from one parent.
+
+## Biochemical edit-feature ablation
+
+One pre-registered follow-up added seven fixed target-minus-source residue-class
+features to the spatial graph student: acidic, basic, aromatic, polar,
+hydrophobic, glycine, and proline membership. All other settings matched the
+region-normalized 20-epoch run. This tests whether a minimal biochemical prior
+improves held-out direction without introducing a sequence language model.
+
+| Dev method | Local error (A) | Site error (A) | Distance-change error (A) | Distance-change cosine | Remote target error (A) | Remote frame drift (A) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Copy | 0.3374 | 0.2795 | 0.2406 | undefined | 0.3287 | 0.0000 |
+| Region loss, no biochemical features | 0.3625 | 0.3256 | 0.2536 | 0.021 | 0.3492 | 0.1175 |
+| Region loss + biochemical features | 0.3585 | 0.3633 | 0.2581 | -0.042 | 0.3468 | 0.1022 |
+
+The extra descriptors slightly reduced local error and drift relative to the
+otherwise matched student, but worsened mutation-site error, distance-change
+error, and response cosine. The model therefore failed the dev gate and was not
+evaluated on test. Fixed residue classes alone do not resolve the missing
+cross-family response signal.
