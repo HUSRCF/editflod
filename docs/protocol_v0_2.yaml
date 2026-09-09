@@ -106,3 +106,18 @@ artifacts:
   tracked_directory: reports
   track: [manifests, split_assignments, per_sample_metrics, experiment_configs, checkpoint_metadata, training_curves]
   exclude: [model_weights, downloaded_structures, large_feature_caches]
+  background_control_reports:
+    coverage: reports/protocol_v02_background_control_coverage_v1.json
+    signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
+
+background_control_gate:
+  corrected_repeat_controls: 247
+  covered_pairs: {train: 19, dev: 11, test: 7}
+  covered_families: {train: 11, dev: 3, test: 4}
+  max_background_joint_local_distance_sbr_ge_2: {train: 0, dev: 0, test: 0}
+  training_weighting_admitted: false
+  reasons:
+    - insufficient_train_coverage
+    - repeat_environment_matching_not_established
+    - target_derived_confidence_would_leak_mutant_information
+  next_gate: matched_environment_response_controls

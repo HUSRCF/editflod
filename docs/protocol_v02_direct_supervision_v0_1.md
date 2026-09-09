@@ -155,3 +155,55 @@ measurable effect. It still fails the copy-parent gate, particularly at the
 mutation site, and was therefore not repeated across seeds or evaluated on
 test. Hard preservation solves unrelated remote drift but not held-out mutation
 response prediction.
+
+## Same-sequence background-control audit
+
+All available repeat-structure batches were recomputed with the corrected
+standard atom RMSD definition and consolidated by mutation pair, repeat PDB,
+and repeat chain. This last key matters because one PDB file can contain
+multiple same-sequence chains with different coordinates. The background-only
+index contains 247 distinct control chains and covers 37/101 mutation pairs,
+30/56 parents, and 18/27 families.
+
+| Split | Covered pairs | Total pairs | Covered families | Total families |
+| --- | ---: | ---: | ---: | ---: |
+| Train | 19 | 71 | 11 | 18 |
+| Dev | 11 | 15 | 3 | 5 |
+| Test | 7 | 15 | 4 | 4 |
+
+The endpoint signal is the copy-parent error, not an assumed mutation-only
+effect. On dev, its median ratio to the maximum same-sequence background is
+0.769 locally, 0.545 at the mutation site, and 0.606 for distance change. Using
+the median rather than maximum background raises these ratios to 1.081, 1.299,
+and 0.987, respectively, but does not establish a clean response target.
+
+On train, maximum background and endpoint signal have Spearman correlations of
+0.695 locally, 0.665 at the site, and 0.560 for distance change. This is
+consistent with experimental-state variation contributing materially to both
+the repeat controls and parent-mutant endpoints. It is not evidence that the
+background causes the endpoint difference.
+
+Among records with at least two repeat controls, no train, dev, or test pair
+simultaneously passes the frozen maximum-background local and distance
+signal/background threshold of 2. At a threshold of 1, only 5 train, 3 dev, and
+1 test pairs pass. The localized seed-0 student also worsens local error versus
+copy-parent on all 11 covered dev records, including the three with both ratios
+above 1.5.
+
+Consequently, repeat-derived target weighting or background subtraction is not
+admitted for training: train coverage is only 19/71, the controls have not all
+been matched for crystal environment and ligand/contact state, and weights
+derived from parent-mutant endpoint signal would leak target information. The
+tracked reports are:
+
+- `reports/protocol_v02_background_control_coverage_v1.json`: parent-side
+  same-sequence controls, per-control metrics, max/median aggregation, and
+  coverage.
+- `reports/protocol_v02_background_signal_diagnostic_v1.json`: explicitly
+  diagnostic endpoint-to-background ratios and correlations.
+
+The next data gate is therefore a matched-environment response set, not another
+student hyperparameter sweep. Repeat controls must be checked for biological
+assembly, target-chain contacts, ligand state, construct, and crystal form;
+training labels must remain independent of any confidence feature available
+only after observing the mutant endpoint.

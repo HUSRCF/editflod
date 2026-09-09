@@ -187,7 +187,9 @@ def audit_repeat_pairs(
             row: dict[str, Any] = {
                 "pair_id": raw["pair_id"],
                 "parent_structure": str(parent_path),
+                "parent_chain": raw["parent_chain"].strip(),
                 "repeat_structure": str(repeat_path),
+                "repeat_chain": raw["repeat_chain"].strip(),
                 "length": len(parent.sequence),
                 "mutation_index": mutation_index,
                 "mapping": "residue_id" if parent.residue_ids == repeat.residue_ids else "sequence_index",
@@ -243,6 +245,7 @@ def audit_repeat_pairs(
         pair_row: dict[str, Any] = {
             "pair_id": pair_id,
             "parent_structure": repeats[0]["parent_structure"],
+            "parent_chain": repeats[0]["parent_chain"],
             "length": repeats[0]["length"],
             "mutation_index": repeats[0]["mutation_index"],
             "repeat_structures": len(repeats),
