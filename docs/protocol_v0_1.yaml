@@ -78,6 +78,19 @@ data:
   microminer_discovery_repeat_instances: 197
   microminer_discovery_new_pairs_passing_two_repeat_signal_background_gate: 0
   microminer_discovery_eligible_for_unbiased_test: false
+  microminer_repeat_first_hash_groups: 128
+  microminer_repeat_first_hash_candidate_rows: 885
+  microminer_repeat_first_hash_metadata_pairs: 13
+  microminer_repeat_first_largest_groups: 64
+  microminer_repeat_first_largest_candidate_rows: 5684
+  microminer_repeat_first_largest_metadata_pairs: 21
+  microminer_repeat_first_equal_length_pairs_per_scan: 1
+  microminer_repeat_first_terminal_overlap_pairs_merged: 6
+  microminer_repeat_first_terminal_overlap_context_pairs: 6
+  microminer_repeat_first_terminal_overlap_pairs_with_repeats: 4
+  microminer_repeat_first_terminal_overlap_pairs_with_two_repeats: 2
+  microminer_repeat_first_new_pairs_passing_signal_background_gate: 0
+  microminer_terminal_overlap_sensitivity_only: true
   minimum_connected_groups_for_student_development: 32
 
 teacher:

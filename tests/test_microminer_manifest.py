@@ -105,3 +105,45 @@ def test_microminer_import_rejects_missing_shared_uniprot(tmp_path):
     assert records == []
     assert counters["accepted"] == 0
     assert "no shared UniProt" in rejections[0]["reason"]
+
+
+def test_microminer_import_optionally_allows_terminal_overlap(tmp_path):
+    _pdb(tmp_path / "1AAA.pdb", (("ALA", 9), ("ALA", 10), ("GLY", 11)))
+    _pdb(tmp_path / "2AAA.pdb", (("VAL", 10), ("GLY", 11)))
+    candidates = tmp_path / "candidates.csv"
+    _candidates(candidates, hitPos="10")
+
+    records, counters = records_from_microminer_candidates(
+        candidates,
+        tmp_path,
+        min_length=1,
+        allow_terminal_overlap=True,
+        min_mapping_coverage=0.65,
+    )
+
+    assert counters["terminal_overlap_mapping"] == 1
+    assert records[0].pair.mutation_indices == (0,)
+    mapping = records[0].environment_metadata["residue_mapping"]
+    assert mapping["mode"] == "terminal_overlap_crop"
+    assert mapping["parent_terminal_trim"] == [1, 0]
+
+
+def test_microminer_import_terminal_overlap_rejects_internal_gap(tmp_path):
+    _pdb(tmp_path / "1AAA.pdb", (("ALA", 9), ("ALA", 10), ("GLY", 11), ("GLY", 12)))
+    _pdb(tmp_path / "2AAA.pdb", (("ALA", 9), ("VAL", 10), ("GLY", 12)))
+    candidates = tmp_path / "candidates.csv"
+    _candidates(candidates, hitPos="10")
+    rejections = []
+
+    records, counters = records_from_microminer_candidates(
+        candidates,
+        tmp_path,
+        min_length=1,
+        allow_terminal_overlap=True,
+        min_mapping_coverage=0.5,
+        rejections=rejections,
+    )
+
+    assert records == []
+    assert counters["invalid_terminal_overlap"] == 1
+    assert "internal gap or reordering" in rejections[0]["reason"]

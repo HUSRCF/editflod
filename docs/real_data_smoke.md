@@ -114,6 +114,52 @@ Artifacts are:
 /tmp/ospedit-real-sample/microminer_discovery_repeat_audit_4096_v1.json
 ```
 
+### Repeat-first group audit
+
+`scripts/select_microminer_repeat_groups.py` was added to invert the discovery
+order: it first groups the full MicroMiner table by a fixed mutant PDB chain,
+author position, and substitution, then retains several candidate parent
+structures per target. The implementation uses two streaming passes and
+bounded per-group heaps. It labels both RMSD-stratified and largest-group
+selection as discovery-only and ineligible for an unbiased test set.
+
+The full release contains 57,401 quality-eligible target groups. Of these,
+22,234 have at least three candidate parent rows and 7,792 have at least ten.
+A hash-selected `128 groups x 12 parents` scan emitted 885 rows; strict RCSB
+metadata retained 13 rows in 8 groups. A capacity-selected
+`64 groups x 100 parents` scan emitted 5,684 rows; metadata retained 21 rows
+in 11 groups. Despite the apparent group multiplicity, equal-length full-chain
+validation retained only one pair from each scan. Most candidate parents were
+near homologs or differently truncated constructs, not exact parent repeats.
+
+The existing Platinum terminal-overlap mapping was moved into the core data
+module and exposed to the MicroMiner importer as an explicit sensitivity
+option. It requires shared residue IDs to form one continuous interval,
+coverage at least 95%, no internal gap or reordering, exact mutation identity,
+and matching author residue numbers. Default MicroMiner import behavior remains
+strictly equal-length.
+
+The terminal-overlap sensitivity retained 4 and 2 records from the two scans.
+All 6 passed local structure-context checks. Exact-sequence RCSB discovery
+queried all three unique parent sequences, downloaded 111 entries without
+failure, and found 6 context-matched repeat instances for 4 mutation pairs.
+Only two pairs had at least two repeats. Neither passed the frozen dual gate:
+`4CA2_A -> 1CNJ_A (Q92N)` scored `1.103/0.955` and
+`1EYD_A -> 1KDB_A (K116E)` scored `1.425/0.660` for neighborhood and
+distance-change signal/background respectively.
+
+Repeat-first mining therefore improves the audit path and recovers legitimate
+construct-mapped pairs, but adds zero primary identifiable groups. It does not
+justify changing the minimum-repeat or signal/background thresholds.
+
+```text
+/tmp/ospedit-real-sample/microminer_repeat_first_candidates_128x12_v1.json
+/tmp/ospedit-real-sample/microminer_repeat_first_largest_64x100_v1.json
+/tmp/ospedit-real-sample/microminer_repeat_first_terminal_merged_v1.jsonl
+/tmp/ospedit-real-sample/microminer_repeat_first_terminal_repeat_discovery_v1.json
+/tmp/ospedit-real-sample/microminer_repeat_first_terminal_repeat_audit_v1.json
+```
+
 ## Platinum capacity and identifiability audit (2026-09-09)
 
 The public Platinum flat file was added as a second experimental-pair source.

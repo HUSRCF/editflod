@@ -67,7 +67,7 @@ Once the FoldFlow environment and checkpoint loader are available, run the
 real C0-C5 grid with the injected endpoint factory:
 
 ```bash
-python scripts/run_mechanism_grid.py \
+python -m scripts.run_mechanism_grid \
   --manifest data/manifest/pairs.jsonl \
   --endpoint-factory my_foldflow_loader:build_endpoint \
   --split dev --output results/mechanism_dev.json
@@ -82,7 +82,7 @@ Calibrate noise and update scales on the frozen development split with the
 reproducible sweep tool:
 
 ```bash
-python scripts/run_mechanism_sweep.py \
+python -m scripts.run_mechanism_sweep \
   --manifest data/manifest/pairs.jsonl \
   --endpoint-factory my_foldflow_loader:build_endpoint \
   --split dev \
@@ -115,7 +115,7 @@ Freeze a configuration with an explicit development-set constraint before
 opening the held-out test split:
 
 ```bash
-python scripts/select_mechanism_config.py \
+python -m scripts.select_mechanism_config \
   --input results/mechanism_sweep_dev.json \
   --method C3_two_noise_shared_difference \
   --max-remote-drift 0.05 \
@@ -186,7 +186,7 @@ mode, split counts, and resulting manifest fingerprint.
 For a local PreMut release, use the dedicated importer:
 
 ```bash
-python scripts/build_premut_manifest.py \
+python -m scripts.build_premut_manifest \
   --csv /path/to/MutData2022.csv \
   --pdb-root /path/to/MutData2022_PDB \
   --dataset-name premut22 \
@@ -206,7 +206,7 @@ For the Platinum protein--ligand mutation database, build a structure-pair
 manifest from the public flat file and locally downloaded RCSB PDB files:
 
 ```bash
-python scripts/build_platinum_manifest.py \
+python -m scripts.build_platinum_manifest \
   --csv data/platinum_flat_file.csv \
   --pdb-root data/platinum_pdb \
   --output data/manifest/platinum.jsonl \
@@ -227,7 +227,7 @@ For the much larger MicroMiner monomer release, first select a deterministic
 candidate pool without using mutant RMSD as a ranking target:
 
 ```bash
-python scripts/select_microminer_candidates.py \
+python -m scripts.select_microminer_candidates \
   --tsv /path/to/filtered_single_mutations_pdb_monomer.tsv \
   --output data/microminer_candidates.csv \
   --report results/microminer_selection.json --max-candidates 2048
@@ -239,12 +239,30 @@ can be requested with, for example,
 an output as `eligible_for_unbiased_test=false`; it must not be used as a
 held-out estimate of general performance.
 
+To make repeated parent structures a candidate-generation condition rather
+than a rare post-hoc event, select repeated-target groups in two streaming
+passes:
+
+```bash
+python -m scripts.select_microminer_repeat_groups \
+  --tsv /path/to/filtered_single_mutations_pdb_monomer.tsv \
+  --output data/microminer_repeat_first.csv \
+  --report results/microminer_repeat_first.json \
+  --max-groups 128 --parent-candidates-per-group 12
+```
+
+The group key fixes the target PDB chain, target author position, and amino-
+acid substitution. Candidate parent structures are still only hypotheses:
+RCSB metadata screening and full observed-chain validation remain mandatory.
+`--group-selection largest` is available for a separately labeled capacity-
+discovery scan and is never eligible for an unbiased test set.
+
 Then use RCSB entry metadata to reject different UniProt chains, multichain
 protein entries, mismatched hetero contexts, and mismatched experimental
 methods before downloading coordinates:
 
 ```bash
-python scripts/audit_microminer_metadata.py \
+python -m scripts.audit_microminer_metadata \
   --candidates data/microminer_candidates.csv \
   --metadata-cache data/cache/microminer_rcsb_metadata.json \
   --output data/microminer_candidates_context.csv \
@@ -254,13 +272,13 @@ python scripts/audit_microminer_metadata.py \
 Finally, build and locally audit the structure manifest:
 
 ```bash
-python scripts/build_microminer_manifest.py \
+python -m scripts.build_microminer_manifest \
   --candidates data/microminer_candidates_context.csv \
   --structure-root data/microminer_pdb \
   --metadata-report results/microminer_metadata_audit.json \
   --output data/manifest/microminer.jsonl \
   --report results/microminer_import.json
-python scripts/audit_structure_context.py \
+python -m scripts.audit_structure_context \
   --manifest data/manifest/microminer.jsonl \
   --output results/microminer_context.json \
   --filtered-output data/manifest/microminer_context.jsonl
@@ -273,12 +291,16 @@ mutation rows contain additional full-chain differences and are correctly
 rejected. When a metadata report is supplied, shared UniProt accessions are
 embedded and used as provisional family groups; all imported records remain
 `train` until sequence-family clustering freezes a leakage-safe split.
+An explicit `--allow-terminal-overlap` sensitivity mode applies the same
+continuous residue-ID overlap policy used by the Platinum importer, with
+`--min-mapping-coverage 0.95` by default. It rejects internal gaps and records
+all terminal trims; default MicroMiner imports remain equal-length only.
 
 Same-sequence background structures can be discovered with a resumable query
 cache and bounded coordinate downloads:
 
 ```bash
-python scripts/discover_rcsb_repeats.py \
+python -m scripts.discover_rcsb_repeats \
   --manifest data/manifest/microminer_context.jsonl \
   --query-cache data/cache/rcsb_sequence_queries.json \
   --download-dir data/cache/rcsb_repeats \
@@ -295,7 +317,7 @@ When available, pass PreMut's cluster file to avoid grouping unrelated
 proteins solely by mutation label:
 
 ```bash
-python scripts/build_premut_manifest.py ... \
+python -m scripts.build_premut_manifest ... \
   --cluster-dict /path/to/MutData2022_cluster_dict
 ```
 
@@ -469,7 +491,7 @@ normalized channel, providing a directly measurable update-stability ablation.
 To repeat a bound sweep without manually duplicating commands:
 
 ```bash
-python scripts/run_student_bound_sweep.py \
+python -m scripts.run_student_bound_sweep \
   --manifest data/manifest/pairs.jsonl --output-dir results/bounds \
   --bounds 0.1 0.25 0.5 1.0 --split train --eval-split dev --epochs 25
 ```
@@ -495,7 +517,7 @@ and records its manifest fingerprint in `summary.json`.
 Before generating teacher labels, run the endpoint admission gate:
 
 ```bash
-python scripts/run_teacher_admission.py \
+python -m scripts.run_teacher_admission \
   --manifest data/manifest/pairs.jsonl \
   --endpoint-factory my_foldflow_loader:build_endpoint \
   --split dev --output results/teacher_admission.json
@@ -511,7 +533,7 @@ After the report is ready, materialize endpoint labels with the audited cache
 builder:
 
 ```bash
-python scripts/build_teacher_cache.py \
+python -m scripts.build_teacher_cache \
   --manifest data/manifest/pairs.jsonl \
   --admission-report results/teacher_admission.json \
   --endpoint-factory my_foldflow_loader:build_endpoint \
@@ -534,7 +556,7 @@ Audit a generated cache against experimental parent-to-mutant deltas before
 using it for research distillation:
 
 ```bash
-python scripts/evaluate_teacher_cache.py \
+python -m scripts.evaluate_teacher_cache \
   --manifest data/manifest/pairs.jsonl \
   --teacher-cache results/teacher_cache/index.json \
   --split train --noise-level 0.25 \
@@ -564,7 +586,7 @@ After caching several noise levels, evaluate two-level transport combinations
 without additional endpoint calls:
 
 ```bash
-python scripts/evaluate_teacher_combinations.py \
+python -m scripts.evaluate_teacher_combinations \
   --manifest data/manifest/pairs.jsonl \
   --teacher-cache results/teacher_cache/index.json --split train \
   --noise-levels 0.1 0.25 0.5 0.75 \
@@ -583,7 +605,7 @@ First reject pairs whose experimental context makes mutation attribution
 ambiguous:
 
 ```bash
-python scripts/audit_structure_context.py \
+python -m scripts.audit_structure_context \
   --manifest data/manifest/pairs.jsonl \
   --verify-checksums \
   --filtered-output data/manifest/context_clean.jsonl \
@@ -606,7 +628,7 @@ Then estimate whether the remaining mutation changes exceed experimental
 conformational background:
 
 ```bash
-python scripts/audit_repeat_structures.py \
+python -m scripts.audit_repeat_structures \
   --pairs-csv data/repeat_pairs.csv \
   --mutation-manifest data/manifest/context_clean.jsonl \
   --background-aggregation max \
@@ -627,7 +649,7 @@ Discover candidate repeats from the official RCSB exact-sequence service and
 write the CSV consumed by that audit with:
 
 ```bash
-python scripts/discover_rcsb_repeats.py \
+python -m scripts.discover_rcsb_repeats \
   --manifest data/manifest/context_clean.jsonl \
   --download-dir data/rcsb_repeat_cache \
   --pairs-output data/repeat_pairs.csv \
@@ -644,7 +666,7 @@ Select independent PreMut groups with one parent and at least two additional
 same-sequence wild-type structures before downloading and auditing them:
 
 ```bash
-python scripts/select_premut_repeat_candidates.py \
+python -m scripts.select_premut_repeat_candidates \
   --csv data/MutData2022.csv \
   --dataset-name premut22n \
   --pdb-root data/pdb \
@@ -669,7 +691,7 @@ candidate per parent.
 Merge independently audited subsets through the structured manifest API:
 
 ```bash
-python scripts/merge_manifests.py \
+python -m scripts.merge_manifests \
   --manifest data/manifest/subset_a.jsonl data/manifest/subset_b.jsonl \
   --output data/manifest/combined.jsonl \
   --report results/manifest_merge.json --verify-checksums

@@ -12,6 +12,7 @@ from typing import Any
 from ospedit.data import (
     PairRecord,
     THREE_TO_ONE,
+    map_terminal_overlap,
     manifest_fingerprint,
     pair_record_from_structures,
     parse_structure,
@@ -39,9 +40,13 @@ def records_from_microminer_candidates(
     min_length: int | None = 64,
     max_length: int | None = 256,
     chain_uniprot: dict[str, list[str]] | None = None,
+    allow_terminal_overlap: bool = False,
+    min_mapping_coverage: float = 0.95,
     rejections: list[dict[str, Any]] | None = None,
 ) -> tuple[list[PairRecord], dict[str, int]]:
     """Validate selected rows against observed chains and return all-train records."""
+    if not 0.0 < min_mapping_coverage <= 1.0:
+        raise ValueError("min_mapping_coverage must be in (0, 1]")
     root = Path(structure_root).expanduser().resolve()
     if not root.is_dir():
         raise NotADirectoryError(f"structure root does not exist: {root}")
@@ -57,6 +62,8 @@ def records_from_microminer_candidates(
         "out_of_scope_length": 0,
         "exact_residue_id_mapping": 0,
         "sequence_index_equal_length_mapping": 0,
+        "terminal_overlap_mapping": 0,
+        "invalid_terminal_overlap": 0,
     }
     records = []
     with Path(csv_path).open(newline="", encoding="utf-8-sig") as handle:
@@ -88,11 +95,30 @@ def records_from_microminer_candidates(
                 except ValueError:
                     counters["parse_error"] += 1
                     raise
-                if len(parent.sequence) != len(mutant.sequence):
+                mapping_metadata: dict[str, Any]
+                if parent.residue_ids == mutant.residue_ids:
+                    mapping_metadata = {"mode": "exact_residue_ids", "coverage": 1.0}
+                elif allow_terminal_overlap:
+                    try:
+                        parent, mutant, mapping_metadata = map_terminal_overlap(
+                            parent,
+                            mutant,
+                            min_coverage=min_mapping_coverage,
+                        )
+                    except ValueError:
+                        counters["invalid_terminal_overlap"] += 1
+                        raise
+                elif len(parent.sequence) != len(mutant.sequence):
                     counters["unequal_observed_length"] += 1
                     raise ValueError(
                         f"observed chain lengths differ: {len(parent.sequence)} != {len(mutant.sequence)}"
                     )
+                else:
+                    mapping_metadata = {
+                        "mode": "sequence_index_equal_length",
+                        "coverage": 1.0,
+                        "requires_equal_observed_length": True,
+                    }
                 differences = [
                     index
                     for index, (source, target) in enumerate(zip(parent.sequence, mutant.sequence))
@@ -129,12 +155,9 @@ def records_from_microminer_candidates(
                 ):
                     counters["out_of_scope_length"] += 1
                     raise ValueError(f"length {length} is outside configured scope")
-                exact_ids = parent.residue_ids == mutant.residue_ids
-                mapping_mode = (
-                    "exact_residue_ids" if exact_ids else "sequence_index_equal_length"
-                )
+                exact_ids = mapping_metadata["mode"] == "exact_residue_ids"
                 original_mutant_residue_ids = mutant.residue_ids
-                if not exact_ids:
+                if mapping_metadata["mode"] == "sequence_index_equal_length":
                     mutant = replace(mutant, residue_ids=parent.residue_ids)
                 pair_id = (
                     f"{dataset_name}_{query_id}_{query_chain}_{hit_id}_{hit_chain}_"
@@ -160,9 +183,7 @@ def records_from_microminer_candidates(
                     environment_metadata={
                         "source_database": "MicroMiner/PDB",
                         "residue_mapping": {
-                            "mode": mapping_mode,
-                            "coverage": 1.0,
-                            "requires_equal_observed_length": True,
+                            **mapping_metadata,
                             "original_mutant_mutation_residue_id": list(
                                 original_mutant_residue_ids[mutation_index]
                             ),
@@ -202,7 +223,11 @@ def records_from_microminer_candidates(
                 counters[
                     "exact_residue_id_mapping"
                     if exact_ids
-                    else "sequence_index_equal_length_mapping"
+                    else (
+                        "terminal_overlap_mapping"
+                        if mapping_metadata["mode"] == "terminal_overlap_crop"
+                        else "sequence_index_equal_length_mapping"
+                    )
                 ] += 1
             except (KeyError, OSError, ValueError) as error:
                 if rejections is not None:
@@ -223,6 +248,8 @@ def main() -> None:
     parser.add_argument("--report", required=True)
     parser.add_argument("--min-length", type=int, default=64)
     parser.add_argument("--max-length", type=int, default=256)
+    parser.add_argument("--allow-terminal-overlap", action="store_true")
+    parser.add_argument("--min-mapping-coverage", type=float, default=0.95)
     parser.add_argument(
         "--metadata-report",
         help="metadata-audit JSON used to attach shared UniProt family groups",
@@ -249,6 +276,8 @@ def main() -> None:
             min_length=args.min_length,
             max_length=args.max_length,
             chain_uniprot=chain_uniprot,
+            allow_terminal_overlap=args.allow_terminal_overlap,
+            min_mapping_coverage=args.min_mapping_coverage,
             rejections=rejections,
         )
     except (OSError, ValueError) as error:
@@ -263,6 +292,11 @@ def main() -> None:
             else None
         ),
         "length_scope": [args.min_length, args.max_length],
+        "mapping_policy": {
+            "allow_terminal_overlap": args.allow_terminal_overlap,
+            "minimum_coverage": args.min_mapping_coverage,
+            "internal_gaps_allowed": False,
+        },
         "split_policy": "all_train_pending_sequence_family_clustering",
         "counters": counters,
         "records": len(records),

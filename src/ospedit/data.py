@@ -127,6 +127,65 @@ def parse_structure(path: str | Path, chain_id: str, model_index: int = 0) -> Pa
     return ParsedStructure(str(source), chain_id, "".join(sequence), coords, tuple(residue_ids))
 
 
+def map_terminal_overlap(
+    parent: ParsedStructure,
+    mutant: ParsedStructure,
+    *,
+    min_coverage: float,
+) -> tuple[ParsedStructure, ParsedStructure, dict[str, Any]]:
+    """Crop continuous terminal coordinate differences using shared residue IDs."""
+    if not 0.0 < min_coverage <= 1.0:
+        raise ValueError("min_coverage must be in (0, 1]")
+    if parent.residue_ids == mutant.residue_ids:
+        return parent, mutant, {
+            "mode": "exact_residue_ids",
+            "coverage": 1.0,
+            "parent_terminal_trim": [0, 0],
+            "mutant_terminal_trim": [0, 0],
+        }
+    mutant_indices = {residue_id: index for index, residue_id in enumerate(mutant.residue_ids)}
+    shared = [
+        (parent_index, mutant_indices[residue_id])
+        for parent_index, residue_id in enumerate(parent.residue_ids)
+        if residue_id in mutant_indices
+    ]
+    if not shared:
+        raise ValueError("parent and mutant have no shared residue identifiers")
+    parent_positions = [item[0] for item in shared]
+    mutant_positions = [item[1] for item in shared]
+    if parent_positions != list(range(parent_positions[0], parent_positions[-1] + 1)) or (
+        mutant_positions != list(range(mutant_positions[0], mutant_positions[-1] + 1))
+    ):
+        raise ValueError("residue identifier mismatch contains an internal gap or reordering")
+    retained = len(shared)
+    coverage = retained / max(len(parent.sequence), len(mutant.sequence))
+    if coverage < min_coverage:
+        raise ValueError(
+            f"terminal-overlap coverage {coverage:.4f} is below minimum {min_coverage:.4f}"
+        )
+    parent_start, parent_stop = parent_positions[0], parent_positions[-1] + 1
+    mutant_start, mutant_stop = mutant_positions[0], mutant_positions[-1] + 1
+
+    def crop(structure: ParsedStructure, start: int, stop: int) -> ParsedStructure:
+        return ParsedStructure(
+            path=structure.path,
+            chain_id=structure.chain_id,
+            sequence=structure.sequence[start:stop],
+            coords=np.array(structure.coords[start:stop], copy=True),
+            residue_ids=structure.residue_ids[start:stop],
+            atom_names=structure.atom_names,
+        )
+
+    return crop(parent, parent_start, parent_stop), crop(mutant, mutant_start, mutant_stop), {
+        "mode": "terminal_overlap_crop",
+        "coverage": coverage,
+        "parent_original_length": len(parent.sequence),
+        "mutant_original_length": len(mutant.sequence),
+        "parent_terminal_trim": [parent_start, len(parent.sequence) - parent_stop],
+        "mutant_terminal_trim": [mutant_start, len(mutant.sequence) - mutant_stop],
+    }
+
+
 def align_coordinates_to_reference(reference: np.ndarray, mobile: np.ndarray) -> np.ndarray:
     """Rigidly align ``mobile`` onto ``reference`` using shared finite atoms."""
     valid = np.isfinite(reference).all(axis=-1) & np.isfinite(mobile).all(axis=-1)

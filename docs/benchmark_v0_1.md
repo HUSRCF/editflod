@@ -103,7 +103,7 @@ Use explicit entries so duplicate copy-parent methods in source reports cannot
 be selected implicitly:
 
 ```bash
-python scripts/assemble_benchmark_table.py \
+python -m scripts.assemble_benchmark_table \
   --entry copy_parent=results/mechanism_test.json::C0_copy_parent \
   --entry foldflow_c2=results/mechanism_test.json::C2_single_noise_local_frame_difference \
   --entry premut_raw=results/premut_test.json::B1_premut_raw \
@@ -119,7 +119,7 @@ Resident-runtime reports use a separate explicit assembler so shared model
 loads cannot be inferred ambiguously from suite totals:
 
 ```bash
-python scripts/assemble_runtime_table.py \
+python -m scripts.assemble_runtime_table \
   --entry foldflow_c2=results/foldflow_all.json::C2_single_noise_local_frame_difference::metadata.endpoint_setup_seconds::cpu \
   --entry 'premut_raw=results/premut_all.json::B1_premut_raw::results/premut_batch.json#model_load_seconds::cpu' \
   --entry 'esmfold_default=results/esmfold_all.json::B2_esmfold_default::results/esmfold_batch.json#model_load_seconds::gpu' \

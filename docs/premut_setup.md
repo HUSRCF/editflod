@@ -45,7 +45,7 @@ numerical equivalence to the authors' original CUDA 11.3 environment.
 ## Evaluation
 
 ```bash
-python scripts/run_premut_baseline.py \
+python -m scripts.run_premut_baseline \
   --manifest data/manifest/pairs.jsonl \
   --split test \
   --upstream-root /path/to/PreMut \

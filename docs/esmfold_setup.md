@@ -41,7 +41,7 @@ by checksum rather than assumed to match an unmodified download:
 ## Command
 
 ```bash
-python scripts/run_esmfold_baseline.py \
+python -m scripts.run_esmfold_baseline \
   --manifest data/manifest/pairs.jsonl \
   --split test \
   --model-dir /path/to/torch-hub-cache \
