@@ -481,6 +481,12 @@ without freezing non-mutated positions; it also defaults to `0.0`.
 10 Angstrom of a mutation, matching the local evaluation region; it also
 defaults to `0.0`. Set `--neighborhood-radius` to reproduce a different local
 radius; the selected radius is stored in the checkpoint configuration.
+`--target-localization-radius` changes the supervised task for an explicit
+local-editing ablation: experimental deltas are retained inside the radius,
+cosine-tapered over `--target-localization-transition`, and set to zero beyond
+the window. Evaluation applies the same output window, so remote coordinates
+remain in the parent frame. This is a restricted local editor, not a claim that
+real mutations cannot cause distal changes.
 `--geometry-features` enables optional invariant chain-context and
 mutation-distance channels; this setting is stored in the checkpoint and must
 match any parent-context cache used at inference.

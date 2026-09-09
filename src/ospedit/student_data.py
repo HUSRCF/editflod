@@ -90,6 +90,29 @@ def mutation_neighborhood_mask(pair: StructurePair, radius: float = 10.0) -> np.
     return (valid & (nearest <= radius)).astype(np.float32)
 
 
+def mutation_localization_weights(
+    pair: StructurePair,
+    radius: float = 10.0,
+    transition: float = 5.0,
+) -> np.ndarray:
+    """Return a cosine-tapered spatial window around mutated residues."""
+    if radius <= 0 or transition <= 0:
+        raise ValueError("localization radius and transition must be positive")
+    ca = pair.parent_coords[:, pair.ca_atom_index, :]
+    valid = np.isfinite(ca).all(axis=-1)
+    mutation_indices = [index for index in pair.mutation_indices if valid[index]]
+    weights = np.zeros(pair.length, dtype=np.float32)
+    if not mutation_indices:
+        return weights
+    distances = np.linalg.norm(ca[:, None, :] - ca[mutation_indices][None, :, :], axis=-1)
+    nearest = np.min(distances, axis=1)
+    weights[valid & (nearest <= radius)] = 1.0
+    taper = valid & (nearest > radius) & (nearest < radius + transition)
+    phase = (nearest[taper] - radius) / transition
+    weights[taper] = (0.5 * (1.0 + np.cos(np.pi * phase))).astype(np.float32)
+    return weights
+
+
 def parent_spatial_graph(
     pair: StructurePair,
     *,
@@ -190,6 +213,8 @@ class PairDataset:
         family_balanced_loss: bool = False,
         include_biochemical: bool = False,
         include_target_residue: bool = True,
+        target_localization_radius: float | None = None,
+        target_localization_transition: float = 5.0,
     ):
         if not records:
             raise ValueError("PairDataset requires at least one record")
@@ -212,6 +237,12 @@ class PairDataset:
         self.family_balanced_loss = bool(family_balanced_loss)
         self.include_biochemical = bool(include_biochemical)
         self.include_target_residue = bool(include_target_residue)
+        if target_localization_radius is not None and target_localization_radius <= 0:
+            raise ValueError("target_localization_radius must be positive or None")
+        if target_localization_transition <= 0:
+            raise ValueError("target_localization_transition must be positive")
+        self.target_localization_radius = target_localization_radius
+        self.target_localization_transition = float(target_localization_transition)
         family_counts = Counter(record.family_id for record in self.records)
         self.family_weights = {family: len(self.records) / (len(family_counts) * count) for family, count in family_counts.items()}
         if teacher_deltas is not None:
@@ -229,6 +260,14 @@ class PairDataset:
             translation_scale=self.translation_scale,
             rotation_scale=self.rotation_scale,
         )
+        localization = None
+        if self.target_localization_radius is not None:
+            localization = mutation_localization_weights(
+                record.pair,
+                radius=self.target_localization_radius,
+                transition=self.target_localization_transition,
+            )
+            target *= localization[:, None]
         input_valid = parent_residue_mask(record.pair)
         edit = encode_edit_features(
             [record.pair.parent_sequence],
@@ -260,6 +299,8 @@ class PairDataset:
             scaled_teacher = teacher_delta.copy()
             scaled_teacher[..., :3] /= self.translation_scale
             scaled_teacher[..., 3:] /= self.rotation_scale
+            if localization is not None:
+                scaled_teacher *= localization[:, None]
             item["teacher_delta"] = scaled_teacher
             item["teacher_mask"] = (teacher_valid & valid).astype(np.float32)
         if self.include_spatial_graph:

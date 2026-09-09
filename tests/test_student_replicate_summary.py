@@ -3,7 +3,7 @@ import pytest
 from scripts.summarize_student_replicates import REPORT_FORMAT, summarize_reports
 
 
-def _report(seed: int, local_error: float, *, geometry: bool = False):
+def _report(seed: int, local_error: float, *, geometry: bool = False, localization: float | None = None):
     return {
         "checkpoint": f"seed-{seed}.pt",
         "checkpoint_sha256": str(seed) * 64,
@@ -14,6 +14,7 @@ def _report(seed: int, local_error: float, *, geometry: bool = False):
             "manifest_fingerprint": "a" * 64,
             "student_architecture": "spatial_graph",
             "geometry_features": geometry,
+            "target_localization_radius": localization,
             "seed": seed,
         },
         "comparison": {
@@ -37,3 +38,5 @@ def test_replicate_summary_aggregates_numeric_metrics():
 def test_replicate_summary_rejects_incomparable_configuration():
     with pytest.raises(ValueError, match="geometry_features"):
         summarize_reports([_report(0, 0.2), _report(1, 0.2, geometry=True)])
+    with pytest.raises(ValueError, match="target_localization_radius"):
+        summarize_reports([_report(0, 0.2), _report(1, 0.2, localization=10.0)])

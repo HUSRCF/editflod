@@ -81,6 +81,8 @@ class StudentEditor:
     update_scale: float = 1.0
     include_biochemical: bool = False
     include_target_residue: bool = True
+    output_localization_radius: float | None = None
+    output_localization_transition: float = 5.0
 
     def __post_init__(self) -> None:
         if self.parent_cache is not None and self.parent_cache.include_geometry != self.include_geometry:
@@ -100,6 +102,8 @@ class StudentEditor:
             update_scale=self.update_scale,
             include_biochemical=self.include_biochemical,
             include_target_residue=self.include_target_residue,
+            output_localization_radius=self.output_localization_radius,
+            output_localization_transition=self.output_localization_transition,
         )
 
     def predict_batch(self, pairs: list[StructurePair]) -> list[np.ndarray]:
@@ -116,6 +120,8 @@ class StudentEditor:
             update_scale=self.update_scale,
             include_biochemical=self.include_biochemical,
             include_target_residue=self.include_target_residue,
+            output_localization_radius=self.output_localization_radius,
+            output_localization_transition=self.output_localization_transition,
         )
 
 

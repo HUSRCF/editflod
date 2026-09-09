@@ -130,3 +130,28 @@ distance does not improve held-out response under the current full-endpoint
 target. The next intervention should separate local mutation-conditioned
 supervision from remote endpoint variation or add matched-state controls;
 adding another propagation layer is not supported by these results.
+
+## Localized-target and localized-output ablation
+
+The response-scope audit motivated one explicitly restricted local editor. It
+uses the exact experimental local-frame delta through 10 A, a cosine taper from
+10 to 15 A, and a zero target beyond 15 A. The same window is applied to the
+predicted delta at inference. This tests a preservation-first local task; it
+does not assume distal mutation responses are universally absent.
+
+On dev, the record-macro unbounded localized oracle has local error 0.1047 A, local
+distance-change cosine 1.000, and zero remote frame drift. Thus the restricted
+target retains a substantial representable local signal.
+
+| Seed-0 dev method | Local error (A) | Site error (A) | Distance-change error (A) | Distance-change cosine | Remote target error (A) | Remote frame drift (A) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Copy | 0.3374 | 0.2795 | 0.2406 | undefined | 0.3287 | 0.0000 |
+| Full target + localized output | 0.3613 | 0.4557 | 0.2437 | 0.014 | 0.3287 | 0.0000 |
+| Localized target + localized output | 0.3592 | 0.4035 | 0.2420 | 0.037 | 0.3284 | 0.0000 |
+
+Localized supervision improves the matched post-hoc-window control on local,
+site, distance-change, and direction metrics, so separating the target has a
+measurable effect. It still fails the copy-parent gate, particularly at the
+mutation site, and was therefore not repeated across seeds or evaluated on
+test. Hard preservation solves unrelated remote drift but not held-out mutation
+response prediction.

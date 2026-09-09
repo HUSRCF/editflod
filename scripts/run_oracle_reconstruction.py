@@ -21,6 +21,8 @@ def oracle_report(
     bounds: tuple[float | None, ...] = (None, 0.1),
     translation_scale: float = 1.0,
     rotation_scale: float = 1.0,
+    localization_radius: float | None = None,
+    localization_transition: float = 5.0,
 ) -> dict[str, Any]:
     records = load_manifest(manifest)
     errors = validate_manifest(records)
@@ -39,12 +41,16 @@ def oracle_report(
                 translation_scale=translation_scale,
                 rotation_scale=rotation_scale,
                 max_normalized_delta=bound,
+                localization_radius=localization_radius,
+                localization_transition=localization_transition,
             )
             prediction = oracle_prediction(
                 record.pair,
                 translation_scale=translation_scale,
                 rotation_scale=rotation_scale,
                 max_normalized_delta=bound,
+                localization_radius=localization_radius,
+                localization_transition=localization_transition,
             )
             rows.append({
                 "pair_id": record.pair.pair_id,
@@ -74,6 +80,8 @@ def oracle_report(
         "split": split,
         "translation_scale": translation_scale,
         "rotation_scale": rotation_scale,
+        "localization_radius": localization_radius,
+        "localization_transition": localization_transition,
         "bounds": list(bounds),
         "records": rows,
         "summary": summaries,
@@ -88,6 +96,8 @@ def main() -> None:
     parser.add_argument("--bound", type=float, action="append", default=[])
     parser.add_argument("--translation-scale", type=float, default=1.0)
     parser.add_argument("--rotation-scale", type=float, default=1.0)
+    parser.add_argument("--localization-radius", type=float)
+    parser.add_argument("--localization-transition", type=float, default=5.0)
     args = parser.parse_args()
     bounds: tuple[float | None, ...] = (None, *(args.bound or [0.1]))
     report = oracle_report(
@@ -96,6 +106,8 @@ def main() -> None:
         bounds=bounds,
         translation_scale=args.translation_scale,
         rotation_scale=args.rotation_scale,
+        localization_radius=args.localization_radius,
+        localization_transition=args.localization_transition,
     )
     destination = Path(args.output)
     destination.parent.mkdir(parents=True, exist_ok=True)

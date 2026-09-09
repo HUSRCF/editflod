@@ -110,6 +110,17 @@ def main() -> None:
         help="Radius in Angstrom used by neighborhood loss weighting",
     )
     parser.add_argument(
+        "--target-localization-radius",
+        type=float,
+        help="Keep target deltas inside this mutation-centered radius and taper them to zero",
+    )
+    parser.add_argument(
+        "--target-localization-transition",
+        type=float,
+        default=5.0,
+        help="Cosine-taper width in Angstrom for a localized target",
+    )
+    parser.add_argument(
         "--teacher-cache",
         help="Admitted teacher cache index.json for optional delta distillation",
     )
@@ -261,6 +272,20 @@ def main() -> None:
         saved_radius = resume_config.get("neighborhood_radius")
         if saved_radius is not None and not np.isclose(float(saved_radius), args.neighborhood_radius):
             raise SystemExit(f"resume checkpoint neighborhood_radius={saved_radius} does not match requested {args.neighborhood_radius}")
+        saved_target_radius = resume_config.get("target_localization_radius")
+        if (saved_target_radius is None) != (args.target_localization_radius is None) or (
+            saved_target_radius is not None
+            and not np.isclose(float(saved_target_radius), args.target_localization_radius)
+        ):
+            raise SystemExit(
+                f"resume checkpoint target_localization_radius={saved_target_radius} does not match requested {args.target_localization_radius}"
+            )
+        saved_target_transition = float(resume_config.get("target_localization_transition", 5.0))
+        if not np.isclose(saved_target_transition, args.target_localization_transition):
+            raise SystemExit(
+                "resume checkpoint target_localization_transition="
+                f"{saved_target_transition} does not match requested {args.target_localization_transition}"
+            )
         saved_spatial_neighbors = resume_config.get("spatial_neighbors")
         if saved_spatial_neighbors is not None and int(saved_spatial_neighbors) != args.spatial_neighbors:
             raise SystemExit(f"resume checkpoint spatial_neighbors={saved_spatial_neighbors} does not match requested {args.spatial_neighbors}")
@@ -327,6 +352,8 @@ def main() -> None:
         family_balanced_loss=args.family_balanced_loss,
         include_biochemical=args.biochemical_edit_features,
         include_target_residue=not args.ablate_target_residue,
+        target_localization_radius=args.target_localization_radius,
+        target_localization_transition=args.target_localization_transition,
     )
     evaluation = None
     evaluation_payload: dict[str, object] | None
@@ -346,6 +373,8 @@ def main() -> None:
                 spatial_neighbors=args.spatial_neighbors,
                 include_biochemical=args.biochemical_edit_features,
                 include_target_residue=not args.ablate_target_residue,
+                output_localization_radius=args.target_localization_radius,
+                output_localization_transition=args.target_localization_transition,
             ),
             batch_size=args.eval_batch_size or args.batch_size,
             method="student",

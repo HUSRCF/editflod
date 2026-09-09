@@ -8,6 +8,7 @@ from ospedit.student_data import PairDataset, collate_pair_records, iter_pair_ba
 def make_record(pair_id="pair", length=2):
     residue = np.array([[-1.0, 0.5, 0.0], [0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [1.0, 1.0, 0.0]])
     parent = np.repeat(residue[None, :, :], length, axis=0)
+    parent[:, :, 1] += np.arange(length)[:, None] * 4.0
     mutant = parent.copy()
     mutant[1, :, 0] += 0.4
     pair = StructurePair(pair_id, "A" * length, "A" + "Y" + "A" * (length - 2), parent, mutant, (1,))
@@ -262,6 +263,42 @@ def test_target_delta_scales_translation_and_rotation_channels():
 def test_target_delta_rejects_non_positive_scales():
     with pytest.raises(ValueError, match="positive"):
         target_local_delta(make_record().pair, translation_scale=0.0)
+
+
+def test_mutation_localization_weights_use_smooth_spatial_taper():
+    from ospedit.student_data import mutation_localization_weights
+
+    record = make_record(length=5)
+    weights = mutation_localization_weights(record.pair, radius=4.0, transition=8.0)
+    assert weights[1] == pytest.approx(1.0)
+    assert weights[2] == pytest.approx(1.0)
+    assert 0.0 < weights[3] < 1.0
+    assert weights[4] == pytest.approx(0.0)
+
+
+def test_pair_dataset_localizes_target_and_preserves_full_loss_mask():
+    record = make_record(length=5)
+    mutant = record.pair.parent_coords.copy()
+    mutant[:, :, 0] += 0.4
+    pair = StructurePair(
+        "localized-target",
+        record.pair.parent_sequence,
+        record.pair.mutant_sequence,
+        record.pair.parent_coords,
+        mutant,
+        record.pair.mutation_indices,
+        record.pair.atom_names,
+    )
+    record = PairRecord(pair, record.parent_id, record.family_id, record.split)
+    full = PairDataset([record])[0]
+    localized = PairDataset(
+        [record],
+        target_localization_radius=4.0,
+        target_localization_transition=4.0,
+    )[0]
+    assert np.array_equal(localized["loss_mask"], full["loss_mask"])
+    assert np.allclose(localized["target_delta"][3:], 0.0)
+    assert np.allclose(localized["target_delta"][:2], full["target_delta"][:2])
 
 
 def test_parent_geometry_features_add_invariant_context_channels():

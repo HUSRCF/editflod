@@ -43,6 +43,13 @@ class ShiftStudent(torch.nn.Module):
         return output
 
 
+class AllShiftStudent(torch.nn.Module):
+    def forward(self, parent, edit):
+        output = torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+        output[..., 0] = 1.0
+        return output
+
+
 class MaskSpyStudent(torch.nn.Module):
     def __init__(self):
         super().__init__()
@@ -232,3 +239,25 @@ def test_biochemical_spatial_graph_student_runs_single_and_batch_inference():
         include_biochemical=True,
     )
     assert np.allclose(single, batch[0])
+
+
+def test_output_localization_preserves_remote_residues_in_single_and_batch():
+    base = make_pair()
+    coords = np.concatenate((base.parent_coords, base.parent_coords[:1] + np.array([0.0, 15.0, 0.0])), axis=0)
+    pair = StructurePair("localized-output", "AAA", "AYA", coords, coords.copy(), (1,))
+    model = AllShiftStudent()
+    single = predict_student(
+        model,
+        pair,
+        output_localization_radius=4.0,
+        output_localization_transition=4.0,
+    )
+    batch = predict_student_batch(
+        model,
+        [pair],
+        output_localization_radius=4.0,
+        output_localization_transition=4.0,
+    )[0]
+    assert not np.array_equal(single[1], pair.parent_coords[1])
+    assert np.array_equal(single[2], pair.parent_coords[2])
+    assert np.allclose(single, batch)

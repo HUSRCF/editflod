@@ -27,7 +27,14 @@ from .student_training import (
 )
 
 
-def _student_editor(checkpoint: str, pair: StructurePair, device: str, update_scale: float = 1.0) -> StudentEditor:
+def _student_editor(
+    checkpoint: str,
+    pair: StructurePair,
+    device: str,
+    update_scale: float = 1.0,
+    output_localization_radius: float | None = None,
+    output_localization_transition: float | None = None,
+) -> StudentEditor:
     try:
         import torch
     except ImportError as error:  # pragma: no cover
@@ -37,6 +44,13 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str, update_sc
     include_geometry = bool(config.get("geometry_features", False))
     include_biochemical = bool(config.get("biochemical_edit_features", False))
     include_target_residue = not bool(config.get("ablate_target_residue", False))
+    checkpoint_localization_radius = config.get("target_localization_radius")
+    localization_radius = output_localization_radius if output_localization_radius is not None else checkpoint_localization_radius
+    localization_transition = (
+        output_localization_transition
+        if output_localization_transition is not None
+        else float(config.get("target_localization_transition", 5.0))
+    )
     edit_dim = int(config.get("edit_dim", 48 if include_biochemical else 41))
     # Checkpoints written before positional encoding was introduced must keep
     # their original behavior instead of silently changing at evaluation.
@@ -103,6 +117,8 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str, update_sc
         update_scale=update_scale,
         include_biochemical=include_biochemical,
         include_target_residue=include_target_residue,
+        output_localization_radius=localization_radius,
+        output_localization_transition=localization_transition,
     )
 
 
@@ -125,6 +141,8 @@ def main() -> None:
     )
     parser.add_argument("--student-checkpoint", help="Student .pt checkpoint for --editor student")
     parser.add_argument("--student-update-scale", type=float, default=1.0)
+    parser.add_argument("--student-output-localization-radius", type=float)
+    parser.add_argument("--student-output-localization-transition", type=float)
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--parent-structure", help="Parent PDB/mmCIF path; use with --mutant-structure")
     parser.add_argument("--mutant-structure", help="Mutant PDB/mmCIF path; use with --parent-structure")
@@ -156,6 +174,7 @@ def main() -> None:
         default="copy_source_backbone",
     )
     args = parser.parse_args()
+    editor: StudentEditor | CopyParentEditor
     if args.manifest_append and not args.manifest_output:
         parser.error("--manifest-append requires --manifest-output")
     if args.audit_manifest:
@@ -183,6 +202,8 @@ def main() -> None:
                 candidates[0].pair,
                 args.device,
                 args.student_update_scale,
+                args.student_output_localization_radius,
+                args.student_output_localization_transition,
             )
         else:
             editor = CopyParentEditor()
@@ -255,7 +276,14 @@ def main() -> None:
     if args.editor == "student":
         if not args.student_checkpoint:
             parser.error("--editor student requires --student-checkpoint")
-        editor = _student_editor(args.student_checkpoint, pair, args.device, args.student_update_scale)
+        editor = _student_editor(
+            args.student_checkpoint,
+            pair,
+            args.device,
+            args.student_update_scale,
+            args.student_output_localization_radius,
+            args.student_output_localization_transition,
+        )
     else:
         editor = CopyParentEditor()
     result = evaluate_editor(pair, editor, args.editor)

@@ -34,3 +34,10 @@ def test_bounded_oracle_matches_student_component_bound():
 def test_oracle_rejects_nonpositive_bound():
     with pytest.raises(ValueError, match="positive"):
         oracle_local_delta(make_pair(), max_normalized_delta=0.0)
+
+
+def test_localized_oracle_preserves_remote_parent_coordinates():
+    pair = make_pair()
+    prediction = oracle_prediction(pair, localization_radius=1.0, localization_transition=1.0)
+    assert np.array_equal(prediction[0], pair.parent_coords[0])
+    assert np.allclose(prediction[1], pair.mutant_coords[1], atol=1e-6)

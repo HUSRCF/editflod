@@ -13,6 +13,7 @@ from .geometry import apply_local_frame_update
 from .student import BIOCHEMICAL_GROUPS, encode_edit_features
 from .student_data import (
     edit_geometry_features,
+    mutation_localization_weights,
     parent_context_features,
     parent_local_features,
     parent_residue_mask,
@@ -112,6 +113,8 @@ def predict_student(
     update_scale: float = 1.0,
     include_biochemical: bool = False,
     include_target_residue: bool = True,
+    output_localization_radius: float | None = None,
+    output_localization_transition: float = 5.0,
 ) -> np.ndarray:
     """Run one student forward pass and return edited backbone coordinates."""
     if pair.parent_sequence == pair.mutant_sequence:
@@ -149,9 +152,16 @@ def predict_student(
             model.train()
     if prediction.shape != (1, pair.length, 6):
         raise ValueError(f"student output must have shape {(1, pair.length, 6)}, got {tuple(prediction.shape)}")
+    output = prediction[0].detach().cpu().numpy()
+    if output_localization_radius is not None:
+        output *= mutation_localization_weights(
+            pair,
+            radius=output_localization_radius,
+            transition=output_localization_transition,
+        )[:, None]
     return apply_student_delta(
         pair,
-        prediction[0].detach().cpu().numpy(),
+        output,
         translation_scale,
         rotation_scale,
         update_scale,
@@ -172,6 +182,8 @@ def predict_student_batch(
     update_scale: float = 1.0,
     include_biochemical: bool = False,
     include_target_residue: bool = True,
+    output_localization_radius: float | None = None,
+    output_localization_transition: float = 5.0,
 ) -> list[np.ndarray]:
     """Run one padded student forward for multiple residue-mapped pairs."""
     if not pairs:
@@ -226,13 +238,14 @@ def predict_student_batch(
             model.train()
     if prediction.ndim != 3 or prediction.shape[0] != len(pairs) or prediction.shape[-1] != 6:
         raise ValueError("student batch output must have shape (batch, length, 6)")
-    return [
-        apply_student_delta(
-            pair,
-            prediction[index, : pair.length].detach().cpu().numpy(),
-            translation_scale,
-            rotation_scale,
-            update_scale,
-        )
-        for index, pair in enumerate(pairs)
-    ]
+    results = []
+    for index, pair in enumerate(pairs):
+        output = prediction[index, : pair.length].detach().cpu().numpy()
+        if output_localization_radius is not None:
+            output *= mutation_localization_weights(
+                pair,
+                radius=output_localization_radius,
+                transition=output_localization_transition,
+            )[:, None]
+        results.append(apply_student_delta(pair, output, translation_scale, rotation_scale, update_scale))
+    return results

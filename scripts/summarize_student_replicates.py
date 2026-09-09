@@ -38,11 +38,15 @@ COMPARABILITY_KEYS = (
     "mutation_loss_weight",
     "neighborhood_loss_weight",
     "family_balanced_loss",
+    "target_localization_radius",
+    "target_localization_transition",
 )
 CONFIG_DEFAULTS: dict[str, Any] = {
     "biochemical_edit_features": False,
     "ablate_target_residue": False,
     "edit_dim": 41,
+    "target_localization_radius": None,
+    "target_localization_transition": 5.0,
 }
 
 
