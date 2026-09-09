@@ -23,6 +23,7 @@ from scripts.select_microminer_candidates import (
 
 
 GroupKey = tuple[str, str, str, str, str]
+GROUP_COLUMNS = ("hitName", "hitChain", "hitAA", "hitPos", "queryAA")
 
 
 def _group_key(row: dict[str, str]) -> GroupKey:
@@ -33,6 +34,14 @@ def _group_key(row: dict[str, str]) -> GroupKey:
         row["hitPos"],
         row["queryAA"].upper(),
     )
+
+
+def read_group_allowlist(path: str | Path) -> set[GroupKey]:
+    with Path(path).open(newline="", encoding="utf-8-sig") as handle:
+        reader = csv.DictReader(handle)
+        if tuple(reader.fieldnames or ()) != GROUP_COLUMNS:
+            raise ValueError("target allowlist header does not match the group schema")
+        return {_group_key(row) for row in reader}
 
 
 def _group_rank(key: GroupKey, seed: int) -> int:
@@ -100,6 +109,7 @@ def select_repeat_groups(
     group_rmsd_cutoffs: Sequence[float] = (0.15, 0.3, 0.6),
     row_pool_multiplier: int = 4,
     group_selection: str = "hash",
+    allowed_groups: set[GroupKey] | None = None,
 ) -> tuple[list[dict[str, str]], dict[str, Any]]:
     """Two-pass selection of repeated-target groups and bounded parent candidates."""
     if (
@@ -110,6 +120,8 @@ def select_repeat_groups(
         or row_pool_multiplier <= 0
     ):
         raise ValueError("group, row, site-residue, and pool limits must be positive")
+    if parent_candidates_per_group < min_group_rows:
+        raise ValueError("parent_candidates_per_group must be at least min_group_rows")
     if not 0 <= min_full_sequence_identity <= 1 or not 0 <= min_alignment_lddt <= 1:
         raise ValueError("identity and lDDT thresholds must be in [0, 1]")
     if group_selection not in {"hash", "largest"}:
@@ -133,6 +145,9 @@ def select_repeat_groups(
             continue
         counters["eligible_rows"] += 1
         key = _group_key(row)
+        if allowed_groups is not None and key not in allowed_groups:
+            counters["rows_outside_target_allowlist"] += 1
+            continue
         counts[key] += 1
         max_rmsd[key] = max(
             max_rmsd.get(key, 0.0),
@@ -236,6 +251,7 @@ def select_repeat_groups(
             "group_selection": group_selection,
             "intended_use": "repeat_first_discovery_only",
             "eligible_for_unbiased_test": False,
+            "target_allowlist_groups": len(allowed_groups) if allowed_groups is not None else None,
         },
         "counters": dict(sorted(counters.items())),
         "eligible_groups": len(eligible_groups),
@@ -263,8 +279,14 @@ def main() -> None:
     parser.add_argument("--group-rmsd-cutoffs", default="0.15,0.30,0.60")
     parser.add_argument("--row-pool-multiplier", type=int, default=4)
     parser.add_argument("--group-selection", choices=("hash", "largest"), default="hash")
+    parser.add_argument("--target-allowlist")
     args = parser.parse_args()
     try:
+        allowed_groups = (
+            read_group_allowlist(args.target_allowlist)
+            if args.target_allowlist
+            else None
+        )
         rows, report = select_repeat_groups(
             args.tsv,
             max_groups=args.max_groups,
@@ -277,6 +299,12 @@ def main() -> None:
             group_rmsd_cutoffs=tuple(float(value) for value in args.group_rmsd_cutoffs.split(",")),
             row_pool_multiplier=args.row_pool_multiplier,
             group_selection=args.group_selection,
+            allowed_groups=allowed_groups,
+        )
+        report["configuration"]["target_allowlist"] = (
+            str(Path(args.target_allowlist).expanduser().resolve())
+            if args.target_allowlist
+            else None
         )
     except (OSError, ValueError) as error:
         raise SystemExit(str(error)) from error

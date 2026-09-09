@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from scripts.select_microminer_candidates import COLUMNS
-from scripts.select_microminer_repeat_groups import select_repeat_groups
+from scripts.select_microminer_repeat_groups import _group_key, select_repeat_groups
 
 
 def _row(query: str, hit: str, *, position: str, rmsd: str) -> list[str]:
@@ -62,6 +62,19 @@ def test_repeat_group_selector_drops_groups_below_minimum(tmp_path):
     assert report["eligible_groups"] == 0
 
 
+def test_repeat_group_selector_rejects_impossible_candidate_limit(tmp_path):
+    source = tmp_path / "micro.tsv"
+    _write(source, [_row("1AAA", "9AAA", position="10", rmsd="0.2")])
+
+    with pytest.raises(ValueError, match="at least min_group_rows"):
+        select_repeat_groups(
+            source,
+            max_groups=1,
+            parent_candidates_per_group=3,
+            min_group_rows=10,
+        )
+
+
 def test_repeat_group_selector_can_prioritize_largest_groups(tmp_path):
     source = tmp_path / "micro.tsv"
     rows = [
@@ -84,6 +97,31 @@ def test_repeat_group_selector_can_prioritize_largest_groups(tmp_path):
     assert len(selected) == 5
     assert {row["hitName"] for row in selected} == {"9AAA"}
     assert report["configuration"]["group_selection"] == "largest"
+
+
+def test_repeat_group_selector_applies_target_allowlist(tmp_path):
+    source = tmp_path / "micro.tsv"
+    rows = [
+        _row(f"{index}AAA", "9AAA", position="10", rmsd="0.2")
+        for index in range(1, 4)
+    ] + [
+        _row(f"{index}BBB", "8AAA", position="20", rmsd="0.2")
+        for index in range(1, 4)
+    ]
+    _write(source, rows)
+    allowed = {_group_key(dict(zip(COLUMNS, rows[0][:-1])))}
+
+    selected, report = select_repeat_groups(
+        source,
+        max_groups=2,
+        parent_candidates_per_group=3,
+        min_group_rows=3,
+        allowed_groups=allowed,
+    )
+
+    assert len(selected) == 3
+    assert {row["hitName"] for row in selected} == {"9AAA"}
+    assert report["configuration"]["target_allowlist_groups"] == 1
 
 
 @pytest.mark.parametrize("cutoffs", [(0.2, 0.2), (-0.1,), (float("inf"),)])
