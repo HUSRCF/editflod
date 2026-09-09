@@ -1,0 +1,31 @@
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Packaging and environments
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+
+# Local secrets and machine-specific files
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Large generated research artifacts
+data/raw/
+data/cache/
+results/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors

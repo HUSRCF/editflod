@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ospedit"
+version = "0.1.0"
+description = "Reference-conditioned protein structure editing experiments"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<2", "biopython>=1.80"]
+
+[project.scripts]
+ospedit-eval = "ospedit.cli:main"
+ospedit-train = "ospedit.train_cli:main"
+ospedit-foldflow-check = "ospedit.foldflow_env:main"
+ospedit-p1-preflight = "ospedit.p1_preflight:main"
+ospedit-build-manifest = "ospedit.manifest_cli:main"
+ospedit-split-manifest = "ospedit.split_cli:main"
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]

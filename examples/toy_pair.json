@@ -1,0 +1,17 @@
+{
+  "pair_id": "toy_ala_to_tyr",
+  "parent_sequence": "AAA",
+  "mutant_sequence": "AYA",
+  "parent_coords": [
+    [[0.0, 0.0, 0.0]],
+    [[0.0, 3.8, 0.0]],
+    [[0.0, 7.6, 0.0]]
+  ],
+  "mutant_coords": [
+    [[0.0, 0.0, 0.0]],
+    [[0.8, 3.8, 0.0]],
+    [[0.0, 7.6, 0.0]]
+  ],
+  "mutation_indices": [1],
+  "atom_names": ["CA"]
+}

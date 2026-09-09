@@ -1,0 +1,183 @@
+# 项目协议模板；不是现有训练程序的可直接运行配置。
+project:
+  name: reference_preserving_protein_edit
+  protocol_version: '0.1'
+  task: fixed_length_substitution_structure_editing
+  hardware_budget: single_24gb_gpu
+  status: microminer_capacity_audited_identifiability_gate_active_teacher_not_admitted
+
+scope:
+  min_length: 64
+  initial_max_length: 128
+  expanded_max_length: 256
+  primary_mutation_counts: [1]
+  extension_mutation_counts: [2, 3, 4]
+  backbone_atoms: [N, CA, C, O]
+  insertions_deletions: false
+  mandatory_iterative_relaxation: false
+
+data:
+  manifest: data/manifest/pairs.parquet
+  split_manifest: data/manifest/split_manifest.json
+  split_group: parent_family_connected_component
+  experimental_targets_primary: true
+  synthetic_targets_training_only: true
+  debug_pairs_target: 8
+  mechanism_dev_pairs_target: 32
+  counts_subject_to_data_audit: true
+  same_sequence_repeat_structure_required_for_primary_evidence: true
+  structure_context_audit_required_for_primary_evidence: true
+  require_single_protein_chain: true
+  require_matching_target_hetero_set: true
+  require_matching_experimental_method: true
+  default_ignored_hetero: [HOH]
+  crystallization_additive_relaxation_primary: false
+  platinum_terminal_overlap_mapping:
+    enabled: true
+    minimum_coverage: 0.95
+    internal_gaps_allowed: false
+    mapping_provenance_required: true
+  minimum_same_sequence_repeat_structures: 2
+  repeat_background_aggregation: max
+  min_neighborhood_signal_to_background: 2.0
+  min_distance_change_signal_to_background: 2.0
+  current_signal_background_identifiable_groups: 6
+  current_context_and_signal_background_identifiable_groups: 1
+  current_identifiable_connected_groups: 1
+  current_identifiable_set_role: insufficient_for_mechanism_generalization
+  newly_identifiable_pairs_before_context_gate: 3
+  newly_identifiable_pairs_after_context_gate: 0
+  platinum_monomer_64_256_imported_pairs: 9
+  platinum_monomer_64_256_strict_context_pairs: 4
+  platinum_monomer_64_256_additive_sensitivity_pairs: 7
+  platinum_monomer_max_320_additive_sensitivity_pairs: 20
+  platinum_new_pairs_passing_two_repeat_signal_background_gate: 0
+  platinum_y43f_two_repeat_neighborhood_signal_to_background: 1.28504802600155
+  platinum_y43f_two_repeat_distance_signal_to_background: 0.9226227927008214
+  microminer_release_rows: 4868764
+  microminer_deterministic_candidate_pool: 2048
+  microminer_metadata_strict_pairs: 100
+  microminer_full_chain_single_substitution_pairs: 16
+  microminer_strict_context_pairs: 16
+  microminer_shared_uniprot_families: 11
+  microminer_pairs_with_context_matched_repeats: 6
+  microminer_pairs_with_at_least_two_repeats: 5
+  microminer_repeat_instances: 103
+  microminer_new_pairs_passing_two_repeat_signal_background_gate: 0
+  microminer_split_status: all_train_pending_sequence_family_clustering
+  minimum_connected_groups_for_student_development: 32
+
+teacher:
+  candidate: foldflow2_base
+  checkpoint_release: '0.2.0'
+  checkpoint_name: ff2_base.pth
+  sequence_conditioning_must_be_verified: true
+  shared_noise: true
+  refinement: false
+  native_noise_schedule: true
+  teacher_admission_required: true
+  admission_repeat_tolerance: 1.0e-6  # 两次相同共享噪声查询的响应摘要最大误差
+  time_grid: [0.1, 0.25, 0.5, 0.75]
+  direction_gate_aggregation: parent_macro
+  min_mutation_direction_cosine: 0.2
+  current_direction_gate: rejected_and_previous_three_pair_set_context_confounded
+  distillation_enabled: false
+  update_scales: null  # 平移和旋转分开在开发集校准
+
+editor:
+  coordinate_representation: parent_local_residue_frames
+  output_update: translation_and_so3_rotation
+  preserve_input_coordinates_at_zero_update: true
+  hard_freeze_remote_residues: false
+  primary_num_samples: 1
+
+student:
+  status: deferred_until_identifiable_data_capacity
+  parent_context_cache: true
+  condition_modes: [recomputed_mutant_plm, discrete_edit_encoder]
+  initial_hidden_dim: 256
+  initial_blocks: 4
+  initial_spatial_neighbors: 24
+  sequence_edges: true
+  global_context: true
+  exact_no_mutation_identity: true
+  translation_scale_angstrom: 1.0
+  rotation_scale_radian: 1.0
+  max_normalized_delta: null
+  development_candidate_max_normalized_delta: 0.1
+
+training:
+  freeze_plm: true
+  micro_batch_size: 1
+  grad_accumulation_steps: 16
+  student_learning_rate: 0.0001
+  pretrained_module_learning_rate: 0.00001
+  weight_decay: 0.01
+  neural_precision: bf16_if_validated
+  geometry_and_difference_precision: fp32
+  gradient_clip_norm: 1.0
+  primary_losses: [experimental_target_geometry, structural_violations]
+  optional_loss: admitted_teacher_distillation
+  remote_preservation_regularizer: ablation_only
+  target_leakage_checks: true
+
+regions:
+  definition: source_ca_distance_to_nearest_mutation_ca
+  local_radius_angstrom: 10.0
+  remote_min_distance_angstrom: 15.0
+  freeze_on_development_set: true
+
+baselines:
+  - copy_source_backbone
+  - copy_source_plus_shared_sidechain_packer
+  - premut
+  - esmfold_default
+  - esmfold_zero_extra_recycling
+  - target_only_partial_denoising
+  - single_noise_conditional_difference
+  - two_noise_shared_conditional_difference
+  - equal_budget_single_noise_controls
+  - direct_supervised_same_student
+  - mutation_neighborhood_difference_ablation
+
+baseline_status:
+  premut_raw: integrated_and_smoke_tested
+  premut_refined: pending_atomrefine_integration
+  premut_seed_policy: predeclare_and_aggregate
+  premut_runtime_modes: [cold_subprocess, persistent_batch, prediction_cache]
+  copy_parent: operational
+  esmfold_default: integrated_and_smoke_tested
+  esmfold_zero_extra_recycling: integrated_and_smoke_tested
+  esmfold_alignment: global_backbone_kabsch_to_parent
+  esmfold_runtime: persistent_model_with_load_cost_reported_separately
+
+evaluation:
+  test_manifest_frozen: true
+  per_family_aggregation: true
+  per_parent_aggregation: true
+  statistical_unit: parent_family_connected_component
+  report_failures_and_coverage: true
+  primary_metrics:
+    - local_backbone_error
+    - pair_distance_change_error
+    - remote_target_error
+    - parent_to_prediction_frame_rmsd
+    - remote_scaffold_frame_drift
+    - backbone_geometry_violations
+    - end_to_end_runtime
+  candidate_counts_per_parent: [1, 32, 128]
+  runtime_modes: [cold_parent, cached_parent]
+  report_condition_branch_count: true
+  report_structure_update_count: true
+  report_sequence_encoder_calls: true
+  report_network_calls_and_batch_size: true
+  report_postprocessing_cost: true
+  current_unified_mechanism_table: /tmp/ospedit-real-sample/frozen_benchmark_v1.csv
+  current_resident_runtime_table: /tmp/ospedit-real-sample/resident_runtime_v1.csv
+  current_same_parent_runtime_table: /tmp/ospedit-real-sample/runtime_2LZM_resident_v1.csv
+  measured_same_parent_candidate_count: 15
+  resident_runtime_setup_and_candidate_decomposition: operational
+  resident_runtime_linear_extrapolation_is_measured_throughput: false
+  cross_device_runtime_ranking_allowed: false
+  cross_method_runtime_claim_ready: false
+  runtime_blocker: matched_hardware_and_measured_same_parent_n32_n128_workloads_pending
