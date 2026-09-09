@@ -137,6 +137,7 @@ artifacts:
     structure_prediction_localized_oracle: reports/protocol_v02_structure_prediction_localized_oracle_v1.json
     student_localized_architecture_sweep: reports/protocol_v02_student_localized_architecture_sweep_v1.json
     student_localized_weighted_architecture_sweep: reports/protocol_v02_student_localized_weighted_architecture_sweep_v1.json
+    student_localized_weighted_generalization: reports/protocol_v02_student_localized_weighted_generalization_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -380,9 +381,23 @@ background_control_gate:
       copy_parent_noninferiority_passed: false
       architecture_selected: null
       continue_regional_weight_grid: false
-      next_intervention: diagnose_family_and_record_level_generalization
+      next_intervention: within_family_endpoint_holdout_diagnostic
       rationale:
         - regional_weighting_improves_train_fit_but_worsens_dev_local_error
         - mutation_site_dev_error_worsens_for_all_six_paired_runs
         - spatial_graph_dev_direction_and_drift_also_worsen_for_all_seeds
         - fixed_loss_reweighting_does_not_resolve_cross_family_transfer
+    record_level_diagnostic:
+      dev_records: 8
+      dev_families: 4
+      record_seed_comparisons_per_architecture: 24
+      transformer_local_improvements_over_copy: 0
+      spatial_graph_local_improvements_over_copy: 0
+      transformer_site_improvements_over_copy: 2
+      spatial_graph_site_improvements_over_copy: 1
+      spatial_graph_distance_error_improvements_over_copy: 0
+      all_four_families_regress_in_mean_local_error_for_both_architectures: true
+      interpretation:
+        - no_single_dev_family_explains_the_failed_aggregate
+        - next_separate_seen_family_transfer_from_unseen_family_transfer
+        - diagnostic_does_not_change_pair_selection_or_frozen_splits

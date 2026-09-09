@@ -838,6 +838,20 @@ fixed regional-weighting ablation. These weights are recorded in the summary;
 the frozen result did not pass copy-parent noninferiority and is retained as a
 negative result rather than a recommended default.
 
+Decompose saved dev evaluations without rerunning a model:
+
+```bash
+python scripts/analyze_student_generalization.py \
+  --copy-report /path/to/copy_parent_dev.json \
+  --student-report transformer:0:/path/to/transformer_seed0_dev.json \
+  --student-report spatial_graph:0:/path/to/spatial_graph_seed0_dev.json \
+  --output reports/student_generalization.json
+```
+
+The diagnostic requires identical pair IDs, family assignments, split, and
+metric schema. It reports every record-seed comparison and never changes data
+selection.
+
 Add a same-manifest development evaluation after training:
 
 ```bash

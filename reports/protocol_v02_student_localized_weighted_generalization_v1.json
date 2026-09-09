@@ -1,0 +1,2412 @@
+{
+  "analysis_changes_dataset_selection": false,
+  "architectures": {
+    "spatial_graph": {
+      "all_record_seed_local_errors_worse_than_copy": true,
+      "by_family_student_minus_copy": {
+        "v02_family_260dd007d20d": {
+          "distance_change_error": {
+            "count": 3,
+            "max": 0.002709441385477601,
+            "mean": 0.0020365451074326377,
+            "min": 0.0011899030870753946,
+            "std": 0.0006323974738018816
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "max": 0.025350933127081865,
+            "mean": 0.01782162986432741,
+            "min": 0.007714417509993354,
+            "std": 0.00742724184971731
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "max": 0.1988975056830724,
+            "mean": 0.149936823889787,
+            "min": 0.0994055695480332,
+            "std": 0.04063259252186748
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "max": 4.013902896256994,
+            "mean": 3.3588353099507073,
+            "min": 2.6173511574286983,
+            "std": 0.5734050674078324
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "max": 0.00548299270288855,
+            "mean": 0.0044185705170600035,
+            "min": 0.003109313352170337,
+            "std": 0.0009843937356686107
+          },
+          "remote_target_error": {
+            "count": 3,
+            "max": 0.0007972632261637469,
+            "mean": 0.000632115040956042,
+            "min": 0.0004636977338822179,
+            "std": 0.00013619716046620636
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        },
+        "v02_family_3da1b9ebba69": {
+          "distance_change_error": {
+            "count": 6,
+            "max": 0.007772252807558611,
+            "mean": 0.0028160438602006697,
+            "min": 0.00029142425790756876,
+            "std": 0.0028200842923973304
+          },
+          "local_backbone_error": {
+            "count": 6,
+            "max": 0.027559108806323618,
+            "mean": 0.012335159384797243,
+            "min": 0.00045137499131309156,
+            "std": 0.011796424213459772
+          },
+          "mutation_site_backbone_error": {
+            "count": 6,
+            "max": 0.0866226612205746,
+            "mean": 0.039695646283143295,
+            "min": 0.012959052066326138,
+            "std": 0.023448559611659862
+          },
+          "predicted_distance_change_norm": {
+            "count": 6,
+            "max": 3.7450577046800833,
+            "mean": 2.808055100368352,
+            "min": 1.8860167488913266,
+            "std": 0.742135150532671
+          },
+          "remote_scaffold_drift": {
+            "count": 6,
+            "max": 0.004652548544542557,
+            "mean": 0.003329199372411769,
+            "min": 0.001955044678276857,
+            "std": 0.000979595337366946
+          },
+          "remote_target_error": {
+            "count": 6,
+            "max": 0.0005578236842537776,
+            "mean": 0.00024439222472313893,
+            "min": 1.6632874120847685e-05,
+            "std": 0.00020963707238805932
+          },
+          "true_distance_change_norm": {
+            "count": 6,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        },
+        "v02_family_5c932f233753": {
+          "distance_change_error": {
+            "count": 6,
+            "max": 0.0066153090706448925,
+            "mean": 0.004952373142019582,
+            "min": 0.0037543044537504122,
+            "std": 0.0010676805197216226
+          },
+          "local_backbone_error": {
+            "count": 6,
+            "max": 0.027054122435654,
+            "mean": 0.01785974889133451,
+            "min": 0.008780382215605953,
+            "std": 0.0062410233560387255
+          },
+          "mutation_site_backbone_error": {
+            "count": 6,
+            "max": 0.18640103091680205,
+            "mean": 0.13973270179906483,
+            "min": 0.09004163782078436,
+            "std": 0.034729888121609744
+          },
+          "predicted_distance_change_norm": {
+            "count": 6,
+            "max": 3.708494432615601,
+            "mean": 3.5031294097028094,
+            "min": 3.2251526663482393,
+            "std": 0.17185684397737966
+          },
+          "remote_scaffold_drift": {
+            "count": 6,
+            "max": 0.008552598745883683,
+            "mean": 0.007063636718828929,
+            "min": 0.00511250070214256,
+            "std": 0.0011945457616393065
+          },
+          "remote_target_error": {
+            "count": 6,
+            "max": 0.000661418983390949,
+            "mean": 0.0004150766585669652,
+            "min": 0.00011608479880353961,
+            "std": 0.0002049432656976575
+          },
+          "true_distance_change_norm": {
+            "count": 6,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        },
+        "v02_family_987a40463804": {
+          "distance_change_error": {
+            "count": 9,
+            "max": 0.005710269445017652,
+            "mean": 0.003095734338525061,
+            "min": 0.0009179903379468168,
+            "std": 0.0017213946736652553
+          },
+          "local_backbone_error": {
+            "count": 9,
+            "max": 0.030540092527917728,
+            "mean": 0.021209736180820872,
+            "min": 0.008240072291903822,
+            "std": 0.007077860178366252
+          },
+          "mutation_site_backbone_error": {
+            "count": 9,
+            "max": 0.19045279871374649,
+            "mean": 0.10492831846022779,
+            "min": -0.005900482378761174,
+            "std": 0.07002860790877592
+          },
+          "predicted_distance_change_norm": {
+            "count": 9,
+            "max": 4.575160044551539,
+            "mean": 3.371840167724976,
+            "min": 2.3915630996641863,
+            "std": 0.7371077977130706
+          },
+          "remote_scaffold_drift": {
+            "count": 9,
+            "max": 0.0101383539999598,
+            "mean": 0.005544541516030186,
+            "min": 0.0031120391452551708,
+            "std": 0.002403617484920579
+          },
+          "remote_target_error": {
+            "count": 9,
+            "max": 0.0005605016219094594,
+            "mean": 6.590536958005982e-05,
+            "min": -0.000246090875922339,
+            "std": 0.00031385124011575717
+          },
+          "true_distance_change_norm": {
+            "count": 9,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        }
+      },
+      "by_pair": {
+        "microminer_1BVX_A_1KXW_A_N27D": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.16425153238374604,
+            "local_backbone_error": 0.18095341942793425,
+            "mutation_site_backbone_error": 0.1556078506334151,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 8.219351220019072e-15,
+            "remote_target_error": 0.3355612774988786,
+            "true_distance_change_norm": 21.106162132951358
+          },
+          "family_id": "v02_family_987a40463804",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 2
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.04502609324288036,
+              "mean": -0.06181024324813228,
+              "min": -0.08562128321925166,
+              "std": 0.01730173881914235
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.1699618018287637,
+              "mean": 0.16956233637386373,
+              "min": 0.16899453796514946,
+              "std": 0.00041243329397480606
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.20907091055736465,
+              "mean": 0.20326236446377866,
+              "min": 0.1980087381780784,
+              "std": 0.004533127429060344
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.3239652199998347,
+              "mean": 0.2884570813175226,
+              "min": 0.24472835819445118,
+              "std": 0.032866432456252405
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 4.575160044551539,
+              "mean": 4.266783451545492,
+              "min": 3.979193484796434,
+              "std": 0.24374590315865755
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.010138353999968019,
+              "mean": 0.0068364386614820916,
+              "min": 0.005144005932266123,
+              "std": 0.0023350522988427533
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.3356156636766977,
+              "mean": 0.3355016524021914,
+              "min": 0.3353877620351479,
+              "std": 9.304049483686474e-05
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 21.106162132951358,
+              "mean": 21.106162132951358,
+              "min": 21.106162132951358,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.005710269445017652,
+              "mean": 0.005310803990117676,
+              "min": 0.00474300558140342,
+              "std": 0.000412433293974806
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.028117491129430405,
+              "mean": 0.022308945035844407,
+              "min": 0.017055318750144155,
+              "std": 0.004533127429060344
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.1683573693664196,
+              "mean": 0.13284923068410756,
+              "min": 0.0891205075610361,
+              "std": 0.03286643245625241
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0101383539999598,
+              "mean": 0.0068364386614738724,
+              "min": 0.005144005932257904,
+              "std": 0.0023350522988427533
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 5.438617781911015e-05,
+              "mean": -5.962509668727689e-05,
+              "min": -0.00017351546373067794,
+              "std": 9.304049483686474e-05
+            }
+          }
+        },
+        "microminer_1LHL_A_1LZ1_A_P47A": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.2213078097373366,
+            "local_backbone_error": 0.3241159702229299,
+            "mutation_site_backbone_error": 0.4433521961796721,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 6.15648449243079e-15,
+            "remote_target_error": 0.31878567560780097,
+            "true_distance_change_norm": 28.659147742611992
+          },
+          "family_id": "v02_family_987a40463804",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.0033867957241363353,
+              "mean": -0.01823617769742659,
+              "min": -0.04323529652539304,
+              "std": 0.017780862796675873
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.22308825562627133,
+              "mean": 0.2225855293900517,
+              "min": 0.22222580007528342,
+              "std": 0.00036632725261792653
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.3546560627508476,
+              "mean": 0.34913206963557514,
+              "min": 0.33990751883343867,
+              "std": 0.006565083513878118
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.6338049948934186,
+              "mean": 0.6113207415725648,
+              "min": 0.5868227506773269,
+              "std": 0.019233203445413245
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 2.810458540290521,
+              "mean": 2.6035169317902156,
+              "min": 2.3915630996641863,
+              "std": 0.17105006934352768
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.003516477621091548,
+              "mean": 0.0033100534167641252,
+              "min": 0.0031120391452613273,
+              "std": 0.00016521837147757718
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.3193461772297104,
+              "mean": 0.3192752636798813,
+              "min": 0.31922881840115636,
+              "std": 5.093980681821658e-05
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 28.659147742611992,
+              "mean": 28.659147742611992,
+              "min": 28.659147742611992,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.001780445888934723,
+              "mean": 0.0012777196527150685,
+              "min": 0.0009179903379468168,
+              "std": 0.00036632725261792653
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.030540092527917728,
+              "mean": 0.025016099412645283,
+              "min": 0.0157915486105088,
+              "std": 0.006565083513878118
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.19045279871374649,
+              "mean": 0.16796854539289266,
+              "min": 0.14347055449765483,
+              "std": 0.019233203445413245
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0035164776210853915,
+              "mean": 0.0033100534167579687,
+              "min": 0.0031120391452551708,
+              "std": 0.00016521837147757718
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.0005605016219094594,
+              "mean": 0.0004895880720803455,
+              "min": 0.00044314279335538886,
+              "std": 5.093980681821658e-05
+            }
+          }
+        },
+        "microminer_1REX_A_133L_A_R115H": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.09224594523592937,
+            "local_backbone_error": 0.17668566372278932,
+            "mutation_site_backbone_error": 0.18585934376419314,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 4.050816187968101e-15,
+            "remote_target_error": 0.16867562230075211,
+            "true_distance_change_norm": 11.945760867233332
+          },
+          "family_id": "v02_family_987a40463804",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 1,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 3
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": 0.04005125205237863,
+              "mean": 0.027236024545560147,
+              "min": 0.01967008734659918,
+              "std": 0.009110955136287038
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0955954834989326,
+              "mean": 0.09494462460867181,
+              "min": 0.09454048934751746,
+              "std": 0.0004646917090929759
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.20166342431963888,
+              "mean": 0.19298982781676224,
+              "min": 0.18492573601469314,
+              "std": 0.0068467108616039945
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.21720624891172027,
+              "mean": 0.19982652306787632,
+              "min": 0.17995886138543196,
+              "std": 0.01530760895624828
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 3.76177793876675,
+              "mean": 3.245220119839219,
+              "min": 2.9564250995739805,
+              "std": 0.36611038248031486
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.009399242229491738,
+              "mean": 0.006487132469862764,
+              "min": 0.004726709243272495,
+              "std": 0.0020741146753275666
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.16845145321260138,
+              "mean": 0.16844337543409924,
+              "min": 0.16842953142482978,
+              "std": 9.834573629873273e-06
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 11.945760867233332,
+              "mean": 11.945760867233332,
+              "min": 11.945760867233332,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0033495382630032294,
+              "mean": 0.0026986793727424387,
+              "min": 0.0022945441115880955,
+              "std": 0.0004646917090929759
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.024977760596849558,
+              "mean": 0.016304164093972923,
+              "min": 0.008240072291903822,
+              "std": 0.0068467108616039945
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.03134690514752714,
+              "mean": 0.013967179303683186,
+              "min": -0.005900482378761174,
+              "std": 0.01530760895624828
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.009399242229487688,
+              "mean": 0.006487132469858714,
+              "min": 0.004726709243268444,
+              "std": 0.0020741146753275666
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": -0.000224169088150733,
+              "mean": -0.0002322468666528891,
+              "min": -0.000246090875922339,
+              "std": 9.834573629873273e-06
+            }
+          }
+        },
+        "microminer_1TS0_A_1OT6_A_E46Q": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.2681211692112188,
+            "local_backbone_error": 0.14899654933367085,
+            "mutation_site_backbone_error": 0.1216781543364231,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 5.855728569805018e-15,
+            "remote_target_error": 0.3879349101810831,
+            "true_distance_change_norm": 33.38081636775022
+          },
+          "family_id": "v02_family_5c932f233753",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.09763175287211735,
+              "mean": -0.10160546521153624,
+              "min": -0.10388831647530095,
+              "std": 0.0028202133977227326
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.2726830663868106,
+              "mean": 0.27234774902237474,
+              "min": 0.2718754736649692,
+              "std": 0.0003436273368748067
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.17605067176932485,
+              "mean": 0.17230192247799514,
+              "min": 0.16772305521446,
+              "std": 0.0034500358700597783
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.30807918525322514,
+              "mean": 0.25922484480281494,
+              "min": 0.21171979215720746,
+              "std": 0.03935012573163612
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 3.6320995698413263,
+              "mean": 3.4533417578359966,
+              "min": 3.2251526663482393,
+              "std": 0.16977246362726264
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.008249813385181534,
+              "mean": 0.007405528324211419,
+              "min": 0.00635082389988925,
+              "std": 0.0007894080050551704
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.38859632916447406,
+              "mean": 0.3885111956481792,
+              "min": 0.3883567324201221,
+              "std": 0.00010941239014477382
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 33.38081636775022,
+              "mean": 33.38081636775022,
+              "min": 33.38081636775022,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0045618971755918,
+              "mean": 0.0042265798111559465,
+              "min": 0.0037543044537504122,
+              "std": 0.0003436273368748067
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.027054122435654,
+              "mean": 0.023305373144324303,
+              "min": 0.01872650588078914,
+              "std": 0.0034500358700597783
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.18640103091680205,
+              "mean": 0.13754669046639187,
+              "min": 0.09004163782078436,
+              "std": 0.03935012573163612
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.008249813385175678,
+              "mean": 0.007405528324205563,
+              "min": 0.006350823899883395,
+              "std": 0.0007894080050551701
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.000661418983390949,
+              "mean": 0.0005762854670960568,
+              "min": 0.0004218222390389714,
+              "std": 0.00010941239014477382
+            }
+          }
+        },
+        "platinum_3FYW_3FY8_X_F98Y": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.17944980013493594,
+            "local_backbone_error": 0.2505902931521402,
+            "mutation_site_backbone_error": 0.1307429011074186,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 4.87656327468178e-15,
+            "remote_target_error": 0.26654286886002293,
+            "true_distance_change_norm": 28.08375039024043
+          },
+          "family_id": "v02_family_260dd007d20d",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.024784693680637154,
+              "mean": -0.03314643908666421,
+              "min": -0.03968102623117083,
+              "std": 0.006217130171201934
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.18215924152041355,
+              "mean": 0.1814863452423686,
+              "min": 0.18063970322201134,
+              "std": 0.0006323974738018816
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.2759412262792221,
+              "mean": 0.2684119230164676,
+              "min": 0.25830471066213356,
+              "std": 0.00742724184971731
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.329640406790491,
+              "mean": 0.28067972499720556,
+              "min": 0.2301484706554518,
+              "std": 0.04063259252186748
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 4.013902896256994,
+              "mean": 3.3588353099507073,
+              "min": 2.6173511574286983,
+              "std": 0.5734050674078324
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0054829927028934265,
+              "mean": 0.00441857051706488,
+              "min": 0.0031093133521752137,
+              "std": 0.0009843937356686105
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.2673401320861867,
+              "mean": 0.267174983900979,
+              "min": 0.26700656659390515,
+              "std": 0.00013619716046620636
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 28.08375039024043,
+              "mean": 28.08375039024043,
+              "min": 28.08375039024043,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.002709441385477601,
+              "mean": 0.0020365451074326377,
+              "min": 0.0011899030870753946,
+              "std": 0.0006323974738018816
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.025350933127081865,
+              "mean": 0.01782162986432741,
+              "min": 0.007714417509993354,
+              "std": 0.00742724184971731
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.1988975056830724,
+              "mean": 0.149936823889787,
+              "min": 0.0994055695480332,
+              "std": 0.04063259252186748
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.00548299270288855,
+              "mean": 0.0044185705170600035,
+              "min": 0.003109313352170337,
+              "std": 0.0009843937356686107
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.0007972632261637469,
+              "mean": 0.000632115040956042,
+              "min": 0.0004636977338822179,
+              "std": 0.00013619716046620636
+            }
+          }
+        },
+        "premut22alt1_2PHY_1F9I_A_Y_41_F": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.26936091566787435,
+            "local_backbone_error": 0.24823533718957924,
+            "mutation_site_backbone_error": 0.09462509108225912,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 7.062072693383371e-15,
+            "remote_target_error": 0.2698742379862188,
+            "true_distance_change_norm": 33.53516355687345
+          },
+          "family_id": "v02_family_5c932f233753",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.0870702439828862,
+              "mean": -0.14953665846121753,
+              "min": -0.18487317058328714,
+              "std": 0.04429730476598679
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.27597622473851924,
+              "mean": 0.27503908214075756,
+              "min": 0.2735686623539183,
+              "std": 0.0010527353511144844
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.2628261424672597,
+              "mean": 0.260649461827924,
+              "min": 0.2570157194051852,
+              "std": 0.0025861845539406803
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.2778495738851191,
+              "mean": 0.23654380421399693,
+              "min": 0.21451763810984567,
+              "std": 0.02922910487323104
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 3.708494432615601,
+              "mean": 3.5529170615696217,
+              "min": 3.334484781329083,
+              "std": 0.15902590883512877
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.008552598745890745,
+              "mean": 0.0067217451134593586,
+              "min": 0.005112500702149622,
+              "std": 0.001413129298826422
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.2703228768798304,
+              "mean": 0.2701281058362566,
+              "min": 0.26999032278502233,
+              "std": 0.00014161868978955597
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 33.53516355687345,
+              "mean": 33.53516355687345,
+              "min": 33.53516355687345,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0066153090706448925,
+              "mean": 0.005678166472883217,
+              "min": 0.004207746686043956,
+              "std": 0.0010527353511144844
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.014590805277680474,
+              "mean": 0.012414124638344718,
+              "min": 0.008780382215605953,
+              "std": 0.0025861845539406803
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.18322448280285997,
+              "mean": 0.14191871313173782,
+              "min": 0.11989254702758655,
+              "std": 0.02922910487323103
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.008552598745883683,
+              "mean": 0.006721745113452297,
+              "min": 0.00511250070214256,
+              "std": 0.001413129298826422
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.00044863889361163034,
+              "mean": 0.00025386785003787365,
+              "min": 0.00011608479880353961,
+              "std": 0.00014161868978955597
+            }
+          }
+        },
+        "premut22m_1QD2_1GIU_A_E_84_R": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.33274817020879316,
+            "local_backbone_error": 0.32979774885850627,
+            "mutation_site_backbone_error": 0.29936664385327433,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 7.187970943633146e-15,
+            "remote_target_error": 0.387220301973386,
+            "true_distance_change_norm": 82.02225521989932
+          },
+          "family_id": "v02_family_3da1b9ebba69",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": 0.00325702339070948,
+              "mean": -0.00015561613305862564,
+              "min": -0.0028190905919614076,
+              "std": 0.002536497125750808
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.3330891025543345,
+              "mean": 0.3330580329071155,
+              "min": 0.33303959446670073,
+              "std": 2.2097107265960896e-05
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.331304020410715,
+              "mean": 0.3306490797254367,
+              "min": 0.33024912384981936,
+              "std": 0.0004668794479775485
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.33821774389661896,
+              "mean": 0.32483142759977807,
+              "min": 0.31232569591960047,
+              "std": 0.010588708106953212
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 3.7450577046800833,
+              "mean": 3.5317071170941197,
+              "min": 3.3601666598186877,
+              "std": 0.1598881783227723
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0026497972573654967,
+              "mean": 0.0024056639815109304,
+              "min": 0.0019550446782840448,
+              "std": 0.0003190064222551889
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.38728742370719516,
+              "mean": 0.3872657634596877,
+              "min": 0.3872369348475069,
+              "std": 2.122608972034017e-05
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 82.02225521989932,
+              "mean": 82.02225521989932,
+              "min": 82.02225521989932,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0003409323455413338,
+              "mean": 0.0003098626983223755,
+              "min": 0.00029142425790756876,
+              "std": 2.2097107265960896e-05
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.0015062715522087267,
+              "mean": 0.0008513308669304368,
+              "min": 0.00045137499131309156,
+              "std": 0.0004668794479775485
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.03885110004334463,
+              "mean": 0.0254647837465037,
+              "min": 0.012959052066326138,
+              "std": 0.010588708106953212
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.002649797257358309,
+              "mean": 0.0024056639815037426,
+              "min": 0.001955044678276857,
+              "std": 0.0003190064222551889
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 6.712173380912789e-05,
+              "mean": 4.546148630169e-05,
+              "min": 1.6632874120847685e-05,
+              "std": 2.122608972034017e-05
+            }
+          }
+        },
+        "premut22q_4VUB_7EPJ_A_V_45_L": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.24488154381735144,
+            "local_backbone_error": 0.5694764838548722,
+            "mutation_site_backbone_error": 0.7469781535528031,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 6.255310510210511e-15,
+            "remote_target_error": 0.3820386124457321,
+            "true_distance_change_norm": 24.610290572724477
+          },
+          "family_id": "v02_family_3da1b9ebba69",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.1430821081811297,
+              "mean": -0.21189631969224698,
+              "min": -0.2983709448161798,
+              "std": 0.06461461832845881
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.25265379662491005,
+              "mean": 0.2502037688394304,
+              "min": 0.24826245566232927,
+              "std": 0.001828489682222874
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.5970355926611958,
+              "mean": 0.5932954717575362,
+              "min": 0.5881067402645398,
+              "std": 0.003786375202395328
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.8336008147733777,
+              "mean": 0.8009046623725861,
+              "min": 0.7760717407079952,
+              "std": 0.024135332176612175
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 2.2994099951142792,
+              "mean": 2.0844030836425844,
+              "min": 1.8860167488913266,
+              "std": 0.1691757994583891
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0046525485445488126,
+              "mean": 0.004252734763326052,
+              "min": 0.0038348088843387926,
+              "std": 0.0003340863900591909
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.3825964361299859,
+              "mean": 0.3824819354088767,
+              "min": 0.3823735562050584,
+              "std": 9.109324879622554e-05
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 24.610290572724477,
+              "mean": 24.610290572724477,
+              "min": 24.610290572724477,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.007772252807558611,
+              "mean": 0.0053222250220789635,
+              "min": 0.003380911844977824,
+              "std": 0.001828489682222874
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.027559108806323618,
+              "mean": 0.02381898790266405,
+              "min": 0.018630256409667645,
+              "std": 0.003786375202395328
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.0866226612205746,
+              "mean": 0.05392650881978289,
+              "min": 0.02909358715519217,
+              "std": 0.02413533217661217
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.004652548544542557,
+              "mean": 0.0042527347633197965,
+              "min": 0.003834808884332537,
+              "std": 0.0003340863900591909
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.0005578236842537776,
+              "mean": 0.00044332296314458786,
+              "min": 0.0003349437593263005,
+              "std": 9.109324879622554e-05
+            }
+          }
+        }
+      },
+      "comparisons": 24,
+      "overall_student_minus_copy": {
+        "distance_change_error": {
+          "count": 24,
+          "improved": 0,
+          "max": 0.007772252807558611,
+          "mean": 0.0033575727659310405,
+          "min": 0.00029142425790756876,
+          "std": 0.002094613192233328
+        },
+        "local_backbone_error": {
+          "count": 24,
+          "improved": 0,
+          "max": 0.030540092527917728,
+          "mean": 0.017730081869881693,
+          "min": 0.00045137499131309156,
+          "std": 0.009057045578139612
+        },
+        "mutation_site_backbone_error": {
+          "count": 24,
+          "improved": 1,
+          "max": 0.1988975056830724,
+          "mean": 0.10294730942936083,
+          "min": -0.005900482378761174,
+          "std": 0.06403386714295467
+        },
+        "remote_scaffold_drift": {
+          "count": 24,
+          "improved": 0,
+          "max": 0.0101383539999598,
+          "mean": 0.0052297334059539955,
+          "min": 0.001955044678276857,
+          "std": 0.002178876284052009
+        },
+        "remote_target_error": {
+          "count": 24,
+          "improved": 5,
+          "max": 0.0007972632261637469,
+          "mean": 0.00026859611453455373,
+          "min": -0.000246090875922339,
+          "std": 0.00031333642823957824
+        }
+      },
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "transformer": {
+      "all_record_seed_local_errors_worse_than_copy": true,
+      "by_family_student_minus_copy": {
+        "v02_family_260dd007d20d": {
+          "distance_change_error": {
+            "count": 3,
+            "max": 0.004186421935898937,
+            "mean": 0.0030624454019481753,
+            "min": 0.002296446667544,
+            "std": 0.0008120396983212465
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "max": 0.02645383770207993,
+            "mean": 0.020077210572177984,
+            "min": 0.015365012755925112,
+            "std": 0.004677481756723168
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "max": 0.07842252751087864,
+            "mean": 0.05667702755851937,
+            "min": 0.03508462401200482,
+            "std": 0.01769295620299289
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "max": 4.266348551084159,
+            "mean": 3.6592077078607557,
+            "min": 3.2057555422105772,
+            "std": 0.4464150085802328
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "max": 0.0032628964481128597,
+            "mean": 0.0026229031944349705,
+            "min": 0.0021103482980392545,
+            "std": 0.00047907703676938816
+          },
+          "remote_target_error": {
+            "count": 3,
+            "max": 0.00038222741345766975,
+            "mean": 0.00012305066918070576,
+            "min": -9.024210776525932e-05,
+            "std": 0.00019559459086706206
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        },
+        "v02_family_3da1b9ebba69": {
+          "distance_change_error": {
+            "count": 6,
+            "max": 0.005650660428134557,
+            "mean": 0.0017813095078364715,
+            "min": 0.00012203117623599269,
+            "std": 0.0019090941333681942
+          },
+          "local_backbone_error": {
+            "count": 6,
+            "max": 0.012860693941415091,
+            "mean": 0.007487293516652366,
+            "min": 0.0016452629680732134,
+            "std": 0.0048250081328566645
+          },
+          "mutation_site_backbone_error": {
+            "count": 6,
+            "max": 0.08739844903908545,
+            "mean": 0.055195098621624784,
+            "min": 0.032771179667046346,
+            "std": 0.018910372297455152
+          },
+          "predicted_distance_change_norm": {
+            "count": 6,
+            "max": 3.4459964929455897,
+            "mean": 2.762763267573988,
+            "min": 2.230079119621527,
+            "std": 0.4787002349666093
+          },
+          "remote_scaffold_drift": {
+            "count": 6,
+            "max": 0.004602735285676358,
+            "mean": 0.0027983441445231442,
+            "min": 0.0009772685253687176,
+            "std": 0.0015974458195876949
+          },
+          "remote_target_error": {
+            "count": 6,
+            "max": 0.00040681756939586755,
+            "mean": -6.441649902377833e-06,
+            "min": -0.00035162471806726714,
+            "std": 0.000235414664121019
+          },
+          "true_distance_change_norm": {
+            "count": 6,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        },
+        "v02_family_5c932f233753": {
+          "distance_change_error": {
+            "count": 6,
+            "max": 0.006015946228061286,
+            "mean": 0.0012503641106209051,
+            "min": -0.001962280507042613,
+            "std": 0.002518697772496909
+          },
+          "local_backbone_error": {
+            "count": 6,
+            "max": 0.016312495667346272,
+            "mean": 0.01135695380536487,
+            "min": 0.0009233127491216075,
+            "std": 0.0054160456237773835
+          },
+          "mutation_site_backbone_error": {
+            "count": 6,
+            "max": 0.13592776180042926,
+            "mean": 0.05658744716407186,
+            "min": -0.009725883938346211,
+            "std": 0.04362308673862727
+          },
+          "predicted_distance_change_norm": {
+            "count": 6,
+            "max": 5.7131215380509675,
+            "mean": 4.358224668934115,
+            "min": 3.296495345517616,
+            "std": 0.8224833603791207
+          },
+          "remote_scaffold_drift": {
+            "count": 6,
+            "max": 0.007156250767183438,
+            "mean": 0.005749871755489948,
+            "min": 0.0037336236912392236,
+            "std": 0.001513893631274542
+          },
+          "remote_target_error": {
+            "count": 6,
+            "max": 0.00011602649200748161,
+            "mean": -0.0003665823805166409,
+            "min": -0.0010793385791944554,
+            "std": 0.0003954175438670097
+          },
+          "true_distance_change_norm": {
+            "count": 6,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        },
+        "v02_family_987a40463804": {
+          "distance_change_error": {
+            "count": 9,
+            "max": 0.005212208975695853,
+            "mean": 0.002324216493114243,
+            "min": 0.0013335124418540623,
+            "std": 0.001204066585571263
+          },
+          "local_backbone_error": {
+            "count": 9,
+            "max": 0.02940300520196132,
+            "mean": 0.016962093272575342,
+            "min": 0.008918290659968076,
+            "std": 0.006096378081021374
+          },
+          "mutation_site_backbone_error": {
+            "count": 9,
+            "max": 0.14316557053286544,
+            "mean": 0.07454568896530957,
+            "min": -0.0009343002929738942,
+            "std": 0.04984173808571242
+          },
+          "predicted_distance_change_norm": {
+            "count": 9,
+            "max": 4.9989394670176415,
+            "mean": 3.3460059752123468,
+            "min": 2.2867060844570593,
+            "std": 1.0340482657994876
+          },
+          "remote_scaffold_drift": {
+            "count": 9,
+            "max": 0.00719380999956428,
+            "mean": 0.0038008173257574975,
+            "min": 0.002141096656491884,
+            "std": 0.0016968157614117632
+          },
+          "remote_target_error": {
+            "count": 9,
+            "max": 0.0002716806418543438,
+            "mean": 7.3709855498858984e-06,
+            "min": -0.0003228908710808942,
+            "std": 0.0001825125435364236
+          },
+          "true_distance_change_norm": {
+            "count": 9,
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "std": 0.0
+          }
+        }
+      },
+      "by_pair": {
+        "microminer_1BVX_A_1KXW_A_N27D": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.16425153238374604,
+            "local_backbone_error": 0.18095341942793425,
+            "mutation_site_backbone_error": 0.1556078506334151,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 8.219351220019072e-15,
+            "remote_target_error": 0.3355612774988786,
+            "true_distance_change_norm": 21.106162132951358
+          },
+          "family_id": "v02_family_987a40463804",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 3
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": 0.05860934297078796,
+              "mean": 0.01468634826769579,
+              "min": -0.01768329713043144,
+              "std": 0.032199913493936055
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.1694637413594419,
+              "mean": 0.16781360527779968,
+              "min": 0.1661180715738609,
+              "std": 0.0013662411418730873
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.21035642462989557,
+              "mean": 0.20489064593089132,
+              "min": 0.19949387053465173,
+              "std": 0.004434887556625609
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.22884968290034605,
+              "mean": 0.22595616202285326,
+              "min": 0.2228707658062695,
+              "std": 0.0024446505563200174
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 4.9989394670176415,
+              "mean": 4.724223843675235,
+              "min": 4.514389565651119,
+              "std": 0.20306705535579472
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.007193809999572499,
+              "mean": 0.0056025443511524735,
+              "min": 0.003851960622826743,
+              "std": 0.0013689475281282407
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.3355022164448275,
+              "mean": 0.3353602187023113,
+              "min": 0.3352383866277977,
+              "std": 0.00010864785229655631
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 21.106162132951358,
+              "mean": 21.106162132951358,
+              "min": 21.106162132951358,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.005212208975695853,
+              "mean": 0.003562072894053655,
+              "min": 0.0018665391901148687,
+              "std": 0.001366241141873087
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.02940300520196132,
+              "mean": 0.023937226502957053,
+              "min": 0.01854045110671748,
+              "std": 0.004434887556625609
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.07324183226693096,
+              "mean": 0.07034831138943816,
+              "min": 0.0672629151728544,
+              "std": 0.0024446505563200174
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.00719380999956428,
+              "mean": 0.0056025443511442535,
+              "min": 0.0038519606228185235,
+              "std": 0.0013689475281282407
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": -5.906105405112383e-05,
+              "mean": -0.0002010587965672698,
+              "min": -0.0003228908710808942,
+              "std": 0.00010864785229655631
+            }
+          }
+        },
+        "microminer_1LHL_A_1LZ1_A_P47A": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.2213078097373366,
+            "local_backbone_error": 0.3241159702229299,
+            "mutation_site_backbone_error": 0.4433521961796721,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 6.15648449243079e-15,
+            "remote_target_error": 0.31878567560780097,
+            "true_distance_change_norm": 28.659147742611992
+          },
+          "family_id": "v02_family_987a40463804",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 1
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.02741828000832655,
+              "mean": -0.05133196028966321,
+              "min": -0.07590349343629066,
+              "std": 0.01979947066772386
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.22338310796287983,
+              "mean": 0.22297799782908811,
+              "min": 0.2226495374363534,
+              "std": 0.00030434390246358113
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.3425889521151969,
+              "mean": 0.33849259876831783,
+              "min": 0.33303426088289795,
+              "std": 0.004017817197480976
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.5865177667125375,
+              "mean": 0.5797549200062795,
+              "min": 0.5698314899819436,
+              "std": 0.007169375749922957
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 2.471030019212843,
+              "mean": 2.3592653448365724,
+              "min": 2.2867060844570593,
+              "std": 0.080194042155913
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.002552365087466003,
+              "mean": 0.002328132995133375,
+              "min": 0.0021410966564980407,
+              "std": 0.00016994719502940665
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.3190573562496553,
+              "mean": 0.3189556226735442,
+              "min": 0.3187787580328557,
+              "std": 0.00012553286222969967
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 28.659147742611992,
+              "mean": 28.659147742611992,
+              "min": 28.659147742611992,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.002075298225543226,
+              "mean": 0.0016701880917515122,
+              "min": 0.0013417276990168037,
+              "std": 0.00030434390246358113
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.018472981892267037,
+              "mean": 0.01437662854538796,
+              "min": 0.008918290659968076,
+              "std": 0.004017817197480976
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.14316557053286544,
+              "mean": 0.13640272382660742,
+              "min": 0.12647929380227146,
+              "std": 0.007169375749922957
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0025523650874598467,
+              "mean": 0.0023281329951272186,
+              "min": 0.002141096656491884,
+              "std": 0.00016994719502940665
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.0002716806418543438,
+              "mean": 0.0001699470657432108,
+              "min": -6.9175749452532465e-06,
+              "std": 0.00012553286222969967
+            }
+          }
+        },
+        "microminer_1REX_A_133L_A_R115H": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.09224594523592937,
+            "local_backbone_error": 0.17668566372278932,
+            "mutation_site_backbone_error": 0.18585934376419314,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 4.050816187968101e-15,
+            "remote_target_error": 0.16867562230075211,
+            "true_distance_change_norm": 11.945760867233332
+          },
+          "family_id": "v02_family_987a40463804",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 1,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": 0.07500951857324636,
+              "mean": 0.04630912013211607,
+              "min": 0.021651046619497728,
+              "std": 0.0219702363123461
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.09428789014664307,
+              "mean": 0.09398633372946692,
+              "min": 0.09357945767778343,
+              "std": 0.00029865064294055954
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.1901885568702117,
+              "mean": 0.18925808849217032,
+              "min": 0.18780755657529435,
+              "std": 0.0010392754413269536
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.22174697592697298,
+              "mean": 0.20274537544407623,
+              "min": 0.18492504347121924,
+              "std": 0.015055679413732466
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 3.4593477946675875,
+              "mean": 2.9545287371252336,
+              "min": 2.6050393312948907,
+              "std": 0.36565576997433497
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.005017743660905799,
+              "mean": 0.0034717746310050737,
+              "min": 0.0025421703218665164,
+              "std": 0.0011006195046399077
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.1687493261946958,
+              "mean": 0.16872884698822585,
+              "min": 0.1687020206365392,
+              "std": 1.9827063111281837e-05
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 11.945760867233332,
+              "mean": 11.945760867233332,
+              "min": 11.945760867233332,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0020419449107137028,
+              "mean": 0.0017403884935375629,
+              "min": 0.0013335124418540623,
+              "std": 0.00029865064294055954
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.013502893147422368,
+              "mean": 0.01257242476938101,
+              "min": 0.011121892852505033,
+              "std": 0.0010392754413269536
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.03588763216277985,
+              "mean": 0.0168860316798831,
+              "min": -0.0009343002929738942,
+              "std": 0.015055679413732466
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.005017743660901748,
+              "mean": 0.0034717746310010227,
+              "min": 0.0025421703218624653,
+              "std": 0.001100619504639908
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 7.370389394367738e-05,
+              "mean": 5.3224687473716704e-05,
+              "min": 2.6398335787075622e-05,
+              "std": 1.9827063111281837e-05
+            }
+          }
+        },
+        "microminer_1TS0_A_1OT6_A_E46Q": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.2681211692112188,
+            "local_backbone_error": 0.14899654933367085,
+            "mutation_site_backbone_error": 0.1216781543364231,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 5.855728569805018e-15,
+            "remote_target_error": 0.3879349101810831,
+            "true_distance_change_norm": 33.38081636775022
+          },
+          "family_id": "v02_family_5c932f233753",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 1,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 2
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": 0.05284197027656516,
+              "mean": 0.011719461932065696,
+              "min": -0.04983959200694457,
+              "std": 0.044340463876110285
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.2707354917951663,
+              "mean": 0.26933543742565763,
+              "min": 0.2686320723529071,
+              "std": 0.000989991690093565
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.16530904500101712,
+              "mean": 0.16457541263406372,
+              "min": 0.16401950915289953,
+              "std": 0.0005412432253789969
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.16819461074763473,
+              "mean": 0.14859956969857033,
+              "min": 0.11195227039807688,
+              "std": 0.025934338184524758
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 4.487419419326881,
+              "mean": 3.7272280850832438,
+              "min": 3.296495345517616,
+              "std": 0.5391241425373942
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.005673853972486256,
+              "mean": 0.004381296891607313,
+              "min": 0.003733623691245079,
+              "std": 0.0009139765863427143
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.3880509366730906,
+              "mean": 0.38786324023957697,
+              "min": 0.3877415472277803,
+              "std": 0.00013465460996222898
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 33.38081636775022,
+              "mean": 33.38081636775022,
+              "min": 33.38081636775022,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0026143225839475037,
+              "mean": 0.0012142682144388555,
+              "min": 0.0005109031416882792,
+              "std": 0.000989991690093565
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.016312495667346272,
+              "mean": 0.015578863300392876,
+              "min": 0.015022959819228687,
+              "std": 0.0005412432253789969
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.04651645641121163,
+              "mean": 0.026921415362147236,
+              "min": -0.009725883938346211,
+              "std": 0.025934338184524758
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0056738539724804,
+              "mean": 0.0043812968916014565,
+              "min": 0.0037336236912392236,
+              "std": 0.0009139765863427144
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.00011602649200748161,
+              "mean": -7.166994150618426e-05,
+              "min": -0.0001933629533028003,
+              "std": 0.000134654609962229
+            }
+          }
+        },
+        "platinum_3FYW_3FY8_X_F98Y": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.17944980013493594,
+            "local_backbone_error": 0.2505902931521402,
+            "mutation_site_backbone_error": 0.1307429011074186,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 4.87656327468178e-15,
+            "remote_target_error": 0.26654286886002293,
+            "true_distance_change_norm": 28.08375039024043
+          },
+          "family_id": "v02_family_260dd007d20d",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 1
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.05575079809553529,
+              "mean": -0.06479569412717076,
+              "min": -0.07940101648900943,
+              "std": 0.01042503279754932
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.18363622207083488,
+              "mean": 0.18251224553688414,
+              "min": 0.18174624680247994,
+              "std": 0.0008120396983212465
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.27704413085422014,
+              "mean": 0.2706675037243182,
+              "min": 0.2659553059080653,
+              "std": 0.004677481756723168
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.20916542861829723,
+              "mean": 0.18741992866593796,
+              "min": 0.16582752511942342,
+              "std": 0.01769295620299289
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 4.266348551084159,
+              "mean": 3.6592077078607557,
+              "min": 3.2057555422105772,
+              "std": 0.4464150085802328
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0032628964481177364,
+              "mean": 0.0026229031944398472,
+              "min": 0.002110348298044131,
+              "std": 0.00047907703676938816
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.2669250962734806,
+              "mean": 0.26666591952920365,
+              "min": 0.26645262675225767,
+              "std": 0.00019559459086706204
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 28.08375039024043,
+              "mean": 28.08375039024043,
+              "min": 28.08375039024043,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.004186421935898937,
+              "mean": 0.0030624454019481753,
+              "min": 0.002296446667544,
+              "std": 0.0008120396983212465
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.02645383770207993,
+              "mean": 0.020077210572177984,
+              "min": 0.015365012755925112,
+              "std": 0.004677481756723168
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.07842252751087864,
+              "mean": 0.05667702755851937,
+              "min": 0.03508462401200482,
+              "std": 0.01769295620299289
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0032628964481128597,
+              "mean": 0.0026229031944349705,
+              "min": 0.0021103482980392545,
+              "std": 0.00047907703676938816
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.00038222741345766975,
+              "mean": 0.00012305066918070576,
+              "min": -9.024210776525932e-05,
+              "std": 0.00019559459086706206
+            }
+          }
+        },
+        "premut22alt1_2PHY_1F9I_A_Y_41_F": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.26936091566787435,
+            "local_backbone_error": 0.24823533718957924,
+            "mutation_site_backbone_error": 0.09462509108225912,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 7.062072693383371e-15,
+            "remote_target_error": 0.2698742379862188,
+            "true_distance_change_norm": 33.53516355687345
+          },
+          "family_id": "v02_family_5c932f233753",
+          "improving_seeds": {
+            "distance_change_error": 2,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 3
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": 0.12188296559339871,
+              "mean": 0.04921877420222407,
+              "min": -0.047381002324378675,
+              "std": 0.07114425198449081
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.27537686189593563,
+              "mean": 0.2706473756746773,
+              "min": 0.26739863516083173,
+              "std": 0.0034212552615180735
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.26074527089408867,
+              "mean": 0.25537038149991614,
+              "min": 0.24915864993870085,
+              "std": 0.004767086804353616
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.2305528528826884,
+              "mean": 0.18087857004825558,
+              "min": 0.14157888617617947,
+              "std": 0.037056856455947425
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 5.7131215380509675,
+              "mean": 4.989221252784987,
+              "min": 4.550066259585252,
+              "std": 0.5157417352429791
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0071562507671905,
+              "mean": 0.007118446619385499,
+              "min": 0.007049258956382402,
+              "std": 4.899323534693856e-05
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.26964527678670985,
+              "mean": 0.2692127431666917,
+              "min": 0.26879489940702433,
+              "std": 0.00034732047253993603
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 33.53516355687345,
+              "mean": 33.53516355687345,
+              "min": 33.53516355687345,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.006015946228061286,
+              "mean": 0.0012864600068029548,
+              "min": -0.001962280507042613,
+              "std": 0.0034212552615180735
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.012509933704509424,
+              "mean": 0.007135044310336865,
+              "min": 0.0009233127491216075,
+              "std": 0.004767086804353616
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.13592776180042926,
+              "mean": 0.08625347896599649,
+              "min": 0.04695379509392035,
+              "std": 0.03705685645594742
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.007156250767183438,
+              "mean": 0.007118446619378437,
+              "min": 0.00704925895637534,
+              "std": 4.899323534693856e-05
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": -0.0002289611995089369,
+              "mean": -0.0006614948195270975,
+              "min": -0.0010793385791944554,
+              "std": 0.00034732047253993603
+            }
+          }
+        },
+        "premut22m_1QD2_1GIU_A_E_84_R": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.33274817020879316,
+            "local_backbone_error": 0.32979774885850627,
+            "mutation_site_backbone_error": 0.29936664385327433,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 7.187970943633146e-15,
+            "remote_target_error": 0.387220301973386,
+            "true_distance_change_norm": 82.02225521989932
+          },
+          "family_id": "v02_family_3da1b9ebba69",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 0
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": 0.005923019957756014,
+              "mean": -0.023659991352910508,
+              "min": -0.05078169260563978,
+              "std": 0.023214932581211767
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.33335228283824403,
+              "mean": 0.33310992263078204,
+              "min": 0.33287020138502915,
+              "std": 0.0001968177752348919
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.3342298930631001,
+              "mean": 0.3325737091709705,
+              "min": 0.3314430118265795,
+              "std": 0.001196878952528415
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.3680425609266364,
+              "mean": 0.344769308398074,
+              "min": 0.3321378235203207,
+              "std": 0.016476709948782805
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 2.759909705721156,
+              "mean": 2.4300106381093656,
+              "min": 2.230079119621527,
+              "std": 0.23501600705857503
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0014278244673473263,
+              "mean": 0.001209902913625038,
+              "min": 0.0009772685253759056,
+              "std": 0.00018423266962602707
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.38725966887063795,
+              "mean": 0.38725554213595803,
+              "min": 0.38724836808041396,
+              "std": 5.091927484325952e-06
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 82.02225521989932,
+              "mean": 82.02225521989932,
+              "min": 82.02225521989932,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.0006041126294508703,
+              "mean": 0.00036175242198888125,
+              "min": 0.00012203117623599269,
+              "std": 0.0001968177752348919
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.004432144204593813,
+              "mean": 0.002775960312464243,
+              "min": 0.0016452629680732134,
+              "std": 0.001196878952528415
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.06867591707336207,
+              "mean": 0.04540266454479965,
+              "min": 0.032771179667046346,
+              "std": 0.016476709948782805
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.0014278244673401382,
+              "mean": 0.0012099029136178497,
+              "min": 0.0009772685253687176,
+              "std": 0.00018423266962602707
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 3.936689725192455e-05,
+              "mean": 3.524016257200335e-05,
+              "min": 2.8066107027935328e-05,
+              "std": 5.091927484325952e-06
+            }
+          }
+        },
+        "premut22q_4VUB_7EPJ_A_V_45_L": {
+          "copy": {
+            "distance_change_cosine": null,
+            "distance_change_error": 0.24488154381735144,
+            "local_backbone_error": 0.5694764838548722,
+            "mutation_site_backbone_error": 0.7469781535528031,
+            "predicted_distance_change_norm": 0.0,
+            "remote_scaffold_drift": 6.255310510210511e-15,
+            "remote_target_error": 0.3820386124457321,
+            "true_distance_change_norm": 24.610290572724477
+          },
+          "family_id": "v02_family_3da1b9ebba69",
+          "improving_seeds": {
+            "distance_change_error": 0,
+            "local_backbone_error": 0,
+            "mutation_site_backbone_error": 0,
+            "remote_scaffold_drift": 0,
+            "remote_target_error": 2
+          },
+          "student": {
+            "distance_change_cosine": {
+              "count": 3,
+              "max": -0.004737745360041078,
+              "mean": -0.0381457601424502,
+              "min": -0.10377707309397217,
+              "std": 0.04641086667415234
+            },
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.250532204245486,
+              "mean": 0.24808241041103551,
+              "min": 0.24628369205661407,
+              "std": 0.0017945079948312001
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.5823371777962872,
+              "mean": 0.5816751105757126,
+              "min": 0.5804639632399248,
+              "std": 0.0008576518031750092
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.8343766025918885,
+              "mean": 0.811965686251253,
+              "min": 0.7996550532922801,
+              "std": 0.015872582014986345
+            },
+            "predicted_distance_change_norm": {
+              "count": 3,
+              "max": 3.4459964929455897,
+              "mean": 3.0955158970386107,
+              "min": 2.4956433626931083,
+              "std": 0.4261768195352453
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.004602735285682613,
+              "mean": 0.004386785375434694,
+              "min": 0.004265599826211105,
+              "std": 0.00015308013717990642
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.382445430015128,
+              "mean": 0.38199048898335536,
+              "min": 0.38168698772766485,
+              "std": 0.0003276270035552927
+            },
+            "true_distance_change_norm": {
+              "count": 3,
+              "max": 24.610290572724477,
+              "mean": 24.610290572724477,
+              "min": 24.610290572724477,
+              "std": 0.0
+            }
+          },
+          "student_minus_copy": {
+            "distance_change_error": {
+              "count": 3,
+              "max": 0.005650660428134557,
+              "mean": 0.0032008665936840617,
+              "min": 0.0014021482392626294,
+              "std": 0.0017945079948312
+            },
+            "local_backbone_error": {
+              "count": 3,
+              "max": 0.012860693941415091,
+              "mean": 0.012198626720840489,
+              "min": 0.010987479385052623,
+              "std": 0.0008576518031750092
+            },
+            "mutation_site_backbone_error": {
+              "count": 3,
+              "max": 0.08739844903908545,
+              "mean": 0.06498753269844992,
+              "min": 0.05267689973947709,
+              "std": 0.015872582014986345
+            },
+            "remote_scaffold_drift": {
+              "count": 3,
+              "max": 0.004602735285676358,
+              "mean": 0.004386785375428438,
+              "min": 0.0042655998262048495,
+              "std": 0.00015308013717990642
+            },
+            "remote_target_error": {
+              "count": 3,
+              "max": 0.00040681756939586755,
+              "mean": -4.812346237675902e-05,
+              "min": -0.00035162471806726714,
+              "std": 0.0003276270035552927
+            }
+          }
+        }
+      },
+      "comparisons": 24,
+      "overall_student_minus_copy": {
+        "distance_change_error": {
+          "count": 24,
+          "improved": 2,
+          "max": 0.006015946228061286,
+          "mean": 0.0020123052647757073,
+          "min": -0.001962280507042613,
+          "std": 0.001859038129404216
+        },
+        "local_backbone_error": {
+          "count": 24,
+          "improved": 0,
+          "max": 0.02940300520196132,
+          "mean": 0.013581498129242309,
+          "min": 0.0009233127491216075,
+          "std": 0.00706452604032464
+        },
+        "mutation_site_backbone_error": {
+          "count": 24,
+          "improved": 2,
+          "max": 0.14316557053286544,
+          "mean": 0.06298489825323017,
+          "min": -0.009725883938346211,
+          "std": 0.0402037787641407
+        },
+        "remote_scaffold_drift": {
+          "count": 24,
+          "improved": 0,
+          "max": 0.00719380999956428,
+          "mean": 0.0038902233714667063,
+          "min": 0.0009772685253687176,
+          "std": 0.0019198159289809398
+        },
+        "remote_target_error": {
+          "count": 24,
+          "improved": 12,
+          "max": 0.00040681756939586755,
+          "mean": -7.511055437595925e-05,
+          "min": -0.0010793385791944554,
+          "std": 0.000316377918268007
+        }
+      },
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "families": 4,
+  "format": "ospedit.student_generalization_diagnostic.v1",
+  "inputs": {
+    "copy_report": {
+      "path": "/tmp/ospedit-real-sample/protocol_v02_localized_weighted_architecture_sweep_v1/copy_parent_dev.json",
+      "sha256": "fc045dbb2c47ddc43b31706545ae94c731a132048befd60ad271f24d86ec02d5"
+    },
+    "student_reports": [
+      {
+        "architecture": "transformer",
+        "path": "/tmp/ospedit-real-sample/protocol_v02_localized_weighted_architecture_sweep_v1/transformer_seed0_dev.json",
+        "seed": 0,
+        "sha256": "b4bd747ba91e55ae5c35f1b5c345abcf7cc1d5f83a69c8c9ed4f135088fd70f8"
+      },
+      {
+        "architecture": "transformer",
+        "path": "/tmp/ospedit-real-sample/protocol_v02_localized_weighted_architecture_sweep_v1/transformer_seed1_dev.json",
+        "seed": 1,
+        "sha256": "290cef955d358d3987f6ae7d4468a9e5d44b35f45e3a1a1f808c9c38178d0ad9"
+      },
+      {
+        "architecture": "transformer",
+        "path": "/tmp/ospedit-real-sample/protocol_v02_localized_weighted_architecture_sweep_v1/transformer_seed2_dev.json",
+        "seed": 2,
+        "sha256": "d7ee89f477784b8607b20bfdbe3df6b0ccedd357e63a6d5751b6be0ffa813dd1"
+      },
+      {
+        "architecture": "spatial_graph",
+        "path": "/tmp/ospedit-real-sample/protocol_v02_localized_weighted_architecture_sweep_v1/spatial_graph_seed0_dev.json",
+        "seed": 0,
+        "sha256": "5b6619010633072e2c25e1f261ff77bbcda41163402b96be958a8cc66445d53a"
+      },
+      {
+        "architecture": "spatial_graph",
+        "path": "/tmp/ospedit-real-sample/protocol_v02_localized_weighted_architecture_sweep_v1/spatial_graph_seed1_dev.json",
+        "seed": 1,
+        "sha256": "31c462f203e816318d323db12a2e5c267dc66409acb42545ac5a2fe59ac31da3"
+      },
+      {
+        "architecture": "spatial_graph",
+        "path": "/tmp/ospedit-real-sample/protocol_v02_localized_weighted_architecture_sweep_v1/spatial_graph_seed2_dev.json",
+        "seed": 2,
+        "sha256": "95d5dcf6c21bb54985fa927bce3d6c28f83cd305fe017db9b39949cfb10455b1"
+      }
+    ]
+  },
+  "records": 8,
+  "selection_used_observed_response": false,
+  "split": "dev"
+}

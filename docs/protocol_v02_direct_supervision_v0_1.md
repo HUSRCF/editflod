@@ -473,3 +473,17 @@ Further regional-weight sweeps are not justified. The next diagnostic will
 decompose held-out error by family and record to determine whether the failure is
 associated with particular endpoint contexts, response magnitudes, or a general
 cross-family transfer problem; no response-derived filtering will be introduced.
+
+The record-level decomposition found no local-error improvement in any of 24
+record-seed comparisons per architecture. All four dev families had positive
+mean student-minus-copy local error for both architectures. Mutation-site error
+improved in only 2/24 Transformer and 1/24 spatial-graph comparisons; graph
+distance-change error improved in 0/24. The failed family-macro result is
+therefore not caused by one outlying family.
+
+The next diagnostic will use only the training partition to create
+response-independent, physical-endpoint-group holdouts within seen families.
+This is not a replacement for frozen dev. It separates two hypotheses: failure
+to transfer even within a represented family points back to representation or
+targets, while within-family success combined with unseen-family failure points
+to coverage and the need for transferable pretrained context.

@@ -307,6 +307,8 @@ def main() -> None:
                 "seed": seed,
                 "checkpoint": str(checkpoint.resolve()),
                 "checkpoint_sha256": file_sha256(checkpoint),
+                "dev_report": str(dev_path.resolve()),
+                "dev_report_sha256": file_sha256(dev_path),
                 "parameter_count": parameter_count,
                 "epochs": int(checkpoint_payload["epoch"]),
                 "optimizer_steps": int(checkpoint_payload["epoch"])
@@ -348,6 +350,7 @@ def main() -> None:
             "copy_parent_noninferiority_required": True,
             "secondary_metrics": [
                 "mutation_site_backbone_error",
+                "distance_change_error",
                 "distance_change_cosine",
                 "remote_target_error",
                 "remote_scaffold_drift",
