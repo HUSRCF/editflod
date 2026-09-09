@@ -72,6 +72,48 @@ primary evidence rule. These 16 records are suitable for sensitivity analyses
 and data-pipeline development, not for relaxing the frozen identifiability
 criterion after observing results.
 
+### Response-stratified discovery audit
+
+A second, separately labeled discovery-only sample tested whether the first
+pool was dominated by very small structural responses. The selector allocated
+4,096 candidates equally across MicroMiner site-backbone RMSD strata
+`<0.15`, `0.15--0.30`, `0.30--0.60`, and `>=0.60 Angstrom`, using seed 29.
+Because this selection reads an experimental structural-difference field, its
+report sets `eligible_for_unbiased_test=false`; none of these records may be
+used to estimate population-level test performance.
+
+RCSB metadata screening retained 192 pairs (`99/54/25/14` by the four source
+strata) across 374 unique PDB entries. All coordinates were downloaded. Strict
+full-chain validation retained 35 single substitutions, of which 32 passed the
+coordinate-level context gate. They cover 18 shared-UniProt groups before the
+three context rejections. The response-scale median rose from `1.313` in the
+unbiased pool to `2.394`, showing that the stratification enriched structural
+change without being treated as unbiased evidence.
+
+Repeat discovery completed for 25 of 27 unique parent sequences. Two 252-aa
+sequences from the same `P84131` family consistently received HTTP 400 from
+the RCSB sequence-search API and remain an explicit coverage gap. For the
+successful queries, PDB-to-mmCIF fallback resolved all 456 coordinate entries.
+The audit found 197 context-matched repeats for 12 mutation pairs; 10 pairs
+had at least two repeats. None passed the same conservative dual
+signal/background gate. The closest result was
+`2ZIL_A -> 1GB8_A (V74M)`, with neighborhood ratio `2.893` and distance-change
+ratio `1.533`.
+
+Thus response stratification improves raw response capacity but does not solve
+label identifiability. The result strengthens the decision to keep teacher
+distillation disabled rather than weakening the frozen distance-change gate.
+Artifacts are:
+
+```text
+/tmp/ospedit-real-sample/microminer_discovery_candidates_4096_v1.json
+/tmp/ospedit-real-sample/microminer_discovery_manifest_4096_v1.jsonl
+/tmp/ospedit-real-sample/microminer_discovery_context_manifest_4096_v1.jsonl
+/tmp/ospedit-real-sample/microminer_discovery_response_4096_v1.json
+/tmp/ospedit-real-sample/microminer_discovery_repeat_discovery_4096_v3.json
+/tmp/ospedit-real-sample/microminer_discovery_repeat_audit_4096_v1.json
+```
+
 ## Platinum capacity and identifiability audit (2026-09-09)
 
 The public Platinum flat file was added as a second experimental-pair source.

@@ -65,6 +65,19 @@ data:
   microminer_repeat_instances: 103
   microminer_new_pairs_passing_two_repeat_signal_background_gate: 0
   microminer_split_status: all_train_pending_sequence_family_clustering
+  microminer_discovery_rmsd_cutoffs_angstrom: [0.15, 0.30, 0.60]
+  microminer_discovery_candidate_pool: 4096
+  microminer_discovery_metadata_strict_pairs: 192
+  microminer_discovery_full_chain_single_substitution_pairs: 35
+  microminer_discovery_strict_context_pairs: 32
+  microminer_discovery_shared_uniprot_families_before_context: 18
+  microminer_discovery_repeat_query_success: 25
+  microminer_discovery_repeat_query_requested: 27
+  microminer_discovery_pairs_with_context_matched_repeats: 12
+  microminer_discovery_pairs_with_at_least_two_repeats: 10
+  microminer_discovery_repeat_instances: 197
+  microminer_discovery_new_pairs_passing_two_repeat_signal_background_gate: 0
+  microminer_discovery_eligible_for_unbiased_test: false
   minimum_connected_groups_for_student_development: 32
 
 teacher:

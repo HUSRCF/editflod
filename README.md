@@ -228,10 +228,16 @@ candidate pool without using mutant RMSD as a ranking target:
 
 ```bash
 python scripts/select_microminer_candidates.py \
-  --input /path/to/filtered_single_mutations_pdb_monomer.tsv \
+  --tsv /path/to/filtered_single_mutations_pdb_monomer.tsv \
   --output data/microminer_candidates.csv \
-  --report results/microminer_selection.json --limit 2048
+  --report results/microminer_selection.json --max-candidates 2048
 ```
+
+For mechanism-data discovery only, an explicitly biased RMSD-stratified pool
+can be requested with, for example,
+`--discovery-site-backbone-rmsd-cutoffs 0.15,0.30,0.60`. The report marks such
+an output as `eligible_for_unbiased_test=false`; it must not be used as a
+held-out estimate of general performance.
 
 Then use RCSB entry metadata to reject different UniProt chains, multichain
 protein entries, mismatched hetero contexts, and mismatched experimental
@@ -267,6 +273,23 @@ mutation rows contain additional full-chain differences and are correctly
 rejected. When a metadata report is supplied, shared UniProt accessions are
 embedded and used as provisional family groups; all imported records remain
 `train` until sequence-family clustering freezes a leakage-safe split.
+
+Same-sequence background structures can be discovered with a resumable query
+cache and bounded coordinate downloads:
+
+```bash
+python scripts/discover_rcsb_repeats.py \
+  --manifest data/manifest/microminer_context.jsonl \
+  --query-cache data/cache/rcsb_sequence_queries.json \
+  --download-dir data/cache/rcsb_repeats \
+  --pairs-output results/microminer_repeat_pairs.csv \
+  --report results/microminer_repeat_discovery.json \
+  --download-workers 8
+```
+
+The downloader falls back from legacy PDB to mmCIF, atomically caches complete
+files, and records per-sequence query failures instead of discarding a whole
+batch after a transient or sequence-specific API error.
 
 When available, pass PreMut's cluster file to avoid grouping unrelated
 proteins solely by mutation label:
