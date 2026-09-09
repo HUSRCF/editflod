@@ -870,6 +870,19 @@ Use `--biochemical-edit-features` on the sweep only for the corresponding fixed
 input ablation; it is recorded in the report configuration and is not enabled
 by default.
 
+Create reverse directions for experimental training endpoints while leaving
+dev/test records unchanged:
+
+```bash
+python scripts/augment_reverse_training.py \
+  /tmp/within_family_probe.jsonl /tmp/reverse_probe.jsonl \
+  reports/reverse_augmentation.json
+```
+
+Reverse records swap sequences, coordinates, files, chains, and checksums. They
+remain in the same unordered physical endpoint group and are training
+augmentation, not independent evidence.
+
 Add a same-manifest development evaluation after training:
 
 ```bash

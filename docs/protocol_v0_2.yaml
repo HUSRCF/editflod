@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: biochemical_edit_features_do_not_fix_unseen_edit_propagation
+  status: reverse_augmentation_regularizes_toward_copy_without_learning_response
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -143,6 +143,9 @@ artifacts:
     student_within_family_generalization: reports/protocol_v02_student_within_family_generalization_v1.json
     student_within_family_biochemical_architecture_sweep: reports/protocol_v02_student_within_family_biochemical_architecture_sweep_v1.json
     student_within_family_biochemical_generalization: reports/protocol_v02_student_within_family_biochemical_generalization_v1.json
+    within_family_reverse_augmentation: reports/protocol_v02_within_family_reverse_augmentation_v1.json
+    student_within_family_reverse_transformer_sweep: reports/protocol_v02_student_within_family_reverse_transformer_sweep_v1.json
+    student_within_family_reverse_generalization: reports/protocol_v02_student_within_family_reverse_generalization_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -483,3 +486,35 @@ background_control_gate:
         - transformer_overall_local_and_site_results_worsen_from_default_features
         - graph_local_regression_shrinks_but_site_error_worsens
         - reverse_experimental_endpoints_expand_directed_edit_coverage_without_teacher_labels
+  reverse_endpoint_augmentation:
+    configuration:
+      source_train_records: 36
+      reverse_train_records_added: 36
+      output_train_records: 72
+      dev_records_unchanged: 12
+      directed_edit_types_before: 31
+      directed_edit_types_after: 58
+      physical_endpoint_groups_unchanged: true
+      architecture: local_feature_transformer
+      seeds: [0, 1, 2]
+      optimizer_steps_per_run: 3528
+      endpoint_group_balanced_loss: true
+    dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.2865061793288868, std: 0.0006538804944249801}
+      local_error_minus_copy_angstrom: {mean: 0.0011963685037188847, std: 0.0006538804944249801}
+      mutation_site_backbone_error_angstrom: {mean: 0.2624984051458777, std: 0.005769072193728426}
+      mutation_site_error_minus_copy_angstrom: {mean: -0.003107027053080728, std: 0.005769072193728426}
+      distance_change_error_minus_copy: {mean: 0.00020041649892229194, std: 0.00017570807144816244}
+      distance_change_cosine: {mean: 0.0007238524773124198, std: 0.025272410958880838}
+      remote_scaffold_drift_angstrom: {mean: 0.000865067729203645, std: 0.0004402762538177644}
+    decision:
+      selected_as_default: false
+      copy_parent_local_noninferiority_passed: false
+      meaningful_mutation_response_retained: false
+      next_intervention: redesign_neighborhood_response_objective_or_transfer_context
+      rationale:
+        - reverse_training_reduces_local_regression_and_remote_drift
+        - prior_transformer_site_gain_is_almost_eliminated
+        - distance_change_direction_remains_uninformative
+        - reverse_pairs_regularize_toward_copy_more_than_they_teach_response
+        - training_edit_type_expansion_does_not_cover_the_eight_unseen_dev_edits

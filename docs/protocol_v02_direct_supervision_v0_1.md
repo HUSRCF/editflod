@@ -531,3 +531,25 @@ experimental endpoint pair while leaving dev directions untouched. Reverse
 examples are not independent evidence and will remain in the same endpoint
 group for weighting. They expand probe-train directed edit types from 31 to 58
 without adding teacher labels or crossing endpoint splits.
+
+### Reverse-endpoint augmentation result
+
+All 36 probe-train records received a reverse direction, while the 12 dev
+directions remained unchanged. Endpoint-group balancing kept the number and
+total weighting of physical pairs fixed. The Transformer used 49 epochs over 72
+records, retaining the 3,528-step budget.
+
+Reverse training reduced dev family-macro local regression from 0.0167 to
+0.00120 Angstrom and remote drift from 0.00665 to 0.00087 Angstrom. However, it
+also reduced the prior mutation-site improvement from 0.0495 to 0.00311
+Angstrom. Distance-change cosine was 0.0007 and distance-change error remained
+slightly worse than copy. The model predicted a much smaller change norm and
+behaved primarily as a more stable near-copy baseline.
+
+Although directed training edit types increased from 31 to 58, none of the
+eight previously unseen dev substitutions became exactly covered; they are not
+simply reverse forms of the training edits. Reverse augmentation is therefore
+retained as a preservation control, not selected as the response model. The
+next model intervention must explicitly improve coherent neighborhood response
+or bring transferable sequence/structure context; more shrinkage toward zero is
+not sufficient.

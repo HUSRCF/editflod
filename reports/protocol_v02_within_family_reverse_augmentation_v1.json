@@ -1,0 +1,336 @@
+{
+  "augmented_manifest_fingerprint": "47804384bc69941a36aff0f7e5d2b80f2d58fe1e3145c0a85858c1e909dd8d51",
+  "augmented_pairs": [
+    {
+      "directed_edit": "E>D",
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E__reverse_train",
+      "source_pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E"
+    },
+    {
+      "directed_edit": "A>D",
+      "family_id": "v02_family_a548251c30c2",
+      "pair_id": "premut22n_2RN2_1KVA_A_D_133_A__reverse_train",
+      "source_pair_id": "premut22n_2RN2_1KVA_A_D_133_A"
+    },
+    {
+      "directed_edit": "I>S",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I__reverse_train",
+      "source_pair_id": "microminer_1DYE_A_1DYC_A_S131I"
+    },
+    {
+      "directed_edit": "H>D",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "microminer_1L04_A_1L09_A_D157H__reverse_train",
+      "source_pair_id": "microminer_1L04_A_1L09_A_D157H"
+    },
+    {
+      "directed_edit": "G>A",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "microminer_1L25_A_1L28_A_A86G__reverse_train",
+      "source_pair_id": "microminer_1L25_A_1L28_A_A86G"
+    },
+    {
+      "directed_edit": "I>M",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I__reverse_train",
+      "source_pair_id": "premut22p_1LYD_256L_A_M_5_I"
+    },
+    {
+      "directed_edit": "A>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L02_A_T_156_A__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L02_A_T_156_A"
+    },
+    {
+      "directed_edit": "D>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L05_A_T_156_D__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L05_A_T_156_D"
+    },
+    {
+      "directed_edit": "F>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L07_A_T_156_F__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L07_A_T_156_F"
+    },
+    {
+      "directed_edit": "G>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L08_A_T_156_G__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L08_A_T_156_G"
+    },
+    {
+      "directed_edit": "H>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L09_A_T_156_H__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L09_A_T_156_H"
+    },
+    {
+      "directed_edit": "R>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L13_A_T_156_R__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L13_A_T_156_R"
+    },
+    {
+      "directed_edit": "V>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L15_A_T_156_V__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L15_A_T_156_V"
+    },
+    {
+      "directed_edit": "D>G",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L16_A_G_155_D__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L16_A_G_155_D"
+    },
+    {
+      "directed_edit": "V>I",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L17_A_I_2_V__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L17_A_I_2_V"
+    },
+    {
+      "directed_edit": "Y>I",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L18_A_I_2_Y__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L18_A_I_2_Y"
+    },
+    {
+      "directed_edit": "D>N",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L20_A_N_143_D__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L20_A_N_143_D"
+    },
+    {
+      "directed_edit": "G>K",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L22_A_K_123_G__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L22_A_K_123_G"
+    },
+    {
+      "directed_edit": "A>G",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L23_A_G_76_A__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L23_A_G_76_A"
+    },
+    {
+      "directed_edit": "P>A",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L24_A_A_81_P__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L24_A_A_81_P"
+    },
+    {
+      "directed_edit": "A>P",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L25_A_P_85_A__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L25_A_P_85_A"
+    },
+    {
+      "directed_edit": "H>P",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L29_A_P_85_H__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L29_A_P_85_H"
+    },
+    {
+      "directed_edit": "L>P",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L30_A_P_85_L__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L30_A_P_85_L"
+    },
+    {
+      "directed_edit": "A>V",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L33_A_V_130_A__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L33_A_V_130_A"
+    },
+    {
+      "directed_edit": "H>R",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L34_A_R_95_H__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L34_A_R_95_H"
+    },
+    {
+      "directed_edit": "E>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L37_A_T_114_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L37_A_T_114_E"
+    },
+    {
+      "directed_edit": "E>Q",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L38_A_Q_122_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L38_A_Q_122_E"
+    },
+    {
+      "directed_edit": "E>K",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L42_A_K_15_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L42_A_K_15_E"
+    },
+    {
+      "directed_edit": "E>K",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L43_A_K_15_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L43_A_K_15_E"
+    },
+    {
+      "directed_edit": "E>R",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L44_A_R_118_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L44_A_R_118_E"
+    },
+    {
+      "directed_edit": "E>K",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L45_A_K_134_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L45_A_K_134_E"
+    },
+    {
+      "directed_edit": "E>K",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L46_A_K_146_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L46_A_K_146_E"
+    },
+    {
+      "directed_edit": "E>R",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L47_A_R_153_E__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L47_A_R_153_E"
+    },
+    {
+      "directed_edit": "S>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23all_2LZM_1L52_A_T_151_S__reverse_train",
+      "source_pair_id": "premut23all_2LZM_1L52_A_T_151_S"
+    },
+    {
+      "directed_edit": "A>T",
+      "family_id": "v02_family_e40682d3a677",
+      "pair_id": "premut23ctx_2LZM_1L02_A_T_156_A__reverse_train",
+      "source_pair_id": "premut23ctx_2LZM_1L02_A_T_156_A"
+    },
+    {
+      "directed_edit": "Y>L",
+      "family_id": "v02_family_ea2e28f36573",
+      "pair_id": "platinum_1U72_1DLS_A_L22Y__reverse_train",
+      "source_pair_id": "platinum_1U72_1DLS_A_L22Y"
+    }
+  ],
+  "dev_or_test_records_augmented": 0,
+  "directed_edit_counts_after": {
+    "A>D": 1,
+    "A>G": 2,
+    "A>P": 2,
+    "A>T": 2,
+    "A>V": 1,
+    "D>A": 1,
+    "D>E": 1,
+    "D>G": 1,
+    "D>H": 1,
+    "D>N": 1,
+    "D>T": 1,
+    "E>D": 1,
+    "E>K": 4,
+    "E>Q": 1,
+    "E>R": 2,
+    "E>T": 1,
+    "F>T": 1,
+    "G>A": 2,
+    "G>D": 1,
+    "G>K": 1,
+    "G>T": 1,
+    "H>D": 1,
+    "H>P": 1,
+    "H>R": 1,
+    "H>T": 1,
+    "I>M": 1,
+    "I>S": 1,
+    "I>V": 1,
+    "I>Y": 1,
+    "K>E": 4,
+    "K>G": 1,
+    "L>P": 1,
+    "L>Y": 1,
+    "M>I": 1,
+    "N>D": 1,
+    "P>A": 2,
+    "P>H": 1,
+    "P>L": 1,
+    "Q>E": 1,
+    "R>E": 2,
+    "R>H": 1,
+    "R>T": 1,
+    "S>I": 1,
+    "S>T": 1,
+    "T>A": 2,
+    "T>D": 1,
+    "T>E": 1,
+    "T>F": 1,
+    "T>G": 1,
+    "T>H": 1,
+    "T>R": 1,
+    "T>S": 1,
+    "T>V": 1,
+    "V>A": 1,
+    "V>I": 1,
+    "V>T": 1,
+    "Y>I": 1,
+    "Y>L": 1
+  },
+  "directed_edit_counts_before": {
+    "A>G": 1,
+    "A>P": 1,
+    "D>A": 1,
+    "D>E": 1,
+    "D>H": 1,
+    "G>A": 1,
+    "G>D": 1,
+    "I>V": 1,
+    "I>Y": 1,
+    "K>E": 4,
+    "K>G": 1,
+    "L>Y": 1,
+    "M>I": 1,
+    "N>D": 1,
+    "P>A": 1,
+    "P>H": 1,
+    "P>L": 1,
+    "Q>E": 1,
+    "R>E": 2,
+    "R>H": 1,
+    "S>I": 1,
+    "T>A": 2,
+    "T>D": 1,
+    "T>E": 1,
+    "T>F": 1,
+    "T>G": 1,
+    "T>H": 1,
+    "T>R": 1,
+    "T>S": 1,
+    "T>V": 1,
+    "V>A": 1
+  },
+  "format": "ospedit.reverse_training_augmentation.v1",
+  "limitations": [
+    "reverse_directions_are_training_augmentation_not_independent_evidence",
+    "reverse_directions_do_not_add_new_physical_endpoint_pairs",
+    "endpoint_group_balancing_remains_required"
+  ],
+  "selection_used_observed_response": false,
+  "source_manifest_fingerprint": "e9f5aca3c94ebe80b6ee813f9a780bc96f5a8f8021849af419f866f093da7968",
+  "summary": {
+    "directed_edit_types_after": 58,
+    "directed_edit_types_before": 31,
+    "existing_reverse_records_skipped": 0,
+    "output_dev_records": 12,
+    "output_train_records": 72,
+    "physical_endpoint_groups_after": 47,
+    "physical_endpoint_groups_before": 47,
+    "reverse_train_records_added": 36,
+    "source_records": 48,
+    "source_train_records": 36
+  },
+  "teacher_labels_added": 0
+}
