@@ -37,3 +37,22 @@ def test_parent_context_cache_can_bound_memory_with_lru_eviction():
     assert len(cache) == 1
     cache.get(first)
     assert cache.misses == 3
+
+
+def test_geometry_cache_reuses_parent_context_but_recomputes_edit_channels():
+    residue = np.asarray(
+        [[-1.0, 0.5, 0.0], [0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [1.5, 0.0, 0.0]]
+    )
+    coords = np.repeat(residue[None], 3, axis=0)
+    coords[:, :, 1] += np.arange(3)[:, None] * 4.0
+    first = StructurePair("first", "AAA", "YAA", coords, coords.copy(), (0,))
+    second = StructurePair("second", "AAA", "AAY", coords.copy(), coords.copy(), (2,))
+    cache = ParentContextCache(include_geometry=True)
+
+    first_features = cache.get(first)
+    second_features = cache.get(second)
+
+    assert cache.misses == 1 and cache.hits == 1
+    assert first_features[0, -1] == 1.0 and first_features[2, -1] == 0.0
+    assert second_features[0, -1] == 0.0 and second_features[2, -1] == 1.0
+    assert not np.array_equal(first_features[:, -2:], second_features[:, -2:])

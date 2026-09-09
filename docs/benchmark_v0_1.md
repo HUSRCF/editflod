@@ -1,5 +1,9 @@
 # Frozen mechanism benchmark v0.1
 
+> Historical metric note: coordinate RMSD fields produced before
+> `ospedit.structure_metrics.v2` used per-coordinate RMSE and are smaller than
+> standard atom RMSD by `sqrt(3)`. New experiments must record the metric schema.
+
 The first unified table is assembled from method reports only after checking
 that every method in a split has the same split-level manifest fingerprint and
 ordered pair IDs. The machine-readable artifacts are:

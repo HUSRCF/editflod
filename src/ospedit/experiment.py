@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 
 from .data import PairRecord, StructurePair, manifest_fingerprint
-from .metrics import evaluate_pair
+from .metrics import METRIC_SCHEMA_VERSION, evaluate_pair
 from .models import ConditionalDifferenceEditor, CopyParentEditor, Editor, EndpointModel, FieldModel, IndependentNoiseLocalFrameDifferenceEditor, LocalFrameDifferenceEditor, MultiNoiseLocalFrameDifferenceEditor, MutationNeighborhoodDifferenceEditor, RepeatedSingleNoiseLocalFrameDifferenceEditor, StudentEditor, TargetUpdateEditor
 from .runtime import RuntimeStats
 from .data import json_safe
@@ -111,6 +111,7 @@ def parent_workload_payload(
 ) -> dict[str, object]:
     """Convert parent workload reports into strict-JSON-safe dictionaries."""
     return json_safe({
+        "metric_schema": METRIC_SCHEMA_VERSION,
         "parents": {
             parent_id: {
                 str(count): {
@@ -187,6 +188,7 @@ def write_parent_workload_csv(
 def suite_payload(suite: SuiteEvaluation) -> dict[str, object]:
     """Convert a suite report into strict-JSON-safe nested dictionaries."""
     return json_safe({
+        "metric_schema": METRIC_SCHEMA_VERSION,
         "split": suite.split,
         "manifest_fingerprint": suite.manifest_fingerprint,
         "run_metadata": suite.run_metadata,

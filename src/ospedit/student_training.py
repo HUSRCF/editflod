@@ -114,12 +114,13 @@ def train_student(
             parent = torch.as_tensor(batch["parent_features"], dtype=torch.float32, device=device)
             edit = torch.as_tensor(batch["edit_features"], dtype=torch.float32, device=device)
             target = torch.as_tensor(batch["target_delta"], dtype=torch.float32, device=device)
-            mask = torch.as_tensor(batch["residue_mask"], dtype=torch.float32, device=device)
-            neighborhood_values = batch.get("neighborhood_mask", np.zeros(mask.shape, dtype=np.float32))
+            input_mask = torch.as_tensor(batch["input_mask"], dtype=torch.float32, device=device)
+            loss_mask = torch.as_tensor(batch["loss_mask"], dtype=torch.float32, device=device)
+            neighborhood_values = batch.get("neighborhood_mask", np.zeros(loss_mask.shape, dtype=np.float32))
             neighborhood = torch.as_tensor(neighborhood_values, dtype=torch.float32, device=device)
             residue_weights = (1.0 + mutation_loss_weight * edit[..., -1]) * (1.0 + neighborhood_loss_weight * neighborhood)
-            prediction = model(parent, edit, residue_mask=mask)
-            loss = masked_delta_loss(prediction, target, mask, kind=delta_loss_kind, beta=delta_loss_beta, residue_weights=residue_weights)
+            prediction = model(parent, edit, residue_mask=input_mask)
+            loss = masked_delta_loss(prediction, target, loss_mask, kind=delta_loss_kind, beta=delta_loss_beta, residue_weights=residue_weights)
             if distill_weight and "teacher_delta" in batch:
                 teacher = torch.as_tensor(batch["teacher_delta"], dtype=torch.float32, device=device)
                 teacher_mask = torch.as_tensor(batch["teacher_mask"], dtype=torch.float32, device=device)
@@ -127,7 +128,7 @@ def train_student(
                     prediction, teacher, teacher_mask, kind=delta_loss_kind, beta=delta_loss_beta
                 )
             if delta_norm_weight:
-                loss = loss + delta_norm_weight * masked_prediction_norm_loss(prediction, mask)
+                loss = loss + delta_norm_weight * masked_prediction_norm_loss(prediction, input_mask)
             window_start = (count // grad_accumulation_steps) * grad_accumulation_steps
             window_size = min(grad_accumulation_steps, len(materialized_batches) - window_start)
             (loss / window_size).backward()

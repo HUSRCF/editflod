@@ -37,7 +37,7 @@ def _rmsd(reference: np.ndarray, target: np.ndarray, residue_mask: np.ndarray | 
     if residue_mask is not None:
         valid &= residue_mask[:, None]
     difference = reference[valid] - target[valid]
-    return float(np.sqrt(np.mean(difference * difference))) if len(difference) else float("nan")
+    return float(np.sqrt(np.mean(np.sum(difference * difference, axis=-1)))) if len(difference) else float("nan")
 
 
 def _distance_change_rms(reference: np.ndarray, target: np.ndarray, ca_index: int) -> float:
@@ -298,7 +298,8 @@ def audit_repeat_pairs(
             "distance_signal_to_background",
         )
     return {
-        "format": "ospedit.repeat_structure_audit.v2",
+        "format": "ospedit.repeat_structure_audit.v3",
+        "coordinate_rmsd_definition": "sqrt(mean(sum((atom_xyz_error)**2, axis=-1)))",
         "csv": str(source.resolve()),
         "neighborhood_radius": neighborhood_radius,
         "translation_scale": translation_scale,

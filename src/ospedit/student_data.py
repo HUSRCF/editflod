@@ -9,7 +9,7 @@ from .geometry import local_frame_difference, residue_frames_masked
 from .student import encode_edit_features
 
 
-def parent_local_features(pair: StructurePair, *, include_geometry: bool = False) -> np.ndarray:
+def parent_context_features(pair: StructurePair, *, include_geometry: bool = False) -> np.ndarray:
     """Encode parent backbone atoms in each residue's local frame.
 
     The feature layout is flattened local xyz for every atom followed by one
@@ -42,13 +42,31 @@ def parent_local_features(pair: StructurePair, *, include_geometry: bool = False
                     relative = (ca[neighbor_index] - origin) @ rotation
                     features[residue_index, cursor:cursor + 3] = relative.astype(np.float32)
                 cursor += 3
-            mutation_distances = [
-                float(np.linalg.norm(ca[residue_index] - ca[index]))
-                for index in pair.mutation_indices
-                if 0 <= index < pair.length and finite_ca[index]
-            ]
-            features[residue_index, cursor] = min(mutation_distances, default=0.0)
-            features[residue_index, cursor + 1] = float(residue_index in pair.mutation_indices)
+    return features
+
+
+def edit_geometry_features(pair: StructurePair) -> np.ndarray:
+    """Return candidate-specific distance and mutation-marker channels."""
+    features = np.zeros((pair.length, 2), dtype=np.float32)
+    ca = pair.parent_coords[:, pair.ca_atom_index]
+    finite_ca = np.isfinite(ca).all(axis=-1)
+    mutation_indices = [
+        index for index in pair.mutation_indices
+        if 0 <= index < pair.length and finite_ca[index]
+    ]
+    if not mutation_indices:
+        return features
+    distances = np.linalg.norm(ca[:, None, :] - ca[mutation_indices][None, :, :], axis=-1)
+    features[finite_ca, 0] = np.min(distances[finite_ca], axis=1).astype(np.float32)
+    features[mutation_indices, 1] = 1.0
+    return features
+
+
+def parent_local_features(pair: StructurePair, *, include_geometry: bool = False) -> np.ndarray:
+    """Combine cacheable parent context with candidate-specific edit geometry."""
+    features = parent_context_features(pair, include_geometry=include_geometry)
+    if include_geometry:
+        features[:, -2:] = edit_geometry_features(pair)
     return features
 
 
@@ -149,13 +167,15 @@ class PairDataset:
     def __getitem__(self, index: int) -> dict[str, Any]:
         record = self.records[index]
         target, valid = target_local_delta(record.pair, translation_scale=self.translation_scale, rotation_scale=self.rotation_scale)
+        input_valid = parent_residue_mask(record.pair)
         edit = encode_edit_features([record.pair.parent_sequence], [record.pair.mutant_sequence])[0].numpy()
         item = {
             "pair_id": record.pair.pair_id,
             "parent_features": parent_local_features(record.pair, include_geometry=self.include_geometry),
             "edit_features": edit,
             "target_delta": target,
-            "residue_mask": valid.astype(np.float32),
+            "input_mask": input_valid.astype(np.float32),
+            "loss_mask": valid.astype(np.float32),
             "neighborhood_mask": mutation_neighborhood_mask(record.pair, self.neighborhood_radius),
         }
         if self.teacher_deltas is not None:
@@ -200,7 +220,8 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
     parent = np.zeros((len(batch), max_length, parent_dim), dtype=np.float32)
     edit = np.zeros((len(batch), max_length, edit_dim), dtype=np.float32)
     target = np.zeros((len(batch), max_length, 6), dtype=np.float32)
-    residue_mask = np.zeros((len(batch), max_length), dtype=np.float32)
+    input_mask = np.zeros((len(batch), max_length), dtype=np.float32)
+    loss_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     neighborhood_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     has_teacher = ["teacher_delta" in item for item in batch]
     if any(has_teacher) and not all(has_teacher):
@@ -216,7 +237,8 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         parent[index, :length] = item["parent_features"]
         edit[index, :length] = item["edit_features"]
         target[index, :length] = item["target_delta"]
-        residue_mask[index, :length] = item["residue_mask"]
+        input_mask[index, :length] = item["input_mask"]
+        loss_mask[index, :length] = item["loss_mask"]
         neighborhood_mask[index, :length] = item["neighborhood_mask"]
         if teacher is not None and teacher_mask is not None:
             teacher[index, :length] = item["teacher_delta"]
@@ -227,7 +249,8 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         "parent_features": parent,
         "edit_features": edit,
         "target_delta": target,
-        "residue_mask": residue_mask,
+        "input_mask": input_mask,
+        "loss_mask": loss_mask,
         "neighborhood_mask": neighborhood_mask,
     }
     if teacher is not None and teacher_mask is not None:

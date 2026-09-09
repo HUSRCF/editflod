@@ -5,6 +5,9 @@ import numpy as np
 from .data import StructurePair
 
 
+METRIC_SCHEMA_VERSION = "ospedit.structure_metrics.v2"
+
+
 def _flat_valid(coords_a: np.ndarray, coords_b: np.ndarray, residue_mask: np.ndarray | None = None) -> tuple[np.ndarray, np.ndarray]:
     valid = np.isfinite(coords_a).all(axis=-1) & np.isfinite(coords_b).all(axis=-1)
     if residue_mask is not None:
@@ -31,13 +34,13 @@ def kabsch_align(reference: np.ndarray, mobile: np.ndarray) -> np.ndarray:
 def _rmsd(a: np.ndarray, b: np.ndarray, mask: np.ndarray | None = None) -> float:
     aa = kabsch_align(a, b)
     x, y = _flat_valid(a, aa, mask)
-    return float(np.sqrt(np.mean((x - y) ** 2))) if len(x) else float("nan")
+    return float(np.sqrt(np.mean(np.sum((x - y) ** 2, axis=-1)))) if len(x) else float("nan")
 
 
 def _direct_rmsd(a: np.ndarray, b: np.ndarray, mask: np.ndarray | None = None) -> float:
     """RMSD in the supplied coordinate frame, without a new rigid fit."""
     x, y = _flat_valid(a, b, mask)
-    return float(np.sqrt(np.mean((x - y) ** 2))) if len(x) else float("nan")
+    return float(np.sqrt(np.mean(np.sum((x - y) ** 2, axis=-1)))) if len(x) else float("nan")
 
 
 def _distance_matrix(coords: np.ndarray, ca_atom_index: int) -> np.ndarray:

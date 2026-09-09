@@ -40,7 +40,7 @@ def test_repeat_structure_audit_reports_zero_for_identical_structures(tmp_path):
 
     report = audit_repeat_pairs(pairs)
 
-    assert report["format"] == "ospedit.repeat_structure_audit.v2"
+    assert report["format"] == "ospedit.repeat_structure_audit.v3"
     assert report["records"][0]["mapping"] == "residue_id"
     assert report["records"][0]["backbone_rmsd_angstrom"] == pytest.approx(0.0, abs=1e-7)
     assert report["records"][0]["max_normalized_delta_norm"] == pytest.approx(0.0, abs=1e-7)

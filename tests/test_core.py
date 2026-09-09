@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from ospedit.data import StructurePair
-from ospedit.metrics import backbone_angle_violations, backbone_clash_violations, backbone_geometry_violations, evaluate_pair, region_masks
+from ospedit.metrics import _direct_rmsd, backbone_angle_violations, backbone_clash_violations, backbone_geometry_violations, evaluate_pair, region_masks
 from ospedit.models import ConditionalDifferenceEditor, CopyParentEditor, TargetUpdateEditor
 
 
@@ -57,6 +57,12 @@ def test_distance_change_reports_signed_response_alignment():
     assert np.isclose(exact["local_distance_change_cosine"], 1.0)
     assert np.isclose(exact["mutation_site_backbone_error"], 0.0)
     assert np.isclose(exact["mutation_site_global_rmsd"], 0.0)
+
+
+def test_direct_rmsd_uses_euclidean_error_per_atom():
+    reference = np.zeros((2, 1, 3))
+    translated = reference + np.array([1.0, 0.0, 0.0])
+    assert _direct_rmsd(reference, translated) == pytest.approx(1.0)
 
 
 def test_conditional_difference_is_exact_identity_without_mutation():

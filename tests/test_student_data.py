@@ -86,7 +86,26 @@ def test_collate_pads_variable_length_records():
     batch = collate_pair_records([first, second])
     assert batch["parent_features"].shape == (2, 3, 16)
     assert batch["target_delta"].shape == (2, 3, 6)
-    assert batch["residue_mask"].tolist() == [[1.0, 1.0, 0.0], [1.0, 1.0, 1.0]]
+    assert batch["input_mask"].tolist() == [[1.0, 1.0, 0.0], [1.0, 1.0, 1.0]]
+    assert batch["loss_mask"].tolist() == [[1.0, 1.0, 0.0], [1.0, 1.0, 1.0]]
+
+
+def test_pair_dataset_separates_parent_input_mask_from_target_loss_mask():
+    record = make_record("mask-split")
+    mutant = record.pair.mutant_coords.copy()
+    mutant[0] = np.nan
+    pair = StructurePair(
+        record.pair.pair_id,
+        record.pair.parent_sequence,
+        record.pair.mutant_sequence,
+        record.pair.parent_coords,
+        mutant,
+        record.pair.mutation_indices,
+        record.pair.atom_names,
+    )
+    item = PairDataset([PairRecord(pair, "parent", "family", "dev")])[0]
+    assert item["input_mask"].tolist() == [1.0, 1.0]
+    assert item["loss_mask"].tolist() == [0.0, 1.0]
 
 
 def test_pair_dataset_carries_scaled_teacher_delta_and_mask():

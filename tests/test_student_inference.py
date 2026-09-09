@@ -4,7 +4,7 @@ import pytest
 torch = pytest.importorskip("torch")
 
 from ospedit.data import StructurePair
-from ospedit.student_inference import apply_student_delta, predict_student, predict_student_batch
+from ospedit.student_inference import ParentContextCache, apply_student_delta, predict_student, predict_student_batch
 
 
 def make_pair():
@@ -37,6 +37,13 @@ class MaskSpyStudent(torch.nn.Module):
     def forward(self, parent, edit, residue_mask=None):
         self.mask = residue_mask.detach().cpu().tolist()
         return torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+
+
+class GeometryMarkerStudent(torch.nn.Module):
+    def forward(self, parent, edit, residue_mask=None):
+        output = torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+        output[..., 0] = parent[..., -1]
+        return output
 
 
 def test_predict_student_zero_delta_preserves_parent():
@@ -100,3 +107,42 @@ def test_predict_student_batch_handles_mixed_lengths():
     )
     results = predict_student_batch(ShiftStudent(), [short, long])
     assert [result.shape[0] for result in results] == [2, 3]
+
+
+def test_predict_student_batch_mask_does_not_depend_on_mutant_coordinates():
+    pair = make_pair()
+    missing_mutant = pair.mutant_coords.copy()
+    missing_mutant[0] = np.nan
+    pair = StructurePair(
+        "missing-target",
+        pair.parent_sequence,
+        pair.mutant_sequence,
+        pair.parent_coords,
+        missing_mutant,
+        pair.mutation_indices,
+        pair.atom_names,
+    )
+    model = MaskSpyStudent()
+    predict_student_batch(model, [pair])
+    assert model.mask == [[True, True]]
+
+
+def test_geometry_cached_predictions_match_uncached_and_are_order_independent():
+    base = make_pair()
+    coords = np.concatenate((base.parent_coords, base.parent_coords[:1] + np.array([0.0, 7.6, 0.0])), axis=0)
+    first = StructurePair("first-position", "AAA", "YAA", coords, coords.copy(), (0,))
+    second = StructurePair("second-position", "AAA", "AAY", coords.copy(), coords.copy(), (2,))
+    model = GeometryMarkerStudent()
+    expected = predict_student_batch(model, [first, second], include_geometry=True)
+
+    forward = predict_student_batch(
+        model, [first, second], parent_cache=ParentContextCache(include_geometry=True)
+    )
+    reverse = predict_student_batch(
+        model, [second, first], parent_cache=ParentContextCache(include_geometry=True)
+    )
+
+    assert np.allclose(forward[0], expected[0])
+    assert np.allclose(forward[1], expected[1])
+    assert np.allclose(reverse[0], expected[1])
+    assert np.allclose(reverse[1], expected[0])

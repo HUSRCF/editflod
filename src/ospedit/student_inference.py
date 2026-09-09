@@ -11,8 +11,7 @@ import numpy as np
 from .data import StructurePair
 from .geometry import apply_local_frame_update
 from .student import encode_edit_features
-from .student_data import parent_local_features, parent_residue_mask
-from .student_data import PairDataset, collate_pair_records
+from .student_data import edit_geometry_features, parent_context_features, parent_local_features, parent_residue_mask
 
 
 @dataclass
@@ -40,7 +39,7 @@ class ParentContextCache:
         key = self._key(pair)
         if key not in self._values:
             self.misses += 1
-            features = parent_local_features(pair, include_geometry=self.include_geometry)
+            features = parent_context_features(pair, include_geometry=self.include_geometry)
             features.setflags(write=False)
             self._values[key] = features
         else:
@@ -50,7 +49,13 @@ class ParentContextCache:
             self._values.move_to_end(key)
             while len(self._values) > self.max_entries:
                 self._values.popitem(last=False)
-        return self._values[key]
+        cached = self._values[key]
+        if not self.include_geometry:
+            return cached
+        features = np.array(cached, copy=True)
+        features[:, -2:] = edit_geometry_features(pair)
+        features.setflags(write=False)
+        return features
 
     def clear(self) -> None:
         self._values.clear()
@@ -148,21 +153,24 @@ def predict_student_batch(
         import torch
     except ImportError as error:  # pragma: no cover
         raise ImportError("student inference requires torch; install ospedit[torch]") from error
-    if parent_cache is None:
-        dataset = PairDataset([_record_for_pair(pair) for pair in pairs], include_geometry=include_geometry)
-        batch = collate_pair_records([dataset[index] for index in range(len(dataset))])
-    else:
-        # Keep edit/target handling identical while substituting cached parent
-        # features for each candidate in the padded batch.
-        dataset = PairDataset([_record_for_pair(pair) for pair in pairs], include_geometry=parent_cache.include_geometry)
-        items = [dataset[index] for index in range(len(dataset))]
-        for item, pair in zip(items, pairs, strict=True):
-            item["parent_features"] = parent_cache.get(pair)
-            item["residue_mask"] = parent_residue_mask(pair).astype(np.float32)
-        batch = collate_pair_records(items)
-    parent = torch.as_tensor(batch["parent_features"], dtype=torch.float32, device=device)
-    edit = torch.as_tensor(batch["edit_features"], dtype=torch.float32, device=device)
-    residue_mask = torch.as_tensor(batch["residue_mask"], dtype=torch.bool, device=device)
+    use_geometry = parent_cache.include_geometry if parent_cache is not None else include_geometry
+    feature_rows = [
+        parent_cache.get(pair) if parent_cache is not None else parent_local_features(pair, include_geometry=use_geometry)
+        for pair in pairs
+    ]
+    max_length = max(pair.length for pair in pairs)
+    parent_values = np.zeros((len(pairs), max_length, feature_rows[0].shape[-1]), dtype=np.float32)
+    edit_values = np.zeros((len(pairs), max_length, 41), dtype=np.float32)
+    mask_values = np.zeros((len(pairs), max_length), dtype=bool)
+    for index, (pair, features) in enumerate(zip(pairs, feature_rows, strict=True)):
+        parent_values[index, :pair.length] = features
+        edit_values[index, :pair.length] = encode_edit_features(
+            [pair.parent_sequence], [pair.mutant_sequence]
+        )[0].numpy()
+        mask_values[index, :pair.length] = parent_residue_mask(pair)
+    parent = torch.as_tensor(parent_values, dtype=torch.float32, device=device)
+    edit = torch.as_tensor(edit_values, dtype=torch.float32, device=device)
+    residue_mask = torch.as_tensor(mask_values, dtype=torch.bool, device=device)
     was_training = bool(model.training)
     model.eval()
     try:
@@ -180,10 +188,3 @@ def predict_student_batch(
         apply_student_delta(pair, prediction[index, : pair.length].detach().cpu().numpy(), translation_scale, rotation_scale)
         for index, pair in enumerate(pairs)
     ]
-
-
-def _record_for_pair(pair: StructurePair):
-    """Create an in-memory PairRecord without inventing source metadata."""
-    from .data import PairRecord
-
-    return PairRecord(pair, parent_id=pair.pair_id, family_id=pair.pair_id, split="dev")

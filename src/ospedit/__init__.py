@@ -10,6 +10,7 @@ from .student import ParentEditStudent, encode_edit_features
 from .student_data import PairDataset, collate_pair_records, iter_pair_batches, parent_local_features, parent_residue_mask, target_local_delta
 from .student_training import load_student_checkpoint, masked_delta_loss, masked_prediction_norm_loss, save_student_checkpoint, train_records, train_student, validate_student_checkpoint_config
 from .student_inference import ParentContextCache, apply_student_delta, predict_student, predict_student_batch
+from .oracle import oracle_local_delta, oracle_prediction
 from .adapters import FoldFlow2EndpointAdapter
 from .external_baselines import ESMFoldEditor, PreMutEditor
 from .foldflow_batch import FoldFlow2BatchBuilder, FoldFlow2MarginalConverter, backbone_to_rigids, make_foldflow_reference_rigid_sampler, make_forward_marginal_sampler, openfold_rigid_from_tensor7, rotation_matrix_to_quaternion, sequence_to_aatype
@@ -62,6 +63,8 @@ __all__ = [
     "predict_student",
     "predict_student_batch",
     "ParentContextCache",
+    "oracle_local_delta",
+    "oracle_prediction",
     "EvaluationResult",
     "evaluate_editor",
     "ManifestEvaluation",

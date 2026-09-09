@@ -16,7 +16,8 @@ from .data import (
     verify_record_checksums,
     write_manifest,
 )
-from .experiment import evaluate_editor, evaluate_manifest, evaluate_manifest_batched
+from .experiment import evaluate_editor, evaluate_manifest_batched
+from .metrics import METRIC_SCHEMA_VERSION
 from .models import CopyParentEditor, StudentEditor
 from .student import ParentEditStudent
 from .student_data import parent_local_features
@@ -169,7 +170,12 @@ def main() -> None:
     else:
         editor = CopyParentEditor()
     result = evaluate_editor(pair, editor, args.editor)
-    print(json.dumps(json_safe({"method": result.method, "metrics": result.metrics, "runtime": result.runtime.as_dict()}), indent=2, sort_keys=True, allow_nan=False))
+    print(json.dumps(json_safe({
+        "metric_schema": METRIC_SCHEMA_VERSION,
+        "method": result.method,
+        "metrics": result.metrics,
+        "runtime": result.runtime.as_dict(),
+    }), indent=2, sort_keys=True, allow_nan=False))
 
 
 if __name__ == "__main__":

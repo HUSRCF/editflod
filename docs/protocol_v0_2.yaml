@@ -1,0 +1,94 @@
+# Correctness-first protocol. Protocol v0.1 remains frozen for historical results.
+project:
+  name: reference_preserving_protein_edit
+  protocol_version: '0.2'
+  status: direct_supervision_representation_validation
+  primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
+
+scope:
+  chains: single_target_chain_with_audited_biological_environment
+  length_range: [64, 256]
+  mutation_counts: [1]
+  backbone_atoms: [N, CA, C, O]
+  insertions_deletions: false
+
+data_layers:
+  structure_prediction_pairs:
+    purpose: supervised_training_and_mutant_structure_prediction
+    requirements:
+      - reliable_residue_mapping
+      - parent_mutant_coordinate_alignment
+      - audited_target_chain_environment
+      - parent_family_connected_split
+    same_sequence_repeats_required: false
+    low_response_pairs_retained: true
+  high_confidence_response_subset:
+    purpose: mutation_response_attribution_and_mechanism_claims
+    requirements:
+      - matched_target_chain_contacts_and_ligands
+      - at_least_two_same_sequence_repeat_structures
+      - frozen_signal_to_background_thresholds
+    repeat_background_aggregation: max
+    min_neighborhood_signal_to_background: 2.0
+    min_distance_signal_to_background: 2.0
+
+correctness:
+  metric_schema: ospedit.structure_metrics.v2
+  coordinate_rmsd: sqrt_mean_atom_squared_euclidean_error
+  inference_input_mask: parent_valid
+  supervision_loss_mask: parent_valid_and_mutant_valid
+  cache_policy:
+    parent_structure_context: cacheable
+    mutation_distance_and_marker: recomputed_per_candidate
+  regression_requirements:
+    - cached_equals_uncached_for_each_candidate
+    - candidate_order_does_not_change_predictions
+    - inference_mask_independent_of_mutant_coordinate_completeness
+    - one_angstrom_atom_translation_has_one_angstrom_direct_rmsd
+
+representation_gate:
+  unbounded_oracle_required: true
+  bounded_oracle_bounds: [0.05, 0.1, 0.25]
+  interpretation:
+    oracle_failure: revise_output_representation_or_alignment
+    bounded_oracle_failure: revise_output_bound
+    oracle_pass_student_train_failure: revise_inputs_loss_or_optimization
+
+student:
+  supervision: experimental_pairs_first
+  teacher_distillation: paused_pending_teacher_admission
+  input_ablation:
+    - local_residue_features
+    - relative_spatial_graph
+  spatial_graph_edges:
+    - sequence_neighbors
+    - parent_spatial_neighbors
+  spatial_edge_features:
+    - ca_distance
+    - relative_translation_in_source_frame
+    - relative_rotation
+    - relative_sequence_position
+    - mutation_endpoint_markers
+  overfit_gate:
+    records: [8, 16]
+    report_optimizer_steps: true
+    save_training_curve: true
+    test_family_generalization_only_after_train_fit: true
+
+evaluation:
+  primary_baselines: [copy_parent, local_feature_student, relative_spatial_graph_student, premut]
+  primary_metrics:
+    - local_backbone_error
+    - mutation_site_backbone_error
+    - distance_change_error
+    - distance_change_cosine
+    - remote_target_error
+    - remote_scaffold_frame_drift
+  mutation_site_backbone_error_note: globally_fitted_then_subset_scored
+  mutation_site_global_rmsd_note: compatibility_alias_not_independent_metric
+  runtime_comparison_requires_matched_hardware: true
+
+artifacts:
+  tracked_directory: reports
+  track: [manifests, split_assignments, per_sample_metrics, experiment_configs, checkpoint_metadata, training_curves]
+  exclude: [model_weights, downloaded_structures, large_feature_caches]
