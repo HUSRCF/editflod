@@ -1,0 +1,85 @@
+{
+  "configuration": {
+    "dev_fraction": 0.15,
+    "experimental_only": true,
+    "max_length": 256,
+    "min_length": 64,
+    "min_sequence_coverage": 0.8,
+    "min_sequence_identity": 0.5,
+    "seed": 0,
+    "single_substitution": true,
+    "train_fraction": 0.7
+  },
+  "connected_groups": 27,
+  "filtered_records": 24,
+  "format": "ospedit.protocol_v02_manifest.v1",
+  "input_records": 125,
+  "inputs": [
+    {
+      "fingerprint": "d512c193463a091ad1074a8c38c089d0e9acb56cb3fe19f76fb2beb30746657e",
+      "path": "/tmp/ospedit-real-sample/pairs2022_aligned_context_clean.jsonl",
+      "records": 3
+    },
+    {
+      "fingerprint": "d2265ed3c85e4854e389e57aceb9ebb618265c610a71e337a6870aed07e65792",
+      "path": "/tmp/ospedit-real-sample/premut2023_2LZM_context_clean.jsonl",
+      "records": 37
+    },
+    {
+      "fingerprint": "161ae0014ea1d0978133c128da19c09434293886be09b441210f019b0a9b6e08",
+      "path": "/tmp/ospedit-real-sample/premut2023_context_round0_context_clean.jsonl",
+      "records": 1
+    },
+    {
+      "fingerprint": "e4650766a6827cb679408da0fb9d9cfdb4ec606691180a75ad3b3e17bf8561de",
+      "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1_context_clean.jsonl",
+      "records": 15
+    },
+    {
+      "fingerprint": "bce7df32980a31363172cd4e864b092ddd2f9ab969ee87fe87ecbd2f377d4e15",
+      "path": "/tmp/ospedit-real-sample/repeat_expand_next20_context_clean.jsonl",
+      "records": 4
+    },
+    {
+      "fingerprint": "09acefab31a9856966adeb51d09449b2a525da22910f3694ec6bd41fc69e5935",
+      "path": "/tmp/ospedit-real-sample/repeat_expand_next40_context_clean.jsonl",
+      "records": 4
+    },
+    {
+      "fingerprint": "3695613d3be62eacdacb32e0218edb625ef19c9ecad7e06579f5081c28c1a4e0",
+      "path": "/tmp/ospedit-real-sample/repeat_expand_next40b_context_clean.jsonl",
+      "records": 10
+    },
+    {
+      "fingerprint": "23045fa24f4fbe4c814cfb85d55f74f3aca99def9b94a66ec9b8ce8b486d120b",
+      "path": "/tmp/ospedit-real-sample/repeat_expand_next80_context_clean.jsonl",
+      "records": 4
+    },
+    {
+      "fingerprint": "7fa446f5888f0e390370f647408a18d52d2e952ccb2e3b9613095b1cbce0acb1",
+      "path": "/tmp/ospedit-real-sample/microminer_discovery_context_manifest_4096_v1.jsonl",
+      "records": 32
+    },
+    {
+      "fingerprint": "50886aeb84391e025569d1acbf0c8c4f509929198a195474f52c1f0f9884909e",
+      "path": "/tmp/ospedit-real-sample/platinum_monomer_max320_context_manifest.jsonl",
+      "records": 15
+    }
+  ],
+  "largest_group_records": 44,
+  "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "protocol": "0.2",
+  "selected_records": 101,
+  "sequence_similarity_links": 42,
+  "split_groups": {
+    "dev": 5,
+    "test": 4,
+    "train": 18
+  },
+  "split_records": {
+    "dev": 15,
+    "test": 15,
+    "train": 71
+  },
+  "upstream_cluster_links": 78
+}

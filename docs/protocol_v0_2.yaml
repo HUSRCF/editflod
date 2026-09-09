@@ -22,6 +22,20 @@ data_layers:
       - parent_family_connected_split
     same_sequence_repeats_required: false
     low_response_pairs_retained: true
+    sequence_grouping:
+      global_identity_threshold: 0.5
+      shorter_sequence_coverage_threshold: 0.8
+      linkage: connected_component
+      upstream_cluster_dictionaries: [MutData2022, MutData2023]
+    frozen_development_manifest:
+      records: 101
+      connected_groups: 27
+      split_records: {train: 71, dev: 15, test: 15}
+      split_groups: {train: 18, dev: 5, test: 4}
+      largest_group_records: 44
+      fingerprint: 653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731
+      compact_index: reports/protocol_v02_structure_pairs_index.csv
+      provenance_report: reports/protocol_v02_structure_pairs_report.json
   high_confidence_response_subset:
     purpose: mutation_response_attribution_and_mechanism_claims
     requirements:
