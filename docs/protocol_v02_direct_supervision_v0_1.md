@@ -207,3 +207,25 @@ student hyperparameter sweep. Repeat controls must be checked for biological
 assembly, target-chain contacts, ligand state, construct, and crystal form;
 training labels must remain independent of any confidence feature available
 only after observing the mutant endpoint.
+
+### Coordinate-file context prescreen
+
+A follow-up prescreen compares hetero residues within 6 A of the target chain,
+the presence of other protein-chain contacts within 5 A, and experimental
+method. It retains 200/247 controls and leaves at least one control for 27/37
+pairs (16 train, 9 dev, and 2 test). The 47 rejections comprise 39 proximal
+hetero mismatches, 14 protein-contact-presence mismatches, and 2 method
+mismatches; reasons can overlap.
+
+This filter does not rescue response identifiability. Among dev records with at
+least two prescreened controls, median endpoint/max-background ratios are 0.593
+locally, 0.520 at the mutation site, and 0.551 for distance change. No split has
+a record passing the frozen maximum-background local and distance thresholds
+of 2. The result strengthens the decision not to train with target-derived
+confidence weights.
+
+The prescreen explicitly reports `biological_assembly_verified: false`.
+Asymmetric-unit contacts, ligand names, and experiment method are useful
+automatic checks but cannot establish biological-assembly, construct, crystal
+form, or occupancy equivalence. The detailed artifact is
+`reports/protocol_v02_repeat_control_context_v1.json`.

@@ -108,6 +108,7 @@ artifacts:
   exclude: [model_weights, downloaded_structures, large_feature_caches]
   background_control_reports:
     coverage: reports/protocol_v02_background_control_coverage_v1.json
+    coordinate_context: reports/protocol_v02_repeat_control_context_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
 
 background_control_gate:
@@ -121,3 +122,8 @@ background_control_gate:
     - repeat_environment_matching_not_established
     - target_derived_confidence_would_leak_mutant_information
   next_gate: matched_environment_response_controls
+  coordinate_context_prescreen:
+    selected_controls: 200
+    total_controls: 247
+    pairs_with_selected_control: {train: 16, dev: 9, test: 2}
+    biological_assembly_verified: false

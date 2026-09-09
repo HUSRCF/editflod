@@ -15,6 +15,17 @@ def _pair(pair_id: str) -> StructurePair:
     return StructurePair(pair_id, "AAA", "AYA", parent, mutant, (1,))
 
 
+def _record(pair: StructurePair, tmp_path: Path, split: str) -> PairRecord:
+    return PairRecord(
+        pair,
+        "parent-1",
+        "family-1",
+        split,
+        source_file=str(tmp_path / "parent.pdb"),
+        source_chain="A",
+    )
+
+
 def _audit(path: Path, pair_id: str, repeat: str, site: float = 0.2, chain: str = "A") -> Path:
     row = {
         "pair_id": pair_id,
@@ -42,7 +53,7 @@ def _audit(path: Path, pair_id: str, repeat: str, site: float = 0.2, chain: str 
 def test_background_coverage_deduplicates_controls_and_excludes_mutant_labels(tmp_path):
     pair = _pair("pair-1")
     manifest = tmp_path / "manifest.jsonl"
-    write_manifest([PairRecord(pair, "parent-1", "family-1", "train")], manifest)
+    write_manifest([_record(pair, tmp_path, "train")], manifest)
     first = _audit(tmp_path / "first.json", pair.pair_id, "repeat.pdb")
     second = _audit(tmp_path / "second.json", pair.pair_id, "repeat.pdb")
 
@@ -61,7 +72,7 @@ def test_background_coverage_deduplicates_controls_and_excludes_mutant_labels(tm
 def test_background_coverage_rejects_old_metric_schema(tmp_path):
     pair = _pair("pair-1")
     manifest = tmp_path / "manifest.jsonl"
-    write_manifest([PairRecord(pair, "parent-1", "family-1", "dev")], manifest)
+    write_manifest([_record(pair, tmp_path, "dev")], manifest)
     audit = _audit(tmp_path / "audit.json", pair.pair_id, "repeat.pdb")
     payload = json.loads(audit.read_text())
     payload["format"] = "ospedit.repeat_structure_audit.v2"
@@ -74,7 +85,7 @@ def test_background_coverage_rejects_old_metric_schema(tmp_path):
 def test_background_coverage_rejects_inconsistent_duplicate(tmp_path):
     pair = _pair("pair-1")
     manifest = tmp_path / "manifest.jsonl"
-    write_manifest([PairRecord(pair, "parent-1", "family-1", "test")], manifest)
+    write_manifest([_record(pair, tmp_path, "test")], manifest)
     first = _audit(tmp_path / "first.json", pair.pair_id, "repeat.pdb", site=0.2)
     second = _audit(tmp_path / "second.json", pair.pair_id, "repeat.pdb", site=0.25)
 
@@ -85,7 +96,7 @@ def test_background_coverage_rejects_inconsistent_duplicate(tmp_path):
 def test_background_coverage_keeps_distinct_chains_from_same_file(tmp_path):
     pair = _pair("pair-1")
     manifest = tmp_path / "manifest.jsonl"
-    write_manifest([PairRecord(pair, "parent-1", "family-1", "train")], manifest)
+    write_manifest([_record(pair, tmp_path, "train")], manifest)
     first = _audit(tmp_path / "first.json", pair.pair_id, "repeat.pdb", chain="A")
     second = _audit(tmp_path / "second.json", pair.pair_id, "repeat.pdb", chain="B")
 

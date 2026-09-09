@@ -33,6 +33,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5209876585451868,
             "distance_change_rms_angstrom": 0.4037592166745708,
@@ -49,6 +51,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40077582791181665,
             "distance_change_rms_angstrom": 0.26051453048703843,
@@ -65,6 +69,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4249692039606529,
             "distance_change_rms_angstrom": 0.27742650267348934,
@@ -81,6 +87,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40398484092938003,
             "distance_change_rms_angstrom": 0.24538478650064108,
@@ -97,6 +105,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40775035682724275,
             "distance_change_rms_angstrom": 0.2733336062335407,
@@ -113,6 +123,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2257518536352267,
             "distance_change_rms_angstrom": 0.1426660064581327,
@@ -129,6 +141,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4397872839613935,
             "distance_change_rms_angstrom": 0.34918187236155784,
@@ -145,6 +159,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3606341643326579,
             "distance_change_rms_angstrom": 0.23741885726813625,
@@ -161,6 +177,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4335485009655998,
             "distance_change_rms_angstrom": 0.24860181912380763,
@@ -177,6 +195,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3959735210162189,
             "distance_change_rms_angstrom": 0.34267676145392406,
@@ -193,6 +213,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1804789297864294,
             "distance_change_rms_angstrom": 0.10436555343791422,
@@ -209,6 +231,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40161607441995745,
             "distance_change_rms_angstrom": 0.26308468421456344,
@@ -225,6 +249,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.41217226273484614,
             "distance_change_rms_angstrom": 0.277867209284247,
@@ -241,6 +267,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.41042743567898204,
             "distance_change_rms_angstrom": 0.2732969934108064,
@@ -257,6 +285,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.42403240640978984,
             "distance_change_rms_angstrom": 0.2863147054280971,
@@ -273,6 +303,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1659494310914532,
             "distance_change_rms_angstrom": 0.11494848177203754,
@@ -289,6 +321,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.31876446857731283,
             "distance_change_rms_angstrom": 0.16317218241164141,
@@ -305,6 +339,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6017555159871552,
             "distance_change_rms_angstrom": 0.5093879177825796,
@@ -321,6 +357,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5382333756360755,
             "distance_change_rms_angstrom": 0.4474657295040621,
@@ -337,6 +375,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.47983019756218886,
             "distance_change_rms_angstrom": 0.3616017042973378,
@@ -353,6 +393,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4535780210562902,
             "distance_change_rms_angstrom": 0.2688611820781696,
@@ -369,6 +411,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4329686556417383,
             "distance_change_rms_angstrom": 0.2606784304933164,
@@ -385,6 +429,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6137480695096657,
             "distance_change_rms_angstrom": 0.5154869909440712,
@@ -401,6 +447,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.48593646247963446,
             "distance_change_rms_angstrom": 0.27498433244574705,
@@ -417,6 +465,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5806495481143701,
             "distance_change_rms_angstrom": 0.4220881419336968,
@@ -433,6 +483,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4155033149607711,
             "distance_change_rms_angstrom": 0.27382201701388165,
@@ -449,6 +501,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40618247679852004,
             "distance_change_rms_angstrom": 0.26715266660308207,
@@ -465,6 +519,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.42161750583116925,
             "distance_change_rms_angstrom": 0.2829784107083976,
@@ -481,6 +537,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.596567755663147,
             "distance_change_rms_angstrom": 0.42266302093805747,
@@ -500,7 +558,9 @@
       "family_id": "v02_family_987a40463804",
       "mutation_index": 54,
       "pair_id": "microminer_1AKI_A_1HEO_A_I55V",
+      "parent_chain": "A",
       "parent_id": "1AKI_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
       "repeat_structures": 29,
       "split": "dev"
     },
@@ -525,6 +585,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40077582791181643,
             "distance_change_rms_angstrom": 0.2605145304870379,
@@ -541,6 +603,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4255173047803927,
             "distance_change_rms_angstrom": 0.31158996350650475,
@@ -557,6 +621,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.13155441592169215,
             "distance_change_rms_angstrom": 0.08335669336510762,
@@ -573,6 +639,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.16508115798136705,
             "distance_change_rms_angstrom": 0.09010928819037253,
@@ -589,6 +657,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1510078414442895,
             "distance_change_rms_angstrom": 0.08651308857297497,
@@ -605,6 +675,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40851901680928,
             "distance_change_rms_angstrom": 0.26476943955264914,
@@ -621,6 +693,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4704499605296279,
             "distance_change_rms_angstrom": 0.31525319839001453,
@@ -637,6 +711,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.21701769394751613,
             "distance_change_rms_angstrom": 0.13340155064214587,
@@ -653,6 +729,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2631864222460339,
             "distance_change_rms_angstrom": 0.1523859987574019,
@@ -669,6 +747,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.48869887829480585,
             "distance_change_rms_angstrom": 0.3683797135185812,
@@ -685,6 +765,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40463399297871355,
             "distance_change_rms_angstrom": 0.26190139672949486,
@@ -701,6 +783,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1403043094013869,
             "distance_change_rms_angstrom": 0.08209554553913173,
@@ -717,6 +801,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.16234012461386463,
             "distance_change_rms_angstrom": 0.09945840831899563,
@@ -733,6 +819,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.16700005759065772,
             "distance_change_rms_angstrom": 0.108212240303325,
@@ -749,6 +837,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.17250266868480438,
             "distance_change_rms_angstrom": 0.1158230125168937,
@@ -765,6 +855,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4322661852445983,
             "distance_change_rms_angstrom": 0.28810976993281034,
@@ -781,6 +873,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.38531566534597606,
             "distance_change_rms_angstrom": 0.2605773422971531,
@@ -797,6 +891,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.43762172653227804,
             "distance_change_rms_angstrom": 0.42718103131573004,
@@ -813,6 +909,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4417172235766849,
             "distance_change_rms_angstrom": 0.3921134227768834,
@@ -829,6 +927,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24903290432262795,
             "distance_change_rms_angstrom": 0.21934193026310328,
@@ -845,6 +945,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3447847652039837,
             "distance_change_rms_angstrom": 0.1449572046802198,
@@ -861,6 +963,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3139759080708528,
             "distance_change_rms_angstrom": 0.1351935387477769,
@@ -877,6 +981,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5147455882418258,
             "distance_change_rms_angstrom": 0.4634805110492014,
@@ -893,6 +999,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4385782976953087,
             "distance_change_rms_angstrom": 0.25825525245186615,
@@ -909,6 +1017,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.49065833562878114,
             "distance_change_rms_angstrom": 0.41185731137693915,
@@ -925,6 +1035,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.13027307431172122,
             "distance_change_rms_angstrom": 0.09440960393721273,
@@ -941,6 +1053,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.17320944174667402,
             "distance_change_rms_angstrom": 0.11963143827056935,
@@ -957,6 +1071,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1936077836447133,
             "distance_change_rms_angstrom": 0.1347215585629167,
@@ -973,6 +1089,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.7269310521621959,
             "distance_change_rms_angstrom": 0.5142248688010492,
@@ -992,7 +1110,9 @@
       "family_id": "v02_family_987a40463804",
       "mutation_index": 26,
       "pair_id": "microminer_1BVX_A_1KXW_A_N27D",
+      "parent_chain": "A",
       "parent_id": "1BVX_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
       "repeat_structures": 29,
       "split": "dev"
     },
@@ -1017,6 +1137,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.36063416433265794,
             "distance_change_rms_angstrom": 0.23741885726813677,
@@ -1033,6 +1155,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.40090678340040276,
             "distance_change_rms_angstrom": 0.3044069363728581,
@@ -1049,6 +1173,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.21701769394751536,
             "distance_change_rms_angstrom": 0.13340155064214326,
@@ -1065,6 +1191,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24485487727213723,
             "distance_change_rms_angstrom": 0.1516506635794676,
@@ -1081,6 +1209,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.23704929682177858,
             "distance_change_rms_angstrom": 0.10560191669313247,
@@ -1097,6 +1227,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2518143503291344,
             "distance_change_rms_angstrom": 0.15188503942860523,
@@ -1113,6 +1245,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.36819592119650657,
             "distance_change_rms_angstrom": 0.24787803909280998,
@@ -1129,6 +1263,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.489338594227265,
             "distance_change_rms_angstrom": 0.3687023211341373,
@@ -1145,6 +1281,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.32323360021907754,
             "distance_change_rms_angstrom": 0.16552308037350044,
@@ -1161,6 +1299,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4736793529019518,
             "distance_change_rms_angstrom": 0.37602033614974995,
@@ -1177,6 +1317,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3667209592190597,
             "distance_change_rms_angstrom": 0.2396548755401946,
@@ -1193,6 +1335,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24321845527888558,
             "distance_change_rms_angstrom": 0.13695181985489707,
@@ -1209,6 +1353,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.26198659467794577,
             "distance_change_rms_angstrom": 0.16039548756469652,
@@ -1225,6 +1371,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2690837365181026,
             "distance_change_rms_angstrom": 0.16455856865498292,
@@ -1241,6 +1389,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.26893987485559673,
             "distance_change_rms_angstrom": 0.15548031888044508,
@@ -1257,6 +1407,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3911987988254269,
             "distance_change_rms_angstrom": 0.26403455930232234,
@@ -1273,6 +1425,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4167777822062061,
             "distance_change_rms_angstrom": 0.24975467885947467,
@@ -1289,6 +1443,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.47738573948725677,
             "distance_change_rms_angstrom": 0.42033596162626274,
@@ -1305,6 +1461,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3829066408754634,
             "distance_change_rms_angstrom": 0.34870902447206054,
@@ -1321,6 +1479,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3252731530091206,
             "distance_change_rms_angstrom": 0.24804528366544004,
@@ -1337,6 +1497,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3276523323816242,
             "distance_change_rms_angstrom": 0.16801264941865693,
@@ -1353,6 +1515,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.28569844858872556,
             "distance_change_rms_angstrom": 0.1402887627012793,
@@ -1369,6 +1533,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4697925421703831,
             "distance_change_rms_angstrom": 0.42981234543738095,
@@ -1385,6 +1551,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.407046493792303,
             "distance_change_rms_angstrom": 0.2305708672407417,
@@ -1401,6 +1569,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5094406530496146,
             "distance_change_rms_angstrom": 0.39619446591082014,
@@ -1417,6 +1587,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24605483280001778,
             "distance_change_rms_angstrom": 0.15075051579102441,
@@ -1433,6 +1605,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.27536773600853204,
             "distance_change_rms_angstrom": 0.16924207449847006,
@@ -1449,6 +1623,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2936471234342224,
             "distance_change_rms_angstrom": 0.18608835667292264,
@@ -1465,6 +1641,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.7083583804279703,
             "distance_change_rms_angstrom": 0.5167456190940417,
@@ -1484,7 +1662,9 @@
       "family_id": "v02_family_987a40463804",
       "mutation_index": 58,
       "pair_id": "microminer_1HEL_A_3A3Q_A_N59D",
+      "parent_chain": "A",
       "parent_id": "1HEL_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
       "repeat_structures": 29,
       "split": "dev"
     },
@@ -1509,6 +1689,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.39597352101622096,
             "distance_change_rms_angstrom": 0.3426767614539282,
@@ -1525,6 +1707,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6146347920722285,
             "distance_change_rms_angstrom": 0.527031825153975,
@@ -1541,6 +1725,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4886988782948066,
             "distance_change_rms_angstrom": 0.3683797135185829,
@@ -1557,6 +1743,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.49996153834726376,
             "distance_change_rms_angstrom": 0.3758814118639356,
@@ -1573,6 +1761,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4854334246084769,
             "distance_change_rms_angstrom": 0.36261124660357064,
@@ -1589,6 +1779,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4921730773115221,
             "distance_change_rms_angstrom": 0.37092541293647735,
@@ -1605,6 +1797,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.42781963992453304,
             "distance_change_rms_angstrom": 0.3598158229114933,
@@ -1621,6 +1815,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.30313135725075147,
             "distance_change_rms_angstrom": 0.2608185653556727,
@@ -1637,6 +1833,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.47367935290195595,
             "distance_change_rms_angstrom": 0.37602033614975916,
@@ -1653,6 +1851,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5554186444578747,
             "distance_change_rms_angstrom": 0.38888294742595503,
@@ -1669,6 +1869,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.41496587084989134,
             "distance_change_rms_angstrom": 0.3508089050200548,
@@ -1685,6 +1887,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.49698221952770727,
             "distance_change_rms_angstrom": 0.3746856609998984,
@@ -1701,6 +1905,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4907701628749753,
             "distance_change_rms_angstrom": 0.36690432504879716,
@@ -1717,6 +1923,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.49634864404751194,
             "distance_change_rms_angstrom": 0.37686143144656936,
@@ -1733,6 +1941,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5157165393626998,
             "distance_change_rms_angstrom": 0.40224827329204216,
@@ -1749,6 +1959,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.43871927663196403,
             "distance_change_rms_angstrom": 0.37502430729386793,
@@ -1765,6 +1977,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.46525735180290384,
             "distance_change_rms_angstrom": 0.3332021331689968,
@@ -1781,6 +1995,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6895850146287132,
             "distance_change_rms_angstrom": 0.5995425205019544,
@@ -1797,6 +2013,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6490672349084677,
             "distance_change_rms_angstrom": 0.5634115689440156,
@@ -1813,6 +2031,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5677750194993075,
             "distance_change_rms_angstrom": 0.4315476026498682,
@@ -1829,6 +2049,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5631004944792755,
             "distance_change_rms_angstrom": 0.40697913184009066,
@@ -1845,6 +2067,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5362990450351901,
             "distance_change_rms_angstrom": 0.39501864006290616,
@@ -1861,6 +2085,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.7016942724427916,
             "distance_change_rms_angstrom": 0.6062295459496359,
@@ -1877,6 +2103,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5534103040870284,
             "distance_change_rms_angstrom": 0.4242234251332767,
@@ -1893,6 +2121,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6172929485557112,
             "distance_change_rms_angstrom": 0.47996267453916186,
@@ -1909,6 +2139,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5117300356703988,
             "distance_change_rms_angstrom": 0.3881298525121896,
@@ -1925,6 +2157,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.516242312912821,
             "distance_change_rms_angstrom": 0.38611317431153935,
@@ -1941,6 +2175,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5362282376886363,
             "distance_change_rms_angstrom": 0.40809019086911824,
@@ -1957,6 +2193,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6896890164430954,
             "distance_change_rms_angstrom": 0.4847049283605337,
@@ -1976,7 +2214,9 @@
       "family_id": "v02_family_987a40463804",
       "mutation_index": 97,
       "pair_id": "microminer_1HSW_A_1IR9_A_I98M",
+      "parent_chain": "A",
       "parent_id": "1HSW_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
       "repeat_structures": 29,
       "split": "dev"
     },
@@ -2001,6 +2241,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1L04.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.0755860259026754,
             "distance_change_rms_angstrom": 0.061512752650550784,
@@ -2020,7 +2262,9 @@
       "family_id": "v02_family_e40682d3a677",
       "mutation_index": 156,
       "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "parent_chain": "A",
       "parent_id": "1L04_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1L04.pdb",
       "repeat_structures": 1,
       "split": "train"
     },
@@ -2045,6 +2289,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1REX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3167376399607504,
             "distance_change_rms_angstrom": 0.22218630590229999,
@@ -2061,6 +2307,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1REX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.12836760850473602,
             "distance_change_rms_angstrom": 0.09497807818539221,
@@ -2077,6 +2325,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1REX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3383465605029372,
             "distance_change_rms_angstrom": 0.23290823820664108,
@@ -2096,7 +2346,9 @@
       "family_id": "v02_family_987a40463804",
       "mutation_index": 114,
       "pair_id": "microminer_1REX_A_133L_A_R115H",
+      "parent_chain": "A",
       "parent_id": "1REX_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1REX.pdb",
       "repeat_structures": 3,
       "split": "dev"
     },
@@ -2121,6 +2373,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4880241883271846,
             "distance_change_rms_angstrom": 0.4422172024536148,
@@ -2137,6 +2391,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2710081191503557,
             "distance_change_rms_angstrom": 0.24040704784515154,
@@ -2153,6 +2409,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.0018864287923302855,
             "distance_change_rms_angstrom": 0.001643054326665425,
@@ -2169,6 +2427,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2191408059615438,
             "distance_change_rms_angstrom": 0.1639354869769048,
@@ -2185,6 +2445,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2268745178012374,
             "distance_change_rms_angstrom": 0.17821721050992895,
@@ -2201,6 +2463,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 5.486333395082429e-15,
             "distance_change_rms_angstrom": 5.126475238863654e-15,
@@ -2217,6 +2481,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.0012655825825333724,
             "distance_change_rms_angstrom": 0.0011038632035479778,
@@ -2233,6 +2499,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.0018893532282285182,
             "distance_change_rms_angstrom": 0.0016484906560331179,
@@ -2249,6 +2517,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.11995954281382322,
             "distance_change_rms_angstrom": 0.10164485010678355,
@@ -2265,6 +2535,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.11995954281382322,
             "distance_change_rms_angstrom": 0.10164485010678355,
@@ -2281,6 +2553,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.13918236001544698,
             "distance_change_rms_angstrom": 0.09321881192572565,
@@ -2297,6 +2571,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.46623826988995165,
             "distance_change_rms_angstrom": 0.3815570962291532,
@@ -2313,6 +2589,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.31340559769537446,
             "distance_change_rms_angstrom": 0.21330321862325752,
@@ -2329,6 +2607,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24102774432638516,
             "distance_change_rms_angstrom": 0.16220346919131146,
@@ -2345,6 +2625,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.13207396284877312,
             "distance_change_rms_angstrom": 0.10023959073068532,
@@ -2361,6 +2643,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2728875468381297,
             "distance_change_rms_angstrom": 0.2263961983024687,
@@ -2377,6 +2661,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2021307625558446,
             "distance_change_rms_angstrom": 0.16158312405214129,
@@ -2393,6 +2679,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.15950199615613622,
             "distance_change_rms_angstrom": 0.1337612851335715,
@@ -2409,6 +2697,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.14249264714944088,
             "distance_change_rms_angstrom": 0.12867100714063368,
@@ -2425,6 +2715,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2730910740388069,
             "distance_change_rms_angstrom": 0.20003688046629856,
@@ -2441,6 +2733,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2760097342242603,
             "distance_change_rms_angstrom": 0.19085736587136787,
@@ -2457,6 +2751,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2086103144232362,
             "distance_change_rms_angstrom": 0.1448662257419617,
@@ -2473,6 +2769,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3601063857751054,
             "distance_change_rms_angstrom": 0.280335504492179,
@@ -2489,6 +2787,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3262887730932493,
             "distance_change_rms_angstrom": 0.21772373415125235,
@@ -2505,6 +2805,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1606232955198234,
             "distance_change_rms_angstrom": 0.11609528167344746,
@@ -2521,6 +2823,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2134328211568011,
             "distance_change_rms_angstrom": 0.17947315917998694,
@@ -2537,6 +2841,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.11136690112945896,
             "distance_change_rms_angstrom": 0.07511975285577936,
@@ -2553,6 +2859,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3938494804032295,
             "distance_change_rms_angstrom": 0.3018222144554563,
@@ -2572,7 +2880,9 @@
       "family_id": "v02_family_5c932f233753",
       "mutation_index": 45,
       "pair_id": "microminer_1TS0_A_1OT6_A_E46Q",
+      "parent_chain": "A",
       "parent_id": "1TS0_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
       "repeat_structures": 28,
       "split": "dev"
     },
@@ -2597,6 +2907,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2007297949174602,
             "distance_change_rms_angstrom": 0.19702909372381572,
@@ -2613,6 +2925,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.06059931714968544,
             "distance_change_rms_angstrom": 0.043830869041491964,
@@ -2629,6 +2943,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.07405603152153144,
             "distance_change_rms_angstrom": 0.05128330239043259,
@@ -2645,6 +2961,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1799929334841768,
             "distance_change_rms_angstrom": 0.16328240543808656,
@@ -2661,6 +2979,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.17892080247134068,
             "distance_change_rms_angstrom": 0.1628877632386894,
@@ -2677,6 +2997,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1855860062018052,
             "distance_change_rms_angstrom": 0.16439356802611943,
@@ -2693,6 +3015,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.11481849494458707,
             "distance_change_rms_angstrom": 0.08148035839943606,
@@ -2709,6 +3033,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.10064538356454658,
             "distance_change_rms_angstrom": 0.08073221338621009,
@@ -2725,6 +3051,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.10692775703986333,
             "distance_change_rms_angstrom": 0.08696347528044926,
@@ -2741,6 +3069,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.07828923451475836,
             "distance_change_rms_angstrom": 0.05266558257368962,
@@ -2760,7 +3090,9 @@
       "family_id": "v02_family_e40682d3a677",
       "mutation_index": 98,
       "pair_id": "microminer_2B6W_A_1L92_A_A99I",
+      "parent_chain": "A",
       "parent_id": "2B6W_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
       "repeat_structures": 10,
       "split": "train"
     },
@@ -2785,6 +3117,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZIL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.09096684286303588,
             "distance_change_rms_angstrom": 0.06684608920578651,
@@ -2801,6 +3135,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZIL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.13839098585860193,
             "distance_change_rms_angstrom": 0.14844915964897598,
@@ -2820,7 +3156,9 @@
       "family_id": "v02_family_987a40463804",
       "mutation_index": 73,
       "pair_id": "microminer_2ZIL_A_1GB8_A_V74M",
+      "parent_chain": "A",
       "parent_id": "2ZIL_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZIL.pdb",
       "repeat_structures": 2,
       "split": "dev"
     },
@@ -2845,6 +3183,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3712052511483116,
             "distance_change_rms_angstrom": 0.20063596698757064,
@@ -2861,6 +3201,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5922253903471945,
             "distance_change_rms_angstrom": 0.4301399580572045,
@@ -2877,6 +3219,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4340949068212757,
             "distance_change_rms_angstrom": 0.2994375470564494,
@@ -2893,6 +3237,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.43486279389239574,
             "distance_change_rms_angstrom": 0.31015368366031165,
@@ -2909,6 +3255,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.41493393542731355,
             "distance_change_rms_angstrom": 0.2765840793053578,
@@ -2925,6 +3273,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.42060118760734583,
             "distance_change_rms_angstrom": 0.3048003612363211,
@@ -2941,6 +3291,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4029502531401955,
             "distance_change_rms_angstrom": 0.2194944087993691,
@@ -2957,6 +3309,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5913986422212211,
             "distance_change_rms_angstrom": 0.412002323780853,
@@ -2973,6 +3327,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4541480270421522,
             "distance_change_rms_angstrom": 0.2709615310842149,
@@ -2989,6 +3345,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.39788098839292746,
             "distance_change_rms_angstrom": 0.2670132229275043,
@@ -3005,6 +3363,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5285031300401544,
             "distance_change_rms_angstrom": 0.3672987364379632,
@@ -3021,6 +3381,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3832405871665936,
             "distance_change_rms_angstrom": 0.2087456028412406,
@@ -3037,6 +3399,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4167290845541583,
             "distance_change_rms_angstrom": 0.2958419575840835,
@@ -3053,6 +3417,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4178855631653704,
             "distance_change_rms_angstrom": 0.30710218476104423,
@@ -3069,6 +3435,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.417502782705094,
             "distance_change_rms_angstrom": 0.30586287970364423,
@@ -3085,6 +3453,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.409784485111937,
             "distance_change_rms_angstrom": 0.2963371610414146,
@@ -3101,6 +3471,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.41430434470858013,
             "distance_change_rms_angstrom": 0.2287037412559151,
@@ -3117,6 +3489,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.31770823128603676,
             "distance_change_rms_angstrom": 0.19860787971872998,
@@ -3133,6 +3507,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6283040121226463,
             "distance_change_rms_angstrom": 0.5118814356972428,
@@ -3149,6 +3525,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6212775517181393,
             "distance_change_rms_angstrom": 0.4560618800386768,
@@ -3165,6 +3543,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5166305284522867,
             "distance_change_rms_angstrom": 0.3848313761125443,
@@ -3181,6 +3561,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5254596357854706,
             "distance_change_rms_angstrom": 0.31199127649919867,
@@ -3197,6 +3579,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5060991376967384,
             "distance_change_rms_angstrom": 0.2898532793112968,
@@ -3213,6 +3597,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6860163393978584,
             "distance_change_rms_angstrom": 0.5174282396100142,
@@ -3229,6 +3615,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5478237886597107,
             "distance_change_rms_angstrom": 0.30781630203320326,
@@ -3245,6 +3633,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.5742014619306429,
             "distance_change_rms_angstrom": 0.4332059809261372,
@@ -3261,6 +3651,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.44046436461028826,
             "distance_change_rms_angstrom": 0.3131784403896933,
@@ -3277,6 +3669,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4067173295522604,
             "distance_change_rms_angstrom": 0.2841096758506736,
@@ -3293,6 +3687,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4237770187194826,
             "distance_change_rms_angstrom": 0.30262229332439955,
@@ -3309,6 +3705,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6605062192406538,
             "distance_change_rms_angstrom": 0.44369950941387176,
@@ -3328,7 +3726,9 @@
       "family_id": "v02_family_987a40463804",
       "mutation_index": 61,
       "pair_id": "microminer_2ZQ4_A_1LZE_A_W62Y",
+      "parent_chain": "A",
       "parent_id": "2ZQ4_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
       "repeat_structures": 30,
       "split": "dev"
     },
@@ -3353,6 +3753,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.31262665636426934,
             "distance_change_rms_angstrom": 0.20094967010467502,
@@ -3369,6 +3771,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.30661745127677587,
             "distance_change_rms_angstrom": 0.21855773626881678,
@@ -3385,6 +3789,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2229954095824081,
             "distance_change_rms_angstrom": 0.13823759962400387,
@@ -3401,6 +3807,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24655683434909775,
             "distance_change_rms_angstrom": 0.17197839876743456,
@@ -3417,6 +3825,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.20216250279421552,
             "distance_change_rms_angstrom": 0.1163324877258097,
@@ -3433,6 +3843,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.12207591616589557,
             "distance_change_rms_angstrom": 0.11608698953800123,
@@ -3452,7 +3864,9 @@
       "family_id": "v02_family_7ae2a6204321",
       "mutation_index": 120,
       "pair_id": "microminer_4YGH_A_6NNX_A_L121M",
+      "parent_chain": "A",
       "parent_id": "4YGH_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
       "repeat_structures": 6,
       "split": "train"
     },
@@ -3477,6 +3891,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5FNX.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3418252757398335,
             "distance_change_rms_angstrom": 0.24735107735177408,
@@ -3496,7 +3912,9 @@
       "family_id": "v02_family_cf7defecbfbc",
       "mutation_index": 174,
       "pair_id": "microminer_5FNX_A_5FZU_A_K177E",
+      "parent_chain": "A",
       "parent_id": "5FNX_A",
+      "parent_structure": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5FNX.pdb",
       "repeat_structures": 1,
       "split": "train"
     },
@@ -3521,6 +3939,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1AZQ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6176955026240916,
             "distance_change_rms_angstrom": 0.646946274866292,
@@ -3537,6 +3957,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1AZQ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.281168714342741,
             "distance_change_rms_angstrom": 0.8982481107856609,
@@ -3556,7 +3978,9 @@
       "family_id": "v02_family_2be082f68809",
       "mutation_index": 25,
       "pair_id": "premut22alt1_1AZQ_1WTW_A_V_25_A",
+      "parent_chain": "A",
       "parent_id": "1AZQ_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1AZQ.pdb",
       "repeat_structures": 2,
       "split": "test"
     },
@@ -3581,6 +4005,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1B4L.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.19222037205619905,
             "distance_change_rms_angstrom": 0.15568860086836533,
@@ -3597,6 +4023,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1B4L.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.17748430142552934,
             "distance_change_rms_angstrom": 0.10816119417008441,
@@ -3616,7 +4044,9 @@
       "family_id": "v02_family_e4243e43dbec",
       "mutation_index": 84,
       "pair_id": "premut22alt1_1B4L_1F18_A_G_84_R",
+      "parent_chain": "A",
       "parent_id": "1B4L_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1B4L.pdb",
       "repeat_structures": 2,
       "split": "test"
     },
@@ -3641,6 +4071,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CDH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.001976052066612,
             "distance_change_rms_angstrom": 0.6817930044500646,
@@ -3657,6 +4089,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CDH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.2541244091755663,
             "distance_change_rms_angstrom": 0.8610320241217988,
@@ -3676,7 +4110,9 @@
       "family_id": "v02_family_54f812ae22f4",
       "mutation_index": 46,
       "pair_id": "premut22alt1_1CDH_1CDY_A_G_46_S",
+      "parent_chain": "A",
       "parent_id": "1CDH_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CDH.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -3701,6 +4137,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CZL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3452670631526695,
             "distance_change_rms_angstrom": 0.2252038386722061,
@@ -3717,6 +4155,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CZL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.342782847727239,
             "distance_change_rms_angstrom": 0.2241265860167893,
@@ -3736,7 +4176,9 @@
       "family_id": "v02_family_204bcfd23f04",
       "mutation_index": 99,
       "pair_id": "premut22alt1_1CZL_1CZK_A_D_99_N",
+      "parent_chain": "A",
       "parent_id": "1CZL_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CZL.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -3761,6 +4203,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1ERT.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24053872215760463,
             "distance_change_rms_angstrom": 0.1804727801872048,
@@ -3777,6 +4221,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1ERT.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.45953754258238455,
             "distance_change_rms_angstrom": 0.31509454171187296,
@@ -3796,7 +4242,9 @@
       "family_id": "v02_family_0123349a5fb8",
       "mutation_index": 72,
       "pair_id": "premut22alt1_1ERT_1ERV_A_C_72_S",
+      "parent_chain": "A",
       "parent_id": "1ERT_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1ERT.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -3821,6 +4269,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1FDA.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.12760800087129542,
             "distance_change_rms_angstrom": 0.08696295067725551,
@@ -3837,6 +4287,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1FDA.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.17073089589686413,
             "distance_change_rms_angstrom": 0.13679334407285412,
@@ -3856,7 +4308,9 @@
       "family_id": "v02_family_2f4c6b5fd2fc",
       "mutation_index": 14,
       "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "parent_chain": "A",
       "parent_id": "1FDA_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1FDA.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -3881,6 +4335,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2PHY.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.169153634195394,
             "distance_change_rms_angstrom": 0.10896952570116868,
@@ -3897,6 +4353,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2PHY.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.1692163511395688,
             "distance_change_rms_angstrom": 0.10895271660348899,
@@ -3916,7 +4374,9 @@
       "family_id": "v02_family_5c932f233753",
       "mutation_index": 41,
       "pair_id": "premut22alt1_2PHY_1F9I_A_Y_41_F",
+      "parent_chain": "A",
       "parent_id": "2PHY_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2PHY.pdb",
       "repeat_structures": 2,
       "split": "dev"
     },
@@ -3941,6 +4401,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2RN2.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.972726930036777,
             "distance_change_rms_angstrom": 0.6777392501040428,
@@ -3957,6 +4419,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2RN2.pdb",
           "background": {
             "backbone_rmsd_angstrom": 2.022188429846081,
             "distance_change_rms_angstrom": 1.2455391128170896,
@@ -3976,7 +4440,9 @@
       "family_id": "v02_family_a548251c30c2",
       "mutation_index": 133,
       "pair_id": "premut22alt1_2RN2_1KVB_A_D_133_H",
+      "parent_chain": "A",
       "parent_id": "2RN2_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2RN2.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4001,6 +4467,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/3PAZ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.7820891043141607,
             "distance_change_rms_angstrom": 0.6195716288180333,
@@ -4017,6 +4485,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/3PAZ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.19996175925827195,
             "distance_change_rms_angstrom": 0.14977935284297833,
@@ -4036,7 +4506,9 @@
       "family_id": "v02_family_607a3bb0349c",
       "mutation_index": 79,
       "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "parent_chain": "A",
       "parent_id": "3PAZ_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/3PAZ.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4061,6 +4533,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/5NLL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3098140456415187,
             "distance_change_rms_angstrom": 0.15535218982362864,
@@ -4077,6 +4551,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/5NLL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2806609385548059,
             "distance_change_rms_angstrom": 0.15813188851301613,
@@ -4096,7 +4572,9 @@
       "family_id": "v02_family_28cd4576dfdb",
       "mutation_index": 57,
       "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "parent_chain": "A",
       "parent_id": "5NLL_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/5NLL.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4121,6 +4599,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/1DUA.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3055592548785858,
             "distance_change_rms_angstrom": 0.24660534171752255,
@@ -4137,6 +4617,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/1DUA.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3068019941321149,
             "distance_change_rms_angstrom": 0.2529567873346947,
@@ -4156,7 +4638,9 @@
       "family_id": "v02_family_2be082f68809",
       "mutation_index": 194,
       "pair_id": "premut22m_1DUA_1DUE_A_S_194_A",
+      "parent_chain": "A",
       "parent_id": "1DUA_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/1DUA.pdb",
       "repeat_structures": 2,
       "split": "test"
     },
@@ -4181,6 +4665,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/1QD2.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2776199323172904,
             "distance_change_rms_angstrom": 0.20754277286707642,
@@ -4197,6 +4683,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/1QD2.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.20231854311125474,
             "distance_change_rms_angstrom": 0.18666091743023586,
@@ -4216,7 +4704,9 @@
       "family_id": "v02_family_3da1b9ebba69",
       "mutation_index": 84,
       "pair_id": "premut22m_1QD2_1GIU_A_E_84_R",
+      "parent_chain": "A",
       "parent_id": "1QD2_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/1QD2.pdb",
       "repeat_structures": 2,
       "split": "dev"
     },
@@ -4241,6 +4731,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/5NLL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.3098140456415187,
             "distance_change_rms_angstrom": 0.15535218982362864,
@@ -4257,6 +4749,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/5NLL.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.2806609385548059,
             "distance_change_rms_angstrom": 0.15813188851301613,
@@ -4276,7 +4770,9 @@
       "family_id": "v02_family_28cd4576dfdb",
       "mutation_index": 56,
       "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "parent_chain": "A",
       "parent_id": "5NLL_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next20/5NLL.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4301,6 +4797,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/1BV1.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6774379007297942,
             "distance_change_rms_angstrom": 0.5049084469609431,
@@ -4317,6 +4815,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/1BV1.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6771824619845078,
             "distance_change_rms_angstrom": 0.5046335464561243,
@@ -4336,7 +4836,9 @@
       "family_id": "v02_family_412a8d76b44d",
       "mutation_index": 44,
       "pair_id": "premut22n_1BV1_1LLT_A_E_44_S",
+      "parent_chain": "A",
       "parent_id": "1BV1_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/1BV1.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4361,6 +4863,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/2INT.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.3361619924160475,
             "distance_change_rms_angstrom": 1.0013851036323125,
@@ -4377,6 +4881,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/2INT.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.8485087134989991,
             "distance_change_rms_angstrom": 0.617012506044527,
@@ -4396,7 +4902,9 @@
       "family_id": "v02_family_d12b0c64f68a",
       "mutation_index": 87,
       "pair_id": "premut22n_2INT_1HIJ_A_R_87_Q",
+      "parent_chain": "A",
       "parent_id": "2INT_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/2INT.pdb",
       "repeat_structures": 2,
       "split": "test"
     },
@@ -4421,6 +4929,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/2RN2.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.972726930036777,
             "distance_change_rms_angstrom": 0.6777392501040428,
@@ -4437,6 +4947,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/2RN2.pdb",
           "background": {
             "backbone_rmsd_angstrom": 2.022188429846081,
             "distance_change_rms_angstrom": 1.2455391128170896,
@@ -4456,7 +4968,9 @@
       "family_id": "v02_family_a548251c30c2",
       "mutation_index": 133,
       "pair_id": "premut22n_2RN2_1KVA_A_D_133_A",
+      "parent_chain": "A",
       "parent_id": "2RN2_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40/2RN2.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4481,6 +4995,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1AZQ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.6176955026240916,
             "distance_change_rms_angstrom": 0.646946274866292,
@@ -4497,6 +5013,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1AZQ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.281168714342741,
             "distance_change_rms_angstrom": 0.8982481107856609,
@@ -4516,7 +5034,9 @@
       "family_id": "v02_family_2be082f68809",
       "mutation_index": 28,
       "pair_id": "premut22p_1AZQ_1WTR_A_M_28_A",
+      "parent_chain": "A",
       "parent_id": "1AZQ_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1AZQ.pdb",
       "repeat_structures": 2,
       "split": "test"
     },
@@ -4541,6 +5061,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1CDH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.001976052066612,
             "distance_change_rms_angstrom": 0.6817930044500646,
@@ -4557,6 +5079,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1CDH.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.2541244091755663,
             "distance_change_rms_angstrom": 0.8610320241217988,
@@ -4576,7 +5100,9 @@
       "family_id": "v02_family_54f812ae22f4",
       "mutation_index": 42,
       "pair_id": "premut22p_1CDH_1CDU_A_F_42_V",
+      "parent_chain": "A",
       "parent_id": "1CDH_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1CDH.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4601,6 +5127,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1ERT.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.24053872215760463,
             "distance_change_rms_angstrom": 0.1804727801872048,
@@ -4617,6 +5145,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1ERT.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.45953754258238455,
             "distance_change_rms_angstrom": 0.31509454171187296,
@@ -4636,7 +5166,9 @@
       "family_id": "v02_family_0123349a5fb8",
       "mutation_index": 59,
       "pair_id": "premut22p_1ERT_1AIU_A_D_59_N",
+      "parent_chain": "A",
       "parent_id": "1ERT_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1ERT.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4661,6 +5193,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1FDA.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.12760800087129542,
             "distance_change_rms_angstrom": 0.08696295067725551,
@@ -4677,6 +5211,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1FDA.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.17073089589686413,
             "distance_change_rms_angstrom": 0.13679334407285412,
@@ -4696,7 +5232,9 @@
       "family_id": "v02_family_2f4c6b5fd2fc",
       "mutation_index": 13,
       "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "parent_chain": "A",
       "parent_id": "1FDA_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1FDA.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4721,6 +5259,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1LYD.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.16968857720474123,
             "distance_change_rms_angstrom": 0.1308351639189791,
@@ -4737,6 +5277,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1LYD.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.19988926917558433,
             "distance_change_rms_angstrom": 0.13103572037815825,
@@ -4756,7 +5298,9 @@
       "family_id": "v02_family_e40682d3a677",
       "mutation_index": 5,
       "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "parent_chain": "A",
       "parent_id": "1LYD_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1LYD.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4781,6 +5325,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1Q21.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.796403717537937,
             "distance_change_rms_angstrom": 1.338694775835272,
@@ -4797,6 +5343,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1Q21.pdb",
           "background": {
             "backbone_rmsd_angstrom": 1.9726504829993914,
             "distance_change_rms_angstrom": 1.4953348496013121,
@@ -4816,7 +5364,9 @@
       "family_id": "v02_family_2be082f68809",
       "mutation_index": 11,
       "pair_id": "premut22p_1Q21_2Q21_A_G_11_V",
+      "parent_chain": "A",
       "parent_id": "1Q21_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next40b/1Q21.pdb",
       "repeat_structures": 2,
       "split": "test"
     },
@@ -4841,6 +5391,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/3PAZ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.7820891043141607,
             "distance_change_rms_angstrom": 0.6195716288180333,
@@ -4857,6 +5409,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/3PAZ.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.19996175925827195,
             "distance_change_rms_angstrom": 0.14977935284297833,
@@ -4876,7 +5430,9 @@
       "family_id": "v02_family_607a3bb0349c",
       "mutation_index": 79,
       "pair_id": "premut22q_3PAZ_4PAZ_A_P_79_A",
+      "parent_chain": "A",
       "parent_id": "3PAZ_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/3PAZ.pdb",
       "repeat_structures": 2,
       "split": "train"
     },
@@ -4901,6 +5457,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/3X2L.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.19892066130554598,
             "distance_change_rms_angstrom": 0.13478484417397124,
@@ -4917,6 +5475,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/3X2L.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.4073100918107922,
             "distance_change_rms_angstrom": 0.22849639271857608,
@@ -4936,7 +5496,9 @@
       "family_id": "v02_family_4f29116d3b64",
       "mutation_index": 91,
       "pair_id": "premut22q_3X2L_3X2G_A_N_91_D",
+      "parent_chain": "A",
       "parent_id": "3X2L_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/3X2L.pdb",
       "repeat_structures": 2,
       "split": "test"
     },
@@ -4961,6 +5523,8 @@
       },
       "controls": [
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/4VUB.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.8306311258985674,
             "distance_change_rms_angstrom": 0.6336187560893493,
@@ -4977,6 +5541,8 @@
           ]
         },
         {
+          "audit_parent_chain": "A",
+          "audit_parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/4VUB.pdb",
           "background": {
             "backbone_rmsd_angstrom": 0.8549632829265875,
             "distance_change_rms_angstrom": 0.7119141650515213,
@@ -4996,7 +5562,9 @@
       "family_id": "v02_family_3da1b9ebba69",
       "mutation_index": 45,
       "pair_id": "premut22q_4VUB_7EPJ_A_V_45_L",
+      "parent_chain": "A",
       "parent_id": "4VUB_A",
+      "parent_structure": "/tmp/ospedit-real-sample/repeat_expand_next80/4VUB.pdb",
       "repeat_structures": 2,
       "split": "dev"
     }

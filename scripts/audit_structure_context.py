@@ -4,12 +4,8 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 from pathlib import Path
 from typing import Any, Iterable
-
-from Bio.PDB import MMCIFParser, PDBParser
-from Bio.PDB.Polypeptide import is_aa
 
 from ospedit.data import (
     PairRecord,
@@ -20,53 +16,7 @@ from ospedit.data import (
     verify_record_checksums,
     write_manifest,
 )
-
-
-def _structure_context(
-    path: str | Path,
-    chain_id: str,
-    *,
-    ignored_hetero: frozenset[str],
-) -> dict[str, Any]:
-    source = Path(path).expanduser().resolve()
-    parser = MMCIFParser(QUIET=True) if source.suffix.lower() in {".cif", ".mmcif"} else PDBParser(QUIET=True, PERMISSIVE=True)
-    structure = parser.get_structure(source.stem, str(source))
-    try:
-        model = next(iter(structure))
-        target_chain = model[chain_id]
-    except (StopIteration, KeyError) as error:
-        raise ValueError(f"chain/model not found: {source} chain={chain_id}") from error
-    protein_chains = [
-        chain.id for chain in model if any(is_aa(residue, standard=True) for residue in chain)
-    ]
-    target_hetero = sorted({
-        residue.resname.strip().upper()
-        for residue in target_chain
-        if residue.id[0].strip() and residue.resname.strip().upper() not in ignored_hetero
-    })
-    model_hetero = sorted({
-        residue.resname.strip().upper()
-        for chain in model
-        for residue in chain
-        if residue.id[0].strip() and residue.resname.strip().upper() not in ignored_hetero
-    })
-    header = getattr(structure, "header", {}) or {}
-    resolution = header.get("resolution")
-    return {
-        "path": str(source),
-        "target_chain": chain_id,
-        "protein_chains": protein_chains,
-        "protein_chain_count": len(protein_chains),
-        "target_hetero": target_hetero,
-        "model_hetero": model_hetero,
-        "structure_method": header.get("structure_method"),
-        "resolution_angstrom": (
-            float(resolution)
-            if isinstance(resolution, (int, float)) and math.isfinite(float(resolution))
-            else None
-        ),
-        "name": header.get("name"),
-    }
+from ospedit.structure_context import structure_context
 
 
 def audit_structure_context(
@@ -88,15 +38,15 @@ def audit_structure_context(
     results = []
     selected = []
     for record in rows:
-        parent = _structure_context(record.source_file, record.source_chain, ignored_hetero=ignored)
-        mutant = _structure_context(record.target_file, record.target_chain, ignored_hetero=ignored)
+        parent = structure_context(record.source_file, record.source_chain, ignored_hetero=ignored)
+        mutant = structure_context(record.target_file, record.target_chain, ignored_hetero=ignored)
         reasons = []
         if require_single_protein_chain and (
             parent["protein_chain_count"] != 1 or mutant["protein_chain_count"] != 1
         ):
             reasons.append("multiple_protein_chains")
-        if require_matching_target_hetero and parent["target_hetero"] != mutant["target_hetero"]:
-            reasons.append("target_hetero_mismatch")
+        if require_matching_target_hetero and parent["proximal_hetero"] != mutant["proximal_hetero"]:
+            reasons.append("proximal_hetero_mismatch")
         if require_matching_method and parent["structure_method"] != mutant["structure_method"]:
             reasons.append("structure_method_mismatch")
         resolution_difference = None
@@ -127,6 +77,7 @@ def audit_structure_context(
         "configuration": {
             "require_single_protein_chain": require_single_protein_chain,
             "require_matching_target_hetero": require_matching_target_hetero,
+            "hetero_comparison_scope": "within_6_angstrom_of_target_chain",
             "require_matching_method": require_matching_method,
             "max_resolution_difference": max_resolution_difference,
             "ignored_hetero": sorted(ignored),

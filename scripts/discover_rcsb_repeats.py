@@ -18,7 +18,7 @@ from urllib.request import Request, urlopen
 from Bio.PDB import MMCIFParser, PDBParser
 
 from ospedit.data import PairRecord, load_manifest, manifest_fingerprint, parse_structure
-from scripts.audit_structure_context import _structure_context
+from ospedit.structure_context import structure_context
 
 
 SEARCH_ENDPOINT = "https://search.rcsb.org/rcsbsearch/v2/query"
@@ -178,7 +178,7 @@ def discover_repeat_rows(
             counters["candidate_chains"] += 1
             try:
                 parsed = parse_structure(raw_path, chain.id)
-                context = _structure_context(raw_path, chain.id, ignored_hetero=ignored)
+                context = structure_context(raw_path, chain.id, ignored_hetero=ignored)
             except (OSError, ValueError):
                 counters["unreadable_candidate_chains"] += 1
                 continue
@@ -194,7 +194,7 @@ def discover_repeat_rows(
         source_entry = source_path.stem.upper()
         try:
             source_parsed = parse_structure(source_path, record.source_chain)
-            parent_context = _structure_context(
+            parent_context = structure_context(
                 source_path,
                 record.source_chain,
                 ignored_hetero=ignored,

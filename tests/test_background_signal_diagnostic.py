@@ -66,3 +66,26 @@ def test_background_signal_rejects_manifest_mismatch(tmp_path):
 
     with pytest.raises(ValueError, match="different manifests"):
         background_signal_report(background, response)
+
+
+def test_background_signal_adds_context_prescreened_cohort(tmp_path):
+    background, response = _reports(tmp_path)
+    context = tmp_path / "context.json"
+    context.write_text(json.dumps({
+        "format": "ospedit.repeat_control_context_audit.v1",
+        "manifest_fingerprint": "same",
+        "records": [{
+            "pair_id": "pair-1",
+            "selected": True,
+            "background": {
+                "neighborhood_rmsd_angstrom": 0.25,
+                "mutation_site_rmsd_angstrom": 0.1,
+                "distance_change_rms_angstrom": 0.2,
+            },
+        }],
+    }))
+
+    report = background_signal_report(background, response, context)
+
+    assert report["summary"]["context_prescreened_controls"]["overall"]["records"] == 1
+    assert report["context_prescreened_records"][0]["local"]["signal_to_background_max"] == 4.0

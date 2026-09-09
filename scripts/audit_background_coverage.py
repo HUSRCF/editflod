@@ -106,6 +106,7 @@ def background_coverage_report(
                 "repeat_structure": repeat_structure,
                 "repeat_chain": repeat_chain,
                 "parent_structure": str(Path(row["parent_structure"]).resolve()),
+                "parent_chain": str(row["parent_chain"]),
                 **metrics,
             }
             sources[key].add(str(audit_path))
@@ -116,12 +117,16 @@ def background_coverage_report(
     rows: list[dict[str, Any]] = []
     for pair_id, controls in sorted(grouped.items()):
         record = by_pair[pair_id]
+        if not record.source_file or not record.source_chain:
+            raise ValueError(f"manifest is missing parent structure provenance for {pair_id}")
         rows.append({
             "pair_id": pair_id,
             "parent_id": record.parent_id,
             "family_id": record.family_id,
             "split": record.split,
             "mutation_index": record.pair.mutation_indices[0],
+            "parent_structure": str(Path(record.source_file).resolve()),
+            "parent_chain": record.source_chain,
             "repeat_structures": len(controls),
             "background_max": {
                 name: max(row[name] for _, row in controls)
@@ -135,6 +140,8 @@ def background_coverage_report(
                 {
                     "repeat_structure": row["repeat_structure"],
                     "repeat_chain": row["repeat_chain"],
+                    "audit_parent_structure": row["parent_structure"],
+                    "audit_parent_chain": row["parent_chain"],
                     "background": {name: row[name] for name in BACKGROUND_METRICS},
                     "sources": sorted(sources[key]),
                 }

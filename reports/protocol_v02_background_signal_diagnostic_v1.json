@@ -1,5 +1,764 @@
 {
   "background_report": "/home/husrcf/Code/ospedit/reports/protocol_v02_background_control_coverage_v1.json",
+  "context_prescreened_records": [
+    {
+      "distance": {
+        "background_max": 0.5154869909440712,
+        "background_median": 0.27382201701388165,
+        "endpoint_signal": 0.25543085288184786,
+        "signal_to_background_max": 0.4955136741938873,
+        "signal_to_background_median": 0.9328353346725168
+      },
+      "family_id": "v02_family_987a40463804",
+      "local": {
+        "background_max": 0.4771500810096044,
+        "background_median": 0.2287905424314931,
+        "endpoint_signal": 0.24672010231579894,
+        "signal_to_background_max": 0.5170702303848772,
+        "signal_to_background_median": 1.0783667003616397
+      },
+      "pair_id": "microminer_1AKI_A_1HEO_A_I55V",
+      "parent_id": "1AKI_A",
+      "repeat_structures": 25,
+      "site": {
+        "background_max": 0.35425676812978557,
+        "background_median": 0.190878222490245,
+        "endpoint_signal": 0.18565839932629669,
+        "signal_to_background_max": 0.5240786232721426,
+        "signal_to_background_median": 0.9726536474625067
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.5142248688010492,
+        "background_median": 0.2605145304870379,
+        "endpoint_signal": 0.16425153238374604,
+        "signal_to_background_max": 0.31941576992709403,
+        "signal_to_background_median": 0.6304889484539463
+      },
+      "family_id": "v02_family_987a40463804",
+      "local": {
+        "background_max": 0.49611670767297933,
+        "background_median": 0.23899985286980024,
+        "endpoint_signal": 0.18095341942793425,
+        "signal_to_background_max": 0.3647396199912131,
+        "signal_to_background_median": 0.7571277440346882
+      },
+      "pair_id": "microminer_1BVX_A_1KXW_A_N27D",
+      "parent_id": "1BVX_A",
+      "repeat_structures": 25,
+      "site": {
+        "background_max": 0.35781675727601314,
+        "background_median": 0.11807103681986747,
+        "endpoint_signal": 0.1556078506334151,
+        "signal_to_background_max": 0.43488139520917435,
+        "signal_to_background_median": 1.3179172032749644
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.5167456190940417,
+        "background_median": 0.2396548755401946,
+        "endpoint_signal": 0.21320958483269167,
+        "signal_to_background_max": 0.4126006625977607,
+        "signal_to_background_median": 0.8896526071172395
+      },
+      "family_id": "v02_family_987a40463804",
+      "local": {
+        "background_max": 0.544928521585143,
+        "background_median": 0.292273214941508,
+        "endpoint_signal": 0.2989339664624122,
+        "signal_to_background_max": 0.5485746379962696,
+        "signal_to_background_median": 1.022789469511386
+      },
+      "pair_id": "microminer_1HEL_A_3A3Q_A_N59D",
+      "parent_id": "1HEL_A",
+      "repeat_structures": 25,
+      "site": {
+        "background_max": 0.3520485162212465,
+        "background_median": 0.17661193116453927,
+        "endpoint_signal": 0.22935551391575656,
+        "signal_to_background_max": 0.6514883697780366,
+        "signal_to_background_median": 1.2986411076728395
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.6062295459496359,
+        "background_median": 0.37602033614975916,
+        "endpoint_signal": 0.3812749255131861,
+        "signal_to_background_max": 0.6289283128157886,
+        "signal_to_background_median": 1.013974215908722
+      },
+      "family_id": "v02_family_987a40463804",
+      "local": {
+        "background_max": 1.0119930761468596,
+        "background_median": 0.5961737065761146,
+        "endpoint_signal": 0.644569564894987,
+        "signal_to_background_max": 0.6369308052473746,
+        "signal_to_background_median": 1.0811774450718645
+      },
+      "pair_id": "microminer_1HSW_A_1IR9_A_I98M",
+      "parent_id": "1HSW_A",
+      "repeat_structures": 25,
+      "site": {
+        "background_max": 0.7131484399050902,
+        "background_median": 0.3680143675725742,
+        "endpoint_signal": 0.388868226165514,
+        "signal_to_background_max": 0.5452837087006273,
+        "signal_to_background_median": 1.0566658816352523
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.061512752650550784,
+        "background_median": 0.061512752650550784,
+        "endpoint_signal": 0.06276689768069912,
+        "signal_to_background_max": 1.020388374379424,
+        "signal_to_background_median": 1.020388374379424
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "local": {
+        "background_max": 0.06268563906060641,
+        "background_median": 0.06268563906060641,
+        "endpoint_signal": 0.10810508156856433,
+        "signal_to_background_max": 1.7245589769619323,
+        "signal_to_background_median": 1.7245589769619323
+      },
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "parent_id": "1L04_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.08525422815258504,
+        "background_median": 0.08525422815258504,
+        "endpoint_signal": 0.18068712277059668,
+        "signal_to_background_max": 2.1193919256087708,
+        "signal_to_background_median": 2.1193919256087708
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.23290823820664108,
+        "background_median": 0.22218630590229999,
+        "endpoint_signal": 0.09224594523592937,
+        "signal_to_background_max": 0.3960613241773218,
+        "signal_to_background_median": 0.4151738553882428
+      },
+      "family_id": "v02_family_987a40463804",
+      "local": {
+        "background_max": 0.22979991940759698,
+        "background_median": 0.2048696227494168,
+        "endpoint_signal": 0.17668566372278932,
+        "signal_to_background_max": 0.7688673876747594,
+        "signal_to_background_median": 0.8624297802261282
+      },
+      "pair_id": "microminer_1REX_A_133L_A_R115H",
+      "parent_id": "1REX_A",
+      "repeat_structures": 3,
+      "site": {
+        "background_max": 0.35985400855379857,
+        "background_median": 0.3017498571907557,
+        "endpoint_signal": 0.18585934376419314,
+        "signal_to_background_max": 0.5164854061543876,
+        "signal_to_background_median": 0.6159384647088644
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.4422172024536148,
+        "background_median": 0.16189329662172636,
+        "endpoint_signal": 0.2681211692112188,
+        "signal_to_background_max": 0.6063110338620141,
+        "signal_to_background_median": 1.6561597966449495
+      },
+      "family_id": "v02_family_5c932f233753",
+      "local": {
+        "background_max": 0.44868623682366754,
+        "background_median": 0.1818775419334971,
+        "endpoint_signal": 0.14899654933367085,
+        "signal_to_background_max": 0.33207292113180215,
+        "signal_to_background_median": 0.8192135639712512
+      },
+      "pair_id": "microminer_1TS0_A_1OT6_A_E46Q",
+      "parent_id": "1TS0_A",
+      "repeat_structures": 28,
+      "site": {
+        "background_max": 0.5194776239064158,
+        "background_median": 0.1526990638959715,
+        "endpoint_signal": 0.1216781543364231,
+        "signal_to_background_max": 0.2342317527007544,
+        "signal_to_background_median": 0.796849379635478
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.19702909372381572,
+        "background_median": 0.08422191683994265,
+        "endpoint_signal": 0.2569851664905458,
+        "signal_to_background_max": 1.3043006067457892,
+        "signal_to_background_median": 3.051286127563762
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "local": {
+        "background_max": 0.17410892037317466,
+        "background_median": 0.08781063813699418,
+        "endpoint_signal": 0.26835392956360576,
+        "signal_to_background_max": 1.5412991418729838,
+        "signal_to_background_median": 3.0560526065753484
+      },
+      "pair_id": "microminer_2B6W_A_1L92_A_A99I",
+      "parent_id": "2B6W_A",
+      "repeat_structures": 10,
+      "site": {
+        "background_max": 0.10486621097351283,
+        "background_median": 0.08106889464217892,
+        "endpoint_signal": 0.17974540946649914,
+        "signal_to_background_max": 1.714045046520269,
+        "signal_to_background_median": 2.2171932929375395
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.14844915964897598,
+        "background_median": 0.10764762442738124,
+        "endpoint_signal": 0.22754636625547814,
+        "signal_to_background_max": 1.5328235390051113,
+        "signal_to_background_median": 2.1138075964600613
+      },
+      "family_id": "v02_family_987a40463804",
+      "local": {
+        "background_max": 0.1225589261550208,
+        "background_median": 0.10988298838532143,
+        "endpoint_signal": 0.3545819358708321,
+        "signal_to_background_max": 2.8931547215282625,
+        "signal_to_background_median": 3.226904738224233
+      },
+      "pair_id": "microminer_2ZIL_A_1GB8_A_V74M",
+      "parent_id": "2ZIL_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.11509846115824887,
+        "background_median": 0.11327626597636357,
+        "endpoint_signal": 0.3967123475870705,
+        "signal_to_background_max": 3.4467215599140872,
+        "signal_to_background_median": 3.5021665321299453
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.5174282396100142,
+        "background_median": 0.3074592433971237,
+        "endpoint_signal": 0.3159143796000138,
+        "signal_to_background_max": 0.6105472322850384,
+        "signal_to_background_median": 1.0275000227980433
+      },
+      "family_id": "v02_family_987a40463804",
+      "local": {
+        "background_max": 0.7611518599049418,
+        "background_median": 0.6093340461842367,
+        "endpoint_signal": 0.6250580456852671,
+        "signal_to_background_max": 0.8212001817394612,
+        "signal_to_background_median": 1.025805220633078
+      },
+      "pair_id": "microminer_2ZQ4_A_1LZE_A_W62Y",
+      "parent_id": "2ZQ4_A",
+      "repeat_structures": 26,
+      "site": {
+        "background_max": 0.6550584503317434,
+        "background_median": 0.3192482781314012,
+        "endpoint_signal": 0.165560888470904,
+        "signal_to_background_max": 0.25274216123318227,
+        "signal_to_background_median": 0.5185960263903439
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.21855773626881678,
+        "background_median": 0.15510799919571922,
+        "endpoint_signal": 0.2061513075785983,
+        "signal_to_background_max": 0.9432350055320892,
+        "signal_to_background_median": 1.329082372589123
+      },
+      "family_id": "v02_family_7ae2a6204321",
+      "local": {
+        "background_max": 0.1409271132800698,
+        "background_median": 0.09386399978305357,
+        "endpoint_signal": 0.1373189288208072,
+        "signal_to_background_max": 0.9743968043105239,
+        "signal_to_background_median": 1.4629562892929169
+      },
+      "pair_id": "microminer_4YGH_A_6NNX_A_L121M",
+      "parent_id": "4YGH_A",
+      "repeat_structures": 6,
+      "site": {
+        "background_max": 0.08290637252756664,
+        "background_median": 0.06522446130607866,
+        "endpoint_signal": 0.1687693114309112,
+        "signal_to_background_max": 2.035661509310335,
+        "signal_to_background_median": 2.5875156045969914
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.24735107735177408,
+        "background_median": 0.24735107735177408,
+        "endpoint_signal": 0.2545127700210965,
+        "signal_to_background_max": 1.0289535535725092,
+        "signal_to_background_median": 1.0289535535725092
+      },
+      "family_id": "v02_family_cf7defecbfbc",
+      "local": {
+        "background_max": 0.253518480813804,
+        "background_median": 0.253518480813804,
+        "endpoint_signal": 0.25409147666548154,
+        "signal_to_background_max": 1.0022601738927994,
+        "signal_to_background_median": 1.0022601738927994
+      },
+      "pair_id": "microminer_5FNX_A_5FZU_A_K177E",
+      "parent_id": "5FNX_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.33287355929627527,
+        "background_median": 0.33287355929627527,
+        "endpoint_signal": 0.3990487510808687,
+        "signal_to_background_max": 1.1987997842919509,
+        "signal_to_background_median": 1.1987997842919509
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.8982481107856609,
+        "background_median": 0.7725971928259765,
+        "endpoint_signal": 0.5582796110580865,
+        "signal_to_background_max": 0.621520495678841,
+        "signal_to_background_median": 0.7226011383966239
+      },
+      "family_id": "v02_family_2be082f68809",
+      "local": {
+        "background_max": 0.5416163562760781,
+        "background_median": 0.4018111170766706,
+        "endpoint_signal": 0.3260335731939338,
+        "signal_to_background_max": 0.6019640459819214,
+        "signal_to_background_median": 0.8114100365513841
+      },
+      "pair_id": "premut22alt1_1AZQ_1WTW_A_V_25_A",
+      "parent_id": "1AZQ_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.5672902067361265,
+        "background_median": 0.46448301771865175,
+        "endpoint_signal": 0.44655296001730926,
+        "signal_to_background_max": 0.787168462834089,
+        "signal_to_background_median": 0.9613978186125997
+      },
+      "split": "test"
+    },
+    {
+      "distance": {
+        "background_max": 0.6817930044500646,
+        "background_median": 0.6817930044500646,
+        "endpoint_signal": 0.44464960955387556,
+        "signal_to_background_max": 0.6521768434871675,
+        "signal_to_background_median": 0.6521768434871675
+      },
+      "family_id": "v02_family_54f812ae22f4",
+      "local": {
+        "background_max": 0.7928685877930639,
+        "background_median": 0.7928685877930639,
+        "endpoint_signal": 0.5769322576177852,
+        "signal_to_background_max": 0.7276518032120131,
+        "signal_to_background_median": 0.7276518032120131
+      },
+      "pair_id": "premut22alt1_1CDH_1CDY_A_G_46_S",
+      "parent_id": "1CDH_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.957507447325684,
+        "background_median": 0.957507447325684,
+        "endpoint_signal": 0.35723671536795637,
+        "signal_to_background_max": 0.3730902734654625,
+        "signal_to_background_median": 0.3730902734654625
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.2252038386722061,
+        "background_median": 0.2246652123444977,
+        "endpoint_signal": 0.12091922313412103,
+        "signal_to_background_max": 0.53693233582099,
+        "signal_to_background_median": 0.538219610736644
+      },
+      "family_id": "v02_family_204bcfd23f04",
+      "local": {
+        "background_max": 0.2720531811935623,
+        "background_median": 0.2699745527241476,
+        "endpoint_signal": 0.26490653496267375,
+        "signal_to_background_max": 0.9737307014770622,
+        "signal_to_background_median": 0.9812277945816167
+      },
+      "pair_id": "premut22alt1_1CZL_1CZK_A_D_99_N",
+      "parent_id": "1CZL_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.11653210198529264,
+        "background_median": 0.10205971805358488,
+        "endpoint_signal": 0.0805368371731001,
+        "signal_to_background_max": 0.6911128847848685,
+        "signal_to_background_median": 0.7891148310914937
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.1804727801872048,
+        "background_median": 0.1804727801872048,
+        "endpoint_signal": 0.1104982653705781,
+        "signal_to_background_max": 0.6122710873958832,
+        "signal_to_background_median": 0.6122710873958832
+      },
+      "family_id": "v02_family_0123349a5fb8",
+      "local": {
+        "background_max": 0.2668570817638017,
+        "background_median": 0.2668570817638017,
+        "endpoint_signal": 0.14339545025976108,
+        "signal_to_background_max": 0.5373492406946204,
+        "signal_to_background_median": 0.5373492406946204
+      },
+      "pair_id": "premut22alt1_1ERT_1ERV_A_C_72_S",
+      "parent_id": "1ERT_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.3307366197817071,
+        "background_median": 0.3307366197817071,
+        "endpoint_signal": 0.19837419130443462,
+        "signal_to_background_max": 0.5997950618088969,
+        "signal_to_background_median": 0.5997950618088969
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.13679334407285412,
+        "background_median": 0.11187814737505482,
+        "endpoint_signal": 0.18007118689590906,
+        "signal_to_background_max": 1.3163738931625635,
+        "signal_to_background_median": 1.6095295741021456
+      },
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "local": {
+        "background_max": 0.1478354505530419,
+        "background_median": 0.12792497407393766,
+        "endpoint_signal": 0.23803417369093274,
+        "signal_to_background_max": 1.6101291862030647,
+        "signal_to_background_median": 1.8607326318733863
+      },
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "parent_id": "1FDA_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.1420916272330499,
+        "background_median": 0.128211762770516,
+        "endpoint_signal": 0.4226551532380725,
+        "signal_to_background_max": 2.974525392300981,
+        "signal_to_background_median": 3.2965396006182024
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.10896952570116868,
+        "background_median": 0.10896952570116868,
+        "endpoint_signal": 0.26936091566787435,
+        "signal_to_background_max": 2.4718921545694634,
+        "signal_to_background_median": 2.4718921545694634
+      },
+      "family_id": "v02_family_5c932f233753",
+      "local": {
+        "background_max": 0.12415184190516468,
+        "background_median": 0.12415184190516468,
+        "endpoint_signal": 0.24823533718957924,
+        "signal_to_background_max": 1.9994494916893595,
+        "signal_to_background_median": 1.9994494916893595
+      },
+      "pair_id": "premut22alt1_2PHY_1F9I_A_Y_41_F",
+      "parent_id": "2PHY_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.05410194313681635,
+        "background_median": 0.05410194313681635,
+        "endpoint_signal": 0.09462509108225912,
+        "signal_to_background_max": 1.7490146489371985,
+        "signal_to_background_median": 1.7490146489371985
+      },
+      "split": "dev"
+    },
+    {
+      "distance": {
+        "background_max": 0.14977935284297833,
+        "background_median": 0.14977935284297833,
+        "endpoint_signal": 0.14374215690016287,
+        "signal_to_background_max": 0.9596927358262486,
+        "signal_to_background_median": 0.9596927358262486
+      },
+      "family_id": "v02_family_607a3bb0349c",
+      "local": {
+        "background_max": 0.11697614646545137,
+        "background_median": 0.11697614646545137,
+        "endpoint_signal": 0.17860755353367663,
+        "signal_to_background_max": 1.5268715796380585,
+        "signal_to_background_median": 1.5268715796380585
+      },
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "parent_id": "3PAZ_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.0755320484883492,
+        "background_median": 0.0755320484883492,
+        "endpoint_signal": 0.1946224780343944,
+        "signal_to_background_max": 2.5766874052729403,
+        "signal_to_background_median": 2.5766874052729403
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.15813188851301613,
+        "background_median": 0.15674203916832238,
+        "endpoint_signal": 0.16523991726778126,
+        "signal_to_background_max": 1.044950002315188,
+        "signal_to_background_median": 1.0542156918753185
+      },
+      "family_id": "v02_family_28cd4576dfdb",
+      "local": {
+        "background_max": 0.694806214971658,
+        "background_median": 0.6815875732892795,
+        "endpoint_signal": 0.7155647328731265,
+        "signal_to_background_max": 1.029876701523626,
+        "signal_to_background_median": 1.0498500279573413
+      },
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "parent_id": "5NLL_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.5972060160071767,
+        "background_median": 0.5501375484525048,
+        "endpoint_signal": 0.7689730598172824,
+        "signal_to_background_max": 1.287617738613071,
+        "signal_to_background_median": 1.3977832670762889
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.15813188851301613,
+        "background_median": 0.15674203916832238,
+        "endpoint_signal": 0.144713146005031,
+        "signal_to_background_max": 0.9151420840276588,
+        "signal_to_background_median": 0.9232567521316104
+      },
+      "family_id": "v02_family_28cd4576dfdb",
+      "local": {
+        "background_max": 0.6900628767514803,
+        "background_median": 0.6785160019743973,
+        "endpoint_signal": 0.39332635830000773,
+        "signal_to_background_max": 0.5699862600225929,
+        "signal_to_background_median": 0.579686193332916
+      },
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "parent_id": "5NLL_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 2.045309942707863,
+        "background_median": 2.024141910934614,
+        "endpoint_signal": 0.792232417460128,
+        "signal_to_background_max": 0.38734100926105197,
+        "signal_to_background_median": 0.3913917365083991
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.8982481107856609,
+        "background_median": 0.7725971928259765,
+        "endpoint_signal": 0.5265110532828465,
+        "signal_to_background_max": 0.5861532542743996,
+        "signal_to_background_median": 0.6814819652100916
+      },
+      "family_id": "v02_family_2be082f68809",
+      "local": {
+        "background_max": 0.6127081455873638,
+        "background_median": 0.4524146569700968,
+        "endpoint_signal": 0.4991205331895742,
+        "signal_to_background_max": 0.814613836594419,
+        "signal_to_background_median": 1.1032368768339098
+      },
+      "pair_id": "premut22p_1AZQ_1WTR_A_M_28_A",
+      "parent_id": "1AZQ_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.6726043307757367,
+        "background_median": 0.4187511050265402,
+        "endpoint_signal": 0.5349177236589211,
+        "signal_to_background_max": 0.7952933086856323,
+        "signal_to_background_median": 1.277412088560383
+      },
+      "split": "test"
+    },
+    {
+      "distance": {
+        "background_max": 0.6817930044500646,
+        "background_median": 0.6817930044500646,
+        "endpoint_signal": 0.2769444813513065,
+        "signal_to_background_max": 0.4062002389929043,
+        "signal_to_background_median": 0.4062002389929043
+      },
+      "family_id": "v02_family_54f812ae22f4",
+      "local": {
+        "background_max": 0.8090926976572931,
+        "background_median": 0.8090926976572931,
+        "endpoint_signal": 0.4490914239271146,
+        "signal_to_background_max": 0.5550555890906532,
+        "signal_to_background_median": 0.5550555890906532
+      },
+      "pair_id": "premut22p_1CDH_1CDU_A_F_42_V",
+      "parent_id": "1CDH_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.5902846292958404,
+        "background_median": 0.5902846292958404,
+        "endpoint_signal": 0.4751988335558264,
+        "signal_to_background_max": 0.8050333855426635,
+        "signal_to_background_median": 0.8050333855426635
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.1804727801872048,
+        "background_median": 0.1804727801872048,
+        "endpoint_signal": 0.19734725598577268,
+        "signal_to_background_max": 1.0935015007862345,
+        "signal_to_background_median": 1.0935015007862345
+      },
+      "family_id": "v02_family_0123349a5fb8",
+      "local": {
+        "background_max": 0.2984195218926547,
+        "background_median": 0.2984195218926547,
+        "endpoint_signal": 0.2887064011223682,
+        "signal_to_background_max": 0.9674514565646263,
+        "signal_to_background_median": 0.9674514565646263
+      },
+      "pair_id": "premut22p_1ERT_1AIU_A_D_59_N",
+      "parent_id": "1ERT_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.20494176478737194,
+        "background_median": 0.20494176478737194,
+        "endpoint_signal": 0.4344234021950274,
+        "signal_to_background_max": 2.1197407109563233,
+        "signal_to_background_median": 2.1197407109563233
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.13679334407285412,
+        "background_median": 0.11187814737505482,
+        "endpoint_signal": 0.152057845287117,
+        "signal_to_background_max": 1.1115880404687908,
+        "signal_to_background_median": 1.3591380341450034
+      },
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "local": {
+        "background_max": 0.15002075557782243,
+        "background_median": 0.1271267457425051,
+        "endpoint_signal": 0.2276824437823143,
+        "signal_to_background_max": 1.5176729573542596,
+        "signal_to_background_median": 1.7909877457532384
+      },
+      "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "parent_id": "1FDA_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.15932724110512775,
+        "background_median": 0.12741510670861383,
+        "endpoint_signal": 0.2595400485751679,
+        "signal_to_background_max": 1.628974723813346,
+        "signal_to_background_median": 2.0369644956520827
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.13103572037815825,
+        "background_median": 0.13093544214856867,
+        "endpoint_signal": 0.16022142924408764,
+        "signal_to_background_max": 1.2227309376535027,
+        "signal_to_background_median": 1.2236673784802208
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "local": {
+        "background_max": 0.2709394315098699,
+        "background_median": 0.2345014746608676,
+        "endpoint_signal": 0.3578695997382608,
+        "signal_to_background_max": 1.320847237864025,
+        "signal_to_background_median": 1.526086777304093
+      },
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "parent_id": "1LYD_A",
+      "repeat_structures": 2,
+      "site": {
+        "background_max": 0.19220029206837128,
+        "background_median": 0.1631526019559764,
+        "endpoint_signal": 0.1927539061016145,
+        "signal_to_background_max": 1.0028804016231478,
+        "signal_to_background_median": 1.1814332336153943
+      },
+      "split": "train"
+    },
+    {
+      "distance": {
+        "background_max": 0.14977935284297833,
+        "background_median": 0.14977935284297833,
+        "endpoint_signal": 0.27239482857624125,
+        "signal_to_background_max": 1.8186407098567667,
+        "signal_to_background_median": 1.8186407098567667
+      },
+      "family_id": "v02_family_607a3bb0349c",
+      "local": {
+        "background_max": 0.11697614646545137,
+        "background_median": 0.11697614646545137,
+        "endpoint_signal": 0.14061902070837143,
+        "signal_to_background_max": 1.2021170551203182,
+        "signal_to_background_median": 1.2021170551203182
+      },
+      "pair_id": "premut22q_3PAZ_4PAZ_A_P_79_A",
+      "parent_id": "3PAZ_A",
+      "repeat_structures": 1,
+      "site": {
+        "background_max": 0.0755320484883492,
+        "background_median": 0.0755320484883492,
+        "endpoint_signal": 0.17051998442986535,
+        "signal_to_background_max": 2.2575845332219213,
+        "signal_to_background_median": 2.2575845332219213
+      },
+      "split": "train"
+    }
+  ],
+  "control_context_report": "/home/husrcf/Code/ospedit/reports/protocol_v02_repeat_control_context_v1.json",
   "format": "ospedit.background_signal_diagnostic.v1",
   "limitations": [
     "same_sequence_identity_does_not_establish_matched_experimental_environment",
@@ -1650,6 +2409,614 @@
                 "median": 0.9633366295806851,
                 "q25": 0.6827605931756047,
                 "q75": 1.9376129662299575
+              }
+            }
+          }
+        }
+      }
+    },
+    "context_prescreened_at_least_two_controls": {
+      "overall": {
+        "distance": {
+          "max": {
+            "background_signal_pearson": 0.8645119907270074,
+            "background_signal_spearman": 0.653230759246622,
+            "signal_to_background": {
+              "count": 18,
+              "mean": 0.811396011363546,
+              "median": 0.6252244042473148,
+              "q25": 0.5492375654343424,
+              "q75": 1.0949285309303902
+            }
+          },
+          "median": {
+            "background_signal_pearson": 0.8710199991333554,
+            "background_signal_spearman": 0.46304965212418764,
+            "signal_to_background": {
+              "count": 18,
+              "mean": 1.1762261679263482,
+              "median": 1.0207371193533827,
+              "q25": 0.7643640055767777,
+              "q75": 1.3516241187560334
+            }
+          }
+        },
+        "local": {
+          "max": {
+            "background_signal_pearson": 0.7325479987689474,
+            "background_signal_spearman": 0.6718266253869969,
+            "signal_to_background": {
+              "count": 18,
+              "mean": 0.9909515210499167,
+              "median": 0.81790700916694,
+              "q25": 0.5779807065124251,
+              "q75": 1.2481046037789252
+            }
+          },
+          "median": {
+            "background_signal_pearson": 0.8365116440757179,
+            "background_signal_spearman": 0.7275541795665634,
+            "signal_to_background": {
+              "count": 18,
+              "mean": 1.3386689801161344,
+              "median": 1.0641083641594906,
+              "q25": 0.8921292838150003,
+              "q75": 1.510304155301299
+            }
+          }
+        },
+        "records": 18,
+        "site": {
+          "max": {
+            "background_signal_pearson": 0.6614207054633443,
+            "background_signal_spearman": 0.4055727554179567,
+            "signal_to_background": {
+              "count": 18,
+              "mean": 1.1061407474838434,
+              "median": 0.7391406738094788,
+              "q25": 0.5183837104338264,
+              "q75": 1.5436354775132772
+            }
+          },
+          "median": {
+            "background_signal_pearson": 0.7269118451299544,
+            "background_signal_spearman": 0.6388028895768835,
+            "signal_to_background": {
+              "count": 18,
+              "mean": 1.456454122898865,
+              "median": 1.2294226610878887,
+              "q25": 0.8379864893797584,
+              "q75": 1.8771691885081343
+            }
+          }
+        }
+      },
+      "splits": {
+        "dev": {
+          "distance": {
+            "max": {
+              "background_signal_pearson": 0.5755667748211979,
+              "background_signal_spearman": 0.6190476190476191,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 0.625275193608002,
+                "median": 0.5509123540279507,
+                "q25": 0.40846582799265096,
+                "q75": 0.615142502417726
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.4913227563940796,
+              "background_signal_spearman": 0.523809523809524,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.0849490471804653,
+                "median": 0.9734047752906194,
+                "q25": 0.8248616924514162,
+                "q75": 1.18466496625977
+              }
+            }
+          },
+          "local": {
+            "max": {
+              "background_signal_pearson": 0.7234097355700091,
+              "background_signal_spearman": 0.5952380952380953,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 0.8603263132117525,
+                "median": 0.592752721621822,
+                "q25": 0.47898757778646117,
+                "q75": 0.7819505861909348
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.88175227930931,
+              "background_signal_spearman": 0.5952380952380953,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.2342268327542836,
+                "median": 1.024297345072232,
+                "q25": 0.851625726162409,
+                "q75": 1.0790693865391958
+              }
+            }
+          },
+          "records": 8,
+          "site": {
+            "max": {
+              "background_signal_pearson": -0.13911308540460643,
+              "background_signal_spearman": -0.3333333333333334,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 0.8257391221202991,
+                "median": 0.5202820147132652,
+                "q25": 0.3893465867151763,
+                "q75": 0.5718348739699796
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.163502698334335,
+              "background_signal_spearman": 0.09523809523809526,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.2599285303637742,
+                "median": 1.0146597645488795,
+                "q25": 0.7516216509038246,
+                "q75": 1.3034601315733707
+              }
+            }
+          }
+        },
+        "test": {
+          "distance": {
+            "max": {
+              "background_signal_pearson": null,
+              "background_signal_spearman": null,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.6038368749766203,
+                "median": 0.6038368749766203,
+                "q25": 0.59499506462551,
+                "q75": 0.6126786853277306
+              }
+            },
+            "median": {
+              "background_signal_pearson": null,
+              "background_signal_spearman": null,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.7020415518033578,
+                "median": 0.7020415518033578,
+                "q25": 0.6917617585067247,
+                "q75": 0.7123213450999908
+              }
+            }
+          },
+          "local": {
+            "max": {
+              "background_signal_pearson": 0.9999999999999999,
+              "background_signal_spearman": 0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.7082889412881702,
+                "median": 0.7082889412881702,
+                "q25": 0.6551264936350458,
+                "q75": 0.7614513889412946
+              }
+            },
+            "median": {
+              "background_signal_pearson": 1.0,
+              "background_signal_spearman": 0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.957323456692647,
+                "median": 0.957323456692647,
+                "q25": 0.8843667466220155,
+                "q75": 1.0302801667632784
+              }
+            }
+          },
+          "records": 2,
+          "site": {
+            "max": {
+              "background_signal_pearson": 1.0,
+              "background_signal_spearman": 0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.7912308857598607,
+                "median": 0.7912308857598607,
+                "q25": 0.7891996742969749,
+                "q75": 0.7932620972227464
+              }
+            },
+            "median": {
+              "background_signal_pearson": -0.9999999999999999,
+              "background_signal_spearman": -0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 1.1194049535864914,
+                "median": 1.1194049535864914,
+                "q25": 1.0404013860995456,
+                "q75": 1.1984085210734372
+              }
+            }
+          }
+        },
+        "train": {
+          "distance": {
+            "max": {
+              "background_signal_pearson": 0.21338612870916024,
+              "background_signal_spearman": 0.024098134635593994,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.0494066132158215,
+                "median": 1.0782690213919894,
+                "q25": 0.9362117751559815,
+                "q75": 1.2431233549265743
+              }
+            },
+            "median": {
+              "background_signal_pearson": -0.6931101757939926,
+              "background_signal_spearman": -0.6506496351610379,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.3860494427029786,
+                "median": 1.276374875534672,
+                "q25": 1.0214759569393914,
+                "q75": 1.421735919134289
+              }
+            }
+          },
+          "local": {
+            "max": {
+              "background_signal_pearson": 0.8417763120130296,
+              "background_signal_spearman": 0.9047619047619048,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.1922423738285173,
+                "median": 1.1753619696938256,
+                "q25": 0.9742302786021585,
+                "q75": 1.5235795034839406
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.8314077572264371,
+              "background_signal_spearman": 0.7142857142857144,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.5384475083338571,
+                "median": 1.494521533298505,
+                "q25": 1.0326944696134102,
+                "q75": 1.8084239672832754
+              }
+            }
+          },
+          "records": 8,
+          "site": {
+            "max": {
+              "background_signal_pearson": 0.782922369520214,
+              "background_signal_spearman": 0.8333333333333335,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.4652698382783838,
+                "median": 1.4582962312132084,
+                "q25": 0.924938522413578,
+                "q75": 1.7944491622177856
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.7763140000829651,
+              "background_signal_spearman": 0.8571428571428572,
+              "signal_to_background": {
+                "count": 8,
+                "mean": 1.737242007762049,
+                "median": 1.717373881364186,
+                "q25": 1.0833536329844191,
+                "q75": 2.3097738708524025
+              }
+            }
+          }
+        }
+      }
+    },
+    "context_prescreened_controls": {
+      "overall": {
+        "distance": {
+          "max": {
+            "background_signal_pearson": 0.8192640771642247,
+            "background_signal_spearman": 0.6138102181237093,
+            "signal_to_background": {
+              "count": 27,
+              "mean": 0.9136609408670531,
+              "median": 0.9151420840276588,
+              "q25": 0.5962321440682068,
+              "q75": 1.1025447706275127
+            }
+          },
+          "median": {
+            "background_signal_pearson": 0.8079669805332514,
+            "background_signal_spearman": 0.5080967609456091,
+            "signal_to_background": {
+              "count": 27,
+              "mean": 1.1568810452422542,
+              "median": 1.020388374379424,
+              "q25": 0.7020415518033578,
+              "q75": 1.3441102033670633
+            }
+          }
+        },
+        "local": {
+          "max": {
+            "background_signal_pearson": 0.7988724803785024,
+            "background_signal_spearman": 0.75652573007804,
+            "signal_to_background": {
+              "count": 27,
+              "mean": 1.0399960276208475,
+              "median": 0.9674514565646263,
+              "q25": 0.5859751530022572,
+              "q75": 1.4192600976091423
+            }
+          },
+          "median": {
+            "background_signal_pearson": 0.8292167657962687,
+            "background_signal_spearman": 0.7546939486492796,
+            "signal_to_background": {
+              "count": 27,
+              "mean": 1.271807666998326,
+              "median": 1.0498500279573413,
+              "q25": 0.8408216720986896,
+              "q75": 1.5264791784710758
+            }
+          }
+        },
+        "records": 27,
+        "site": {
+          "max": {
+            "background_signal_pearson": 0.6566295135421039,
+            "background_signal_spearman": 0.4915280167173707,
+            "signal_to_background": {
+              "count": 27,
+              "mean": 1.2485063401413077,
+              "median": 0.8050333855426635,
+              "q25": 0.5346811659863849,
+              "q75": 1.8923380791237667
+            }
+          },
+          "median": {
+            "background_signal_pearson": 0.7065126107459411,
+            "background_signal_spearman": 0.7150053510261379,
+            "signal_to_background": {
+              "count": 27,
+              "mean": 1.482048590417989,
+              "median": 1.277412088560383,
+              "q25": 0.8009413825890708,
+              "q75": 2.119566318282547
+            }
+          }
+        }
+      },
+      "splits": {
+        "dev": {
+          "distance": {
+            "max": {
+              "background_signal_pearson": 0.3916849442341021,
+              "background_signal_spearman": 0.38333333333333336,
+              "signal_to_background": {
+                "count": 9,
+                "mean": 0.8304548559370533,
+                "median": 0.6063110338620141,
+                "q25": 0.4126006625977607,
+                "q75": 0.6289283128157886
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.36363937622626624,
+              "background_signal_spearman": 0.3666666666666667,
+              "signal_to_background": {
+                "count": 9,
+                "mean": 1.2390538368903539,
+                "median": 1.013974215908722,
+                "q25": 0.8896526071172395,
+                "q75": 1.6561597966449495
+              }
+            }
+          },
+          "local": {
+            "max": {
+              "background_signal_pearson": 0.7092552668685006,
+              "background_signal_spearman": 0.45,
+              "signal_to_background": {
+                "count": 9,
+                "mean": 0.98689555526482,
+                "median": 0.6369308052473746,
+                "q25": 0.5170702303848772,
+                "q75": 0.8212001817394612
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.8737391790068305,
+              "background_signal_spearman": 0.45,
+              "signal_to_background": {
+                "count": 9,
+                "mean": 1.3192515726359586,
+                "median": 1.025805220633078,
+                "q25": 0.8624297802261282,
+                "q75": 1.0811774450718645
+              }
+            }
+          },
+          "records": 9,
+          "site": {
+            "max": {
+              "background_signal_pearson": 0.12990718273711702,
+              "background_signal_spearman": 0.06666666666666667,
+              "signal_to_background": {
+                "count": 9,
+                "mean": 0.9283252917666213,
+                "median": 0.5240786232721426,
+                "q25": 0.43488139520917435,
+                "q75": 0.6514883697780366
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.3381554421282517,
+              "background_signal_spearman": 0.3666666666666667,
+              "signal_to_background": {
+                "count": 9,
+                "mean": 1.314271432427488,
+                "median": 1.0566658816352523,
+                "q25": 0.796849379635478,
+                "q75": 1.3179172032749644
+              }
+            }
+          }
+        },
+        "test": {
+          "distance": {
+            "max": {
+              "background_signal_pearson": null,
+              "background_signal_spearman": null,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.6038368749766203,
+                "median": 0.6038368749766203,
+                "q25": 0.59499506462551,
+                "q75": 0.6126786853277306
+              }
+            },
+            "median": {
+              "background_signal_pearson": null,
+              "background_signal_spearman": null,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.7020415518033578,
+                "median": 0.7020415518033578,
+                "q25": 0.6917617585067247,
+                "q75": 0.7123213450999908
+              }
+            }
+          },
+          "local": {
+            "max": {
+              "background_signal_pearson": 0.9999999999999999,
+              "background_signal_spearman": 0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.7082889412881702,
+                "median": 0.7082889412881702,
+                "q25": 0.6551264936350458,
+                "q75": 0.7614513889412946
+              }
+            },
+            "median": {
+              "background_signal_pearson": 1.0,
+              "background_signal_spearman": 0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.957323456692647,
+                "median": 0.957323456692647,
+                "q25": 0.8843667466220155,
+                "q75": 1.0302801667632784
+              }
+            }
+          },
+          "records": 2,
+          "site": {
+            "max": {
+              "background_signal_pearson": 1.0,
+              "background_signal_spearman": 0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 0.7912308857598607,
+                "median": 0.7912308857598607,
+                "q25": 0.7891996742969749,
+                "q75": 0.7932620972227464
+              }
+            },
+            "median": {
+              "background_signal_pearson": -0.9999999999999999,
+              "background_signal_spearman": -0.9999999999999999,
+              "signal_to_background": {
+                "count": 2,
+                "mean": 1.1194049535864914,
+                "median": 1.1194049535864914,
+                "q25": 1.0404013860995456,
+                "q75": 1.1984085210734372
+              }
+            }
+          }
+        },
+        "train": {
+          "distance": {
+            "max": {
+              "background_signal_pearson": 0.7658434002143888,
+              "background_signal_spearman": 0.5446531546071587,
+              "signal_to_background": {
+                "count": 16,
+                "mean": 0.9991923718764818,
+                "median": 1.0246709639759666,
+                "q25": 0.849400773892536,
+                "q75": 1.1393737647649687
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.718516187274412,
+              "background_signal_spearman": 0.3321055820775357,
+              "signal_to_background": {
+                "count": 16,
+                "mean": 1.1675137866200602,
+                "median": 1.0415846227239138,
+                "q25": 0.8554867749704997,
+                "q75": 1.336596287978093
+              }
+            }
+          },
+          "local": {
+            "max": {
+              "background_signal_pearson": 0.8664605657426274,
+              "background_signal_spearman": 0.9036058369775742,
+              "signal_to_background": {
+                "count": 16,
+                "mean": 1.1113284291126975,
+                "median": 1.0160684377082128,
+                "q25": 0.907501543226473,
+                "q75": 1.5199726129252094
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.8495856484376171,
+              "background_signal_spearman": 0.8035322263676802,
+              "signal_to_background": {
+                "count": 16,
+                "mean": 1.2844309963653675,
+                "median": 1.1259835415388297,
+                "q25": 0.907501543226473,
+                "q75": 1.576293428969027
+              }
+            }
+          },
+          "records": 16,
+          "site": {
+            "max": {
+              "background_signal_pearson": 0.7467629140634724,
+              "background_signal_spearman": 0.791758860413575,
+              "signal_to_background": {
+                "count": 16,
+                "mean": 1.48576761164975,
+                "median": 1.4582962312132084,
+                "q25": 0.7765532603532147,
+                "q75": 2.119479121945659
+              }
+            },
+            "median": {
+              "background_signal_pearson": 0.7394759863837818,
+              "background_signal_spearman": 0.8182489338103116,
+              "signal_to_background": {
+                "count": 16,
+                "mean": 1.6217536963915826,
+                "median": 1.717373881364186,
+                "q25": 0.8010537469298711,
+                "q75": 2.227291103008635
               }
             }
           }

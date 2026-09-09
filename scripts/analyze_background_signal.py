@@ -14,6 +14,7 @@ import numpy as np
 REPORT_FORMAT = "ospedit.background_signal_diagnostic.v1"
 BACKGROUND_REPORT_FORMAT = "ospedit.background_control_coverage.v1"
 RESPONSE_REPORT_FORMAT = "ospedit.response_learnability_audit.v1"
+CONTEXT_REPORT_FORMAT = "ospedit.repeat_control_context_audit.v1"
 METRICS = {
     "local": ("neighborhood_rmsd_angstrom", "local_backbone_error"),
     "site": ("mutation_site_rmsd_angstrom", "mutation_site_backbone_error"),
@@ -84,6 +85,7 @@ def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
 def background_signal_report(
     background_report: str | Path,
     response_report: str | Path,
+    control_context_report: str | Path | None = None,
 ) -> dict[str, Any]:
     background_path = Path(background_report).resolve()
     response_path = Path(response_report).resolve()
@@ -96,8 +98,7 @@ def background_signal_report(
     if background.get("manifest_fingerprint") != response.get("manifest_fingerprint"):
         raise ValueError("background and response reports use different manifests")
     response_rows = {row["pair_id"]: row for row in response.get("records", [])}
-    rows: list[dict[str, Any]] = []
-    for control in background.get("records", []):
+    def diagnostic_row(control: dict[str, Any]) -> dict[str, Any]:
         pair_id = control["pair_id"]
         if pair_id not in response_rows:
             raise ValueError(f"response report is missing {pair_id}")
@@ -122,12 +123,53 @@ def background_signal_report(
                 "signal_to_background_max": _ratio(signal, maximum),
                 "signal_to_background_median": _ratio(signal, median),
             }
-        rows.append(row)
+        return row
+
+    rows = [diagnostic_row(control) for control in background.get("records", [])]
+
+    context_path = Path(control_context_report).resolve() if control_context_report else None
+    context_rows: list[dict[str, Any]] = []
+    if context_path is not None:
+        context = json.loads(context_path.read_text())
+        if context.get("format") != CONTEXT_REPORT_FORMAT:
+            raise ValueError(f"expected {CONTEXT_REPORT_FORMAT}")
+        if context.get("manifest_fingerprint") != background.get("manifest_fingerprint"):
+            raise ValueError("context and background reports use different manifests")
+        selected: dict[str, list[dict[str, Any]]] = {}
+        for row in context.get("records", []):
+            if row.get("selected"):
+                selected.setdefault(row["pair_id"], []).append(row)
+        background_rows = {row["pair_id"]: row for row in background.get("records", [])}
+        for pair_id, controls in sorted(selected.items()):
+            source_row = background_rows[pair_id]
+            aggregated = {
+                "pair_id": pair_id,
+                "parent_id": source_row["parent_id"],
+                "family_id": source_row["family_id"],
+                "split": source_row["split"],
+                "repeat_structures": len(controls),
+                "background_max": {
+                    name: max(float(row["background"][name]) for row in controls)
+                    for name, _ in METRICS.values()
+                },
+                "background_median": {
+                    name: float(np.median([float(row["background"][name]) for row in controls]))
+                    for name, _ in METRICS.values()
+                },
+            }
+            context_rows.append(diagnostic_row(aggregated))
 
     cohorts = {
         "all_controls": rows,
         "at_least_two_controls": [row for row in rows if row["repeat_structures"] >= 2],
     }
+    if context_path is not None:
+        cohorts.update({
+            "context_prescreened_controls": context_rows,
+            "context_prescreened_at_least_two_controls": [
+                row for row in context_rows if row["repeat_structures"] >= 2
+            ],
+        })
     summary = {
         name: {
             "overall": _summary(cohort),
@@ -144,6 +186,7 @@ def background_signal_report(
         "manifest_fingerprint": background["manifest_fingerprint"],
         "background_report": str(background_path),
         "response_report": str(response_path),
+        "control_context_report": str(context_path) if context_path is not None else None,
         "usage": "diagnostic_only_not_a_training_weight",
         "limitations": [
             "same_sequence_identity_does_not_establish_matched_experimental_environment",
@@ -152,6 +195,7 @@ def background_signal_report(
         ],
         "summary": summary,
         "records": rows,
+        "context_prescreened_records": context_rows,
     }
 
 
@@ -160,9 +204,14 @@ def main() -> None:
     parser.add_argument("background_report")
     parser.add_argument("response_report")
     parser.add_argument("output")
+    parser.add_argument("--control-context-report")
     args = parser.parse_args()
     try:
-        report = background_signal_report(args.background_report, args.response_report)
+        report = background_signal_report(
+            args.background_report,
+            args.response_report,
+            args.control_context_report,
+        )
     except (OSError, ValueError, json.JSONDecodeError) as error:
         raise SystemExit(str(error)) from error
     destination = Path(args.output)
