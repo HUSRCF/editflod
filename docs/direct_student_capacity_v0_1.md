@@ -37,3 +37,23 @@ Tracked machine-readable artifacts:
 Next decision: improve spatial propagation (four to six blocks or a global
 context path) and evaluate a held-out-family split only after the graph model
 matches the Transformer on this training-capacity gate.
+
+## Frozen extrapolation diagnostic
+
+The same 700-step checkpoints were evaluated once on the existing dev and test
+splits without further tuning. They do not establish generalization.
+
+| Split / method | Local error (A) | Site error (A) | Distance-change error (A) | Distance-change cosine | Remote frame drift (A) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Dev / copy | 0.2179 | 0.2462 | 0.2252 | undefined | 0.0000 |
+| Dev / Transformer | 0.5299 | 0.6226 | 0.5257 | 0.140 | 0.5906 |
+| Dev / spatial graph | 0.3325 | 0.4007 | 0.4108 | 0.106 | 0.4143 |
+| Test / copy | 1.2705 | 0.9948 | 0.7667 | undefined | 0.0000 |
+| Test / Transformer | 1.2708 | 1.0074 | 0.7651 | 0.063 | 0.1812 |
+| Test / spatial graph | 1.2631 | 0.9833 | 0.7668 | 0.061 | 0.1193 |
+
+Both models overfit: dev performance is substantially worse than copy-parent,
+and test performance is essentially at the copy baseline. The spatial graph is
+less destructive than the Transformer, but its tiny test local/site changes are
+not accompanied by better distance-change recovery. The next scientific
+constraint is therefore data-supported generalization, not more teacher scans.
