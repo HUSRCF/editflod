@@ -46,6 +46,30 @@ def test_train_cli_writes_checkpoint(tmp_path, monkeypatch):
     assert payload["config"]["gradient_clip_norm"] == 0.5
     assert payload["config"]["translation_scale"] == 2.0
     assert payload["config"]["rotation_scale"] == 0.25
+    assert payload["config"]["endpoint_group_balanced_loss"] is False
+
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "ospedit-train",
+            "--manifest",
+            str(manifest),
+            "--output",
+            str(tmp_path / "bad-endpoint-balance.pt"),
+            "--resume",
+            str(checkpoint),
+            "--epochs",
+            "1",
+            "--translation-scale",
+            "2.0",
+            "--rotation-scale",
+            "0.25",
+            "--endpoint-group-balanced-loss",
+        ],
+    )
+    with pytest.raises(SystemExit, match="endpoint_group_balanced_loss"):
+        main()
 
     monkeypatch.setattr(
         sys,

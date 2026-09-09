@@ -1,3 +1,5 @@
+from dataclasses import replace
+
 import numpy as np
 import pytest
 
@@ -226,6 +228,69 @@ def test_family_balanced_weights_survive_single_sample_batches():
         sample_weights=torch.tensor([1.5]),
     )
     assert float(loss) == pytest.approx(1.5)
+
+
+def test_endpoint_group_balancing_shares_group_mass():
+    first = replace(
+        make_record("first"),
+        source_checksum="a" * 64,
+        target_checksum="b" * 64,
+    )
+    duplicate = replace(
+        make_record("duplicate"),
+        source_checksum="a" * 64,
+        target_checksum="b" * 64,
+    )
+    unique = replace(
+        make_record("unique"),
+        source_checksum="c" * 64,
+        target_checksum="d" * 64,
+    )
+
+    dataset = PairDataset(
+        [first, duplicate, unique], endpoint_group_balanced_loss=True
+    )
+
+    assert [dataset[index]["sample_weight"] for index in range(3)] == pytest.approx(
+        [0.75, 0.75, 1.5]
+    )
+
+
+def test_family_and_endpoint_group_balancing_are_hierarchical():
+    first = replace(
+        make_record("first"),
+        family_id="family-a",
+        source_checksum="a" * 64,
+        target_checksum="b" * 64,
+    )
+    duplicate = replace(
+        make_record("duplicate"),
+        family_id="family-a",
+        source_checksum="a" * 64,
+        target_checksum="b" * 64,
+    )
+    second_group = replace(
+        make_record("second"),
+        family_id="family-a",
+        source_checksum="c" * 64,
+        target_checksum="d" * 64,
+    )
+    other_family = replace(
+        make_record("other"),
+        family_id="family-b",
+        source_checksum="e" * 64,
+        target_checksum="f" * 64,
+    )
+
+    dataset = PairDataset(
+        [first, duplicate, second_group, other_family],
+        family_balanced_loss=True,
+        endpoint_group_balanced_loss=True,
+    )
+
+    assert [dataset[index]["sample_weight"] for index in range(4)] == pytest.approx(
+        [0.5, 0.5, 1.0, 2.0]
+    )
 
 
 def test_supervised_loss_normalizes_site_and_neighborhood_separately():

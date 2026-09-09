@@ -94,6 +94,14 @@ def main() -> None:
         help="Give each training family equal total supervised weight",
     )
     parser.add_argument(
+        "--endpoint-group-balanced-loss",
+        action="store_true",
+        help=(
+            "Give each unordered physical endpoint pair equal total weight; "
+            "combine with family balancing hierarchically"
+        ),
+    )
+    parser.add_argument(
         "--biochemical-edit-features",
         action="store_true",
         help="Append fixed biochemical target-minus-source descriptors",
@@ -295,6 +303,15 @@ def main() -> None:
         saved_family_balanced = bool(resume_config.get("family_balanced_loss", False))
         if saved_family_balanced != args.family_balanced_loss:
             raise SystemExit(f"resume checkpoint family_balanced_loss={saved_family_balanced} does not match requested {args.family_balanced_loss}")
+        saved_endpoint_balanced = bool(
+            resume_config.get("endpoint_group_balanced_loss", False)
+        )
+        if saved_endpoint_balanced != args.endpoint_group_balanced_loss:
+            raise SystemExit(
+                "resume checkpoint endpoint_group_balanced_loss="
+                f"{saved_endpoint_balanced} does not match requested "
+                f"{args.endpoint_group_balanced_loss}"
+            )
         for key, requested in (
             ("delta_norm_weight", args.delta_norm_weight),
             ("mutation_loss_weight", args.mutation_loss_weight),
@@ -350,6 +367,7 @@ def main() -> None:
         include_spatial_graph=architecture in {"spatial_graph", "spatial_graph_global"},
         spatial_neighbors=args.spatial_neighbors,
         family_balanced_loss=args.family_balanced_loss,
+        endpoint_group_balanced_loss=args.endpoint_group_balanced_loss,
         include_biochemical=args.biochemical_edit_features,
         include_target_residue=not args.ablate_target_residue,
         target_localization_radius=args.target_localization_radius,

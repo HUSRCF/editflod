@@ -1,0 +1,77 @@
+{
+  "format": "ospedit.manifest_endpoint_group_audit.v1",
+  "grouping": "unordered_physical_endpoint_identity_pair",
+  "groups": [
+    {
+      "canonical_pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "classification": "reverse_direction_duplicates",
+      "endpoint_group_id": "endpoint_group_fc9481f9eb14fed4",
+      "records": [
+        {
+          "direction": "canonical",
+          "family_id": "v02_family_ea2e28f36573",
+          "pair_id": "platinum_3N0H_3S3V_A_S35K",
+          "split": "train"
+        },
+        {
+          "direction": "reverse",
+          "family_id": "v02_family_ea2e28f36573",
+          "pair_id": "platinum_3S3V_3N0H_A_K35S",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "canonical_pair_id": "premut22_1ERT_1AIU_A_D_59_N",
+      "classification": "same_direction_duplicates",
+      "endpoint_group_id": "endpoint_group_9e0e68a34c794b13",
+      "records": [
+        {
+          "direction": "canonical",
+          "family_id": "v02_family_0123349a5fb8",
+          "pair_id": "premut22_1ERT_1AIU_A_D_59_N",
+          "split": "train"
+        },
+        {
+          "direction": "canonical",
+          "family_id": "v02_family_0123349a5fb8",
+          "pair_id": "premut22p_1ERT_1AIU_A_D_59_N",
+          "split": "train"
+        }
+      ]
+    },
+    {
+      "canonical_pair_id": "premut23all_2LZM_1L02_A_T_156_A",
+      "classification": "same_direction_duplicates",
+      "endpoint_group_id": "endpoint_group_b1b09a35e9d83706",
+      "records": [
+        {
+          "direction": "canonical",
+          "family_id": "v02_family_e40682d3a677",
+          "pair_id": "premut23all_2LZM_1L02_A_T_156_A",
+          "split": "train"
+        },
+        {
+          "direction": "canonical",
+          "family_id": "v02_family_e40682d3a677",
+          "pair_id": "premut23ctx_2LZM_1L02_A_T_156_A",
+          "split": "train"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "checksums_identify_files_not_biologically_equivalent_re_refinements",
+    "reverse_directions_may_be_valid_training_augmentation_but_not_independent_evidence"
+  ],
+  "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "summary": {
+    "duplicate_groups": 3,
+    "records": 101,
+    "records_in_duplicate_groups": 6,
+    "redundant_records": 3,
+    "reverse_direction_duplicate_groups": 1,
+    "same_direction_duplicate_groups": 2,
+    "unique_endpoint_groups": 98
+  }
+}

@@ -290,3 +290,27 @@ SEQADV option. The nine removed records are exactly the five no-annotation and
 four other-site-annotation cases in that artifact. This validates the gate's
 mechanics but does not make strict mode the default: the five absent annotations
 still require manual evidence rather than automatic rejection.
+
+### Response-independent context decisions and endpoint groups
+
+The 15 non-test records in the citation/crystal queue were reviewed without
+using observed displacement or prediction metrics. Eight are retained as
+matched-context direct-supervision candidates (seven train and one dev), three
+are explicit redox-state mismatch challenges, two depend on oligomeric assembly,
+one is the confirmed provenance rejection above, and one is a reverse duplicate
+alias. No record is promoted to strict mutation-attribution truth because the
+literature evidence is abstract/metadata level rather than full-method review.
+
+The candidate set is a mechanism-development probe, not a new generalization
+benchmark: it has only one development record and no reviewed test record. The
+two frozen test entries were intentionally not reviewed while defining these
+rules. The static decisions are validated against the source queue so test
+leakage, missing records, invalid dispositions, and summary drift fail loudly.
+
+An independent manifest audit finds 98 unique physical endpoint groups among
+101 records. Two groups are duplicated in the same direction across source
+imports; one DHFR endpoint pair appears in both directions. These rows are not
+independent experimental evidence. Future student runs should use endpoint-group
+balancing, optionally nested within family balancing, and evaluation should
+aggregate or bootstrap by physical endpoint group. This changes statistical
+weighting, not the validity of learning a directional reverse edit.

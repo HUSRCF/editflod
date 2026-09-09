@@ -1,0 +1,227 @@
+{
+  "format": "ospedit.endpoint_context_decisions.v1",
+  "source_queue": "reports/protocol_v02_endpoint_context_queue_v1.json",
+  "source_queue_sha256": "6c7090553d820d12fa6fec81a0ff479196365eebfbfe13d7794ffe34b3dd8eae",
+  "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "review_scope": "train_and_dev_only",
+  "frozen_test_records_reviewed": false,
+  "selection_used_observed_response": false,
+  "evidence_level": "pubmed_abstract_crossref_metadata_rcsb_metadata_and_pdb_deposition",
+  "open_access_full_text_available": false,
+  "usage": "candidate_data_layer_gating_not_model_selection",
+  "policy": {
+    "matched_context_candidate": "eligible_for_canonical_v03_direct_supervision_probe",
+    "state_mismatch_challenge": "exclude_from_mutation_only_supervision_retain_as_labeled_challenge",
+    "assembly_dependent_challenge": "exclude_from_first_single_chain_scope_retain_for_future_complex_editor",
+    "provenance_reject": "exclude_from_all_mutation_response_training_and_evaluation",
+    "reverse_duplicate_alias": "exclude_as_independent_sample_retain_link_to_canonical_direction"
+  },
+  "summary": {
+    "reviewed": 15,
+    "matched_context_candidate": 8,
+    "state_mismatch_challenge": 3,
+    "assembly_dependent_challenge": 2,
+    "provenance_reject": 1,
+    "reverse_duplicate_alias": 1,
+    "direct_supervision_candidates": {
+      "train": 7,
+      "dev": 1,
+      "test": 0
+    },
+    "strict_mutation_attribution_admitted": 0
+  },
+  "records": [
+    {
+      "pair_id": "premut22alt1_1CZL_1CZK_A_D_99_N",
+      "split": "train",
+      "disposition": "state_mismatch_challenge",
+      "direct_supervision_candidate": false,
+      "reason_codes": [
+        "parent_wild_type_semiquinone",
+        "mutant_d100n_oxidized",
+        "fmn_redox_state_mismatch_despite_matched_growth"
+      ],
+      "evidence": {"pmid": 10610792, "doi": "10.1006/jmbi.1999.3152", "parent_pdb": "1CZL", "mutant_pdb": "1CZK"}
+    },
+    {
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "split": "train",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "reason_codes": [
+        "parent_and_mutant_reduced",
+        "matched_copper_context",
+        "exact_declared_growth_signature",
+        "same_crystal_form_and_primary_study"
+      ],
+      "evidence": {"pmid": 9341204, "doi": "10.1021/bi9704111", "parent_pdb": "3PAZ", "mutant_pdb": "5PAZ"}
+    },
+    {
+      "pair_id": "premut22q_3PAZ_4PAZ_A_P_79_A",
+      "split": "train",
+      "disposition": "state_mismatch_challenge",
+      "direct_supervision_candidate": false,
+      "reason_codes": [
+        "parent_reduced",
+        "mutant_p80a_oxidized",
+        "redox_state_mismatch_despite_identical_cell_and_growth_metadata"
+      ],
+      "evidence": {"pmid": 9341204, "doi": "10.1021/bi9704111", "parent_pdb": "3PAZ", "mutant_pdb": "4PAZ"}
+    },
+    {
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "split": "dev",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "reason_codes": [
+        "same_nadph_ar101_ternary_complex",
+        "same_crystal_form_and_primary_study",
+        "matched_ligand_context",
+        "parent_growth_ph_not_deposited"
+      ],
+      "evidence": {"pmid": 19622858, "doi": "10.1107/s0907444909013936", "parent_pdb": "3FYW", "mutant_pdb": "3FY8"}
+    },
+    {
+      "pair_id": "premut22alt1_1ERT_1ERV_A_C_72_S",
+      "split": "train",
+      "disposition": "assembly_dependent_challenge",
+      "direct_supervision_candidate": false,
+      "reason_codes": [
+        "both_endpoints_reduced",
+        "biological_assembly_is_homodimer",
+        "c73s_replaces_intermonomer_disulfide_with_hydrogen_bond",
+        "first_editor_outputs_single_chain_only"
+      ],
+      "evidence": {"pmid": 8805557, "doi": "10.1016/s0969-2126(96)00079-2", "parent_pdb": "1ERT", "mutant_pdb": "1ERV"}
+    },
+    {
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "split": "train",
+      "disposition": "state_mismatch_challenge",
+      "direct_supervision_candidate": false,
+      "reason_codes": [
+        "parent_oxidized",
+        "mutant_d58p_reduced",
+        "fmn_reduction_drives_57_58_peptide_rearrangement"
+      ],
+      "evidence": {"pmid": 9063874, "doi": "10.1021/bi962180o", "parent_pdb": "5NLL", "mutant_pdb": "1FLN"}
+    },
+    {
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "split": "train",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "reason_codes": [
+        "parent_and_mutant_oxidized",
+        "matched_fmn_context",
+        "same_crystal_form_and_primary_study",
+        "declared_growth_metadata_missing"
+      ],
+      "evidence": {"pmid": 9063874, "doi": "10.1021/bi962180o", "parent_pdb": "5NLL", "mutant_pdb": "1FLD"}
+    },
+    {
+      "pair_id": "microminer_8I6L_A_8I8U_X_S118A",
+      "split": "train",
+      "disposition": "assembly_dependent_challenge",
+      "direct_supervision_candidate": false,
+      "reason_codes": [
+        "biological_assembly_is_24mer",
+        "porous_crystal_hydrate_study",
+        "matched_cryogenic_temperature_and_ph",
+        "first_editor_outputs_single_chain_only"
+      ],
+      "evidence": {"doi": "10.1021/acs.cgd.3c00880", "parent_pdb": "8I6L", "mutant_pdb": "8I8U"}
+    },
+    {
+      "pair_id": "microminer_5FNX_A_5FZU_A_K177E",
+      "split": "train",
+      "disposition": "provenance_reject",
+      "direct_supervision_candidate": false,
+      "reason_codes": [
+        "both_structures_are_n19d_preparations",
+        "manifest_k177e_not_supported_by_engineered_mutation_annotation",
+        "crystallization_ph_mismatch",
+        "paper_reports_ph_and_crystal_packing_conformational_changes"
+      ],
+      "evidence": {"pmid": 27329566, "doi": "10.1016/j.jsb.2016.06.014", "parent_pdb": "5FNX", "mutant_pdb": "5FZU"}
+    },
+    {
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I",
+      "split": "train",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "reason_codes": [
+        "same_systematic_site_131_mutation_study",
+        "same_crystal_form_and_hetero_context",
+        "paper_reports_little_backbone_perturbation_for_nonproline_substitutions",
+        "no_seqadv_annotation_requires_provenance_note"
+      ],
+      "evidence": {"pmid": 8289284, "doi": "10.1006/jmbi.1994.1016", "parent_pdb": "1DYE", "mutant_pdb": "1DYC"}
+    },
+    {
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "split": "train",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "reason_codes": [
+        "same_site_variant_pair_in_systematic_thr157_study",
+        "same_crystal_form",
+        "same_resolution",
+        "no_ligand_or_chain_context_difference"
+      ],
+      "evidence": {"pmid": 3118211, "doi": "10.1038/330041a0", "parent_pdb": "1L04", "mutant_pdb": "1L09"}
+    },
+    {
+      "pair_id": "microminer_1L25_A_1L28_A_A86G",
+      "split": "train",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "reason_codes": [
+        "same_site_variant_pair_in_systematic_pro86_study",
+        "same_crystal_form",
+        "no_ligand_or_chain_context_difference",
+        "paper_reports_extended_helix_for_all_nonproline_variants"
+      ],
+      "evidence": {"pmid": 3277275, "parent_pdb": "1L25", "mutant_pdb": "1L28"}
+    },
+    {
+      "pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "split": "train",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "canonical_endpoint_pair": true,
+      "reason_codes": [
+        "shared_n64f_background",
+        "matched_trimethoprim_and_sulfate_context",
+        "same_crystal_form_and_primary_study",
+        "crystal_growth_and_data_collection_temperature_differ"
+      ],
+      "evidence": {"pmid": 21684339, "doi": "10.1016/j.jsb.2011.06.001", "parent_pdb": "3N0H", "mutant_pdb": "3S3V"}
+    },
+    {
+      "pair_id": "platinum_3S3V_3N0H_A_K35S",
+      "split": "train",
+      "disposition": "reverse_duplicate_alias",
+      "direct_supervision_candidate": false,
+      "canonical_pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "reason_codes": [
+        "same_physical_endpoint_pair_in_reverse_direction",
+        "must_not_count_as_independent_experiment"
+      ],
+      "evidence": {"pmid": 21684339, "doi": "10.1016/j.jsb.2011.06.001", "parent_pdb": "3S3V", "mutant_pdb": "3N0H"}
+    },
+    {
+      "pair_id": "microminer_1GBA_A_1GBJ_A_A216G",
+      "split": "train",
+      "disposition": "matched_context_candidate",
+      "direct_supervision_candidate": true,
+      "reason_codes": [
+        "shared_m190a_background",
+        "same_crystal_form_and_sulfate_context",
+        "same_primary_study",
+        "reverse_edit_from_a216_variant_to_reference_g216"
+      ],
+      "evidence": {"pmid": 7500345, "doi": "10.1006/jmbi.1995.0650", "parent_pdb": "1GBA", "mutant_pdb": "1GBJ"}
+    }
+  ]
+}

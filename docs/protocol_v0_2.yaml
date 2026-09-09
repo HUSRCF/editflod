@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: direct_supervision_representation_validation
+  status: matched_context_data_gating
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -112,7 +112,9 @@ artifacts:
     rcsb_environment: reports/protocol_v02_rcsb_environment_v1.json
     rcsb_endpoint_environment: reports/protocol_v02_rcsb_endpoint_environment_v1.json
     endpoint_context_queue: reports/protocol_v02_endpoint_context_queue_v1.json
+    endpoint_context_decisions: reports/protocol_v02_endpoint_context_decisions_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
+    manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
     response_review_queue: reports/protocol_v02_response_review_queue_v1.json
     response_review_decisions: reports/protocol_v02_response_review_decisions_v1.json
@@ -156,3 +158,20 @@ background_control_gate:
       default: record_seqadv_support
       high_precision_option: require_engineered_mutation_support
       no_annotation_disposition: manual_review_not_automatic_rejection
+  response_independent_context_review:
+    review_scope: train_and_dev_only
+    frozen_test_reviewed: false
+    matched_context_candidates: {train: 7, dev: 1, test: 0}
+    state_mismatch_challenges: 3
+    assembly_dependent_challenges: 2
+    provenance_rejections: 1
+    reverse_duplicate_aliases: 1
+    strict_mutation_attribution_admitted: 0
+    next_use: mechanism_development_probe_not_generalization_benchmark
+  endpoint_group_policy:
+    manifest_records: 101
+    unique_physical_endpoint_groups: 98
+    same_direction_duplicate_groups: 2
+    reverse_direction_duplicate_groups: 1
+    future_training: endpoint_group_balanced_loss
+    future_evaluation: aggregate_or_bootstrap_by_endpoint_group

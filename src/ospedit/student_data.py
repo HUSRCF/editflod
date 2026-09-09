@@ -6,6 +6,7 @@ from collections import Counter
 import numpy as np
 
 from .data import PairRecord, StructurePair
+from .endpoint_groups import endpoint_group_key
 from .geometry import local_frame_difference, residue_frames_masked
 from .student import encode_edit_features
 
@@ -211,6 +212,7 @@ class PairDataset:
         include_spatial_graph: bool = False,
         spatial_neighbors: int = 24,
         family_balanced_loss: bool = False,
+        endpoint_group_balanced_loss: bool = False,
         include_biochemical: bool = False,
         include_target_residue: bool = True,
         target_localization_radius: float | None = None,
@@ -235,6 +237,7 @@ class PairDataset:
             raise ValueError("spatial_neighbors must be positive")
         self.spatial_neighbors = int(spatial_neighbors)
         self.family_balanced_loss = bool(family_balanced_loss)
+        self.endpoint_group_balanced_loss = bool(endpoint_group_balanced_loss)
         self.include_biochemical = bool(include_biochemical)
         self.include_target_residue = bool(include_target_residue)
         if target_localization_radius is not None and target_localization_radius <= 0:
@@ -244,7 +247,42 @@ class PairDataset:
         self.target_localization_radius = target_localization_radius
         self.target_localization_transition = float(target_localization_transition)
         family_counts = Counter(record.family_id for record in self.records)
-        self.family_weights = {family: len(self.records) / (len(family_counts) * count) for family, count in family_counts.items()}
+        self.family_weights = {
+            family: len(self.records) / (len(family_counts) * count)
+            for family, count in family_counts.items()
+        }
+        self.sample_weights = {
+            record.pair.pair_id: self.family_weights[record.family_id]
+            if self.family_balanced_loss
+            else 1.0
+            for record in self.records
+        }
+        if self.endpoint_group_balanced_loss:
+            endpoint_members: dict[tuple[str, str], list[PairRecord]] = {}
+            for record in self.records:
+                endpoint_members.setdefault(endpoint_group_key(record), []).append(record)
+            for members in endpoint_members.values():
+                if len({record.family_id for record in members}) != 1:
+                    raise ValueError("one endpoint group spans multiple families")
+            if self.family_balanced_loss:
+                family_group_counts = Counter(
+                    members[0].family_id for members in endpoint_members.values()
+                )
+                group_mass = {
+                    key: len(self.records)
+                    / (len(family_counts) * family_group_counts[members[0].family_id])
+                    for key, members in endpoint_members.items()
+                }
+            else:
+                group_mass = {
+                    key: len(self.records) / len(endpoint_members)
+                    for key in endpoint_members
+                }
+            self.sample_weights = {
+                record.pair.pair_id: group_mass[key] / len(members)
+                for key, members in endpoint_members.items()
+                for record in members
+            }
         if teacher_deltas is not None:
             missing = [record.pair.pair_id for record in self.records if record.pair.pair_id not in teacher_deltas]
             if missing:
@@ -283,7 +321,7 @@ class PairDataset:
             "input_mask": input_valid.astype(np.float32),
             "loss_mask": valid.astype(np.float32),
             "neighborhood_mask": mutation_neighborhood_mask(record.pair, self.neighborhood_radius),
-            "sample_weight": self.family_weights[record.family_id] if self.family_balanced_loss else 1.0,
+            "sample_weight": self.sample_weights[record.pair.pair_id],
         }
         if self.teacher_deltas is not None:
             teacher_delta, teacher_valid = self.teacher_deltas[record.pair.pair_id]

@@ -768,6 +768,12 @@ ospedit-train \
 
 Use `--no-gradient-clip` to disable clipping, or set an explicit
 `--gradient-clip-norm`; the selected value is stored in the checkpoint config.
+Use `--endpoint-group-balanced-loss` when a manifest can contain the same
+physical endpoint pair more than once or in both directions. The full endpoint
+group receives one total unit of weight. Combined with
+`--family-balanced-loss`, families are balanced first and unique endpoint
+groups are balanced within each family. Reverse edits can therefore remain as
+directional augmentation without being counted as independent experiments.
 
 Add a same-manifest development evaluation after training:
 
