@@ -468,6 +468,10 @@ parent-to-mutant delta range before selecting a bounded student dataset. The
 tool can optionally write a thresholded manifest with `--filtered-output`; it
 always validates the filtered records before writing them. The report includes
 the content fingerprint of the input manifest for later provenance checks.
+Use `scripts/audit_response_learnability.py MANIFEST OUTPUT` to separate the
+copy-parent error from the unbounded local-frame oracle floor and summarize
+response scope by record, family, and split. Its recoverable fraction measures
+output-representation capacity; it is not a mutation-causality statistic.
 The final output layer is zero-initialized, so a newly created student starts
 as an exact copy-parent editor. `--delta-norm-weight` enables an optional
 normalized-update penalty for stability diagnostics; it defaults to `0.0`.
@@ -484,6 +488,10 @@ match any parent-context cache used at inference.
 class descriptors (acidic, basic, aromatic, polar, hydrophobic, glycine, and
 proline). The feature flag and resulting `edit_dim` are stored in checkpoints
 and restored during evaluation; resume rejects a conflicting feature setting.
+`--ablate-target-residue` zeros the target one-hot channels while preserving
+the parent residue identity and mutation position. It diagnoses whether the
+student uses the requested target residue and cannot be combined with
+biochemical target-minus-source features.
 Positional encoding is enabled by default; pass `--no-positional-encoding` to
 reproduce the pre-position baseline in student or sweep runs.
 Legacy checkpoints that predate this option are evaluated with positional
@@ -732,6 +740,9 @@ Resume also validates the recorded target scales, neighborhood radius, loss
 kind/beta, and loss weights before continuing.
 New training checkpoints also store a deterministic `manifest_fingerprint`;
 resume refuses to continue when the supplied manifest has changed.
+Use `scripts/summarize_student_replicates.py CHECKPOINT... --output REPORT` to
+verify that replicate checkpoints have comparable data and training settings,
+then aggregate family-macro development metrics across seeds.
 
 The same path is available as a CLI for a frozen manifest split:
 

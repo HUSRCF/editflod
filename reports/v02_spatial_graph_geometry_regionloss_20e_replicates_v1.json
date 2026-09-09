@@ -1,0 +1,289 @@
+{
+  "aggregate": {
+    "backbone_angle_checked": {
+      "count": 3,
+      "max": 332.5777777777778,
+      "mean": 332.5777777777778,
+      "min": 332.5777777777778,
+      "std": 0.0
+    },
+    "backbone_angle_violations": {
+      "count": 3,
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "std": 0.0
+    },
+    "backbone_clash_checked": {
+      "count": 3,
+      "max": 241066.84444444446,
+      "mean": 241066.8444444445,
+      "min": 241066.84444444446,
+      "std": 2.9103830456733704e-11
+    },
+    "backbone_clash_violations": {
+      "count": 3,
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "std": 0.0
+    },
+    "backbone_geometry_checked_bonds": {
+      "count": 3,
+      "max": 664.1555555555556,
+      "mean": 664.1555555555556,
+      "min": 664.1555555555556,
+      "std": 0.0
+    },
+    "backbone_geometry_violations": {
+      "count": 3,
+      "max": 0.06218440739878206,
+      "mean": 0.021291631515766768,
+      "min": 0.000549856882013302,
+      "std": 0.028916564951158404
+    },
+    "distance_change_cosine": {
+      "count": 3,
+      "max": -0.02804920886834127,
+      "mean": -0.050752677506916054,
+      "min": -0.0654735670105267,
+      "std": 0.016287762744324624
+    },
+    "distance_change_error": {
+      "count": 3,
+      "max": 0.2706484505823743,
+      "mean": 0.2593051144947362,
+      "min": 0.25075653157221367,
+      "std": 0.008357834425142287
+    },
+    "local_backbone_error": {
+      "count": 3,
+      "max": 0.3690945562491152,
+      "mean": 0.3613698270284049,
+      "min": 0.3542241873178568,
+      "std": 0.0060845967564837275
+    },
+    "local_distance_change_cosine": {
+      "count": 3,
+      "max": 0.050917334756562904,
+      "mean": 0.0285284500221272,
+      "min": 0.005812588308399941,
+      "std": 0.0184153871078329
+    },
+    "local_distance_change_error": {
+      "count": 3,
+      "max": 0.2552113278675666,
+      "mean": 0.25317316280732477,
+      "min": 0.24932214805084918,
+      "std": 0.0027246318092859307
+    },
+    "mutation_neighborhood_rmsd": {
+      "count": 3,
+      "max": 0.3690945562491152,
+      "mean": 0.3613698270284049,
+      "min": 0.3542241873178568,
+      "std": 0.0060845967564837275
+    },
+    "mutation_site_backbone_error": {
+      "count": 3,
+      "max": 0.45442562051917096,
+      "mean": 0.3908851494758115,
+      "min": 0.3581211904654267,
+      "std": 0.04493722348403385
+    },
+    "mutation_site_global_rmsd": {
+      "count": 3,
+      "max": 0.45442562051917096,
+      "mean": 0.3908851494758115,
+      "min": 0.3581211904654267,
+      "std": 0.04493722348403385
+    },
+    "parent_to_prediction_frame_rmsd": {
+      "count": 3,
+      "max": 0.16873564363069968,
+      "mean": 0.11149249698305197,
+      "min": 0.08274202732533147,
+      "std": 0.04047715399133991
+    },
+    "parent_to_prediction_rmsd": {
+      "count": 3,
+      "max": 0.1679832491924295,
+      "mean": 0.11076663697738343,
+      "min": 0.08211451548386581,
+      "std": 0.040458270310805164
+    },
+    "predicted_distance_change_norm": {
+      "count": 3,
+      "max": 17.900134969341572,
+      "mean": 13.56279101105639,
+      "min": 10.726224107116968,
+      "std": 3.115070688328394
+    },
+    "remote_distance_change_cosine": {
+      "count": 3,
+      "max": -0.06598397144505777,
+      "mean": -0.07902047340568345,
+      "min": -0.08648012537698582,
+      "std": 0.009250190028782619
+    },
+    "remote_distance_change_error": {
+      "count": 3,
+      "max": 0.27567053555913945,
+      "mean": 0.26166765739742237,
+      "min": 0.2510650106038272,
+      "std": 0.010328896184949404
+    },
+    "remote_scaffold_drift": {
+      "count": 3,
+      "max": 0.17075199414339032,
+      "mean": 0.10863077022739172,
+      "min": 0.07470762826260313,
+      "std": 0.04398847518502997
+    },
+    "remote_scaffold_frame_drift": {
+      "count": 3,
+      "max": 0.17175648031883134,
+      "mean": 0.1093820205948423,
+      "min": 0.07520687084876983,
+      "std": 0.04417282410885918
+    },
+    "remote_target_error": {
+      "count": 3,
+      "max": 0.37716455752284855,
+      "mean": 0.35237476919761823,
+      "min": 0.33830626116977236,
+      "std": 0.017582210465452226
+    },
+    "true_distance_change_norm": {
+      "count": 3,
+      "max": 40.669737127102664,
+      "mean": 40.669737127102664,
+      "min": 40.669737127102664,
+      "std": 0.0
+    }
+  },
+  "configuration": {
+    "ablate_target_residue": false,
+    "biochemical_edit_features": false,
+    "blocks": 2,
+    "delta_loss": "mse",
+    "delta_loss_beta": 1.0,
+    "edit_dim": 41,
+    "epochs": 20,
+    "family_balanced_loss": true,
+    "geometry_features": true,
+    "heads": 4,
+    "hidden_dim": 32,
+    "loss_schema": "ospedit.student_loss.v2",
+    "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+    "mutation_loss_weight": 4.0,
+    "neighborhood_loss_weight": 1.0,
+    "parent_dim": 24,
+    "rotation_scale": 1.0,
+    "spatial_neighbors": 16,
+    "student_architecture": "spatial_graph",
+    "translation_scale": 1.0
+  },
+  "format": "ospedit.student_replicates.v1",
+  "runs": [
+    {
+      "checkpoint": "/tmp/ospedit-real-sample/v02_spatial_graph_geometry_regionloss_20e_v1.pt",
+      "checkpoint_sha256": "7e2b0bc731ae835666e2ac1816c6561293543f5105bde72fd25a0cc8e4c885d6",
+      "epoch": 20,
+      "final_loss": 0.13738473300808962,
+      "metrics": {
+        "backbone_angle_checked": 332.5777777777778,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 241066.84444444446,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 664.1555555555556,
+        "backbone_geometry_violations": 0.000549856882013302,
+        "distance_change_cosine": -0.02804920886834127,
+        "distance_change_error": 0.25075653157221367,
+        "local_backbone_error": 0.36079073751824275,
+        "local_distance_change_cosine": 0.050917334756562904,
+        "local_distance_change_error": 0.2549860125035585,
+        "mutation_neighborhood_rmsd": 0.36079073751824275,
+        "mutation_site_backbone_error": 0.45442562051917096,
+        "mutation_site_global_rmsd": 0.45442562051917096,
+        "parent_to_prediction_frame_rmsd": 0.08274202732533147,
+        "parent_to_prediction_rmsd": 0.08211451548386581,
+        "predicted_distance_change_norm": 10.726224107116968,
+        "remote_distance_change_cosine": -0.06598397144505777,
+        "remote_distance_change_error": 0.2510650106038272,
+        "remote_scaffold_drift": 0.07470762826260313,
+        "remote_scaffold_frame_drift": 0.07520687084876983,
+        "remote_target_error": 0.33830626116977236,
+        "true_distance_change_norm": 40.669737127102664
+      },
+      "optimizer_steps": 1420,
+      "seed": 0
+    },
+    {
+      "checkpoint": "/tmp/ospedit-real-sample/v02_spatial_graph_geometry_regionloss_20e_seed1.pt",
+      "checkpoint_sha256": "2b659a0f01573bfdd06d836a6c138700a4109f928675839ad283bab1e80c140b",
+      "epoch": 20,
+      "final_loss": 0.12172017694437798,
+      "metrics": {
+        "backbone_angle_checked": 332.5777777777778,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 241066.84444444446,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 664.1555555555556,
+        "backbone_geometry_violations": 0.06218440739878206,
+        "distance_change_cosine": -0.058735256641880194,
+        "distance_change_error": 0.2706484505823743,
+        "local_backbone_error": 0.3690945562491152,
+        "local_distance_change_cosine": 0.028855427001418753,
+        "local_distance_change_error": 0.2552113278675666,
+        "mutation_neighborhood_rmsd": 0.3690945562491152,
+        "mutation_site_backbone_error": 0.3581211904654267,
+        "mutation_site_global_rmsd": 0.3581211904654267,
+        "parent_to_prediction_frame_rmsd": 0.16873564363069968,
+        "parent_to_prediction_rmsd": 0.1679832491924295,
+        "predicted_distance_change_norm": 17.900134969341572,
+        "remote_distance_change_cosine": -0.08648012537698582,
+        "remote_distance_change_error": 0.27567053555913945,
+        "remote_scaffold_drift": 0.17075199414339032,
+        "remote_scaffold_frame_drift": 0.17175648031883134,
+        "remote_target_error": 0.37716455752284855,
+        "true_distance_change_norm": 40.669737127102664
+      },
+      "optimizer_steps": 1420,
+      "seed": 1
+    },
+    {
+      "checkpoint": "/tmp/ospedit-real-sample/v02_spatial_graph_geometry_regionloss_20e_seed2.pt",
+      "checkpoint_sha256": "f2fce6e02c5f508a0350d4a430c7e888cde7934e4bee28b50e463d64366175f9",
+      "epoch": 20,
+      "final_loss": 0.18302278667950714,
+      "metrics": {
+        "backbone_angle_checked": 332.5777777777778,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 241066.84444444446,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 664.1555555555556,
+        "backbone_geometry_violations": 0.001140630266504941,
+        "distance_change_cosine": -0.0654735670105267,
+        "distance_change_error": 0.2565103613296206,
+        "local_backbone_error": 0.3542241873178568,
+        "local_distance_change_cosine": 0.005812588308399941,
+        "local_distance_change_error": 0.24932214805084918,
+        "mutation_neighborhood_rmsd": 0.3542241873178568,
+        "mutation_site_backbone_error": 0.3601086374428369,
+        "mutation_site_global_rmsd": 0.3601086374428369,
+        "parent_to_prediction_frame_rmsd": 0.08299981999312481,
+        "parent_to_prediction_rmsd": 0.08220214625585501,
+        "predicted_distance_change_norm": 12.062013956710626,
+        "remote_distance_change_cosine": -0.08459732339500678,
+        "remote_distance_change_error": 0.25826742602930053,
+        "remote_scaffold_drift": 0.0804326882761817,
+        "remote_scaffold_frame_drift": 0.08118271061692575,
+        "remote_target_error": 0.3416534889002338,
+        "true_distance_change_norm": 40.669737127102664
+      },
+      "optimizer_steps": 1420,
+      "seed": 2
+    }
+  ]
+}

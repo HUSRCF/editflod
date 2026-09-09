@@ -36,6 +36,7 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str, update_sc
     config = dict(payload.get("config", {}))
     include_geometry = bool(config.get("geometry_features", False))
     include_biochemical = bool(config.get("biochemical_edit_features", False))
+    include_target_residue = not bool(config.get("ablate_target_residue", False))
     edit_dim = int(config.get("edit_dim", 48 if include_biochemical else 41))
     # Checkpoints written before positional encoding was introduced must keep
     # their original behavior instead of silently changing at evaluation.
@@ -101,6 +102,7 @@ def _student_editor(checkpoint: str, pair: StructurePair, device: str, update_sc
         spatial_neighbors=int(config.get("spatial_neighbors", 24)),
         update_scale=update_scale,
         include_biochemical=include_biochemical,
+        include_target_residue=include_target_residue,
     )
 
 

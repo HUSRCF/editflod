@@ -1,0 +1,289 @@
+{
+  "aggregate": {
+    "backbone_angle_checked": {
+      "count": 3,
+      "max": 332.5777777777778,
+      "mean": 332.5777777777778,
+      "min": 332.5777777777778,
+      "std": 0.0
+    },
+    "backbone_angle_violations": {
+      "count": 3,
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "std": 0.0
+    },
+    "backbone_clash_checked": {
+      "count": 3,
+      "max": 241066.84444444446,
+      "mean": 241066.8444444445,
+      "min": 241066.84444444446,
+      "std": 2.9103830456733704e-11
+    },
+    "backbone_clash_violations": {
+      "count": 3,
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "std": 0.0
+    },
+    "backbone_geometry_checked_bonds": {
+      "count": 3,
+      "max": 664.1555555555556,
+      "mean": 664.1555555555556,
+      "min": 664.1555555555556,
+      "std": 0.0
+    },
+    "backbone_geometry_violations": {
+      "count": 3,
+      "max": 0.0021898587048578273,
+      "mean": 0.001433067112871466,
+      "min": 0.0,
+      "std": 0.0010138644623162456
+    },
+    "distance_change_cosine": {
+      "count": 3,
+      "max": 0.021230280218181893,
+      "mean": -0.02295065711043563,
+      "min": -0.0513408850528662,
+      "std": 0.03166126323431314
+    },
+    "distance_change_error": {
+      "count": 3,
+      "max": 0.2605091715141391,
+      "mean": 0.2552468923989203,
+      "min": 0.25164310432588555,
+      "std": 0.003804797957790505
+    },
+    "local_backbone_error": {
+      "count": 3,
+      "max": 0.36672892433735554,
+      "mean": 0.3585526548152389,
+      "min": 0.34646554839382193,
+      "std": 0.008722464678324994
+    },
+    "local_distance_change_cosine": {
+      "count": 3,
+      "max": 0.04635372847734219,
+      "mean": 0.026927158301177295,
+      "min": 0.0010523697021138111,
+      "std": 0.019047973074014058
+    },
+    "local_distance_change_error": {
+      "count": 3,
+      "max": 0.2501075878785606,
+      "mean": 0.24569475139742178,
+      "min": 0.23924936832841034,
+      "std": 0.004660019111099628
+    },
+    "mutation_neighborhood_rmsd": {
+      "count": 3,
+      "max": 0.36672892433735554,
+      "mean": 0.3585526548152389,
+      "min": 0.34646554839382193,
+      "std": 0.008722464678324994
+    },
+    "mutation_site_backbone_error": {
+      "count": 3,
+      "max": 0.41675268319360137,
+      "mean": 0.3506723474478728,
+      "min": 0.30967576690498383,
+      "std": 0.04717529425293773
+    },
+    "mutation_site_global_rmsd": {
+      "count": 3,
+      "max": 0.41675268319360137,
+      "mean": 0.3506723474478728,
+      "min": 0.30967576690498383,
+      "std": 0.04717529425293773
+    },
+    "parent_to_prediction_frame_rmsd": {
+      "count": 3,
+      "max": 0.1167556203276072,
+      "mean": 0.10081772366232154,
+      "min": 0.07987790393562606,
+      "std": 0.015465141820796991
+    },
+    "parent_to_prediction_rmsd": {
+      "count": 3,
+      "max": 0.11656098619254533,
+      "mean": 0.10024616252617465,
+      "min": 0.0794313436024359,
+      "std": 0.015488491592245048
+    },
+    "predicted_distance_change_norm": {
+      "count": 3,
+      "max": 14.553727198708197,
+      "mean": 12.964353754805652,
+      "min": 10.59196322531005,
+      "std": 1.7095282512000896
+    },
+    "remote_distance_change_cosine": {
+      "count": 3,
+      "max": 0.022568620358155662,
+      "mean": -0.03975059041646561,
+      "min": -0.07244063316624033,
+      "std": 0.04408405049598762
+    },
+    "remote_distance_change_error": {
+      "count": 3,
+      "max": 0.26279348281680387,
+      "mean": 0.2571593604501396,
+      "min": 0.25429293022134575,
+      "std": 0.00398413005431634
+    },
+    "remote_scaffold_drift": {
+      "count": 3,
+      "max": 0.11727425923952643,
+      "mean": 0.10044337351882536,
+      "min": 0.08007233775324339,
+      "std": 0.015392535795488549
+    },
+    "remote_scaffold_frame_drift": {
+      "count": 3,
+      "max": 0.1175304211888863,
+      "mean": 0.10099574956093811,
+      "min": 0.08053097601633782,
+      "std": 0.015358472397465397
+    },
+    "remote_target_error": {
+      "count": 3,
+      "max": 0.3495739235673486,
+      "mean": 0.3467226080696329,
+      "min": 0.34137368808091223,
+      "std": 0.0037850131354566436
+    },
+    "true_distance_change_norm": {
+      "count": 3,
+      "max": 40.669737127102664,
+      "mean": 40.669737127102664,
+      "min": 40.669737127102664,
+      "std": 0.0
+    }
+  },
+  "configuration": {
+    "ablate_target_residue": false,
+    "biochemical_edit_features": false,
+    "blocks": 2,
+    "delta_loss": "mse",
+    "delta_loss_beta": 1.0,
+    "edit_dim": 41,
+    "epochs": 20,
+    "family_balanced_loss": true,
+    "geometry_features": false,
+    "heads": 4,
+    "hidden_dim": 32,
+    "loss_schema": "ospedit.student_loss.v2",
+    "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+    "mutation_loss_weight": 4.0,
+    "neighborhood_loss_weight": 1.0,
+    "parent_dim": 16,
+    "rotation_scale": 1.0,
+    "spatial_neighbors": 16,
+    "student_architecture": "spatial_graph",
+    "translation_scale": 1.0
+  },
+  "format": "ospedit.student_replicates.v1",
+  "runs": [
+    {
+      "checkpoint": "/tmp/ospedit-real-sample/v02_spatial_graph_regionloss_20e_v1.pt",
+      "checkpoint_sha256": "854b7657c7857f0da153163217285a5327f670ba64890154a7a4b64df9758f34",
+      "epoch": 20,
+      "final_loss": 0.11770799212997228,
+      "metrics": {
+        "backbone_angle_checked": 332.5777777777778,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 241066.84444444446,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 664.1555555555556,
+        "backbone_geometry_violations": 0.0021898587048578273,
+        "distance_change_cosine": 0.021230280218181893,
+        "distance_change_error": 0.2535884013567362,
+        "local_backbone_error": 0.3624634917145392,
+        "local_distance_change_cosine": 0.0010523697021138111,
+        "local_distance_change_error": 0.2477272979852944,
+        "mutation_neighborhood_rmsd": 0.3624634917145392,
+        "mutation_site_backbone_error": 0.32558859224503317,
+        "mutation_site_global_rmsd": 0.32558859224503317,
+        "parent_to_prediction_frame_rmsd": 0.1167556203276072,
+        "parent_to_prediction_rmsd": 0.11656098619254533,
+        "predicted_distance_change_norm": 13.747370840398712,
+        "remote_distance_change_cosine": 0.022568620358155662,
+        "remote_distance_change_error": 0.25439166831226906,
+        "remote_scaffold_drift": 0.11727425923952643,
+        "remote_scaffold_frame_drift": 0.1175304211888863,
+        "remote_target_error": 0.34922021256063795,
+        "true_distance_change_norm": 40.669737127102664
+      },
+      "optimizer_steps": 1420,
+      "seed": 0
+    },
+    {
+      "checkpoint": "/tmp/ospedit-real-sample/v02_spatial_graph_regionloss_20e_seed1.pt",
+      "checkpoint_sha256": "af8a28cf7094bfa7e09a2c1111145d4ea47a0c2ba2e59ce7f3b07ad4d4c4eb2e",
+      "epoch": 20,
+      "final_loss": 0.1403959475893816,
+      "metrics": {
+        "backbone_angle_checked": 332.5777777777778,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 241066.84444444446,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 664.1555555555556,
+        "backbone_geometry_violations": 0.0021093426337565704,
+        "distance_change_cosine": -0.0513408850528662,
+        "distance_change_error": 0.2605091715141391,
+        "local_backbone_error": 0.36672892433735554,
+        "local_distance_change_cosine": 0.04635372847734219,
+        "local_distance_change_error": 0.2501075878785606,
+        "mutation_neighborhood_rmsd": 0.36672892433735554,
+        "mutation_site_backbone_error": 0.41675268319360137,
+        "mutation_site_global_rmsd": 0.41675268319360137,
+        "parent_to_prediction_frame_rmsd": 0.10581964672373138,
+        "parent_to_prediction_rmsd": 0.10474615778354268,
+        "predicted_distance_change_norm": 14.553727198708197,
+        "remote_distance_change_cosine": -0.07244063316624033,
+        "remote_distance_change_error": 0.26279348281680387,
+        "remote_scaffold_drift": 0.10398352356370621,
+        "remote_scaffold_frame_drift": 0.10492585147759023,
+        "remote_target_error": 0.3495739235673486,
+        "true_distance_change_norm": 40.669737127102664
+      },
+      "optimizer_steps": 1420,
+      "seed": 1
+    },
+    {
+      "checkpoint": "/tmp/ospedit-real-sample/v02_spatial_graph_regionloss_20e_seed2.pt",
+      "checkpoint_sha256": "8cd429e0b2357842549472099f0b56412b816377a2aa345fa02b2a3cb9b42f46",
+      "epoch": 20,
+      "final_loss": 0.12765228911958845,
+      "metrics": {
+        "backbone_angle_checked": 332.5777777777778,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 241066.84444444446,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 664.1555555555556,
+        "backbone_geometry_violations": 0.0,
+        "distance_change_cosine": -0.038741366496622576,
+        "distance_change_error": 0.25164310432588555,
+        "local_backbone_error": 0.34646554839382193,
+        "local_distance_change_cosine": 0.03337537672407588,
+        "local_distance_change_error": 0.23924936832841034,
+        "mutation_neighborhood_rmsd": 0.34646554839382193,
+        "mutation_site_backbone_error": 0.30967576690498383,
+        "mutation_site_global_rmsd": 0.30967576690498383,
+        "parent_to_prediction_frame_rmsd": 0.07987790393562606,
+        "parent_to_prediction_rmsd": 0.0794313436024359,
+        "predicted_distance_change_norm": 10.59196322531005,
+        "remote_distance_change_cosine": -0.06937975844131214,
+        "remote_distance_change_error": 0.25429293022134575,
+        "remote_scaffold_drift": 0.08007233775324339,
+        "remote_scaffold_frame_drift": 0.08053097601633782,
+        "remote_target_error": 0.34137368808091223,
+        "true_distance_change_norm": 40.669737127102664
+      },
+      "optimizer_steps": 1420,
+      "seed": 2
+    }
+  ]
+}

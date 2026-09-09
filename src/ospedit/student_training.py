@@ -251,6 +251,7 @@ def train_records(
     spatial_neighbors: int = 24,
     family_balanced_loss: bool = False,
     include_biochemical: bool = False,
+    include_target_residue: bool = True,
 ) -> list[float]:
     """Train directly from PairRecords using the experimental target path."""
     materialized_records = list(records)
@@ -278,6 +279,7 @@ def train_records(
         spatial_neighbors=spatial_neighbors,
         family_balanced_loss=family_balanced_loss,
         include_biochemical=include_biochemical,
+        include_target_residue=include_target_residue,
     )
     batches = list(iter_pair_batches(dataset, batch_size=batch_size, shuffle=shuffle, seed=seed))
     return train_student(

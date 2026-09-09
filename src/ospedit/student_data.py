@@ -189,6 +189,7 @@ class PairDataset:
         spatial_neighbors: int = 24,
         family_balanced_loss: bool = False,
         include_biochemical: bool = False,
+        include_target_residue: bool = True,
     ):
         if not records:
             raise ValueError("PairDataset requires at least one record")
@@ -210,6 +211,7 @@ class PairDataset:
         self.spatial_neighbors = int(spatial_neighbors)
         self.family_balanced_loss = bool(family_balanced_loss)
         self.include_biochemical = bool(include_biochemical)
+        self.include_target_residue = bool(include_target_residue)
         family_counts = Counter(record.family_id for record in self.records)
         self.family_weights = {family: len(self.records) / (len(family_counts) * count) for family, count in family_counts.items()}
         if teacher_deltas is not None:
@@ -232,6 +234,7 @@ class PairDataset:
             [record.pair.parent_sequence],
             [record.pair.mutant_sequence],
             include_biochemical=self.include_biochemical,
+            include_target_residue=self.include_target_residue,
         )[0].numpy()
         item = {
             "pair_id": record.pair.pair_id,

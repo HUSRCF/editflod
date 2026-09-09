@@ -41,6 +41,7 @@ def encode_edit_features(
     mutant_sequences: Sequence[str],
     *,
     include_biochemical: bool = False,
+    include_target_residue: bool = True,
 ) -> "Tensor":
     """Encode aligned source/target residues as source+target one-hot plus mask."""
     if torch is None:
@@ -60,7 +61,8 @@ def encode_edit_features(
             if source_letter not in TOKEN_INDEX or target_letter not in TOKEN_INDEX:
                 raise ValueError(f"unsupported amino-acid token at batch={batch}, residue={residue}")
             features[batch, residue, TOKEN_INDEX[source_letter]] = 1.0
-            features[batch, residue, len(AMINO_ACIDS) + TOKEN_INDEX[target_letter]] = 1.0
+            if include_target_residue:
+                features[batch, residue, len(AMINO_ACIDS) + TOKEN_INDEX[target_letter]] = 1.0
             features[batch, residue, EDIT_MASK_INDEX] = float(source_letter != target_letter)
             if include_biochemical:
                 for offset, group in enumerate(BIOCHEMICAL_GROUPS):

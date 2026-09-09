@@ -5,6 +5,7 @@ torch = pytest.importorskip("torch")
 from ospedit.student import (
     BIOCHEMICAL_GROUPS,
     EDIT_MASK_INDEX,
+    TOKEN_INDEX,
     HybridSpatialGraphStudent,
     ParentEditStudent,
     SpatialGraphStudent,
@@ -24,6 +25,14 @@ def test_edit_encoder_adds_biochemical_target_minus_source_descriptors():
     assert features[0, :, EDIT_MASK_INDEX].tolist() == [1.0, 0.0]
     assert features[0, 0, 41:].tolist() == [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     assert torch.equal(features[0, 1, 41:], torch.zeros(len(BIOCHEMICAL_GROUPS)))
+
+
+def test_edit_encoder_can_ablate_target_identity_without_losing_position():
+    features = encode_edit_features(["DA"], ["KA"], include_target_residue=False)
+    assert features.shape == (1, 2, 41)
+    assert features[0, 0, TOKEN_INDEX["D"]] == 1.0
+    assert torch.equal(features[..., 20:40], torch.zeros_like(features[..., 20:40]))
+    assert features[0, :, EDIT_MASK_INDEX].tolist() == [1.0, 0.0]
 
 
 def test_spatial_graph_student_accepts_biochemical_edit_features():

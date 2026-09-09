@@ -121,6 +121,12 @@ def test_train_cli_writes_checkpoint(tmp_path, monkeypatch):
     assert loaded_editor.translation_scale == 2.0
     assert loaded_editor.rotation_scale == 0.25
 
+    ablated_checkpoint = tmp_path / "student-ablated.pt"
+    payload["config"]["ablate_target_residue"] = True
+    torch.save(payload, ablated_checkpoint)
+    ablated_editor = _student_editor(str(ablated_checkpoint), pair, "cpu")
+    assert ablated_editor.include_target_residue is False
+
 
 def test_old_checkpoint_defaults_to_pre_position_behavior(tmp_path):
     from ospedit.cli import _student_editor

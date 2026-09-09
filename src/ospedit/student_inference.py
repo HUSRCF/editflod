@@ -111,6 +111,7 @@ def predict_student(
     spatial_neighbors: int = 24,
     update_scale: float = 1.0,
     include_biochemical: bool = False,
+    include_target_residue: bool = True,
 ) -> np.ndarray:
     """Run one student forward pass and return edited backbone coordinates."""
     if pair.parent_sequence == pair.mutant_sequence:
@@ -125,6 +126,7 @@ def predict_student(
         [pair.parent_sequence],
         [pair.mutant_sequence],
         include_biochemical=include_biochemical,
+        include_target_residue=include_target_residue,
     ).to(device=device)
     was_training = bool(model.training)
     model.eval()
@@ -169,6 +171,7 @@ def predict_student_batch(
     spatial_neighbors: int = 24,
     update_scale: float = 1.0,
     include_biochemical: bool = False,
+    include_target_residue: bool = True,
 ) -> list[np.ndarray]:
     """Run one padded student forward for multiple residue-mapped pairs."""
     if not pairs:
@@ -194,6 +197,7 @@ def predict_student_batch(
             [pair.parent_sequence],
             [pair.mutant_sequence],
             include_biochemical=include_biochemical,
+            include_target_residue=include_target_residue,
         )[0].numpy()
         mask_values[index, : pair.length] = parent_residue_mask(pair)
         if edge_values is not None and edge_masks is not None:

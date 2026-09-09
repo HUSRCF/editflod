@@ -68,6 +68,16 @@ class GeometryMarkerStudent(torch.nn.Module):
         return output
 
 
+class EditSpyStudent(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.edit = None
+
+    def forward(self, parent, edit, residue_mask=None):
+        self.edit = edit.detach().cpu()
+        return torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+
+
 def test_predict_student_zero_delta_preserves_parent():
     pair = make_pair()
     assert np.array_equal(predict_student(ZeroStudent(), pair), pair.parent_coords)
@@ -170,6 +180,13 @@ def test_predict_student_batch_mask_does_not_depend_on_mutant_coordinates():
     model = MaskSpyStudent()
     predict_student_batch(model, [pair])
     assert model.mask == [[True, True]]
+
+
+def test_predict_student_can_ablate_target_identity_but_keep_mutation_position():
+    model = EditSpyStudent()
+    predict_student(model, make_pair(), include_target_residue=False)
+    assert torch.equal(model.edit[..., 20:40], torch.zeros_like(model.edit[..., 20:40]))
+    assert model.edit[0, :, 40].tolist() == [0.0, 1.0]
 
 
 def test_geometry_cached_predictions_match_uncached_and_are_order_independent():

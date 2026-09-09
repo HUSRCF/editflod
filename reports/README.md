@@ -15,3 +15,8 @@ per-coordinate RMSE and are smaller than standard atom RMSD by `sqrt(3)`.
 Large checkpoints, downloaded structures, embeddings, and prediction caches stay
 outside Git. A tracked report should contain their checksum and provenance when
 they contribute to a result.
+
+Response learnability audits use `ospedit.response_learnability_audit.v1` and
+must distinguish copy-parent error, unbounded representation-oracle error, and
+their recoverable fraction. This is a representation diagnostic, not evidence
+that an observed parent/mutant difference was caused by the mutation.

@@ -99,6 +99,11 @@ def main() -> None:
         help="Append fixed biochemical target-minus-source descriptors",
     )
     parser.add_argument(
+        "--ablate-target-residue",
+        action="store_true",
+        help="Zero target-residue one-hot channels while retaining parent identity and mutation position",
+    )
+    parser.add_argument(
         "--neighborhood-radius",
         type=float,
         default=10.0,
@@ -133,6 +138,8 @@ def main() -> None:
     parser.add_argument("--allow-nonexperimental", action="store_true")
     parser.add_argument("--verify-checksums", action="store_true")
     args = parser.parse_args()
+    if args.ablate_target_residue and args.biochemical_edit_features:
+        parser.error("--ablate-target-residue cannot be combined with --biochemical-edit-features")
 
     try:
         import torch
@@ -246,6 +253,11 @@ def main() -> None:
         saved_biochemical = bool(resume_config.get("biochemical_edit_features", False))
         if saved_biochemical != args.biochemical_edit_features:
             raise SystemExit(f"resume checkpoint biochemical_edit_features={saved_biochemical} does not match requested {args.biochemical_edit_features}")
+        saved_target_ablation = bool(resume_config.get("ablate_target_residue", False))
+        if saved_target_ablation != args.ablate_target_residue:
+            raise SystemExit(
+                f"resume checkpoint ablate_target_residue={saved_target_ablation} does not match requested {args.ablate_target_residue}"
+            )
         saved_radius = resume_config.get("neighborhood_radius")
         if saved_radius is not None and not np.isclose(float(saved_radius), args.neighborhood_radius):
             raise SystemExit(f"resume checkpoint neighborhood_radius={saved_radius} does not match requested {args.neighborhood_radius}")
@@ -314,6 +326,7 @@ def main() -> None:
         spatial_neighbors=args.spatial_neighbors,
         family_balanced_loss=args.family_balanced_loss,
         include_biochemical=args.biochemical_edit_features,
+        include_target_residue=not args.ablate_target_residue,
     )
     evaluation = None
     evaluation_payload: dict[str, object] | None
@@ -332,6 +345,7 @@ def main() -> None:
                 include_spatial_graph=architecture in {"spatial_graph", "spatial_graph_global"},
                 spatial_neighbors=args.spatial_neighbors,
                 include_biochemical=args.biochemical_edit_features,
+                include_target_residue=not args.ablate_target_residue,
             ),
             batch_size=args.eval_batch_size or args.batch_size,
             method="student",

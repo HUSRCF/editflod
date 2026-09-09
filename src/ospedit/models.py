@@ -80,6 +80,7 @@ class StudentEditor:
     spatial_neighbors: int = 24
     update_scale: float = 1.0
     include_biochemical: bool = False
+    include_target_residue: bool = True
 
     def __post_init__(self) -> None:
         if self.parent_cache is not None and self.parent_cache.include_geometry != self.include_geometry:
@@ -98,6 +99,7 @@ class StudentEditor:
             spatial_neighbors=self.spatial_neighbors,
             update_scale=self.update_scale,
             include_biochemical=self.include_biochemical,
+            include_target_residue=self.include_target_residue,
         )
 
     def predict_batch(self, pairs: list[StructurePair]) -> list[np.ndarray]:
@@ -113,6 +115,7 @@ class StudentEditor:
             spatial_neighbors=self.spatial_neighbors,
             update_scale=self.update_scale,
             include_biochemical=self.include_biochemical,
+            include_target_residue=self.include_target_residue,
         )
 
 

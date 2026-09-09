@@ -88,3 +88,45 @@ otherwise matched student, but worsened mutation-site error, distance-change
 error, and response cosine. The model therefore failed the dev gate and was not
 evaluated on test. Fixed residue classes alone do not resolve the missing
 cross-family response signal.
+
+## Response scope and representation recoverability
+
+`ospedit.response_learnability_audit.v1` compares copy-parent with the exact
+unbounded local-frame oracle and reports translation/rotation response scope.
+The following values are family-macro means; the test column is frozen-dataset
+characterization only and was not used for model selection.
+
+| Split | Families | Copy local (A) | Oracle local (A) | Recoverable local fraction | Local translation energy | Remote translation energy |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Train | 18 | 0.2941 | 0.0828 | 0.697 | 0.179 | 0.676 |
+| Dev | 5 | 0.3374 | 0.0879 | 0.734 | 0.175 | 0.648 |
+| Test | 4 | 0.4806 | 0.1944 | 0.628 | 0.381 | 0.516 |
+
+The representation can remove roughly 70% of train/dev local error and almost
+all pairwise distance-change error, so the local-frame output is not the main
+bottleneck. In contrast, most translation energy lies more than 15 A from the
+mutation in train and dev. The paired endpoint therefore asks the model to
+predict widespread structural differences that may include experimental-state
+variation; this audit alone cannot attribute those differences to mutation.
+
+## Conditioning and mutation-distance diagnostics
+
+A seed-0 target-identity ablation retained parent residue one-hot channels and
+the mutation marker but zeroed all target residue one-hot channels. It worsened
+dev family-macro local error from 0.3625 to 0.3699 A and mutation-site error from
+0.3256 to 0.4625 A. The full model therefore uses target identity, although
+neither variant beats copy-parent.
+
+We also repeated the region-loss graph student with and without the optional
+mutation-distance geometry channels over seeds 0, 1, and 2:
+
+| Dev configuration | Local error (A) | Site error (A) | Distance-change error (A) | Distance-change cosine | Remote frame drift (A) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Base spatial graph | 0.3586 +/- 0.0087 | 0.3507 +/- 0.0472 | 0.2552 +/- 0.0038 | -0.023 +/- 0.032 | 0.1010 +/- 0.0154 |
+| + mutation-distance geometry | 0.3614 +/- 0.0061 | 0.3909 +/- 0.0449 | 0.2593 +/- 0.0084 | -0.051 +/- 0.016 | 0.1094 +/- 0.0442 |
+
+The apparent seed-0 drift reduction did not replicate. Explicit mutation
+distance does not improve held-out response under the current full-endpoint
+target. The next intervention should separate local mutation-conditioned
+supervision from remote endpoint variation or add matched-state controls;
+adding another propagation layer is not supported by these results.
