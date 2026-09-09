@@ -337,3 +337,31 @@ must include an unbounded or substantially relaxed output and report the
 bounded oracle beside learned results. These numbers characterize
 representation capacity only; the probe has no reviewed test record and does
 not establish generalization.
+
+### Direct-supervision overfit probe
+
+Two unbounded students were trained for 500 epochs (3,500 optimizer steps) on
+the seven matched-context train records with family-balanced loss, seed 0, no
+teacher signal, hidden dimension 32, and two blocks. This is a capacity check,
+not a tuned generalization experiment.
+
+The spatial-graph student reduced train family-macro local error from the
+copy-parent value of 0.1969 to 0.1113 Angstrom and mutation-site error from
+0.3571 to 0.0938 Angstrom; its distance-change cosine was 0.833. The local
+feature Transformer reached 0.1067, 0.1031, and 0.871 respectively. Both models
+therefore learned substantial non-zero training responses. The earlier
+near-copy result did not demonstrate that a one-pass student was intrinsically
+unable to learn the task.
+
+Neither model beat copy-parent on the single held-out dev record. Copy-parent
+local and site errors were 0.2506 and 0.1307 Angstrom. The spatial graph reached
+0.2770 and 0.2320 with distance-change cosine 0.021; the Transformer reached
+0.2842 and 0.1938 with cosine 0.041. Both introduced unsupported drift. These
+post-training measurements were not used for additional tuning.
+
+This probe passes the train-fit gate but provides no evidence that spatial
+edges improve generalization: the Transformer is slightly better on some train
+metrics, the graph is slightly better on train site error, and one dev record
+cannot resolve the comparison. The next data/model experiment must expand
+response-independent train/dev coverage and use multiple seeds before choosing
+an architecture. FoldFlow distillation remains paused.

@@ -1,0 +1,84 @@
+{
+  "family_summary": {
+    "v02_family_260dd007d20d": {
+      "backbone_angle_checked": 314.0,
+      "backbone_angle_violations": 0.0,
+      "backbone_clash_checked": 193440.0,
+      "backbone_clash_violations": 0.0,
+      "backbone_geometry_checked_bonds": 627.0,
+      "backbone_geometry_violations": 0.012759170653907496,
+      "distance_change_cosine": 0.021046104517511408,
+      "distance_change_error": 0.21294374768257357,
+      "local_backbone_error": 0.2770122789529592,
+      "local_distance_change_cosine": 0.20655672787192075,
+      "local_distance_change_error": 0.19726145129750877,
+      "mutation_neighborhood_rmsd": 0.2770122789529592,
+      "mutation_site_backbone_error": 0.23196286668114352,
+      "mutation_site_global_rmsd": 0.23196286668114352,
+      "parent_to_prediction_frame_rmsd": 0.12459355385468783,
+      "parent_to_prediction_rmsd": 0.12377741463201221,
+      "predicted_distance_change_norm": 18.542182203631153,
+      "remote_distance_change_cosine": 0.10916974534372631,
+      "remote_distance_change_error": 0.2224390492205846,
+      "remote_scaffold_drift": 0.13379521354228133,
+      "remote_scaffold_frame_drift": 0.13563291459400728,
+      "remote_target_error": 0.29820752246386134,
+      "true_distance_change_norm": 28.08375039024043
+    }
+  },
+  "manifest_fingerprint": "6229d9386989f88c592b1ae828006bee3e23423cd8f15f8526be6e675735e436",
+  "method": "student",
+  "metric_schema": "ospedit.structure_metrics.v2",
+  "records": [
+    {
+      "family_id": "v02_family_260dd007d20d",
+      "method": "student",
+      "metrics": {
+        "backbone_angle_checked": 314.0,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 193440.0,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 627.0,
+        "backbone_geometry_violations": 0.012759170653907496,
+        "distance_change_cosine": 0.021046104517511408,
+        "distance_change_error": 0.21294374768257357,
+        "local_backbone_error": 0.2770122789529592,
+        "local_distance_change_cosine": 0.20655672787192075,
+        "local_distance_change_error": 0.19726145129750877,
+        "mutation_neighborhood_rmsd": 0.2770122789529592,
+        "mutation_site_backbone_error": 0.23196286668114352,
+        "mutation_site_global_rmsd": 0.23196286668114352,
+        "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+        "parent_to_prediction_frame_rmsd": 0.12459355385468783,
+        "parent_to_prediction_rmsd": 0.12377741463201221,
+        "predicted_distance_change_norm": 18.542182203631153,
+        "remote_distance_change_cosine": 0.10916974534372631,
+        "remote_distance_change_error": 0.2224390492205846,
+        "remote_scaffold_drift": 0.13379521354228133,
+        "remote_scaffold_frame_drift": 0.13563291459400728,
+        "remote_target_error": 0.29820752246386134,
+        "true_distance_change_norm": 28.08375039024043
+      },
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "parent_id": "3FYW_X",
+      "runtime": {
+        "batch_seconds": 0.100734056904912,
+        "batch_size": 1
+      },
+      "split": "dev"
+    }
+  ],
+  "runtime_summary": {
+    "batch_size": 1.0,
+    "batches": 1.0,
+    "condition_branches": 1.0,
+    "conditional_batches": 1.0,
+    "mean_seconds": 0.100734056904912,
+    "network_calls": 1.0,
+    "records": 1.0,
+    "sequence_encoder_calls": 0.0,
+    "structure_updates": 1.0,
+    "total_seconds": 0.100734056904912
+  },
+  "split": "dev"
+}

@@ -34,6 +34,10 @@ def checkpoint_report(checkpoint: str | Path) -> dict[str, Any]:
     source = Path(checkpoint)
     payload = torch.load(source, map_location="cpu", weights_only=False)
     config = dict(payload.get("config", {}))
+    total_epochs = int(payload.get("epoch", 0))
+    if config.get("resume") and config.get("epochs") != total_epochs:
+        config["last_run_epochs"] = config.get("epochs")
+        config["epochs"] = total_epochs
     history = [float(value) for value in payload.get("history", [])]
     records = int(config.get("record_count", 0))
     batch_size = int(config.get("batch_size", 1))
@@ -60,8 +64,8 @@ def checkpoint_report(checkpoint: str | Path) -> dict[str, Any]:
         "checkpoint": str(source.resolve()),
         "checkpoint_sha256": file_sha256(source),
         "checkpoint_format_version": payload.get("format_version"),
-        "epoch": int(payload.get("epoch", 0)),
-        "optimizer_steps": int(payload.get("epoch", 0)) * steps_per_epoch,
+        "epoch": total_epochs,
+        "optimizer_steps": total_epochs * steps_per_epoch,
         "loss_history": history,
         "configuration": config,
         "comparison": comparison,

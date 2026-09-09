@@ -1,0 +1,84 @@
+{
+  "family_summary": {
+    "v02_family_260dd007d20d": {
+      "backbone_angle_checked": 314.0,
+      "backbone_angle_violations": 0.0,
+      "backbone_clash_checked": 193440.0,
+      "backbone_clash_violations": 0.0,
+      "backbone_geometry_checked_bonds": 627.0,
+      "backbone_geometry_violations": 0.004784688995215311,
+      "distance_change_cosine": 0.04132464739754146,
+      "distance_change_error": 0.1943708166109429,
+      "local_backbone_error": 0.2841576127953485,
+      "local_distance_change_cosine": -0.012591191699328323,
+      "local_distance_change_error": 0.2076827057185833,
+      "mutation_neighborhood_rmsd": 0.2841576127953485,
+      "mutation_site_backbone_error": 0.19376182265699154,
+      "mutation_site_global_rmsd": 0.19376182265699154,
+      "parent_to_prediction_frame_rmsd": 0.10350581463796771,
+      "parent_to_prediction_rmsd": 0.10040366212478234,
+      "predicted_distance_change_norm": 12.906101486525056,
+      "remote_distance_change_cosine": 0.07818439672452716,
+      "remote_distance_change_error": 0.20522473917084705,
+      "remote_scaffold_drift": 0.09459252318492829,
+      "remote_scaffold_frame_drift": 0.09625681312113261,
+      "remote_target_error": 0.2748744567471904,
+      "true_distance_change_norm": 28.08375039024043
+    }
+  },
+  "manifest_fingerprint": "6229d9386989f88c592b1ae828006bee3e23423cd8f15f8526be6e675735e436",
+  "method": "student",
+  "metric_schema": "ospedit.structure_metrics.v2",
+  "records": [
+    {
+      "family_id": "v02_family_260dd007d20d",
+      "method": "student",
+      "metrics": {
+        "backbone_angle_checked": 314.0,
+        "backbone_angle_violations": 0.0,
+        "backbone_clash_checked": 193440.0,
+        "backbone_clash_violations": 0.0,
+        "backbone_geometry_checked_bonds": 627.0,
+        "backbone_geometry_violations": 0.004784688995215311,
+        "distance_change_cosine": 0.04132464739754146,
+        "distance_change_error": 0.1943708166109429,
+        "local_backbone_error": 0.2841576127953485,
+        "local_distance_change_cosine": -0.012591191699328323,
+        "local_distance_change_error": 0.2076827057185833,
+        "mutation_neighborhood_rmsd": 0.2841576127953485,
+        "mutation_site_backbone_error": 0.19376182265699154,
+        "mutation_site_global_rmsd": 0.19376182265699154,
+        "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+        "parent_to_prediction_frame_rmsd": 0.10350581463796771,
+        "parent_to_prediction_rmsd": 0.10040366212478234,
+        "predicted_distance_change_norm": 12.906101486525056,
+        "remote_distance_change_cosine": 0.07818439672452716,
+        "remote_distance_change_error": 0.20522473917084705,
+        "remote_scaffold_drift": 0.09459252318492829,
+        "remote_scaffold_frame_drift": 0.09625681312113261,
+        "remote_target_error": 0.2748744567471904,
+        "true_distance_change_norm": 28.08375039024043
+      },
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "parent_id": "3FYW_X",
+      "runtime": {
+        "batch_seconds": 0.03121423814445734,
+        "batch_size": 1
+      },
+      "split": "dev"
+    }
+  ],
+  "runtime_summary": {
+    "batch_size": 1.0,
+    "batches": 1.0,
+    "condition_branches": 1.0,
+    "conditional_batches": 1.0,
+    "mean_seconds": 0.03121423814445734,
+    "network_calls": 1.0,
+    "records": 1.0,
+    "sequence_encoder_calls": 0.0,
+    "structure_updates": 1.0,
+    "total_seconds": 0.03121423814445734
+  },
+  "split": "dev"
+}

@@ -429,6 +429,8 @@ def main() -> None:
         history=prior_history + history,
         config=vars(args)
         | {
+            "epochs": start_epoch + args.epochs,
+            "last_run_epochs": args.epochs,
             "loss_schema": LOSS_SCHEMA_VERSION,
             "parent_dim": parent_dim,
             "edit_dim": edit_dim,
@@ -436,6 +438,7 @@ def main() -> None:
             "blocks": blocks,
             "heads": heads,
             "record_count": len(selected),
+            "max_normalized_delta": max_normalized_delta,
             "manifest_fingerprint": manifest_fingerprint(records),
             "teacher_cache_fingerprint": teacher_cache_fingerprint,
             "evaluation": evaluation_payload,

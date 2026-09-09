@@ -31,7 +31,7 @@ def test_train_cli_writes_checkpoint(tmp_path, monkeypatch):
     monkeypatch.setattr(
         sys,
         "argv",
-        ["ospedit-train", "--manifest", str(manifest), "--output", str(checkpoint), "--epochs", "1", "--hidden-dim", "32", "--blocks", "1", "--heads", "4", "--no-shuffle", "--eval-split", "dev", "--eval-batch-size", "2", "--gradient-clip-norm", "0.5", "--translation-scale", "2.0", "--rotation-scale", "0.25"],
+        ["ospedit-train", "--manifest", str(manifest), "--output", str(checkpoint), "--epochs", "1", "--hidden-dim", "32", "--blocks", "1", "--heads", "4", "--no-shuffle", "--eval-split", "dev", "--eval-batch-size", "2", "--gradient-clip-norm", "0.5", "--translation-scale", "2.0", "--rotation-scale", "0.25", "--max-normalized-delta", "0.5"],
     )
     main()
     payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
@@ -46,6 +46,9 @@ def test_train_cli_writes_checkpoint(tmp_path, monkeypatch):
     assert payload["config"]["gradient_clip_norm"] == 0.5
     assert payload["config"]["translation_scale"] == 2.0
     assert payload["config"]["rotation_scale"] == 0.25
+    assert payload["config"]["epochs"] == 1
+    assert payload["config"]["last_run_epochs"] == 1
+    assert payload["config"]["max_normalized_delta"] == 0.5
     assert payload["config"]["endpoint_group_balanced_loss"] is False
 
     monkeypatch.setattr(
@@ -123,6 +126,9 @@ def test_train_cli_writes_checkpoint(tmp_path, monkeypatch):
     resumed_payload = torch.load(resumed, map_location="cpu", weights_only=False)
     assert resumed_payload["epoch"] == 2
     assert len(resumed_payload["history"]) == 2
+    assert resumed_payload["config"]["epochs"] == 2
+    assert resumed_payload["config"]["last_run_epochs"] == 1
+    assert resumed_payload["config"]["max_normalized_delta"] == 0.5
 
     monkeypatch.setattr(
         sys,

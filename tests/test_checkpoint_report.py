@@ -21,11 +21,20 @@ def test_checkpoint_report_counts_optimizer_steps_and_macro_metrics(tmp_path):
         path,
         epoch=3,
         history=[3.0, 2.0, 1.0],
-        config={"record_count": 7, "batch_size": 2, "grad_accumulation_steps": 3, "evaluation": evaluation},
+        config={
+            "record_count": 7,
+            "batch_size": 2,
+            "grad_accumulation_steps": 3,
+            "epochs": 2,
+            "resume": "/tmp/previous.pt",
+            "evaluation": evaluation,
+        },
     )
 
     report = checkpoint_report(path)
 
     assert report["optimizer_steps"] == 6
+    assert report["configuration"]["epochs"] == 3
+    assert report["configuration"]["last_run_epochs"] == 2
     assert report["comparison"]["student_parent_family_macro"]["local_backbone_error"] == 2.0
     assert report["comparison"]["student_minus_copy"]["local_backbone_error"] == -1.0

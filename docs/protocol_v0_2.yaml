@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: matched_context_representation_characterized
+  status: matched_context_overfit_passed_generalization_not_established
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -116,6 +116,10 @@ artifacts:
     matched_context_probe: reports/protocol_v02_matched_context_probe_v1.json
     matched_context_learnability: reports/protocol_v02_matched_context_learnability_v1.json
     matched_context_oracle: reports/protocol_v02_matched_context_oracle_v1.json
+    spatial_graph_overfit_train: reports/protocol_v02_spatial_graph_overfit_seed0_epoch500_v1.json
+    spatial_graph_overfit_dev: reports/protocol_v02_spatial_graph_overfit_seed0_epoch500_dev_v1.json
+    transformer_overfit_train: reports/protocol_v02_transformer_overfit_seed0_epoch500_v1.json
+    transformer_overfit_dev: reports/protocol_v02_transformer_overfit_seed0_epoch500_dev_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -198,3 +202,44 @@ background_control_gate:
       - residual_intra_residue_error_remains_even_with_exact_frame_deltas
       - normalized_component_bound_0_1_materially_reduces_recoverability
       - probe_is_too_small_and_has_no_test_evidence_for_generalization_claims
+  matched_context_overfit_probe:
+    configuration:
+      seed: 0
+      epochs: 500
+      optimizer_steps: 3500
+      hidden_dim: 32
+      blocks: 2
+      learning_rate: 0.001
+      max_normalized_delta: null
+      family_balanced_loss: true
+      teacher_distillation: false
+    train_family_macro:
+      copy_parent:
+        local_backbone_error_angstrom: 0.19690072185025603
+        mutation_site_backbone_error_angstrom: 0.35705635217204595
+      spatial_graph:
+        local_backbone_error_angstrom: 0.11127385127599246
+        mutation_site_backbone_error_angstrom: 0.0938095971735006
+        distance_change_cosine: 0.8333425886053822
+      local_feature_transformer:
+        local_backbone_error_angstrom: 0.10671112650808748
+        mutation_site_backbone_error_angstrom: 0.10313516394728754
+        distance_change_cosine: 0.8711545143861447
+    single_dev_record:
+      copy_parent:
+        local_backbone_error_angstrom: 0.2505902931521402
+        mutation_site_backbone_error_angstrom: 0.1307429011074186
+      spatial_graph:
+        local_backbone_error_angstrom: 0.2770122789529592
+        mutation_site_backbone_error_angstrom: 0.23196286668114352
+        distance_change_cosine: 0.021046104517511408
+      local_feature_transformer:
+        local_backbone_error_angstrom: 0.2841576127953485
+        mutation_site_backbone_error_angstrom: 0.19376182265699154
+        distance_change_cosine: 0.04132464739754146
+    interpretation:
+      - direct_supervision_can_fit_nonzero_training_responses
+      - earlier_near_copy_result_did_not_establish_student_incapacity
+      - neither_student_beats_copy_parent_on_the_single_dev_record
+      - explicit_spatial_edges_do_not_show_an_advantage_in_this_probe
+      - expand_response_independent_coverage_before_architecture_selection
