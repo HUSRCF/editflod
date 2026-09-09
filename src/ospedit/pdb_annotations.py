@@ -36,3 +36,48 @@ def parse_engineered_mutations(path: str | Path) -> list[dict[str, Any]]:
             "reference_residue": THREE_TO_ONE.get(reference_name),
         })
     return records
+
+
+def engineered_edit_supported(
+    parent_annotations: list[dict[str, Any]],
+    mutant_annotations: list[dict[str, Any]],
+    *,
+    parent_chain: str,
+    mutant_chain: str,
+    parent_residue_number: int,
+    mutant_residue_number: int,
+    parent_insertion_code: str,
+    mutant_insertion_code: str,
+    source_residue: str,
+    target_residue: str,
+) -> bool:
+    """Check whether SEQADV records support an endpoint residue substitution."""
+    parent_site = [
+        row
+        for row in parent_annotations
+        if row["chain"] == parent_chain
+        and row["residue_number"] == parent_residue_number
+        and row["insertion_code"] == parent_insertion_code
+    ]
+    mutant_site = [
+        row
+        for row in mutant_annotations
+        if row["chain"] == mutant_chain
+        and row["residue_number"] == mutant_residue_number
+        and row["insertion_code"] == mutant_insertion_code
+    ]
+    direct = any(
+        row["deposited_residue"] == target_residue
+        and row["reference_residue"] == source_residue
+        for row in mutant_site
+    )
+    reverse = any(
+        row["deposited_residue"] == source_residue
+        and row["reference_residue"] == target_residue
+        for row in parent_site
+    )
+    paired = (
+        any(row["deposited_residue"] == source_residue for row in parent_site)
+        and any(row["deposited_residue"] == target_residue for row in mutant_site)
+    )
+    return direct or reverse or paired

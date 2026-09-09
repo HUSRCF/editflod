@@ -5,8 +5,14 @@ from scripts.build_microminer_manifest import records_from_microminer_candidates
 from scripts.select_microminer_candidates import COLUMNS
 
 
-def _pdb(path: Path, residues: tuple[tuple[str, int], ...]) -> None:
+def _pdb(
+    path: Path,
+    residues: tuple[tuple[str, int], ...],
+    seqadv: str | None = None,
+) -> None:
     lines = ["HEADER    TEST", "EXPDTA    X-RAY DIFFRACTION"]
+    if seqadv:
+        lines.append(seqadv)
     serial = 1
     for residue, number in residues:
         for atom, x in (("N", 0.0), ("CA", 1.0), ("C", 2.0), ("O", 3.0)):
@@ -147,3 +153,50 @@ def test_microminer_import_terminal_overlap_rejects_internal_gap(tmp_path):
     assert records == []
     assert counters["invalid_terminal_overlap"] == 1
     assert "internal gap or reordering" in rejections[0]["reason"]
+
+
+def test_microminer_import_can_require_engineered_mutation_support(tmp_path):
+    _pdb(tmp_path / "1AAA.pdb", (("ALA", 10), ("GLY", 11)))
+    _pdb(
+        tmp_path / "2AAA.pdb",
+        (("VAL", 20), ("GLY", 21)),
+        "SEQADV 2AAA VAL A   20  UNP  P00000001 ALA    10 ENGINEERED MUTATION",
+    )
+    candidates = tmp_path / "candidates.csv"
+    _candidates(candidates)
+
+    records, counters = records_from_microminer_candidates(
+        candidates,
+        tmp_path,
+        min_length=1,
+        require_engineered_mutation_support=True,
+    )
+
+    assert counters["engineered_mutation_supported"] == 1
+    assert records[0].experiment_metadata["engineered_mutation_annotation"][
+        "supported"
+    ] is True
+
+
+def test_microminer_import_rejects_unrelated_engineered_mutation(tmp_path):
+    _pdb(tmp_path / "1AAA.pdb", (("ALA", 10), ("GLY", 11)))
+    _pdb(
+        tmp_path / "2AAA.pdb",
+        (("VAL", 20), ("GLY", 21)),
+        "SEQADV 2AAA ASP A   30  UNP  P00000001 ASN    30 ENGINEERED MUTATION",
+    )
+    candidates = tmp_path / "candidates.csv"
+    _candidates(candidates)
+    rejections = []
+
+    records, counters = records_from_microminer_candidates(
+        candidates,
+        tmp_path,
+        min_length=1,
+        require_engineered_mutation_support=True,
+        rejections=rejections,
+    )
+
+    assert records == []
+    assert counters["engineered_mutation_support_required_rejection"] == 1
+    assert "not supported" in rejections[0]["reason"]

@@ -20,6 +20,7 @@ from ospedit.data import (
     write_manifest,
 )
 from scripts.select_microminer_candidates import COLUMNS
+from ospedit.pdb_annotations import engineered_edit_supported, parse_engineered_mutations
 
 
 def _structure_path(root: Path, pdb_id: str) -> Path | None:
@@ -42,6 +43,7 @@ def records_from_microminer_candidates(
     chain_uniprot: dict[str, list[str]] | None = None,
     allow_terminal_overlap: bool = False,
     min_mapping_coverage: float = 0.95,
+    require_engineered_mutation_support: bool = False,
     rejections: list[dict[str, Any]] | None = None,
 ) -> tuple[list[PairRecord], dict[str, int]]:
     """Validate selected rows against observed chains and return all-train records."""
@@ -64,6 +66,9 @@ def records_from_microminer_candidates(
         "sequence_index_equal_length_mapping": 0,
         "terminal_overlap_mapping": 0,
         "invalid_terminal_overlap": 0,
+        "engineered_mutation_supported": 0,
+        "engineered_mutation_unverified": 0,
+        "engineered_mutation_support_required_rejection": 0,
     }
     records = []
     with Path(csv_path).open(newline="", encoding="utf-8-sig") as handle:
@@ -155,6 +160,30 @@ def records_from_microminer_candidates(
                 ):
                     counters["out_of_scope_length"] += 1
                     raise ValueError(f"length {length} is outside configured scope")
+                parent_annotations = parse_engineered_mutations(query_path)
+                mutant_annotations = parse_engineered_mutations(hit_path)
+                annotation_supported = engineered_edit_supported(
+                    parent_annotations,
+                    mutant_annotations,
+                    parent_chain=query_chain,
+                    mutant_chain=hit_chain,
+                    parent_residue_number=parent_residue_id[1],
+                    mutant_residue_number=mutant_residue_id[1],
+                    parent_insertion_code=parent_residue_id[2],
+                    mutant_insertion_code=mutant_residue_id[2],
+                    source_residue=source_aa,
+                    target_residue=target_aa,
+                )
+                counters[
+                    "engineered_mutation_supported"
+                    if annotation_supported
+                    else "engineered_mutation_unverified"
+                ] += 1
+                if require_engineered_mutation_support and not annotation_supported:
+                    counters["engineered_mutation_support_required_rejection"] += 1
+                    raise ValueError(
+                        "manifest edit is not supported by engineered-mutation SEQADV records"
+                    )
                 exact_ids = mapping_metadata["mode"] == "exact_residue_ids"
                 original_mutant_residue_ids = mutant.residue_ids
                 if mapping_metadata["mode"] == "sequence_index_equal_length":
@@ -216,6 +245,11 @@ def records_from_microminer_candidates(
                             if shared_uniprot
                             else "provisional_query_chain_only"
                         ),
+                        "engineered_mutation_annotation": {
+                            "supported": annotation_supported,
+                            "source": "legacy_pdb_seqadv",
+                            "required": require_engineered_mutation_support,
+                        },
                     },
                 )
                 records.append(record)
@@ -251,6 +285,14 @@ def main() -> None:
     parser.add_argument("--allow-terminal-overlap", action="store_true")
     parser.add_argument("--min-mapping-coverage", type=float, default=0.95)
     parser.add_argument(
+        "--require-engineered-mutation-support",
+        action="store_true",
+        help=(
+            "reject pairs whose edit is not supported by legacy PDB SEQADV "
+            "engineered-mutation records"
+        ),
+    )
+    parser.add_argument(
         "--metadata-report",
         help="metadata-audit JSON used to attach shared UniProt family groups",
     )
@@ -278,6 +320,7 @@ def main() -> None:
             chain_uniprot=chain_uniprot,
             allow_terminal_overlap=args.allow_terminal_overlap,
             min_mapping_coverage=args.min_mapping_coverage,
+            require_engineered_mutation_support=args.require_engineered_mutation_support,
             rejections=rejections,
         )
     except (OSError, ValueError) as error:
@@ -296,6 +339,11 @@ def main() -> None:
             "allow_terminal_overlap": args.allow_terminal_overlap,
             "minimum_coverage": args.min_mapping_coverage,
             "internal_gaps_allowed": False,
+        },
+        "mutation_provenance_policy": {
+            "source": "legacy_pdb_seqadv",
+            "support_required": args.require_engineered_mutation_support,
+            "absence_is_inconclusive_when_support_not_required": True,
         },
         "split_policy": "all_train_pending_sequence_family_clustering",
         "counters": counters,

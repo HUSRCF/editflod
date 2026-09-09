@@ -152,3 +152,7 @@ background_control_gate:
     seqadv_is_hard_filter: false
     confirmed_provenance_mismatches:
       - microminer_5FNX_A_5FZU_A_K177E
+    future_microminer_ingestion:
+      default: record_seqadv_support
+      high_precision_option: require_engineered_mutation_support
+      no_annotation_disposition: manual_review_not_automatic_rejection

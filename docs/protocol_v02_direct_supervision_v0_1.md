@@ -283,3 +283,10 @@ different pH values, while the manifest edit is a K177E sequence discrepancy at
 author residue 177. It is not a controlled K177E mutation endpoint and must not
 be used for mutation-response claims. This finding motivates a source-level
 annotation gate for newly discovered structural-neighbor pairs.
+
+An ingestion shadow run on the existing 192-row MicroMiner discovery artifact
+produced 35 otherwise usable pairs in diagnostic mode and 26 under the strict
+SEQADV option. The nine removed records are exactly the five no-annotation and
+four other-site-annotation cases in that artifact. This validates the gate's
+mechanics but does not make strict mode the default: the five absent annotations
+still require manual evidence rather than automatic rejection.

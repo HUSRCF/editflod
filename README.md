@@ -295,6 +295,12 @@ An explicit `--allow-terminal-overlap` sensitivity mode applies the same
 continuous residue-ID overlap policy used by the Platinum importer, with
 `--min-mapping-coverage 0.95` by default. It rejects internal gaps and records
 all terminal trims; default MicroMiner imports remain equal-length only.
+For a high-precision discovery pass over legacy PDB files, add
+`--require-engineered-mutation-support`. This requires the observed endpoint
+edit to be supported by an `ENGINEERED MUTATION` `SEQADV` record in one endpoint
+or by matching annotated variants at both endpoints. The flag is intentionally
+optional: older structures often omit `SEQADV`, so absence is inconclusive and
+should enter manual review rather than being treated as a negative label.
 
 Same-sequence background structures can be discovered with a resumable query
 cache and bounded coordinate downloads:
