@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: reverse_augmentation_regularizes_toward_copy_without_learning_response
+  status: local_distance_objective_improves_direction_but_fails_copy_gate
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -146,6 +146,10 @@ artifacts:
     within_family_reverse_augmentation: reports/protocol_v02_within_family_reverse_augmentation_v1.json
     student_within_family_reverse_transformer_sweep: reports/protocol_v02_student_within_family_reverse_transformer_sweep_v1.json
     student_within_family_reverse_generalization: reports/protocol_v02_student_within_family_reverse_generalization_v1.json
+    student_within_family_distance_loss_transformer_sweep: reports/protocol_v02_student_within_family_distance_loss_transformer_sweep_v1.json
+    student_within_family_distance_loss_generalization: reports/protocol_v02_student_within_family_distance_loss_generalization_v1.json
+    student_distance_loss_transformer_sweep: reports/protocol_v02_student_distance_loss_transformer_sweep_v1.json
+    student_distance_loss_generalization: reports/protocol_v02_student_distance_loss_generalization_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -518,3 +522,42 @@ background_control_gate:
         - distance_change_direction_remains_uninformative
         - reverse_pairs_regularize_toward_copy_more_than_they_teach_response
         - training_edit_type_expansion_does_not_cover_the_eight_unseen_dev_edits
+  local_distance_change_objective:
+    definition: coupled_ca_distance_changes_among_valid_10_angstrom_neighborhood_residues
+    loss_schema: ospedit.student_loss.v3
+    weight_selection:
+      uses_train_only_zero_prediction_statistics: true
+      mean_frame_delta_loss: 0.002052880991565568
+      mean_local_distance_change_loss: 0.0298654057971564
+      raw_loss_ratio: 0.06873775650358083
+      fixed_weight: 0.05
+      dev_used_to_select_weight: false
+    within_family_transformer_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.29971158585982965, std: 0.003926016974047321}
+      local_error_minus_copy_angstrom: {mean: 0.01440177503466176, std: 0.003926016974047321}
+      mutation_site_backbone_error_angstrom: {mean: 0.23508502774955317, std: 0.006657703426376623}
+      mutation_site_error_minus_copy_angstrom: {mean: -0.030520404449405274, std: 0.0066577034263766224}
+      distance_change_cosine: {mean: 0.03562137450161912, std: 0.009640597890990532}
+      local_distance_change_error: {mean: 0.23294802241240994, std: 0.00316836425454661}
+      local_distance_change_cosine: {mean: -0.018071185103837577, std: 0.01316135003502513}
+    frozen_dev_transformer_family_macro:
+      local_backbone_error_angstrom: {mean: 0.28839544240501874, std: 0.004037642676018245}
+      local_error_minus_copy_angstrom: {mean: 0.006871683097933993, std: 0.004037642676018245}
+      mutation_site_backbone_error_angstrom: {mean: 0.2704871841750056, std: 0.0037044982674890687}
+      mutation_site_error_minus_copy_angstrom: {mean: 0.014568837663615997, std: 0.0037044982674890687}
+      distance_change_error_minus_copy: {mean: 0.001553962783113307, std: 0.0008082527216110856}
+      distance_change_cosine: {mean: -0.021667280206824003, std: 0.012857083319708655}
+      local_distance_change_error: {mean: 0.19374885703327407, std: 0.0038668452122568833}
+      local_distance_change_cosine: {mean: -0.0008772986857799661, std: 0.012773025048478043}
+      remote_scaffold_drift_angstrom: {mean: 0.0017382929485039722, std: 0.0003270876954387344}
+    decision:
+      selected_as_useful_objective_component: true
+      copy_parent_local_noninferiority_passed: false
+      mutation_response_gate_passed: false
+      next_intervention: mutation_anchored_neighborhood_vector_objective
+      rationale:
+        - frozen_dev_site_error_improves_relative_to_unweighted_localization_all_seeds
+        - frozen_dev_local_distance_cosine_improves_all_seeds
+        - local_and_site_errors_remain_worse_than_copy_on_frozen_dev
+        - scalar_distances_discard_deformation_direction
+        - next_target_should_couple_each_neighbor_to_the_mutation_frame

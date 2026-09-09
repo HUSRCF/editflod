@@ -18,7 +18,7 @@ from .student import EDIT_MASK_INDEX
 from .teacher_cache import TeacherCache
 
 
-LOSS_SCHEMA_VERSION = "ospedit.student_loss.v2"
+LOSS_SCHEMA_VERSION = "ospedit.student_loss.v3"
 
 
 def masked_delta_loss(
@@ -81,6 +81,63 @@ def masked_prediction_norm_loss(prediction: Tensor, residue_mask: Tensor) -> Ten
     return per_sample[valid_samples].mean()
 
 
+def local_distance_change_loss(
+    prediction: Tensor,
+    target: Tensor,
+    parent_origins: Tensor,
+    parent_rotations: Tensor,
+    residue_mask: Tensor,
+    *,
+    translation_scale: float = 1.0,
+    sample_weights: Tensor | None = None,
+) -> Tensor:
+    """Compare coupled C-alpha distance changes inside a residue neighborhood."""
+    if prediction.shape != target.shape or prediction.shape[-1] < 3:
+        raise ValueError("prediction and target must share shape (batch, length, >=3)")
+    if parent_origins.shape != prediction.shape[:2] + (3,):
+        raise ValueError("parent_origins must have shape (batch, length, 3)")
+    if parent_rotations.shape != prediction.shape[:2] + (3, 3):
+        raise ValueError("parent_rotations must have shape (batch, length, 3, 3)")
+    if residue_mask.shape != prediction.shape[:2]:
+        raise ValueError("residue_mask must have shape (batch, length)")
+    if translation_scale <= 0:
+        raise ValueError("translation_scale must be positive")
+    if sample_weights is not None and sample_weights.shape != prediction.shape[:1]:
+        raise ValueError("sample_weights must have shape (batch,)")
+
+    pred_shift = torch.einsum(
+        "blij,blj->bli", parent_rotations, prediction[..., :3] * translation_scale
+    )
+    target_shift = torch.einsum(
+        "blij,blj->bli", parent_rotations, target[..., :3] * translation_scale
+    )
+    parent_distances = torch.cdist(parent_origins, parent_origins)
+    predicted_change = torch.cdist(
+        parent_origins + pred_shift, parent_origins + pred_shift
+    ) - parent_distances
+    target_change = torch.cdist(
+        parent_origins + target_shift, parent_origins + target_shift
+    ) - parent_distances
+    valid = residue_mask.to(dtype=torch.bool)
+    pair_mask = valid[:, :, None] & valid[:, None, :]
+    pair_mask &= torch.triu(
+        torch.ones(pair_mask.shape[-2:], dtype=torch.bool, device=pair_mask.device),
+        diagonal=1,
+    )
+    squared = (predicted_change - target_change).pow(2)
+    denominators = pair_mask.sum(dim=(1, 2))
+    valid_samples = denominators > 0
+    if not bool(valid_samples.any()):
+        return prediction.sum() * 0.0
+    per_sample = (squared * pair_mask).sum(dim=(1, 2)) / denominators.clamp_min(1)
+    if sample_weights is None:
+        return per_sample[valid_samples].mean()
+    weights = sample_weights.to(dtype=prediction.dtype)[valid_samples]
+    if (weights < 0).any() or float(weights.sum()) <= 0:
+        raise ValueError("valid sample weights must be non-negative with positive sum")
+    return (per_sample[valid_samples] * weights).mean()
+
+
 def supervised_delta_loss(
     prediction: Tensor,
     target: Tensor,
@@ -137,6 +194,8 @@ def train_student(
     delta_loss_beta: float = 1.0,
     mutation_loss_weight: float = 0.0,
     neighborhood_loss_weight: float = 0.0,
+    local_distance_loss_weight: float = 0.0,
+    translation_scale: float = 1.0,
     distill_weight: float = 0.0,
 ) -> list[float]:
     """Minimal supervised loop over collated numpy batches."""
@@ -154,6 +213,8 @@ def train_student(
         raise ValueError("mutation_loss_weight must be non-negative")
     if neighborhood_loss_weight < 0:
         raise ValueError("neighborhood_loss_weight must be non-negative")
+    if local_distance_loss_weight < 0:
+        raise ValueError("local_distance_loss_weight must be non-negative")
     if distill_weight < 0:
         raise ValueError("distill_weight must be non-negative")
     materialized_batches = list(batches)
@@ -205,6 +266,22 @@ def train_student(
                     kind=delta_loss_kind,
                     beta=delta_loss_beta,
                 )
+            if local_distance_loss_weight:
+                parent_origins = torch.as_tensor(
+                    batch["parent_frame_origins"], dtype=torch.float32, device=device
+                )
+                parent_rotations = torch.as_tensor(
+                    batch["parent_frame_rotations"], dtype=torch.float32, device=device
+                )
+                loss = loss + local_distance_loss_weight * local_distance_change_loss(
+                    prediction,
+                    target,
+                    parent_origins,
+                    parent_rotations,
+                    loss_mask * neighborhood,
+                    translation_scale=translation_scale,
+                    sample_weights=sample_weights,
+                )
             if delta_norm_weight:
                 loss = loss + delta_norm_weight * masked_prediction_norm_loss(prediction, input_mask)
             window_start = (count // grad_accumulation_steps) * grad_accumulation_steps
@@ -244,6 +321,7 @@ def train_records(
     delta_loss_beta: float = 1.0,
     mutation_loss_weight: float = 0.0,
     neighborhood_loss_weight: float = 0.0,
+    local_distance_loss_weight: float = 0.0,
     distill_weight: float = 0.0,
     teacher_cache: TeacherCache | None = None,
     teacher_noise_level: float | None = None,
@@ -301,6 +379,8 @@ def train_records(
         delta_loss_beta=delta_loss_beta,
         mutation_loss_weight=mutation_loss_weight,
         neighborhood_loss_weight=neighborhood_loss_weight,
+        local_distance_loss_weight=local_distance_loss_weight,
+        translation_scale=translation_scale,
         distill_weight=distill_weight,
     )
 

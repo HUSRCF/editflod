@@ -307,6 +307,9 @@ class PairDataset:
             )
             target *= localization[:, None]
         input_valid = parent_residue_mask(record.pair)
+        parent_rotations, parent_origins, _ = residue_frames_masked(
+            record.pair.parent_coords, record.pair.atom_names
+        )
         edit = encode_edit_features(
             [record.pair.parent_sequence],
             [record.pair.mutant_sequence],
@@ -318,6 +321,8 @@ class PairDataset:
             "parent_features": parent_local_features(record.pair, include_geometry=self.include_geometry),
             "edit_features": edit,
             "target_delta": target,
+            "parent_frame_origins": parent_origins.astype(np.float32),
+            "parent_frame_rotations": parent_rotations.astype(np.float32),
             "input_mask": input_valid.astype(np.float32),
             "loss_mask": valid.astype(np.float32),
             "neighborhood_mask": mutation_neighborhood_mask(record.pair, self.neighborhood_radius),
@@ -372,6 +377,10 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
     parent = np.zeros((len(batch), max_length, parent_dim), dtype=np.float32)
     edit = np.zeros((len(batch), max_length, edit_dim), dtype=np.float32)
     target = np.zeros((len(batch), max_length, 6), dtype=np.float32)
+    parent_frame_origins = np.zeros((len(batch), max_length, 3), dtype=np.float32)
+    parent_frame_rotations = np.zeros(
+        (len(batch), max_length, 3, 3), dtype=np.float32
+    )
     input_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     loss_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     neighborhood_mask = np.zeros((len(batch), max_length), dtype=np.float32)
@@ -395,6 +404,8 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         parent[index, :length] = item["parent_features"]
         edit[index, :length] = item["edit_features"]
         target[index, :length] = item["target_delta"]
+        parent_frame_origins[index, :length] = item["parent_frame_origins"]
+        parent_frame_rotations[index, :length] = item["parent_frame_rotations"]
         input_mask[index, :length] = item["input_mask"]
         loss_mask[index, :length] = item["loss_mask"]
         neighborhood_mask[index, :length] = item["neighborhood_mask"]
@@ -411,6 +422,8 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         "parent_features": parent,
         "edit_features": edit,
         "target_delta": target,
+        "parent_frame_origins": parent_frame_origins,
+        "parent_frame_rotations": parent_frame_rotations,
         "input_mask": input_mask,
         "loss_mask": loss_mask,
         "neighborhood_mask": neighborhood_mask,

@@ -19,6 +19,8 @@ METRICS = (
     "mutation_site_backbone_error",
     "distance_change_error",
     "distance_change_cosine",
+    "local_distance_change_error",
+    "local_distance_change_cosine",
     "remote_target_error",
     "remote_scaffold_drift",
     "predicted_distance_change_norm",
@@ -28,6 +30,7 @@ ERROR_METRICS = (
     "local_backbone_error",
     "mutation_site_backbone_error",
     "distance_change_error",
+    "local_distance_change_error",
     "remote_target_error",
     "remote_scaffold_drift",
 )

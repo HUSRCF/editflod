@@ -89,6 +89,12 @@ def main() -> None:
         help="Extra weight for residues within 10 Angstrom of a mutation",
     )
     parser.add_argument(
+        "--local-distance-loss-weight",
+        type=float,
+        default=0.0,
+        help="Weight for coupled C-alpha distance-change loss in the mutation neighborhood",
+    )
+    parser.add_argument(
         "--family-balanced-loss",
         action="store_true",
         help="Give each training family equal total supervised weight",
@@ -321,6 +327,7 @@ def main() -> None:
             ("delta_norm_weight", args.delta_norm_weight),
             ("mutation_loss_weight", args.mutation_loss_weight),
             ("neighborhood_loss_weight", args.neighborhood_loss_weight),
+            ("local_distance_loss_weight", args.local_distance_loss_weight),
             ("delta_loss_beta", args.delta_loss_beta),
         ):
             saved = resume_config.get(key)
@@ -365,6 +372,7 @@ def main() -> None:
         delta_loss_beta=args.delta_loss_beta,
         mutation_loss_weight=args.mutation_loss_weight,
         neighborhood_loss_weight=args.neighborhood_loss_weight,
+        local_distance_loss_weight=args.local_distance_loss_weight,
         neighborhood_radius=args.neighborhood_radius,
         distill_weight=args.distill_weight,
         teacher_cache=teacher_cache,

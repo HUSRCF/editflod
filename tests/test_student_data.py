@@ -316,6 +316,41 @@ def test_supervised_loss_normalizes_site_and_neighborhood_separately():
     assert float(loss) == pytest.approx(19.0)
 
 
+def test_local_distance_change_loss_couples_residue_translations():
+    torch = pytest.importorskip("torch")
+    from ospedit.student_training import local_distance_change_loss
+
+    prediction = torch.zeros((1, 2, 6))
+    target = torch.zeros_like(prediction)
+    target[0, 1, 0] = 1.0
+    origins = torch.tensor([[[0.0, 0.0, 0.0], [1.0, 0.0, 0.0]]])
+    rotations = torch.eye(3).reshape(1, 1, 3, 3).repeat(1, 2, 1, 1)
+
+    loss = local_distance_change_loss(
+        prediction, target, origins, rotations, torch.ones((1, 2))
+    )
+
+    assert float(loss) == pytest.approx(1.0)
+
+
+def test_local_distance_change_loss_ignores_samples_without_a_valid_pair():
+    torch = pytest.importorskip("torch")
+    from ospedit.student_training import local_distance_change_loss
+
+    prediction = torch.zeros((1, 2, 6), requires_grad=True)
+    loss = local_distance_change_loss(
+        prediction,
+        torch.ones_like(prediction),
+        torch.zeros((1, 2, 3)),
+        torch.eye(3).reshape(1, 1, 3, 3).repeat(1, 2, 1, 1),
+        torch.tensor([[1.0, 0.0]]),
+    )
+
+    assert float(loss.detach()) == 0.0
+    loss.backward()
+    assert prediction.grad is not None
+
+
 def test_target_delta_scales_translation_and_rotation_channels():
     record = make_record()
     raw, mask = target_local_delta(record.pair)
@@ -399,6 +434,8 @@ def test_pair_dataset_collates_spatial_graph():
     assert batch["edge_features"].shape == (1, 3, 3, 16)
     assert batch["edge_mask"].shape == (1, 3, 3)
     assert not np.diag(batch["edge_mask"][0]).any()
+    assert batch["parent_frame_origins"].shape == (1, 3, 3)
+    assert batch["parent_frame_rotations"].shape == (1, 3, 3, 3)
 
 
 def test_student_training_loop_runs_one_epoch():

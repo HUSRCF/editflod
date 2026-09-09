@@ -24,6 +24,8 @@ PRIMARY_METRICS = (
     "mutation_site_backbone_error",
     "distance_change_error",
     "distance_change_cosine",
+    "local_distance_change_error",
+    "local_distance_change_cosine",
     "remote_target_error",
     "remote_scaffold_drift",
     "predicted_distance_change_norm",
@@ -146,6 +148,7 @@ def main() -> None:
     parser.add_argument("--gradient-clip-norm", type=float, default=1.0)
     parser.add_argument("--mutation-loss-weight", type=float, default=0.0)
     parser.add_argument("--neighborhood-loss-weight", type=float, default=0.0)
+    parser.add_argument("--local-distance-loss-weight", type=float, default=0.0)
     parser.add_argument("--biochemical-edit-features", action="store_true")
     parser.add_argument("--max-normalized-delta", type=float)
     parser.add_argument("--target-localization-radius", type=float)
@@ -164,7 +167,11 @@ def main() -> None:
         parser.error("model dimensions must be positive")
     if args.learning_rate <= 0 or args.gradient_clip_norm <= 0:
         parser.error("learning rate and gradient clip norm must be positive")
-    if args.mutation_loss_weight < 0 or args.neighborhood_loss_weight < 0:
+    if (
+        args.mutation_loss_weight < 0
+        or args.neighborhood_loss_weight < 0
+        or args.local_distance_loss_weight < 0
+    ):
         parser.error("regional loss weights must be non-negative")
     if args.max_normalized_delta is not None and args.max_normalized_delta <= 0:
         parser.error("max normalized delta must be positive")
@@ -250,6 +257,8 @@ def main() -> None:
                 str(args.mutation_loss_weight),
                 "--neighborhood-loss-weight",
                 str(args.neighborhood_loss_weight),
+                "--local-distance-loss-weight",
+                str(args.local_distance_loss_weight),
                 "--family-balanced-loss",
                 "--endpoint-group-balanced-loss",
                 "--seed",
@@ -366,6 +375,8 @@ def main() -> None:
                 "mutation_site_backbone_error",
                 "distance_change_error",
                 "distance_change_cosine",
+                "local_distance_change_error",
+                "local_distance_change_cosine",
                 "remote_target_error",
                 "remote_scaffold_drift",
             ],
@@ -384,6 +395,7 @@ def main() -> None:
             "gradient_clip_norm": args.gradient_clip_norm,
             "mutation_loss_weight": args.mutation_loss_weight,
             "neighborhood_loss_weight": args.neighborhood_loss_weight,
+            "local_distance_loss_weight": args.local_distance_loss_weight,
             "biochemical_edit_features": args.biochemical_edit_features,
             "max_normalized_delta": args.max_normalized_delta,
             "target_localization_radius": args.target_localization_radius,

@@ -553,3 +553,31 @@ retained as a preservation control, not selected as the response model. The
 next model intervention must explicitly improve coherent neighborhood response
 or bring transferable sequence/structure context; more shrinkage toward zero is
 not sufficient.
+
+### Local distance-change objective
+
+A coupled geometric loss was added in loss schema v3. Predicted and target
+C-alpha frame origins are reconstructed in the parent global frame, and changes
+in every valid pairwise distance inside the parent-defined 10 Angstrom mutation
+neighborhood are compared. Unlike per-residue frame MSE, this term couples the
+updates of two residues. The fixed weight 0.05 was chosen without dev results:
+at zero prediction, train-only mean frame loss was 0.00205 and mean distance
+loss was 0.02987, giving a raw ratio of 0.0687.
+
+On the within-family probe, the distance loss improved mean local distance
+cosine from -0.0933 to -0.0181 and whole-structure distance cosine from 0.0154
+to 0.0356. Mutation-site improvement remained 0.0305 Angstrom, but local error
+was still 0.0144 worse than copy.
+
+The same fixed configuration was then evaluated on frozen unseen-family dev.
+Relative to the prior localized Transformer, mutation-site error improved in all
+three seeds (0.2818 to 0.2705 Angstrom), local distance cosine improved in all
+three seeds (-0.0488 to -0.0009), and remote drift decreased from 0.00223 to
+0.00174 Angstrom. Local error improved slightly to 0.2884 Angstrom but remained
+0.00687 worse than copy; site error also remained 0.0146 worse. Global
+distance-change cosine stayed negative at -0.0217.
+
+This is a reproducible directional improvement, not a passed editor. Scalar
+distance changes discard the direction of local deformation. The next target
+should compare mutation-anchored neighbor displacement changes in the parent
+mutation frame, retaining vector direction while coupling site and neighborhood.
