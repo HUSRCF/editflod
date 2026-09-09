@@ -77,6 +77,24 @@ def test_structure_context_rejects_multichain_complex(tmp_path):
     assert report["records"][0]["rejection_reasons"] == ["multiple_protein_chains"]
 
 
+def test_structure_context_can_gate_protein_contact_count_without_single_chain_rule(
+    tmp_path,
+):
+    record = _record(tmp_path, extra_chain=True)
+
+    report, selected = audit_structure_context(
+        [record],
+        require_single_protein_chain=False,
+        require_matching_protein_contacts=True,
+    )
+
+    assert selected == []
+    assert report["records"][0]["protein_contact_counts_matched"] is False
+    assert report["records"][0]["rejection_reasons"] == [
+        "proximal_protein_contact_count_mismatch"
+    ]
+
+
 def test_structure_context_finds_proximal_ligand_on_another_chain(tmp_path):
     path = tmp_path / "structure.pdb"
     _pdb(path, residue="ALA", ligand_chain="B")

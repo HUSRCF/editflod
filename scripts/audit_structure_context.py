@@ -24,6 +24,7 @@ def audit_structure_context(
     *,
     require_single_protein_chain: bool = True,
     require_matching_target_hetero: bool = True,
+    require_matching_protein_contacts: bool = False,
     require_matching_method: bool = True,
     max_resolution_difference: float | None = None,
     ignored_hetero: Iterable[str] = ("HOH",),
@@ -47,6 +48,14 @@ def audit_structure_context(
             reasons.append("multiple_protein_chains")
         if require_matching_target_hetero and parent["proximal_hetero"] != mutant["proximal_hetero"]:
             reasons.append("proximal_hetero_mismatch")
+        protein_contacts_matched = (
+            parent["protein_contact_chain_count"]
+            == mutant["protein_contact_chain_count"]
+            and parent["protein_contact_residue_count"]
+            == mutant["protein_contact_residue_count"]
+        )
+        if require_matching_protein_contacts and not protein_contacts_matched:
+            reasons.append("proximal_protein_contact_count_mismatch")
         if require_matching_method and parent["structure_method"] != mutant["structure_method"]:
             reasons.append("structure_method_mismatch")
         resolution_difference = None
@@ -65,6 +74,7 @@ def audit_structure_context(
             "parent": parent,
             "mutant": mutant,
             "resolution_difference_angstrom": resolution_difference,
+            "protein_contact_counts_matched": protein_contacts_matched,
             "selected": not reasons,
             "rejection_reasons": reasons,
         }
@@ -78,6 +88,10 @@ def audit_structure_context(
             "require_single_protein_chain": require_single_protein_chain,
             "require_matching_target_hetero": require_matching_target_hetero,
             "hetero_comparison_scope": "within_6_angstrom_of_target_chain",
+            "require_matching_protein_contacts": require_matching_protein_contacts,
+            "protein_contact_comparison": (
+                "target_neighbor_chain_count_and_residue_count_within_5_angstrom"
+            ),
             "require_matching_method": require_matching_method,
             "max_resolution_difference": max_resolution_difference,
             "ignored_hetero": sorted(ignored),
@@ -85,6 +99,10 @@ def audit_structure_context(
         "records": results,
         "selected_records": len(selected),
         "rejected_records": len(rows) - len(selected),
+        "limitations": [
+            "matching_contact_counts_do_not_establish_identical_partner_identity_or_interface_geometry",
+            "deposited_model_contacts_may_include_crystal_contacts_outside_the_biological_assembly",
+        ],
     }
     return payload, selected
 
@@ -97,6 +115,7 @@ def main() -> None:
     parser.add_argument("--verify-checksums", action="store_true")
     parser.add_argument("--allow-multiple-protein-chains", action="store_true")
     parser.add_argument("--allow-target-hetero-mismatch", action="store_true")
+    parser.add_argument("--require-matching-protein-contacts", action="store_true")
     parser.add_argument("--allow-method-mismatch", action="store_true")
     parser.add_argument("--max-resolution-difference", type=float)
     parser.add_argument("--ignore-hetero", nargs="*", default=("HOH",))
@@ -111,6 +130,7 @@ def main() -> None:
             records,
             require_single_protein_chain=not args.allow_multiple_protein_chains,
             require_matching_target_hetero=not args.allow_target_hetero_mismatch,
+            require_matching_protein_contacts=args.require_matching_protein_contacts,
             require_matching_method=not args.allow_method_mismatch,
             max_resolution_difference=args.max_resolution_difference,
             ignored_hetero=args.ignore_hetero,

@@ -1,0 +1,4257 @@
+{
+  "families": {
+    "v02_family_0123349a5fb8": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.19734725598577268,
+        "copy_error.local_backbone_error": 0.2887064011223682,
+        "copy_error.local_distance_change_error": 0.24495820020472217,
+        "copy_error.mutation_site_backbone_error": 0.4344234021950274,
+        "copy_error.remote_distance_change_error": 0.18282695913460903,
+        "copy_error.remote_target_error": 0.1924155274968401,
+        "oracle_error.distance_change_error": 4.263206924878646e-09,
+        "oracle_error.local_backbone_error": 0.06990268909316869,
+        "oracle_error.local_distance_change_error": 7.680703619250328e-09,
+        "oracle_error.mutation_site_backbone_error": 0.06108209220908741,
+        "oracle_error.remote_distance_change_error": 3.4766335320512003e-09,
+        "oracle_error.remote_target_error": 0.06266034041459827,
+        "recoverable_fraction.distance_change_error": 0.999999978397435,
+        "recoverable_fraction.local_backbone_error": 0.7578762063417485,
+        "recoverable_fraction.local_distance_change_error": 0.9999999686448398,
+        "recoverable_fraction.mutation_site_backbone_error": 0.8593950236095579,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999809840214,
+        "recoverable_fraction.remote_target_error": 0.674348836449141,
+        "response_scope.local_rotation_energy_fraction": 0.22962388396263123,
+        "response_scope.local_rotation_rms_radian": 0.10289839655160904,
+        "response_scope.local_translation_energy_fraction": 0.3164866268634796,
+        "response_scope.local_translation_rms_angstrom": 0.2987898290157318,
+        "response_scope.remote_rotation_energy_fraction": 0.5902332663536072,
+        "response_scope.remote_rotation_rms_radian": 0.07748241722583771,
+        "response_scope.remote_translation_energy_fraction": 0.5114516615867615,
+        "response_scope.remote_translation_rms_angstrom": 0.17839455604553223,
+        "response_scope.rotation_rms_radian": 0.08116169273853302,
+        "response_scope.translation_rms_angstrom": 0.20074240863323212
+      },
+      "records": 2,
+      "split": "train"
+    },
+    "v02_family_260dd007d20d": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.17944980013493594,
+        "copy_error.local_backbone_error": 0.2505902931521402,
+        "copy_error.local_distance_change_error": 0.18847733172827147,
+        "copy_error.mutation_site_backbone_error": 0.1307429011074186,
+        "copy_error.remote_distance_change_error": 0.1967009643999212,
+        "copy_error.remote_target_error": 0.26654286886002293,
+        "oracle_error.distance_change_error": 4.349631536645832e-09,
+        "oracle_error.local_backbone_error": 0.06919682029102214,
+        "oracle_error.local_distance_change_error": 4.579591546269964e-09,
+        "oracle_error.mutation_site_backbone_error": 0.02970967038948649,
+        "oracle_error.remote_distance_change_error": 4.699868472496748e-09,
+        "oracle_error.remote_target_error": 0.07929391962857224,
+        "recoverable_fraction.distance_change_error": 0.9999999757612906,
+        "recoverable_fraction.local_backbone_error": 0.7238647218908401,
+        "recoverable_fraction.local_distance_change_error": 0.9999999757021627,
+        "recoverable_fraction.mutation_site_backbone_error": 0.7727626499195014,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999761065307,
+        "recoverable_fraction.remote_target_error": 0.7025096939651607,
+        "response_scope.local_rotation_energy_fraction": 0.11509004235267639,
+        "response_scope.local_rotation_rms_radian": 0.1025485023856163,
+        "response_scope.local_translation_energy_fraction": 0.1505420058965683,
+        "response_scope.local_translation_rms_angstrom": 0.24197375774383545,
+        "response_scope.remote_rotation_energy_fraction": 0.7799004316329956,
+        "response_scope.remote_rotation_rms_radian": 0.13066472113132477,
+        "response_scope.remote_translation_energy_fraction": 0.7138121128082275,
+        "response_scope.remote_translation_rms_angstrom": 0.25790491700172424,
+        "response_scope.rotation_rms_radian": 0.11569765210151672,
+        "response_scope.translation_rms_angstrom": 0.23870059847831726
+      },
+      "records": 1,
+      "split": "dev"
+    },
+    "v02_family_28cd4576dfdb": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.144713146005031,
+        "copy_error.local_backbone_error": 0.39332635830000773,
+        "copy_error.local_distance_change_error": 0.2612380030860492,
+        "copy_error.mutation_site_backbone_error": 0.792232417460128,
+        "copy_error.remote_distance_change_error": 0.15062114759455542,
+        "copy_error.remote_target_error": 0.26412998808283866,
+        "oracle_error.distance_change_error": 4.462408962445831e-09,
+        "oracle_error.local_backbone_error": 0.1913602871955795,
+        "oracle_error.local_distance_change_error": 7.667545905188195e-09,
+        "oracle_error.mutation_site_backbone_error": 0.1225790591218868,
+        "oracle_error.remote_distance_change_error": 4.422842475567756e-09,
+        "oracle_error.remote_target_error": 0.11033373412468529,
+        "recoverable_fraction.distance_change_error": 0.9999999691637623,
+        "recoverable_fraction.local_backbone_error": 0.5134821677787982,
+        "recoverable_fraction.local_distance_change_error": 0.9999999706491941,
+        "recoverable_fraction.mutation_site_backbone_error": 0.8452738660772411,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999706359795,
+        "recoverable_fraction.remote_target_error": 0.5822748680468592,
+        "response_scope.local_rotation_energy_fraction": 0.7556102871894836,
+        "response_scope.local_rotation_rms_radian": 0.48951494693756104,
+        "response_scope.local_translation_energy_fraction": 0.16797442734241486,
+        "response_scope.local_translation_rms_angstrom": 0.3136851191520691,
+        "response_scope.remote_rotation_energy_fraction": 0.2344546914100647,
+        "response_scope.remote_rotation_rms_radian": 0.08825679868459702,
+        "response_scope.remote_translation_energy_fraction": 0.7739566564559937,
+        "response_scope.remote_translation_rms_angstrom": 0.21793770790100098,
+        "response_scope.rotation_rms_radian": 0.15899145603179932,
+        "response_scope.translation_rms_angstrom": 0.21608726680278778
+      },
+      "records": 1,
+      "split": "train"
+    },
+    "v02_family_2f4c6b5fd2fc": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.16606451609151301,
+        "copy_error.local_backbone_error": 0.23285830873662353,
+        "copy_error.local_distance_change_error": 0.17948787187697265,
+        "copy_error.mutation_site_backbone_error": 0.3410976009066202,
+        "copy_error.remote_distance_change_error": 0.17068383816011412,
+        "copy_error.remote_target_error": 0.21349614929116117,
+        "oracle_error.distance_change_error": 3.5849831586438115e-09,
+        "oracle_error.local_backbone_error": 0.06503351138672842,
+        "oracle_error.local_distance_change_error": 4.193248189521628e-09,
+        "oracle_error.mutation_site_backbone_error": 0.10220842213072817,
+        "oracle_error.remote_distance_change_error": 3.4204782481659342e-09,
+        "oracle_error.remote_target_error": 0.10057282548866228,
+        "recoverable_fraction.distance_change_error": 0.9999999783164025,
+        "recoverable_fraction.local_backbone_error": 0.7226104749246587,
+        "recoverable_fraction.local_distance_change_error": 0.9999999765011554,
+        "recoverable_fraction.mutation_site_backbone_error": 0.7326856122880268,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999799289234,
+        "recoverable_fraction.remote_target_error": 0.5437443191475736,
+        "response_scope.local_rotation_energy_fraction": 0.10565460100769997,
+        "response_scope.local_rotation_rms_radian": 0.08974692225456238,
+        "response_scope.local_translation_energy_fraction": 0.31535056978464127,
+        "response_scope.local_translation_rms_angstrom": 0.21773773431777954,
+        "response_scope.remote_rotation_energy_fraction": 0.6930661499500275,
+        "response_scope.remote_rotation_rms_radian": 0.1855560839176178,
+        "response_scope.remote_translation_energy_fraction": 0.4509325623512268,
+        "response_scope.remote_translation_rms_angstrom": 0.18523483723402023,
+        "response_scope.rotation_rms_radian": 0.14414670318365097,
+        "response_scope.translation_rms_angstrom": 0.18446532636880875
+      },
+      "records": 2,
+      "split": "train"
+    },
+    "v02_family_3da1b9ebba69": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.2888148570130723,
+        "copy_error.local_backbone_error": 0.44963711635668924,
+        "copy_error.local_distance_change_error": 0.30468507956974655,
+        "copy_error.mutation_site_backbone_error": 0.5231723987030387,
+        "copy_error.remote_distance_change_error": 0.2646361440078507,
+        "copy_error.remote_target_error": 0.3846294572095591,
+        "oracle_error.distance_change_error": 7.6363637252872e-09,
+        "oracle_error.local_backbone_error": 0.10000551151956498,
+        "oracle_error.local_distance_change_error": 9.709964574678854e-09,
+        "oracle_error.mutation_site_backbone_error": 0.09943933550470833,
+        "oracle_error.remote_distance_change_error": 6.867212141839442e-09,
+        "oracle_error.remote_target_error": 0.15545168879487214,
+        "recoverable_fraction.distance_change_error": 0.9999999735008072,
+        "recoverable_fraction.local_backbone_error": 0.7573580381649434,
+        "recoverable_fraction.local_distance_change_error": 0.9999999682976823,
+        "recoverable_fraction.mutation_site_backbone_error": 0.7606750289296859,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999734557778,
+        "recoverable_fraction.remote_target_error": 0.5950525259595745,
+        "response_scope.local_rotation_energy_fraction": 0.07896772399544716,
+        "response_scope.local_rotation_rms_radian": 0.18101941794157028,
+        "response_scope.local_translation_energy_fraction": 0.1966239046305418,
+        "response_scope.local_translation_rms_angstrom": 0.4650472551584244,
+        "response_scope.remote_rotation_energy_fraction": 0.6807774603366852,
+        "response_scope.remote_rotation_rms_radian": 0.19467823207378387,
+        "response_scope.remote_translation_energy_fraction": 0.6005482077598572,
+        "response_scope.remote_translation_rms_angstrom": 0.326200932264328,
+        "response_scope.rotation_rms_radian": 0.20360781252384186,
+        "response_scope.translation_rms_angstrom": 0.37006670236587524
+      },
+      "records": 2,
+      "split": "dev"
+    },
+    "v02_family_5c932f233753": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.26874104243954655,
+        "copy_error.local_backbone_error": 0.19861594326162504,
+        "copy_error.local_distance_change_error": 0.1361936200508547,
+        "copy_error.mutation_site_backbone_error": 0.10815162270934112,
+        "copy_error.remote_distance_change_error": 0.32371989561463294,
+        "copy_error.remote_target_error": 0.3289045740836509,
+        "oracle_error.distance_change_error": 6.599319358628619e-09,
+        "oracle_error.local_backbone_error": 0.0465096742610208,
+        "oracle_error.local_distance_change_error": 4.9221599485091375e-09,
+        "oracle_error.mutation_site_backbone_error": 0.031361077140594225,
+        "oracle_error.remote_distance_change_error": 7.119495136160683e-09,
+        "oracle_error.remote_target_error": 0.09610189935832818,
+        "recoverable_fraction.distance_change_error": 0.9999999754363376,
+        "recoverable_fraction.local_backbone_error": 0.7614663130900095,
+        "recoverable_fraction.local_distance_change_error": 0.9999999660114067,
+        "recoverable_fraction.mutation_site_backbone_error": 0.7077213382988616,
+        "recoverable_fraction.remote_distance_change_error": 0.999999978217442,
+        "recoverable_fraction.remote_target_error": 0.7076098449550796,
+        "response_scope.local_rotation_energy_fraction": 0.060693871695548296,
+        "response_scope.local_rotation_rms_radian": 0.06252268888056278,
+        "response_scope.local_translation_energy_fraction": 0.10857918672263622,
+        "response_scope.local_translation_rms_angstrom": 0.19665702432394028,
+        "response_scope.remote_rotation_energy_fraction": 0.7880038321018219,
+        "response_scope.remote_rotation_rms_radian": 0.18627185747027397,
+        "response_scope.remote_translation_energy_fraction": 0.6791824996471405,
+        "response_scope.remote_translation_rms_angstrom": 0.3497372269630432,
+        "response_scope.rotation_rms_radian": 0.14659272134304047,
+        "response_scope.translation_rms_angstrom": 0.30108268558979034
+      },
+      "records": 2,
+      "split": "dev"
+    },
+    "v02_family_607a3bb0349c": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.14374215690016287,
+        "copy_error.local_backbone_error": 0.17860755353367663,
+        "copy_error.local_distance_change_error": 0.14811877645199173,
+        "copy_error.mutation_site_backbone_error": 0.1946224780343944,
+        "copy_error.remote_distance_change_error": 0.1515435270874862,
+        "copy_error.remote_target_error": 0.20818071493867765,
+        "oracle_error.distance_change_error": 3.915971692383001e-09,
+        "oracle_error.local_backbone_error": 0.06612444043370827,
+        "oracle_error.local_distance_change_error": 2.3744602284919965e-09,
+        "oracle_error.mutation_site_backbone_error": 0.09347281595638773,
+        "oracle_error.remote_distance_change_error": 4.2773305096469884e-09,
+        "oracle_error.remote_target_error": 0.13073141968458782,
+        "recoverable_fraction.distance_change_error": 0.9999999727569714,
+        "recoverable_fraction.local_backbone_error": 0.6297780293976176,
+        "recoverable_fraction.local_distance_change_error": 0.9999999839692152,
+        "recoverable_fraction.mutation_site_backbone_error": 0.5197224035968298,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999717749045,
+        "recoverable_fraction.remote_target_error": 0.37202915398241154,
+        "response_scope.local_rotation_energy_fraction": 0.11305510997772217,
+        "response_scope.local_rotation_rms_radian": 0.06763238459825516,
+        "response_scope.local_translation_energy_fraction": 0.11371857672929764,
+        "response_scope.local_translation_rms_angstrom": 0.16170157492160797,
+        "response_scope.remote_rotation_energy_fraction": 0.7572896480560303,
+        "response_scope.remote_rotation_rms_radian": 0.07486508786678314,
+        "response_scope.remote_translation_energy_fraction": 0.7476051449775696,
+        "response_scope.remote_translation_rms_angstrom": 0.17732639610767365,
+        "response_scope.rotation_rms_radian": 0.07024294137954712,
+        "response_scope.translation_rms_angstrom": 0.16745248436927795
+      },
+      "records": 1,
+      "split": "train"
+    },
+    "v02_family_7ae2a6204321": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.2061513075785983,
+        "copy_error.local_backbone_error": 0.1373189288208072,
+        "copy_error.local_distance_change_error": 0.07732675028629654,
+        "copy_error.mutation_site_backbone_error": 0.1687693114309112,
+        "copy_error.remote_distance_change_error": 0.23519007205959344,
+        "copy_error.remote_target_error": 0.37339566091118315,
+        "oracle_error.distance_change_error": 5.180600547791343e-09,
+        "oracle_error.local_backbone_error": 0.03691464132452366,
+        "oracle_error.local_distance_change_error": 3.030777584466931e-09,
+        "oracle_error.mutation_site_backbone_error": 0.03839354437196567,
+        "oracle_error.remote_distance_change_error": 6.091451705769036e-09,
+        "oracle_error.remote_target_error": 0.13870515994728846,
+        "recoverable_fraction.distance_change_error": 0.9999999748699118,
+        "recoverable_fraction.local_backbone_error": 0.731175871807921,
+        "recoverable_fraction.local_distance_change_error": 0.9999999608055741,
+        "recoverable_fraction.mutation_site_backbone_error": 0.7725087336883355,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999740998774,
+        "recoverable_fraction.remote_target_error": 0.6285303380097895,
+        "response_scope.local_rotation_energy_fraction": 0.01789209060370922,
+        "response_scope.local_rotation_rms_radian": 0.05427273362874985,
+        "response_scope.local_translation_energy_fraction": 0.037276413291692734,
+        "response_scope.local_translation_rms_angstrom": 0.13097244501113892,
+        "response_scope.remote_rotation_energy_fraction": 0.7469130754470825,
+        "response_scope.remote_rotation_rms_radian": 0.1934511363506317,
+        "response_scope.remote_translation_energy_fraction": 0.7187694907188416,
+        "response_scope.remote_translation_rms_angstrom": 0.3172800838947296,
+        "response_scope.rotation_rms_radian": 0.1588548719882965,
+        "response_scope.translation_rms_angstrom": 0.2655903398990631
+      },
+      "records": 1,
+      "split": "train"
+    },
+    "v02_family_987a40463804": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.15926842911900402,
+        "copy_error.local_backbone_error": 0.22725168445788446,
+        "copy_error.local_distance_change_error": 0.12241777485405163,
+        "copy_error.mutation_site_backbone_error": 0.26160646352576006,
+        "copy_error.remote_distance_change_error": 0.16593784913904366,
+        "copy_error.remote_target_error": 0.27434085846914386,
+        "oracle_error.distance_change_error": 3.796869442936934e-09,
+        "oracle_error.local_backbone_error": 0.06493349961382268,
+        "oracle_error.local_distance_change_error": 4.556020382626476e-09,
+        "oracle_error.mutation_site_backbone_error": 0.06444289129643331,
+        "oracle_error.remote_distance_change_error": 3.883273891966228e-09,
+        "oracle_error.remote_target_error": 0.1557399072945469,
+        "recoverable_fraction.distance_change_error": 0.999999976043982,
+        "recoverable_fraction.local_backbone_error": 0.6958862177942339,
+        "recoverable_fraction.local_distance_change_error": 0.9999999546903958,
+        "recoverable_fraction.mutation_site_backbone_error": 0.6843569737753499,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999760381252,
+        "recoverable_fraction.remote_target_error": 0.4074329427691801,
+        "response_scope.local_rotation_energy_fraction": 0.12022734060883522,
+        "response_scope.local_rotation_rms_radian": 0.08717280998826027,
+        "response_scope.local_translation_energy_fraction": 0.17923801889022192,
+        "response_scope.local_translation_rms_angstrom": 0.21532362699508667,
+        "response_scope.remote_rotation_energy_fraction": 0.8092462420463562,
+        "response_scope.remote_rotation_rms_radian": 0.1214805617928505,
+        "response_scope.remote_translation_energy_fraction": 0.7331596414248148,
+        "response_scope.remote_translation_rms_angstrom": 0.2010770489772161,
+        "response_scope.rotation_rms_radian": 0.11104163279136021,
+        "response_scope.translation_rms_angstrom": 0.192793071269989
+      },
+      "records": 3,
+      "split": "dev"
+    },
+    "v02_family_a548251c30c2": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.5791398244742513,
+        "copy_error.local_backbone_error": 0.3835220647058939,
+        "copy_error.local_distance_change_error": 0.2557601208473229,
+        "copy_error.mutation_site_backbone_error": 0.35561386559050867,
+        "copy_error.remote_distance_change_error": 0.6761126723390011,
+        "copy_error.remote_target_error": 1.009360947621356,
+        "oracle_error.distance_change_error": 2.0311348134520714e-08,
+        "oracle_error.local_backbone_error": 0.14313122624401495,
+        "oracle_error.local_distance_change_error": 6.990329127726824e-09,
+        "oracle_error.mutation_site_backbone_error": 0.09591686307235442,
+        "oracle_error.remote_distance_change_error": 2.292745604641582e-08,
+        "oracle_error.remote_target_error": 0.16089825664454124,
+        "recoverable_fraction.distance_change_error": 0.999999969004066,
+        "recoverable_fraction.local_backbone_error": 0.6380849751610421,
+        "recoverable_fraction.local_distance_change_error": 0.9999999726256066,
+        "recoverable_fraction.mutation_site_backbone_error": 0.7250936498927634,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999704822826,
+        "recoverable_fraction.remote_target_error": 0.7418266433641317,
+        "response_scope.local_rotation_energy_fraction": 0.05378839513286948,
+        "response_scope.local_rotation_rms_radian": 0.13522686809301376,
+        "response_scope.local_translation_energy_fraction": 0.0528342230245471,
+        "response_scope.local_translation_rms_angstrom": 0.3662562146782875,
+        "response_scope.remote_rotation_energy_fraction": 0.7197319865226746,
+        "response_scope.remote_rotation_rms_radian": 0.3526192158460617,
+        "response_scope.remote_translation_energy_fraction": 0.7981357574462891,
+        "response_scope.remote_translation_rms_angstrom": 1.0313406437635422,
+        "response_scope.rotation_rms_radian": 0.32752976194024086,
+        "response_scope.translation_rms_angstrom": 0.9005519896745682
+      },
+      "records": 2,
+      "split": "train"
+    },
+    "v02_family_c8b7ffd01e8a": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.10599213039393296,
+        "copy_error.local_backbone_error": 0.18041706121233905,
+        "copy_error.local_distance_change_error": 0.10625717969942562,
+        "copy_error.mutation_site_backbone_error": 0.2960618224090168,
+        "copy_error.remote_distance_change_error": 0.09133288401966198,
+        "copy_error.remote_target_error": 0.1367993823216107,
+        "oracle_error.distance_change_error": 2.4768160544590636e-09,
+        "oracle_error.local_backbone_error": 0.03689019608041594,
+        "oracle_error.local_distance_change_error": 3.828365484255271e-09,
+        "oracle_error.mutation_site_backbone_error": 0.05004967844760103,
+        "oracle_error.remote_distance_change_error": 2.205785851104311e-09,
+        "oracle_error.remote_target_error": 0.036783853656663715,
+        "recoverable_fraction.distance_change_error": 0.9999999766320758,
+        "recoverable_fraction.local_backbone_error": 0.7955282286911957,
+        "recoverable_fraction.local_distance_change_error": 0.9999999639707595,
+        "recoverable_fraction.mutation_site_backbone_error": 0.8309485564860972,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999758489413,
+        "recoverable_fraction.remote_target_error": 0.7311109667864865,
+        "response_scope.local_rotation_energy_fraction": 0.07523064315319061,
+        "response_scope.local_rotation_rms_radian": 0.04962683096528053,
+        "response_scope.local_translation_energy_fraction": 0.1842772513628006,
+        "response_scope.local_translation_rms_angstrom": 0.18314753472805023,
+        "response_scope.remote_rotation_energy_fraction": 0.8423914313316345,
+        "response_scope.remote_rotation_rms_radian": 0.06478079408407211,
+        "response_scope.remote_translation_energy_fraction": 0.7118210196495056,
+        "response_scope.remote_translation_rms_angstrom": 0.14041733741760254,
+        "response_scope.rotation_rms_radian": 0.06031118705868721,
+        "response_scope.translation_rms_angstrom": 0.14221452176570892
+      },
+      "records": 1,
+      "split": "train"
+    },
+    "v02_family_e40682d3a677": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.1033323432310943,
+        "copy_error.local_backbone_error": 0.19191099397847977,
+        "copy_error.local_distance_change_error": 0.12570139100915828,
+        "copy_error.mutation_site_backbone_error": 0.19208873594905634,
+        "copy_error.remote_distance_change_error": 0.09589269260530633,
+        "copy_error.remote_target_error": 0.1438503999592217,
+        "oracle_error.distance_change_error": 2.6869060095057683e-09,
+        "oracle_error.local_backbone_error": 0.06933642926331653,
+        "oracle_error.local_distance_change_error": 3.4080453557261307e-09,
+        "oracle_error.mutation_site_backbone_error": 0.06369886743407413,
+        "oracle_error.remote_distance_change_error": 2.4806770693482922e-09,
+        "oracle_error.remote_target_error": 0.07069046183681815,
+        "recoverable_fraction.distance_change_error": 0.9999999738485408,
+        "recoverable_fraction.local_backbone_error": 0.59653781698529,
+        "recoverable_fraction.local_distance_change_error": 0.9999999720612722,
+        "recoverable_fraction.mutation_site_backbone_error": 0.6095482420045789,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999740782022,
+        "recoverable_fraction.remote_target_error": 0.5038929161915675,
+        "response_scope.local_rotation_energy_fraction": 0.1352069644434821,
+        "response_scope.local_rotation_rms_radian": 0.08193095250143892,
+        "response_scope.local_translation_energy_fraction": 0.1821587026296627,
+        "response_scope.local_translation_rms_angstrom": 0.17483690682621228,
+        "response_scope.remote_rotation_energy_fraction": 0.7233993879386357,
+        "response_scope.remote_rotation_rms_radian": 0.07545017885665099,
+        "response_scope.remote_translation_energy_fraction": 0.6662983376355398,
+        "response_scope.remote_translation_rms_angstrom": 0.1245298023734774,
+        "response_scope.rotation_rms_radian": 0.07617154407004516,
+        "response_scope.translation_rms_angstrom": 0.1331042672197024
+      },
+      "records": 42,
+      "split": "train"
+    },
+    "v02_family_ea2e28f36573": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.19517647955815137,
+        "copy_error.local_backbone_error": 0.2224020009893919,
+        "copy_error.local_distance_change_error": 0.1625364780933128,
+        "copy_error.mutation_site_backbone_error": 0.3919941543917507,
+        "copy_error.remote_distance_change_error": 0.20754644601909733,
+        "copy_error.remote_target_error": 0.2599084228922115,
+        "oracle_error.distance_change_error": 4.552975616786548e-09,
+        "oracle_error.local_backbone_error": 0.08755183381808193,
+        "oracle_error.local_distance_change_error": 3.974870048142347e-09,
+        "oracle_error.mutation_site_backbone_error": 0.11075682850301688,
+        "oracle_error.remote_distance_change_error": 4.918937031108315e-09,
+        "oracle_error.remote_target_error": 0.10232834491955316,
+        "recoverable_fraction.distance_change_error": 0.9999999771945073,
+        "recoverable_fraction.local_backbone_error": 0.5685795866826825,
+        "recoverable_fraction.local_distance_change_error": 0.9999999757660556,
+        "recoverable_fraction.mutation_site_backbone_error": 0.6701613261699662,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999769263299,
+        "recoverable_fraction.remote_target_error": 0.5965336262233629,
+        "response_scope.local_rotation_energy_fraction": 0.04327750205993652,
+        "response_scope.local_rotation_rms_radian": 0.09632697142660618,
+        "response_scope.local_translation_energy_fraction": 0.08403676003217697,
+        "response_scope.local_translation_rms_angstrom": 0.20942238718271255,
+        "response_scope.remote_rotation_energy_fraction": 0.8531381189823151,
+        "response_scope.remote_rotation_rms_radian": 0.1629389487206936,
+        "response_scope.remote_translation_energy_fraction": 0.8014284074306488,
+        "response_scope.remote_translation_rms_angstrom": 0.23312454670667648,
+        "response_scope.rotation_rms_radian": 0.1474004201591015,
+        "response_scope.translation_rms_angstrom": 0.22031067311763763
+      },
+      "records": 2,
+      "split": "train"
+    },
+    "v02_family_fb83dc187d83": {
+      "metrics": {
+        "copy_error.distance_change_error": 0.08604377842471646,
+        "copy_error.local_backbone_error": 0.14501851023761608,
+        "copy_error.local_distance_change_error": 0.1382219142156854,
+        "copy_error.mutation_site_backbone_error": 0.4876470016929241,
+        "copy_error.remote_distance_change_error": 0.07422909597076616,
+        "copy_error.remote_target_error": 0.0967305511051448,
+        "oracle_error.distance_change_error": 2.2285463540153247e-09,
+        "oracle_error.local_backbone_error": 0.0535462116101922,
+        "oracle_error.local_distance_change_error": 3.6146568187635117e-09,
+        "oracle_error.mutation_site_backbone_error": 0.0898667512135932,
+        "oracle_error.remote_distance_change_error": 1.6858206157301848e-09,
+        "oracle_error.remote_target_error": 0.047488603928442626,
+        "recoverable_fraction.distance_change_error": 0.9999999740998549,
+        "recoverable_fraction.local_backbone_error": 0.6307629176271669,
+        "recoverable_fraction.local_distance_change_error": 0.9999999738488875,
+        "recoverable_fraction.mutation_site_backbone_error": 0.8157135163312597,
+        "recoverable_fraction.remote_distance_change_error": 0.9999999772889512,
+        "recoverable_fraction.remote_target_error": 0.5090630272867653,
+        "response_scope.local_rotation_energy_fraction": 0.23886963725090027,
+        "response_scope.local_rotation_rms_radian": 0.08024382591247559,
+        "response_scope.local_translation_energy_fraction": 0.3301360011100769,
+        "response_scope.local_translation_rms_angstrom": 0.16895954310894012,
+        "response_scope.remote_rotation_energy_fraction": 0.5042877793312073,
+        "response_scope.remote_rotation_rms_radian": 0.054270826280117035,
+        "response_scope.remote_translation_energy_fraction": 0.42906999588012695,
+        "response_scope.remote_translation_rms_angstrom": 0.08965951949357986,
+        "response_scope.rotation_rms_radian": 0.059495653957128525,
+        "response_scope.translation_rms_angstrom": 0.10655905306339264
+      },
+      "records": 1,
+      "split": "train"
+    }
+  },
+  "format": "ospedit.response_learnability_audit.v1",
+  "manifest": "/tmp/ospedit-real-sample/protocol_v02_structure_prediction_layer_v1.jsonl",
+  "manifest_fingerprint": "c6e5e9e7652f62d3e3d5108d4c8d730a61599ceeb3d1545ba5d4ff43364ae650",
+  "metric_schema": "ospedit.structure_metrics.v2",
+  "records": [
+    {
+      "copy_error": {
+        "distance_change_error": 0.17944980013493594,
+        "local_backbone_error": 0.2505902931521402,
+        "local_distance_change_error": 0.18847733172827147,
+        "mutation_site_backbone_error": 0.1307429011074186,
+        "remote_distance_change_error": 0.1967009643999212,
+        "remote_target_error": 0.26654286886002293
+      },
+      "family_id": "v02_family_260dd007d20d",
+      "length": 157,
+      "local_residues": 23,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 4.349631536645832e-09,
+        "local_backbone_error": 0.06919682029102214,
+        "local_distance_change_error": 4.579591546269964e-09,
+        "mutation_site_backbone_error": 0.02970967038948649,
+        "remote_distance_change_error": 4.699868472496748e-09,
+        "remote_target_error": 0.07929391962857224
+      },
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "parent_id": "3FYW_X",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999757612906,
+        "local_backbone_error": 0.7238647218908401,
+        "local_distance_change_error": 0.9999999757021627,
+        "mutation_site_backbone_error": 0.7727626499195014,
+        "remote_distance_change_error": 0.9999999761065307,
+        "remote_target_error": 0.7025096939651607
+      },
+      "remote_residues": 96,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.11509004235267639,
+        "local_rotation_rms_radian": 0.1025485023856163,
+        "local_translation_energy_fraction": 0.1505420058965683,
+        "local_translation_rms_angstrom": 0.24197375774383545,
+        "remote_rotation_energy_fraction": 0.7799004316329956,
+        "remote_rotation_rms_radian": 0.13066472113132477,
+        "remote_translation_energy_fraction": 0.7138121128082275,
+        "remote_translation_rms_angstrom": 0.25790491700172424,
+        "rotation_rms_radian": 0.11569765210151672,
+        "translation_rms_angstrom": 0.23870059847831726
+      },
+      "split": "dev",
+      "valid_residues": 157
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.33274817020879316,
+        "local_backbone_error": 0.32979774885850627,
+        "local_distance_change_error": 0.24171041897851958,
+        "mutation_site_backbone_error": 0.29936664385327433,
+        "remote_distance_change_error": 0.30227296155071587,
+        "remote_target_error": 0.387220301973386
+      },
+      "family_id": "v02_family_3da1b9ebba69",
+      "length": 247,
+      "local_residues": 17,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 8.68882465073249e-09,
+        "local_backbone_error": 0.1050530803693876,
+        "local_distance_change_error": 7.468023917534944e-09,
+        "mutation_site_backbone_error": 0.10611484036591047,
+        "remote_distance_change_error": 6.759886380524413e-09,
+        "remote_target_error": 0.11151263278022532
+      },
+      "pair_id": "premut22m_1QD2_1GIU_A_E_84_R",
+      "parent_id": "1QD2_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999738876861,
+        "local_backbone_error": 0.6814621059937594,
+        "local_distance_change_error": 0.9999999691034257,
+        "mutation_site_backbone_error": 0.6455355245993288,
+        "remote_distance_change_error": 0.9999999776364835,
+        "remote_target_error": 0.7120175977036202
+      },
+      "remote_residues": 210,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.03899479657411575,
+        "local_rotation_rms_radian": 0.13787978887557983,
+        "local_translation_energy_fraction": 0.05078398808836937,
+        "local_translation_rms_angstrom": 0.3343451917171478,
+        "remote_rotation_energy_fraction": 0.5728136301040649,
+        "remote_rotation_rms_radian": 0.15035532414913177,
+        "remote_translation_energy_fraction": 0.6789942979812622,
+        "remote_translation_rms_angstrom": 0.34784001111984253,
+        "rotation_rms_radian": 0.18317797780036926,
+        "translation_rms_angstrom": 0.38923120498657227
+      },
+      "split": "dev",
+      "valid_residues": 247
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.24488154381735144,
+        "local_backbone_error": 0.5694764838548722,
+        "local_distance_change_error": 0.3676597401609736,
+        "mutation_site_backbone_error": 0.7469781535528031,
+        "remote_distance_change_error": 0.22699932646498552,
+        "remote_target_error": 0.3820386124457321
+      },
+      "family_id": "v02_family_3da1b9ebba69",
+      "length": 101,
+      "local_residues": 12,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 6.583902799841913e-09,
+        "local_backbone_error": 0.09495794266974236,
+        "local_distance_change_error": 1.1951905231822766e-08,
+        "mutation_site_backbone_error": 0.0927638306435062,
+        "remote_distance_change_error": 6.974537903154472e-09,
+        "remote_target_error": 0.199390744809519
+      },
+      "pair_id": "premut22q_4VUB_7EPJ_A_V_45_L",
+      "parent_id": "4VUB_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999731139281,
+        "local_backbone_error": 0.8332539703361275,
+        "local_distance_change_error": 0.9999999674919391,
+        "mutation_site_backbone_error": 0.8758145332600429,
+        "remote_distance_change_error": 0.9999999692750723,
+        "remote_target_error": 0.47808745421552884
+      },
+      "remote_residues": 70,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.11894065141677856,
+        "local_rotation_rms_radian": 0.22415904700756073,
+        "local_translation_energy_fraction": 0.34246382117271423,
+        "local_translation_rms_angstrom": 0.5957493185997009,
+        "remote_rotation_energy_fraction": 0.7887412905693054,
+        "remote_rotation_rms_radian": 0.23900113999843597,
+        "remote_translation_energy_fraction": 0.5221021175384521,
+        "remote_translation_rms_angstrom": 0.3045618534088135,
+        "rotation_rms_radian": 0.22403764724731445,
+        "translation_rms_angstrom": 0.3509021997451782
+      },
+      "split": "dev",
+      "valid_residues": 101
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.2681211692112188,
+        "local_backbone_error": 0.14899654933367085,
+        "local_distance_change_error": 0.09583331563692903,
+        "mutation_site_backbone_error": 0.1216781543364231,
+        "remote_distance_change_error": 0.34170395370858836,
+        "remote_target_error": 0.3879349101810831
+      },
+      "family_id": "v02_family_5c932f233753",
+      "length": 125,
+      "local_residues": 23,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 7.427298510915817e-09,
+        "local_backbone_error": 0.03814387061341043,
+        "local_distance_change_error": 2.5612176630466115e-09,
+        "mutation_site_backbone_error": 0.03332103605420266,
+        "remote_distance_change_error": 8.736119411938588e-09,
+        "remote_target_error": 0.11299092991487504
+      },
+      "pair_id": "microminer_1TS0_A_1OT6_A_E46Q",
+      "parent_id": "1TS0_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999722987241,
+        "local_backbone_error": 0.7439949395875672,
+        "local_distance_change_error": 0.9999999732742455,
+        "mutation_site_backbone_error": 0.7261543270776885,
+        "remote_distance_change_error": 0.9999999744336601,
+        "remote_target_error": 0.70873740168903
+      },
+      "remote_residues": 63,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.013239935971796513,
+        "local_rotation_rms_radian": 0.051159556955099106,
+        "local_translation_energy_fraction": 0.03360871598124504,
+        "local_translation_rms_angstrom": 0.14386700093746185,
+        "remote_rotation_energy_fraction": 0.8989971280097961,
+        "remote_rotation_rms_radian": 0.2547162175178528,
+        "remote_translation_energy_fraction": 0.7340869903564453,
+        "remote_translation_rms_angstrom": 0.4062587022781372,
+        "rotation_rms_radian": 0.19071847200393677,
+        "translation_rms_angstrom": 0.33662334084510803
+      },
+      "split": "dev",
+      "valid_residues": 125
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.26936091566787435,
+        "local_backbone_error": 0.24823533718957924,
+        "local_distance_change_error": 0.17655392446478038,
+        "mutation_site_backbone_error": 0.09462509108225912,
+        "remote_distance_change_error": 0.3057358375206775,
+        "remote_target_error": 0.2698742379862188
+      },
+      "family_id": "v02_family_5c932f233753",
+      "length": 125,
+      "local_residues": 26,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 5.771340206341421e-09,
+        "local_backbone_error": 0.05487547790863118,
+        "local_distance_change_error": 7.283102233971664e-09,
+        "mutation_site_backbone_error": 0.029401118226985788,
+        "remote_distance_change_error": 5.502870860382778e-09,
+        "remote_target_error": 0.07921286880178131
+      },
+      "pair_id": "premut22alt1_2PHY_1F9I_A_Y_41_F",
+      "parent_id": "2PHY_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999978573951,
+        "local_backbone_error": 0.7789376865924518,
+        "local_distance_change_error": 0.9999999587485678,
+        "mutation_site_backbone_error": 0.6892883495200347,
+        "remote_distance_change_error": 0.9999999820012239,
+        "remote_target_error": 0.7064822882211294
+      },
+      "remote_residues": 64,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.10814780741930008,
+        "local_rotation_rms_radian": 0.07388582080602646,
+        "local_translation_energy_fraction": 0.1835496574640274,
+        "local_translation_rms_angstrom": 0.2494470477104187,
+        "remote_rotation_energy_fraction": 0.6770105361938477,
+        "remote_rotation_rms_radian": 0.11782749742269516,
+        "remote_translation_energy_fraction": 0.6242780089378357,
+        "remote_translation_rms_angstrom": 0.2932157516479492,
+        "rotation_rms_radian": 0.10246697068214417,
+        "translation_rms_angstrom": 0.26554203033447266
+      },
+      "split": "dev",
+      "valid_residues": 125
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.16425153238374604,
+        "local_backbone_error": 0.18095341942793425,
+        "local_distance_change_error": 0.15920808558577754,
+        "mutation_site_backbone_error": 0.1556078506334151,
+        "remote_distance_change_error": 0.1870593429886855,
+        "remote_target_error": 0.3355612774988786
+      },
+      "family_id": "v02_family_987a40463804",
+      "length": 129,
+      "local_residues": 26,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.6110900615947224e-09,
+        "local_backbone_error": 0.048954000619998876,
+        "local_distance_change_error": 4.01511639258865e-09,
+        "mutation_site_backbone_error": 0.05289890346907478,
+        "remote_distance_change_error": 4.165645498096507e-09,
+        "remote_target_error": 0.1990732571770774
+      },
+      "pair_id": "microminer_1BVX_A_1KXW_A_N27D",
+      "parent_id": "1BVX_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999780148775,
+        "local_backbone_error": 0.7294662859935891,
+        "local_distance_change_error": 0.9999999747807005,
+        "mutation_site_backbone_error": 0.6600499058772082,
+        "remote_distance_change_error": 0.9999999777308878,
+        "remote_target_error": 0.4067454425585721
+      },
+      "remote_residues": 64,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.06778135150671005,
+        "local_rotation_rms_radian": 0.0602133683860302,
+        "local_translation_energy_fraction": 0.20087887346744537,
+        "local_translation_rms_angstrom": 0.18876074254512787,
+        "remote_rotation_energy_fraction": 0.8513756394386292,
+        "remote_rotation_rms_radian": 0.1360175907611847,
+        "remote_translation_energy_fraction": 0.6881561875343323,
+        "remote_translation_rms_angstrom": 0.22268179059028625,
+        "rotation_rms_radian": 0.10383162647485733,
+        "translation_rms_angstrom": 0.18907597661018372
+      },
+      "split": "dev",
+      "valid_residues": 129
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.2213078097373366,
+        "local_backbone_error": 0.3241159702229299,
+        "local_distance_change_error": 0.07622509189650926,
+        "mutation_site_backbone_error": 0.4433521961796721,
+        "remote_distance_change_error": 0.2223830985928267,
+        "remote_target_error": 0.31878567560780097
+      },
+      "family_id": "v02_family_987a40463804",
+      "length": 130,
+      "local_residues": 9,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 5.449484830861218e-09,
+        "local_backbone_error": 0.0713354632616315,
+        "local_distance_change_error": 6.7742157758970365e-09,
+        "mutation_site_backbone_error": 0.047551152299495886,
+        "remote_distance_change_error": 5.1434103072240316e-09,
+        "remote_target_error": 0.1451730358564812
+      },
+      "pair_id": "microminer_1LHL_A_1LZ1_A_P47A",
+      "parent_id": "1LHL_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999753759939,
+        "local_backbone_error": 0.7799075953814731,
+        "local_distance_change_error": 0.9999999111287949,
+        "mutation_site_backbone_error": 0.8927463251355467,
+        "remote_distance_change_error": 0.9999999768713974,
+        "remote_target_error": 0.5446061508890185
+      },
+      "remote_residues": 112,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.017613191157579422,
+        "local_rotation_rms_radian": 0.07206733524799347,
+        "local_translation_energy_fraction": 0.07694122940301895,
+        "local_translation_rms_angstrom": 0.2867358922958374,
+        "remote_rotation_energy_fraction": 0.9277617931365967,
+        "remote_rotation_rms_radian": 0.14826884865760803,
+        "remote_translation_energy_fraction": 0.8567511439323425,
+        "remote_translation_rms_angstrom": 0.2712327241897583,
+        "rotation_rms_radian": 0.14287921786308289,
+        "translation_rms_angstrom": 0.27198946475982666
+      },
+      "split": "dev",
+      "valid_residues": 130
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.09224594523592937,
+        "local_backbone_error": 0.17668566372278932,
+        "local_distance_change_error": 0.13182014707986806,
+        "mutation_site_backbone_error": 0.18585934376419314,
+        "remote_distance_change_error": 0.08837110583561879,
+        "remote_target_error": 0.16867562230075211
+      },
+      "family_id": "v02_family_987a40463804",
+      "length": 130,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.3300334363548616e-09,
+        "local_backbone_error": 0.07451103495983767,
+        "local_distance_change_error": 2.878728979393741e-09,
+        "mutation_site_backbone_error": 0.09287861812072926,
+        "remote_distance_change_error": 2.3407658705781446e-09,
+        "remote_target_error": 0.12297342885008211
+      },
+      "pair_id": "microminer_1REX_A_133L_A_R115H",
+      "parent_id": "1REX_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999747410748,
+        "local_backbone_error": 0.5782847720076393,
+        "local_distance_change_error": 0.999999978161692,
+        "mutation_site_backbone_error": 0.5002746903132946,
+        "remote_distance_change_error": 0.9999999735120902,
+        "remote_target_error": 0.2709472348599494
+      },
+      "remote_residues": 98,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.2752874791622162,
+        "local_rotation_rms_radian": 0.12923772633075714,
+        "local_translation_energy_fraction": 0.2598939538002014,
+        "local_translation_rms_angstrom": 0.17047424614429474,
+        "remote_rotation_energy_fraction": 0.6486012935638428,
+        "remote_rotation_rms_radian": 0.08015524595975876,
+        "remote_translation_energy_fraction": 0.6545715928077698,
+        "remote_translation_rms_angstrom": 0.1093166321516037,
+        "rotation_rms_radian": 0.08641405403614044,
+        "translation_rms_angstrom": 0.11731377243995667
+      },
+      "split": "dev",
+      "valid_residues": 130
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.19734725598577268,
+        "local_backbone_error": 0.2887064011223682,
+        "local_distance_change_error": 0.24495820020472217,
+        "mutation_site_backbone_error": 0.4344234021950274,
+        "remote_distance_change_error": 0.18282695913460903,
+        "remote_target_error": 0.1924155274968401
+      },
+      "family_id": "v02_family_0123349a5fb8",
+      "length": 105,
+      "local_residues": 15,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 4.263206924878646e-09,
+        "local_backbone_error": 0.06990268909316869,
+        "local_distance_change_error": 7.680703619250328e-09,
+        "mutation_site_backbone_error": 0.06108209220908741,
+        "remote_distance_change_error": 3.4766335320512003e-09,
+        "remote_target_error": 0.06266034041459827
+      },
+      "pair_id": "premut22_1ERT_1AIU_A_D_59_N",
+      "parent_id": "1ERT_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999978397435,
+        "local_backbone_error": 0.7578762063417485,
+        "local_distance_change_error": 0.9999999686448398,
+        "mutation_site_backbone_error": 0.8593950236095579,
+        "remote_distance_change_error": 0.9999999809840214,
+        "remote_target_error": 0.674348836449141
+      },
+      "remote_residues": 68,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.22962388396263123,
+        "local_rotation_rms_radian": 0.10289839655160904,
+        "local_translation_energy_fraction": 0.3164866268634796,
+        "local_translation_rms_angstrom": 0.2987898290157318,
+        "remote_rotation_energy_fraction": 0.5902332663536072,
+        "remote_rotation_rms_radian": 0.07748241722583771,
+        "remote_translation_energy_fraction": 0.5114516615867615,
+        "remote_translation_rms_angstrom": 0.17839455604553223,
+        "rotation_rms_radian": 0.08116169273853302,
+        "translation_rms_angstrom": 0.20074240863323212
+      },
+      "split": "train",
+      "valid_residues": 105
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.19734725598577268,
+        "local_backbone_error": 0.2887064011223682,
+        "local_distance_change_error": 0.24495820020472217,
+        "mutation_site_backbone_error": 0.4344234021950274,
+        "remote_distance_change_error": 0.18282695913460903,
+        "remote_target_error": 0.1924155274968401
+      },
+      "family_id": "v02_family_0123349a5fb8",
+      "length": 105,
+      "local_residues": 15,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 4.263206924878646e-09,
+        "local_backbone_error": 0.06990268909316869,
+        "local_distance_change_error": 7.680703619250328e-09,
+        "mutation_site_backbone_error": 0.06108209220908741,
+        "remote_distance_change_error": 3.4766335320512003e-09,
+        "remote_target_error": 0.06266034041459827
+      },
+      "pair_id": "premut22p_1ERT_1AIU_A_D_59_N",
+      "parent_id": "1ERT_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999978397435,
+        "local_backbone_error": 0.7578762063417485,
+        "local_distance_change_error": 0.9999999686448398,
+        "mutation_site_backbone_error": 0.8593950236095579,
+        "remote_distance_change_error": 0.9999999809840214,
+        "remote_target_error": 0.674348836449141
+      },
+      "remote_residues": 68,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.22962388396263123,
+        "local_rotation_rms_radian": 0.10289839655160904,
+        "local_translation_energy_fraction": 0.3164866268634796,
+        "local_translation_rms_angstrom": 0.2987898290157318,
+        "remote_rotation_energy_fraction": 0.5902332663536072,
+        "remote_rotation_rms_radian": 0.07748241722583771,
+        "remote_translation_energy_fraction": 0.5114516615867615,
+        "remote_translation_rms_angstrom": 0.17839455604553223,
+        "rotation_rms_radian": 0.08116169273853302,
+        "translation_rms_angstrom": 0.20074240863323212
+      },
+      "split": "train",
+      "valid_residues": 105
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.144713146005031,
+        "local_backbone_error": 0.39332635830000773,
+        "local_distance_change_error": 0.2612380030860492,
+        "mutation_site_backbone_error": 0.792232417460128,
+        "remote_distance_change_error": 0.15062114759455542,
+        "remote_target_error": 0.26412998808283866
+      },
+      "family_id": "v02_family_28cd4576dfdb",
+      "length": 138,
+      "local_residues": 11,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 4.462408962445831e-09,
+        "local_backbone_error": 0.1913602871955795,
+        "local_distance_change_error": 7.667545905188195e-09,
+        "mutation_site_backbone_error": 0.1225790591218868,
+        "remote_distance_change_error": 4.422842475567756e-09,
+        "remote_target_error": 0.11033373412468529
+      },
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "parent_id": "5NLL_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999691637623,
+        "local_backbone_error": 0.5134821677787982,
+        "local_distance_change_error": 0.9999999706491941,
+        "mutation_site_backbone_error": 0.8452738660772411,
+        "remote_distance_change_error": 0.9999999706359795,
+        "remote_target_error": 0.5822748680468592
+      },
+      "remote_residues": 105,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.7556102871894836,
+        "local_rotation_rms_radian": 0.48951494693756104,
+        "local_translation_energy_fraction": 0.16797442734241486,
+        "local_translation_rms_angstrom": 0.3136851191520691,
+        "remote_rotation_energy_fraction": 0.2344546914100647,
+        "remote_rotation_rms_radian": 0.08825679868459702,
+        "remote_translation_energy_fraction": 0.7739566564559937,
+        "remote_translation_rms_angstrom": 0.21793770790100098,
+        "rotation_rms_radian": 0.15899145603179932,
+        "translation_rms_angstrom": 0.21608726680278778
+      },
+      "split": "train",
+      "valid_residues": 138
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.18007118689590906,
+        "local_backbone_error": 0.23803417369093274,
+        "local_distance_change_error": 0.16858620941180782,
+        "mutation_site_backbone_error": 0.4226551532380725,
+        "remote_distance_change_error": 0.18550727779623957,
+        "remote_target_error": 0.25837330229704214
+      },
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "length": 106,
+      "local_residues": 21,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.7002695257348548e-09,
+        "local_backbone_error": 0.086312010243239,
+        "local_distance_change_error": 4.3406013089762e-09,
+        "mutation_site_backbone_error": 0.1701327854065092,
+        "remote_distance_change_error": 3.656627019131406e-09,
+        "remote_target_error": 0.13610049857937526
+      },
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "parent_id": "1FDA_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999794510738,
+        "local_backbone_error": 0.6373965598935056,
+        "local_distance_change_error": 0.9999999742529277,
+        "mutation_site_backbone_error": 0.5974666720538551,
+        "remote_distance_change_error": 0.9999999802884982,
+        "remote_target_error": 0.47324085975839103
+      },
+      "remote_residues": 49,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.059522368013858795,
+        "local_rotation_rms_radian": 0.11170518398284912,
+        "local_translation_energy_fraction": 0.227663055062294,
+        "local_translation_rms_angstrom": 0.2132817953824997,
+        "remote_rotation_energy_fraction": 0.8614055514335632,
+        "remote_rotation_rms_radian": 0.2781946361064911,
+        "remote_translation_energy_fraction": 0.5184906125068665,
+        "remote_translation_rms_angstrom": 0.21071214973926544,
+        "rotation_rms_radian": 0.20379334688186646,
+        "translation_rms_angstrom": 0.19895930588245392
+      },
+      "split": "train",
+      "valid_residues": 106
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.152057845287117,
+        "local_backbone_error": 0.2276824437823143,
+        "local_distance_change_error": 0.19038953434213748,
+        "mutation_site_backbone_error": 0.2595400485751679,
+        "remote_distance_change_error": 0.1558603985239887,
+        "remote_target_error": 0.16861899628528018
+      },
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "length": 106,
+      "local_residues": 25,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.4696967915527682e-09,
+        "local_backbone_error": 0.04375501253021781,
+        "local_distance_change_error": 4.045895070067056e-09,
+        "mutation_site_backbone_error": 0.03428405885494713,
+        "remote_distance_change_error": 3.184329477200462e-09,
+        "remote_target_error": 0.0650451523979493
+      },
+      "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "parent_id": "1FDA_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999771817313,
+        "local_backbone_error": 0.8078243899558119,
+        "local_distance_change_error": 0.9999999787493831,
+        "mutation_site_backbone_error": 0.8679045525221986,
+        "remote_distance_change_error": 0.9999999795693486,
+        "remote_target_error": 0.6142477785367562
+      },
+      "remote_residues": 46,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.15178683400154114,
+        "local_rotation_rms_radian": 0.06778866052627563,
+        "local_translation_energy_fraction": 0.4030380845069885,
+        "local_translation_rms_angstrom": 0.2221936732530594,
+        "remote_rotation_energy_fraction": 0.5247267484664917,
+        "remote_rotation_rms_radian": 0.0929175317287445,
+        "remote_translation_energy_fraction": 0.38337451219558716,
+        "remote_translation_rms_angstrom": 0.15975752472877502,
+        "rotation_rms_radian": 0.08450005948543549,
+        "translation_rms_angstrom": 0.16997134685516357
+      },
+      "split": "train",
+      "valid_residues": 106
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.14374215690016287,
+        "local_backbone_error": 0.17860755353367663,
+        "local_distance_change_error": 0.14811877645199173,
+        "mutation_site_backbone_error": 0.1946224780343944,
+        "remote_distance_change_error": 0.1515435270874862,
+        "remote_target_error": 0.20818071493867765
+      },
+      "family_id": "v02_family_607a3bb0349c",
+      "length": 123,
+      "local_residues": 15,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.915971692383001e-09,
+        "local_backbone_error": 0.06612444043370827,
+        "local_distance_change_error": 2.3744602284919965e-09,
+        "mutation_site_backbone_error": 0.09347281595638773,
+        "remote_distance_change_error": 4.2773305096469884e-09,
+        "remote_target_error": 0.13073141968458782
+      },
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "parent_id": "3PAZ_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999727569714,
+        "local_backbone_error": 0.6297780293976176,
+        "local_distance_change_error": 0.9999999839692152,
+        "mutation_site_backbone_error": 0.5197224035968298,
+        "remote_distance_change_error": 0.9999999717749045,
+        "remote_target_error": 0.37202915398241154
+      },
+      "remote_residues": 82,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.11305510997772217,
+        "local_rotation_rms_radian": 0.06763238459825516,
+        "local_translation_energy_fraction": 0.11371857672929764,
+        "local_translation_rms_angstrom": 0.16170157492160797,
+        "remote_rotation_energy_fraction": 0.7572896480560303,
+        "remote_rotation_rms_radian": 0.07486508786678314,
+        "remote_translation_energy_fraction": 0.7476051449775696,
+        "remote_translation_rms_angstrom": 0.17732639610767365,
+        "rotation_rms_radian": 0.07024294137954712,
+        "translation_rms_angstrom": 0.16745248436927795
+      },
+      "split": "train",
+      "valid_residues": 123
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.2061513075785983,
+        "local_backbone_error": 0.1373189288208072,
+        "local_distance_change_error": 0.07732675028629654,
+        "mutation_site_backbone_error": 0.1687693114309112,
+        "remote_distance_change_error": 0.23519007205959344,
+        "remote_target_error": 0.37339566091118315
+      },
+      "family_id": "v02_family_7ae2a6204321",
+      "length": 137,
+      "local_residues": 21,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 5.180600547791343e-09,
+        "local_backbone_error": 0.03691464132452366,
+        "local_distance_change_error": 3.030777584466931e-09,
+        "mutation_site_backbone_error": 0.03839354437196567,
+        "remote_distance_change_error": 6.091451705769036e-09,
+        "remote_target_error": 0.13870515994728846
+      },
+      "pair_id": "microminer_4YGH_A_6NNX_A_L121M",
+      "parent_id": "4YGH_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999748699118,
+        "local_backbone_error": 0.731175871807921,
+        "local_distance_change_error": 0.9999999608055741,
+        "mutation_site_backbone_error": 0.7725087336883355,
+        "remote_distance_change_error": 0.9999999740998774,
+        "remote_target_error": 0.6285303380097895
+      },
+      "remote_residues": 69,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.01789209060370922,
+        "local_rotation_rms_radian": 0.05427273362874985,
+        "local_translation_energy_fraction": 0.037276413291692734,
+        "local_translation_rms_angstrom": 0.13097244501113892,
+        "remote_rotation_energy_fraction": 0.7469130754470825,
+        "remote_rotation_rms_radian": 0.1934511363506317,
+        "remote_translation_energy_fraction": 0.7187694907188416,
+        "remote_translation_rms_angstrom": 0.3172800838947296,
+        "rotation_rms_radian": 0.1588548719882965,
+        "translation_rms_angstrom": 0.2655903398990631
+      },
+      "split": "train",
+      "valid_residues": 137
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.9790072771924432,
+        "local_backbone_error": 0.5587162836083079,
+        "local_distance_change_error": 0.371661776006186,
+        "mutation_site_backbone_error": 0.47080937106618104,
+        "remote_distance_change_error": 1.1675072601449548,
+        "remote_target_error": 1.6897732902740485
+      },
+      "family_id": "v02_family_a548251c30c2",
+      "length": 155,
+      "local_residues": 22,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.612420440780959e-08,
+        "local_backbone_error": 0.2160129938916459,
+        "local_distance_change_error": 1.0138905407942855e-08,
+        "mutation_site_backbone_error": 0.12189341600189293,
+        "remote_distance_change_error": 4.151895379468902e-08,
+        "remote_target_error": 0.18867424688671874
+      },
+      "pair_id": "premut22alt1_2RN2_1KVB_A_D_133_H",
+      "parent_id": "2RN2_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999631011891,
+        "local_backbone_error": 0.6133762336465508,
+        "local_distance_change_error": 0.999999972720075,
+        "mutation_site_backbone_error": 0.741098152473353,
+        "remote_distance_change_error": 0.999999964437948,
+        "remote_target_error": 0.8883434553187194
+      },
+      "remote_residues": 97,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.01454849075525999,
+        "local_rotation_rms_radian": 0.16999468207359314,
+        "local_translation_energy_fraction": 0.016531212255358696,
+        "local_translation_rms_angstrom": 0.5255449414253235,
+        "remote_rotation_energy_fraction": 0.728812575340271,
+        "remote_rotation_rms_radian": 0.573006808757782,
+        "remote_translation_energy_fraction": 0.8302550911903381,
+        "remote_translation_rms_angstrom": 1.7737350463867188,
+        "rotation_rms_radian": 0.5309723019599915,
+        "translation_rms_angstrom": 1.539937138557434
+      },
+      "split": "train",
+      "valid_residues": 155
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1792723717560593,
+        "local_backbone_error": 0.2083278458034798,
+        "local_distance_change_error": 0.13985846568845986,
+        "mutation_site_backbone_error": 0.24041836011483628,
+        "remote_distance_change_error": 0.1847180845330474,
+        "remote_target_error": 0.3289486049686635
+      },
+      "family_id": "v02_family_a548251c30c2",
+      "length": 155,
+      "local_residues": 22,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 4.498491861231838e-09,
+        "local_backbone_error": 0.070249458596384,
+        "local_distance_change_error": 3.841752847510794e-09,
+        "mutation_site_backbone_error": 0.0699403101428159,
+        "remote_distance_change_error": 4.335958298142623e-09,
+        "remote_target_error": 0.13312226640236374
+      },
+      "pair_id": "premut22n_2RN2_1KVA_A_D_133_A",
+      "parent_id": "2RN2_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999749069429,
+        "local_backbone_error": 0.6627937166755334,
+        "local_distance_change_error": 0.9999999725311383,
+        "mutation_site_backbone_error": 0.7090891473121738,
+        "remote_distance_change_error": 0.9999999765266173,
+        "remote_target_error": 0.5953098314095441
+      },
+      "remote_residues": 97,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.09302829951047897,
+        "local_rotation_rms_radian": 0.10045905411243439,
+        "local_translation_energy_fraction": 0.0891372337937355,
+        "local_translation_rms_angstrom": 0.20696748793125153,
+        "remote_rotation_energy_fraction": 0.7106513977050781,
+        "remote_rotation_rms_radian": 0.13223162293434143,
+        "remote_translation_energy_fraction": 0.76601642370224,
+        "remote_translation_rms_angstrom": 0.2889462411403656,
+        "rotation_rms_radian": 0.12408722192049026,
+        "translation_rms_angstrom": 0.26116684079170227
+      },
+      "split": "train",
+      "valid_residues": 155
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10599213039393296,
+        "local_backbone_error": 0.18041706121233905,
+        "local_distance_change_error": 0.10625717969942562,
+        "mutation_site_backbone_error": 0.2960618224090168,
+        "remote_distance_change_error": 0.09133288401966198,
+        "remote_target_error": 0.1367993823216107
+      },
+      "family_id": "v02_family_c8b7ffd01e8a",
+      "length": 189,
+      "local_residues": 21,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.4768160544590636e-09,
+        "local_backbone_error": 0.03689019608041594,
+        "local_distance_change_error": 3.828365484255271e-09,
+        "mutation_site_backbone_error": 0.05004967844760103,
+        "remote_distance_change_error": 2.205785851104311e-09,
+        "remote_target_error": 0.036783853656663715
+      },
+      "pair_id": "microminer_4HKO_A_6JUG_A_N44E",
+      "parent_id": "4HKO_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999766320758,
+        "local_backbone_error": 0.7955282286911957,
+        "local_distance_change_error": 0.9999999639707595,
+        "mutation_site_backbone_error": 0.8309485564860972,
+        "remote_distance_change_error": 0.9999999758489413,
+        "remote_target_error": 0.7311109667864865
+      },
+      "remote_residues": 138,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.07523064315319061,
+        "local_rotation_rms_radian": 0.04962683096528053,
+        "local_translation_energy_fraction": 0.1842772513628006,
+        "local_translation_rms_angstrom": 0.18314753472805023,
+        "remote_rotation_energy_fraction": 0.8423914313316345,
+        "remote_rotation_rms_radian": 0.06478079408407211,
+        "remote_translation_energy_fraction": 0.7118210196495056,
+        "remote_translation_rms_angstrom": 0.14041733741760254,
+        "rotation_rms_radian": 0.06031118705868721,
+        "translation_rms_angstrom": 0.14221452176570892
+      },
+      "split": "train",
+      "valid_residues": 189
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10170393915999931,
+        "local_backbone_error": 0.151372072556568,
+        "local_distance_change_error": 0.09112045773380015,
+        "mutation_site_backbone_error": 0.16368505778650955,
+        "remote_distance_change_error": 0.09725898380397711,
+        "remote_target_error": 0.13571924971374724
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 162,
+      "local_residues": 13,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.3702560491962766e-09,
+        "local_backbone_error": 0.0436930518608065,
+        "local_distance_change_error": 2.995906725147357e-09,
+        "mutation_site_backbone_error": 0.026891425198990952,
+        "remote_distance_change_error": 2.2573651246942655e-09,
+        "remote_target_error": 0.06967898588886352
+      },
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I",
+      "parent_id": "1DYE_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999766945502,
+        "local_backbone_error": 0.7113532825252272,
+        "local_distance_change_error": 0.9999999671214697,
+        "mutation_site_backbone_error": 0.8357124006146927,
+        "remote_distance_change_error": 0.9999999767901634,
+        "remote_target_error": 0.48659467219405345
+      },
+      "remote_residues": 124,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.05951213836669922,
+        "local_rotation_rms_radian": 0.06380192190408707,
+        "local_translation_energy_fraction": 0.09726426750421524,
+        "local_translation_rms_angstrom": 0.12781469523906708,
+        "remote_rotation_energy_fraction": 0.8735187649726868,
+        "remote_rotation_rms_radian": 0.07914580404758453,
+        "remote_translation_energy_fraction": 0.7936170697212219,
+        "remote_translation_rms_angstrom": 0.11821442097425461,
+        "rotation_rms_radian": 0.07408753037452698,
+        "translation_rms_angstrom": 0.11609627306461334
+      },
+      "split": "train",
+      "valid_residues": 162
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.06276689768069912,
+        "local_backbone_error": 0.10810508156856433,
+        "local_distance_change_error": 0.07939133467190235,
+        "mutation_site_backbone_error": 0.18068712277059668,
+        "remote_distance_change_error": 0.06324635811821001,
+        "remote_target_error": 0.08247320158665652
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 15,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.7386215536649755e-09,
+        "local_backbone_error": 0.04831278068905211,
+        "local_distance_change_error": 2.763747410924218e-09,
+        "mutation_site_backbone_error": 0.13039705113589878,
+        "remote_distance_change_error": 1.6223435436557841e-09,
+        "remote_target_error": 0.03826128838889195
+      },
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "parent_id": "1L04_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999723003428,
+        "local_backbone_error": 0.5530942672809481,
+        "local_distance_change_error": 0.9999999651882989,
+        "mutation_site_backbone_error": 0.27832681634178763,
+        "remote_distance_change_error": 0.9999999743488228,
+        "remote_target_error": 0.5360761113573369
+      },
+      "remote_residues": 126,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.23674601316452026,
+        "local_rotation_rms_radian": 0.07302381098270416,
+        "local_translation_energy_fraction": 0.17820583283901215,
+        "local_translation_rms_angstrom": 0.10869316011667252,
+        "remote_rotation_energy_fraction": 0.660744845867157,
+        "remote_rotation_rms_radian": 0.042092084884643555,
+        "remote_translation_energy_fraction": 0.7008746266365051,
+        "remote_translation_rms_angstrom": 0.07437411695718765,
+        "rotation_rms_radian": 0.0453886054456234,
+        "translation_rms_angstrom": 0.07786906510591507
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.0860892666564336,
+        "local_backbone_error": 0.16385737829498936,
+        "local_distance_change_error": 0.10818508646560364,
+        "mutation_site_backbone_error": 0.1218230262850504,
+        "remote_distance_change_error": 0.07645007058655083,
+        "remote_target_error": 0.10883000141565363
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.4212072389500045e-09,
+        "local_backbone_error": 0.06542625026976494,
+        "local_distance_change_error": 4.015528283618026e-09,
+        "mutation_site_backbone_error": 0.038995653175279414,
+        "remote_distance_change_error": 2.007731362065296e-09,
+        "remote_target_error": 0.048913884360475245
+      },
+      "pair_id": "microminer_1L25_A_1L28_A_A86G",
+      "parent_id": "1L25_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999718756202,
+        "local_backbone_error": 0.6007122111280258,
+        "local_distance_change_error": 0.9999999628827927,
+        "mutation_site_backbone_error": 0.6798991589321173,
+        "remote_distance_change_error": 0.9999999737380052,
+        "remote_target_error": 0.5505477926655646
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.21844883263111115,
+        "local_rotation_rms_radian": 0.08160442858934402,
+        "local_translation_energy_fraction": 0.25324350595474243,
+        "local_translation_rms_angstrom": 0.17974388599395752,
+        "remote_rotation_energy_fraction": 0.6618430018424988,
+        "remote_rotation_rms_radian": 0.05122993513941765,
+        "remote_translation_energy_fraction": 0.5993942022323608,
+        "remote_translation_rms_angstrom": 0.09973523765802383,
+        "rotation_rms_radian": 0.05453520640730858,
+        "translation_rms_angstrom": 0.11156372725963593
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.16022142924408764,
+        "local_backbone_error": 0.3578695997382608,
+        "local_distance_change_error": 0.1696809767178893,
+        "mutation_site_backbone_error": 0.1927539061016145,
+        "remote_distance_change_error": 0.1449956925388638,
+        "remote_target_error": 0.18637011717806817
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 20,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.775439875157314e-09,
+        "local_backbone_error": 0.24334421470200499,
+        "local_distance_change_error": 4.193927423135245e-09,
+        "mutation_site_backbone_error": 0.10164707481847762,
+        "remote_distance_change_error": 3.419209303042085e-09,
+        "remote_target_error": 0.09129408988982136
+      },
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "parent_id": "1LYD_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999764361116,
+        "local_backbone_error": 0.32001987629018386,
+        "local_distance_change_error": 0.9999999752834554,
+        "mutation_site_backbone_error": 0.4726588068991343,
+        "remote_distance_change_error": 0.9999999764185457,
+        "remote_target_error": 0.5101463084739384
+      },
+      "remote_residues": 108,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.21158474683761597,
+        "local_rotation_rms_radian": 0.15628857910633087,
+        "local_translation_energy_fraction": 0.1711988002061844,
+        "local_translation_rms_angstrom": 0.2372705340385437,
+        "remote_rotation_energy_fraction": 0.5882025957107544,
+        "remote_rotation_rms_radian": 0.11213769763708115,
+        "remote_translation_energy_fraction": 0.561467707157135,
+        "remote_translation_rms_angstrom": 0.184909388422966,
+        "rotation_rms_radian": 0.1186528354883194,
+        "translation_rms_angstrom": 0.20025645196437836
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.06522354716129834,
+        "local_backbone_error": 0.12600865197110242,
+        "local_distance_change_error": 0.07321909191671311,
+        "mutation_site_backbone_error": 0.11917578690089421,
+        "remote_distance_change_error": 0.062250253612288836,
+        "remote_target_error": 0.09393624612721083
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.7481261440970293e-09,
+        "local_backbone_error": 0.06020449457491917,
+        "local_distance_change_error": 2.003783686329018e-09,
+        "mutation_site_backbone_error": 0.04317407511487391,
+        "remote_distance_change_error": 1.622028506367675e-09,
+        "remote_target_error": 0.05039749455452291
+      },
+      "pair_id": "premut23all_2LZM_1L02_A_T_156_A",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999973197929,
+        "local_backbone_error": 0.5222193584871786,
+        "local_distance_change_error": 0.9999999726330439,
+        "mutation_site_backbone_error": 0.63772779490202,
+        "remote_distance_change_error": 0.9999999739434233,
+        "remote_target_error": 0.46349256402823086
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.1291327327489853,
+        "local_rotation_rms_radian": 0.0575881227850914,
+        "local_translation_energy_fraction": 0.13881619274616241,
+        "local_translation_rms_angstrom": 0.10199996829032898,
+        "remote_rotation_energy_fraction": 0.7767040729522705,
+        "remote_rotation_rms_radian": 0.050130341202020645,
+        "remote_translation_energy_fraction": 0.7024133205413818,
+        "remote_translation_rms_angstrom": 0.08143937587738037,
+        "rotation_rms_radian": 0.0500556156039238,
+        "translation_rms_angstrom": 0.08551022410392761
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.07713341498057373,
+        "local_backbone_error": 0.13181351654221304,
+        "local_distance_change_error": 0.09257717896818886,
+        "mutation_site_backbone_error": 0.1629168046404189,
+        "remote_distance_change_error": 0.07542433921912899,
+        "remote_target_error": 0.10372286237293556
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.140229195144721e-09,
+        "local_backbone_error": 0.06522743046107919,
+        "local_distance_change_error": 3.1970418550018926e-09,
+        "mutation_site_backbone_error": 0.11374779032236344,
+        "remote_distance_change_error": 1.9863190563564884e-09,
+        "remote_target_error": 0.04906477951686526
+      },
+      "pair_id": "premut23all_2LZM_1L04_A_T_156_D",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999972252892,
+        "local_backbone_error": 0.5051537037160356,
+        "local_distance_change_error": 0.9999999654661993,
+        "mutation_site_backbone_error": 0.3018044358688389,
+        "remote_distance_change_error": 0.999999973664747,
+        "remote_target_error": 0.5269627313171049
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.29221653938293457,
+        "local_rotation_rms_radian": 0.10040206462144852,
+        "local_translation_energy_fraction": 0.17274893820285797,
+        "local_translation_rms_angstrom": 0.13204215466976166,
+        "remote_rotation_energy_fraction": 0.5754536986351013,
+        "remote_rotation_rms_radian": 0.05000961944460869,
+        "remote_translation_energy_fraction": 0.7009874582290649,
+        "remote_translation_rms_angstrom": 0.09441003203392029,
+        "rotation_rms_radian": 0.05801340192556381,
+        "translation_rms_angstrom": 0.09922999143600464
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.08018990628386942,
+        "local_backbone_error": 0.13615465357650006,
+        "local_distance_change_error": 0.08686450927374016,
+        "mutation_site_backbone_error": 0.13816576770983413,
+        "remote_distance_change_error": 0.07702265220047462,
+        "remote_target_error": 0.1067190862709329
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.1458323949858005e-09,
+        "local_backbone_error": 0.07166570165916687,
+        "local_distance_change_error": 2.620407701741201e-09,
+        "mutation_site_backbone_error": 0.0974375538301594,
+        "remote_distance_change_error": 1.9848812845565507e-09,
+        "remote_target_error": 0.053236609210071326
+      },
+      "pair_id": "premut23all_2LZM_1L05_A_T_156_D",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999732406172,
+        "local_backbone_error": 0.4736448606297494,
+        "local_distance_change_error": 0.9999999698333909,
+        "mutation_site_backbone_error": 0.2947778929235874,
+        "remote_distance_change_error": 0.9999999742299021,
+        "remote_target_error": 0.5011519394486103
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.25240597128868103,
+        "local_rotation_rms_radian": 0.09659507870674133,
+        "local_translation_energy_fraction": 0.15708239376544952,
+        "local_translation_rms_angstrom": 0.13092964887619019,
+        "remote_rotation_energy_fraction": 0.5929293632507324,
+        "remote_rotation_rms_radian": 0.05254904180765152,
+        "remote_translation_energy_fraction": 0.7019637823104858,
+        "remote_translation_rms_angstrom": 0.09824031591415405,
+        "rotation_rms_radian": 0.06005418300628662,
+        "translation_rms_angstrom": 0.10318399220705032
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.0807776936741845,
+        "local_backbone_error": 0.1328815179346975,
+        "local_distance_change_error": 0.08771123104232435,
+        "mutation_site_backbone_error": 0.16525374674022178,
+        "remote_distance_change_error": 0.08408997079310614,
+        "remote_target_error": 0.10631972645164946
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.080611582859682e-09,
+        "local_backbone_error": 0.05633656723609146,
+        "local_distance_change_error": 2.0592165803400613e-09,
+        "mutation_site_backbone_error": 0.039658680073582406,
+        "remote_distance_change_error": 2.0850990812500864e-09,
+        "remote_target_error": 0.043798265042031874
+      },
+      "pair_id": "premut23all_2LZM_1L06_A_T_156_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999742427459,
+        "local_backbone_error": 0.5760391052743906,
+        "local_distance_change_error": 0.999999976522772,
+        "mutation_site_backbone_error": 0.7600134287065474,
+        "remote_distance_change_error": 0.9999999752039505,
+        "remote_target_error": 0.5880513757533997
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.15725578367710114,
+        "local_rotation_rms_radian": 0.0600559376180172,
+        "local_translation_energy_fraction": 0.1373957246541977,
+        "local_translation_rms_angstrom": 0.11658842116594315,
+        "remote_rotation_energy_fraction": 0.7257677316665649,
+        "remote_rotation_rms_radian": 0.045794107019901276,
+        "remote_translation_energy_fraction": 0.7592206597328186,
+        "remote_translation_rms_angstrom": 0.09727716445922852,
+        "rotation_rms_radian": 0.0473032221198082,
+        "translation_rms_angstrom": 0.09824419021606445
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.06061686242664958,
+        "local_backbone_error": 0.11475986431883806,
+        "local_distance_change_error": 0.07402111214104017,
+        "mutation_site_backbone_error": 0.2242686683440288,
+        "remote_distance_change_error": 0.05528216771578928,
+        "remote_target_error": 0.08132220109328696
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.5013573178079463e-09,
+        "local_backbone_error": 0.045040133443006794,
+        "local_distance_change_error": 1.6075439126395386e-09,
+        "mutation_site_backbone_error": 0.03408933611066188,
+        "remote_distance_change_error": 1.4789020042668912e-09,
+        "remote_target_error": 0.043937331952662674
+      },
+      "pair_id": "premut23all_2LZM_1L07_A_T_156_F",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999752320187,
+        "local_backbone_error": 0.6075271288412166,
+        "local_distance_change_error": 0.9999999782826295,
+        "mutation_site_backbone_error": 0.8479977771198572,
+        "remote_distance_change_error": 0.9999999732481185,
+        "remote_target_error": 0.4597129521585263
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.13082461059093475,
+        "local_rotation_rms_radian": 0.04962100088596344,
+        "local_translation_energy_fraction": 0.17581187188625336,
+        "local_translation_rms_angstrom": 0.10094986110925674,
+        "remote_rotation_energy_fraction": 0.7749496102333069,
+        "remote_rotation_rms_radian": 0.04286626726388931,
+        "remote_translation_energy_fraction": 0.7080717086791992,
+        "remote_translation_rms_angstrom": 0.07190819084644318,
+        "rotation_rms_radian": 0.0428507924079895,
+        "translation_rms_angstrom": 0.07520031929016113
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.05297978143148948,
+        "local_backbone_error": 0.10733396935104926,
+        "local_distance_change_error": 0.08020574695215321,
+        "mutation_site_backbone_error": 0.08892192459377253,
+        "remote_distance_change_error": 0.05154247360282713,
+        "remote_target_error": 0.07479295549599932
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.4526961987045227e-09,
+        "local_backbone_error": 0.05640880109998255,
+        "local_distance_change_error": 2.4663050118582234e-09,
+        "mutation_site_backbone_error": 0.10405221054454468,
+        "remote_distance_change_error": 1.3809601292386101e-09,
+        "remote_target_error": 0.04335525896907172
+      },
+      "pair_id": "premut23all_2LZM_1L08_A_T_156_G",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999725801776,
+        "local_backbone_error": 0.4744552778488004,
+        "local_distance_change_error": 0.9999999692502707,
+        "mutation_site_backbone_error": -0.1701524794913376,
+        "remote_distance_change_error": 0.9999999732073369,
+        "remote_target_error": 0.42032964626741093
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.23239363729953766,
+        "local_rotation_rms_radian": 0.06919726729393005,
+        "local_translation_energy_fraction": 0.2319384664297104,
+        "local_translation_rms_angstrom": 0.10498929768800735,
+        "remote_rotation_energy_fraction": 0.6830142140388489,
+        "remote_rotation_rms_radian": 0.042106565088033676,
+        "remote_translation_energy_fraction": 0.6527832746505737,
+        "remote_translation_rms_angstrom": 0.06251745671033859,
+        "rotation_rms_radian": 0.044834766536951065,
+        "translation_rms_angstrom": 0.06809209287166595
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.06282907213706994,
+        "local_backbone_error": 0.10295547879737536,
+        "local_distance_change_error": 0.07387181413102377,
+        "mutation_site_backbone_error": 0.15843089831548038,
+        "remote_distance_change_error": 0.061768263893539614,
+        "remote_target_error": 0.08130871513365083
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.5956249706166738e-09,
+        "local_backbone_error": 0.046529245991090845,
+        "local_distance_change_error": 2.2641124198707654e-09,
+        "mutation_site_backbone_error": 0.04023404682252358,
+        "remote_distance_change_error": 1.5483471647485594e-09,
+        "remote_target_error": 0.04821614160096032
+      },
+      "pair_id": "premut23all_2LZM_1L09_A_T_156_H",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999746037159,
+        "local_backbone_error": 0.5480644008983326,
+        "local_distance_change_error": 0.9999999693507943,
+        "mutation_site_backbone_error": 0.7460467165791972,
+        "remote_distance_change_error": 0.9999999749329661,
+        "remote_target_error": 0.4069990957094174
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.1557263731956482,
+        "local_rotation_rms_radian": 0.05726107209920883,
+        "local_translation_energy_fraction": 0.16044588387012482,
+        "local_translation_rms_angstrom": 0.09607096016407013,
+        "remote_rotation_energy_fraction": 0.7449902296066284,
+        "remote_rotation_rms_radian": 0.044454097747802734,
+        "remote_translation_energy_fraction": 0.716663122177124,
+        "remote_translation_rms_angstrom": 0.07206816971302032,
+        "rotation_rms_radian": 0.04532276839017868,
+        "translation_rms_angstrom": 0.07491450756788254
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.05385033139157061,
+        "local_backbone_error": 0.10324094391538567,
+        "local_distance_change_error": 0.08285698942070445,
+        "mutation_site_backbone_error": 0.14301138746480288,
+        "remote_distance_change_error": 0.04801647068739843,
+        "remote_target_error": 0.06979084085727337
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.4131339702122163e-09,
+        "local_backbone_error": 0.05224454120471038,
+        "local_distance_change_error": 2.3122483843876207e-09,
+        "mutation_site_backbone_error": 0.11796827073156342,
+        "remote_distance_change_error": 1.2818964302669768e-09,
+        "remote_target_error": 0.03782283079762438
+      },
+      "pair_id": "premut23all_2LZM_1L12_A_T_156_N",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999737581193,
+        "local_backbone_error": 0.4939552156019707,
+        "local_distance_change_error": 0.9999999720935023,
+        "mutation_site_backbone_error": 0.17511274575531913,
+        "remote_distance_change_error": 0.9999999733029852,
+        "remote_target_error": 0.4580545192889361
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.3625777065753937,
+        "local_rotation_rms_radian": 0.08338377624750137,
+        "local_translation_energy_fraction": 0.2564541697502136,
+        "local_translation_rms_angstrom": 0.11027927696704865,
+        "remote_rotation_energy_fraction": 0.5545958876609802,
+        "remote_rotation_rms_radian": 0.036603912711143494,
+        "remote_translation_energy_fraction": 0.6277757883071899,
+        "remote_translation_rms_angstrom": 0.06124201416969299,
+        "rotation_rms_radian": 0.04325328394770622,
+        "translation_rms_angstrom": 0.06801851093769073
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.05569927573704961,
+        "local_backbone_error": 0.09473358869485447,
+        "local_distance_change_error": 0.05877135039488465,
+        "mutation_site_backbone_error": 0.09958580186189103,
+        "remote_distance_change_error": 0.053772142058005144,
+        "remote_target_error": 0.0795746272356563
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.4884284611396067e-09,
+        "local_backbone_error": 0.04248008024693744,
+        "local_distance_change_error": 1.395156454451e-09,
+        "mutation_site_backbone_error": 0.03802003657031705,
+        "remote_distance_change_error": 1.4678234433654094e-09,
+        "remote_target_error": 0.039028377316711584
+      },
+      "pair_id": "premut23all_2LZM_1L13_A_T_156_R",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999973277418,
+        "local_backbone_error": 0.5515837536381141,
+        "local_distance_change_error": 0.999999976261283,
+        "mutation_site_backbone_error": 0.6182183016104592,
+        "remote_distance_change_error": 0.9999999727029018,
+        "remote_target_error": 0.509537415725103
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.13501296937465668,
+        "local_rotation_rms_radian": 0.04748360440135002,
+        "local_translation_energy_fraction": 0.1250075250864029,
+        "local_translation_rms_angstrom": 0.08468667417764664,
+        "remote_rotation_energy_fraction": 0.7405773997306824,
+        "remote_rotation_rms_radian": 0.039472922682762146,
+        "remote_translation_energy_fraction": 0.7166250348091125,
+        "remote_translation_rms_angstrom": 0.07196992635726929,
+        "rotation_rms_radian": 0.04036398231983185,
+        "translation_rms_angstrom": 0.07481436431407928
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.05715978301317928,
+        "local_backbone_error": 0.09023542986600194,
+        "local_distance_change_error": 0.053162404343838586,
+        "mutation_site_backbone_error": 0.1043692934578158,
+        "remote_distance_change_error": 0.059593361786267916,
+        "remote_target_error": 0.08329967784834706
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.517059971783894e-09,
+        "local_backbone_error": 0.05254679757772911,
+        "local_distance_change_error": 1.3044652998970343e-09,
+        "mutation_site_backbone_error": 0.054701273685252814,
+        "remote_distance_change_error": 1.573917752978548e-09,
+        "remote_target_error": 0.04330867513682779
+      },
+      "pair_id": "premut23all_2LZM_1L14_A_T_156_S",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999734593119,
+        "local_backbone_error": 0.4176700032818573,
+        "local_distance_change_error": 0.9999999754626354,
+        "mutation_site_backbone_error": 0.4758872856855921,
+        "remote_distance_change_error": 0.9999999735890424,
+        "remote_target_error": 0.4800859228330476
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.10326453298330307,
+        "local_rotation_rms_radian": 0.04494693502783775,
+        "local_translation_energy_fraction": 0.08261244744062424,
+        "local_translation_rms_angstrom": 0.06799151748418808,
+        "remote_rotation_energy_fraction": 0.7800701260566711,
+        "remote_rotation_rms_radian": 0.04384796693921089,
+        "remote_translation_energy_fraction": 0.8138725161552429,
+        "remote_translation_rms_angstrom": 0.07574749737977982,
+        "rotation_rms_radian": 0.04368804022669792,
+        "translation_rms_angstrom": 0.07388734817504883
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.05598828915954822,
+        "local_backbone_error": 0.10692310341692636,
+        "local_distance_change_error": 0.07993347364892403,
+        "mutation_site_backbone_error": 0.21452451323262606,
+        "remote_distance_change_error": 0.052674432971560006,
+        "remote_target_error": 0.07499344901562685
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.4614974711383195e-09,
+        "local_backbone_error": 0.037316681039115396,
+        "local_distance_change_error": 2.274570796373784e-09,
+        "mutation_site_backbone_error": 0.02037087862994246,
+        "remote_distance_change_error": 1.3202164903916e-09,
+        "remote_target_error": 0.03863692791416297
+      },
+      "pair_id": "premut23all_2LZM_1L15_A_T_156_V",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999973896372,
+        "local_backbone_error": 0.6509951558962325,
+        "local_distance_change_error": 0.9999999715442018,
+        "mutation_site_backbone_error": 0.9050417207666487,
+        "remote_distance_change_error": 0.9999999749362942,
+        "remote_target_error": 0.4847959598962844
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.15486373007297516,
+        "local_rotation_rms_radian": 0.04949204623699188,
+        "local_translation_energy_fraction": 0.19219686090946198,
+        "local_translation_rms_angstrom": 0.09505007416009903,
+        "remote_rotation_energy_fraction": 0.7250198721885681,
+        "remote_rotation_rms_radian": 0.038009632378816605,
+        "remote_translation_energy_fraction": 0.6914531588554382,
+        "remote_translation_rms_angstrom": 0.0639909878373146,
+        "rotation_rms_radian": 0.03928245231509209,
+        "translation_rms_angstrom": 0.06772006303071976
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.11614990347800079,
+        "local_backbone_error": 0.31726615299475747,
+        "local_distance_change_error": 0.23040184725434387,
+        "mutation_site_backbone_error": 0.6448509152721721,
+        "remote_distance_change_error": 0.08243218636549118,
+        "remote_target_error": 0.11541701095539035
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 19,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.883944562840402e-09,
+        "local_backbone_error": 0.05152061154840644,
+        "local_distance_change_error": 6.3500963074287245e-09,
+        "mutation_site_backbone_error": 0.030990797701920404,
+        "remote_distance_change_error": 1.8698138147278178e-09,
+        "remote_target_error": 0.0511809966668636
+      },
+      "pair_id": "premut23all_2LZM_1L16_A_G_155_D",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999751704953,
+        "local_backbone_error": 0.8376107534255072,
+        "local_distance_change_error": 0.999999972439039,
+        "mutation_site_backbone_error": 0.9519411433434345,
+        "remote_distance_change_error": 0.999999977316945,
+        "remote_target_error": 0.5565558643114966
+      },
+      "remote_residues": 118,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.19967015087604523,
+        "local_rotation_rms_radian": 0.08107059448957443,
+        "local_translation_energy_fraction": 0.49000313878059387,
+        "local_translation_rms_angstrom": 0.2946445047855377,
+        "remote_rotation_energy_fraction": 0.5593558549880981,
+        "remote_rotation_rms_radian": 0.05444858968257904,
+        "remote_translation_energy_fraction": 0.35395926237106323,
+        "remote_translation_rms_angstrom": 0.10048732906579971,
+        "rotation_rms_radian": 0.06175350770354271,
+        "translation_rms_angstrom": 0.14326950907707214
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10818283557855736,
+        "local_backbone_error": 0.12399909351193507,
+        "local_distance_change_error": 0.09321168205861712,
+        "mutation_site_backbone_error": 0.21239476208538408,
+        "remote_distance_change_error": 0.11256387091082196,
+        "remote_target_error": 0.14446682720147794
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.682359490893951e-09,
+        "local_backbone_error": 0.06453567393848564,
+        "local_distance_change_error": 2.6248674726253976e-09,
+        "mutation_site_backbone_error": 0.05454228566647748,
+        "remote_distance_change_error": 2.7351249444570043e-09,
+        "remote_target_error": 0.07245787366664792
+      },
+      "pair_id": "premut23all_2LZM_1L17_A_I_2_V",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999752053136,
+        "local_backbone_error": 0.4795472119134968,
+        "local_distance_change_error": 0.9999999718397156,
+        "mutation_site_backbone_error": 0.7432032450755489,
+        "remote_distance_change_error": 0.9999999757015735,
+        "remote_target_error": 0.49844628645719535
+      },
+      "remote_residues": 108,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.0751941055059433,
+        "local_rotation_rms_radian": 0.08074058592319489,
+        "local_translation_energy_fraction": 0.08537299185991287,
+        "local_translation_rms_angstrom": 0.13427479565143585,
+        "remote_rotation_energy_fraction": 0.5885432958602905,
+        "remote_rotation_rms_radian": 0.08694354444742203,
+        "remote_translation_energy_fraction": 0.6290303468704224,
+        "remote_translation_rms_angstrom": 0.14028723537921906,
+        "rotation_rms_radian": 0.09196828305721283,
+        "translation_rms_angstrom": 0.14353978633880615
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1978303948781801,
+        "local_backbone_error": 0.49019520312277803,
+        "local_distance_change_error": 0.34949071844613855,
+        "mutation_site_backbone_error": 0.759234982479783,
+        "remote_distance_change_error": 0.153333401105905,
+        "remote_target_error": 0.20226471844183772
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 5.74776227531371e-09,
+        "local_backbone_error": 0.07910588450219501,
+        "local_distance_change_error": 1.3477315162096985e-08,
+        "mutation_site_backbone_error": 0.12532902619260894,
+        "remote_distance_change_error": 4.2237332939370925e-09,
+        "remote_target_error": 0.07623029954240508
+      },
+      "pair_id": "premut23all_2LZM_1L18_A_I_2_Y",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999709460102,
+        "local_backbone_error": 0.8386237074572483,
+        "local_distance_change_error": 0.999999961437273,
+        "mutation_site_backbone_error": 0.8349272240021602,
+        "remote_distance_change_error": 0.9999999724539254,
+        "remote_target_error": 0.6231161809649688
+      },
+      "remote_residues": 108,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.15146112442016602,
+        "local_rotation_rms_radian": 0.13439840078353882,
+        "local_translation_energy_fraction": 0.35806405544281006,
+        "local_translation_rms_angstrom": 0.47799932956695557,
+        "remote_rotation_energy_fraction": 0.5915741920471191,
+        "remote_rotation_rms_radian": 0.10223420709371567,
+        "remote_translation_energy_fraction": 0.4101557731628418,
+        "remote_translation_rms_angstrom": 0.1969107687473297,
+        "rotation_rms_radian": 0.10786525905132294,
+        "translation_rms_angstrom": 0.2495083063840866
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.09334679635689272,
+        "local_backbone_error": 0.1405989900802087,
+        "local_distance_change_error": 0.07989167500233398,
+        "mutation_site_backbone_error": 0.34959096872011913,
+        "remote_distance_change_error": 0.09252602938702509,
+        "remote_target_error": 0.1633493493370113
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 13,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.4638288956059345e-09,
+        "local_backbone_error": 0.05547444281480673,
+        "local_distance_change_error": 3.953145537124493e-09,
+        "mutation_site_backbone_error": 0.12687382813529052,
+        "remote_distance_change_error": 2.3926790593430627e-09,
+        "remote_target_error": 0.08273871668770201
+      },
+      "pair_id": "premut23all_2LZM_1L19_A_S_37_D",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999736056406,
+        "local_backbone_error": 0.605442096112072,
+        "local_distance_change_error": 0.9999999505186801,
+        "mutation_site_backbone_error": 0.6370792168922844,
+        "remote_distance_change_error": 0.9999999741404763,
+        "remote_target_error": 0.4934860957603137
+      },
+      "remote_residues": 136,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.06313920021057129,
+        "local_rotation_rms_radian": 0.07727526128292084,
+        "local_translation_energy_fraction": 0.0897473394870758,
+        "local_translation_rms_angstrom": 0.13575728237628937,
+        "remote_rotation_energy_fraction": 0.6966260075569153,
+        "remote_rotation_rms_radian": 0.07935842126607895,
+        "remote_translation_energy_fraction": 0.7352931499481201,
+        "remote_translation_rms_angstrom": 0.1201392337679863,
+        "rotation_rms_radian": 0.08658460527658463,
+        "translation_rms_angstrom": 0.12758572399616241
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10496845564977057,
+        "local_backbone_error": 0.12876031568157534,
+        "local_distance_change_error": 0.08895350092077786,
+        "mutation_site_backbone_error": 0.18623687409020767,
+        "remote_distance_change_error": 0.09427723803129517,
+        "remote_target_error": 0.12863421952014648
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 13,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.8185101438187635e-09,
+        "local_backbone_error": 0.05112590996923337,
+        "local_distance_change_error": 2.828923282822503e-09,
+        "mutation_site_backbone_error": 0.09314879562824675,
+        "remote_distance_change_error": 2.5342700068863044e-09,
+        "remote_target_error": 0.0647850393095882
+      },
+      "pair_id": "premut23all_2LZM_1L20_A_N_143_D",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999731489796,
+        "local_backbone_error": 0.6029373670093516,
+        "local_distance_change_error": 0.9999999681977297,
+        "mutation_site_backbone_error": 0.49983698940775706,
+        "remote_distance_change_error": 0.9999999731189622,
+        "remote_target_error": 0.49636232449452006
+      },
+      "remote_residues": 122,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.03130865842103958,
+        "local_rotation_rms_radian": 0.057108279317617416,
+        "local_translation_energy_fraction": 0.05982193350791931,
+        "local_translation_rms_angstrom": 0.1283559501171112,
+        "remote_rotation_energy_fraction": 0.6179613471031189,
+        "remote_rotation_rms_radian": 0.08282076567411423,
+        "remote_translation_energy_fraction": 0.5217490196228027,
+        "remote_translation_rms_angstrom": 0.12373949587345123,
+        "rotation_rms_radian": 0.09086918085813522,
+        "translation_rms_angstrom": 0.14775274693965912
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.17912089466831568,
+        "local_backbone_error": 0.22944306308607873,
+        "local_distance_change_error": 0.15937087334431346,
+        "mutation_site_backbone_error": 0.31892227703024406,
+        "remote_distance_change_error": 0.16416658705043724,
+        "remote_target_error": 0.21711029813644417
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 17,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.949101418681931e-09,
+        "local_backbone_error": 0.06560073050478306,
+        "local_distance_change_error": 4.185128146114701e-09,
+        "mutation_site_backbone_error": 0.03410994220129512,
+        "remote_distance_change_error": 4.001106384643061e-09,
+        "remote_target_error": 0.09358744203039304
+      },
+      "pair_id": "premut23all_2LZM_1L22_A_K_123_G",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999779528713,
+        "local_backbone_error": 0.7140871045634007,
+        "local_distance_change_error": 0.9999999737396925,
+        "mutation_site_backbone_error": 0.8930462226755631,
+        "remote_distance_change_error": 0.9999999756277665,
+        "remote_target_error": 0.5689405669206097
+      },
+      "remote_residues": 124,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.061258938163518906,
+        "local_rotation_rms_radian": 0.07028999924659729,
+        "local_translation_energy_fraction": 0.13521790504455566,
+        "local_translation_rms_angstrom": 0.21808046102523804,
+        "remote_rotation_energy_fraction": 0.882753849029541,
+        "remote_rotation_rms_radian": 0.09879663586616516,
+        "remote_translation_energy_fraction": 0.7583582401275635,
+        "remote_translation_rms_angstrom": 0.19122754037380219,
+        "rotation_rms_radian": 0.09143474698066711,
+        "translation_rms_angstrom": 0.19094233214855194
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10119398632506846,
+        "local_backbone_error": 0.15507437688224185,
+        "local_distance_change_error": 0.07920718574474515,
+        "mutation_site_backbone_error": 0.21014507925049333,
+        "remote_distance_change_error": 0.10384945567364792,
+        "remote_target_error": 0.17814698605651702
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 20,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.7152395189182866e-09,
+        "local_backbone_error": 0.04695868173707684,
+        "local_distance_change_error": 2.3627708445854945e-09,
+        "mutation_site_backbone_error": 0.024973595366462247,
+        "remote_distance_change_error": 2.918971114664463e-09,
+        "remote_target_error": 0.09042064449225436
+      },
+      "pair_id": "premut23all_2LZM_1L23_A_G_76_A",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999731679755,
+        "local_backbone_error": 0.6971860685099792,
+        "local_distance_change_error": 0.9999999701697413,
+        "mutation_site_backbone_error": 0.8811602181905308,
+        "remote_distance_change_error": 0.999999971892283,
+        "remote_target_error": 0.49243797779678145
+      },
+      "remote_residues": 124,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.0513291172683239,
+        "local_rotation_rms_radian": 0.055957455188035965,
+        "local_translation_energy_fraction": 0.1522570252418518,
+        "local_translation_rms_angstrom": 0.15577012300491333,
+        "remote_rotation_energy_fraction": 0.905791699886322,
+        "remote_rotation_rms_radian": 0.09440486878156662,
+        "remote_translation_energy_fraction": 0.7709178924560547,
+        "remote_translation_rms_angstrom": 0.1407679319381714,
+        "rotation_rms_radian": 0.08625198900699615,
+        "translation_rms_angstrom": 0.13940829038619995
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.0958144000508583,
+        "local_backbone_error": 0.11609979997679808,
+        "local_distance_change_error": 0.09398563841774502,
+        "mutation_site_backbone_error": 0.14439539988538916,
+        "remote_distance_change_error": 0.09680905586523599,
+        "remote_target_error": 0.17004491305979288
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 12,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.181996315779214e-09,
+        "local_backbone_error": 0.06017705459825115,
+        "local_distance_change_error": 1.937077051306588e-09,
+        "mutation_site_backbone_error": 0.021525873444577306,
+        "remote_distance_change_error": 2.128787150719362e-09,
+        "remote_target_error": 0.08750860372945823
+      },
+      "pair_id": "premut23all_2LZM_1L24_A_A_81_P",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999772268435,
+        "local_backbone_error": 0.4816782233020452,
+        "local_distance_change_error": 0.9999999793896484,
+        "mutation_site_backbone_error": 0.85092410518851,
+        "remote_distance_change_error": 0.9999999780104544,
+        "remote_target_error": 0.4853794673723195
+      },
+      "remote_residues": 133,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.06352479010820389,
+        "local_rotation_rms_radian": 0.08283849060535431,
+        "local_translation_energy_fraction": 0.05759764090180397,
+        "local_translation_rms_angstrom": 0.11752870678901672,
+        "remote_rotation_energy_fraction": 0.8848015666007996,
+        "remote_rotation_rms_radian": 0.09286418557167053,
+        "remote_translation_energy_fraction": 0.8582872748374939,
+        "remote_translation_rms_angstrom": 0.13627707958221436,
+        "rotation_rms_radian": 0.08890562504529953,
+        "translation_rms_angstrom": 0.13246779143810272
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1363966478605679,
+        "local_backbone_error": 0.41180058221325977,
+        "local_distance_change_error": 0.2677210836503902,
+        "mutation_site_backbone_error": 0.11879206411006092,
+        "remote_distance_change_error": 0.12103284794648314,
+        "remote_target_error": 0.20766105547185107
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.5165174058209405e-09,
+        "local_backbone_error": 0.09644478780185377,
+        "local_distance_change_error": 4.592986851988978e-09,
+        "mutation_site_backbone_error": 0.0716042367558629,
+        "remote_distance_change_error": 3.335046260879262e-09,
+        "remote_target_error": 0.09734266951951541
+      },
+      "pair_id": "premut23all_2LZM_1L25_A_P_85_A",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999974218447,
+        "local_backbone_error": 0.7657973495726925,
+        "local_distance_change_error": 0.9999999828441346,
+        "mutation_site_backbone_error": 0.39723046912021387,
+        "remote_distance_change_error": 0.9999999724451145,
+        "remote_target_error": 0.5312425370354991
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.19067715108394623,
+        "local_rotation_rms_radian": 0.1407395303249359,
+        "local_translation_energy_fraction": 0.35459572076797485,
+        "local_translation_rms_angstrom": 0.37971505522727966,
+        "remote_rotation_energy_fraction": 0.746151864528656,
+        "remote_rotation_rms_radian": 0.1004125103354454,
+        "remote_translation_energy_fraction": 0.5684757828712463,
+        "remote_translation_rms_angstrom": 0.17340214550495148,
+        "rotation_rms_radian": 0.10067111253738403,
+        "translation_rms_angstrom": 0.19917237758636475
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1121137547269528,
+        "local_backbone_error": 0.38348098618554766,
+        "local_distance_change_error": 0.26684793418331954,
+        "mutation_site_backbone_error": 0.09301049445067189,
+        "remote_distance_change_error": 0.09542084142061895,
+        "remote_target_error": 0.17811485219881415
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.3113523917542117e-09,
+        "local_backbone_error": 0.09680934374799773,
+        "local_distance_change_error": 4.460544709979399e-09,
+        "mutation_site_backbone_error": 0.043607530872962326,
+        "remote_distance_change_error": 2.931607317175672e-09,
+        "remote_target_error": 0.09055183034515038
+      },
+      "pair_id": "premut23all_2LZM_1L27_A_P_85_D",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999704643521,
+        "local_backbone_error": 0.747551124474379,
+        "local_distance_change_error": 0.9999999832843198,
+        "mutation_site_backbone_error": 0.5311547247381898,
+        "remote_distance_change_error": 0.9999999692770754,
+        "remote_target_error": 0.491609884143321
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.15284019708633423,
+        "local_rotation_rms_radian": 0.1171998679637909,
+        "local_translation_energy_fraction": 0.40442684292793274,
+        "local_translation_rms_angstrom": 0.338390052318573,
+        "remote_rotation_energy_fraction": 0.7873345613479614,
+        "remote_rotation_rms_radian": 0.09593904763460159,
+        "remote_translation_energy_fraction": 0.5400004982948303,
+        "remote_translation_rms_angstrom": 0.14102694392204285,
+        "rotation_rms_radian": 0.09363675862550735,
+        "translation_rms_angstrom": 0.16620178520679474
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10509106892077506,
+        "local_backbone_error": 0.3112664652743745,
+        "local_distance_change_error": 0.19101641514762518,
+        "mutation_site_backbone_error": 0.16517585754189532,
+        "remote_distance_change_error": 0.09674320745419224,
+        "remote_target_error": 0.177801229638157
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.1563748899582638e-09,
+        "local_backbone_error": 0.11026695024792563,
+        "local_distance_change_error": 6.399329388113816e-09,
+        "mutation_site_backbone_error": 0.03825208303967214,
+        "remote_distance_change_error": 2.7533325625452416e-09,
+        "remote_target_error": 0.09269355199915906
+      },
+      "pair_id": "premut23all_2LZM_1L28_A_P_85_G",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999699653366,
+        "local_backbone_error": 0.6457474140340568,
+        "local_distance_change_error": 0.9999999664985368,
+        "mutation_site_backbone_error": 0.7684160166689623,
+        "remote_distance_change_error": 0.9999999715397841,
+        "remote_target_error": 0.4786675424697593
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.1268419623374939,
+        "local_rotation_rms_radian": 0.10720876604318619,
+        "local_translation_energy_fraction": 0.2638726830482483,
+        "local_translation_rms_angstrom": 0.2459115982055664,
+        "remote_rotation_energy_fraction": 0.8092001080513,
+        "remote_rotation_rms_radian": 0.09766393899917603,
+        "remote_translation_energy_fraction": 0.6691976189613342,
+        "remote_translation_rms_angstrom": 0.1412428319454193,
+        "rotation_rms_radian": 0.09402360767126083,
+        "translation_rms_angstrom": 0.14952708780765533
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10238913154459407,
+        "local_backbone_error": 0.35157488399887077,
+        "local_distance_change_error": 0.21137204601423376,
+        "mutation_site_backbone_error": 0.13234590886946657,
+        "remote_distance_change_error": 0.08613591455355395,
+        "remote_target_error": 0.12093905941967965
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.117530227221096e-09,
+        "local_backbone_error": 0.11308513435447645,
+        "local_distance_change_error": 7.903480092093279e-09,
+        "mutation_site_backbone_error": 0.0289331907872353,
+        "remote_distance_change_error": 2.186003697875822e-09,
+        "remote_target_error": 0.059706979757861774
+      },
+      "pair_id": "premut23all_2LZM_1L29_A_P_85_H",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999695521371,
+        "local_backbone_error": 0.6783469482568621,
+        "local_distance_change_error": 0.9999999626086786,
+        "mutation_site_backbone_error": 0.7813820537832246,
+        "remote_distance_change_error": 0.9999999746214606,
+        "remote_target_error": 0.5063052412978661
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.24438005685806274,
+        "local_rotation_rms_radian": 0.1060195043683052,
+        "local_translation_energy_fraction": 0.4192716181278229,
+        "local_translation_rms_angstrom": 0.2874520719051361,
+        "remote_rotation_energy_fraction": 0.6600366234779358,
+        "remote_rotation_rms_radian": 0.06284118443727493,
+        "remote_translation_energy_fraction": 0.4593679904937744,
+        "remote_translation_rms_angstrom": 0.10851893573999405,
+        "rotation_rms_radian": 0.0669870674610138,
+        "translation_rms_angstrom": 0.1386614590883255
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1194210961226458,
+        "local_backbone_error": 0.3712932847164774,
+        "local_distance_change_error": 0.2638503948916532,
+        "mutation_site_backbone_error": 0.13580810215119984,
+        "remote_distance_change_error": 0.10718467443495021,
+        "remote_target_error": 0.18360065253090846
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.232009210689082e-09,
+        "local_backbone_error": 0.08080519622251585,
+        "local_distance_change_error": 4.535577839085927e-09,
+        "mutation_site_backbone_error": 0.07690387720095396,
+        "remote_distance_change_error": 2.7674834871224244e-09,
+        "remote_target_error": 0.09365457684472465
+      },
+      "pair_id": "premut23all_2LZM_1L30_A_P_85_L",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999729360279,
+        "local_backbone_error": 0.7823682798782117,
+        "local_distance_change_error": 0.9999999828100395,
+        "mutation_site_backbone_error": 0.4337313018678796,
+        "remote_distance_change_error": 0.9999999741802313,
+        "remote_target_error": 0.4899006318675351
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.16889308393001556,
+        "local_rotation_rms_radian": 0.13193652033805847,
+        "local_translation_energy_fraction": 0.39391955733299255,
+        "local_translation_rms_angstrom": 0.3468208909034729,
+        "remote_rotation_energy_fraction": 0.7803090214729309,
+        "remote_rotation_rms_radian": 0.10228214412927628,
+        "remote_translation_energy_fraction": 0.5506035089492798,
+        "remote_translation_rms_angstrom": 0.1478864550590515,
+        "rotation_rms_radian": 0.10027603805065155,
+        "translation_rms_angstrom": 0.17259950935840607
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.12332927845879495,
+        "local_backbone_error": 0.39466104271826,
+        "local_distance_change_error": 0.2953948612745072,
+        "mutation_site_backbone_error": 0.22178401535693013,
+        "remote_distance_change_error": 0.10352490855847728,
+        "remote_target_error": 0.13422952284825201
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.0659401705344683e-09,
+        "local_backbone_error": 0.08107703528100563,
+        "local_distance_change_error": 4.838606746612155e-09,
+        "mutation_site_backbone_error": 0.07398767121797827,
+        "remote_distance_change_error": 2.6341402828126603e-09,
+        "remote_target_error": 0.0613779874638069
+      },
+      "pair_id": "premut23all_2LZM_1L31_A_P_85_R",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999751402083,
+        "local_backbone_error": 0.7945653953514618,
+        "local_distance_change_error": 0.9999999836198683,
+        "mutation_site_backbone_error": 0.6663976387166337,
+        "remote_distance_change_error": 0.9999999745554928,
+        "remote_target_error": 0.5427385409602073
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.3182287812232971,
+        "local_rotation_rms_radian": 0.1338338702917099,
+        "local_translation_energy_fraction": 0.5151501297950745,
+        "local_translation_rms_angstrom": 0.3803942799568176,
+        "remote_rotation_energy_fraction": 0.5608336329460144,
+        "remote_rotation_rms_radian": 0.06407973915338516,
+        "remote_translation_energy_fraction": 0.38722968101501465,
+        "remote_translation_rms_angstrom": 0.11894845962524414,
+        "rotation_rms_radian": 0.07410275936126709,
+        "translation_rms_angstrom": 0.16554081439971924
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.11674036192019169,
+        "local_backbone_error": 0.36742866331430224,
+        "local_distance_change_error": 0.2554966919100681,
+        "mutation_site_backbone_error": 0.1851050614889063,
+        "remote_distance_change_error": 0.10212096694152113,
+        "remote_target_error": 0.18973294395947624
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.8109751462592425e-09,
+        "local_backbone_error": 0.10310986946512038,
+        "local_distance_change_error": 7.144392180164403e-09,
+        "mutation_site_backbone_error": 0.031857577118676955,
+        "remote_distance_change_error": 2.5803616993723818e-09,
+        "remote_target_error": 0.09829050403686439
+      },
+      "pair_id": "premut23all_2LZM_1L32_A_P_85_S",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999673551196,
+        "local_backbone_error": 0.7193744534380021,
+        "local_distance_change_error": 0.9999999720372419,
+        "mutation_site_backbone_error": 0.8278946190750908,
+        "remote_distance_change_error": 0.9999999747323025,
+        "remote_target_error": 0.48195341312019285
+      },
+      "remote_residues": 123,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.14430519938468933,
+        "local_rotation_rms_radian": 0.12404092401266098,
+        "local_translation_energy_fraction": 0.36335289478302,
+        "local_translation_rms_angstrom": 0.32973551750183105,
+        "remote_rotation_energy_fraction": 0.7901669144630432,
+        "remote_rotation_rms_radian": 0.10468654334545135,
+        "remote_translation_energy_fraction": 0.5673494338989258,
+        "remote_translation_rms_angstrom": 0.14860525727272034,
+        "rotation_rms_radian": 0.10199104994535446,
+        "translation_rms_angstrom": 0.17085964977741241
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.12144476766331731,
+        "local_backbone_error": 0.13127195249831589,
+        "local_distance_change_error": 0.08748374726213728,
+        "mutation_site_backbone_error": 0.25059226888980757,
+        "remote_distance_change_error": 0.12496949949568073,
+        "remote_target_error": 0.1876756539165838
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 13,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.9776891433559307e-09,
+        "local_backbone_error": 0.06215388446792427,
+        "local_distance_change_error": 1.981875292913809e-09,
+        "mutation_site_backbone_error": 0.1389636302993245,
+        "remote_distance_change_error": 3.24877840596313e-09,
+        "remote_target_error": 0.08703602702227486
+      },
+      "pair_id": "premut23all_2LZM_1L33_A_V_130_A",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999754811245,
+        "local_backbone_error": 0.5265257864681974,
+        "local_distance_change_error": 0.9999999773457888,
+        "mutation_site_backbone_error": 0.44545922779273495,
+        "remote_distance_change_error": 0.9999999740034295,
+        "remote_target_error": 0.5362423137688399
+      },
+      "remote_residues": 126,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.03934623673558235,
+        "local_rotation_rms_radian": 0.06197694316506386,
+        "local_translation_energy_fraction": 0.04591671749949455,
+        "local_translation_rms_angstrom": 0.11479686945676804,
+        "remote_rotation_energy_fraction": 0.8636343479156494,
+        "remote_rotation_rms_radian": 0.09326741099357605,
+        "remote_translation_energy_fraction": 0.8653188347816467,
+        "remote_translation_rms_angstrom": 0.16007336974143982,
+        "rotation_rms_radian": 0.08796872943639755,
+        "translation_rms_angstrom": 0.15083231031894684
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.14748278443134893,
+        "local_backbone_error": 0.15383493886483876,
+        "local_distance_change_error": 0.07929450344711016,
+        "mutation_site_backbone_error": 0.244198649105065,
+        "remote_distance_change_error": 0.13999077221630432,
+        "remote_target_error": 0.22613183861325936
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 20,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.6200742442617104e-09,
+        "local_backbone_error": 0.05513419662136098,
+        "local_distance_change_error": 2.7087822936786938e-09,
+        "mutation_site_backbone_error": 0.0988776886339879,
+        "remote_distance_change_error": 3.6267140921482e-09,
+        "remote_target_error": 0.10553911758476574
+      },
+      "pair_id": "premut23all_2LZM_1L34_A_R_95_H",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999754542589,
+        "local_backbone_error": 0.6416015956570011,
+        "local_distance_change_error": 0.9999999658389651,
+        "mutation_site_backbone_error": 0.5950932202272489,
+        "remote_distance_change_error": 0.9999999740931917,
+        "remote_target_error": 0.5332850153610461
+      },
+      "remote_residues": 99,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.05958540737628937,
+        "local_rotation_rms_radian": 0.07277882099151611,
+        "local_translation_energy_fraction": 0.07579159736633301,
+        "local_translation_rms_angstrom": 0.13705642521381378,
+        "remote_rotation_energy_fraction": 0.7823510766029358,
+        "remote_rotation_rms_radian": 0.11853137612342834,
+        "remote_translation_energy_fraction": 0.702598512172699,
+        "remote_translation_rms_angstrom": 0.18755988776683807,
+        "rotation_rms_radian": 0.10411856323480606,
+        "translation_rms_angstrom": 0.17385293543338776
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1206324256058308,
+        "local_backbone_error": 0.17627728013119776,
+        "local_distance_change_error": 0.11685684687205893,
+        "mutation_site_backbone_error": 0.17918806575775997,
+        "remote_distance_change_error": 0.11495717577837469,
+        "remote_target_error": 0.18179092700398855
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 12,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.8411796948248576e-09,
+        "local_backbone_error": 0.07163550847176818,
+        "local_distance_change_error": 3.055714772039216e-09,
+        "mutation_site_backbone_error": 0.02182711327681099,
+        "remote_distance_change_error": 2.7551954690328232e-09,
+        "remote_target_error": 0.08745463042892963
+      },
+      "pair_id": "premut23all_2LZM_1L37_A_T_114_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999764476286,
+        "local_backbone_error": 0.5936202985520762,
+        "local_distance_change_error": 0.9999999738507853,
+        "mutation_site_backbone_error": 0.8781888002166476,
+        "remote_distance_change_error": 0.9999999760328535,
+        "remote_target_error": 0.518927419149962
+      },
+      "remote_residues": 120,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.061716027557849884,
+        "local_rotation_rms_radian": 0.08255099505186081,
+        "local_translation_energy_fraction": 0.10325320810079575,
+        "local_translation_rms_angstrom": 0.17440949380397797,
+        "remote_rotation_energy_fraction": 0.8387283086776733,
+        "remote_rotation_rms_radian": 0.09623519331216812,
+        "remote_translation_energy_fraction": 0.7846816182136536,
+        "remote_translation_rms_angstrom": 0.15204250812530518,
+        "rotation_rms_radian": 0.08988598734140396,
+        "translation_rms_angstrom": 0.14682060480117798
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.09991962806104465,
+        "local_backbone_error": 0.11815048551255476,
+        "local_distance_change_error": 0.06382613804712692,
+        "mutation_site_backbone_error": 0.2218797529960561,
+        "remote_distance_change_error": 0.10048518042273874,
+        "remote_target_error": 0.17072708627167152
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 14,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.6882146525598378e-09,
+        "local_backbone_error": 0.06828286100626813,
+        "local_distance_change_error": 2.2642100667309223e-09,
+        "mutation_site_backbone_error": 0.12776018394327798,
+        "remote_distance_change_error": 2.7102854855061495e-09,
+        "remote_target_error": 0.08880150099479539
+      },
+      "pair_id": "premut23all_2LZM_1L38_A_Q_122_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999730962305,
+        "local_backbone_error": 0.4220687226967651,
+        "local_distance_change_error": 0.9999999645253475,
+        "mutation_site_backbone_error": 0.4241917875870859,
+        "remote_distance_change_error": 0.999999973028008,
+        "remote_target_error": 0.4798628446485115
+      },
+      "remote_residues": 128,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.0601891428232193,
+        "local_rotation_rms_radian": 0.07212292402982712,
+        "local_translation_energy_fraction": 0.05603877827525139,
+        "local_translation_rms_angstrom": 0.10608772933483124,
+        "remote_rotation_energy_fraction": 0.9053156971931458,
+        "remote_rotation_rms_radian": 0.09250672161579132,
+        "remote_translation_energy_fraction": 0.8864332437515259,
+        "remote_translation_rms_angstrom": 0.13954132795333862,
+        "rotation_rms_radian": 0.0858927071094513,
+        "translation_rms_angstrom": 0.13093715906143188
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.11475991624987367,
+        "local_backbone_error": 0.16297005250124333,
+        "local_distance_change_error": 0.09480185183354813,
+        "mutation_site_backbone_error": 0.16944056526479295,
+        "remote_distance_change_error": 0.10468491781508633,
+        "remote_target_error": 0.17165408254041367
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 15,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.9141400836085113e-09,
+        "local_backbone_error": 0.08060996344136709,
+        "local_distance_change_error": 2.2591464412591768e-09,
+        "mutation_site_backbone_error": 0.033227116922630084,
+        "remote_distance_change_error": 3.0316890863683597e-09,
+        "remote_target_error": 0.08934746117455149
+      },
+      "pair_id": "premut23all_2LZM_1L42_A_K_15_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999746066381,
+        "local_backbone_error": 0.5053694700089018,
+        "local_distance_change_error": 0.9999999761698068,
+        "mutation_site_backbone_error": 0.8039010500779169,
+        "remote_distance_change_error": 0.9999999710398676,
+        "remote_target_error": 0.479491196176381
+      },
+      "remote_residues": 117,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.07834376394748688,
+        "local_rotation_rms_radian": 0.0832495391368866,
+        "local_translation_energy_fraction": 0.07973992079496384,
+        "local_translation_rms_angstrom": 0.1377115547657013,
+        "remote_rotation_energy_fraction": 0.6052556037902832,
+        "remote_rotation_rms_radian": 0.08285175263881683,
+        "remote_translation_energy_fraction": 0.6420238614082336,
+        "remote_translation_rms_angstrom": 0.139913871884346,
+        "rotation_rms_radian": 0.08995044976472855,
+        "translation_rms_angstrom": 0.1474878191947937
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.11734969420327475,
+        "local_backbone_error": 0.17146458700923975,
+        "local_distance_change_error": 0.09656670965986959,
+        "mutation_site_backbone_error": 0.16880144579361792,
+        "remote_distance_change_error": 0.1074110407301178,
+        "remote_target_error": 0.17155296851253707
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 15,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.0564450993171118e-09,
+        "local_backbone_error": 0.08594457763433135,
+        "local_distance_change_error": 2.280207924617799e-09,
+        "mutation_site_backbone_error": 0.047610759411480325,
+        "remote_distance_change_error": 3.0095660704825553e-09,
+        "remote_target_error": 0.09068667385496537
+      },
+      "pair_id": "premut23all_2LZM_1L43_A_K_15_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999739543838,
+        "local_backbone_error": 0.4987619360159773,
+        "local_distance_change_error": 0.9999999763872256,
+        "mutation_site_backbone_error": 0.7179481538938312,
+        "remote_distance_change_error": 0.9999999719808499,
+        "remote_target_error": 0.47137799688766097
+      },
+      "remote_residues": 117,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.0987389087677002,
+        "local_rotation_rms_radian": 0.0963573306798935,
+        "local_translation_energy_fraction": 0.08547446876764297,
+        "local_translation_rms_angstrom": 0.14608234167099,
+        "remote_rotation_energy_fraction": 0.5857120156288147,
+        "remote_rotation_rms_radian": 0.08403018116950989,
+        "remote_translation_energy_fraction": 0.634952962398529,
+        "remote_translation_rms_angstrom": 0.14256174862384796,
+        "rotation_rms_radian": 0.09273940324783325,
+        "translation_rms_angstrom": 0.15111349523067474
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1383516210649599,
+        "local_backbone_error": 0.16870916457774854,
+        "local_distance_change_error": 0.09625490298941491,
+        "mutation_site_backbone_error": 0.1401471117887783,
+        "remote_distance_change_error": 0.13094195646589266,
+        "remote_target_error": 0.192201485309921
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.2615967301847654e-09,
+        "local_backbone_error": 0.07501899231717997,
+        "local_distance_change_error": 2.1591037916142804e-09,
+        "mutation_site_backbone_error": 0.10655523723762415,
+        "remote_distance_change_error": 3.3638980664110062e-09,
+        "remote_target_error": 0.09872417980752503
+      },
+      "pair_id": "premut23all_2LZM_1L44_A_R_118_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999764253088,
+        "local_backbone_error": 0.5553354051337979,
+        "local_distance_change_error": 0.9999999775688954,
+        "mutation_site_backbone_error": 0.23969009508937938,
+        "remote_distance_change_error": 0.999999974310006,
+        "remote_target_error": 0.4863505885590099
+      },
+      "remote_residues": 124,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.07650503516197205,
+        "local_rotation_rms_radian": 0.084417924284935,
+        "local_translation_energy_fraction": 0.09482385963201523,
+        "local_translation_rms_angstrom": 0.1555861383676529,
+        "remote_rotation_energy_fraction": 0.8424399495124817,
+        "remote_rotation_rms_radian": 0.10062555223703384,
+        "remote_translation_energy_fraction": 0.8241435885429382,
+        "remote_translation_rms_angstrom": 0.16476412117481232,
+        "rotation_rms_radian": 0.09532959014177322,
+        "translation_rms_angstrom": 0.15781566500663757
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.12214352775613045,
+        "local_backbone_error": 0.13859309601078282,
+        "local_distance_change_error": 0.09127898683249286,
+        "mutation_site_backbone_error": 0.09899444242972279,
+        "remote_distance_change_error": 0.11588792629760371,
+        "remote_target_error": 0.189173422017709
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 11,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.9817646950707427e-09,
+        "local_backbone_error": 0.0405037659144217,
+        "local_distance_change_error": 2.0338087219551346e-09,
+        "mutation_site_backbone_error": 0.035595620948674966,
+        "remote_distance_change_error": 2.926359306019513e-09,
+        "remote_target_error": 0.09386779380576754
+      },
+      "pair_id": "premut23all_2LZM_1L45_A_K_134_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999755880254,
+        "local_backbone_error": 0.7077504790623161,
+        "local_distance_change_error": 0.9999999777187633,
+        "mutation_site_backbone_error": 0.6404280879308485,
+        "remote_distance_change_error": 0.9999999747483677,
+        "remote_target_error": 0.5038003076511438
+      },
+      "remote_residues": 126,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.025946857407689095,
+        "local_rotation_rms_radian": 0.05343909561634064,
+        "local_translation_energy_fraction": 0.05885632708668709,
+        "local_translation_rms_angstrom": 0.14385230839252472,
+        "remote_rotation_energy_fraction": 0.9126584529876709,
+        "remote_rotation_rms_radian": 0.09364441782236099,
+        "remote_translation_energy_fraction": 0.8456145524978638,
+        "remote_translation_rms_angstrom": 0.16110816597938538,
+        "rotation_rms_radian": 0.08591937273740768,
+        "translation_rms_angstrom": 0.15356585383415222
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.12963415143585783,
+        "local_backbone_error": 0.11761027580272645,
+        "local_distance_change_error": 0.07027821008761126,
+        "mutation_site_backbone_error": 0.08415856414641557,
+        "remote_distance_change_error": 0.12379275145616722,
+        "remote_target_error": 0.14905194986541007
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 17,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.2217263390834343e-09,
+        "local_backbone_error": 0.063139073650064,
+        "local_distance_change_error": 1.9439124006994835e-09,
+        "mutation_site_backbone_error": 0.032621066428118066,
+        "remote_distance_change_error": 2.938346968473905e-09,
+        "remote_target_error": 0.07210564489253023
+      },
+      "pair_id": "premut23all_2LZM_1L46_A_K_146_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999751475495,
+        "local_backbone_error": 0.46315002478210066,
+        "local_distance_change_error": 0.9999999723397565,
+        "mutation_site_backbone_error": 0.6123856584415427,
+        "remote_distance_change_error": 0.9999999762639821,
+        "remote_target_error": 0.5162381642263674
+      },
+      "remote_residues": 112,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.048038315027952194,
+        "local_rotation_rms_radian": 0.06336868554353714,
+        "local_translation_energy_fraction": 0.04809040203690529,
+        "local_translation_rms_angstrom": 0.10643122345209122,
+        "remote_rotation_energy_fraction": 0.5973221063613892,
+        "remote_rotation_rms_radian": 0.08705636858940125,
+        "remote_translation_energy_fraction": 0.5659162402153015,
+        "remote_translation_rms_angstrom": 0.1422431766986847,
+        "rotation_rms_radian": 0.09308578073978424,
+        "translation_rms_angstrom": 0.15625804662704468
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.13028443153208674,
+        "local_backbone_error": 0.1425016426128575,
+        "local_distance_change_error": 0.08342045032477052,
+        "mutation_site_backbone_error": 0.1351368043774334,
+        "remote_distance_change_error": 0.12933628729960453,
+        "remote_target_error": 0.20113848064373654
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 20,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.2586629447903848e-09,
+        "local_backbone_error": 0.053032485987152767,
+        "local_distance_change_error": 2.4582975413227167e-09,
+        "mutation_site_backbone_error": 0.06018368121900374,
+        "remote_distance_change_error": 3.488492121378028e-09,
+        "remote_target_error": 0.09224864407295692
+      },
+      "pair_id": "premut23all_2LZM_1L47_A_R_153_E",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999749880863,
+        "local_backbone_error": 0.6278464934525056,
+        "local_distance_change_error": 0.9999999705312363,
+        "mutation_site_backbone_error": 0.5546462601637939,
+        "remote_distance_change_error": 0.9999999730277387,
+        "remote_target_error": 0.5413675007501378
+      },
+      "remote_residues": 114,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.04910072684288025,
+        "local_rotation_rms_radian": 0.057207200676202774,
+        "local_translation_energy_fraction": 0.07361723482608795,
+        "local_translation_rms_angstrom": 0.12720352411270142,
+        "remote_rotation_energy_fraction": 0.8301601409912109,
+        "remote_rotation_rms_radian": 0.09852585196495056,
+        "remote_translation_energy_fraction": 0.812522292137146,
+        "remote_translation_rms_angstrom": 0.17700663208961487,
+        "rotation_rms_radian": 0.09015706926584244,
+        "translation_rms_angstrom": 0.1637202501296997
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.10741342386306946,
+        "local_backbone_error": 0.13168186530275125,
+        "local_distance_change_error": 0.10839167702825102,
+        "mutation_site_backbone_error": 0.10064698342154133,
+        "remote_distance_change_error": 0.09727650854536264,
+        "remote_target_error": 0.12599606089241802
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 24,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.7768681685394746e-09,
+        "local_backbone_error": 0.05359614618294459,
+        "local_distance_change_error": 2.920858449479396e-09,
+        "mutation_site_backbone_error": 0.05093059070065538,
+        "remote_distance_change_error": 2.437581580070481e-09,
+        "remote_target_error": 0.061311572320817236
+      },
+      "pair_id": "premut23all_2LZM_1L52_A_T_151_S",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999741478479,
+        "local_backbone_error": 0.5929876444283266,
+        "local_distance_change_error": 0.9999999730527424,
+        "mutation_site_backbone_error": 0.4939680359088161,
+        "remote_distance_change_error": 0.9999999749417242,
+        "remote_target_error": 0.5133850067489948
+      },
+      "remote_residues": 103,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.07703051716089249,
+        "local_rotation_rms_radian": 0.06463872641324997,
+        "local_translation_energy_fraction": 0.11715244501829147,
+        "local_translation_rms_angstrom": 0.1260017603635788,
+        "remote_rotation_energy_fraction": 0.522670567035675,
+        "remote_rotation_rms_radian": 0.08127602189779282,
+        "remote_translation_energy_fraction": 0.490752249956131,
+        "remote_translation_rms_angstrom": 0.1244855746626854,
+        "rotation_rms_radian": 0.08909330517053604,
+        "translation_rms_angstrom": 0.14082656800746918
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.06522354716129834,
+        "local_backbone_error": 0.12600865197110242,
+        "local_distance_change_error": 0.07321909191671311,
+        "mutation_site_backbone_error": 0.11917578690089421,
+        "remote_distance_change_error": 0.062250253612288836,
+        "remote_target_error": 0.09393624612721083
+      },
+      "family_id": "v02_family_e40682d3a677",
+      "length": 164,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 1.7481261440970293e-09,
+        "local_backbone_error": 0.06020449457491917,
+        "local_distance_change_error": 2.003783686329018e-09,
+        "mutation_site_backbone_error": 0.04317407511487391,
+        "remote_distance_change_error": 1.622028506367675e-09,
+        "remote_target_error": 0.05039749455452291
+      },
+      "pair_id": "premut23ctx_2LZM_1L02_A_T_156_A",
+      "parent_id": "2LZM_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.999999973197929,
+        "local_backbone_error": 0.5222193584871786,
+        "local_distance_change_error": 0.9999999726330439,
+        "mutation_site_backbone_error": 0.63772779490202,
+        "remote_distance_change_error": 0.9999999739434233,
+        "remote_target_error": 0.46349256402823086
+      },
+      "remote_residues": 127,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.1291327327489853,
+        "local_rotation_rms_radian": 0.0575881227850914,
+        "local_translation_energy_fraction": 0.13881619274616241,
+        "local_translation_rms_angstrom": 0.10199996829032898,
+        "remote_rotation_energy_fraction": 0.7767040729522705,
+        "remote_rotation_rms_radian": 0.050130341202020645,
+        "remote_translation_energy_fraction": 0.7024133205413818,
+        "remote_translation_rms_angstrom": 0.08143937587738037,
+        "rotation_rms_radian": 0.0500556156039238,
+        "translation_rms_angstrom": 0.08551022410392761
+      },
+      "split": "train",
+      "valid_residues": 164
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.2202538176598569,
+        "local_backbone_error": 0.3183643256055113,
+        "local_distance_change_error": 0.22930751592601886,
+        "mutation_site_backbone_error": 0.6286068473914369,
+        "remote_distance_change_error": 0.23649160373959494,
+        "remote_target_error": 0.35872703334174433
+      },
+      "family_id": "v02_family_ea2e28f36573",
+      "length": 186,
+      "local_residues": 20,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 5.917805711644559e-09,
+        "local_backbone_error": 0.10949124077879124,
+        "local_distance_change_error": 5.680555335257805e-09,
+        "mutation_site_backbone_error": 0.15808909899158377,
+        "remote_distance_change_error": 6.51951656422838e-09,
+        "remote_target_error": 0.13552834888115295
+      },
+      "pair_id": "platinum_1U72_1DLS_A_L22Y",
+      "parent_id": "1U72_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999731318813,
+        "local_backbone_error": 0.6560819414344086,
+        "local_distance_change_error": 0.9999999752273478,
+        "mutation_site_backbone_error": 0.7485087862984401,
+        "remote_distance_change_error": 0.999999972432355,
+        "remote_target_error": 0.6221964438569626
+      },
+      "remote_residues": 132,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.04311400651931763,
+        "local_rotation_rms_radian": 0.13774707913398743,
+        "local_translation_energy_fraction": 0.11539138853549957,
+        "local_translation_rms_angstrom": 0.302681565284729,
+        "remote_rotation_energy_fraction": 0.8867029547691345,
+        "remote_rotation_rms_radian": 0.2431589812040329,
+        "remote_translation_energy_fraction": 0.7870393395423889,
+        "remote_translation_rms_angstrom": 0.3076986074447632,
+        "rotation_rms_radian": 0.21753628551959991,
+        "translation_rms_angstrom": 0.2921849191188812
+      },
+      "split": "train",
+      "valid_residues": 186
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.1700991414564458,
+        "local_backbone_error": 0.1264396763732725,
+        "local_distance_change_error": 0.09576544026060674,
+        "mutation_site_backbone_error": 0.15538146139206452,
+        "remote_distance_change_error": 0.17860128829859973,
+        "remote_target_error": 0.16108981244267861
+      },
+      "family_id": "v02_family_ea2e28f36573",
+      "length": 186,
+      "local_residues": 16,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 3.1881455219285367e-09,
+        "local_backbone_error": 0.0656124268573726,
+        "local_distance_change_error": 2.2691847610268884e-09,
+        "mutation_site_backbone_error": 0.06342455801444997,
+        "remote_distance_change_error": 3.3183574979882493e-09,
+        "remote_target_error": 0.06912834095795337
+      },
+      "pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "parent_id": "3N0H_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999812571333,
+        "local_backbone_error": 0.4810772319309565,
+        "local_distance_change_error": 0.9999999763047634,
+        "mutation_site_backbone_error": 0.5918138660414921,
+        "remote_distance_change_error": 0.9999999814203048,
+        "remote_target_error": 0.5708708085897632
+      },
+      "remote_residues": 133,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.04344099760055542,
+        "local_rotation_rms_radian": 0.05490686371922493,
+        "local_translation_energy_fraction": 0.05268213152885437,
+        "local_translation_rms_angstrom": 0.1161632090806961,
+        "remote_rotation_energy_fraction": 0.8195732831954956,
+        "remote_rotation_rms_radian": 0.08271891623735428,
+        "remote_translation_energy_fraction": 0.8158174753189087,
+        "remote_translation_rms_angstrom": 0.15855048596858978,
+        "rotation_rms_radian": 0.07726455479860306,
+        "translation_rms_angstrom": 0.14843642711639404
+      },
+      "split": "train",
+      "valid_residues": 186
+    },
+    {
+      "copy_error": {
+        "distance_change_error": 0.08604377842471646,
+        "local_backbone_error": 0.14501851023761608,
+        "local_distance_change_error": 0.1382219142156854,
+        "mutation_site_backbone_error": 0.4876470016929241,
+        "remote_distance_change_error": 0.07422909597076616,
+        "remote_target_error": 0.0967305511051448
+      },
+      "family_id": "v02_family_fb83dc187d83",
+      "length": 198,
+      "local_residues": 26,
+      "mutation_count": 1,
+      "oracle_error": {
+        "distance_change_error": 2.2285463540153247e-09,
+        "local_backbone_error": 0.0535462116101922,
+        "local_distance_change_error": 3.6146568187635117e-09,
+        "mutation_site_backbone_error": 0.0898667512135932,
+        "remote_distance_change_error": 1.6858206157301848e-09,
+        "remote_target_error": 0.047488603928442626
+      },
+      "pair_id": "microminer_1GBA_A_1GBJ_A_A216G",
+      "parent_id": "1GBA_A",
+      "recoverable_fraction": {
+        "distance_change_error": 0.9999999740998549,
+        "local_backbone_error": 0.6307629176271669,
+        "local_distance_change_error": 0.9999999738488875,
+        "mutation_site_backbone_error": 0.8157135163312597,
+        "remote_distance_change_error": 0.9999999772889512,
+        "remote_target_error": 0.5090630272867653
+      },
+      "remote_residues": 120,
+      "response_scope": {
+        "local_rotation_energy_fraction": 0.23886963725090027,
+        "local_rotation_rms_radian": 0.08024382591247559,
+        "local_translation_energy_fraction": 0.3301360011100769,
+        "local_translation_rms_angstrom": 0.16895954310894012,
+        "remote_rotation_energy_fraction": 0.5042877793312073,
+        "remote_rotation_rms_radian": 0.054270826280117035,
+        "remote_translation_energy_fraction": 0.42906999588012695,
+        "remote_translation_rms_angstrom": 0.08965951949357986,
+        "rotation_rms_radian": 0.059495653957128525,
+        "translation_rms_angstrom": 0.10655905306339264
+      },
+      "split": "train",
+      "valid_residues": 198
+    }
+  ],
+  "rotation_scale": 1.0,
+  "summary": {
+    "dev": {
+      "families": 4,
+      "family_macro": {
+        "copy_error.distance_change_error": {
+          "count": 4,
+          "mean": 0.2240685321766397,
+          "median": 0.22409542128724125,
+          "q25": 0.17440445738095295,
+          "q75": 0.273759496082928
+        },
+        "copy_error.local_backbone_error": {
+          "count": 4,
+          "mean": 0.28152375930708473,
+          "median": 0.23892098880501234,
+          "q25": 0.2200927491588196,
+          "q75": 0.30035199895327747
+        },
+        "copy_error.local_distance_change_error": {
+          "count": 4,
+          "mean": 0.18794345155073108,
+          "median": 0.1623354758895631,
+          "q25": 0.13274965875165393,
+          "q75": 0.21752926868864025
+        },
+        "copy_error.mutation_site_backbone_error": {
+          "count": 4,
+          "mean": 0.2559183465113896,
+          "median": 0.19617468231658933,
+          "q25": 0.12509508150789922,
+          "q75": 0.3269979473200797
+        },
+        "copy_error.remote_distance_change_error": {
+          "count": 4,
+          "mean": 0.2377487132903621,
+          "median": 0.23066855420388593,
+          "q25": 0.18901018558470184,
+          "q75": 0.2794070819095462
+        },
+        "copy_error.remote_target_error": {
+          "count": 4,
+          "mean": 0.3136044396555942,
+          "median": 0.30162271627639736,
+          "q25": 0.2723913610668636,
+          "q75": 0.34283579486512794
+        },
+        "oracle_error.distance_change_error": {
+          "count": 4,
+          "mean": 5.595546015874646e-09,
+          "median": 5.474475447637225e-09,
+          "q25": 4.211441013218607e-09,
+          "q75": 6.858580450293264e-09
+        },
+        "oracle_error.local_backbone_error": {
+          "count": 4,
+          "mean": 0.07016137642135765,
+          "median": 0.0670651599524224,
+          "q25": 0.06032754327562221,
+          "q75": 0.07689899309815786
+        },
+        "oracle_error.local_distance_change_error": {
+          "count": 4,
+          "mean": 5.9419341130211075e-09,
+          "median": 4.75087574738955e-09,
+          "q25": 4.573698755359092e-09,
+          "q75": 6.119111105051566e-09
+        },
+        "oracle_error.mutation_site_backbone_error": {
+          "count": 4,
+          "mean": 0.05623824358280559,
+          "median": 0.04790198421851377,
+          "q25": 0.03094822545281729,
+          "q75": 0.07319200234850207
+        },
+        "oracle_error.remote_distance_change_error": {
+          "count": 4,
+          "mean": 5.642462410615776e-09,
+          "median": 5.7835403071680955e-09,
+          "q25": 4.4957198273641176e-09,
+          "q75": 6.930282890419753e-09
+        },
+        "oracle_error.remote_target_error": {
+          "count": 4,
+          "mean": 0.12164685376907987,
+          "median": 0.12577679407660017,
+          "q25": 0.09189990442588919,
+          "q75": 0.15552374341979083
+        },
+        "recoverable_fraction.distance_change_error": {
+          "count": 4,
+          "mean": 0.9999999751856042,
+          "median": 0.999999975598814,
+          "q25": 0.999999974952455,
+          "q75": 0.9999999758319635
+        },
+        "recoverable_fraction.local_backbone_error": {
+          "count": 4,
+          "mean": 0.7346438227350067,
+          "median": 0.7406113800278917,
+          "q25": 0.7168700958666885,
+          "q75": 0.75838510689621
+        },
+        "recoverable_fraction.local_distance_change_error": {
+          "count": 4,
+          "mean": 0.999999966175412,
+          "median": 0.9999999671545445,
+          "q25": 0.999999963181154,
+          "q75": 0.9999999701488025
+        },
+        "recoverable_fraction.mutation_site_backbone_error": {
+          "count": 4,
+          "mean": 0.7313789977308497,
+          "median": 0.7341981836142737,
+          "q25": 0.7018802471679837,
+          "q75": 0.7636969341771398
+        },
+        "recoverable_fraction.remote_distance_change_error": {
+          "count": 4,
+          "mean": 0.999999975954469,
+          "median": 0.9999999760723279,
+          "q25": 0.9999999753925384,
+          "q75": 0.9999999766342585
+        },
+        "recoverable_fraction.remote_target_error": {
+          "count": 4,
+          "mean": 0.6031512519122487,
+          "median": 0.6487811099623676,
+          "q25": 0.5481476301619759,
+          "q75": 0.7037847317126404
+        },
+        "response_scope.local_rotation_energy_fraction": {
+          "count": 4,
+          "mean": 0.09374474466312677,
+          "median": 0.09702888317406178,
+          "q25": 0.07439926092047244,
+          "q75": 0.1163743669167161
+        },
+        "response_scope.local_rotation_rms_radian": {
+          "count": 4,
+          "mean": 0.10831585479900241,
+          "median": 0.09486065618693829,
+          "q25": 0.0810102797113359,
+          "q75": 0.1221662312746048
+        },
+        "response_scope.local_translation_energy_fraction": {
+          "count": 4,
+          "mean": 0.15874577903499207,
+          "median": 0.16489001239339512,
+          "q25": 0.14005130110308528,
+          "q75": 0.18358449032530189
+        },
+        "response_scope.local_translation_rms_angstrom": {
+          "count": 4,
+          "mean": 0.2797504160553217,
+          "median": 0.22864869236946106,
+          "q25": 0.21065697632730007,
+          "q75": 0.2977421320974827
+        },
+        "response_scope.remote_rotation_energy_fraction": {
+          "count": 4,
+          "mean": 0.7644819915294647,
+          "median": 0.7839521318674088,
+          "q25": 0.755119688808918,
+          "q75": 0.7933144345879555
+        },
+        "response_scope.remote_rotation_rms_radian": {
+          "count": 4,
+          "mean": 0.15827384311705828,
+          "median": 0.15846828930079937,
+          "q25": 0.1283686812967062,
+          "q75": 0.18837345112115145
+        },
+        "response_scope.remote_translation_energy_fraction": {
+          "count": 4,
+          "mean": 0.68167561541001,
+          "median": 0.696497306227684,
+          "q25": 0.6595239266753197,
+          "q75": 0.7186489949623743
+        },
+        "response_scope.remote_translation_rms_angstrom": {
+          "count": 4,
+          "mean": 0.28373003130157787,
+          "median": 0.2920529246330261,
+          "q25": 0.2436979499955972,
+          "q75": 0.3320850059390068
+        },
+        "response_scope.rotation_rms_radian": {
+          "count": 4,
+          "mean": 0.14423495468993983,
+          "median": 0.1311451867222786,
+          "q25": 0.11453364727397759,
+          "q75": 0.16084649413824081
+        },
+        "response_scope.translation_rms_angstrom": {
+          "count": 4,
+          "mean": 0.27566076442599297,
+          "median": 0.2698916420340538,
+          "q25": 0.2272237166762352,
+          "q75": 0.31832868978381157
+        }
+      },
+      "record_macro": {
+        "copy_error.distance_change_error": {
+          "count": 8,
+          "mean": 0.22154586079964822,
+          "median": 0.23309467677734402,
+          "q25": 0.17565023319713846,
+          "q75": 0.2684311058253827
+        },
+        "copy_error.local_backbone_error": {
+          "count": 8,
+          "mean": 0.27860643322030276,
+          "median": 0.24941281517085973,
+          "q25": 0.17988648050164802,
+          "q75": 0.32553641488182394
+        },
+        "copy_error.local_distance_change_error": {
+          "count": 8,
+          "mean": 0.17968600694145362,
+          "median": 0.16788100502527897,
+          "q25": 0.1228234392191333,
+          "q75": 0.2017856035408335
+        },
+        "copy_error.mutation_site_backbone_error": {
+          "count": 8,
+          "mean": 0.2722762918136823,
+          "median": 0.1707335971988041,
+          "q25": 0.12847671441466973,
+          "q75": 0.33536303193487377
+        },
+        "copy_error.remote_distance_change_error": {
+          "count": 8,
+          "mean": 0.23390332388275242,
+          "median": 0.22469121252890611,
+          "q25": 0.1942905590471123,
+          "q75": 0.30313868054320625
+        },
+        "copy_error.remote_target_error": {
+          "count": 8,
+          "mean": 0.3145791883567344,
+          "median": 0.3271734765533398,
+          "q25": 0.26904139570466984,
+          "q75": 0.3833340348276456
+        },
+        "oracle_error.distance_change_error": {
+          "count": 8,
+          "mean": 5.526450754161034e-09,
+          "median": 5.610412518601319e-09,
+          "q25": 4.164996167883054e-09,
+          "q75": 6.794751727610389e-09
+        },
+        "oracle_error.local_backbone_error": {
+          "count": 8,
+          "mean": 0.06962846133670772,
+          "median": 0.07026614177632681,
+          "q25": 0.0533951085864731,
+          "q75": 0.07962276188731385
+        },
+        "oracle_error.local_distance_change_error": {
+          "count": 8,
+          "mean": 5.938987717565672e-09,
+          "median": 5.676903661083501e-09,
+          "q25": 3.731019539289923e-09,
+          "q75": 7.3293326548624844e-09
+        },
+        "oracle_error.mutation_site_backbone_error": {
+          "count": 8,
+          "mean": 0.060579896196173946,
+          "median": 0.05022502788428533,
+          "q25": 0.03241819463802362,
+          "q75": 0.09279252751281196
+        },
+        "oracle_error.remote_distance_change_error": {
+          "count": 8,
+          "mean": 5.54038808804946e-09,
+          "median": 5.323140583803405e-09,
+          "q25": 4.5663127288966876e-09,
+          "q75": 6.813549261181928e-09
+        },
+        "oracle_error.remote_target_error": {
+          "count": 8,
+          "mean": 0.13120260222732671,
+          "median": 0.11798217938247857,
+          "q25": 0.10345795449231204,
+          "q75": 0.15864809118663026
+        },
+        "recoverable_fraction.distance_change_error": {
+          "count": 8,
+          "mean": 0.9999999752209408,
+          "median": 0.9999999750585344,
+          "q25": 0.9999999736942466,
+          "q75": 0.9999999763246874
+        },
+        "recoverable_fraction.local_backbone_error": {
+          "count": 8,
+          "mean": 0.7311465097229309,
+          "median": 0.7367306127905782,
+          "q25": 0.7132640679165699,
+          "q75": 0.7791801637897071
+        },
+        "recoverable_fraction.local_distance_change_error": {
+          "count": 8,
+          "mean": 0.999999963548941,
+          "median": 0.9999999711888357,
+          "q25": 0.9999999653060963,
+          "q75": 0.999999975011066
+        },
+        "recoverable_fraction.mutation_site_backbone_error": {
+          "count": 8,
+          "mean": 0.7203282882128308,
+          "median": 0.7077213382988616,
+          "q25": 0.6564213105577383,
+          "q75": 0.7985256207546367
+        },
+        "recoverable_fraction.remote_distance_change_error": {
+          "count": 8,
+          "mean": 0.9999999759459183,
+          "median": 0.999999976488964,
+          "q25": 0.9999999742032676,
+          "q75": 0.9999999776600845
+        },
+        "recoverable_fraction.remote_target_error": {
+          "count": 8,
+          "mean": 0.5662666580127511,
+          "median": 0.6235579224270896,
+          "q25": 0.46025195130128965,
+          "q75": 0.7070460665881045
+        },
+        "response_scope.local_rotation_energy_fraction": {
+          "count": 8,
+          "mean": 0.09438690694514662,
+          "median": 0.08796457946300507,
+          "q25": 0.03364939521998167,
+          "q75": 0.11605269461870193
+        },
+        "response_scope.local_rotation_rms_radian": {
+          "count": 8,
+          "mean": 0.1063938932493329,
+          "median": 0.08821716159582138,
+          "q25": 0.06910384353250265,
+          "q75": 0.13139824196696281
+        },
+        "response_scope.local_translation_energy_fraction": {
+          "count": 8,
+          "mean": 0.16233278065919876,
+          "median": 0.16704583168029785,
+          "q25": 0.07040191907435656,
+          "q75": 0.21563264355063438
+        },
+        "response_scope.local_translation_rms_angstrom": {
+          "count": 8,
+          "mean": 0.2764191497117281,
+          "median": 0.24571040272712708,
+          "q25": 0.1841891184449196,
+          "q75": 0.298638217151165
+        },
+        "response_scope.remote_rotation_energy_fraction": {
+          "count": 8,
+          "mean": 0.7681502178311348,
+          "median": 0.7843208611011505,
+          "q25": 0.6699082255363464,
+          "q75": 0.8632810115814209
+        },
+        "response_scope.remote_rotation_rms_radian": {
+          "count": 8,
+          "mean": 0.157125823199749,
+          "median": 0.14214321970939636,
+          "q25": 0.12745541520416737,
+          "q75": 0.17251677811145782
+        },
+        "response_scope.remote_translation_energy_fraction": {
+          "count": 8,
+          "mean": 0.6840940564870834,
+          "median": 0.6835752427577972,
+          "q25": 0.6469981968402863,
+          "q75": 0.718880832195282
+        },
+        "response_scope.remote_translation_rms_angstrom": {
+          "count": 8,
+          "mean": 0.27662654779851437,
+          "median": 0.28222423791885376,
+          "q25": 0.24909913539886475,
+          "q75": 0.31538139283657074
+        },
+        "response_scope.rotation_rms_radian": {
+          "count": 8,
+          "mean": 0.14365295227617025,
+          "median": 0.1292884349822998,
+          "q25": 0.10349046252667904,
+          "q75": 0.18506310135126114
+        },
+        "response_scope.translation_rms_angstrom": {
+          "count": 8,
+          "mean": 0.26992232352495193,
+          "median": 0.26876574754714966,
+          "q25": 0.22629444301128387,
+          "q75": 0.3401930555701256
+        }
+      },
+      "records": 8
+    },
+    "test": {
+      "families": 0,
+      "family_macro": {},
+      "record_macro": {},
+      "records": 0
+    },
+    "train": {
+      "families": 10,
+      "family_macro": {
+        "copy_error.distance_change_error": {
+          "count": 10,
+          "mean": 0.19277029386432243,
+          "median": 0.155388831048272,
+          "q25": 0.11542963702049044,
+          "q75": 0.19680456187886736
+        },
+        "copy_error.local_backbone_error": {
+          "count": 10,
+          "mean": 0.2354088181637204,
+          "median": 0.20715649748393583,
+          "q25": 0.17905993045334223,
+          "q75": 0.274744378025932
+        },
+        "copy_error.local_distance_change_error": {
+          "count": 10,
+          "mean": 0.16996066857709372,
+          "median": 0.15532762727265226,
+          "q25": 0.12883152181079005,
+          "q75": 0.2285906181227848
+        },
+        "copy_error.mutation_site_backbone_error": {
+          "count": 10,
+          "mean": 0.3654550790060338,
+          "median": 0.34835573324856445,
+          "q25": 0.21998231412805,
+          "q75": 0.42381609024420824
+        },
+        "copy_error.remote_distance_change_error": {
+          "count": 10,
+          "mean": 0.20359793349901914,
+          "median": 0.16111368262380016,
+          "q25": 0.1095748063526186,
+          "q75": 0.20136657429797525
+        },
+        "copy_error.remote_target_error": {
+          "count": 10,
+          "mean": 0.28982677446202454,
+          "median": 0.21083843211491943,
+          "q25": 0.1559916818436263,
+          "q75": 0.26307459678518186
+        },
+        "oracle_error.distance_change_error": {
+          "count": 10,
+          "mean": 5.366376345543004e-09,
+          "median": 4.0895893086308235e-09,
+          "q25": 2.911425296790279e-09,
+          "q75": 4.530333953201369e-09
+        },
+        "oracle_error.local_backbone_error": {
+          "count": 10,
+          "mean": 0.08197914664497301,
+          "median": 0.0677304348485124,
+          "q25": 0.056418036554326256,
+          "q75": 0.08313954763685362
+        },
+        "oracle_error.local_distance_change_error": {
+          "count": 10,
+          "mean": 4.676300236153316e-09,
+          "median": 3.901617766198809e-09,
+          "q25": 3.459698221485476e-09,
+          "q75": 6.2910588931755255e-09
+        },
+        "oracle_error.mutation_site_backbone_error": {
+          "count": 10,
+          "mean": 0.08280249224606956,
+          "median": 0.09166978358499046,
+          "q25": 0.06173628601533409,
+          "q75": 0.10063553236613473
+        },
+        "oracle_error.remote_distance_change_error": {
+          "count": 10,
+          "mean": 5.5907413084907845e-09,
+          "median": 3.8769820208490946e-09,
+          "q25": 2.7156273640527026e-09,
+          "q75": 4.794913392223175e-09
+        },
+        "oracle_error.remote_target_error": {
+          "count": 10,
+          "mean": 0.0961193000645841,
+          "median": 0.10145058520410771,
+          "q25": 0.06466787077015324,
+          "q75": 0.1256319982946122
+        },
+        "recoverable_fraction.distance_change_error": {
+          "count": 10,
+          "mean": 0.9999999744283528,
+          "median": 0.9999999744848833,
+          "q25": 0.9999999730298638,
+          "q75": 0.9999999770538994
+        },
+        "recoverable_fraction.local_backbone_error": {
+          "count": 10,
+          "mean": 0.6584416275398122,
+          "median": 0.6344239463941045,
+          "q25": 0.6048478700883719,
+          "q75": 0.7290345225871054
+        },
+        "recoverable_fraction.local_distance_change_error": {
+          "count": 10,
+          "mean": 0.9999999718842559,
+          "median": 0.9999999723434394,
+          "q25": 0.9999999691459284,
+          "q75": 0.9999999752867635
+        },
+        "recoverable_fraction.mutation_site_backbone_error": {
+          "count": 10,
+          "mean": 0.7381050930144657,
+          "median": 0.7525971729881811,
+          "q25": 0.6838944071006654,
+          "q75": 0.8271397964473879
+        },
+        "recoverable_fraction.remote_distance_change_error": {
+          "count": 10,
+          "mean": 0.9999999752048414,
+          "median": 0.9999999749744093,
+          "q25": 0.9999999723507289,
+          "q75": 0.9999999771982959
+        },
+        "recoverable_fraction.remote_target_error": {
+          "count": 10,
+          "mean": 0.5883354695488089,
+          "median": 0.5894042471351111,
+          "q25": 0.5177333502519674,
+          "q75": 0.6628942118393031
+        },
+        "response_scope.local_rotation_energy_fraction": {
+          "count": 10,
+          "mean": 0.17682091147816253,
+          "median": 0.10935485549271107,
+          "q25": 0.059148957137949765,
+          "q75": 0.20601965408284395
+        },
+        "response_scope.local_rotation_rms_radian": {
+          "count": 10,
+          "mean": 0.12474208328695524,
+          "median": 0.08583893737800065,
+          "q25": 0.07078524492681026,
+          "q75": 0.10125554027035832
+        },
+        "response_scope.local_translation_energy_fraction": {
+          "count": 10,
+          "mean": 0.17842495521707905,
+          "median": 0.1750665649860388,
+          "q25": 0.09145721420645714,
+          "q75": 0.2825822401791811
+        },
+        "response_scope.local_translation_rms_angstrom": {
+          "count": 10,
+          "mean": 0.22255092889425301,
+          "median": 0.1962849609553814,
+          "q25": 0.17042888403825818,
+          "q75": 0.27852680534124374
+        },
+        "response_scope.remote_rotation_energy_fraction": {
+          "count": 10,
+          "mean": 0.6664905535323279,
+          "median": 0.7215656872306551,
+          "q25": 0.6159414872527122,
+          "q75": 0.7546955049037933
+        },
+        "response_scope.remote_rotation_rms_radian": {
+          "count": 10,
+          "mean": 0.1329671487833063,
+          "median": 0.08286960795521736,
+          "q25": 0.07501136061425011,
+          "q75": 0.17990180011838675
+        },
+        "response_scope.remote_translation_energy_fraction": {
+          "count": 10,
+          "mean": 0.6609469034132504,
+          "median": 0.7152952551841736,
+          "q25": 0.5501633305989561,
+          "q75": 0.7673687785863876
+        },
+        "response_scope.remote_translation_rms_angstrom": {
+          "count": 10,
+          "mean": 0.2695245430937835,
+          "median": 0.18181469663977623,
+          "q25": 0.14964460209012032,
+          "q75": 0.2293278370052576
+        },
+        "response_scope.rotation_rms_radian": {
+          "count": 10,
+          "mean": 0.12843062325070304,
+          "median": 0.112654197961092,
+          "q25": 0.07172509205217163,
+          "q75": 0.15599125903099775
+        },
+        "response_scope.translation_rms_angstrom": {
+          "count": 10,
+          "mean": 0.2537078330914179,
+          "median": 0.19260386750102043,
+          "q25": 0.14852401241660118,
+          "q75": 0.21925482153892517
+        }
+      },
+      "record_macro": {
+        "copy_error.distance_change_error": {
+          "count": 55,
+          "mean": 0.13276467431323236,
+          "median": 0.11475991624987367,
+          "q25": 0.08606652254057504,
+          "q75": 0.14422765145259692
+        },
+        "copy_error.local_backbone_error": {
+          "count": 55,
+          "mean": 0.206362322005621,
+          "median": 0.15383493886483876,
+          "q25": 0.12622416417218746,
+          "q75": 0.2887064011223682
+        },
+        "copy_error.local_distance_change_error": {
+          "count": 55,
+          "mean": 0.13992920705761377,
+          "median": 0.09576544026060674,
+          "q25": 0.08006961030053862,
+          "q75": 0.19070297474488135
+        },
+        "copy_error.mutation_site_backbone_error": {
+          "count": 55,
+          "mean": 0.23733305431010096,
+          "median": 0.17918806575775997,
+          "q25": 0.136986934930517,
+          "q75": 0.24739545899743628
+        },
+        "copy_error.remote_distance_change_error": {
+          "count": 55,
+          "mean": 0.1309954481356468,
+          "median": 0.10352490855847728,
+          "q25": 0.07972741928298291,
+          "q75": 0.14249323237758404
+        },
+        "copy_error.remote_target_error": {
+          "count": 55,
+          "mean": 0.19038754891363457,
+          "median": 0.17004491305979288,
+          "q25": 0.10777454384329327,
+          "q75": 0.19230850640338054
+        },
+        "oracle_error.distance_change_error": {
+          "count": 55,
+          "mean": 3.5734440669090223e-09,
+          "median": 2.9776891433559307e-09,
+          "q25": 2.2052713348972696e-09,
+          "q75": 3.5682958250413256e-09
+        },
+        "oracle_error.local_backbone_error": {
+          "count": 55,
+          "mean": 0.0732400786688673,
+          "median": 0.06453567393848564,
+          "q25": 0.05239566939121974,
+          "q75": 0.07985792397178104
+        },
+        "oracle_error.local_distance_change_error": {
+          "count": 55,
+          "mean": 3.806036598744466e-09,
+          "median": 2.920858449479396e-09,
+          "q25": 2.2666974138789054e-09,
+          "q75": 4.4005730094777994e-09
+        },
+        "oracle_error.mutation_site_backbone_error": {
+          "count": 55,
+          "mean": 0.06926623078496222,
+          "median": 0.054701273685252814,
+          "q25": 0.03680782875949601,
+          "q75": 0.10026238172623275
+        },
+        "oracle_error.remote_distance_change_error": {
+          "count": 55,
+          "mean": 3.497430505198711e-09,
+          "median": 2.7533325625452416e-09,
+          "q25": 1.997025209210892e-09,
+          "q75": 3.3915536847265458e-09
+        },
+        "oracle_error.remote_target_error": {
+          "count": 55,
+          "mean": 0.077926576425868,
+          "median": 0.07245787366664792,
+          "q25": 0.05039749455452291,
+          "q75": 0.09314049701477606
+        },
+        "recoverable_fraction.distance_change_error": {
+          "count": 55,
+          "mean": 0.9999999740906566,
+          "median": 0.9999999741478479,
+          "q25": 0.9999999731140559,
+          "q75": 0.9999999754676917
+        },
+        "recoverable_fraction.local_backbone_error": {
+          "count": 55,
+          "mean": 0.6132657820891843,
+          "median": 0.6075271288412166,
+          "q25": 0.5178507631329884,
+          "q75": 0.7095518807937717
+        },
+        "recoverable_fraction.local_distance_change_error": {
+          "count": 55,
+          "mean": 0.999999972125316,
+          "median": 0.9999999725311383,
+          "q25": 0.9999999686448398,
+          "q75": 0.9999999762830232
+        },
+        "recoverable_fraction.mutation_site_backbone_error": {
+          "count": 55,
+          "mean": 0.6429066266235035,
+          "median": 0.6798991589321173,
+          "q25": 0.5097796965022934,
+          "q75": 0.8294215877805939
+        },
+        "recoverable_fraction.remote_distance_change_error": {
+          "count": 55,
+          "mean": 0.9999999745013866,
+          "median": 0.9999999741802313,
+          "q25": 0.9999999730734851,
+          "q75": 0.9999999757752573
+        },
+        "recoverable_fraction.remote_target_error": {
+          "count": 55,
+          "mean": 0.5290803215368467,
+          "median": 0.5090630272867653,
+          "q25": 0.4833746865082386,
+          "q75": 0.5535518284885306
+        },
+        "response_scope.local_rotation_energy_fraction": {
+          "count": 55,
+          "mean": 0.1408007098023187,
+          "median": 0.1268419623374939,
+          "q25": 0.0607240404933691,
+          "q75": 0.19517365097999573
+        },
+        "response_scope.local_rotation_rms_radian": {
+          "count": 55,
+          "mean": 0.09146889170462436,
+          "median": 0.08024382591247559,
+          "q25": 0.0588220302015543,
+          "q75": 0.10289839655160904
+        },
+        "response_scope.local_translation_energy_fraction": {
+          "count": 55,
+          "mean": 0.18220844617621465,
+          "median": 0.13881619274616241,
+          "q25": 0.08542373031377792,
+          "q75": 0.254848837852478
+        },
+        "response_scope.local_translation_rms_angstrom": {
+          "count": 55,
+          "mean": 0.19065506607294083,
+          "median": 0.14385230839252472,
+          "q25": 0.11637581512331963,
+          "q75": 0.24159106612205505
+        },
+        "response_scope.remote_rotation_energy_fraction": {
+          "count": 55,
+          "mean": 0.7123718175021085,
+          "median": 0.7405773997306824,
+          "q25": 0.5922517776489258,
+          "q75": 0.8143866956233978
+        },
+        "response_scope.remote_rotation_rms_radian": {
+          "count": 55,
+          "mean": 0.09457682703029026,
+          "median": 0.08285175263881683,
+          "q25": 0.05340993404388428,
+          "q75": 0.0980948954820633
+        },
+        "response_scope.remote_translation_energy_fraction": {
+          "count": 55,
+          "mean": 0.6634481684728102,
+          "median": 0.7019637823104858,
+          "q25": 0.5636919736862183,
+          "q75": 0.7684671580791473
+        },
+        "response_scope.remote_translation_rms_angstrom": {
+          "count": 55,
+          "mean": 0.17143748930909417,
+          "median": 0.1407679319381714,
+          "q25": 0.09898777678608894,
+          "q75": 0.17520438879728317
+        },
+        "response_scope.rotation_rms_radian": {
+          "count": 55,
+          "mean": 0.09286505668000741,
+          "median": 0.08625198900699615,
+          "q25": 0.05977491848170757,
+          "q75": 0.0938301831483841
+        },
+        "response_scope.translation_rms_angstrom": {
+          "count": 55,
+          "mean": 0.17273497608574953,
+          "median": 0.14775274693965912,
+          "q25": 0.10906139016151428,
+          "q75": 0.17172957956790924
+        }
+      },
+      "records": 55
+    }
+  },
+  "translation_scale": 1.0
+}

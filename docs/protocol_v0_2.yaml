@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: matched_context_overfit_passed_generalization_not_established
+  status: development_structure_prediction_layer_frozen
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -36,6 +36,14 @@ data_layers:
       fingerprint: 653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731
       compact_index: reports/protocol_v02_structure_pairs_index.csv
       provenance_report: reports/protocol_v02_structure_pairs_report.json
+    response_independent_development_layer:
+      records: {train: 55, dev: 8, test: 0}
+      families: {train: 10, dev: 4, test: 0}
+      unique_physical_endpoint_groups: 61
+      fingerprint: c6e5e9e7652f62d3e3d5108d4c8d730a61599ceeb3d1545ba5d4ff43364ae650
+      shared_primary_citation_required: false
+      observed_response_used_for_selection: false
+      frozen_test_records_processed: 0
   high_confidence_response_subset:
     purpose: mutation_response_attribution_and_mechanism_claims
     requirements:
@@ -120,6 +128,11 @@ artifacts:
     spatial_graph_overfit_dev: reports/protocol_v02_spatial_graph_overfit_seed0_epoch500_dev_v1.json
     transformer_overfit_train: reports/protocol_v02_transformer_overfit_seed0_epoch500_v1.json
     transformer_overfit_dev: reports/protocol_v02_transformer_overfit_seed0_epoch500_dev_v1.json
+    target_neighborhood_context: reports/protocol_v02_target_neighborhood_context_v1.json
+    structure_prediction_layer: reports/protocol_v02_structure_prediction_layer_v1.json
+    structure_prediction_endpoint_groups: reports/protocol_v02_structure_prediction_endpoint_groups_v1.json
+    structure_prediction_learnability: reports/protocol_v02_structure_prediction_learnability_v1.json
+    structure_prediction_oracle: reports/protocol_v02_structure_prediction_oracle_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -243,3 +256,31 @@ background_control_gate:
       - neither_student_beats_copy_parent_on_the_single_dev_record
       - explicit_spatial_edges_do_not_show_an_advantage_in_this_probe
       - expand_response_independent_coverage_before_architecture_selection
+  development_structure_prediction_layer:
+    automatic_requirements:
+      - crystal_form_compatible
+      - proximal_hetero_names_matched_with_water_ignored
+      - proximal_protein_contact_chain_and_residue_counts_matched
+      - experimental_method_matched
+      - no_other_site_only_seqadv_conflict
+    manual_nonmatched_context_decisions_veto: true
+    absent_seqadv_annotation_allowed: true
+    records: {train: 55, dev: 8, test: 0}
+    families: {train: 10, dev: 4, test: 0}
+    physical_endpoint_groups: 61
+    train_family_macro_local_backbone_error_angstrom:
+      copy_parent: 0.2354088181637204
+      unbounded_oracle: 0.08197914664497301
+      recoverable_fraction: 0.6584416275398122
+    dev_family_macro_local_backbone_error_angstrom:
+      copy_parent: 0.28152375930708473
+      unbounded_oracle: 0.07016137642135765
+      recoverable_fraction: 0.7346438227350067
+    all_record_macro_oracle_local_backbone_error_angstrom:
+      unbounded: 0.07278146059494228
+      bounded_0_1: 0.13643595056127705
+    interpretation:
+      - shared_citation_is_reserved_for_stricter_attribution_not_general_supervision
+      - expanded_layer_has_sufficient_train_dev_family_coverage_for_multi_seed_development
+      - endpoint_group_balancing_is_required_for_the_two_duplicate_groups
+      - layer_does_not_support_final_test_or_strict_mutation_causality_claims

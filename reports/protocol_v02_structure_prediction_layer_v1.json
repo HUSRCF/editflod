@@ -1,0 +1,966 @@
+{
+  "configuration": {
+    "allow_absent_seqadv_annotation": true,
+    "manual_nonmatched_dispositions_veto": true,
+    "reject_other_site_only_seqadv": true,
+    "require_crystal_form_compatible": true,
+    "require_target_neighborhood_context_selected": true,
+    "splits": [
+      "dev",
+      "train"
+    ]
+  },
+  "format": "ospedit.structure_prediction_layer.v1",
+  "frozen_test_records_processed": 0,
+  "limitations": [
+    "matching_ligand_names_do_not_establish_matching_occupancy_or_chemical_state",
+    "matching_contact_counts_do_not_establish_identical_interface_geometry",
+    "records_without_manual_review_are_structure_prediction_supervision_not_strict_mutation_attribution_truth",
+    "development_layer_cannot_be_used_for_final_test_claims"
+  ],
+  "records": [
+    {
+      "family_id": "v02_family_260dd007d20d",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "parent_id": "3FYW_X",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_3da1b9ebba69",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22m_1QD2_1GIU_A_E_84_R",
+      "parent_id": "1QD2_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_3da1b9ebba69",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22q_4VUB_7EPJ_A_V_45_L",
+      "parent_id": "4VUB_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_5c932f233753",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1TS0_A_1OT6_A_E46Q",
+      "parent_id": "1TS0_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_5c932f233753",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_2PHY_1F9I_A_Y_41_F",
+      "parent_id": "2PHY_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "no_engineered_seqadv_annotation",
+      "pair_id": "microminer_1AKI_A_1HEO_A_I55V",
+      "parent_id": "1AKI_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1BVX_A_1KXW_A_N27D",
+      "parent_id": "1BVX_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1HEL_A_3A3Q_A_N59D",
+      "parent_id": "1HEL_A",
+      "rejection_reasons": [
+        "target_context:proximal_hetero_mismatch"
+      ],
+      "selected": false,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1HSW_A_1IR9_A_I98M",
+      "parent_id": "1HSW_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "no_engineered_seqadv_annotation",
+      "pair_id": "microminer_1LHL_A_1LZ1_A_P47A",
+      "parent_id": "1LHL_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "no_engineered_seqadv_annotation",
+      "pair_id": "microminer_1REX_A_133L_A_R115H",
+      "parent_id": "1REX_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_2MEE_A_1YAP_A_L59V",
+      "parent_id": "2MEE_A",
+      "rejection_reasons": [
+        "target_context:proximal_hetero_mismatch"
+      ],
+      "selected": false,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_2ZIL_A_1GB8_A_V74M",
+      "parent_id": "2ZIL_A",
+      "rejection_reasons": [
+        "target_context:proximal_hetero_mismatch"
+      ],
+      "selected": false,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_987a40463804",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "no_engineered_seqadv_annotation",
+      "pair_id": "microminer_2ZQ4_A_1LZE_A_W62Y",
+      "parent_id": "2ZQ4_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible",
+        "target_context:proximal_hetero_mismatch"
+      ],
+      "selected": false,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_9d078f57ed0d",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_5ZA7_U_6JYP_U_H99Y",
+      "parent_id": "5ZA7_U",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "dev"
+    },
+    {
+      "family_id": "v02_family_0123349a5fb8",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22_1ERT_1AIU_A_D_59_N",
+      "parent_id": "1ERT_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_0123349a5fb8",
+      "manual_disposition": "assembly_dependent_challenge",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_1ERT_1ERV_A_C_72_S",
+      "parent_id": "1ERT_A",
+      "rejection_reasons": [
+        "manual_context:assembly_dependent_challenge"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_0123349a5fb8",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22p_1ERT_1AIU_A_D_59_N",
+      "parent_id": "1ERT_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_204bcfd23f04",
+      "manual_disposition": "state_mismatch_challenge",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_1CZL_1CZK_A_D_99_N",
+      "parent_id": "1CZL_A",
+      "rejection_reasons": [
+        "manual_context:state_mismatch_challenge"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_28cd4576dfdb",
+      "manual_disposition": "state_mismatch_challenge",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "parent_id": "5NLL_A",
+      "rejection_reasons": [
+        "manual_context:state_mismatch_challenge"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_28cd4576dfdb",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "parent_id": "5NLL_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "parent_id": "1FDA_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "parent_id": "1FDA_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_412a8d76b44d",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22n_1BV1_1LLT_A_E_44_S",
+      "parent_id": "1BV1_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_54f812ae22f4",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_1CDH_1CDY_A_G_46_S",
+      "parent_id": "1CDH_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_54f812ae22f4",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22p_1CDH_1CDU_A_F_42_V",
+      "parent_id": "1CDH_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_607a3bb0349c",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "parent_id": "3PAZ_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_607a3bb0349c",
+      "manual_disposition": "state_mismatch_challenge",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22q_3PAZ_4PAZ_A_P_79_A",
+      "parent_id": "3PAZ_A",
+      "rejection_reasons": [
+        "manual_context:state_mismatch_challenge"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_6c0799e5f926",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1JD3_A_1TT8_A_A90G",
+      "parent_id": "1JD3_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_7ae2a6204321",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_4YGH_A_6NNX_A_L121M",
+      "parent_id": "4YGH_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_a515d2e6f827",
+      "manual_disposition": "assembly_dependent_challenge",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_8I6L_A_8I8U_X_S118A",
+      "parent_id": "8I6L_A",
+      "rejection_reasons": [
+        "manual_context:assembly_dependent_challenge"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_a548251c30c2",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_2RN2_1KVB_A_D_133_H",
+      "parent_id": "2RN2_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_a548251c30c2",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22n_2RN2_1KVA_A_D_133_A",
+      "parent_id": "2RN2_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_c322e5df7c9a",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1AGY_A_1FFA_A_N84A",
+      "parent_id": "1AGY_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_c8b7ffd01e8a",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_4HKO_A_6JUG_A_N44E",
+      "parent_id": "4HKO_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_c8b7ffd01e8a",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22_1BVV_1C5H_A_N_34_D",
+      "parent_id": "1BVV_A",
+      "rejection_reasons": [
+        "target_context:proximal_hetero_mismatch"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_cf7defecbfbc",
+      "manual_disposition": "provenance_reject",
+      "mutation_annotation_classification": "other_engineered_mutation_only",
+      "pair_id": "microminer_5FNX_A_5FZU_A_K177E",
+      "parent_id": "5FNX_A",
+      "rejection_reasons": [
+        "conflicting_mutation_provenance",
+        "manual_context:provenance_reject"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e3ec45fb6212",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1WLW_A_1IS3_A_S16Y",
+      "parent_id": "1WLW_A",
+      "rejection_reasons": [
+        "target_context:proximal_hetero_mismatch"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "no_engineered_seqadv_annotation",
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I",
+      "parent_id": "1DYE_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "parent_id": "1L04_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1L25_A_1L28_A_A86G",
+      "parent_id": "1L25_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "other_engineered_mutation_only",
+      "pair_id": "microminer_1LYF_A_1C6P_A_S59T",
+      "parent_id": "1LYF_A",
+      "rejection_reasons": [
+        "conflicting_mutation_provenance"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "other_engineered_mutation_only",
+      "pair_id": "microminer_2B6W_A_1L92_A_A99I",
+      "parent_id": "2B6W_A",
+      "rejection_reasons": [
+        "crystal_form_incompatible",
+        "conflicting_mutation_provenance"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "parent_id": "1LYD_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L02_A_T_156_A",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L04_A_T_156_D",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L05_A_T_156_D",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L06_A_T_156_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L07_A_T_156_F",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L08_A_T_156_G",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L09_A_T_156_H",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L12_A_T_156_N",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L13_A_T_156_R",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L14_A_T_156_S",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L15_A_T_156_V",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L16_A_G_155_D",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L17_A_I_2_V",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L18_A_I_2_Y",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L19_A_S_37_D",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L20_A_N_143_D",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L22_A_K_123_G",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L23_A_G_76_A",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L24_A_A_81_P",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L25_A_P_85_A",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L27_A_P_85_D",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L28_A_P_85_G",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L29_A_P_85_H",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L30_A_P_85_L",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L31_A_P_85_R",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L32_A_P_85_S",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L33_A_V_130_A",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L34_A_R_95_H",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L37_A_T_114_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L38_A_Q_122_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L42_A_K_15_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L43_A_K_15_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L44_A_R_118_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L45_A_K_134_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L46_A_K_146_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L47_A_R_153_E",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23all_2LZM_1L52_A_T_151_S",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_e40682d3a677",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut23ctx_2LZM_1L02_A_T_156_A",
+      "parent_id": "2LZM_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_ea2e28f36573",
+      "manual_disposition": null,
+      "mutation_annotation_classification": "no_engineered_seqadv_annotation",
+      "pair_id": "platinum_1U72_1DLS_A_L22Y",
+      "parent_id": "1U72_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_ea2e28f36573",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "parent_id": "3N0H_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_ea2e28f36573",
+      "manual_disposition": "reverse_duplicate_alias",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "platinum_3S3V_3N0H_A_K35S",
+      "parent_id": "3S3V_A",
+      "rejection_reasons": [
+        "manual_context:reverse_duplicate_alias"
+      ],
+      "selected": false,
+      "split": "train"
+    },
+    {
+      "family_id": "v02_family_fb83dc187d83",
+      "manual_disposition": "matched_context_candidate",
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1GBA_A_1GBJ_A_A216G",
+      "parent_id": "1GBA_A",
+      "rejection_reasons": [],
+      "selected": true,
+      "split": "train"
+    }
+  ],
+  "selected_manifest_fingerprint": "c6e5e9e7652f62d3e3d5108d4c8d730a61599ceeb3d1545ba5d4ff43364ae650",
+  "selection_used_observed_response": false,
+  "source_manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "source_report_sha256": {
+    "endpoint": "18192954828bdafa7af46d8828b0ae98d405c912ca7402235aa4749e8a42b0fb",
+    "manual_context_decisions": "52798220e03e358fa326c97f8b2fec5cccaafee6d064f191110206da4847a913",
+    "mutation_annotations": "3cb95df6fab84fe6afa1149c2346a0311063d171fe32764ebe412325c0b15f12",
+    "target_context": "3d8e86a035477147da0852f0da4204a23be361c090f06bb504132efe8f81afae"
+  },
+  "summary": {
+    "families_selected": 14,
+    "parents_selected": 23,
+    "records_considered": 86,
+    "records_selected": 63,
+    "rejection_reasons": {
+      "conflicting_mutation_provenance": 3,
+      "crystal_form_incompatible": 10,
+      "manual_context:assembly_dependent_challenge": 2,
+      "manual_context:provenance_reject": 1,
+      "manual_context:reverse_duplicate_alias": 1,
+      "manual_context:state_mismatch_challenge": 3,
+      "target_context:proximal_hetero_mismatch": 6
+    },
+    "selected_splits": {
+      "dev": {
+        "families": 4,
+        "records": 8
+      },
+      "train": {
+        "families": 10,
+        "records": 55
+      }
+    }
+  }
+}

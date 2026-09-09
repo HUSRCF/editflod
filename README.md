@@ -791,6 +791,30 @@ the source and selected manifest fingerprints. The selector rejects manifest
 drift, split mismatches, non-matched dispositions, and any frozen-test
 selection.
 
+Build the broader response-independent train/dev structure-prediction layer:
+
+```bash
+python scripts/audit_structure_context.py \
+  --manifest /path/to/protocol_v02_structure_pairs.jsonl \
+  --output reports/protocol_v02_target_neighborhood_context_v1.json \
+  --allow-multiple-protein-chains \
+  --require-matching-protein-contacts --verify-checksums
+
+python scripts/select_structure_prediction_layer.py \
+  /path/to/protocol_v02_structure_pairs.jsonl \
+  reports/protocol_v02_rcsb_endpoint_environment_v1.json \
+  reports/protocol_v02_target_neighborhood_context_v1.json \
+  reports/protocol_v02_endpoint_mutation_annotations_v1.json \
+  reports/protocol_v02_endpoint_context_decisions_v1.json \
+  /tmp/protocol_v02_structure_prediction_layer_v1.jsonl \
+  reports/protocol_v02_structure_prediction_layer_v1.json
+```
+
+This layer does not require a shared primary citation and is not strict
+mutation-attribution truth. It requires compatible crystal form and local
+ligand/contact counts, rejects conflicting mutation provenance, and applies
+manual context decisions as vetoes. It never exports frozen-test records.
+
 Add a same-manifest development evaluation after training:
 
 ```bash

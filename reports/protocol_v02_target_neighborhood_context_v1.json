@@ -1,0 +1,5300 @@
+{
+  "configuration": {
+    "hetero_comparison_scope": "within_6_angstrom_of_target_chain",
+    "ignored_hetero": [
+      "HOH"
+    ],
+    "max_resolution_difference": null,
+    "protein_contact_comparison": "target_neighbor_chain_count_and_residue_count_within_5_angstrom",
+    "require_matching_method": true,
+    "require_matching_protein_contacts": true,
+    "require_matching_target_hetero": true,
+    "require_single_protein_chain": false
+  },
+  "format": "ospedit.structure_context_audit.v1",
+  "limitations": [
+    "matching_contact_counts_do_not_establish_identical_partner_identity_or_interface_geometry",
+    "deposited_model_contacts_may_include_crystal_contacts_outside_the_biological_assembly"
+  ],
+  "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "records": [
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "human thioredoxin (d60n mutant, reduced form)",
+        "path": "/tmp/ospedit-real-sample/pairs2022/1AIU.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22_1ERT_1AIU_A_D_59_N",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "human thioredoxin (reduced form)",
+        "path": "/tmp/ospedit-real-sample/pairs2022/1ERT.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1ERT_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.30000000000000004,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "human thioredoxin mutant with cys 73 replaced by ser (reduced form)",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1ERV.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.65,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22alt1_1ERT_1ERV_A_C_72_S",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "human thioredoxin (reduced form)",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1ERT.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1ERT_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.050000000000000044,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "human thioredoxin (d60n mutant, reduced form)",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1AIU.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22p_1ERT_1AIU_A_D_59_N",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "human thioredoxin (reduced form)",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1ERT.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1ERT_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.30000000000000004,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "FMN"
+        ],
+        "name": "comparisons of wild type and mutant flavodoxins from anacystis nidulans. structural determinants of the redox potentials.",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CZK.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "FMN"
+        ],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "FMN"
+        ]
+      },
+      "pair_id": "premut22alt1_1CZL_1CZK_A_D_99_N",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "FMN"
+        ],
+        "name": "comparisons of wild type and mutant flavodoxins from anacystis nidulans. structural determinants of the redox potentials.",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CZL.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "FMN"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "FMN"
+        ]
+      },
+      "parent_id": "1CZL_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.09999999999999987,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NDP",
+          "XCF"
+        ],
+        "name": "crystal structure of staph. aureus dhfr complexed with nadph and ar- 101",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/3FY8.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "X"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NDP",
+          "XCF"
+        ],
+        "resolution_angstrom": 2.2,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "X",
+        "target_hetero": [
+          "NDP",
+          "XCF"
+        ]
+      },
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NDP",
+          "XCF"
+        ],
+        "name": "staph. aureus dhfr complexed with nadph and ar-101",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/3FYW.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "X"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NDP",
+          "XCF"
+        ],
+        "resolution_angstrom": 2.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "X",
+        "target_hetero": [
+          "NDP",
+          "XCF"
+        ]
+      },
+      "parent_id": "3FYW_X",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "FMN"
+        ],
+        "name": "clostridium beijerinckii flavodoxin mutant: d58p reduced",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1FLN.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "FMN"
+        ],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "FMN"
+        ]
+      },
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "FMN"
+        ],
+        "name": "clostridium beijerinckii flavodoxin: oxidized",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/5NLL.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "FMN"
+        ],
+        "resolution_angstrom": 1.75,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "FMN"
+        ]
+      },
+      "parent_id": "5NLL_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.1499999999999999,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "FMN"
+        ],
+        "name": "clostridium beijerinckii flavodoxin mutant: g57t oxidized",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next20/1FLD.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "FMN"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "FMN"
+        ]
+      },
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "FMN"
+        ],
+        "name": "clostridium beijerinckii flavodoxin: oxidized",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next20/5NLL.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "FMN"
+        ],
+        "resolution_angstrom": 1.75,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "FMN"
+        ]
+      },
+      "parent_id": "5NLL_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.050000000000000044,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "hyperthermophile chromosomal protein sac7d single mutant v26a in complex with dna gcgatcgc",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1WTW.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.2,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22alt1_1AZQ_1WTW_A_V_25_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "hyperthermophile chromosomal protein sac7d bound with kinked dna duplex",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1AZQ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.94,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1AZQ_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.26000000000000023,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "crystal structure of exfoliative toxin a s195a mutant",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next20/1DUE.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22m_1DUA_1DUE_A_S_194_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "crystal structure of exfoliative toxin a",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next20/1DUA.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1DUA_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "hyperthermophile chromosomal protein sac7d single mutant m29a in complex with dna gcgatcgc",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1WTR.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22p_1AZQ_1WTR_A_M_28_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "hyperthermophile chromosomal protein sac7d bound with kinked dna duplex",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1AZQ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.94,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1AZQ_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.1399999999999999,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "GDP",
+          "MG"
+        ],
+        "name": "crystal structures at 2.2 angstroms resolution of the catalytic domains of normal ras protein and an oncogenic mutant complexed with gsp",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/2Q21.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "GDP",
+          "MG"
+        ],
+        "resolution_angstrom": 2.2,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "GDP",
+          "MG"
+        ]
+      },
+      "pair_id": "premut22p_1Q21_2Q21_A_G_11_V",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "GDP",
+          "MG"
+        ],
+        "name": "crystal structures at 2.2 angstroms resolution of the catalytic domains of normal ras protein and an oncogenic mutant complexed with gsp",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1Q21.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "GDP",
+          "MG"
+        ],
+        "resolution_angstrom": 2.2,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "GDP",
+          "MG"
+        ]
+      },
+      "parent_id": "1Q21_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs v23s/v66a at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4ME5.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "pair_id": "microminer_4KHV_A_4ME5_A_V66A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs v23s at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4KHV.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 1.6,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "parent_id": "4KHV_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.19999999999999996,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "8OG",
+          "TX2",
+          "ZN"
+        ],
+        "name": "mutm containing m77a mutation bound to oxog-containing dna",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4G4O.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "8OG",
+          "TX2",
+          "ZN"
+        ],
+        "resolution_angstrom": 1.95,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "ZN"
+        ]
+      },
+      "pair_id": "microminer_3U6C_A_4G4O_A_M77A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "08Q",
+          "8OG",
+          "ZN"
+        ],
+        "name": "mutm set 1 apgo",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/3U6C.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "08Q",
+          "8OG",
+          "ZN"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "ZN"
+        ]
+      },
+      "parent_id": "3U6C_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.1499999999999999,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs l36d/v66h at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5IGB.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "pair_id": "microminer_5CV9_A_5IGB_A_E36D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs l36e/v66h at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5CV9.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 1.62,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "parent_id": "5CV9_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.17999999999999994,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs i92h at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5C4H.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "pair_id": "microminer_5E3F_A_5C4H_A_K92H",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs i92k at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5E3F.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 1.75,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "parent_id": "5E3F_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.050000000000000044,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs v23t at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/6XSC.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "pair_id": "microminer_3BDC_A_6XSC_A_V23T",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CA",
+          "THP"
+        ],
+        "name": "crystal structure of staphylococcal nuclease variant delta+phs at cryogenic temperature",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/3BDC.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CA",
+          "THP"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CA",
+          "THP"
+        ]
+      },
+      "parent_id": "3BDC_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.19999999999999996,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "08Q",
+          "8OG",
+          "ZN"
+        ],
+        "name": "mutm set 1 gpgo",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/3U6D.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "08Q",
+          "8OG",
+          "ZN"
+        ],
+        "resolution_angstrom": 1.87,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "ZN"
+        ]
+      },
+      "pair_id": "microminer_3GO8_A_3U6D_A_E3Q",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "8OG",
+          "ZN"
+        ],
+        "name": "mutm encountering an intrahelical 8-oxoguanine (oxog) lesion in ec3- loop deletion complex",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/3GO8.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "8OG",
+          "ZN"
+        ],
+        "resolution_angstrom": 1.89,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "ZN"
+        ]
+      },
+      "parent_id": "3GO8_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.019999999999999796,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NA"
+        ],
+        "name": "crystal structure of trichomonas vaginalis triosephosphate isomerase tvag_497370 (ile-45 variant)",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4O4V.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NA"
+        ],
+        "resolution_angstrom": 1.23,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "NA"
+        ]
+      },
+      "pair_id": "microminer_4O52_A_4O4V_A_V45I",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NA"
+        ],
+        "name": "crystal structure of trichomonas vaginalis triosephosphate isomerase ile45-val mutant (tvag_497370)",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4O52.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NA"
+        ],
+        "resolution_angstrom": 1.95,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "NA"
+        ]
+      },
+      "parent_id": "4O52_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.72,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "GNP",
+          "MG"
+        ],
+        "name": "three-dimensional structures and properties of a transforming and a nontransforming glycine-12 mutant of p21h-ras",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/821P.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "GNP",
+          "MG"
+        ],
+        "resolution_angstrom": 1.5,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "GNP",
+          "MG"
+        ]
+      },
+      "pair_id": "microminer_421P_A_821P_A_R12P",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "GNP",
+          "MG"
+        ],
+        "name": "three-dimensional structures of h-ras p21 mutants: molecular basis for their inability to function as signal switch molecules",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/421P.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "GNP",
+          "MG"
+        ],
+        "resolution_angstrom": 2.2,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "GNP",
+          "MG"
+        ]
+      },
+      "parent_id": "421P_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.7000000000000002,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "name": "crystal structure of ferredoxin 1 d15e mutant from azotobacter vinelandii at 1.7 angstrom resolution.",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1D3W.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "F3S",
+          "SF4"
+        ]
+      },
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "name": "crystal structures of oxidized and reduced azotobacter vinelandii ferredoxin at ph 8 and ph 6",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1FDA.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "resolution_angstrom": 2.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "F3S",
+          "SF4"
+        ]
+      },
+      "parent_id": "1FDA_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.40000000000000013,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "name": "t14c mutant of azotobacter vinelandii fdi",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1A6L.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "resolution_angstrom": 2.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "F3S",
+          "SF4"
+        ]
+      },
+      "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "name": "crystal structures of oxidized and reduced azotobacter vinelandii ferredoxin at ph 8 and ph 6",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1FDA.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "F3S",
+          "SF4"
+        ],
+        "resolution_angstrom": 2.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "F3S",
+          "SF4"
+        ]
+      },
+      "parent_id": "1FDA_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "ADE"
+        ],
+        "name": "a trichosanthin(tcs) mutant(e85r) complex structure with adenine",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next20/1GIU.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "ADE"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "ADE"
+        ]
+      },
+      "pair_id": "premut22m_1QD2_1GIU_A_E_84_R",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "ADE"
+        ],
+        "name": "crystal structure of the complex of trichosanthin with adenine, obtained from trichosanthin complexed with the dinucleotide apg",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next20/1QD2.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "ADE"
+        ],
+        "resolution_angstrom": 1.86,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "ADE"
+        ]
+      },
+      "parent_id": "1QD2_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.06000000000000005,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CL"
+        ],
+        "name": "crystal structure of e.coli ccdb mutant v46l",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next80/7EPJ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CL"
+        ],
+        "resolution_angstrom": 1.35,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CL"
+        ]
+      },
+      "pair_id": "premut22q_4VUB_7EPJ_A_V_45_L",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CL"
+        ],
+        "name": "ccdb, a topoisomerase poison from escherichia coli",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next80/4VUB.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CL"
+        ],
+        "resolution_angstrom": 1.45,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CL"
+        ]
+      },
+      "parent_id": "4VUB_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.09999999999999987,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "birch pollen allergen bet v 1 mutant e45s",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40/1LLT.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 3.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22n_1BV1_1LLT_A_E_44_S",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "birch pollen allergen bet v 1",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40/1BV1.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1BV1_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 1.1,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "40S",
+          "TRS"
+        ],
+        "name": "x-ray structure of pccel45a n92d apo form at 100k",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next80/3X2G.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "40S",
+          "TRS"
+        ],
+        "resolution_angstrom": 1.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "40S",
+          "TRS"
+        ]
+      },
+      "pair_id": "premut22q_3X2L_3X2G_A_N_91_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "40S",
+          "TRS"
+        ],
+        "name": "x-ray structure of pccel45a apo form at 95k.",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next80/3X2L.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "40S",
+          "TRS"
+        ],
+        "resolution_angstrom": 0.83,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "40S",
+          "TRS"
+        ]
+      },
+      "parent_id": "3X2L_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.17000000000000004,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of t-cell surface glycoprotein cd4 mutant with gly 47 replaced by ser",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CDY.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22alt1_1CDH_1CDY_A_G_46_S",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structures of an hiv and mhc binding fragment from human cd4 as refined in two crystal lattices",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1CDH.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.3,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1CDH_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.2999999999999998,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of t-cell surface glycoprotein cd4 mutant with phe 43 replaced by val",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1CDU.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22p_1CDH_1CDU_A_F_42_V",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structures of an hiv and mhc binding fragment from human cd4 as refined in two crystal lattices",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1CDH.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.3,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1CDH_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.40000000000000036,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "HC4"
+        ],
+        "name": "crystal structure of the photoactive yellow protein mutant y42f",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1F9I.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "HC4"
+        ],
+        "resolution_angstrom": 1.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "HC4"
+        ]
+      },
+      "pair_id": "premut22alt1_2PHY_1F9I_A_Y_41_F",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "HC4"
+        ],
+        "name": "photoactive yellow protein, dark state (unbleached)",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2PHY.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "HC4"
+        ],
+        "resolution_angstrom": 1.4,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "HC4"
+        ]
+      },
+      "parent_id": "2PHY_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.2999999999999998,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "HC4"
+        ],
+        "name": "cryotrapped crystal structure of the e46q mutant of photoactive yellow protein under continuous illumination at 110k",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1OT6.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "HC4"
+        ],
+        "resolution_angstrom": 0.95,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "HC4"
+        ]
+      },
+      "pair_id": "microminer_1TS0_A_1OT6_A_E46Q",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "HC4"
+        ],
+        "name": "structure of the pb1 intermediate from time-resolved laue crystallography",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TS0.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "HC4"
+        ],
+        "resolution_angstrom": 1.6,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "HC4"
+        ]
+      },
+      "parent_id": "1TS0_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.6500000000000001,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CU"
+        ],
+        "name": "reduced mutant p80a pseudoazurin from a. faecalis",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/5PAZ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CU"
+        ],
+        "resolution_angstrom": 1.76,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CU"
+        ]
+      },
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CU"
+        ],
+        "name": "reduced native pseudoazurin from a. faecalis",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/3PAZ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CU"
+        ],
+        "resolution_angstrom": 1.73,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CU"
+        ]
+      },
+      "parent_id": "3PAZ_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.030000000000000027,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CU"
+        ],
+        "name": "oxidized mutant p80a pseudoazurin from a. faecalis",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next80/4PAZ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CU"
+        ],
+        "resolution_angstrom": 1.76,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CU"
+        ]
+      },
+      "pair_id": "premut22q_3PAZ_4PAZ_A_P_79_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CU"
+        ],
+        "name": "reduced native pseudoazurin from a. faecalis",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next80/3PAZ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CU"
+        ],
+        "resolution_angstrom": 1.73,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CU"
+        ]
+      },
+      "parent_id": "3PAZ_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.030000000000000027,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "PHB"
+        ],
+        "name": "chorismate lyase with product, 1.0 a resolution",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1TT8.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "PHB"
+        ],
+        "resolution_angstrom": 1.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "PHB"
+        ]
+      },
+      "pair_id": "microminer_1JD3_A_1TT8_A_A90G",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "PHB"
+        ],
+        "name": "chorismate lyase g90a mutant with bound product",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1JD3.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "PHB"
+        ],
+        "resolution_angstrom": 2.03,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "PHB"
+        ]
+      },
+      "parent_id": "1JD3_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 1.0299999999999998,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "RET"
+        ],
+        "name": "crystal structure of the all-trans retinal-bound r111k:y134f:t54v:r132q:p39y:r59y:l121m mutant of human cellular retinoic acid binding protein ii in the dark at 1.87 angstrom resolution",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/6NNX.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "RET"
+        ],
+        "resolution_angstrom": 1.87,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "RET"
+        ]
+      },
+      "pair_id": "microminer_4YGH_A_6NNX_A_L121M",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "RET"
+        ],
+        "name": "crystal structure of r111k:y134f:t54v:r132q:p39y:r59y mutant of human cellular retinoic acid binding protein ii with retinal at 2.1 angstrom resolution - uv irradiated crystal - 2nd cycle",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4YGH.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "RET"
+        ],
+        "resolution_angstrom": 2.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "RET"
+        ]
+      },
+      "parent_id": "4YGH_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.22999999999999998,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "im mutant of lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1IR9.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1HSW_A_1IR9_A_I98M",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "lysozyme (mucopeptide n-acetylmuramyl hydrolase)",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HSW.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1HSW_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NAG"
+        ],
+        "name": "structure of n59d hen egg-white lysozyme in complex with (glcnac)3",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/3A3Q.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NAG"
+        ],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1HEL_A_3A3Q_A_N59D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structural and thermodynamic analysis of compensating mutations within the core of chicken egg white lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEL.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1HEL_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.30000000000000004,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NAG"
+        ],
+        "name": "dissection of protein-carbohydrate interactions in mutant hen egg- white lysozyme complexes and their hydrolytic activity",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1LZE.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NAG"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_2ZQ4_A_1LZE_A_W62Y",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "the crystal structure of the orthorhombic form of hen egg white lysozyme at 2.0 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZQ4.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2ZQ4_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.19999999999999996,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "refinement of human lysozyme at 1.5 angstroms resolution. analysis of non-bonded and hydrogen-bond interactions",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1LZ1.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.5,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1LHL_A_1LZ1_A_P47A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "role of proline residues in human lysozyme stability: a scanning calorimetric study combined with x-ray structure analysis of proline mutants",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1LHL.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1LHL_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.30000000000000004,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structural and thermodynamic analysis of compensating mutations within the core of chicken egg white lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1HEO.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1AKI_A_1HEO_A_I55V",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "the structure of the orthorhombic form of hen egg-white lysozyme at 1.5 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AKI.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.5,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1AKI_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.30000000000000004,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "role of arg 115 in the catalytic action of human lysozyme. x-ray structure of his 115 and glu 115 mutants",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/133L.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.77,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1REX_A_133L_A_R115H",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "native human lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1REX.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.5,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1REX_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.27,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NA"
+        ],
+        "name": "crystal structure of mutant human lysozyme substituted at the surface positions",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1GB8.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "NA"
+        ]
+      },
+      "pair_id": "microminer_2ZIL_A_1GB8_A_V74M",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NA"
+        ],
+        "name": "crystal structure of human lysozyme from urine",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2ZIL.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NA"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "NA"
+        ]
+      },
+      "parent_id": "2ZIL_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.0,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "analysis of the stabilization of hen lysozyme with the helix dipole and charged side chains",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1KXW.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.96,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1BVX_A_1KXW_A_N27D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "the 1.8 a structure of gel grown tetragonal hen egg white lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1BVX.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1BVX_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.15999999999999992,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NA"
+        ],
+        "name": "contribution of hydrophobic residues to the stability of human lysozyme: calorimetric studies and x-ray structural analysis of the five isoleucine to valine mutants",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1YAP.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "NA"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "NA"
+        ]
+      },
+      "pair_id": "microminer_2MEE_A_1YAP_A_L59V",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "NA"
+        ],
+        "name": "contribution of hydrophobic effect to the conformational stability of human lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2MEE.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "NA"
+        ]
+      },
+      "parent_id": "2MEE_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.0,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "HMX",
+          "SO4"
+        ],
+        "name": "crystal structure of upa_h99y in complex with 3-azanyl-5-(azepan-1- yl)-n-[bis(azanyl)methylidene]-6-chloranyl-pyrazine-2-carboxamide",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/6JYP.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "U"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "HMX",
+          "SO4"
+        ],
+        "resolution_angstrom": 2.25,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "U",
+        "target_hetero": [
+          "HMX",
+          "SO4"
+        ]
+      },
+      "pair_id": "microminer_5ZA7_U_6JYP_U_H99Y",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "HMX",
+          "SO4"
+        ],
+        "name": "upa-hma",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5ZA7.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "U"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "HMX",
+          "SO4"
+        ],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "U",
+        "target_hetero": [
+          "HMX",
+          "SO4"
+        ]
+      },
+      "parent_id": "5ZA7_U",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.55,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CD",
+          "CL",
+          "EDO",
+          "SO4"
+        ],
+        "name": "crystal structure of horse spleen l-ferritin s118a mutant at -180deg celsius.",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/8I8U.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "X"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CD",
+          "CL",
+          "EDO",
+          "SO4"
+        ],
+        "resolution_angstrom": 1.6,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "X",
+        "target_hetero": [
+          "CD",
+          "CL",
+          "EDO",
+          "SO4"
+        ]
+      },
+      "pair_id": "microminer_8I6L_A_8I8U_X_S118A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CD",
+          "CL",
+          "EDO",
+          "SO4"
+        ],
+        "name": "crystal structure of horse spleen l-ferritin at -180deg celsius.",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/8I6L.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CD",
+          "CL",
+          "EDO",
+          "SO4"
+        ],
+        "resolution_angstrom": 1.5,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CD",
+          "CL",
+          "EDO",
+          "SO4"
+        ]
+      },
+      "parent_id": "8I6L_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "e. coli ribonuclease hi d134h mutant",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1KVB.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22alt1_2RN2_1KVB_A_D_133_H",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structural details of ribonuclease h from escherichia coli as refined to an atomic resolution",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/2RN2.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.48,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2RN2_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.41999999999999993,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "e. coli ribonuclease hi d134a mutant",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40/1KVA.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22n_2RN2_1KVA_A_D_133_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structural details of ribonuclease h from escherichia coli as refined to an atomic resolution",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40/2RN2.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.48,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2RN2_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.32000000000000006,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contribution of cutinase serine 42 side chain to the stabilization of the oxyanion transition state",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1FFA.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.69,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1AGY_A_1FFA_A_N84A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "the 1.15 angstrom refined structure of fusarium solani pisi cutinase",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1AGY.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.15,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1AGY_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.54,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "hydrogen bonding and catalysis: an unexpected explanation for how a single amino acid substitution can change the ph optimum of a glycosidase",
+        "path": "/tmp/ospedit-real-sample/pairs2022/1C5H.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.55,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22_1BVV_1C5H_A_N_34_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "DFX",
+          "XYP"
+        ],
+        "name": "sugar ring distortion in the glycosyl-enzyme intermediate of a family g/11 xylanase",
+        "path": "/tmp/ospedit-real-sample/pairs2022/1BVV.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "DFX",
+          "XYP"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1BVV_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.25,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "IOD"
+        ],
+        "name": "crystal structures of endo-beta-1,4-xylanase ii complexed with xylotriose",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/6JUG.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "IOD"
+        ],
+        "resolution_angstrom": 1.19,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "IOD"
+        ]
+      },
+      "pair_id": "microminer_4HKO_A_6JUG_A_N44E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "IOD"
+        ],
+        "name": "crystal structures of mutant endo-beta-1,4-xylanase ii (e177q) in the apo form",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/4HKO.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "IOD"
+        ],
+        "resolution_angstrom": 1.5,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "IOD"
+        ]
+      },
+      "parent_id": "4HKO_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.31000000000000005,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "crystal structure of n19d potato sti-kunitz bi-functional inhibitor of serine and aspartic proteases in space group p4322 and ph 7.2",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5FZU.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.43,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_5FNX_A_5FZU_A_K177E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "crystal structure at ph 9.0 of a potato sti-kunitz bi-functional inhibitor of serine and aspartic proteases in space group p4322 and ph 9.0",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/5FNX.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.65,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "5FNX_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.21999999999999975,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "interleukin-4 mutant with arg 88 replaced with gln (r88q)",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40/1HIJ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 3.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22n_2INT_1HIJ_A_R_87_Q",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "crystal structure of recombinant human interleukin-4",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40/2INT.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.35,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2INT_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.6499999999999999,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "BGC",
+          "GAL",
+          "MES"
+        ],
+        "name": "lactose and mes-liganded congerin ii",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1IS3.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "BGC",
+          "GAL",
+          "MES"
+        ],
+        "resolution_angstrom": 1.45,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "MES"
+        ]
+      },
+      "pair_id": "microminer_1WLW_A_1IS3_A_S16Y",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "GAL",
+          "GLC",
+          "MES"
+        ],
+        "name": "congerin ii y16s single mutant",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1WLW.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "GAL",
+          "GLC",
+          "MES"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "MES"
+        ]
+      },
+      "parent_id": "1WLW_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [
+        "proximal_hetero_mismatch"
+      ],
+      "resolution_difference_angstrom": 0.3500000000000001,
+      "selected": false
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L02.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L02_A_T_156_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L04.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L04_A_T_156_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L05.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L05_A_T_156_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L06.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L06_A_T_156_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L07.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L07_A_T_156_F",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L08.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L08_A_T_156_G",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L09.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L09_A_T_156_H",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L12.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L12_A_T_156_N",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L13.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L13_A_T_156_R",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L14.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L14_A_T_156_S",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L15.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L15_A_T_156_V",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structural analysis of the temperature-sensitive mutant of bacteriophage t4 lysozyme, glycine 156 (right arrow) aspartic acid",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L16.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L16_A_G_155_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "hydrophobic stabilization in t4 lysozyme determined directly by multiple substitutions of ile 3",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L17.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L17_A_I_2_V",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "hydrophobic stabilization in t4 lysozyme determined directly by multiple substitutions of ile 3",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L18.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L18_A_I_2_Y",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "enhanced protein thermostability from designed mutations that interact with alpha-helix dipoles",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L19.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L19_A_S_37_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "enhanced protein thermostability from designed mutations that interact with alpha-helix dipoles",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L20.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.85,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L20_A_N_143_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.15000000000000013,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of left-handed helical residues to the structure and stability of bacteriophage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L22.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L22_A_K_123_G",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "enhanced protein thermostability from site-directed mutations that decrease the entropy of unfolding",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L23.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L23_A_G_76_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "enhanced protein thermostability from site-directed mutations that decrease the entropy of unfolding",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L24.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L24_A_A_81_P",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L25.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L25_A_P_85_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L27.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L27_A_P_85_D",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L28.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L28_A_P_85_G",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.19999999999999996,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L29.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L29_A_P_85_H",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L30.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L30_A_P_85_L",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L31.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L31_A_P_85_R",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L32.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L32_A_P_85_S",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of left-handed helical residues to the structure and stability of bacteriophage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L33.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L33_A_V_130_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "high-resolution structure of the temperature-sensitive mutant of phage lysozyme, arg 96 (right arrow) his",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L34.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L34_A_R_95_H",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.19999999999999996,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of engineered surface salt bridges to the stability of t4 lysozyme determined by directed mutagenesis",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L37.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.85,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L37_A_T_114_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.15000000000000013,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of engineered surface salt bridges to the stability of t4 lysozyme determined by directed mutagenesis",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L38.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L38_A_Q_122_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "cumulative site-directed charge-change replacements in bacteriophage t4 lysozyme suggest that long-range electrostatic interactions contribute little to protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L42.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L42_A_K_15_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "cumulative site-directed charge-change replacements in bacteriophage t4 lysozyme suggest that long-range electrostatic interactions contribute little to protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L43.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L43_A_K_15_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "cumulative site-directed charge-change replacements in bacteriophage t4 lysozyme suggest that long-range electrostatic interactions contribute little to protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L44.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L44_A_R_118_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "cumulative site-directed charge-change replacements in bacteriophage t4 lysozyme suggest that long-range electrostatic interactions contribute little to protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L45.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L45_A_K_134_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "cumulative site-directed charge-change replacements in bacteriophage t4 lysozyme suggest that long-range electrostatic interactions contribute little to protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L46.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L46_A_K_146_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "cumulative site-directed charge-change replacements in bacteriophage t4 lysozyme suggest that long-range electrostatic interactions contribute little to protein stability",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L47.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L47_A_R_153_E",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structural and thermodynamic analysis of the packing of two alpha- helices in bacteriophage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/1L52.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23all_2LZM_1L52_A_T_151_S",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_all_repeats/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/premut2023_context_round0/1L02.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut23ctx_2LZM_1L02_A_T_156_A",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "structure of bacteriophage t4 lysozyme refined at 1.7 angstroms resolution",
+        "path": "/tmp/ospedit-real-sample/premut2023_context_round0/2LZM.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "2LZM_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "bacteriophage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/256L.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "crystal structure of t4-lysozyme generated from synthetic coding dna expressed in escherichia coli",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_next40b/1LYD.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1LYD_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.19999999999999996,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "BME",
+          "CL"
+        ],
+        "name": "determination of alpha-helix propensity within the context of a folded protein: sites 44 and 131 in bacteriophage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1DYC.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "BME",
+          "CL"
+        ],
+        "resolution_angstrom": 2.1,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "BME",
+          "CL"
+        ]
+      },
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "BME",
+          "CL"
+        ],
+        "name": "determination of alpha-helix propensity within the context of a folded protein: sites 44 and 131 in bacteriophage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1DYE.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "BME",
+          "CL"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "BME",
+          "CL"
+        ]
+      },
+      "parent_id": "1DYE_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.30000000000000004,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1L09.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "contributions of hydrogen bonds of thr 157 to the thermodynamic stability of phage t4 lysozyme",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1L04.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1L04_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.0,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "BME",
+          "CL"
+        ],
+        "name": "t4 lysozyme mutant c54t/c97a in the presence of 8 atm argon",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1C6P.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "BME",
+          "CL"
+        ],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "BME",
+          "CL"
+        ]
+      },
+      "pair_id": "microminer_1LYF_A_1C6P_A_S59T",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "BME",
+          "CL"
+        ],
+        "name": "dissection of helix capping in t4 lysozyme by structural and thermodynamic analysis of six amino acid substitutions at thr 59",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1LYF.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "BME",
+          "CL"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "BME",
+          "CL"
+        ]
+      },
+      "parent_id": "1LYF_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.09999999999999987,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1L28.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "pair_id": "microminer_1L25_A_1L28_A_A86G",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [],
+        "name": "replacements of pro86 in phage t4 lysozyme extend an alpha-helix but do not alter protein stability",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1L25.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": []
+      },
+      "parent_id": "1L25_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.09999999999999987,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "BME",
+          "CL"
+        ],
+        "name": "similar hydrophobic replacements of leu 99 and phe 153 within the core of t4 lysozyme have different structural and thermodynamic consequences",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1L92.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "BME",
+          "CL"
+        ],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "BME",
+          "CL"
+        ]
+      },
+      "pair_id": "microminer_2B6W_A_1L92_A_A99I",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "BME",
+          "CL"
+        ],
+        "name": "t4 lysozyme mutant l99a at 200 mpa",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/2B6W.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "BME",
+          "CL"
+        ],
+        "resolution_angstrom": 2.2,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "BME",
+          "CL"
+        ]
+      },
+      "parent_id": "2B6W_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.5000000000000002,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CU",
+          "ZN"
+        ],
+        "name": "crystal structure of yeast copper-zinc superoxide dismutase mutant gly85arg",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1F18.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CU",
+          "ZN"
+        ],
+        "resolution_angstrom": 1.7,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CU",
+          "ZN"
+        ]
+      },
+      "pair_id": "premut22alt1_1B4L_1F18_A_G_84_R",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "CU",
+          "ZN"
+        ],
+        "name": "15 atmosphere oxygen yeast cu/zn superoxide dismutase room temperature (298k) structure",
+        "path": "/tmp/ospedit-real-sample/repeat_expand_alternatives_round1/1B4L.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "CU",
+          "ZN"
+        ],
+        "resolution_angstrom": 1.8,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "CU",
+          "ZN"
+        ]
+      },
+      "parent_id": "1B4L_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.10000000000000009,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "MTX",
+          "NDP"
+        ],
+        "name": "methotrexate-resistant variants of human dihydrofolate reductase with substitution of leucine 22: kinetics, crystallography and potential as selectable markers",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/1DLS.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "MTX",
+          "NDP"
+        ],
+        "resolution_angstrom": 2.3,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "MTX",
+          "NDP"
+        ]
+      },
+      "pair_id": "platinum_1U72_1DLS_A_L22Y",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "MTX",
+          "NDP"
+        ],
+        "name": "understanding the role of leu22 variants in methotrexate resistance: comparison of wild-type and leu22arg variant mouse and human dihydrfolate reductase ternary crystal complexes with methotrexate and nadph",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/1U72.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "MTX",
+          "NDP"
+        ],
+        "resolution_angstrom": 1.9,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "MTX",
+          "NDP"
+        ]
+      },
+      "parent_id": "1U72_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.3999999999999999,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "name": "hdhfr double mutant q35s/n64f trimethoprim binary complex",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/3N0H.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "resolution_angstrom": 1.92,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "SO4",
+          "TOP"
+        ]
+      },
+      "pair_id": "platinum_3S3V_3N0H_A_K35S",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "name": "human dihydrofolate reductase q35k/n64f double mutant binary complex with trimethoprim",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/3S3V.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "resolution_angstrom": 1.53,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "SO4",
+          "TOP"
+        ]
+      },
+      "parent_id": "3S3V_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.3899999999999999,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "name": "human dihydrofolate reductase q35k/n64f double mutant binary complex with trimethoprim",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/3S3V.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "resolution_angstrom": 1.53,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "SO4",
+          "TOP"
+        ]
+      },
+      "pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "name": "hdhfr double mutant q35s/n64f trimethoprim binary complex",
+        "path": "/tmp/ospedit-real-sample/platinum_raw_monomer/3N0H.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "SO4",
+          "TOP"
+        ],
+        "resolution_angstrom": 1.92,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "SO4",
+          "TOP"
+        ]
+      },
+      "parent_id": "3N0H_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.3899999999999999,
+      "selected": true
+    },
+    {
+      "mutant": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "SO4"
+        ],
+        "name": "alpha-lytic protease with met 190 replaced by ala",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1GBJ.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "SO4"
+        ],
+        "resolution_angstrom": 2.0,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "SO4"
+        ]
+      },
+      "pair_id": "microminer_1GBA_A_1GBJ_A_A216G",
+      "parent": {
+        "hetero_contact_radius_angstrom": 6.0,
+        "model_hetero": [
+          "SO4"
+        ],
+        "name": "alpha-lytic protease with met 190 replaced by ala and gly 216 replaced by ala",
+        "path": "/tmp/ospedit-real-sample/microminer_pdb_discovery_4096_v1/1GBA.pdb",
+        "protein_chain_count": 1,
+        "protein_chains": [
+          "A"
+        ],
+        "protein_contact_chain_count": 0,
+        "protein_contact_chains": [],
+        "protein_contact_radius_angstrom": 5.0,
+        "protein_contact_residue_count": 0,
+        "proximal_hetero": [
+          "SO4"
+        ],
+        "resolution_angstrom": 2.15,
+        "structure_method": "x-ray diffraction",
+        "target_chain": "A",
+        "target_hetero": [
+          "SO4"
+        ]
+      },
+      "parent_id": "1GBA_A",
+      "protein_contact_counts_matched": true,
+      "rejection_reasons": [],
+      "resolution_difference_angstrom": 0.1499999999999999,
+      "selected": true
+    }
+  ],
+  "rejected_records": 8,
+  "selected_records": 93
+}

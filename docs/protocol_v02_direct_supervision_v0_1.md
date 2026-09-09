@@ -365,3 +365,35 @@ metrics, the graph is slightly better on train site error, and one dev record
 cannot resolve the comparison. The next data/model experiment must expand
 response-independent train/dev coverage and use multiple seeds before choosing
 an architecture. FoldFlow distillation remains paused.
+
+### Expanded structure-prediction development layer
+
+Requiring a shared primary citation is useful for strict mutation attribution,
+but it reduced the development set to eight records and one dev example. A
+broader layer was therefore frozen using only response-independent endpoint
+criteria. It requires compatible biological-assembly signatures, experimental
+method, construct length, space group and unit cell; matching proximal ligand
+names; matching counts of proximal protein chains and contacting residues; and
+no conflicting other-site-only `SEQADV` annotation. Existing manual redox,
+assembly, provenance, and reverse-alias decisions remain vetoes.
+
+The resulting layer contains 55 train records from 10 families and eight dev
+records from four families. It represents 61 unique physical endpoint groups;
+the two same-direction duplicates remain available but must use endpoint-group
+balanced loss. The selector processes no frozen-test records and does not use
+observed response magnitude. Coordinate-bearing output remains outside Git;
+the tracked report records all source-report hashes and the selected manifest
+fingerprint.
+
+On this layer, train family-macro copy-parent local error is 0.2354 Angstrom and
+the unbounded rigid-frame oracle reaches 0.0820 Angstrom, a mean recoverable
+fraction of 0.658. Dev family-macro values are 0.2815, 0.0702, and 0.735. Across
+all 63 records, imposing `bound=0.1` raises record-macro oracle local error from
+0.0728 to 0.1364 Angstrom. Subsequent multi-seed training must therefore remain
+unbounded initially and compare both student architectures under the same
+family- and endpoint-group weighting.
+
+This is a structure-prediction supervision layer, not a high-confidence claim
+that every observed endpoint difference was caused only by the annotated
+mutation. Matching ligand names does not establish occupancy or redox state,
+and matching contact counts does not establish identical interface geometry.
