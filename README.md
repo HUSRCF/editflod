@@ -830,6 +830,9 @@ python scripts/run_student_architecture_sweep.py \
 The runner always enables family- and physical-endpoint-group loss balancing,
 rejects manifests containing frozen-test records, evaluates train and dev, and
 records checkpoint hashes without placing model weights in Git.
+Use `--target-localization-radius 10 --target-localization-transition 5` for
+the protocol's soft localized-target ablation; both values are passed to
+training and inference and recorded in the report.
 
 Add a same-manifest development evaluation after training:
 

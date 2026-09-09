@@ -145,6 +145,8 @@ def main() -> None:
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--gradient-clip-norm", type=float, default=1.0)
     parser.add_argument("--max-normalized-delta", type=float)
+    parser.add_argument("--target-localization-radius", type=float)
+    parser.add_argument("--target-localization-transition", type=float, default=5.0)
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--verify-checksums", action="store_true")
     args = parser.parse_args()
@@ -156,6 +158,10 @@ def main() -> None:
         parser.error("learning rate and gradient clip norm must be positive")
     if args.max_normalized_delta is not None and args.max_normalized_delta <= 0:
         parser.error("max normalized delta must be positive")
+    if args.target_localization_radius is not None and args.target_localization_radius <= 0:
+        parser.error("target localization radius must be positive")
+    if args.target_localization_transition <= 0:
+        parser.error("target localization transition must be positive")
     if len(set(args.architectures)) != len(args.architectures):
         parser.error("architectures must not contain duplicates")
     if len(set(args.seeds)) != len(args.seeds):
@@ -239,6 +245,13 @@ def main() -> None:
                 train_command.extend(
                     ("--max-normalized-delta", str(args.max_normalized_delta))
                 )
+            if args.target_localization_radius is not None:
+                train_command.extend((
+                    "--target-localization-radius",
+                    str(args.target_localization_radius),
+                    "--target-localization-transition",
+                    str(args.target_localization_transition),
+                ))
             if args.verify_checksums:
                 train_command.append("--verify-checksums")
             started = time.perf_counter()
@@ -345,6 +358,8 @@ def main() -> None:
             "learning_rate": args.learning_rate,
             "gradient_clip_norm": args.gradient_clip_norm,
             "max_normalized_delta": args.max_normalized_delta,
+            "target_localization_radius": args.target_localization_radius,
+            "target_localization_transition": args.target_localization_transition,
             "family_balanced_loss": True,
             "endpoint_group_balanced_loss": True,
             "teacher_distillation": False,

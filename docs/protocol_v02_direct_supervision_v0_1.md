@@ -427,3 +427,26 @@ therefore a soft localized-target ablation using the already defined 10
 Angstrom local region plus a 5 Angstrom cosine taper. It will be compared with
 the full-target runs and must still be judged against copy-parent; it is not a
 claim that all legitimate remote response should be suppressed.
+
+### Soft localized-target result
+
+The fixed 10 Angstrom radius plus 5 Angstrom cosine taper retains most local
+oracle capacity: unbounded record-macro local and mutation-site errors are
+0.0770 and 0.0720 Angstrom, compared with 0.0728 and 0.0682 for the full oracle.
+It reduces oracle remote drift from 0.1926 to 0.0145 Angstrom, while lowering
+whole-structure distance-change cosine from 1.0 to 0.519 as expected.
+
+The same localization was then applied to training targets and inference for
+both architectures over the identical three seeds and step budget. It improved
+dev local error relative to full-target training for all six paired runs. The
+Transformer mean improved from 0.3005 to 0.2893 Angstrom and the spatial graph
+from 0.2965 to 0.2873. Mean remote drift fell to 0.0022 and 0.0018 Angstrom.
+
+Localization still did not beat copy-parent local error of 0.2815 Angstrom;
+mean regressions were 0.0078 and 0.0058 Angstrom. Mutation-site error also
+remained worse than copy, and distance-change cosine remained slightly
+negative. The intervention therefore improves the preservation-response tradeoff
+but does not yet constitute successful editing. The next fixed experiment will
+retain this taper and increase the explicitly normalized mutation-site and
+neighborhood loss terms, testing whether local responses are currently diluted
+by the many zeroed remote targets.
