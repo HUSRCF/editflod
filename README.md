@@ -833,6 +833,10 @@ records checkpoint hashes without placing model weights in Git.
 Use `--target-localization-radius 10 --target-localization-transition 5` for
 the protocol's soft localized-target ablation; both values are passed to
 training and inference and recorded in the report.
+Add `--mutation-loss-weight 1 --neighborhood-loss-weight 1` to reproduce the
+fixed regional-weighting ablation. These weights are recorded in the summary;
+the frozen result did not pass copy-parent noninferiority and is retained as a
+negative result rather than a recommended default.
 
 Add a same-manifest development evaluation after training:
 

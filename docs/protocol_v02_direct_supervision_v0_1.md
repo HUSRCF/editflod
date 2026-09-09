@@ -450,3 +450,26 @@ but does not yet constitute successful editing. The next fixed experiment will
 retain this taper and increase the explicitly normalized mutation-site and
 neighborhood loss terms, testing whether local responses are currently diluted
 by the many zeroed remote targets.
+
+### Localized regional-weighting result
+
+The fixed follow-up assigned weight 1.0 to each separately normalized
+mutation-site and 10 Angstrom neighborhood loss, while retaining the localized
+target, architectures, three seeds, and 3,520-step budget. The extra regional
+supervision improved training fit, but it did not transfer to held-out families.
+
+Transformer dev family-macro local error increased from 0.2893 to 0.2955
+Angstrom relative to unweighted localization, and its mutation-site error
+increased from 0.2818 to 0.3167. Spatial-graph local error increased from 0.2873
+to 0.2988 Angstrom, while mutation-site error increased from 0.2787 to 0.3645.
+The mutation-site regression occurred in all six paired runs. Copy-parent remains
+better at 0.2815 local and 0.2559 mutation-site error.
+
+The spatial graph also worsened distance-change cosine in every seed, reaching a
+mean of -0.0706, and increased remote drift to 0.0051 Angstrom. The Transformer
+mean cosine remained uninformative at -0.0155. This result rejects the narrow
+hypothesis that local response was merely diluted by zeroed remote targets.
+Further regional-weight sweeps are not justified. The next diagnostic will
+decompose held-out error by family and record to determine whether the failure is
+associated with particular endpoint contexts, response magnitudes, or a general
+cross-family transfer problem; no response-derived filtering will be introduced.

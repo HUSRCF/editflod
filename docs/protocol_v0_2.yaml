@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: localized_target_reduces_drift_but_fails_copy_noninferiority
+  status: localized_regional_weighting_worsens_dev_generalization
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -136,6 +136,7 @@ artifacts:
     student_architecture_sweep: reports/protocol_v02_student_architecture_sweep_v1.json
     structure_prediction_localized_oracle: reports/protocol_v02_structure_prediction_localized_oracle_v1.json
     student_localized_architecture_sweep: reports/protocol_v02_student_localized_architecture_sweep_v1.json
+    student_localized_weighted_architecture_sweep: reports/protocol_v02_student_localized_weighted_architecture_sweep_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -356,3 +357,32 @@ background_control_gate:
         - localization_reduces_dev_error_regression_consistently
         - predicted_dev_distance_change_direction_remains_uninformative
         - near_zero_remote_output_alone_is_not_successful_editing
+  localized_regional_weighting_ablation:
+    configuration:
+      localization_radius_angstrom: 10.0
+      localization_transition_angstrom: 5.0
+      mutation_loss_weight: 1.0
+      neighborhood_loss_weight: 1.0
+      all_other_training_settings_match_fixed_budget_architecture_sweep: true
+    transformer_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.2954946470987774, std: 0.00250745512370498}
+      local_error_minus_copy_angstrom: {mean: 0.013970887791692643, std: 0.00250745512370498}
+      mutation_site_backbone_error_angstrom: {mean: 0.316669662088771, std: 0.004753077223400511}
+      distance_change_cosine: {mean: -0.01550207060941417, std: 0.022002966646785346}
+      remote_scaffold_drift_angstrom: {mean: 0.0037429841050574397, std: 0.0002900555894660867}
+    spatial_graph_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.29883032788740477, std: 0.003483782556148737}
+      local_error_minus_copy_angstrom: {mean: 0.01730656858032002, std: 0.003483782556148737}
+      mutation_site_backbone_error_angstrom: {mean: 0.3644917191194454, std: 0.024035740093580782}
+      distance_change_cosine: {mean: -0.07058673357559003, std: 0.009133975753217834}
+      remote_scaffold_drift_angstrom: {mean: 0.005088987031088773, std: 0.0008071914344664622}
+    decision:
+      copy_parent_noninferiority_passed: false
+      architecture_selected: null
+      continue_regional_weight_grid: false
+      next_intervention: diagnose_family_and_record_level_generalization
+      rationale:
+        - regional_weighting_improves_train_fit_but_worsens_dev_local_error
+        - mutation_site_dev_error_worsens_for_all_six_paired_runs
+        - spatial_graph_dev_direction_and_drift_also_worsen_for_all_seeds
+        - fixed_loss_reweighting_does_not_resolve_cross_family_transfer

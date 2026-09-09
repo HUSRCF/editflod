@@ -144,6 +144,8 @@ def main() -> None:
     parser.add_argument("--spatial-neighbors", type=int, default=24)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--gradient-clip-norm", type=float, default=1.0)
+    parser.add_argument("--mutation-loss-weight", type=float, default=0.0)
+    parser.add_argument("--neighborhood-loss-weight", type=float, default=0.0)
     parser.add_argument("--max-normalized-delta", type=float)
     parser.add_argument("--target-localization-radius", type=float)
     parser.add_argument("--target-localization-transition", type=float, default=5.0)
@@ -156,6 +158,8 @@ def main() -> None:
         parser.error("model dimensions must be positive")
     if args.learning_rate <= 0 or args.gradient_clip_norm <= 0:
         parser.error("learning rate and gradient clip norm must be positive")
+    if args.mutation_loss_weight < 0 or args.neighborhood_loss_weight < 0:
+        parser.error("regional loss weights must be non-negative")
     if args.max_normalized_delta is not None and args.max_normalized_delta <= 0:
         parser.error("max normalized delta must be positive")
     if args.target_localization_radius is not None and args.target_localization_radius <= 0:
@@ -234,6 +238,10 @@ def main() -> None:
                 str(args.learning_rate),
                 "--gradient-clip-norm",
                 str(args.gradient_clip_norm),
+                "--mutation-loss-weight",
+                str(args.mutation_loss_weight),
+                "--neighborhood-loss-weight",
+                str(args.neighborhood_loss_weight),
                 "--family-balanced-loss",
                 "--endpoint-group-balanced-loss",
                 "--seed",
@@ -357,6 +365,8 @@ def main() -> None:
             "spatial_neighbors": args.spatial_neighbors,
             "learning_rate": args.learning_rate,
             "gradient_clip_norm": args.gradient_clip_norm,
+            "mutation_loss_weight": args.mutation_loss_weight,
+            "neighborhood_loss_weight": args.neighborhood_loss_weight,
             "max_normalized_delta": args.max_normalized_delta,
             "target_localization_radius": args.target_localization_radius,
             "target_localization_transition": args.target_localization_transition,
