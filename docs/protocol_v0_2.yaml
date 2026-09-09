@@ -109,7 +109,11 @@ artifacts:
   background_control_reports:
     coverage: reports/protocol_v02_background_control_coverage_v1.json
     coordinate_context: reports/protocol_v02_repeat_control_context_v1.json
+    rcsb_environment: reports/protocol_v02_rcsb_environment_v1.json
+    rcsb_endpoint_environment: reports/protocol_v02_rcsb_endpoint_environment_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
+    response_review_queue: reports/protocol_v02_response_review_queue_v1.json
+    response_review_decisions: reports/protocol_v02_response_review_decisions_v1.json
 
 background_control_gate:
   corrected_repeat_controls: 247
@@ -127,3 +131,15 @@ background_control_gate:
     total_controls: 247
     pairs_with_selected_control: {train: 16, dev: 9, test: 2}
     biological_assembly_verified: false
+  rcsb_metadata_audit:
+    repeat_assembly_compatible: 198
+    repeat_crystal_form_compatible: 108
+    repeat_crystal_pairs: {train: 13, dev: 9, test: 2}
+    endpoint_assembly_compatible: 93
+    endpoint_crystal_form_compatible: 86
+    endpoint_citation_crystal_compatible: 17
+    endpoint_citation_growth_compatible: 4
+    endpoint_and_repeat_crystal_pairs: {train: 12, dev: 6, test: 0}
+    diagnostic_review_queue: {train: 4, dev: 1, test: 0}
+    strict_mutation_attribution_admitted: 0
+    review_queue_is_training_or_test_data: false

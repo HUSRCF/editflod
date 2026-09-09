@@ -229,3 +229,37 @@ Asymmetric-unit contacts, ligand names, and experiment method are useful
 automatic checks but cannot establish biological-assembly, construct, crystal
 form, or occupancy equivalence. The detailed artifact is
 `reports/protocol_v02_repeat_control_context_v1.json`.
+
+### RCSB assembly and crystallographic metadata audit
+
+The coordinate-file prescreen was followed by an official RCSB Data API audit.
+Target author chains are mapped to label asymmetry identifiers before comparing
+biological-assembly membership. Crystal-form compatibility additionally
+requires matching space group and unit-cell lengths/angles within the frozen
+10% and 5 degree tolerances.
+
+For same-sequence controls, 198/247 pass the assembly tier and 108/247 pass the
+crystal-form tier. The latter cover 24 mutation pairs and 10 families: 13/7 in
+train, 9/2 in dev, and 2/1 in test. Intersecting those controls with compatible
+parent-mutant endpoints leaves 12 train pairs, 6 dev pairs, and no test pairs.
+With at least two controls and both local and distance endpoint/max-background
+ratios at least 1, only four train records and one dev record remain.
+
+The endpoint audit finds 93/101 assembly-compatible and 86/101 crystal-form
+compatible pairs. A stronger same-primary-citation plus crystal-form tier has
+17 pairs across 11 families; adding exact declared crystal-growth signatures
+leaves four pairs across three families. These tiers are evidence layers, not
+proof that mutation is the only changed experimental variable.
+
+Five records entered a target-aware manual review queue. Abstracts, PDB titles,
+citations, and deposited crystallization metadata identified state, redox,
+cofactor, pH, construct-source, or multi-conformer concerns in every case. No
+record was admitted as a strict mutation-attribution benchmark. Four remain
+useful as explicitly state-aware challenge cases; the oxidized-parent versus
+reduced-mutant FMN case is rejected for mutation-only attribution.
+
+This result prevents a false positive: automated response ratios can prioritize
+manual review, but cannot define training weights or a held-out benchmark. The
+tracked RCSB endpoint/control reports, review queue, and static decisions make
+that evidence chain reproducible without treating endpoint-derived information
+as an inference feature.

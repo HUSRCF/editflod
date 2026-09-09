@@ -1,0 +1,98 @@
+{
+  "format": "ospedit.response_review_decisions.v1",
+  "source_queue": "reports/protocol_v02_response_review_queue_v1.json",
+  "evidence_level": "rcsb_pdb_metadata_and_pubmed_abstract",
+  "open_access_full_text_available": false,
+  "usage": "dataset_gating_not_model_selection",
+  "summary": {
+    "reviewed": 5,
+    "admitted_strict_response": 0,
+    "excluded_strict_response": 5,
+    "retained_state_aware_challenge": 4,
+    "rejected_all_response_attribution": 1
+  },
+  "records": [
+    {
+      "pair_id": "microminer_2ZIL_A_1GB8_A_V74M",
+      "strict_response_admitted": false,
+      "disposition": "state_and_preparation_sensitive_challenge",
+      "reason_codes": [
+        "biological_source_mismatch",
+        "expression_system_mismatch",
+        "crystallization_ph_mismatch",
+        "temperature_mismatch",
+        "hydration_sensitive_surface_mutation"
+      ],
+      "evidence": {
+        "parent_pdb": "2ZIL",
+        "mutant_pdb": "1GB8",
+        "pmid": 11087397,
+        "doi": "10.1021/bi0015717"
+      }
+    },
+    {
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "strict_response_admitted": false,
+      "disposition": "redox_protonation_sensitive_challenge",
+      "reason_codes": [
+        "redox_coupled_proton_transfer",
+        "parent_specific_redox_state_unresolved",
+        "crystallization_condition_incomplete"
+      ],
+      "evidence": {
+        "parent_pdb": "1FDA",
+        "mutant_pdb": "1D3W",
+        "pmid": 10866206,
+        "doi": "10.1038/35015610"
+      }
+    },
+    {
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "strict_response_admitted": false,
+      "disposition": "reject_mutation_attribution",
+      "reason_codes": [
+        "parent_oxidized_mutant_reduced",
+        "fmn_redox_driven_peptide_rearrangement",
+        "repeat_controls_use_other_redox_states"
+      ],
+      "evidence": {
+        "parent_pdb": "5NLL",
+        "mutant_pdb": "1FLN",
+        "pmid": 9063874,
+        "doi": "10.1021/bi962180o"
+      }
+    },
+    {
+      "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "strict_response_admitted": false,
+      "disposition": "cofactor_state_sensitive_challenge",
+      "reason_codes": [
+        "mutation_enables_3fe_to_4fe_conversion",
+        "cluster_composition_depends_on_purification_and_redox_conditions",
+        "background_controls_span_fe_s_states"
+      ],
+      "evidence": {
+        "parent_pdb": "1FDA",
+        "mutant_pdb": "1A6L",
+        "pmid": 9837955,
+        "doi": "10.1074/jbc.273.50.33692"
+      }
+    },
+    {
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "strict_response_admitted": false,
+      "disposition": "multi_conformer_challenge",
+      "reason_codes": [
+        "mutant_has_five_reported_crystal_conformations",
+        "single_endpoint_is_not_unique_response",
+        "hinge_bending_mobility"
+      ],
+      "evidence": {
+        "parent_pdb": "1LYD",
+        "mutant_pdb": "256L",
+        "pmid": 2234094,
+        "doi": "10.1038/348263a0"
+      }
+    }
+  ]
+}

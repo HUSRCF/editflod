@@ -89,3 +89,27 @@ def test_background_signal_adds_context_prescreened_cohort(tmp_path):
 
     assert report["summary"]["context_prescreened_controls"]["overall"]["records"] == 1
     assert report["context_prescreened_records"][0]["local"]["signal_to_background_max"] == 4.0
+
+
+def test_background_signal_adds_rcsb_assembly_and_crystal_cohorts(tmp_path):
+    background, response = _reports(tmp_path)
+    rcsb = tmp_path / "rcsb.json"
+    rcsb.write_text(json.dumps({
+        "format": "ospedit.rcsb_environment_audit.v1",
+        "manifest_fingerprint": "same",
+        "records": [{
+            "pair_id": "pair-1",
+            "assembly_compatible": True,
+            "crystal_form_compatible": False,
+            "background": {
+                "neighborhood_rmsd_angstrom": 0.25,
+                "mutation_site_rmsd_angstrom": 0.1,
+                "distance_change_rms_angstrom": 0.2,
+            },
+        }],
+    }))
+
+    report = background_signal_report(background, response, None, rcsb)
+
+    assert report["summary"]["rcsb_assembly_controls"]["overall"]["records"] == 1
+    assert report["summary"]["rcsb_crystal_form_controls"]["overall"]["records"] == 0

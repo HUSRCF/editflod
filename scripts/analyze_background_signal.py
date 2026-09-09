@@ -15,6 +15,7 @@ REPORT_FORMAT = "ospedit.background_signal_diagnostic.v1"
 BACKGROUND_REPORT_FORMAT = "ospedit.background_control_coverage.v1"
 RESPONSE_REPORT_FORMAT = "ospedit.response_learnability_audit.v1"
 CONTEXT_REPORT_FORMAT = "ospedit.repeat_control_context_audit.v1"
+RCSB_REPORT_FORMAT = "ospedit.rcsb_environment_audit.v1"
 METRICS = {
     "local": ("neighborhood_rmsd_angstrom", "local_backbone_error"),
     "site": ("mutation_site_rmsd_angstrom", "mutation_site_backbone_error"),
@@ -86,6 +87,7 @@ def background_signal_report(
     background_report: str | Path,
     response_report: str | Path,
     control_context_report: str | Path | None = None,
+    rcsb_environment_report: str | Path | None = None,
 ) -> dict[str, Any]:
     background_path = Path(background_report).resolve()
     response_path = Path(response_report).resolve()
@@ -126,20 +128,13 @@ def background_signal_report(
         return row
 
     rows = [diagnostic_row(control) for control in background.get("records", [])]
+    background_rows = {row["pair_id"]: row for row in background.get("records", [])}
 
-    context_path = Path(control_context_report).resolve() if control_context_report else None
-    context_rows: list[dict[str, Any]] = []
-    if context_path is not None:
-        context = json.loads(context_path.read_text())
-        if context.get("format") != CONTEXT_REPORT_FORMAT:
-            raise ValueError(f"expected {CONTEXT_REPORT_FORMAT}")
-        if context.get("manifest_fingerprint") != background.get("manifest_fingerprint"):
-            raise ValueError("context and background reports use different manifests")
+    def aggregate_selected(selected_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         selected: dict[str, list[dict[str, Any]]] = {}
-        for row in context.get("records", []):
-            if row.get("selected"):
-                selected.setdefault(row["pair_id"], []).append(row)
-        background_rows = {row["pair_id"]: row for row in background.get("records", [])}
+        for row in selected_rows:
+            selected.setdefault(row["pair_id"], []).append(row)
+        output = []
         for pair_id, controls in sorted(selected.items()):
             source_row = background_rows[pair_id]
             aggregated = {
@@ -157,7 +152,36 @@ def background_signal_report(
                     for name, _ in METRICS.values()
                 },
             }
-            context_rows.append(diagnostic_row(aggregated))
+            output.append(diagnostic_row(aggregated))
+        return output
+
+    context_path = Path(control_context_report).resolve() if control_context_report else None
+    context_rows: list[dict[str, Any]] = []
+    if context_path is not None:
+        context = json.loads(context_path.read_text())
+        if context.get("format") != CONTEXT_REPORT_FORMAT:
+            raise ValueError(f"expected {CONTEXT_REPORT_FORMAT}")
+        if context.get("manifest_fingerprint") != background.get("manifest_fingerprint"):
+            raise ValueError("context and background reports use different manifests")
+        context_rows = aggregate_selected([
+            row for row in context.get("records", []) if row.get("selected")
+        ])
+
+    rcsb_path = Path(rcsb_environment_report).resolve() if rcsb_environment_report else None
+    assembly_rows: list[dict[str, Any]] = []
+    crystal_rows: list[dict[str, Any]] = []
+    if rcsb_path is not None:
+        rcsb = json.loads(rcsb_path.read_text())
+        if rcsb.get("format") != RCSB_REPORT_FORMAT:
+            raise ValueError(f"expected {RCSB_REPORT_FORMAT}")
+        if rcsb.get("manifest_fingerprint") != background.get("manifest_fingerprint"):
+            raise ValueError("RCSB and background reports use different manifests")
+        assembly_rows = aggregate_selected([
+            row for row in rcsb.get("records", []) if row.get("assembly_compatible")
+        ])
+        crystal_rows = aggregate_selected([
+            row for row in rcsb.get("records", []) if row.get("crystal_form_compatible")
+        ])
 
     cohorts = {
         "all_controls": rows,
@@ -168,6 +192,17 @@ def background_signal_report(
             "context_prescreened_controls": context_rows,
             "context_prescreened_at_least_two_controls": [
                 row for row in context_rows if row["repeat_structures"] >= 2
+            ],
+        })
+    if rcsb_path is not None:
+        cohorts.update({
+            "rcsb_assembly_controls": assembly_rows,
+            "rcsb_assembly_at_least_two_controls": [
+                row for row in assembly_rows if row["repeat_structures"] >= 2
+            ],
+            "rcsb_crystal_form_controls": crystal_rows,
+            "rcsb_crystal_form_at_least_two_controls": [
+                row for row in crystal_rows if row["repeat_structures"] >= 2
             ],
         })
     summary = {
@@ -187,6 +222,7 @@ def background_signal_report(
         "background_report": str(background_path),
         "response_report": str(response_path),
         "control_context_report": str(context_path) if context_path is not None else None,
+        "rcsb_environment_report": str(rcsb_path) if rcsb_path is not None else None,
         "usage": "diagnostic_only_not_a_training_weight",
         "limitations": [
             "same_sequence_identity_does_not_establish_matched_experimental_environment",
@@ -196,6 +232,8 @@ def background_signal_report(
         "summary": summary,
         "records": rows,
         "context_prescreened_records": context_rows,
+        "rcsb_assembly_records": assembly_rows,
+        "rcsb_crystal_form_records": crystal_rows,
     }
 
 
@@ -205,12 +243,14 @@ def main() -> None:
     parser.add_argument("response_report")
     parser.add_argument("output")
     parser.add_argument("--control-context-report")
+    parser.add_argument("--rcsb-environment-report")
     args = parser.parse_args()
     try:
         report = background_signal_report(
             args.background_report,
             args.response_report,
             args.control_context_report,
+            args.rcsb_environment_report,
         )
     except (OSError, ValueError, json.JSONDecodeError) as error:
         raise SystemExit(str(error)) from error

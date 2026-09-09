@@ -1,0 +1,835 @@
+{
+  "configuration": {
+    "min_controls": 2,
+    "min_distance_signal_to_max_background": 1.0,
+    "min_local_signal_to_max_background": 1.0,
+    "mutation_indexing": "zero_based_internal_sequence_index",
+    "require_control_crystal_form_compatible": true,
+    "require_endpoint_crystal_form_compatible": true
+  },
+  "control_report": "/home/husrcf/Code/ospedit/reports/protocol_v02_rcsb_environment_v1.json",
+  "endpoint_report": "/home/husrcf/Code/ospedit/reports/protocol_v02_rcsb_endpoint_environment_v1.json",
+  "format": "ospedit.response_review_queue.v1",
+  "limitations": [
+    "selection_uses_mutant_endpoint_signal_and_must_not_be_an_inference_feature",
+    "crystal_form_metadata_does_not_replace_manual_experimental_context_review",
+    "shared_citation_or_declared_growth_is_reported_as_evidence_not_a_selection_rule",
+    "queue_is_too_small_and_split_incomplete_for_model_evaluation"
+  ],
+  "manifest": "/tmp/ospedit-real-sample/protocol_v02_structure_pairs.jsonl",
+  "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "records": [
+    {
+      "endpoint_cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.03823529411764698
+      },
+      "endpoint_declared_crystal_growth_matched": false,
+      "endpoint_primary_citation_matched": false,
+      "endpoint_shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "endpoint_shared_crystal_growth_signatures": [],
+      "endpoint_shared_primary_citation_ids": [],
+      "endpoint_shared_uniprot": [
+        "P61626"
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_entry": {
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 4.5,
+            "temp": 283.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi0015717",
+          "pdbx_database_id_PubMed": 11087397,
+          "title": "Role of surface hydrophobic residues in the conformational stability of human lysozyme at three different positions.",
+          "year": 2000
+        },
+        "resolution_angstrom": 1.8,
+        "space_group": "P 21 21 21",
+        "title": "CRYSTAL STRUCTURE OF MUTANT HUMAN LYSOZYME SUBSTITUTED AT THE SURFACE POSITIONS"
+      },
+      "mutant_pdb_id": "1GB8",
+      "mutation": [
+        {
+          "index": 73,
+          "source": "V",
+          "target": "M"
+        }
+      ],
+      "pair_id": "microminer_2ZIL_A_1GB8_A_V74M",
+      "parent_entry": {
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.0,
+            "temp": 277.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": null,
+          "pdbx_database_id_PubMed": null,
+          "title": "Preparation and characterization of methyonyl-lysine attached human lysozyme expressed in Escherichia coli and its effective conversion to the authentic-like protein",
+          "year": null
+        },
+        "resolution_angstrom": 1.8,
+        "space_group": "P 21 21 21",
+        "title": "Crystal Structure of Human Lysozyme from Urine"
+      },
+      "parent_id": "2ZIL_A",
+      "parent_pdb_id": "2ZIL",
+      "repeat_control_count": 2,
+      "repeat_controls": [
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.09096684286303588,
+            "distance_change_rms_angstrom": 0.06684608920578651,
+            "max_normalized_delta_norm": 0.43027746479013074,
+            "max_rotation_radian": 0.10565121071957874,
+            "max_translation_angstrom": 0.16430783426332804,
+            "mutation_site_rmsd_angstrom": 0.11145407079447828,
+            "neighborhood_rmsd_angstrom": 0.09720705061562204
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.002941176470588277
+          },
+          "entry": {
+            "crystal_growth": [
+              {
+                "method": "VAPOR DIFFUSION, HANGING DROP",
+                "pH": 6.0,
+                "temp": 277.0
+              }
+            ],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": null,
+              "pdbx_database_id_PubMed": null,
+              "title": "Preparation and characterization of methyonyl-lysine attached human lysozyme expressed in Escherichia coli and its effective conversion to the authentic-like protein",
+              "year": null
+            },
+            "resolution_angstrom": 1.9,
+            "space_group": "P 21 21 21",
+            "title": "Crystal Structure of Human Lysozyme Expressed in E. coli."
+          },
+          "pdb_id": "2ZIJ",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P61626"
+          ]
+        },
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.13839098585860193,
+            "distance_change_rms_angstrom": 0.14844915964897598,
+            "max_normalized_delta_norm": 1.2290578742986873,
+            "max_rotation_radian": 0.30090344967715943,
+            "max_translation_angstrom": 0.42975665897785614,
+            "mutation_site_rmsd_angstrom": 0.11509846115824887,
+            "neighborhood_rmsd_angstrom": 0.1225589261550208
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.013114754098360609
+          },
+          "entry": {
+            "crystal_growth": [
+              {
+                "method": "VAPOR DIFFUSION, HANGING DROP",
+                "pH": 6.0,
+                "temp": 277.0
+              }
+            ],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": null,
+              "pdbx_database_id_PubMed": null,
+              "title": "Preparation and characterization of methyonyl-lysine attached human lysozyme expressed in Escherichia coli and its effective conversion to the authentic-like protein",
+              "year": null
+            },
+            "resolution_angstrom": 1.81,
+            "space_group": "P 21 21 21",
+            "title": "Crystal Structure of Human Lysozyme from Pichia pastoris"
+          },
+          "pdb_id": "2ZIK",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P61626"
+          ]
+        }
+      ],
+      "signal_to_background_max": {
+        "distance": 1.5328235390051113,
+        "local": 2.8931547215282625,
+        "site": 3.4467215599140872
+      },
+      "signal_to_background_median": {
+        "distance": 2.1138075964600613,
+        "local": 3.226904738224233,
+        "site": 3.5021665321299453
+      },
+      "split": "dev"
+    },
+    {
+      "endpoint_cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.02697160883280755
+      },
+      "endpoint_declared_crystal_growth_matched": false,
+      "endpoint_primary_citation_matched": false,
+      "endpoint_shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "endpoint_shared_crystal_growth_signatures": [],
+      "endpoint_shared_primary_citation_ids": [],
+      "endpoint_shared_uniprot": [
+        "P00214"
+      ],
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "mutant_entry": {
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, SITTING DROP",
+            "pH": 7.8,
+            "temp": 277.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1038/35015610",
+          "pdbx_database_id_PubMed": 10866206,
+          "title": "Atomically defined mechanism for proton transfer to a buried redox centre in a protein.",
+          "year": 2000
+        },
+        "resolution_angstrom": 1.7,
+        "space_group": "P 41 21 2",
+        "title": "Crystal structure of ferredoxin 1 d15e mutant from azotobacter vinelandii at 1.7 angstrom resolution."
+      },
+      "mutant_pdb_id": "1D3W",
+      "mutation": [
+        {
+          "index": 14,
+          "source": "D",
+          "target": "E"
+        }
+      ],
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "parent_entry": {
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": null,
+          "pdbx_database_id_PubMed": 8245025,
+          "title": "Crystal structures of oxidized and reduced Azotobacter vinelandii ferredoxin at pH 8 and 6.",
+          "year": 1993
+        },
+        "resolution_angstrom": 2.1,
+        "space_group": "P 41 21 2",
+        "title": "CRYSTAL STRUCTURES OF OXIDIZED AND REDUCED AZOTOBACTER VINELANDII FERREDOXIN AT PH 8 AND PH 6"
+      },
+      "parent_id": "1FDA_A",
+      "parent_pdb_id": "1FDA",
+      "repeat_control_count": 2,
+      "repeat_controls": [
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.12760800087129542,
+            "distance_change_rms_angstrom": 0.08696295067725551,
+            "max_normalized_delta_norm": 0.9033105175739402,
+            "max_rotation_radian": 0.21730272237705753,
+            "max_translation_angstrom": 0.3341401235759897,
+            "mutation_site_rmsd_angstrom": 0.11433189830798207,
+            "neighborhood_rmsd_angstrom": 0.10801449759483339
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.0054347826086956
+          },
+          "entry": {
+            "crystal_growth": [],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": null,
+              "pdbx_database_id_PubMed": 8245025,
+              "title": "Crystal structures of oxidized and reduced Azotobacter vinelandii ferredoxin at pH 8 and 6.",
+              "year": 1993
+            },
+            "resolution_angstrom": 2.2,
+            "space_group": "P 41 21 2",
+            "title": "CRYSTAL STRUCTURES OF OXIDIZED AND REDUCED AZOTOBACTER VINELANDII FERREDOXIN AT PH 8 AND PH 6"
+          },
+          "pdb_id": "1FDB",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00214"
+          ]
+        },
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.17073089589686413,
+            "distance_change_rms_angstrom": 0.13679334407285412,
+            "max_normalized_delta_norm": 1.0645968358560056,
+            "max_rotation_radian": 0.26399430755492803,
+            "max_translation_angstrom": 0.37356644442266507,
+            "mutation_site_rmsd_angstrom": 0.1420916272330499,
+            "neighborhood_rmsd_angstrom": 0.1478354505530419
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.025867507886435267
+          },
+          "entry": {
+            "crystal_growth": [
+              {
+                "method": null,
+                "pH": 7.8,
+                "temp": null
+              }
+            ],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": "10.1006/jmbi.1998.1732",
+              "pdbx_database_id_PubMed": 9600844,
+              "title": "Structure of Azotobacter vinelandii 7Fe ferredoxin at 1.35 A resolution and determination of the [Fe-S] bonds with 0.01 A accuracy.",
+              "year": 1998
+            },
+            "resolution_angstrom": 1.35,
+            "space_group": "P 41 21 2",
+            "title": "7-FE FERREDOXIN FROM AZOTOBACTER VINELANDII LOW TEMPERATURE, 1.35 A"
+          },
+          "pdb_id": "6FD1",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00214"
+          ]
+        }
+      ],
+      "signal_to_background_max": {
+        "distance": 1.3163738931625635,
+        "local": 1.6101291862030647,
+        "site": 2.974525392300981
+      },
+      "signal_to_background_median": {
+        "distance": 1.6095295741021456,
+        "local": 1.8607326318733863,
+        "site": 3.2965396006182024
+      },
+      "split": "train"
+    },
+    {
+      "endpoint_cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.011826731262467914
+      },
+      "endpoint_declared_crystal_growth_matched": false,
+      "endpoint_primary_citation_matched": true,
+      "endpoint_shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "endpoint_shared_crystal_growth_signatures": [],
+      "endpoint_shared_primary_citation_ids": [
+        "DOI:10.1021/bi962180o",
+        "PMID:9063874"
+      ],
+      "endpoint_shared_uniprot": [
+        "P00322"
+      ],
+      "family_id": "v02_family_28cd4576dfdb",
+      "mutant_entry": {
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi962180o",
+          "pdbx_database_id_PubMed": 9063874,
+          "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.9,
+        "space_group": "P 31 2 1",
+        "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN MUTANT: D58P REDUCED"
+      },
+      "mutant_pdb_id": "1FLN",
+      "mutation": [
+        {
+          "index": 57,
+          "source": "D",
+          "target": "P"
+        }
+      ],
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "parent_entry": {
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi962180o",
+          "pdbx_database_id_PubMed": 9063874,
+          "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.75,
+        "space_group": "P 31 2 1",
+        "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN: OXIDIZED"
+      },
+      "parent_id": "5NLL_A",
+      "parent_pdb_id": "5NLL",
+      "repeat_control_count": 2,
+      "repeat_controls": [
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.3098140456415187,
+            "distance_change_rms_angstrom": 0.15535218982362864,
+            "max_normalized_delta_norm": 8.859566344697633,
+            "max_rotation_radian": 2.185241187000289,
+            "max_translation_angstrom": 1.4448014016812345,
+            "mutation_site_rmsd_angstrom": 0.5972060160071767,
+            "neighborhood_rmsd_angstrom": 0.694806214971658
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.011399259048161827
+          },
+          "entry": {
+            "crystal_growth": [],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": "10.1021/bi962180o",
+              "pdbx_database_id_PubMed": 9063874,
+              "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+              "year": 1997
+            },
+            "resolution_angstrom": 1.8,
+            "space_group": "P 31 2 1",
+            "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN: SEMIQUINONE"
+          },
+          "pdb_id": "2FOX",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00322"
+          ]
+        },
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.2806609385548059,
+            "distance_change_rms_angstrom": 0.15813188851301613,
+            "max_normalized_delta_norm": 8.96328757552733,
+            "max_rotation_radian": 2.2129663874023624,
+            "max_translation_angstrom": 1.4089004412093837,
+            "mutation_site_rmsd_angstrom": 0.503069080897833,
+            "neighborhood_rmsd_angstrom": 0.6683689316069013
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.0032530904359141647
+          },
+          "entry": {
+            "crystal_growth": [],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": "10.1021/bi962180o",
+              "pdbx_database_id_PubMed": 9063874,
+              "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+              "year": 1997
+            },
+            "resolution_angstrom": 1.8,
+            "space_group": "P 31 2 1",
+            "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN: REDUCED"
+          },
+          "pdb_id": "5ULL",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00322"
+          ]
+        }
+      ],
+      "signal_to_background_max": {
+        "distance": 1.044950002315188,
+        "local": 1.029876701523626,
+        "site": 1.287617738613071
+      },
+      "signal_to_background_median": {
+        "distance": 1.0542156918753185,
+        "local": 1.0498500279573413,
+        "site": 1.3977832670762889
+      },
+      "split": "train"
+    },
+    {
+      "endpoint_cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.013669821240799278
+      },
+      "endpoint_declared_crystal_growth_matched": false,
+      "endpoint_primary_citation_matched": false,
+      "endpoint_shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "endpoint_shared_crystal_growth_signatures": [],
+      "endpoint_shared_primary_citation_ids": [],
+      "endpoint_shared_uniprot": [
+        "P00214"
+      ],
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "mutant_entry": {
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 7.8,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1074/jbc.273.50.33692",
+          "pdbx_database_id_PubMed": 9837955,
+          "title": "A T14C variant of Azotobacter vinelandii ferredoxin I undergoes facile [3Fe-4S]0 to [4Fe-4S]2+ conversion in vitro but not in vivo.",
+          "year": 1998
+        },
+        "resolution_angstrom": 2.1,
+        "space_group": "P 41 21 2",
+        "title": "T14C MUTANT OF AZOTOBACTER VINELANDII FDI"
+      },
+      "mutant_pdb_id": "1A6L",
+      "mutation": [
+        {
+          "index": 13,
+          "source": "T",
+          "target": "C"
+        }
+      ],
+      "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "parent_entry": {
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": null,
+          "pdbx_database_id_PubMed": 8245025,
+          "title": "Crystal structures of oxidized and reduced Azotobacter vinelandii ferredoxin at pH 8 and 6.",
+          "year": 1993
+        },
+        "resolution_angstrom": 2.1,
+        "space_group": "P 41 21 2",
+        "title": "CRYSTAL STRUCTURES OF OXIDIZED AND REDUCED AZOTOBACTER VINELANDII FERREDOXIN AT PH 8 AND PH 6"
+      },
+      "parent_id": "1FDA_A",
+      "parent_pdb_id": "1FDA",
+      "repeat_control_count": 2,
+      "repeat_controls": [
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.12760800087129542,
+            "distance_change_rms_angstrom": 0.08696295067725551,
+            "max_normalized_delta_norm": 0.9033105175739402,
+            "max_rotation_radian": 0.21730272237705753,
+            "max_translation_angstrom": 0.3341401235759897,
+            "mutation_site_rmsd_angstrom": 0.15932724110512775,
+            "neighborhood_rmsd_angstrom": 0.10423273590718779
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.0054347826086956
+          },
+          "entry": {
+            "crystal_growth": [],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": null,
+              "pdbx_database_id_PubMed": 8245025,
+              "title": "Crystal structures of oxidized and reduced Azotobacter vinelandii ferredoxin at pH 8 and 6.",
+              "year": 1993
+            },
+            "resolution_angstrom": 2.2,
+            "space_group": "P 41 21 2",
+            "title": "CRYSTAL STRUCTURES OF OXIDIZED AND REDUCED AZOTOBACTER VINELANDII FERREDOXIN AT PH 8 AND PH 6"
+          },
+          "pdb_id": "1FDB",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00214"
+          ]
+        },
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.17073089589686413,
+            "distance_change_rms_angstrom": 0.13679334407285412,
+            "max_normalized_delta_norm": 1.0645968358560056,
+            "max_rotation_radian": 0.26399430755492803,
+            "max_translation_angstrom": 0.37356644442266507,
+            "mutation_site_rmsd_angstrom": 0.0955029723120999,
+            "neighborhood_rmsd_angstrom": 0.15002075557782243
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.025867507886435267
+          },
+          "entry": {
+            "crystal_growth": [
+              {
+                "method": null,
+                "pH": 7.8,
+                "temp": null
+              }
+            ],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": "10.1006/jmbi.1998.1732",
+              "pdbx_database_id_PubMed": 9600844,
+              "title": "Structure of Azotobacter vinelandii 7Fe ferredoxin at 1.35 A resolution and determination of the [Fe-S] bonds with 0.01 A accuracy.",
+              "year": 1998
+            },
+            "resolution_angstrom": 1.35,
+            "space_group": "P 41 21 2",
+            "title": "7-FE FERREDOXIN FROM AZOTOBACTER VINELANDII LOW TEMPERATURE, 1.35 A"
+          },
+          "pdb_id": "6FD1",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00214"
+          ]
+        }
+      ],
+      "signal_to_background_max": {
+        "distance": 1.1115880404687908,
+        "local": 1.5176729573542596,
+        "site": 1.628974723813346
+      },
+      "signal_to_background_median": {
+        "distance": 1.3591380341450034,
+        "local": 1.7909877457532384,
+        "site": 2.0369644956520827
+      },
+      "split": "train"
+    },
+    {
+      "endpoint_cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.005149330587023687
+      },
+      "endpoint_declared_crystal_growth_matched": false,
+      "endpoint_primary_citation_matched": false,
+      "endpoint_shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "endpoint_shared_crystal_growth_signatures": [],
+      "endpoint_shared_primary_citation_ids": [],
+      "endpoint_shared_uniprot": [
+        "P00720"
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_entry": {
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1038/348263a0",
+          "pdbx_database_id_PubMed": 2234094,
+          "title": "A mutant T4 lysozyme displays five different crystal conformations.",
+          "year": 1990
+        },
+        "resolution_angstrom": 1.8,
+        "space_group": "P 32 2 1",
+        "title": "BACTERIOPHAGE T4 LYSOZYME"
+      },
+      "mutant_pdb_id": "256L",
+      "mutation": [
+        {
+          "index": 5,
+          "source": "M",
+          "target": "I"
+        }
+      ],
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "parent_entry": {
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1093/protein/2.4.277",
+          "pdbx_database_id_PubMed": 3074306,
+          "title": "Crystal structure of T4-lysozyme generated from synthetic coding DNA expressed in Escherichia coli.",
+          "year": 1988
+        },
+        "resolution_angstrom": 2.0,
+        "space_group": "P 32 2 1",
+        "title": "CRYSTAL STRUCTURE OF T4-LYSOZYME GENERATED FROM SYNTHETIC CODING DNA EXPRESSED IN ESCHERICHIA COLI"
+      },
+      "parent_id": "1LYD_A",
+      "parent_pdb_id": "1LYD",
+      "repeat_control_count": 2,
+      "repeat_controls": [
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.16968857720474123,
+            "distance_change_rms_angstrom": 0.1308351639189791,
+            "max_normalized_delta_norm": 1.3698578673288073,
+            "max_rotation_radian": 0.3349852470999355,
+            "max_translation_angstrom": 0.4062620961004978,
+            "mutation_site_rmsd_angstrom": 0.19220029206837128,
+            "neighborhood_rmsd_angstrom": 0.19806351781186532
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.004926108374384307
+          },
+          "entry": {
+            "crystal_growth": [],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": "10.1016/0022-2836(87)90636-X",
+              "pdbx_database_id_PubMed": 3586019,
+              "title": "Structure of bacteriophage T4 lysozyme refined at 1.7 A resolution.",
+              "year": 1987
+            },
+            "resolution_angstrom": 1.7,
+            "space_group": "P 32 2 1",
+            "title": "STRUCTURE OF BACTERIOPHAGE T4 LYSOZYME REFINED AT 1.7 ANGSTROMS RESOLUTION"
+          },
+          "pdb_id": "2LZM",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00720"
+          ]
+        },
+        {
+          "background": {
+            "backbone_rmsd_angstrom": 0.19988926917558433,
+            "distance_change_rms_angstrom": 0.13103572037815825,
+            "max_normalized_delta_norm": 2.032400698628949,
+            "max_rotation_radian": 0.49766268142538905,
+            "max_translation_angstrom": 0.8214385041745283,
+            "mutation_site_rmsd_angstrom": 0.1341049118435815,
+            "neighborhood_rmsd_angstrom": 0.2709394315098699
+          },
+          "cell_comparison": {
+            "max_angle_difference_degree": 0.0,
+            "max_relative_length_difference": 0.004926108374384307
+          },
+          "entry": {
+            "crystal_growth": [],
+            "experimental_method": "X-ray",
+            "primary_citation": {
+              "pdbx_database_id_DOI": null,
+              "pdbx_database_id_PubMed": 2674124,
+              "title": "Structural studies of mutants of T4 lysozyme that alter hydrophobic stabilization.",
+              "year": 1989
+            },
+            "resolution_angstrom": 1.7,
+            "space_group": "P 32 2 1",
+            "title": "STRUCTURAL STUDIES OF MUTANTS OF T4 LYSOZYME THAT ALTER HYDROPHOBIC STABILIZATION"
+          },
+          "pdb_id": "3LZM",
+          "shared_assembly_signatures": [
+            [
+              1,
+              "homomeric protein",
+              1
+            ]
+          ],
+          "shared_uniprot": [
+            "P00720"
+          ]
+        }
+      ],
+      "signal_to_background_max": {
+        "distance": 1.2227309376535027,
+        "local": 1.320847237864025,
+        "site": 1.0028804016231478
+      },
+      "signal_to_background_median": {
+        "distance": 1.2236673784802208,
+        "local": 1.526086777304093,
+        "site": 1.1814332336153943
+      },
+      "split": "train"
+    }
+  ],
+  "signal_report": "/home/husrcf/Code/ospedit/reports/protocol_v02_background_signal_diagnostic_v1.json",
+  "summary": {
+    "candidates": 5,
+    "families": 4,
+    "splits": {
+      "dev": 1,
+      "test": 0,
+      "train": 4
+    }
+  },
+  "usage": "manual_review_queue_not_training_or_test_data"
+}
