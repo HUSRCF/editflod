@@ -149,6 +149,7 @@ def main() -> None:
     parser.add_argument("--mutation-loss-weight", type=float, default=0.0)
     parser.add_argument("--neighborhood-loss-weight", type=float, default=0.0)
     parser.add_argument("--local-distance-loss-weight", type=float, default=0.0)
+    parser.add_argument("--mutation-vector-loss-weight", type=float, default=0.0)
     parser.add_argument("--biochemical-edit-features", action="store_true")
     parser.add_argument("--max-normalized-delta", type=float)
     parser.add_argument("--target-localization-radius", type=float)
@@ -171,6 +172,7 @@ def main() -> None:
         args.mutation_loss_weight < 0
         or args.neighborhood_loss_weight < 0
         or args.local_distance_loss_weight < 0
+        or args.mutation_vector_loss_weight < 0
     ):
         parser.error("regional loss weights must be non-negative")
     if args.max_normalized_delta is not None and args.max_normalized_delta <= 0:
@@ -259,6 +261,8 @@ def main() -> None:
                 str(args.neighborhood_loss_weight),
                 "--local-distance-loss-weight",
                 str(args.local_distance_loss_weight),
+                "--mutation-vector-loss-weight",
+                str(args.mutation_vector_loss_weight),
                 "--family-balanced-loss",
                 "--endpoint-group-balanced-loss",
                 "--seed",
@@ -396,6 +400,7 @@ def main() -> None:
             "mutation_loss_weight": args.mutation_loss_weight,
             "neighborhood_loss_weight": args.neighborhood_loss_weight,
             "local_distance_loss_weight": args.local_distance_loss_weight,
+            "mutation_vector_loss_weight": args.mutation_vector_loss_weight,
             "biochemical_edit_features": args.biochemical_edit_features,
             "max_normalized_delta": args.max_normalized_delta,
             "target_localization_radius": args.target_localization_radius,

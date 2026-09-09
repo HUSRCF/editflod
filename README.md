@@ -887,6 +887,9 @@ Use `--local-distance-loss-weight 0.05` to reproduce the fixed coupled local
 C-alpha distance-change objective. The loss reconstructs predicted and target
 frame origins from the parent geometry and is recorded under student loss
 schema v3. The weight is optional and defaults to zero.
+Use `--mutation-vector-loss-weight 0.025` only to reproduce the mutation-anchored
+neighbor displacement-vector ablation. It failed the within-family probe and is
+not a recommended training default.
 
 Add a same-manifest development evaluation after training:
 

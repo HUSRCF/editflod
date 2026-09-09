@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: local_distance_objective_improves_direction_but_fails_copy_gate
+  status: anchored_vector_objective_fails_probe_shift_to_transferable_context
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -150,6 +150,8 @@ artifacts:
     student_within_family_distance_loss_generalization: reports/protocol_v02_student_within_family_distance_loss_generalization_v1.json
     student_distance_loss_transformer_sweep: reports/protocol_v02_student_distance_loss_transformer_sweep_v1.json
     student_distance_loss_generalization: reports/protocol_v02_student_distance_loss_generalization_v1.json
+    student_within_family_vector_loss_transformer_sweep: reports/protocol_v02_student_within_family_vector_loss_transformer_sweep_v1.json
+    student_within_family_vector_loss_generalization: reports/protocol_v02_student_within_family_vector_loss_generalization_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -561,3 +563,31 @@ background_control_gate:
         - local_and_site_errors_remain_worse_than_copy_on_frozen_dev
         - scalar_distances_discard_deformation_direction
         - next_target_should_couple_each_neighbor_to_the_mutation_frame
+  mutation_anchored_vector_objective:
+    definition: neighbor_relative_displacement_change_in_parent_mutation_frame
+    weight_selection:
+      uses_train_only_zero_prediction_statistics: true
+      mean_frame_delta_loss: 0.002052880991565568
+      mean_mutation_vector_loss: 0.052545658147816234
+      raw_loss_ratio: 0.039068518007531784
+      fixed_weight: 0.025
+      dev_used_to_select_weight: false
+    within_family_transformer_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.30313620762548094, std: 0.004212421813292945}
+      local_error_minus_copy_angstrom: {mean: 0.0178263968003131, std: 0.004212421813292945}
+      mutation_site_backbone_error_angstrom: {mean: 0.24363644366551437, std: 0.014112933566151576}
+      mutation_site_error_minus_copy_angstrom: {mean: -0.02196898853344409, std: 0.014112933566151575}
+      distance_change_cosine: {mean: 0.02092982652444379, std: 0.007133863076380432}
+      local_distance_change_error: {mean: 0.23611467429298472, std: 0.006911855233363993}
+      local_distance_change_cosine: {mean: -0.050966309741631376, std: 0.02322682644875638}
+    decision:
+      probe_passed: false
+      frozen_dev_run_performed: false
+      selected_as_default: false
+      next_intervention: pretrained_transferable_sequence_context
+      rationale:
+        - local_error_worsens_relative_to_default_localized_transformer_all_seeds
+        - mutation_site_gain_shrinks
+        - local_distance_direction_worsens
+        - endpoint_vector_targets_may_expose_local_nuisance_motion
+        - stop_manual_loss_expansion_and_test_transferable_context

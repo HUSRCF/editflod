@@ -138,6 +138,62 @@ def local_distance_change_loss(
     return (per_sample[valid_samples] * weights).mean()
 
 
+def mutation_anchored_vector_change_loss(
+    prediction: Tensor,
+    target: Tensor,
+    parent_rotations: Tensor,
+    residue_mask: Tensor,
+    mutation_mask: Tensor,
+    *,
+    translation_scale: float = 1.0,
+    sample_weights: Tensor | None = None,
+) -> Tensor:
+    """Compare neighbor displacement changes in each parent mutation frame."""
+    if prediction.shape != target.shape or prediction.shape[-1] < 3:
+        raise ValueError("prediction and target must share shape (batch, length, >=3)")
+    if parent_rotations.shape != prediction.shape[:2] + (3, 3):
+        raise ValueError("parent_rotations must have shape (batch, length, 3, 3)")
+    if residue_mask.shape != prediction.shape[:2]:
+        raise ValueError("residue_mask must have shape (batch, length)")
+    if mutation_mask.shape != prediction.shape[:2]:
+        raise ValueError("mutation_mask must have shape (batch, length)")
+    if translation_scale <= 0:
+        raise ValueError("translation_scale must be positive")
+    if sample_weights is not None and sample_weights.shape != prediction.shape[:1]:
+        raise ValueError("sample_weights must have shape (batch,)")
+
+    pred_shift = torch.einsum(
+        "blij,blj->bli", parent_rotations, prediction[..., :3] * translation_scale
+    )
+    target_shift = torch.einsum(
+        "blij,blj->bli", parent_rotations, target[..., :3] * translation_scale
+    )
+    pred_relative = pred_shift[:, None, :, :] - pred_shift[:, :, None, :]
+    target_relative = target_shift[:, None, :, :] - target_shift[:, :, None, :]
+    anchor_frames = parent_rotations.transpose(-1, -2)
+    pred_local = torch.einsum("blij,blkj->blki", anchor_frames, pred_relative)
+    target_local = torch.einsum("blij,blkj->blki", anchor_frames, target_relative)
+
+    valid = residue_mask.to(dtype=torch.bool)
+    anchors = mutation_mask.to(dtype=torch.bool) & valid
+    pair_mask = anchors[:, :, None] & valid[:, None, :]
+    pair_mask &= ~torch.eye(
+        pair_mask.shape[-1], dtype=torch.bool, device=pair_mask.device
+    )[None, :, :]
+    squared = (pred_local - target_local).pow(2).mean(dim=-1)
+    denominators = pair_mask.sum(dim=(1, 2))
+    valid_samples = denominators > 0
+    if not bool(valid_samples.any()):
+        return prediction.sum() * 0.0
+    per_sample = (squared * pair_mask).sum(dim=(1, 2)) / denominators.clamp_min(1)
+    if sample_weights is None:
+        return per_sample[valid_samples].mean()
+    weights = sample_weights.to(dtype=prediction.dtype)[valid_samples]
+    if (weights < 0).any() or float(weights.sum()) <= 0:
+        raise ValueError("valid sample weights must be non-negative with positive sum")
+    return (per_sample[valid_samples] * weights).mean()
+
+
 def supervised_delta_loss(
     prediction: Tensor,
     target: Tensor,
@@ -195,6 +251,7 @@ def train_student(
     mutation_loss_weight: float = 0.0,
     neighborhood_loss_weight: float = 0.0,
     local_distance_loss_weight: float = 0.0,
+    mutation_vector_loss_weight: float = 0.0,
     translation_scale: float = 1.0,
     distill_weight: float = 0.0,
 ) -> list[float]:
@@ -215,6 +272,8 @@ def train_student(
         raise ValueError("neighborhood_loss_weight must be non-negative")
     if local_distance_loss_weight < 0:
         raise ValueError("local_distance_loss_weight must be non-negative")
+    if mutation_vector_loss_weight < 0:
+        raise ValueError("mutation_vector_loss_weight must be non-negative")
     if distill_weight < 0:
         raise ValueError("distill_weight must be non-negative")
     materialized_batches = list(batches)
@@ -282,6 +341,22 @@ def train_student(
                     translation_scale=translation_scale,
                     sample_weights=sample_weights,
                 )
+            if mutation_vector_loss_weight:
+                parent_rotations = torch.as_tensor(
+                    batch["parent_frame_rotations"], dtype=torch.float32, device=device
+                )
+                loss = loss + (
+                    mutation_vector_loss_weight
+                    * mutation_anchored_vector_change_loss(
+                        prediction,
+                        target,
+                        parent_rotations,
+                        loss_mask * neighborhood,
+                        edit[..., EDIT_MASK_INDEX],
+                        translation_scale=translation_scale,
+                        sample_weights=sample_weights,
+                    )
+                )
             if delta_norm_weight:
                 loss = loss + delta_norm_weight * masked_prediction_norm_loss(prediction, input_mask)
             window_start = (count // grad_accumulation_steps) * grad_accumulation_steps
@@ -322,6 +397,7 @@ def train_records(
     mutation_loss_weight: float = 0.0,
     neighborhood_loss_weight: float = 0.0,
     local_distance_loss_weight: float = 0.0,
+    mutation_vector_loss_weight: float = 0.0,
     distill_weight: float = 0.0,
     teacher_cache: TeacherCache | None = None,
     teacher_noise_level: float | None = None,
@@ -380,6 +456,7 @@ def train_records(
         mutation_loss_weight=mutation_loss_weight,
         neighborhood_loss_weight=neighborhood_loss_weight,
         local_distance_loss_weight=local_distance_loss_weight,
+        mutation_vector_loss_weight=mutation_vector_loss_weight,
         translation_scale=translation_scale,
         distill_weight=distill_weight,
     )

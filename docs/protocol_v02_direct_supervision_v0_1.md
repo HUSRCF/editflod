@@ -581,3 +581,23 @@ This is a reproducible directional improvement, not a passed editor. Scalar
 distance changes discard the direction of local deformation. The next target
 should compare mutation-anchored neighbor displacement changes in the parent
 mutation frame, retaining vector direction while coupling site and neighborhood.
+
+### Mutation-anchored vector objective
+
+The proposed directional target compares each neighborhood residue's relative
+translation change to the mutation anchor, expressed in the parent mutation
+frame. Its fixed weight 0.025 was selected from train-only zero-prediction
+scales: mean vector loss 0.05255 versus frame loss 0.00205, a ratio of 0.0391.
+
+It failed the within-family probe. Local error increased to 0.3031 Angstrom,
+0.0178 worse than copy and worse than both the default localized Transformer and
+the scalar-distance objective. Mutation-site improvement shrank to 0.0220
+Angstrom, local distance cosine fell to -0.0510, and local error worsened versus
+the default in every seed. The frozen unseen-family run was therefore not
+performed.
+
+This stops the current sequence of manually designed loss additions. The data
+show sparse directed-edit coverage, while fixed physicochemical descriptors did
+not transfer reliably. The next model experiment should add a frozen pretrained
+sequence context through an explicit cache, first testing whether it improves
+unseen-edit behavior without changing the geometry decoder or evaluation gate.

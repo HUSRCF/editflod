@@ -351,6 +351,50 @@ def test_local_distance_change_loss_ignores_samples_without_a_valid_pair():
     assert prediction.grad is not None
 
 
+def test_mutation_anchored_vector_loss_preserves_direction():
+    torch = pytest.importorskip("torch")
+    from ospedit.student_training import mutation_anchored_vector_change_loss
+
+    prediction = torch.zeros((1, 2, 6))
+    target = torch.zeros_like(prediction)
+    target[0, 1, 1] = 1.0
+    rotations = torch.eye(3).reshape(1, 1, 3, 3).repeat(1, 2, 1, 1)
+
+    loss = mutation_anchored_vector_change_loss(
+        prediction,
+        target,
+        rotations,
+        torch.ones((1, 2)),
+        torch.tensor([[1.0, 0.0]]),
+    )
+
+    assert float(loss) == pytest.approx(1.0 / 3.0)
+
+
+def test_mutation_anchored_vector_loss_uses_parent_anchor_frame():
+    torch = pytest.importorskip("torch")
+    from ospedit.student_training import mutation_anchored_vector_change_loss
+
+    prediction = torch.zeros((1, 2, 6))
+    target = torch.zeros_like(prediction)
+    prediction[0, 0, 1] = -1.0
+    target[0, 1, 0] = 1.0
+    quarter_turn = torch.tensor(
+        [[0.0, -1.0, 0.0], [1.0, 0.0, 0.0], [0.0, 0.0, 1.0]]
+    )
+    rotations = torch.stack((torch.eye(3), quarter_turn)).unsqueeze(0)
+
+    aligned = mutation_anchored_vector_change_loss(
+        prediction,
+        target,
+        rotations,
+        torch.ones((1, 2)),
+        torch.tensor([[1.0, 0.0]]),
+    )
+
+    assert float(aligned) == pytest.approx(0.0)
+
+
 def test_target_delta_scales_translation_and_rotation_channels():
     record = make_record()
     raw, mask = target_local_delta(record.pair)

@@ -95,6 +95,12 @@ def main() -> None:
         help="Weight for coupled C-alpha distance-change loss in the mutation neighborhood",
     )
     parser.add_argument(
+        "--mutation-vector-loss-weight",
+        type=float,
+        default=0.0,
+        help="Weight for mutation-anchored neighbor displacement-change vectors",
+    )
+    parser.add_argument(
         "--family-balanced-loss",
         action="store_true",
         help="Give each training family equal total supervised weight",
@@ -328,6 +334,7 @@ def main() -> None:
             ("mutation_loss_weight", args.mutation_loss_weight),
             ("neighborhood_loss_weight", args.neighborhood_loss_weight),
             ("local_distance_loss_weight", args.local_distance_loss_weight),
+            ("mutation_vector_loss_weight", args.mutation_vector_loss_weight),
             ("delta_loss_beta", args.delta_loss_beta),
         ):
             saved = resume_config.get(key)
@@ -373,6 +380,7 @@ def main() -> None:
         mutation_loss_weight=args.mutation_loss_weight,
         neighborhood_loss_weight=args.neighborhood_loss_weight,
         local_distance_loss_weight=args.local_distance_loss_weight,
+        mutation_vector_loss_weight=args.mutation_vector_loss_weight,
         neighborhood_radius=args.neighborhood_radius,
         distill_weight=args.distill_weight,
         teacher_cache=teacher_cache,
