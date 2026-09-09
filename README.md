@@ -815,6 +815,22 @@ mutation-attribution truth. It requires compatible crystal form and local
 ligand/contact counts, rejects conflicting mutation provenance, and applies
 manual context decisions as vetoes. It never exports frozen-test records.
 
+Run the fixed-budget architecture comparison without teacher distillation:
+
+```bash
+python scripts/run_student_architecture_sweep.py \
+  --manifest /tmp/protocol_v02_structure_prediction_layer_v1.jsonl \
+  --output-dir /tmp/protocol_v02_architecture_sweep_v1 \
+  --summary-output reports/protocol_v02_student_architecture_sweep_v1.json \
+  --architectures transformer spatial_graph --seeds 0 1 2 \
+  --epochs 64 --batch-size 1 --hidden-dim 32 --blocks 2 --heads 4 \
+  --learning-rate 0.001 --device cpu --verify-checksums
+```
+
+The runner always enables family- and physical-endpoint-group loss balancing,
+rejects manifests containing frozen-test records, evaluates train and dev, and
+records checkpoint hashes without placing model weights in Git.
+
 Add a same-manifest development evaluation after training:
 
 ```bash

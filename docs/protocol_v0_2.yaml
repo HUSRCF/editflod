@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: development_structure_prediction_layer_frozen
+  status: architecture_sweep_failed_copy_noninferiority
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -133,6 +133,7 @@ artifacts:
     structure_prediction_endpoint_groups: reports/protocol_v02_structure_prediction_endpoint_groups_v1.json
     structure_prediction_learnability: reports/protocol_v02_structure_prediction_learnability_v1.json
     structure_prediction_oracle: reports/protocol_v02_structure_prediction_oracle_v1.json
+    student_architecture_sweep: reports/protocol_v02_student_architecture_sweep_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -284,3 +285,40 @@ background_control_gate:
       - expanded_layer_has_sufficient_train_dev_family_coverage_for_multi_seed_development
       - endpoint_group_balancing_is_required_for_the_two_duplicate_groups
       - layer_does_not_support_final_test_or_strict_mutation_causality_claims
+  fixed_budget_architecture_sweep:
+    configuration:
+      architectures: [local_feature_transformer, spatial_graph]
+      seeds: [0, 1, 2]
+      epochs: 64
+      optimizer_steps_per_run: 3520
+      hidden_dim: 32
+      blocks: 2
+      learning_rate: 0.001
+      max_normalized_delta: null
+      family_balanced_loss: true
+      endpoint_group_balanced_loss: true
+      teacher_distillation: false
+      frozen_test_records_processed: 0
+    transformer_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.300543127296025, std: 0.004931122055117901}
+      local_error_minus_copy_angstrom: {mean: 0.019019367988940255, std: 0.004931122055117899}
+      mutation_site_backbone_error_angstrom: {mean: 0.30704408954670975, std: 0.021926208246876317}
+      distance_change_cosine: {mean: -0.006785731318817878, std: 0.014661787603959071}
+      remote_scaffold_drift_angstrom: {mean: 0.11206562736311898, std: 0.011011121588897731}
+    spatial_graph_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.29649475465969116, std: 0.010288685388673344}
+      local_error_minus_copy_angstrom: {mean: 0.01497099535260645, std: 0.010288685388673339}
+      mutation_site_backbone_error_angstrom: {mean: 0.3167172966155596, std: 0.02352325266093781}
+      distance_change_cosine: {mean: -0.02135526933764756, std: 0.05160520945388518}
+      remote_scaffold_drift_angstrom: {mean: 0.08038546063202673, std: 0.03541208948985115}
+    decision:
+      copy_parent_noninferiority_passed: false
+      architecture_selected: null
+      next_intervention: fixed_soft_localized_target_ablation
+      localization_radius_angstrom: 10.0
+      localization_transition_angstrom: 5.0
+      rationale:
+        - both_architectures_worsen_dev_local_and_site_error
+        - dev_distance_change_direction_is_not_learned
+        - remote_target_energy_dominates_full_endpoint_supervision
+        - do_not_choose_the_less_bad_architecture_from_failed_runs

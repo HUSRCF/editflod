@@ -397,3 +397,33 @@ This is a structure-prediction supervision layer, not a high-confidence claim
 that every observed endpoint difference was caused only by the annotated
 mutation. Matching ligand names does not establish occupancy or redox state,
 and matching contact counts does not establish identical interface geometry.
+
+### Fixed-budget multi-seed architecture comparison
+
+The expanded layer was used for a predeclared comparison of the local-feature
+Transformer and spatial graph. Each architecture used seeds 0/1/2, hidden
+dimension 32, two blocks, 64 epochs (3,520 optimizer steps), unbounded outputs,
+family and endpoint-group balanced loss, and no teacher signal. Frozen-test
+records were rejected by the runner.
+
+Neither architecture passed dev copy-parent noninferiority. Copy-parent dev
+family-macro local error is 0.2815 Angstrom. The Transformer obtained
+0.3005 +/- 0.0049 and the spatial graph obtained 0.2965 +/- 0.0103 Angstrom.
+Their mutation-site errors were 0.3070 and 0.3167 versus copy-parent 0.2559.
+Mean distance-change cosine was -0.0068 and -0.0214 respectively. Both models
+introduced remote scaffold drift, although the graph's mean drift was smaller.
+
+The Transformer fit train more strongly, while the graph was slightly less bad
+on dev local error; neither fact justifies architecture selection after both
+failed the primary gate. The result also shows why a single favorable seed is
+not adequate: spatial-graph dev local regression ranged from 0.0058 to 0.0293
+Angstrom across seeds.
+
+The experimental endpoint deltas are dominated by remote motion: remote
+translation and rotation account for about 66% of train family energy, compared
+with about 18% locally. That signal may contain true long-range response, but it
+also contains endpoint-specific nuisance motion. The next fixed intervention is
+therefore a soft localized-target ablation using the already defined 10
+Angstrom local region plus a 5 Angstrom cosine taper. It will be compared with
+the full-target runs and must still be judged against copy-parent; it is not a
+claim that all legitimate remote response should be suppressed.
