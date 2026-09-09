@@ -146,11 +146,17 @@ def main() -> None:
     parser.add_argument("--gradient-clip-norm", type=float, default=1.0)
     parser.add_argument("--mutation-loss-weight", type=float, default=0.0)
     parser.add_argument("--neighborhood-loss-weight", type=float, default=0.0)
+    parser.add_argument("--biochemical-edit-features", action="store_true")
     parser.add_argument("--max-normalized-delta", type=float)
     parser.add_argument("--target-localization-radius", type=float)
     parser.add_argument("--target-localization-transition", type=float, default=5.0)
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--verify-checksums", action="store_true")
+    parser.add_argument(
+        "--within-family-probe",
+        action="store_true",
+        help="Permit family/parent overlap for a diagnostic endpoint holdout",
+    )
     args = parser.parse_args()
     if args.epochs <= 0 or args.batch_size <= 0:
         parser.error("epochs and batch size must be positive")
@@ -198,6 +204,8 @@ def main() -> None:
         "--results-output",
         str(copy_dev_path),
     ]
+    if args.within_family_probe:
+        copy_command.append("--allow-split-overlap")
     _run(copy_command)
     copy_dev = _load_json(copy_dev_path)
 
@@ -262,6 +270,10 @@ def main() -> None:
                 ))
             if args.verify_checksums:
                 train_command.append("--verify-checksums")
+            if args.within_family_probe:
+                train_command.append("--allow-split-overlap")
+            if args.biochemical_edit_features:
+                train_command.append("--biochemical-edit-features")
             started = time.perf_counter()
             train_result = _last_json(_run(train_command).stdout)
             train_command_seconds = time.perf_counter() - started
@@ -286,6 +298,8 @@ def main() -> None:
                 "--results-output",
                 str(dev_path),
             ]
+            if args.within_family_probe:
+                dev_command.append("--allow-split-overlap")
             _run(dev_command)
             dev_result = _load_json(dev_path)
 
@@ -370,6 +384,7 @@ def main() -> None:
             "gradient_clip_norm": args.gradient_clip_norm,
             "mutation_loss_weight": args.mutation_loss_weight,
             "neighborhood_loss_weight": args.neighborhood_loss_weight,
+            "biochemical_edit_features": args.biochemical_edit_features,
             "max_normalized_delta": args.max_normalized_delta,
             "target_localization_radius": args.target_localization_radius,
             "target_localization_transition": args.target_localization_transition,
@@ -378,6 +393,7 @@ def main() -> None:
             "teacher_distillation": False,
             "device": args.device,
             "verify_checksums": args.verify_checksums,
+            "within_family_probe": args.within_family_probe,
             "train_records": train_count,
             "dev_records": dev_count,
         },

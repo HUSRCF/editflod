@@ -131,6 +131,11 @@ def main() -> None:
         action="store_true",
         help="Verify source/target checksums during manifest audit",
     )
+    parser.add_argument(
+        "--allow-split-overlap",
+        action="store_true",
+        help="Allow family/parent overlap only for an explicitly diagnostic split",
+    )
     parser.add_argument("--manifest", help="Evaluate all records in a JSON/JSONL manifest")
     parser.add_argument("--results-output", help="Write batch evaluation JSON to this path")
     parser.add_argument(
@@ -179,14 +184,14 @@ def main() -> None:
         parser.error("--manifest-append requires --manifest-output")
     if args.audit_manifest:
         records = load_manifest(args.audit_manifest)
-        errors = validate_manifest(records)
+        errors = validate_manifest(records, allow_split_overlap=args.allow_split_overlap)
         if args.verify_checksums:
             errors.extend(error for record in records for error in verify_record_checksums(record))
         print(json.dumps({"records": len(records), "errors": errors}, indent=2, allow_nan=False))
         raise SystemExit(1 if errors else 0)
     if args.manifest:
         records = load_manifest(args.manifest)
-        errors = validate_manifest(records)
+        errors = validate_manifest(records, allow_split_overlap=args.allow_split_overlap)
         if args.verify_checksums:
             errors.extend(error for record in records for error in verify_record_checksums(record))
         if errors:

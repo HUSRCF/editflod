@@ -2,7 +2,7 @@
 project:
   name: reference_preserving_protein_edit
   protocol_version: '0.2'
-  status: localized_regional_weighting_worsens_dev_generalization
+  status: biochemical_edit_features_do_not_fix_unseen_edit_propagation
   primary_question: can_a_structure_aware_one_pass_student_beat_copy_parent
 
 scope:
@@ -138,6 +138,11 @@ artifacts:
     student_localized_architecture_sweep: reports/protocol_v02_student_localized_architecture_sweep_v1.json
     student_localized_weighted_architecture_sweep: reports/protocol_v02_student_localized_weighted_architecture_sweep_v1.json
     student_localized_weighted_generalization: reports/protocol_v02_student_localized_weighted_generalization_v1.json
+    within_family_probe: reports/protocol_v02_within_family_probe_v1.json
+    student_within_family_architecture_sweep: reports/protocol_v02_student_within_family_architecture_sweep_v1.json
+    student_within_family_generalization: reports/protocol_v02_student_within_family_generalization_v1.json
+    student_within_family_biochemical_architecture_sweep: reports/protocol_v02_student_within_family_biochemical_architecture_sweep_v1.json
+    student_within_family_biochemical_generalization: reports/protocol_v02_student_within_family_biochemical_generalization_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -401,3 +406,80 @@ background_control_gate:
         - no_single_dev_family_explains_the_failed_aggregate
         - next_separate_seen_family_transfer_from_unseen_family_transfer
         - diagnostic_does_not_change_pair_selection_or_frozen_splits
+  within_family_endpoint_holdout:
+    configuration:
+      source_split: train
+      split_seed: 0
+      dev_endpoint_fraction: 0.2
+      train_records: 36
+      dev_records: 12
+      eligible_families: 4
+      excluded_single_endpoint_families: 6
+      excluded_records: 7
+      optimizer_steps_per_run: 3528
+      target_localization_radius_angstrom: 10.0
+      target_localization_transition_angstrom: 5.0
+      regional_loss_weighting: false
+      frozen_dev_or_test_records_used: 0
+    transformer_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.30199125899794693, std: 0.003614280125970781}
+      local_error_minus_copy_angstrom: {mean: 0.016681448172779074, std: 0.003614280125970781}
+      mutation_site_backbone_error_angstrom: {mean: 0.21615377482886258, std: 0.016669071196426813}
+      mutation_site_error_minus_copy_angstrom: {mean: -0.049451657370095874, std: 0.016669071196426813}
+      distance_change_cosine: {mean: 0.015360202557337936, std: 0.010175882295436823}
+    spatial_graph_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.3013274096058336, std: 0.011234835055273194}
+      local_error_minus_copy_angstrom: {mean: 0.016017598780665682, std: 0.011234835055273194}
+      mutation_site_backbone_error_angstrom: {mean: 0.29668888952610944, std: 0.02938219140111538}
+      mutation_site_error_minus_copy_angstrom: {mean: 0.03108345732715097, std: 0.02938219140111538}
+      distance_change_cosine: {mean: -0.017077083113539587, std: 0.017336060432003846}
+    directed_edit_coverage:
+      train_types: 31
+      dev_records_seen_exact_edit: 4
+      dev_records_unseen_exact_edit: 8
+      transformer_record_seed_local_delta_seen_angstrom: -0.010470520159042124
+      transformer_record_seed_local_delta_unseen_angstrom: 0.010951331766688393
+      transformer_record_seed_site_delta_seen_angstrom: -0.031185769785999257
+      transformer_record_seed_site_delta_unseen_angstrom: -0.013061250766361462
+    decision:
+      same_family_site_response_learned_by_transformer: true
+      same_family_neighborhood_noninferiority_passed: false
+      exact_edit_coverage_associated_with_local_transfer: true
+      next_intervention: fixed_biochemical_edit_feature_ablation
+      rationale:
+        - transformer_improves_site_error_in_all_three_family_macro_runs
+        - whole_local_neighborhood_and_distance_direction_remain_inadequate
+        - seen_exact_edits_improve_local_error_while_unseen_edits_regress
+        - test_fixed_transferable_edit_chemistry_before_larger_models
+  biochemical_edit_feature_ablation:
+    configuration:
+      same_split_localization_architectures_seeds_and_optimizer_steps: true
+      fixed_target_minus_source_descriptors: true
+      descriptor_channels: 7
+    transformer_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.3054086384668793, std: 0.002775089516993595}
+      local_error_minus_copy_angstrom: {mean: 0.020098827641711465, std: 0.002775089516993595}
+      mutation_site_backbone_error_angstrom: {mean: 0.24957994947351614, std: 0.00444679716539041}
+      mutation_site_error_minus_copy_angstrom: {mean: -0.016025482725442287, std: 0.00444679716539041}
+      distance_change_cosine: {mean: 0.021865038365535078, std: 0.01656002995540765}
+    spatial_graph_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.2938538632499637, std: 0.005681962889135166}
+      local_error_minus_copy_angstrom: {mean: 0.008544052424795815, std: 0.005681962889135167}
+      mutation_site_backbone_error_angstrom: {mean: 0.3198878583035698, std: 0.01718268757673798}
+      mutation_site_error_minus_copy_angstrom: {mean: 0.05428242610461137, std: 0.01718268757673798}
+      distance_change_cosine: {mean: -0.0034059162398969224, std: 0.004709103546981984}
+    directed_edit_coverage:
+      transformer_unseen_local_delta_angstrom: 0.010913786366313358
+      transformer_unseen_site_delta_angstrom: -0.02723443843489656
+      transformer_seen_local_delta_angstrom: -0.007436693979054863
+      transformer_seen_site_delta_angstrom: 0.0032250442841705723
+    decision:
+      selected_as_default: false
+      copy_parent_local_noninferiority_passed: false
+      unseen_edit_local_transfer_improved_materially: false
+      next_intervention: reverse_endpoint_training_augmentation
+      rationale:
+        - unseen_edit_local_regression_is_effectively_unchanged
+        - transformer_overall_local_and_site_results_worsen_from_default_features
+        - graph_local_regression_shrinks_but_site_error_worsens
+        - reverse_experimental_endpoints_expand_directed_edit_coverage_without_teacher_labels

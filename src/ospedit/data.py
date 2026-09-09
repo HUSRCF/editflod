@@ -554,7 +554,12 @@ def verify_record_checksums(record: PairRecord) -> list[str]:
     return errors
 
 
-def validate_manifest(records: Iterable[PairRecord], *, max_mutations: int | None = None) -> list[str]:
+def validate_manifest(
+    records: Iterable[PairRecord],
+    *,
+    max_mutations: int | None = None,
+    allow_split_overlap: bool = False,
+) -> list[str]:
     """Return protocol violations without mutating or dropping records."""
     if max_mutations is not None and max_mutations < 0:
         raise ValueError("max_mutations must be non-negative or None")
@@ -573,12 +578,13 @@ def validate_manifest(records: Iterable[PairRecord], *, max_mutations: int | Non
         seen_pairs.add(row.pair.pair_id)
         if row.split not in {"train", "dev", "test"}:
             errors.append(f"{row.pair.pair_id}: invalid split {row.split!r}")
-        previous = seen_groups.setdefault(row.family_id, row.split)
-        if previous != row.split:
-            errors.append(f"family {row.family_id!r} crosses {previous}/{row.split}")
-        previous_parent = seen_parents.setdefault(row.parent_id, row.split)
-        if previous_parent != row.split:
-            errors.append(f"parent {row.parent_id!r} crosses {previous_parent}/{row.split}")
+        if not allow_split_overlap:
+            previous = seen_groups.setdefault(row.family_id, row.split)
+            if previous != row.split:
+                errors.append(f"family {row.family_id!r} crosses {previous}/{row.split}")
+            previous_parent = seen_parents.setdefault(row.parent_id, row.split)
+            if previous_parent != row.split:
+                errors.append(f"parent {row.parent_id!r} crosses {previous_parent}/{row.split}")
         if row.label_source not in {"experimental", "synthetic", "teacher"}:
             errors.append(f"{row.pair.pair_id}: invalid label_source {row.label_source!r}")
         if not row.pair.mutation_indices:

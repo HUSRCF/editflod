@@ -1,0 +1,442 @@
+{
+  "configuration": {
+    "dev_fraction": 0.2,
+    "seed": 0
+  },
+  "families": [
+    {
+      "eligible": false,
+      "endpoint_groups": 1,
+      "family_id": "v02_family_0123349a5fb8",
+      "reason": "fewer_than_two_endpoint_groups",
+      "records": 2
+    },
+    {
+      "eligible": false,
+      "endpoint_groups": 1,
+      "family_id": "v02_family_28cd4576dfdb",
+      "reason": "fewer_than_two_endpoint_groups",
+      "records": 1
+    },
+    {
+      "assignments": [
+        {
+          "endpoint_group_id": "endpoint_group_1596f22c6b5d36df",
+          "pair_ids": [
+            "premut22p_1FDA_1A6L_A_T_13_C"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_f3489c7d15e3c89c",
+          "pair_ids": [
+            "premut22alt1_1FDA_1D3W_A_D_14_E"
+          ],
+          "split": "train"
+        }
+      ],
+      "dev_endpoint_groups": 1,
+      "eligible": true,
+      "endpoint_groups": 2,
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "records": 2,
+      "train_endpoint_groups": 1
+    },
+    {
+      "eligible": false,
+      "endpoint_groups": 1,
+      "family_id": "v02_family_607a3bb0349c",
+      "reason": "fewer_than_two_endpoint_groups",
+      "records": 1
+    },
+    {
+      "eligible": false,
+      "endpoint_groups": 1,
+      "family_id": "v02_family_7ae2a6204321",
+      "reason": "fewer_than_two_endpoint_groups",
+      "records": 1
+    },
+    {
+      "assignments": [
+        {
+          "endpoint_group_id": "endpoint_group_ccb305b2b3a093c1",
+          "pair_ids": [
+            "premut22alt1_2RN2_1KVB_A_D_133_H"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_cb2ee20cceabada3",
+          "pair_ids": [
+            "premut22n_2RN2_1KVA_A_D_133_A"
+          ],
+          "split": "train"
+        }
+      ],
+      "dev_endpoint_groups": 1,
+      "eligible": true,
+      "endpoint_groups": 2,
+      "family_id": "v02_family_a548251c30c2",
+      "records": 2,
+      "train_endpoint_groups": 1
+    },
+    {
+      "eligible": false,
+      "endpoint_groups": 1,
+      "family_id": "v02_family_c8b7ffd01e8a",
+      "reason": "fewer_than_two_endpoint_groups",
+      "records": 1
+    },
+    {
+      "assignments": [
+        {
+          "endpoint_group_id": "endpoint_group_40de565c95caec01",
+          "pair_ids": [
+            "premut23all_2LZM_1L04_A_T_156_D"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_f522c1e1adcefc47",
+          "pair_ids": [
+            "premut23all_2LZM_1L06_A_T_156_E"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_ac39cef0199e870a",
+          "pair_ids": [
+            "premut23all_2LZM_1L14_A_T_156_S"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_079af6630e99c25b",
+          "pair_ids": [
+            "premut23all_2LZM_1L32_A_P_85_S"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_0976dbc206f8982d",
+          "pair_ids": [
+            "premut23all_2LZM_1L31_A_P_85_R"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_dd62e5ea1c127062",
+          "pair_ids": [
+            "premut23all_2LZM_1L19_A_S_37_D"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_605b0356c4a35eea",
+          "pair_ids": [
+            "premut23all_2LZM_1L12_A_T_156_N"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_c98f228dd13478e7",
+          "pair_ids": [
+            "premut23all_2LZM_1L28_A_P_85_G"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_4fa5b9b1ef0f5158",
+          "pair_ids": [
+            "premut23all_2LZM_1L27_A_P_85_D"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_ac78c38c8536409a",
+          "pair_ids": [
+            "premut23all_2LZM_1L09_A_T_156_H"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_7b27f407b5f682a6",
+          "pair_ids": [
+            "premut23all_2LZM_1L25_A_P_85_A"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_3a1876d8416a7869",
+          "pair_ids": [
+            "premut23all_2LZM_1L16_A_G_155_D"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_e011b729e51b730d",
+          "pair_ids": [
+            "premut23all_2LZM_1L52_A_T_151_S"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_f5833f610f37873d",
+          "pair_ids": [
+            "premut23all_2LZM_1L30_A_P_85_L"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_054f2869c02b84d0",
+          "pair_ids": [
+            "premut23all_2LZM_1L23_A_G_76_A"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_cef21104069370e3",
+          "pair_ids": [
+            "microminer_1L25_A_1L28_A_A86G"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_54061d4533d42d3e",
+          "pair_ids": [
+            "premut23all_2LZM_1L22_A_K_123_G"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_1cd6aac5c3a7b8ad",
+          "pair_ids": [
+            "premut23all_2LZM_1L13_A_T_156_R"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_d3eee4af17d6c20b",
+          "pair_ids": [
+            "premut23all_2LZM_1L24_A_A_81_P"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_08ecdc85f5c18029",
+          "pair_ids": [
+            "premut23all_2LZM_1L34_A_R_95_H"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_9c477fa4aa11054b",
+          "pair_ids": [
+            "premut23all_2LZM_1L07_A_T_156_F"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_c6965857510756d3",
+          "pair_ids": [
+            "premut23all_2LZM_1L29_A_P_85_H"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_36a56f7af5ac4578",
+          "pair_ids": [
+            "premut23all_2LZM_1L15_A_T_156_V"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_cbd4c104ab61e4a6",
+          "pair_ids": [
+            "premut23all_2LZM_1L45_A_K_134_E"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_9e4feb375cf1c70f",
+          "pair_ids": [
+            "premut23all_2LZM_1L05_A_T_156_D"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_70b8956b449261eb",
+          "pair_ids": [
+            "premut23all_2LZM_1L47_A_R_153_E"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_814e9f4cf9c402cf",
+          "pair_ids": [
+            "premut23all_2LZM_1L20_A_N_143_D"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_6ac2a00a9ca221dd",
+          "pair_ids": [
+            "premut23all_2LZM_1L18_A_I_2_Y"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_90b0f2c51b35325c",
+          "pair_ids": [
+            "premut23all_2LZM_1L38_A_Q_122_E"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_1dd1a3d03366c5ac",
+          "pair_ids": [
+            "microminer_1DYE_A_1DYC_A_S131I"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_41ed9bb7740d3140",
+          "pair_ids": [
+            "microminer_1L04_A_1L09_A_D157H"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_e11a80253a0b9900",
+          "pair_ids": [
+            "premut23all_2LZM_1L46_A_K_146_E"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_ba9037c7a87e156a",
+          "pair_ids": [
+            "premut22p_1LYD_256L_A_M_5_I"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_e5f012735aa3cb6b",
+          "pair_ids": [
+            "premut23all_2LZM_1L33_A_V_130_A"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_2aba73df2d55a156",
+          "pair_ids": [
+            "premut23all_2LZM_1L43_A_K_15_E"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_8df7a273b97a38c4",
+          "pair_ids": [
+            "premut23all_2LZM_1L08_A_T_156_G"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_493fd07ec7c2abbf",
+          "pair_ids": [
+            "premut23all_2LZM_1L37_A_T_114_E"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_0541357c507b2080",
+          "pair_ids": [
+            "premut23all_2LZM_1L44_A_R_118_E"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_5d1c7f7c0b48c5b9",
+          "pair_ids": [
+            "premut23all_2LZM_1L17_A_I_2_V"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_b1b09a35e9d83706",
+          "pair_ids": [
+            "premut23all_2LZM_1L02_A_T_156_A",
+            "premut23ctx_2LZM_1L02_A_T_156_A"
+          ],
+          "split": "train"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_18054cb8aee5e476",
+          "pair_ids": [
+            "premut23all_2LZM_1L42_A_K_15_E"
+          ],
+          "split": "train"
+        }
+      ],
+      "dev_endpoint_groups": 9,
+      "eligible": true,
+      "endpoint_groups": 41,
+      "family_id": "v02_family_e40682d3a677",
+      "records": 42,
+      "train_endpoint_groups": 32
+    },
+    {
+      "assignments": [
+        {
+          "endpoint_group_id": "endpoint_group_fc9481f9eb14fed4",
+          "pair_ids": [
+            "platinum_3N0H_3S3V_A_S35K"
+          ],
+          "split": "dev"
+        },
+        {
+          "endpoint_group_id": "endpoint_group_d32a4a39930c1d97",
+          "pair_ids": [
+            "platinum_1U72_1DLS_A_L22Y"
+          ],
+          "split": "train"
+        }
+      ],
+      "dev_endpoint_groups": 1,
+      "eligible": true,
+      "endpoint_groups": 2,
+      "family_id": "v02_family_ea2e28f36573",
+      "records": 2,
+      "train_endpoint_groups": 1
+    },
+    {
+      "eligible": false,
+      "endpoint_groups": 1,
+      "family_id": "v02_family_fb83dc187d83",
+      "reason": "fewer_than_two_endpoint_groups",
+      "records": 1
+    }
+  ],
+  "format": "ospedit.within_family_probe_split.v1",
+  "frozen_dev_or_test_records_used": 0,
+  "interpretation": [
+    "diagnostic_only_not_a_replacement_for_frozen_dev",
+    "physical_endpoint_groups_never_cross_splits",
+    "all_probe_dev_families_are_represented_in_probe_train",
+    "excluded_single_endpoint_families_are_not_model_failures"
+  ],
+  "probe_manifest_fingerprint": "e9f5aca3c94ebe80b6ee813f9a780bc96f5a8f8021849af419f866f093da7968",
+  "selection_used_observed_response": false,
+  "source_manifest_fingerprint": "8a77b7dfe8f046fb9c4c2ba9b826983d404477fa460e198ee17f758cf3273353",
+  "summary": {
+    "dev_families": 4,
+    "dev_records": 12,
+    "eligible_families": 4,
+    "excluded_families": 6,
+    "excluded_records": 7,
+    "probe_records": 48,
+    "source_records": 55,
+    "train_families": 4,
+    "train_records": 36
+  }
+}

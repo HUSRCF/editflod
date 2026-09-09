@@ -28,6 +28,13 @@ def test_manifest_rejects_family_leakage(tmp_path):
     assert any("crosses" in error for error in errors)
 
 
+def test_manifest_can_explicitly_allow_diagnostic_split_overlap(tmp_path):
+    path = tmp_path / "manifest.json"
+    path.write_text(json.dumps([row("train"), row("dev")]))
+
+    assert validate_manifest(load_manifest(path), allow_split_overlap=True) == []
+
+
 def test_manifest_accepts_clean_jsonl(tmp_path):
     path = tmp_path / "manifest.jsonl"
     path.write_text(json.dumps(row("train")) + "\n")

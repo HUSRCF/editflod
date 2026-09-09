@@ -10,7 +10,7 @@ from typing import Any, Iterable
 
 import numpy as np
 
-from ospedit.data import file_sha256, json_safe
+from ospedit.data import PairRecord, file_sha256, json_safe, load_manifest
 
 
 REPORT_FORMAT = "ospedit.student_generalization_diagnostic.v1"
@@ -76,6 +76,8 @@ def _parse_spec(value: str) -> tuple[str, int, Path]:
 def analyze_evaluations(
     copy_payload: dict[str, Any],
     student_payloads: Iterable[tuple[str, int, dict[str, Any]]],
+    *,
+    record_annotations: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     copy_records = _index_records(copy_payload)
     grouped: dict[str, list[tuple[int, dict[str, dict[str, Any]]]]] = defaultdict(list)
@@ -104,6 +106,9 @@ def analyze_evaluations(
         by_family_values: dict[str, dict[str, list[float]]] = defaultdict(
             lambda: defaultdict(list)
         )
+        by_edit_coverage: dict[str, dict[str, list[float]]] = defaultdict(
+            lambda: defaultdict(list)
+        )
         for pair_id, copy_row in sorted(copy_records.items()):
             family_id = str(copy_row["family_id"])
             copy_metrics = copy_row["metrics"]
@@ -123,6 +128,15 @@ def analyze_evaluations(
                         row[f"student_minus_copy_{metric}"] = delta
                         pair_deltas[metric].append(delta)
                         by_family_values[family_id][metric].append(delta)
+                        if record_annotations is not None:
+                            coverage = (
+                                "seen"
+                                if record_annotations[pair_id][
+                                    "directed_edit_seen_in_train"
+                                ]
+                                else "unseen"
+                            )
+                            by_edit_coverage[coverage][metric].append(delta)
                 comparisons.append(row)
             by_pair[pair_id] = {
                 "family_id": family_id,
@@ -137,6 +151,9 @@ def analyze_evaluations(
                     metric: sum(value < 0 for value in pair_deltas[metric])
                     for metric in ERROR_METRICS
                 },
+                "annotation": (
+                    record_annotations.get(pair_id) if record_annotations else None
+                ),
             }
         by_family = {
             family_id: {
@@ -167,6 +184,13 @@ def analyze_evaluations(
             ]["improved"]
             == 0,
             "by_family_student_minus_copy": by_family,
+            "by_train_edit_coverage_student_minus_copy": {
+                coverage: {
+                    metric: _summary(values)
+                    for metric, values in sorted(metrics.items())
+                }
+                for coverage, metrics in sorted(by_edit_coverage.items())
+            },
             "by_pair": by_pair,
         }
     return {
@@ -180,9 +204,44 @@ def analyze_evaluations(
     }
 
 
+def _directed_edit(record: PairRecord) -> str:
+    return ",".join(
+        f"{record.pair.parent_sequence[index]}>{record.pair.mutant_sequence[index]}"
+        for index in record.pair.mutation_indices
+    )
+
+
+def _edit_annotations(
+    records: Iterable[PairRecord], pair_ids: set[str]
+) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
+    rows = list(records)
+    train_edits = {_directed_edit(record) for record in rows if record.split == "train"}
+    indexed = {record.pair.pair_id: record for record in rows}
+    missing = pair_ids - set(indexed)
+    if missing:
+        raise ValueError("manifest misses evaluated pairs: " + ", ".join(sorted(missing)))
+    annotations = {
+        pair_id: {
+            "directed_edit": _directed_edit(indexed[pair_id]),
+            "directed_edit_seen_in_train": _directed_edit(indexed[pair_id]) in train_edits,
+        }
+        for pair_id in sorted(pair_ids)
+    }
+    return annotations, {
+        "train_directed_edit_types": len(train_edits),
+        "evaluated_records_seen_in_train": sum(
+            row["directed_edit_seen_in_train"] for row in annotations.values()
+        ),
+        "evaluated_records_unseen_in_train": sum(
+            not row["directed_edit_seen_in_train"] for row in annotations.values()
+        ),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--copy-report", required=True)
+    parser.add_argument("--manifest")
     parser.add_argument(
         "--student-report",
         action="append",
@@ -195,10 +254,20 @@ def main() -> None:
 
     copy_path = Path(args.copy_report)
     student_specs: list[tuple[str, int, Path]] = args.student_report
+    copy_payload = _load(copy_path)
+    copy_pair_ids = set(_index_records(copy_payload))
+    annotations = None
+    edit_coverage = None
+    if args.manifest:
+        annotations, edit_coverage = _edit_annotations(
+            load_manifest(args.manifest), copy_pair_ids
+        )
     report = analyze_evaluations(
-        _load(copy_path),
+        copy_payload,
         [(architecture, seed, _load(path)) for architecture, seed, path in student_specs],
+        record_annotations=annotations,
     )
+    report["edit_coverage"] = edit_coverage
     report["inputs"] = {
         "copy_report": {"path": str(copy_path.resolve()), "sha256": file_sha256(copy_path)},
         "student_reports": [
@@ -210,6 +279,14 @@ def main() -> None:
             }
             for architecture, seed, path in student_specs
         ],
+        "manifest": (
+            {
+                "path": str(Path(args.manifest).resolve()),
+                "sha256": file_sha256(args.manifest),
+            }
+            if args.manifest
+            else None
+        ),
     }
     destination = Path(args.output)
     destination.parent.mkdir(parents=True, exist_ok=True)

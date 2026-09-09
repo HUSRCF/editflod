@@ -852,6 +852,24 @@ The diagnostic requires identical pair IDs, family assignments, split, and
 metric schema. It reports every record-seed comparison and never changes data
 selection.
 
+Build a diagnostic endpoint holdout within training families:
+
+```bash
+python scripts/build_within_family_probe.py \
+  /path/to/structure_prediction_layer.jsonl \
+  /tmp/within_family_probe.jsonl reports/within_family_probe.json \
+  --dev-fraction 0.2 --seed 0
+```
+
+Only families with at least two physical endpoint groups are eligible, and a
+group never crosses the probe split. Use `--within-family-probe` on the
+architecture sweep to enable the otherwise forbidden family/parent overlap.
+This flag marks a mechanism diagnostic and must not be used for final
+generalization claims.
+Use `--biochemical-edit-features` on the sweep only for the corresponding fixed
+input ablation; it is recorded in the report configuration and is not enabled
+by default.
+
 Add a same-manifest development evaluation after training:
 
 ```bash

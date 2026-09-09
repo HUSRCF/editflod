@@ -156,6 +156,11 @@ def main() -> None:
     parser.add_argument("--no-shuffle", action="store_true")
     parser.add_argument("--allow-nonexperimental", action="store_true")
     parser.add_argument("--verify-checksums", action="store_true")
+    parser.add_argument(
+        "--allow-split-overlap",
+        action="store_true",
+        help="Allow family/parent overlap only for an explicitly diagnostic split",
+    )
     args = parser.parse_args()
     if args.ablate_target_residue and args.biochemical_edit_features:
         parser.error("--ablate-target-residue cannot be combined with --biochemical-edit-features")
@@ -169,7 +174,7 @@ def main() -> None:
     torch.manual_seed(args.seed)
 
     records = load_manifest(args.manifest)
-    errors = validate_manifest(records)
+    errors = validate_manifest(records, allow_split_overlap=args.allow_split_overlap)
     if args.verify_checksums:
         errors.extend(error for record in records for error in verify_record_checksums(record))
     if errors:

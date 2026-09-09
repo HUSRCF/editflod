@@ -1,6 +1,8 @@
+import numpy as np
 import pytest
 
-from scripts.analyze_student_generalization import analyze_evaluations
+from ospedit.data import PairRecord, StructurePair
+from scripts.analyze_student_generalization import _edit_annotations, analyze_evaluations
 
 
 def _evaluation(local: float, site: float, *, family: str = "family"):
@@ -56,3 +58,30 @@ def test_generalization_diagnostic_rejects_mismatched_metric_schema():
 
     with pytest.raises(ValueError, match="same metric schema"):
         analyze_evaluations(_evaluation(1.0, 1.0), [("graph", 0, student)])
+
+
+def test_edit_annotations_report_seen_and_unseen_directed_edits():
+    def record(pair_id, split, target):
+        return PairRecord(
+            pair=StructurePair(
+                pair_id=pair_id,
+                parent_sequence="AA",
+                mutant_sequence=f"A{target}",
+                parent_coords=np.zeros((2, 1, 3)),
+                mutant_coords=np.zeros((2, 1, 3)),
+                mutation_indices=(1,),
+                atom_names=("CA",),
+            ),
+            parent_id=pair_id,
+            family_id=pair_id,
+            split=split,
+        )
+
+    annotations, summary = _edit_annotations(
+        [record("train", "train", "C"), record("seen", "dev", "C"), record("unseen", "dev", "D")],
+        {"seen", "unseen"},
+    )
+
+    assert annotations["seen"]["directed_edit_seen_in_train"] is True
+    assert annotations["unseen"]["directed_edit_seen_in_train"] is False
+    assert summary["evaluated_records_seen_in_train"] == 1

@@ -487,3 +487,47 @@ This is not a replacement for frozen dev. It separates two hypotheses: failure
 to transfer even within a represented family points back to representation or
 targets, while within-family success combined with unseen-family failure points
 to coverage and the need for transferable pretrained context.
+
+### Within-family endpoint holdout
+
+A response-independent diagnostic was built from the original training split.
+Only four families had at least two physical endpoint groups; six single-group
+families (seven records) were excluded. The resulting probe contains 36 train
+and 12 dev records, with every dev family represented in train and no endpoint
+group crossing the boundary. Frozen dev and test records were not used. Runs
+used 98 epochs, or 3,528 optimizer steps, to match the prior 3,520-step budget.
+
+The Transformer improved mutation-site family-macro error in all three seeds,
+from copy-parent 0.2656 to 0.2162 +/- 0.0167 Angstrom. It still worsened the
+whole local neighborhood by 0.0167 Angstrom and produced only 0.0154 mean
+distance-change cosine. The spatial graph worsened both local and site error.
+Thus a site-level response is learnable inside represented families, but the
+current models do not transfer a coherent neighborhood update.
+
+Exact directed substitutions are also sparse: only 4/12 probe-dev records use
+an edit observed in probe train. Across record-seed comparisons, Transformer
+local error improves by 0.0105 Angstrom for seen edits and worsens by 0.0110 for
+unseen edits. Site error improves in both strata, by 0.0312 and 0.0131 Angstrom.
+The next fixed ablation will expose the existing physicochemical edit-difference
+features. This tests transferable mutation chemistry without changing the split,
+loss, architecture budget, or endpoint selection.
+
+### Biochemical edit-feature ablation
+
+Adding the seven fixed target-minus-source physicochemical channels did not pass
+the within-family gate. Transformer local error increased to 0.3054 Angstrom,
+or 0.0201 worse than copy, and its site improvement shrank from 0.0495 to 0.0160
+Angstrom. The graph's local regression decreased from 0.0160 to 0.0085 Angstrom,
+but its site regression increased from 0.0311 to 0.0543.
+
+For unseen directed edits, Transformer local regression was essentially
+unchanged (0.01095 to 0.01091 Angstrom). Its unseen-edit site improvement grew,
+but the seen-edit site delta changed from -0.0312 to +0.0032 Angstrom. The fixed
+descriptor set therefore does not provide a stable transferable edit encoding
+and is not selected as the default.
+
+The next intervention will augment training with the reverse direction of each
+experimental endpoint pair while leaving dev directions untouched. Reverse
+examples are not independent evidence and will remain in the same endpoint
+group for weighting. They expand probe-train directed edit types from 31 to 58
+without adding teacher labels or crossing endpoint splits.
