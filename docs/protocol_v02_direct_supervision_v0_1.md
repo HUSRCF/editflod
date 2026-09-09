@@ -263,3 +263,23 @@ manual review, but cannot define training weights or a held-out benchmark. The
 tracked RCSB endpoint/control reports, review queue, and static decisions make
 that evidence chain reproducible without treating endpoint-derived information
 as an inference feature.
+
+### Endpoint provenance queue and mutation annotations
+
+A second review queue deliberately excludes observed response magnitude. It
+contains the 17 same-primary-citation, crystal-form-compatible endpoints (14
+train, one dev, two frozen test) and records whether the deposited crystal-growth
+signatures also match. Four satisfy that stronger declared-growth tier.
+
+Legacy PDB `SEQADV` engineered-mutation records were compared with each manifest
+edit. They support 91/101 edits directly or through two annotated variants at
+the same site; six pairs have no usable engineered-mutation annotation; four
+pairs contain annotations only at other sites. Absence is not a rejection
+because `SEQADV` is optional. The four discrepancies are manual-review flags.
+
+One flag is already confirmed as a provenance mismatch:
+`microminer_5FNX_A_5FZU_A_K177E` compares two N19D inhibitor structures at
+different pH values, while the manifest edit is a K177E sequence discrepancy at
+author residue 177. It is not a controlled K177E mutation endpoint and must not
+be used for mutation-response claims. This finding motivates a source-level
+annotation gate for newly discovered structural-neighbor pairs.

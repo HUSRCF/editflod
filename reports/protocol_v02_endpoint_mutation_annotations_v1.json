@@ -1,0 +1,4001 @@
+{
+  "format": "ospedit.endpoint_mutation_annotation_audit.v1",
+  "limitations": [
+    "legacy_seqadv_annotations_are_optional_and_incomplete",
+    "absence_of_seqadv_does_not_mean_the_edit_is_invalid",
+    "residue_map_is_assumed_to_use_shared_parent_mutant_author_numbering",
+    "other_engineered_mutation_only_requires_manual_construct_review"
+  ],
+  "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "records": [
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 59,
+          "insertion_code": "",
+          "residue_number": 60,
+          "source": "D",
+          "target": "N"
+        }
+      ],
+      "family_id": "v02_family_0123349a5fb8",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 60
+        }
+      ],
+      "pair_id": "premut22_1ERT_1AIU_A_D_59_N",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1ERT_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 72,
+          "insertion_code": "",
+          "residue_number": 73,
+          "source": "C",
+          "target": "S"
+        }
+      ],
+      "family_id": "v02_family_0123349a5fb8",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 73
+        }
+      ],
+      "pair_id": "premut22alt1_1ERT_1ERV_A_C_72_S",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1ERT_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 59,
+          "insertion_code": "",
+          "residue_number": 60,
+          "source": "D",
+          "target": "N"
+        }
+      ],
+      "family_id": "v02_family_0123349a5fb8",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 60
+        }
+      ],
+      "pair_id": "premut22p_1ERT_1AIU_A_D_59_N",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1ERT_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 99,
+          "insertion_code": "",
+          "residue_number": 100,
+          "source": "D",
+          "target": "N"
+        }
+      ],
+      "family_id": "v02_family_204bcfd23f04",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 100
+        }
+      ],
+      "pair_id": "premut22alt1_1CZL_1CZK_A_D_99_N",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1CZL_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "X",
+          "index": 97,
+          "insertion_code": "",
+          "residue_number": 98,
+          "source": "F",
+          "target": "Y"
+        }
+      ],
+      "family_id": "v02_family_260dd007d20d",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "X",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "F",
+          "reference_residue_name": "PHE",
+          "residue_number": 98
+        }
+      ],
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "3FYW_X",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 57,
+          "insertion_code": "",
+          "residue_number": 58,
+          "source": "D",
+          "target": "P"
+        }
+      ],
+      "family_id": "v02_family_28cd4576dfdb",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "P",
+          "deposited_residue_name": "PRO",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 58
+        }
+      ],
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "5NLL_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 56,
+          "insertion_code": "",
+          "residue_number": 57,
+          "source": "G",
+          "target": "T"
+        }
+      ],
+      "family_id": "v02_family_28cd4576dfdb",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "T",
+          "deposited_residue_name": "THR",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 57
+        }
+      ],
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "5NLL_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 25,
+          "insertion_code": "",
+          "residue_number": 26,
+          "source": "V",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 26
+        }
+      ],
+      "pair_id": "premut22alt1_1AZQ_1WTW_A_V_25_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1AZQ_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 194,
+          "insertion_code": "",
+          "residue_number": 195,
+          "source": "S",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 195
+        }
+      ],
+      "pair_id": "premut22m_1DUA_1DUE_A_S_194_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1DUA_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 28,
+          "insertion_code": "",
+          "residue_number": 29,
+          "source": "M",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "M",
+          "reference_residue_name": "MET",
+          "residue_number": 29
+        }
+      ],
+      "pair_id": "premut22p_1AZQ_1WTR_A_M_28_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1AZQ_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 11,
+          "insertion_code": "",
+          "residue_number": 12,
+          "source": "G",
+          "target": "V"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 12
+        }
+      ],
+      "pair_id": "premut22p_1Q21_2Q21_A_G_11_V",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1Q21_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 53,
+          "insertion_code": "",
+          "residue_number": 66,
+          "source": "V",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 23
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 66
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "pair_id": "microminer_4KHV_A_4ME5_A_V66A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 23
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "parent_id": "4KHV_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 75,
+          "insertion_code": "",
+          "residue_number": 77,
+          "source": "M",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "M",
+          "reference_residue_name": "MET",
+          "residue_number": 77
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "C",
+          "deposited_residue_name": "CYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 166
+        }
+      ],
+      "pair_id": "microminer_3U6C_A_4G4O_A_M77A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "C",
+          "deposited_residue_name": "CYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 166
+        }
+      ],
+      "parent_id": "3U6C_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 29,
+          "insertion_code": "",
+          "residue_number": 36,
+          "source": "E",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "L",
+          "reference_residue_name": "LEU",
+          "residue_number": 36
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 66
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "pair_id": "microminer_5CV9_A_5IGB_A_E36D",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "L",
+          "reference_residue_name": "LEU",
+          "residue_number": 36
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 66
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "parent_id": "5CV9_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 79,
+          "insertion_code": "",
+          "residue_number": 92,
+          "source": "K",
+          "target": "H"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 92
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "pair_id": "microminer_5E3F_A_5C4H_A_K92H",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "K",
+          "deposited_residue_name": "LYS",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 92
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "parent_id": "5E3F_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 16,
+          "insertion_code": "",
+          "residue_number": 23,
+          "source": "V",
+          "target": "T"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "T",
+          "deposited_residue_name": "THR",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 23
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "K",
+          "reference_residue_name": "LYS",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "pair_id": "microminer_3BDC_A_6XSC_A_V23T",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 50
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 51
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 117
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 124
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 128
+        }
+      ],
+      "parent_id": "3BDC_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "other_engineered_mutation_only",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 1,
+          "insertion_code": "",
+          "residue_number": 3,
+          "source": "E",
+          "target": "Q"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "C",
+          "deposited_residue_name": "CYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 166
+        }
+      ],
+      "pair_id": "microminer_3GO8_A_3U6D_A_E3Q",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "C",
+          "deposited_residue_name": "CYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 166
+        }
+      ],
+      "parent_id": "3GO8_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 43,
+          "insertion_code": "",
+          "residue_number": 45,
+          "source": "V",
+          "target": "I"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_4O52_A_4O4V_A_V45I",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 45
+        }
+      ],
+      "parent_id": "4O52_A",
+      "reverse_support": true,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 11,
+          "insertion_code": "",
+          "residue_number": 12,
+          "source": "R",
+          "target": "P"
+        }
+      ],
+      "family_id": "v02_family_2be082f68809",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "P",
+          "deposited_residue_name": "PRO",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 12
+        }
+      ],
+      "pair_id": "microminer_421P_A_821P_A_R12P",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "R",
+          "deposited_residue_name": "ARG",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 12
+        }
+      ],
+      "parent_id": "421P_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 14,
+          "insertion_code": "",
+          "residue_number": 15,
+          "source": "D",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 15
+        }
+      ],
+      "pair_id": "premut22alt1_1FDA_1D3W_A_D_14_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1FDA_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 13,
+          "insertion_code": "",
+          "residue_number": 14,
+          "source": "T",
+          "target": "C"
+        }
+      ],
+      "family_id": "v02_family_2f4c6b5fd2fc",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "C",
+          "deposited_residue_name": "CYS",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 14
+        }
+      ],
+      "pair_id": "premut22p_1FDA_1A6L_A_T_13_C",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1FDA_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 84,
+          "insertion_code": "",
+          "residue_number": 85,
+          "source": "E",
+          "target": "R"
+        }
+      ],
+      "family_id": "v02_family_3da1b9ebba69",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "R",
+          "deposited_residue_name": "ARG",
+          "insertion_code": "",
+          "reference_residue": "E",
+          "reference_residue_name": "GLU",
+          "residue_number": 85
+        }
+      ],
+      "pair_id": "premut22m_1QD2_1GIU_A_E_84_R",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1QD2_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 45,
+          "insertion_code": "",
+          "residue_number": 46,
+          "source": "V",
+          "target": "L"
+        }
+      ],
+      "family_id": "v02_family_3da1b9ebba69",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 46
+        }
+      ],
+      "pair_id": "premut22q_4VUB_7EPJ_A_V_45_L",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "4VUB_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 44,
+          "insertion_code": "",
+          "residue_number": 45,
+          "source": "E",
+          "target": "S"
+        }
+      ],
+      "family_id": "v02_family_412a8d76b44d",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "E",
+          "reference_residue_name": "GLU",
+          "residue_number": 45
+        }
+      ],
+      "pair_id": "premut22n_1BV1_1LLT_A_E_44_S",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1BV1_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 91,
+          "insertion_code": "",
+          "residue_number": 92,
+          "source": "N",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_4f29116d3b64",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 92
+        }
+      ],
+      "pair_id": "premut22q_3X2L_3X2G_A_N_91_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "3X2L_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 46,
+          "insertion_code": "",
+          "residue_number": 47,
+          "source": "G",
+          "target": "S"
+        }
+      ],
+      "family_id": "v02_family_54f812ae22f4",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 47
+        }
+      ],
+      "pair_id": "premut22alt1_1CDH_1CDY_A_G_46_S",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1CDH_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 42,
+          "insertion_code": "",
+          "residue_number": 43,
+          "source": "F",
+          "target": "V"
+        }
+      ],
+      "family_id": "v02_family_54f812ae22f4",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "F",
+          "reference_residue_name": "PHE",
+          "residue_number": 43
+        }
+      ],
+      "pair_id": "premut22p_1CDH_1CDU_A_F_42_V",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1CDH_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 41,
+          "insertion_code": "",
+          "residue_number": 42,
+          "source": "Y",
+          "target": "F"
+        }
+      ],
+      "family_id": "v02_family_5c932f233753",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "Y",
+          "reference_residue_name": "TYR",
+          "residue_number": 42
+        }
+      ],
+      "pair_id": "premut22alt1_2PHY_1F9I_A_Y_41_F",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2PHY_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 45,
+          "insertion_code": "",
+          "residue_number": 46,
+          "source": "E",
+          "target": "Q"
+        }
+      ],
+      "family_id": "v02_family_5c932f233753",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "E",
+          "reference_residue_name": "GLU",
+          "residue_number": 46
+        }
+      ],
+      "pair_id": "microminer_1TS0_A_1OT6_A_E46Q",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1TS0_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 79,
+          "insertion_code": "",
+          "residue_number": 80,
+          "source": "P",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_607a3bb0349c",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 80
+        }
+      ],
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "3PAZ_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 79,
+          "insertion_code": "",
+          "residue_number": 80,
+          "source": "P",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_607a3bb0349c",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 80
+        }
+      ],
+      "pair_id": "premut22q_3PAZ_4PAZ_A_P_79_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "3PAZ_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 89,
+          "insertion_code": "",
+          "residue_number": 90,
+          "source": "A",
+          "target": "G"
+        }
+      ],
+      "family_id": "v02_family_6c0799e5f926",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 14
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 81
+        }
+      ],
+      "pair_id": "microminer_1JD3_A_1TT8_A_A90G",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 14
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 81
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 90
+        }
+      ],
+      "parent_id": "1JD3_A",
+      "reverse_support": true,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 120,
+          "insertion_code": "",
+          "residue_number": 121,
+          "source": "L",
+          "target": "M"
+        }
+      ],
+      "family_id": "v02_family_7ae2a6204321",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 39
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 54
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 59
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "K",
+          "deposited_residue_name": "LYS",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 111
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "M",
+          "deposited_residue_name": "MET",
+          "insertion_code": "",
+          "reference_residue": "L",
+          "reference_residue_name": "LEU",
+          "residue_number": 121
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 132
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "Y",
+          "reference_residue_name": "TYR",
+          "residue_number": 134
+        }
+      ],
+      "pair_id": "microminer_4YGH_A_6NNX_A_L121M",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 39
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 54
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 59
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "K",
+          "deposited_residue_name": "LYS",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 111
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 132
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "Y",
+          "reference_residue_name": "TYR",
+          "residue_number": 134
+        }
+      ],
+      "parent_id": "4YGH_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 97,
+          "insertion_code": "",
+          "residue_number": 98,
+          "source": "I",
+          "target": "M"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "M",
+          "deposited_residue_name": "MET",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 98
+        }
+      ],
+      "pair_id": "microminer_1HSW_A_1IR9_A_I98M",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1HSW_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 58,
+          "insertion_code": "",
+          "residue_number": 59,
+          "source": "N",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 59
+        }
+      ],
+      "pair_id": "microminer_1HEL_A_3A3Q_A_N59D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1HEL_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "no_engineered_seqadv_annotation",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 61,
+          "insertion_code": "",
+          "residue_number": 62,
+          "source": "W",
+          "target": "Y"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_2ZQ4_A_1LZE_A_W62Y",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2ZQ4_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "no_engineered_seqadv_annotation",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 46,
+          "insertion_code": "",
+          "residue_number": 47,
+          "source": "P",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_1LHL_A_1LZ1_A_P47A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1LHL_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "no_engineered_seqadv_annotation",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 54,
+          "insertion_code": "",
+          "residue_number": 55,
+          "source": "I",
+          "target": "V"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_1AKI_A_1HEO_A_I55V",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1AKI_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "no_engineered_seqadv_annotation",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 114,
+          "insertion_code": "",
+          "residue_number": 115,
+          "source": "R",
+          "target": "H"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_1REX_A_133L_A_R115H",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1REX_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 73,
+          "insertion_code": "",
+          "residue_number": 74,
+          "source": "V",
+          "target": "M"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "M",
+          "deposited_residue_name": "MET",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 74
+        }
+      ],
+      "pair_id": "microminer_2ZIL_A_1GB8_A_V74M",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2ZIL_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 26,
+          "insertion_code": "",
+          "residue_number": 27,
+          "source": "N",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 27
+        }
+      ],
+      "pair_id": "microminer_1BVX_A_1KXW_A_N27D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1BVX_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 58,
+          "insertion_code": "",
+          "residue_number": 59,
+          "source": "L",
+          "target": "V"
+        }
+      ],
+      "family_id": "v02_family_987a40463804",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 59
+        }
+      ],
+      "pair_id": "microminer_2MEE_A_1YAP_A_L59V",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 59
+        }
+      ],
+      "parent_id": "2MEE_A",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "U",
+          "index": 93,
+          "insertion_code": "",
+          "residue_number": 99,
+          "source": "H",
+          "target": "Y"
+        }
+      ],
+      "family_id": "v02_family_9d078f57ed0d",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "U",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "H",
+          "reference_residue_name": "HIS",
+          "residue_number": 99
+        },
+        {
+          "chain": "U",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 122
+        },
+        {
+          "chain": "U",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 145
+        }
+      ],
+      "pair_id": "microminer_5ZA7_U_6JYP_U_H99Y",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "U",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 122
+        },
+        {
+          "chain": "U",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 145
+        }
+      ],
+      "parent_id": "5ZA7_U",
+      "reverse_support": false,
+      "split": "dev"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 117,
+          "insertion_code": "",
+          "residue_number": 118,
+          "source": "S",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_a515d2e6f827",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "X",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 118
+        }
+      ],
+      "pair_id": "microminer_8I6L_A_8I8U_X_S118A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "8I6L_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 133,
+          "insertion_code": "",
+          "residue_number": 134,
+          "source": "D",
+          "target": "H"
+        }
+      ],
+      "family_id": "v02_family_a548251c30c2",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 134
+        }
+      ],
+      "pair_id": "premut22alt1_2RN2_1KVB_A_D_133_H",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2RN2_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 133,
+          "insertion_code": "",
+          "residue_number": 134,
+          "source": "D",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_a548251c30c2",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 134
+        }
+      ],
+      "pair_id": "premut22n_2RN2_1KVA_A_D_133_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2RN2_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 67,
+          "insertion_code": "",
+          "residue_number": 84,
+          "source": "N",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_c322e5df7c9a",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 84
+        }
+      ],
+      "pair_id": "microminer_1AGY_A_1FFA_A_N84A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1AGY_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 34,
+          "insertion_code": "",
+          "residue_number": 35,
+          "source": "N",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_c8b7ffd01e8a",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 35
+        }
+      ],
+      "pair_id": "premut22_1BVV_1C5H_A_N_34_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1BVV_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 42,
+          "insertion_code": "",
+          "residue_number": 44,
+          "source": "N",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_c8b7ffd01e8a",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 44
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "E",
+          "reference_residue_name": "GLU",
+          "residue_number": 177
+        }
+      ],
+      "pair_id": "microminer_4HKO_A_6JUG_A_N44E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "E",
+          "reference_residue_name": "GLU",
+          "residue_number": 177
+        }
+      ],
+      "parent_id": "4HKO_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "other_engineered_mutation_only",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 174,
+          "insertion_code": "",
+          "residue_number": 177,
+          "source": "K",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_cf7defecbfbc",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 19
+        }
+      ],
+      "pair_id": "microminer_5FNX_A_5FZU_A_K177E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "5FNX_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 87,
+          "insertion_code": "",
+          "residue_number": 88,
+          "source": "R",
+          "target": "Q"
+        }
+      ],
+      "family_id": "v02_family_d12b0c64f68a",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "Q",
+          "deposited_residue_name": "GLN",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 88
+        }
+      ],
+      "pair_id": "premut22n_2INT_1HIJ_A_R_87_Q",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2INT_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 14,
+          "insertion_code": "",
+          "residue_number": 16,
+          "source": "S",
+          "target": "Y"
+        }
+      ],
+      "family_id": "v02_family_e3ec45fb6212",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_1WLW_A_1IS3_A_S16Y",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "Y",
+          "reference_residue_name": "TYR",
+          "residue_number": 16
+        }
+      ],
+      "parent_id": "1WLW_A",
+      "reverse_support": true,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L02_A_T_156_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L04_A_T_156_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L05_A_T_156_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L06_A_T_156_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "F"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L07_A_T_156_F",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "G"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L08_A_T_156_G",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "H"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L09_A_T_156_H",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "N"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L12_A_T_156_N",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "R"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "R",
+          "deposited_residue_name": "ARG",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L13_A_T_156_R",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "S"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L14_A_T_156_S",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "V"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L15_A_T_156_V",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 155,
+          "insertion_code": "",
+          "residue_number": 156,
+          "source": "G",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 156
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L16_A_G_155_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 2,
+          "insertion_code": "",
+          "residue_number": 3,
+          "source": "I",
+          "target": "V"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 3
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L17_A_I_2_V",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 2,
+          "insertion_code": "",
+          "residue_number": 3,
+          "source": "I",
+          "target": "Y"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "I",
+          "reference_residue_name": "ILE",
+          "residue_number": 3
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L18_A_I_2_Y",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 37,
+          "insertion_code": "",
+          "residue_number": 38,
+          "source": "S",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 38
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L19_A_S_37_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 143,
+          "insertion_code": "",
+          "residue_number": 144,
+          "source": "N",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 144
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L20_A_N_143_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 123,
+          "insertion_code": "",
+          "residue_number": 124,
+          "source": "K",
+          "target": "G"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "K",
+          "reference_residue_name": "LYS",
+          "residue_number": 124
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L22_A_K_123_G",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 76,
+          "insertion_code": "",
+          "residue_number": 77,
+          "source": "G",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 77
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L23_A_G_76_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 81,
+          "insertion_code": "",
+          "residue_number": 82,
+          "source": "A",
+          "target": "P"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "P",
+          "deposited_residue_name": "PRO",
+          "insertion_code": "",
+          "reference_residue": "A",
+          "reference_residue_name": "ALA",
+          "residue_number": 82
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L24_A_A_81_P",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "P",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L25_A_P_85_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "P",
+          "target": "D"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L27_A_P_85_D",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "P",
+          "target": "G"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L28_A_P_85_G",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "P",
+          "target": "H"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L29_A_P_85_H",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "P",
+          "target": "L"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "L",
+          "deposited_residue_name": "LEU",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L30_A_P_85_L",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "P",
+          "target": "R"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "R",
+          "deposited_residue_name": "ARG",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L31_A_P_85_R",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "P",
+          "target": "S"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L32_A_P_85_S",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 130,
+          "insertion_code": "",
+          "residue_number": 131,
+          "source": "V",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "V",
+          "reference_residue_name": "VAL",
+          "residue_number": 131
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L33_A_V_130_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 95,
+          "insertion_code": "",
+          "residue_number": 96,
+          "source": "R",
+          "target": "H"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 96
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L34_A_R_95_H",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 114,
+          "insertion_code": "",
+          "residue_number": 115,
+          "source": "T",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 115
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L37_A_T_114_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 122,
+          "insertion_code": "",
+          "residue_number": 123,
+          "source": "Q",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 123
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L38_A_Q_122_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 15,
+          "insertion_code": "",
+          "residue_number": 16,
+          "source": "K",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "K",
+          "reference_residue_name": "LYS",
+          "residue_number": 16
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L42_A_K_15_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 15,
+          "insertion_code": "",
+          "residue_number": 16,
+          "source": "K",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "K",
+          "reference_residue_name": "LYS",
+          "residue_number": 16
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L43_A_K_15_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 118,
+          "insertion_code": "",
+          "residue_number": 119,
+          "source": "R",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 119
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L44_A_R_118_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 134,
+          "insertion_code": "",
+          "residue_number": 135,
+          "source": "K",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "K",
+          "reference_residue_name": "LYS",
+          "residue_number": 135
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L45_A_K_134_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 146,
+          "insertion_code": "",
+          "residue_number": 147,
+          "source": "K",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "K",
+          "reference_residue_name": "LYS",
+          "residue_number": 147
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L46_A_K_146_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 153,
+          "insertion_code": "",
+          "residue_number": 154,
+          "source": "R",
+          "target": "E"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "E",
+          "deposited_residue_name": "GLU",
+          "insertion_code": "",
+          "reference_residue": "R",
+          "reference_residue_name": "ARG",
+          "residue_number": 154
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L47_A_R_153_E",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 151,
+          "insertion_code": "",
+          "residue_number": 152,
+          "source": "T",
+          "target": "S"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 152
+        }
+      ],
+      "pair_id": "premut23all_2LZM_1L52_A_T_151_S",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "T",
+          "target": "A"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "premut23ctx_2LZM_1L02_A_T_156_A",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "2LZM_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 5,
+          "insertion_code": "",
+          "residue_number": 6,
+          "source": "M",
+          "target": "I"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "I",
+          "deposited_residue_name": "ILE",
+          "insertion_code": "",
+          "reference_residue": "M",
+          "reference_residue_name": "MET",
+          "residue_number": 6
+        }
+      ],
+      "pair_id": "premut22p_1LYD_256L_A_M_5_I",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1LYD_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "no_engineered_seqadv_annotation",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 130,
+          "insertion_code": "",
+          "residue_number": 131,
+          "source": "S",
+          "target": "I"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1DYE_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 156,
+          "insertion_code": "",
+          "residue_number": 157,
+          "source": "D",
+          "target": "H"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "parent_id": "1L04_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "other_engineered_mutation_only",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 58,
+          "insertion_code": "",
+          "residue_number": 59,
+          "source": "S",
+          "target": "T"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "T",
+          "deposited_residue_name": "THR",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 54
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 97
+        }
+      ],
+      "pair_id": "microminer_1LYF_A_1C6P_A_S59T",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1LYF_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 85,
+          "insertion_code": "",
+          "residue_number": 86,
+          "source": "A",
+          "target": "G"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "pair_id": "microminer_1L25_A_1L28_A_A86G",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "parent_id": "1L25_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "other_engineered_mutation_only",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 98,
+          "insertion_code": "",
+          "residue_number": 99,
+          "source": "A",
+          "target": "I"
+        }
+      ],
+      "family_id": "v02_family_e40682d3a677",
+      "mutant_engineered_mutations": [],
+      "pair_id": "microminer_2B6W_A_1L92_A_A99I",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "T",
+          "deposited_residue_name": "THR",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 54
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 97
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "L",
+          "reference_residue_name": "LEU",
+          "residue_number": 99
+        }
+      ],
+      "parent_id": "2B6W_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": true,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 84,
+          "insertion_code": "",
+          "residue_number": 85,
+          "source": "G",
+          "target": "R"
+        }
+      ],
+      "family_id": "v02_family_e4243e43dbec",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "R",
+          "deposited_residue_name": "ARG",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 85
+        }
+      ],
+      "pair_id": "premut22alt1_1B4L_1F18_A_G_84_R",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1B4L_A",
+      "reverse_support": false,
+      "split": "test"
+    },
+    {
+      "classification": "no_engineered_seqadv_annotation",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 21,
+          "insertion_code": "",
+          "residue_number": 22,
+          "source": "L",
+          "target": "Y"
+        }
+      ],
+      "family_id": "v02_family_ea2e28f36573",
+      "mutant_engineered_mutations": [],
+      "pair_id": "platinum_1U72_1DLS_A_L22Y",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [],
+      "parent_id": "1U72_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 34,
+          "insertion_code": "",
+          "residue_number": 35,
+          "source": "K",
+          "target": "S"
+        }
+      ],
+      "family_id": "v02_family_ea2e28f36573",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "pair_id": "platinum_3S3V_3N0H_A_K35S",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "K",
+          "deposited_residue_name": "LYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "parent_id": "3S3V_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 34,
+          "insertion_code": "",
+          "residue_number": 35,
+          "source": "S",
+          "target": "K"
+        }
+      ],
+      "family_id": "v02_family_ea2e28f36573",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "K",
+          "deposited_residue_name": "LYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "paired_endpoint_support": true,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "parent_id": "3N0H_A",
+      "reverse_support": false,
+      "split": "train"
+    },
+    {
+      "classification": "edit_supported_by_seqadv",
+      "direct_support": false,
+      "expected_edit": [
+        {
+          "chain": "A",
+          "index": 160,
+          "insertion_code": "",
+          "residue_number": 216,
+          "source": "A",
+          "target": "G"
+        }
+      ],
+      "family_id": "v02_family_fb83dc187d83",
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "M",
+          "reference_residue_name": "MET",
+          "residue_number": 190
+        }
+      ],
+      "pair_id": "microminer_1GBA_A_1GBJ_A_A216G",
+      "paired_endpoint_support": false,
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "M",
+          "reference_residue_name": "MET",
+          "residue_number": 190
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 216
+        }
+      ],
+      "parent_id": "1GBA_A",
+      "reverse_support": true,
+      "split": "train"
+    }
+  ],
+  "selection_semantics": "diagnostic_only_not_a_hard_filter",
+  "summary": {
+    "classifications": {
+      "edit_supported_by_seqadv": 91,
+      "no_engineered_seqadv_annotation": 6,
+      "other_engineered_mutation_only": 4
+    },
+    "pairs": 101,
+    "splits": {
+      "dev": {
+        "edit_supported_by_seqadv": 11,
+        "no_engineered_seqadv_annotation": 4,
+        "other_engineered_mutation_only": 0
+      },
+      "test": {
+        "edit_supported_by_seqadv": 14,
+        "no_engineered_seqadv_annotation": 0,
+        "other_engineered_mutation_only": 1
+      },
+      "train": {
+        "edit_supported_by_seqadv": 66,
+        "no_engineered_seqadv_annotation": 2,
+        "other_engineered_mutation_only": 3
+      }
+    }
+  }
+}

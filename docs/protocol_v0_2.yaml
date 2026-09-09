@@ -111,6 +111,8 @@ artifacts:
     coordinate_context: reports/protocol_v02_repeat_control_context_v1.json
     rcsb_environment: reports/protocol_v02_rcsb_environment_v1.json
     rcsb_endpoint_environment: reports/protocol_v02_rcsb_endpoint_environment_v1.json
+    endpoint_context_queue: reports/protocol_v02_endpoint_context_queue_v1.json
+    endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
     response_review_queue: reports/protocol_v02_response_review_queue_v1.json
     response_review_decisions: reports/protocol_v02_response_review_decisions_v1.json
@@ -143,3 +145,10 @@ background_control_gate:
     diagnostic_review_queue: {train: 4, dev: 1, test: 0}
     strict_mutation_attribution_admitted: 0
     review_queue_is_training_or_test_data: false
+  endpoint_provenance_audit:
+    seqadv_edit_supported: 91
+    no_engineered_seqadv_annotation: 6
+    other_engineered_mutation_only: 4
+    seqadv_is_hard_filter: false
+    confirmed_provenance_mismatches:
+      - microminer_5FNX_A_5FZU_A_K177E

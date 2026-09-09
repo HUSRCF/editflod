@@ -1,0 +1,1800 @@
+{
+  "annotation_report": "/home/husrcf/Code/ospedit/reports/protocol_v02_endpoint_mutation_annotations_v1.json",
+  "configuration": {
+    "mutation_annotation_used_for_selection": false,
+    "mutation_indexing": "zero_based_internal_sequence_index",
+    "observed_structure_response_used_for_selection": false,
+    "selection_tier": "citation_crystal_compatible",
+    "test_records_frozen_for_final_evaluation": true
+  },
+  "endpoint_report": "/home/husrcf/Code/ospedit/reports/protocol_v02_rcsb_endpoint_environment_v1.json",
+  "format": "ospedit.endpoint_context_review_queue.v1",
+  "limitations": [
+    "shared_primary_citation_does_not_establish_identical_sample_state",
+    "declared_growth_metadata_may_be_incomplete_or_coarsely_normalized",
+    "test_records_must_not_be_used_for_model_or_threshold_selection",
+    "manual_primary_source_review_is_required_before_response_attribution",
+    "seqadv_annotations_are_diagnostic_and_not_a_hard_filter"
+  ],
+  "manifest": "/tmp/ospedit-real-sample/protocol_v02_structure_pairs.jsonl",
+  "manifest_fingerprint": "653bbf248e256355721e20fcec02f809948d9efc784ad495c157b391eec6a731",
+  "records": [
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.011309796729328974
+      },
+      "declared_crystal_growth_matched": true,
+      "family_id": "v02_family_204bcfd23f04",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "N",
+          "deposited_residue_name": "ASN",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 100
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 90.0,
+          "length_a": 60.17,
+          "length_b": 66.17,
+          "length_c": 51.41
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.8,
+            "temp": 277.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1006/jmbi.1999.3152",
+          "pdbx_database_id_PubMed": 10610792,
+          "title": "Comparisons of wild-type and mutant flavodoxins from Anacystis nidulans. Structural determinants of the redox potentials.",
+          "year": 1999
+        },
+        "resolution_angstrom": 1.9,
+        "space_group": "P 21 21 21",
+        "title": "COMPARISONS OF WILD TYPE AND MUTANT FLAVODOXINS FROM ANACYSTIS NIDULANS. STRUCTURAL DETERMINANTS OF THE REDOX POTENTIALS."
+      },
+      "mutant_pdb_id": "1CZK",
+      "mutation": [
+        {
+          "index": 99,
+          "source": "D",
+          "target": "N"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_1CZL_1CZK_A_D_99_N",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 90.0,
+          "length_a": 59.79,
+          "length_b": 65.43,
+          "length_c": 51.51
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.8,
+            "temp": 277.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1006/jmbi.1999.3152",
+          "pdbx_database_id_PubMed": 10610792,
+          "title": "Comparisons of wild-type and mutant flavodoxins from Anacystis nidulans. Structural determinants of the redox potentials.",
+          "year": 1999
+        },
+        "resolution_angstrom": 1.8,
+        "space_group": "P 21 21 21",
+        "title": "COMPARISONS OF WILD TYPE AND MUTANT FLAVODOXINS FROM ANACYSTIS NIDULANS. STRUCTURAL DETERMINANTS OF THE REDOX POTENTIALS."
+      },
+      "parent_id": "1CZL_A",
+      "parent_pdb_id": "1CZL",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [
+        [
+          "VAPOR DIFFUSION, HANGING DROP",
+          6.8,
+          277.0
+        ]
+      ],
+      "shared_primary_citation_ids": [
+        "DOI:10.1006/jmbi.1999.3152",
+        "PMID:10610792"
+      ],
+      "shared_uniprot": [
+        "P10340"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.0
+      },
+      "declared_crystal_growth_matched": true,
+      "family_id": "v02_family_607a3bb0349c",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 80
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 50.06,
+          "length_b": 50.06,
+          "length_c": 98.72
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 7.0,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi9704111",
+          "pdbx_database_id_PubMed": 9341204,
+          "title": "Site-directed mutants of pseudoazurin: explanation of increased redox potentials from X-ray structures and from calculation of redox potential differences.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.76,
+        "space_group": "P 65",
+        "title": "REDUCED MUTANT P80A PSEUDOAZURIN FROM A. FAECALIS"
+      },
+      "mutant_pdb_id": "5PAZ",
+      "mutation": [
+        {
+          "index": 79,
+          "source": "P",
+          "target": "A"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_3PAZ_5PAZ_A_P_79_A",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 50.06,
+          "length_b": 50.06,
+          "length_c": 98.72
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 7.0,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi9704111",
+          "pdbx_database_id_PubMed": 9341204,
+          "title": "Site-directed mutants of pseudoazurin: explanation of increased redox potentials from X-ray structures and from calculation of redox potential differences.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.73,
+        "space_group": "P 65",
+        "title": "REDUCED NATIVE PSEUDOAZURIN FROM A. FAECALIS"
+      },
+      "parent_id": "3PAZ_A",
+      "parent_pdb_id": "3PAZ",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [
+        [
+          null,
+          7.0,
+          null
+        ]
+      ],
+      "shared_primary_citation_ids": [
+        "DOI:10.1021/bi9704111",
+        "PMID:9341204"
+      ],
+      "shared_uniprot": [
+        "P04377"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.0
+      },
+      "declared_crystal_growth_matched": true,
+      "family_id": "v02_family_607a3bb0349c",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 80
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 50.06,
+          "length_b": 50.06,
+          "length_c": 98.72
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 7.0,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi9704111",
+          "pdbx_database_id_PubMed": 9341204,
+          "title": "Site-directed mutants of pseudoazurin: explanation of increased redox potentials from X-ray structures and from calculation of redox potential differences.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.76,
+        "space_group": "P 65",
+        "title": "OXIDIZED MUTANT P80A PSEUDOAZURIN FROM A. FAECALIS"
+      },
+      "mutant_pdb_id": "4PAZ",
+      "mutation": [
+        {
+          "index": 79,
+          "source": "P",
+          "target": "A"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22q_3PAZ_4PAZ_A_P_79_A",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 50.06,
+          "length_b": 50.06,
+          "length_c": 98.72
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 7.0,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi9704111",
+          "pdbx_database_id_PubMed": 9341204,
+          "title": "Site-directed mutants of pseudoazurin: explanation of increased redox potentials from X-ray structures and from calculation of redox potential differences.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.73,
+        "space_group": "P 65",
+        "title": "REDUCED NATIVE PSEUDOAZURIN FROM A. FAECALIS"
+      },
+      "parent_id": "3PAZ_A",
+      "parent_pdb_id": "3PAZ",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [
+        [
+          null,
+          7.0,
+          null
+        ]
+      ],
+      "shared_primary_citation_ids": [
+        "DOI:10.1021/bi9704111",
+        "PMID:9341204"
+      ],
+      "shared_uniprot": [
+        "P04377"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.006056544608537316
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_260dd007d20d",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "X",
+          "deposited_residue": "Y",
+          "deposited_residue_name": "TYR",
+          "insertion_code": "",
+          "reference_residue": "F",
+          "reference_residue_name": "PHE",
+          "residue_number": 98
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 79.567,
+          "length_b": 79.567,
+          "length_c": 108.958
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 5.5,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1107/S0907444909013936",
+          "pdbx_database_id_PubMed": 19622858,
+          "title": "Inhibitory properties and X-ray crystallographic study of the binding of AR-101, AR-102 and iclaprim in ternary complexes with NADPH and dihydrofolate reductase from Staphylococcus aureus",
+          "year": 2009
+        },
+        "resolution_angstrom": 2.2,
+        "space_group": "P 61 2 2",
+        "title": "Crystal Structure of Staph. aureus DHFR complexed with NADPH and AR-101"
+      },
+      "mutant_pdb_id": "3FY8",
+      "mutation": [
+        {
+          "index": 97,
+          "source": "F",
+          "target": "Y"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "platinum_3FYW_3FY8_X_F98Y",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 79.088,
+          "length_b": 79.088,
+          "length_c": 108.446
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": null,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1107/S0907444909013936",
+          "pdbx_database_id_PubMed": 19622858,
+          "title": "Inhibitory properties and X-ray crystallographic study of the binding of AR-101, AR-102 and iclaprim in ternary complexes with NADPH and dihydrofolate reductase from Staphylococcus aureus",
+          "year": 2009
+        },
+        "resolution_angstrom": 2.1,
+        "space_group": "P 61 2 2",
+        "title": "Staph. aureus DHFR complexed with NADPH and AR-101"
+      },
+      "parent_id": "3FYW_X",
+      "parent_pdb_id": "3FYW",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1107/s0907444909013936",
+        "PMID:19622858"
+      ],
+      "shared_uniprot": [
+        "P0A017"
+      ],
+      "split": "dev"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.1799999999999926,
+        "max_relative_length_difference": 0.006040015100037756
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_0123349a5fb8",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "C",
+          "reference_residue_name": "CYS",
+          "residue_number": 73
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 95.04,
+          "angle_gamma": 90.0,
+          "length_a": 67.8,
+          "length_b": 26.33,
+          "length_c": 51.54
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/S0969-2126(96)00079-2",
+          "pdbx_database_id_PubMed": 8805557,
+          "title": "Crystal structures of reduced, oxidized, and mutated human thioredoxins: evidence for a regulatory homodimer.",
+          "year": 1996
+        },
+        "resolution_angstrom": 1.65,
+        "space_group": "C 1 2 1",
+        "title": "HUMAN THIOREDOXIN MUTANT WITH CYS 73 REPLACED BY SER (REDUCED FORM)"
+      },
+      "mutant_pdb_id": "1ERV",
+      "mutation": [
+        {
+          "index": 72,
+          "source": "C",
+          "target": "S"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_1ERT_1ERV_A_C_72_S",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 95.22,
+          "angle_gamma": 90.0,
+          "length_a": 67.91,
+          "length_b": 26.49,
+          "length_c": 51.69
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/S0969-2126(96)00079-2",
+          "pdbx_database_id_PubMed": 8805557,
+          "title": "Crystal structures of reduced, oxidized, and mutated human thioredoxins: evidence for a regulatory homodimer.",
+          "year": 1996
+        },
+        "resolution_angstrom": 1.7,
+        "space_group": "C 1 2 1",
+        "title": "HUMAN THIOREDOXIN (REDUCED FORM)"
+      },
+      "parent_id": "1ERT_A",
+      "parent_pdb_id": "1ERT",
+      "shared_assembly_signatures": [
+        [
+          2,
+          "homomeric protein",
+          2
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1016/s0969-2126(96)00079-2",
+        "PMID:8805557"
+      ],
+      "shared_uniprot": [
+        "P10599"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.011826731262467914
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_28cd4576dfdb",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "P",
+          "deposited_residue_name": "PRO",
+          "insertion_code": "",
+          "reference_residue": "D",
+          "reference_residue_name": "ASP",
+          "residue_number": 58
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.64,
+          "length_b": 61.64,
+          "length_c": 71.01
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi962180o",
+          "pdbx_database_id_PubMed": 9063874,
+          "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.9,
+        "space_group": "P 31 2 1",
+        "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN MUTANT: D58P REDUCED"
+      },
+      "mutant_pdb_id": "1FLN",
+      "mutation": [
+        {
+          "index": 57,
+          "source": "D",
+          "target": "P"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22alt1_5NLL_1FLN_A_D_57_P",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.48,
+          "length_b": 61.48,
+          "length_c": 70.18
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi962180o",
+          "pdbx_database_id_PubMed": 9063874,
+          "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.75,
+        "space_group": "P 31 2 1",
+        "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN: OXIDIZED"
+      },
+      "parent_id": "5NLL_A",
+      "parent_pdb_id": "5NLL",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1021/bi962180o",
+        "PMID:9063874"
+      ],
+      "shared_uniprot": [
+        "P00322"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.009261897976631397
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_28cd4576dfdb",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "T",
+          "deposited_residue_name": "THR",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 57
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.53,
+          "length_b": 61.53,
+          "length_c": 70.83
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi962180o",
+          "pdbx_database_id_PubMed": 9063874,
+          "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.8,
+        "space_group": "P 31 2 1",
+        "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN MUTANT: G57T OXIDIZED"
+      },
+      "mutant_pdb_id": "1FLD",
+      "mutation": [
+        {
+          "index": 56,
+          "source": "G",
+          "target": "T"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22m_5NLL_1FLD_A_G_56_T",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.48,
+          "length_b": 61.48,
+          "length_c": 70.18
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/bi962180o",
+          "pdbx_database_id_PubMed": 9063874,
+          "title": "Control of oxidation-reduction potentials in flavodoxin from Clostridium beijerinckii: the role of conformation changes.",
+          "year": 1997
+        },
+        "resolution_angstrom": 1.75,
+        "space_group": "P 31 2 1",
+        "title": "CLOSTRIDIUM BEIJERINCKII FLAVODOXIN: OXIDIZED"
+      },
+      "parent_id": "5NLL_A",
+      "parent_pdb_id": "5NLL",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1021/bi962180o",
+        "PMID:9063874"
+      ],
+      "shared_uniprot": [
+        "P00322"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.0041854793527337465
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_a515d2e6f827",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "X",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 118
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 90.0,
+          "length_a": 181.296,
+          "length_b": 181.296,
+          "length_c": 181.296
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 8.0,
+            "temp": 293.15
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/acs.cgd.3c00880",
+          "pdbx_database_id_PubMed": null,
+          "title": "Atomic-level insights into a unique semi-clathrate hydrate formed in a confined environment of porous protein crystal.",
+          "year": 2023
+        },
+        "resolution_angstrom": 1.6,
+        "space_group": "F 4 3 2",
+        "title": "Crystal structure of horse spleen L-ferritin S118A mutant at -180deg Celsius."
+      },
+      "mutant_pdb_id": "8I8U",
+      "mutation": [
+        {
+          "index": 117,
+          "source": "S",
+          "target": "A"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_8I6L_A_8I8U_X_S118A",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 90.0,
+          "length_a": 182.058,
+          "length_b": 182.058,
+          "length_c": 182.058
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION",
+            "pH": 8.0,
+            "temp": 293.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1021/acs.cgd.3c00880",
+          "pdbx_database_id_PubMed": null,
+          "title": "Atomic-level insights into a unique semi-clathrate hydrate formed in a confined environment of porous protein crystal.",
+          "year": 2023
+        },
+        "resolution_angstrom": 1.5,
+        "space_group": "F 4 3 2",
+        "title": "Crystal structure of horse spleen L-ferritin at -180deg Celsius."
+      },
+      "parent_id": "8I6L_A",
+      "parent_pdb_id": "8I6L",
+      "shared_assembly_signatures": [
+        [
+          24,
+          "homomeric protein",
+          24
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1021/acs.cgd.3c00880"
+      ],
+      "shared_uniprot": [
+        "P02791"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.010264305876315077
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_cf7defecbfbc",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 19
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 90.0,
+          "length_a": 77.14,
+          "length_b": 77.14,
+          "length_c": 94.14
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 7.2,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/j.jsb.2016.06.014",
+          "pdbx_database_id_PubMed": 27329566,
+          "title": "Structures of a bi-functional Kunitz-type STI family inhibitor of serine and aspartic proteases: Could the aspartic protease inhibition have evolved from a canonical serine protease-binding loop?",
+          "year": 2016
+        },
+        "resolution_angstrom": 2.43,
+        "space_group": "P 43 2 2",
+        "title": "CRYSTAL STRUCTURE OF N19D POTATO STI-KUNITZ BI-FUNCTIONAL INHIBITOR OF SERINE AND ASPARTIC PROTEASES IN SPACE GROUP P4322 AND PH 7.2"
+      },
+      "mutant_pdb_id": "5FZU",
+      "mutation": [
+        {
+          "index": 174,
+          "source": "K",
+          "target": "E"
+        }
+      ],
+      "mutation_annotation_classification": "other_engineered_mutation_only",
+      "pair_id": "microminer_5FNX_A_5FZU_A_K177E",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 90.0,
+          "length_a": 77.94,
+          "length_b": 77.94,
+          "length_c": 95.01
+        },
+        "crystal_growth": [
+          {
+            "method": null,
+            "pH": 9.0,
+            "temp": null
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/j.jsb.2016.06.014",
+          "pdbx_database_id_PubMed": 27329566,
+          "title": "Structures of a bi-functional Kunitz-type STI family inhibitor of serine and aspartic proteases: Could the aspartic protease inhibition have evolved from a canonical serine protease-binding loop?",
+          "year": 2016
+        },
+        "resolution_angstrom": 2.65,
+        "space_group": "P 43 2 2",
+        "title": "Crystal structure at pH 9.0 of a potato STI-Kunitz bi-functional inhibitor of serine and aspartic proteases in space group p4322 and ph 9.0"
+      },
+      "parent_id": "5FNX_A",
+      "parent_pdb_id": "5FNX",
+      "shared_assembly_signatures": [
+        [
+          2,
+          "homomeric protein",
+          2
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1016/j.jsb.2016.06.014",
+        "PMID:27329566"
+      ],
+      "shared_uniprot": [
+        "M1AKE5"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.0020725388601036563
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_e40682d3a677",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.1,
+          "length_b": 61.1,
+          "length_c": 96.7
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1006/jmbi.1994.1016",
+          "pdbx_database_id_PubMed": 8289284,
+          "title": "Determination of alpha-helix propensity within the context of a folded protein. Sites 44 and 131 in bacteriophage T4 lysozyme.",
+          "year": 1994
+        },
+        "resolution_angstrom": 2.1,
+        "space_group": "P 32 2 1",
+        "title": "DETERMINATION OF ALPHA-HELIX PROPENSITY WITHIN THE CONTEXT OF A FOLDED PROTEIN: SITES 44 AND 131 IN BACTERIOPHAGE T4 LYSOZYME"
+      },
+      "mutant_pdb_id": "1DYC",
+      "mutation": [
+        {
+          "index": 130,
+          "source": "S",
+          "target": "I"
+        }
+      ],
+      "mutation_annotation_classification": "no_engineered_seqadv_annotation",
+      "pair_id": "microminer_1DYE_A_1DYC_A_S131I",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.1,
+          "length_b": 61.1,
+          "length_c": 96.5
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1006/jmbi.1994.1016",
+          "pdbx_database_id_PubMed": 8289284,
+          "title": "Determination of alpha-helix propensity within the context of a folded protein. Sites 44 and 131 in bacteriophage T4 lysozyme.",
+          "year": 1994
+        },
+        "resolution_angstrom": 1.8,
+        "space_group": "P 32 2 1",
+        "title": "DETERMINATION OF ALPHA-HELIX PROPENSITY WITHIN THE CONTEXT OF A FOLDED PROTEIN: SITES 44 AND 131 IN BACTERIOPHAGE T4 LYSOZYME"
+      },
+      "parent_id": "1DYE_A",
+      "parent_pdb_id": "1DYE",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1006/jmbi.1994.1016",
+        "PMID:8289284"
+      ],
+      "shared_uniprot": [
+        "P00720"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.004115226337448618
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_e40682d3a677",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "H",
+          "deposited_residue_name": "HIS",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.2,
+          "length_b": 61.2,
+          "length_c": 96.8
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1038/330041a0",
+          "pdbx_database_id_PubMed": 3118211,
+          "title": "Contributions of hydrogen bonds of Thr 157 to the thermodynamic stability of phage T4 lysozyme.",
+          "year": 1987
+        },
+        "resolution_angstrom": 1.7,
+        "space_group": "P 32 2 1",
+        "title": "CONTRIBUTIONS OF HYDROGEN BONDS OF THR 157 TO THE THERMODYNAMIC STABILITY OF PHAGE T4 LYSOZYME"
+      },
+      "mutant_pdb_id": "1L09",
+      "mutation": [
+        {
+          "index": 156,
+          "source": "D",
+          "target": "H"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1L04_A_1L09_A_D157H",
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "D",
+          "deposited_residue_name": "ASP",
+          "insertion_code": "",
+          "reference_residue": "T",
+          "reference_residue_name": "THR",
+          "residue_number": 157
+        }
+      ],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.2,
+          "length_b": 61.2,
+          "length_c": 97.2
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1038/330041a0",
+          "pdbx_database_id_PubMed": 3118211,
+          "title": "Contributions of hydrogen bonds of Thr 157 to the thermodynamic stability of phage T4 lysozyme.",
+          "year": 1987
+        },
+        "resolution_angstrom": 1.7,
+        "space_group": "P 32 2 1",
+        "title": "CONTRIBUTIONS OF HYDROGEN BONDS OF THR 157 TO THE THERMODYNAMIC STABILITY OF PHAGE T4 LYSOZYME"
+      },
+      "parent_id": "1L04_A",
+      "parent_pdb_id": "1L04",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1038/330041a0",
+        "PMID:3118211"
+      ],
+      "shared_uniprot": [
+        "P00720"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.004149377593360907
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_e40682d3a677",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "G",
+          "deposited_residue_name": "GLY",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.2,
+          "length_b": 61.2,
+          "length_c": 96.8
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": null,
+          "pdbx_database_id_PubMed": 3277275,
+          "title": "Replacements of Pro86 in phage T4 lysozyme extend an alpha-helix but do not alter protein stability.",
+          "year": 1988
+        },
+        "resolution_angstrom": 1.9,
+        "space_group": "P 32 2 1",
+        "title": "REPLACEMENTS OF PRO86 IN PHAGE T4 LYSOZYME EXTEND AN ALPHA-HELIX BUT DO NOT ALTER PROTEIN STABILITY"
+      },
+      "mutant_pdb_id": "1L28",
+      "mutation": [
+        {
+          "index": 85,
+          "source": "A",
+          "target": "G"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1L25_A_1L28_A_A86G",
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "P",
+          "reference_residue_name": "PRO",
+          "residue_number": 86
+        }
+      ],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 61.3,
+          "length_b": 61.3,
+          "length_c": 96.4
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": null,
+          "pdbx_database_id_PubMed": 3277275,
+          "title": "Replacements of Pro86 in phage T4 lysozyme extend an alpha-helix but do not alter protein stability.",
+          "year": 1988
+        },
+        "resolution_angstrom": 1.8,
+        "space_group": "P 32 2 1",
+        "title": "REPLACEMENTS OF PRO86 IN PHAGE T4 LYSOZYME EXTEND AN ALPHA-HELIX BUT DO NOT ALTER PROTEIN STABILITY"
+      },
+      "parent_id": "1L25_A",
+      "parent_pdb_id": "1L25",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "PMID:3277275"
+      ],
+      "shared_uniprot": [
+        "P00720"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.007998476480670313
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_ea2e28f36573",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "K",
+          "deposited_residue_name": "LYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 84.688,
+          "length_b": 84.688,
+          "length_c": 78.743
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.9,
+            "temp": 287.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/j.jsb.2011.06.001",
+          "pdbx_database_id_PubMed": 21684339,
+          "title": "Crystallographic analysis reveals a novel second binding site for trimethoprim in active site double mutants of human dihydrofolate reductase.",
+          "year": 2011
+        },
+        "resolution_angstrom": 1.53,
+        "space_group": "H 3",
+        "title": "human dihydrofolate reductase Q35K/N64F double mutant binary complex with trimethoprim"
+      },
+      "mutant_pdb_id": "3S3V",
+      "mutation": [
+        {
+          "index": 34,
+          "source": "S",
+          "target": "K"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "platinum_3N0H_3S3V_A_S35K",
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 84.016,
+          "length_b": 84.016,
+          "length_c": 78.495
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.9,
+            "temp": 298.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/j.jsb.2011.06.001",
+          "pdbx_database_id_PubMed": 21684339,
+          "title": "Crystallographic analysis reveals a novel second binding site for trimethoprim in active site double mutants of human dihydrofolate reductase.",
+          "year": 2011
+        },
+        "resolution_angstrom": 1.92,
+        "space_group": "H 3",
+        "title": "hDHFR double mutant Q35S/N64F Trimethoprim Binary Complex"
+      },
+      "parent_id": "3N0H_A",
+      "parent_pdb_id": "3N0H",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1016/j.jsb.2011.06.001",
+        "PMID:21684339"
+      ],
+      "shared_uniprot": [
+        "P00374"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.007935008501794788
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_ea2e28f36573",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "S",
+          "deposited_residue_name": "SER",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 84.016,
+          "length_b": 84.016,
+          "length_c": 78.495
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.9,
+            "temp": 298.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/j.jsb.2011.06.001",
+          "pdbx_database_id_PubMed": 21684339,
+          "title": "Crystallographic analysis reveals a novel second binding site for trimethoprim in active site double mutants of human dihydrofolate reductase.",
+          "year": 2011
+        },
+        "resolution_angstrom": 1.92,
+        "space_group": "H 3",
+        "title": "hDHFR double mutant Q35S/N64F Trimethoprim Binary Complex"
+      },
+      "mutant_pdb_id": "3N0H",
+      "mutation": [
+        {
+          "index": 34,
+          "source": "K",
+          "target": "S"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "platinum_3S3V_3N0H_A_K35S",
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "K",
+          "deposited_residue_name": "LYS",
+          "insertion_code": "",
+          "reference_residue": "Q",
+          "reference_residue_name": "GLN",
+          "residue_number": 35
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "F",
+          "deposited_residue_name": "PHE",
+          "insertion_code": "",
+          "reference_residue": "N",
+          "reference_residue_name": "ASN",
+          "residue_number": 64
+        }
+      ],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 84.688,
+          "length_b": 84.688,
+          "length_c": 78.743
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.9,
+            "temp": 287.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/j.jsb.2011.06.001",
+          "pdbx_database_id_PubMed": 21684339,
+          "title": "Crystallographic analysis reveals a novel second binding site for trimethoprim in active site double mutants of human dihydrofolate reductase.",
+          "year": 2011
+        },
+        "resolution_angstrom": 1.53,
+        "space_group": "H 3",
+        "title": "human dihydrofolate reductase Q35K/N64F double mutant binary complex with trimethoprim"
+      },
+      "parent_id": "3S3V_A",
+      "parent_pdb_id": "3S3V",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1016/j.jsb.2011.06.001",
+        "PMID:21684339"
+      ],
+      "shared_uniprot": [
+        "P00374"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.0015110305228164748
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_fb83dc187d83",
+      "frozen_test_record": false,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "M",
+          "reference_residue_name": "MET",
+          "residue_number": 190
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 66.28,
+          "length_b": 66.28,
+          "length_c": 80.01
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1006/jmbi.1995.0650",
+          "pdbx_database_id_PubMed": 7500345,
+          "title": "Kinetic and structural characterization of mutations of glycine 216 in alpha-lytic protease: a new target for engineering substrate specificity.",
+          "year": 1995
+        },
+        "resolution_angstrom": 2.0,
+        "space_group": "P 32 2 1",
+        "title": "ALPHA-LYTIC PROTEASE WITH MET 190 REPLACED BY ALA"
+      },
+      "mutant_pdb_id": "1GBJ",
+      "mutation": [
+        {
+          "index": 160,
+          "source": "A",
+          "target": "G"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "microminer_1GBA_A_1GBJ_A_A216G",
+      "parent_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "M",
+          "reference_residue_name": "MET",
+          "residue_number": 190
+        },
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 216
+        }
+      ],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 66.18,
+          "length_b": 66.18,
+          "length_c": 80.03
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1006/jmbi.1995.0650",
+          "pdbx_database_id_PubMed": 7500345,
+          "title": "Kinetic and structural characterization of mutations of glycine 216 in alpha-lytic protease: a new target for engineering substrate specificity.",
+          "year": 1995
+        },
+        "resolution_angstrom": 2.15,
+        "space_group": "P 32 2 1",
+        "title": "ALPHA-LYTIC PROTEASE WITH MET 190 REPLACED BY ALA AND GLY 216 REPLACED BY ALA"
+      },
+      "parent_id": "1GBA_A",
+      "parent_pdb_id": "1GBA",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1006/jmbi.1995.0650",
+        "PMID:7500345"
+      ],
+      "shared_uniprot": [
+        "P00778"
+      ],
+      "split": "train"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.11999999999999034,
+        "max_relative_length_difference": 0.002885145742288508
+      },
+      "declared_crystal_growth_matched": true,
+      "family_id": "v02_family_2be082f68809",
+      "frozen_test_record": true,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "A",
+          "deposited_residue_name": "ALA",
+          "insertion_code": "",
+          "reference_residue": "S",
+          "reference_residue_name": "SER",
+          "residue_number": 195
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 118.21,
+          "angle_gamma": 90.0,
+          "length_a": 47.002,
+          "length_b": 67.366,
+          "length_c": 48.076
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.5,
+            "temp": 289.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": null,
+          "pdbx_database_id_PubMed": 10752623,
+          "title": "Structural similarities and differences in Staphylococcus aureus exfoliative Toxins A and B as revealed by their crystal structures",
+          "year": 2000
+        },
+        "resolution_angstrom": 2.0,
+        "space_group": "P 1 21 1",
+        "title": "CRYSTAL STRUCTURE OF EXFOLIATIVE TOXIN A S195A MUTANT"
+      },
+      "mutant_pdb_id": "1DUE",
+      "mutation": [
+        {
+          "index": 194,
+          "source": "S",
+          "target": "A"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22m_1DUA_1DUE_A_S_194_A",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 118.09,
+          "angle_gamma": 90.0,
+          "length_a": 47.138,
+          "length_b": 67.228,
+          "length_c": 47.999
+        },
+        "crystal_growth": [
+          {
+            "method": "VAPOR DIFFUSION, HANGING DROP",
+            "pH": 6.5,
+            "temp": 289.0
+          }
+        ],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": null,
+          "pdbx_database_id_PubMed": 10752623,
+          "title": "Structural similarities and differences in Staphylococcus aureus exfoliative toxins A and B as revealed by their crystal structures.",
+          "year": 2000
+        },
+        "resolution_angstrom": 2.0,
+        "space_group": "P 1 21 1",
+        "title": "CRYSTAL STRUCTURE OF EXFOLIATIVE TOXIN A"
+      },
+      "parent_id": "1DUA_A",
+      "parent_pdb_id": "1DUA",
+      "shared_assembly_signatures": [
+        [
+          1,
+          "homomeric protein",
+          1
+        ]
+      ],
+      "shared_crystal_growth_signatures": [
+        [
+          "VAPOR DIFFUSION, HANGING DROP",
+          6.5,
+          289.0
+        ]
+      ],
+      "shared_primary_citation_ids": [
+        "PMID:10752623"
+      ],
+      "shared_uniprot": [
+        "P09331"
+      ],
+      "split": "test"
+    },
+    {
+      "cell_comparison": {
+        "max_angle_difference_degree": 0.0,
+        "max_relative_length_difference": 0.0
+      },
+      "declared_crystal_growth_matched": false,
+      "family_id": "v02_family_2be082f68809",
+      "frozen_test_record": true,
+      "mutant_engineered_mutations": [
+        {
+          "chain": "A",
+          "deposited_residue": "V",
+          "deposited_residue_name": "VAL",
+          "insertion_code": "",
+          "reference_residue": "G",
+          "reference_residue_name": "GLY",
+          "residue_number": 12
+        }
+      ],
+      "mutant_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 83.2,
+          "length_b": 83.2,
+          "length_c": 105.1
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/0022-2836(91)90753-S",
+          "pdbx_database_id_PubMed": 1899707,
+          "title": "Crystal structures at 2.2 A resolution of the catalytic domains of normal ras protein and an oncogenic mutant complexed with GDP.",
+          "year": 1991
+        },
+        "resolution_angstrom": 2.2,
+        "space_group": "P 65 2 2",
+        "title": "CRYSTAL STRUCTURES AT 2.2 ANGSTROMS RESOLUTION OF THE CATALYTIC DOMAINS OF NORMAL RAS PROTEIN AND AN ONCOGENIC MUTANT COMPLEXED WITH GSP"
+      },
+      "mutant_pdb_id": "2Q21",
+      "mutation": [
+        {
+          "index": 11,
+          "source": "G",
+          "target": "V"
+        }
+      ],
+      "mutation_annotation_classification": "edit_supported_by_seqadv",
+      "pair_id": "premut22p_1Q21_2Q21_A_G_11_V",
+      "parent_engineered_mutations": [],
+      "parent_entry": {
+        "cell": {
+          "angle_alpha": 90.0,
+          "angle_beta": 90.0,
+          "angle_gamma": 120.0,
+          "length_a": 83.2,
+          "length_b": 83.2,
+          "length_c": 105.1
+        },
+        "crystal_growth": [],
+        "experimental_method": "X-ray",
+        "primary_citation": {
+          "pdbx_database_id_DOI": "10.1016/0022-2836(91)90753-S",
+          "pdbx_database_id_PubMed": 1899707,
+          "title": "Crystal structures at 2.2 A resolution of the catalytic domains of normal ras protein and an oncogenic mutant complexed with GDP.",
+          "year": 1991
+        },
+        "resolution_angstrom": 2.2,
+        "space_group": "P 65 2 2",
+        "title": "CRYSTAL STRUCTURES AT 2.2 ANGSTROMS RESOLUTION OF THE CATALYTIC DOMAINS OF NORMAL RAS PROTEIN AND AN ONCOGENIC MUTANT COMPLEXED WITH GSP"
+      },
+      "parent_id": "1Q21_A",
+      "parent_pdb_id": "1Q21",
+      "shared_assembly_signatures": [
+        [
+          2,
+          "homomeric protein",
+          2
+        ]
+      ],
+      "shared_crystal_growth_signatures": [],
+      "shared_primary_citation_ids": [
+        "DOI:10.1016/0022-2836(91)90753-s",
+        "PMID:1899707"
+      ],
+      "shared_uniprot": [
+        "P01112"
+      ],
+      "split": "test"
+    }
+  ],
+  "summary": {
+    "candidates": 17,
+    "declared_growth_matched": 4,
+    "families": 11,
+    "mutation_annotation_classifications": {
+      "edit_supported_by_seqadv": 15,
+      "no_engineered_seqadv_annotation": 1,
+      "other_engineered_mutation_only": 1
+    },
+    "splits": {
+      "dev": 1,
+      "test": 2,
+      "train": 14
+    }
+  },
+  "usage": "manual_context_review_without_response_magnitude_selection"
+}
