@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 
 from .data import PairRecord, StructurePair, manifest_fingerprint
-from .metrics import METRIC_SCHEMA_VERSION, evaluate_pair
+from .metrics import METRIC_SCHEMA_VERSION, evaluate_pair, gate_localization_metrics
 from .models import ConditionalDifferenceEditor, CopyParentEditor, Editor, EndpointModel, FieldModel, IndependentNoiseLocalFrameDifferenceEditor, LocalFrameDifferenceEditor, MultiNoiseLocalFrameDifferenceEditor, MutationNeighborhoodDifferenceEditor, RepeatedSingleNoiseLocalFrameDifferenceEditor, StudentEditor, TargetUpdateEditor
 from .runtime import RuntimeStats
 from .data import json_safe
@@ -341,13 +341,27 @@ def evaluate_manifest_batched(
         if any(record.pair.parent_sequence != record.pair.mutant_sequence for record in group):
             conditional_batch_count += 1
         for record, prediction in zip(group, predictions, strict=True):
+            metrics = evaluate_pair(record.pair, prediction)
+            gates = getattr(editor, "last_gates", None)
+            if gates is not None:
+                row_index = len(rows)
+                true_ca = np.linalg.norm(
+                    record.pair.mutant_coords[:, record.pair.ca_atom_index]
+                    - record.pair.parent_coords[:, record.pair.ca_atom_index],
+                    axis=-1,
+                )
+                metrics.update(
+                    gate_localization_metrics(
+                        gates[row_index][: record.pair.length], true_ca
+                    )
+                )
             rows.append({
                 "pair_id": record.pair.pair_id,
                 "parent_id": record.parent_id,
                 "family_id": record.family_id,
                 "split": record.split,
                 "method": method or type(editor).__name__,
-                "metrics": evaluate_pair(record.pair, prediction),
+                "metrics": metrics,
                 "runtime": {"batch_size": len(group), "batch_seconds": elapsed},
             })
     # Quality aggregation uses the same row order as the regular evaluator.

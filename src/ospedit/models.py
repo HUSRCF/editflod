@@ -86,13 +86,14 @@ class StudentEditor:
     sequence_context_mode: str = "parent_edit"
     output_localization_radius: float | None = None
     output_localization_transition: float = 5.0
+    last_gates: np.ndarray | None = None
 
     def __post_init__(self) -> None:
         if self.parent_cache is not None and self.parent_cache.include_geometry != self.include_geometry:
             raise ValueError("StudentEditor geometry setting must match parent_cache.include_geometry")
 
     def predict(self, pair: StructurePair) -> np.ndarray:
-        return predict_student(
+        result = predict_student(
             self.model,
             pair,
             device=self.device,
@@ -110,9 +111,12 @@ class StudentEditor:
             output_localization_radius=self.output_localization_radius,
             output_localization_transition=self.output_localization_transition,
         )
+        gate = getattr(self.model, "last_gate", None)
+        self.last_gates = None if gate is None else gate.detach().cpu().numpy()[0]
+        return result
 
     def predict_batch(self, pairs: list[StructurePair]) -> list[np.ndarray]:
-        return predict_student_batch(
+        results = predict_student_batch(
             self.model,
             pairs,
             device=self.device,
@@ -130,6 +134,9 @@ class StudentEditor:
             output_localization_radius=self.output_localization_radius,
             output_localization_transition=self.output_localization_transition,
         )
+        gate = getattr(self.model, "last_gate", None)
+        self.last_gates = None if gate is None else gate.detach().cpu().numpy()
+        return results
 
 
 @dataclass

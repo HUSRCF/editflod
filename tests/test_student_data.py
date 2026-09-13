@@ -58,6 +58,14 @@ def test_pair_dataset_separates_parent_and_edit_sequence_context(tmp_path):
     assert np.array_equal(item["edit_features"][:, -3:], mutant - parent)
 
 
+def test_pair_dataset_emits_soft_gate_response_targets():
+    item = PairDataset(
+        [make_record()], gate_response_threshold=0.25, gate_response_temperature=0.1
+    )[0]
+    assert item["gate_target"].shape == (2,)
+    assert item["gate_target"][1] > item["gate_target"][0]
+
+
 def test_parent_residue_mask_excludes_degenerate_frames():
     record = make_record()
     broken = record.pair.parent_coords.copy()

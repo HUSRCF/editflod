@@ -155,6 +155,9 @@ def main() -> None:
     parser.add_argument("--local-distance-loss-weight", type=float, default=0.0)
     parser.add_argument("--mutation-vector-loss-weight", type=float, default=0.0)
     parser.add_argument("--gate-sparsity-weight", type=float, default=0.0)
+    parser.add_argument("--gate-response-loss-weight", type=float, default=0.0)
+    parser.add_argument("--gate-response-threshold", type=float, default=0.25)
+    parser.add_argument("--gate-response-temperature", type=float, default=0.1)
     parser.add_argument("--biochemical-edit-features", action="store_true")
     parser.add_argument("--sequence-context-cache")
     parser.add_argument("--sequence-context-mode", choices=("none", "parent", "parent_edit"), default="parent_edit")
@@ -181,6 +184,7 @@ def main() -> None:
         or args.local_distance_loss_weight < 0
         or args.mutation_vector_loss_weight < 0
         or args.gate_sparsity_weight < 0
+        or args.gate_response_loss_weight < 0
     ):
         parser.error("regional loss weights must be non-negative")
     if args.max_normalized_delta is not None and args.max_normalized_delta <= 0:
@@ -273,6 +277,12 @@ def main() -> None:
                 str(args.mutation_vector_loss_weight),
                 "--gate-sparsity-weight",
                 str(args.gate_sparsity_weight),
+                "--gate-response-loss-weight",
+                str(args.gate_response_loss_weight),
+                "--gate-response-threshold",
+                str(args.gate_response_threshold),
+                "--gate-response-temperature",
+                str(args.gate_response_temperature),
                 "--family-balanced-loss",
                 "--endpoint-group-balanced-loss",
                 "--seed",
@@ -422,6 +432,9 @@ def main() -> None:
             "local_distance_loss_weight": args.local_distance_loss_weight,
             "mutation_vector_loss_weight": args.mutation_vector_loss_weight,
             "gate_sparsity_weight": args.gate_sparsity_weight,
+            "gate_response_loss_weight": args.gate_response_loss_weight,
+            "gate_response_threshold": args.gate_response_threshold,
+            "gate_response_temperature": args.gate_response_temperature,
             "biochemical_edit_features": args.biochemical_edit_features,
             "sequence_context_cache": (
                 str(Path(args.sequence_context_cache).resolve())

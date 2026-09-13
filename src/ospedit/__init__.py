@@ -3,7 +3,7 @@
 from .data import PairRecord, StructurePair, append_manifest, assign_group_splits, file_sha256, json_safe, load_manifest, manifest_fingerprint, pair_record_from_structures, pair_parsed_structures, parse_structure, validate_manifest, verify_record_checksums, write_manifest
 from .experiment import EvaluationResult, ManifestEvaluation, SuiteEvaluation, build_mechanism_editors, evaluate_editor, evaluate_editor_suite, evaluate_manifest, evaluate_manifest_batched, evaluate_parent_workloads, flatten_parent_workload_reports, flatten_suite_reports, group_records_by_parent, parent_workloads, parent_workload_payload, suite_payload, write_parent_workload_csv, write_parent_workload_report, write_suite_csv, write_suite_report
 from .models import ConditionalDifferenceEditor, CopyParentEditor, FieldModel, IndependentNoiseLocalFrameDifferenceEditor, LocalFrameDifferenceEditor, MultiNoiseLocalFrameDifferenceEditor, MutationNeighborhoodDifferenceEditor, RepeatedSingleNoiseLocalFrameDifferenceEditor, StudentEditor, TargetUpdateEditor
-from .metrics import evaluate_pair
+from .metrics import evaluate_pair, gate_localization_metrics
 from .diagnostics import assess_teacher_admission, condition_response_diagnostic, condition_response_repeat_error
 from .noise import SharedNoise, make_shared_noise
 from .student import GatedParentEditStudent, HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent, encode_edit_features
@@ -40,6 +40,7 @@ __all__ = [
     "TargetUpdateEditor",
     "ConditionalDifferenceEditor",
     "evaluate_pair",
+    "gate_localization_metrics",
     "condition_response_diagnostic",
     "condition_response_repeat_error",
     "assess_teacher_admission",

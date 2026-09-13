@@ -98,6 +98,50 @@ def _cosine_similarity(predicted: np.ndarray, target: np.ndarray) -> float:
     return float(np.dot(predicted, target) / denominator) if denominator > 1e-12 else float("nan")
 
 
+def gate_localization_metrics(
+    gate: np.ndarray,
+    true_displacement: np.ndarray,
+    *,
+    response_threshold: float = 0.25,
+) -> dict[str, float]:
+    """Score whether a residue gate separates response from stable residues."""
+    scores = np.asarray(gate, dtype=float).reshape(-1)
+    displacement = np.asarray(true_displacement, dtype=float).reshape(-1)
+    if scores.shape != displacement.shape:
+        raise ValueError("gate and true_displacement must have the same shape")
+    if response_threshold <= 0:
+        raise ValueError("response_threshold must be positive")
+    valid = np.isfinite(scores) & np.isfinite(displacement)
+    scores = scores[valid]
+    response = displacement[valid] >= response_threshold
+    positives = int(response.sum())
+    negatives = int((~response).sum())
+    result = {
+        "gate_response_mean": float(scores[response].mean()) if positives else float("nan"),
+        "gate_stable_mean": float(scores[~response].mean()) if negatives else float("nan"),
+        "gate_response_count": float(positives),
+        "gate_stable_count": float(negatives),
+        "gate_response_threshold": float(response_threshold),
+    }
+    if not positives or not negatives:
+        result["gate_auprc"] = float("nan")
+        result["gate_auroc"] = float("nan")
+        return result
+    order = np.argsort(-scores, kind="mergesort")
+    ordered = response[order]
+    cumulative = np.cumsum(ordered, dtype=float)
+    ranks = np.arange(1, len(ordered) + 1, dtype=float)
+    precision = cumulative / ranks
+    result["gate_auprc"] = float(np.sum(precision[ordered]) / positives)
+    positive_ranks = np.flatnonzero(ordered) + 1
+    result["gate_auroc"] = float(
+        1.0
+        - (positive_ranks.sum() - positives * (positives + 1) / 2)
+        / (positives * negatives)
+    )
+    return result
+
+
 def _ca_displacement_energy(
     parent: np.ndarray, other: np.ndarray, ca_atom_index: int
 ) -> np.ndarray:

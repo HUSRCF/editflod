@@ -241,6 +241,8 @@ class PairDataset:
         sequence_context_mode: str = "parent_edit",
         target_localization_radius: float | None = None,
         target_localization_transition: float = 5.0,
+        gate_response_threshold: float = 0.25,
+        gate_response_temperature: float = 0.1,
     ):
         if not records:
             raise ValueError("PairDataset requires at least one record")
@@ -277,6 +279,10 @@ class PairDataset:
             raise ValueError("target_localization_transition must be positive")
         self.target_localization_radius = target_localization_radius
         self.target_localization_transition = float(target_localization_transition)
+        if gate_response_threshold <= 0 or gate_response_temperature <= 0:
+            raise ValueError("gate response threshold and temperature must be positive")
+        self.gate_response_threshold = float(gate_response_threshold)
+        self.gate_response_temperature = float(gate_response_temperature)
         family_counts = Counter(record.family_id for record in self.records)
         self.family_weights = {
             family: len(self.records) / (len(family_counts) * count)
@@ -329,6 +335,16 @@ class PairDataset:
             translation_scale=self.translation_scale,
             rotation_scale=self.rotation_scale,
         )
+        response_magnitude = np.linalg.norm(
+            target[:, :3] * self.translation_scale, axis=-1
+        )
+        gate_target = 1.0 / (
+            1.0
+            + np.exp(
+                -(response_magnitude - self.gate_response_threshold)
+                / self.gate_response_temperature
+            )
+        )
         localization = None
         if self.target_localization_radius is not None:
             localization = mutation_localization_weights(
@@ -367,6 +383,7 @@ class PairDataset:
             "loss_mask": valid.astype(np.float32),
             "neighborhood_mask": mutation_neighborhood_mask(record.pair, self.neighborhood_radius),
             "sample_weight": self.sample_weights[record.pair.pair_id],
+            "gate_target": gate_target.astype(np.float32),
         }
         if self.teacher_deltas is not None:
             teacher_delta, teacher_valid = self.teacher_deltas[record.pair.pair_id]
@@ -425,6 +442,7 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
     loss_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     neighborhood_mask = np.zeros((len(batch), max_length), dtype=np.float32)
     sample_weight = np.ones(len(batch), dtype=np.float32)
+    gate_target = np.zeros((len(batch), max_length), dtype=np.float32)
     has_teacher = ["teacher_delta" in item for item in batch]
     if any(has_teacher) and not all(has_teacher):
         raise ValueError("all batch items must either contain teacher deltas or omit them")
@@ -450,6 +468,7 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         loss_mask[index, :length] = item["loss_mask"]
         neighborhood_mask[index, :length] = item["neighborhood_mask"]
         sample_weight[index] = item.get("sample_weight", 1.0)
+        gate_target[index, :length] = item.get("gate_target", 0.0)
         if teacher is not None and teacher_mask is not None:
             teacher[index, :length] = item["teacher_delta"]
             teacher_mask[index, :length] = item["teacher_mask"]
@@ -468,6 +487,7 @@ def collate_pair_records(batch: Sequence[dict[str, Any]]) -> dict[str, Any]:
         "loss_mask": loss_mask,
         "neighborhood_mask": neighborhood_mask,
         "sample_weight": sample_weight,
+        "gate_target": gate_target,
     }
     if teacher is not None and teacher_mask is not None:
         result["teacher_delta"] = teacher

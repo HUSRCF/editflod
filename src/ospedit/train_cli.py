@@ -102,6 +102,9 @@ def main() -> None:
         help="Weight for mutation-anchored neighbor displacement-change vectors",
     )
     parser.add_argument("--gate-sparsity-weight", type=float, default=0.0)
+    parser.add_argument("--gate-response-loss-weight", type=float, default=0.0)
+    parser.add_argument("--gate-response-threshold", type=float, default=0.25)
+    parser.add_argument("--gate-response-temperature", type=float, default=0.1)
     parser.add_argument(
         "--family-balanced-loss",
         action="store_true",
@@ -364,6 +367,15 @@ def main() -> None:
                 "resume checkpoint target_localization_transition="
                 f"{saved_target_transition} does not match requested {args.target_localization_transition}"
             )
+        for key, requested in (
+            ("gate_response_threshold", args.gate_response_threshold),
+            ("gate_response_temperature", args.gate_response_temperature),
+        ):
+            saved = resume_config.get(key)
+            if saved is not None and not np.isclose(float(saved), requested):
+                raise SystemExit(
+                    f"resume checkpoint {key}={saved} does not match requested {requested}"
+                )
         saved_spatial_neighbors = resume_config.get("spatial_neighbors")
         if saved_spatial_neighbors is not None and int(saved_spatial_neighbors) != args.spatial_neighbors:
             raise SystemExit(f"resume checkpoint spatial_neighbors={saved_spatial_neighbors} does not match requested {args.spatial_neighbors}")
@@ -389,6 +401,7 @@ def main() -> None:
             ("local_distance_loss_weight", args.local_distance_loss_weight),
             ("mutation_vector_loss_weight", args.mutation_vector_loss_weight),
             ("gate_sparsity_weight", args.gate_sparsity_weight),
+            ("gate_response_loss_weight", args.gate_response_loss_weight),
             ("delta_loss_beta", args.delta_loss_beta),
         ):
             saved = resume_config.get(key)
@@ -436,6 +449,7 @@ def main() -> None:
         local_distance_loss_weight=args.local_distance_loss_weight,
         mutation_vector_loss_weight=args.mutation_vector_loss_weight,
         gate_sparsity_weight=args.gate_sparsity_weight,
+        gate_response_loss_weight=args.gate_response_loss_weight,
         neighborhood_radius=args.neighborhood_radius,
         distill_weight=args.distill_weight,
         teacher_cache=teacher_cache,
@@ -450,6 +464,8 @@ def main() -> None:
         sequence_context_mode=args.sequence_context_mode,
         target_localization_radius=args.target_localization_radius,
         target_localization_transition=args.target_localization_transition,
+        gate_response_threshold=args.gate_response_threshold,
+        gate_response_temperature=args.gate_response_temperature,
     )
     evaluation = None
     evaluation_payload: dict[str, object] | None

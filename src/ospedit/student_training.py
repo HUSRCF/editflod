@@ -254,6 +254,7 @@ def train_student(
     local_distance_loss_weight: float = 0.0,
     mutation_vector_loss_weight: float = 0.0,
     gate_sparsity_weight: float = 0.0,
+    gate_response_loss_weight: float = 0.0,
     translation_scale: float = 1.0,
     distill_weight: float = 0.0,
 ) -> list[float]:
@@ -278,6 +279,8 @@ def train_student(
         raise ValueError("mutation_vector_loss_weight must be non-negative")
     if gate_sparsity_weight < 0:
         raise ValueError("gate_sparsity_weight must be non-negative")
+    if gate_response_loss_weight < 0:
+        raise ValueError("gate_response_loss_weight must be non-negative")
     if distill_weight < 0:
         raise ValueError("distill_weight must be non-negative")
     materialized_batches = list(batches)
@@ -376,6 +379,23 @@ def train_student(
                 loss = loss + gate_sparsity_weight * (
                     gate * input_mask
                 ).sum() / input_mask.sum().clamp_min(1.0)
+            if gate_response_loss_weight:
+                gate_logits = getattr(model, "last_gate_logits", None)
+                if gate_logits is None or "gate_target" not in batch:
+                    raise ValueError(
+                        "gate_response_loss_weight requires a gated student model and gate targets"
+                    )
+                gate_target = torch.as_tensor(
+                    batch["gate_target"], dtype=torch.float32, device=device
+                )
+                gate_loss = torch.nn.functional.binary_cross_entropy_with_logits(
+                    gate_logits, gate_target, reduction="none"
+                )
+                valid = input_mask
+                per_sample = (gate_loss * valid).sum(dim=1) / valid.sum(dim=1).clamp_min(1.0)
+                valid_samples = valid.sum(dim=1) > 0
+                if bool(valid_samples.any()):
+                    loss = loss + gate_response_loss_weight * per_sample[valid_samples].mean()
             if delta_norm_weight:
                 loss = loss + delta_norm_weight * masked_prediction_norm_loss(prediction, input_mask)
             window_start = (count // grad_accumulation_steps) * grad_accumulation_steps
@@ -418,6 +438,7 @@ def train_records(
     local_distance_loss_weight: float = 0.0,
     mutation_vector_loss_weight: float = 0.0,
     gate_sparsity_weight: float = 0.0,
+    gate_response_loss_weight: float = 0.0,
     distill_weight: float = 0.0,
     teacher_cache: TeacherCache | None = None,
     teacher_noise_level: float | None = None,
@@ -431,6 +452,8 @@ def train_records(
     sequence_context_mode: str = "parent_edit",
     target_localization_radius: float | None = None,
     target_localization_transition: float = 5.0,
+    gate_response_threshold: float = 0.25,
+    gate_response_temperature: float = 0.1,
 ) -> list[float]:
     """Train directly from PairRecords using the experimental target path."""
     materialized_records = list(records)
@@ -462,6 +485,8 @@ def train_records(
         include_target_residue=include_target_residue,
         sequence_context=sequence_context,
         sequence_context_mode=sequence_context_mode,
+        gate_response_threshold=gate_response_threshold,
+        gate_response_temperature=gate_response_temperature,
         target_localization_radius=target_localization_radius,
         target_localization_transition=target_localization_transition,
     )
@@ -482,6 +507,7 @@ def train_records(
         local_distance_loss_weight=local_distance_loss_weight,
         mutation_vector_loss_weight=mutation_vector_loss_weight,
         gate_sparsity_weight=gate_sparsity_weight,
+        gate_response_loss_weight=gate_response_loss_weight,
         translation_scale=translation_scale,
         distill_weight=distill_weight,
     )

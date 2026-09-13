@@ -214,6 +214,7 @@ if nn is not None:
             nn.init.zeros_(self.gate_projection[-1].weight)
             nn.init.constant_(self.gate_projection[-1].bias, gate_logit)
             self.last_gate: Tensor | None = None
+            self.last_gate_logits: Tensor | None = None
 
         def forward(
             self,
@@ -233,13 +234,15 @@ if nn is not None:
             delta = self.output_projection(hidden)
             if self.max_normalized_delta is not None:
                 delta = torch.tanh(delta) * self.max_normalized_delta
-            gate = torch.sigmoid(self.gate_projection(hidden)).squeeze(-1)
+            gate_logits = self.gate_projection(hidden).squeeze(-1)
+            gate = torch.sigmoid(gate_logits)
             edit_mask = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
             gate = gate * edit_mask[:, None].to(gate.dtype)
             if residue_mask is not None:
                 gate = gate * residue_mask.to(gate.dtype)
                 delta = delta * residue_mask[:, :, None].to(delta.dtype)
             self.last_gate = gate
+            self.last_gate_logits = gate_logits
             return delta * gate[:, :, None]
 
     class SpatialGraphStudent(nn.Module):

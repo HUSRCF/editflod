@@ -1,4 +1,7 @@
+import numpy as np
 import pytest
+
+# ruff: noqa: E402
 
 torch = pytest.importorskip("torch")
 
@@ -11,6 +14,7 @@ from ospedit.student import (
     SpatialGraphStudent,
     encode_edit_features,
 )
+from ospedit.metrics import gate_localization_metrics
 
 
 def test_edit_encoder_marks_only_sequence_changes():
@@ -69,6 +73,17 @@ def test_student_optional_delta_bound_is_respected():
         model.output_projection[-1].bias.fill_(10.0)
     output = model(torch.randn(1, 2, 8), encode_edit_features(["AA"], ["AY"]))
     assert float(output.abs().max()) <= 0.25 + 1e-6
+
+
+def test_gate_localization_metrics_distinguish_response_and_stable():
+    metrics = gate_localization_metrics(
+        np.array([0.9, 0.1, 0.8, 0.2]),
+        np.array([0.5, 0.0, 0.4, 0.0]),
+    )
+    assert metrics["gate_response_mean"] == pytest.approx(0.85)
+    assert metrics["gate_stable_mean"] == pytest.approx(0.15)
+    assert metrics["gate_auprc"] == pytest.approx(1.0)
+    assert metrics["gate_auroc"] == pytest.approx(1.0)
 
 
 def test_student_positional_encoding_preserves_shape_and_is_optional():
