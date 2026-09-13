@@ -297,12 +297,12 @@ def train_student(
         tensor_batches.append(tensor_batch)
     forward_parameters = inspect.signature(model.forward).parameters
     history: list[float] = []
-    for _ in range(epochs):
+    for epoch_index in range(epochs):
         model.train()
         total = 0.0
         count = 0
         optimizer.zero_grad(set_to_none=True)
-        for batch in tensor_batches:
+        for batch_index, batch in enumerate(tensor_batches):
             parent = torch.as_tensor(batch["parent_features"], dtype=torch.float32, device=device)
             edit = torch.as_tensor(batch["edit_features"], dtype=torch.float32, device=device)
             target = torch.as_tensor(batch["target_delta"], dtype=torch.float32, device=device)
@@ -406,9 +406,14 @@ def train_student(
                 if gradient_clip_norm is not None:
                     # Fail at the first non-finite gradient instead of allowing
                     # NaNs to enter the optimizer and surfacing only at eval.
-                    torch.nn.utils.clip_grad_norm_(
-                        model.parameters(), gradient_clip_norm, error_if_nonfinite=True
-                    )
+                    try:
+                        torch.nn.utils.clip_grad_norm_(
+                            model.parameters(), gradient_clip_norm, error_if_nonfinite=True
+                        )
+                    except RuntimeError as exc:
+                        raise RuntimeError(
+                            f"non-finite student gradient at epoch={epoch_index} batch={batch_index}"
+                        ) from exc
                 optimizer.step()
                 optimizer.zero_grad(set_to_none=True)
             total += float(loss.detach().cpu())
