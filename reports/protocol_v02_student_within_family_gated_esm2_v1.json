@@ -1,0 +1,1155 @@
+{
+  "aggregate": {
+    "gated_transformer": {
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.3480561349685325,
+            "std": 0.0
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.2853098108251679,
+            "std": 0.0
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.20348072602148004,
+            "std": 0.0
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.26560543219895844,
+            "std": 0.0
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 5.3493109566701305e-15,
+            "std": 0.0
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.5383805526813884,
+            "std": 0.0
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 53.43482909405021,
+            "std": 0.0
+          }
+        },
+        "student_family_macro": {
+          "distance_change_cosine": {
+            "count": 3,
+            "mean": 0.026850736024288075,
+            "std": 0.0010679734209578372
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.35265433335035423,
+            "std": 0.0003118128601290315
+          },
+          "edit_energy_precision": {
+            "count": 3,
+            "mean": 0.4438218685148239,
+            "std": 0.006879352816221521
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.011145371164370059,
+            "std": 0.0007316691290657282
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.28557961709782104,
+            "std": 2.9271459458546795e-05
+          },
+          "local_distance_change_cosine": {
+            "count": 3,
+            "mean": 0.04187543031099439,
+            "std": 0.04873786741140813
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.20347794474885247,
+            "std": 3.942834678552223e-06
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.26708782528865355,
+            "std": 0.000179676706870869
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 3.7601573581585224,
+            "std": 0.0543329103837004
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.09099762256224947,
+            "std": 0.00232376839699928
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.09138440717127039,
+            "std": 0.0023255717723243965
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.5811520820824975,
+            "std": 0.0023227796168846762
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.0014949755280647334,
+            "std": 0.0007296254926562155
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 53.43482909405021,
+            "std": 0.0
+          }
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.004598198381821776,
+            "std": 0.0003118128601290315
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.011145371164370059,
+            "std": 0.0007316691290657282
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.00026980627265316137,
+            "std": 2.9271459458546795e-05
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": -2.7812726275666666e-06,
+            "std": 3.942834678552223e-06
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.0014823930896951665,
+            "std": 0.00017967670687086897
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 3.7601573581585224,
+            "std": 0.0543329103837004
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.09099762256224413,
+            "std": 0.00232376839699928
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.09138440717127039,
+            "std": 0.0023255717723243965
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.04277152940110899,
+            "std": 0.0023227796168846762
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.0014949755280647334,
+            "std": 0.0007296254926562155
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          }
+        }
+      },
+      "parameter_count": [
+        48103
+      ],
+      "runs": 3,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.17156916174661427,
+            "std": 2.7755575615628914e-17
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.23667139075426247,
+            "std": 0.0
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.16379034352241814,
+            "std": 0.0
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.37199213018607563,
+            "std": 5.551115123125783e-17
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 6.206889449519908e-15,
+            "std": 0.0
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.273143718430464,
+            "std": 0.0
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 26.246870825942082,
+            "std": 0.0
+          }
+        },
+        "student_family_macro": {
+          "distance_change_cosine": {
+            "count": 3,
+            "mean": 0.15900680890736663,
+            "std": 0.012350143361484463
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.1690742975168301,
+            "std": 0.0006911899202817771
+          },
+          "edit_energy_precision": {
+            "count": 3,
+            "mean": 0.5608260217723575,
+            "std": 0.020203585116552923
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.014564879988911636,
+            "std": 0.002199400232507408
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.23402716343001062,
+            "std": 0.002714010155151517
+          },
+          "local_distance_change_cosine": {
+            "count": 3,
+            "mean": 0.15900999035180377,
+            "std": 0.06625402970374764
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.16207495613425812,
+            "std": 0.002371770373994954
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.34434438676250095,
+            "std": 0.03710737948483442
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 3.7293797735932195,
+            "std": 0.47927443139655806
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.09116483389538554,
+            "std": 0.002211147153361027
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0915264811435189,
+            "std": 0.0021984127892882037
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.257041282419926,
+            "std": 0.00010358007926140378
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.00017999825739694044,
+            "std": 0.00017463085351299127
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 26.246870825942082,
+            "std": 0.0
+          }
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": -0.002494864229784177,
+            "std": 0.0006911899202817771
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.014564879988911636,
+            "std": 0.002199400232507408
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": -0.0026442273242518375,
+            "std": 0.0027140101551515173
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": -0.0017153873881600261,
+            "std": 0.002371770373994954
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": -0.027647743423574733,
+            "std": 0.03710737948483442
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 3.7293797735932195,
+            "std": 0.47927443139655806
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.09116483389537933,
+            "std": 0.002211147153361027
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0915264811435189,
+            "std": 0.0021984127892882037
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": -0.016102436010537957,
+            "std": 0.00010358007926140378
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.00017999825739694044,
+            "std": 0.00017463085351299127
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          }
+        }
+      }
+    }
+  },
+  "configuration": {
+    "architectures": [
+      "gated_transformer"
+    ],
+    "batch_size": 1,
+    "biochemical_edit_features": false,
+    "blocks": 2,
+    "dev_records": 12,
+    "device": "cuda",
+    "endpoint_group_balanced_loss": true,
+    "epochs": 98,
+    "family_balanced_loss": true,
+    "gate_sparsity_weight": 0.02,
+    "gradient_clip_norm": 1.0,
+    "heads": 4,
+    "hidden_dim": 32,
+    "learning_rate": 0.001,
+    "local_distance_loss_weight": 0.0,
+    "max_normalized_delta": null,
+    "mutation_loss_weight": 0.0,
+    "mutation_vector_loss_weight": 0.0,
+    "neighborhood_loss_weight": 0.0,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "sequence_context_cache": "/tmp/ospedit-real-sample/protocol_v02_esm2_t6_context_v2.npz",
+    "sequence_context_mode": "parent_edit",
+    "spatial_neighbors": 24,
+    "target_localization_radius": null,
+    "target_localization_transition": 5.0,
+    "teacher_distillation": false,
+    "train_records": 36,
+    "verify_checksums": true,
+    "within_family_probe": true
+  },
+  "environment": {
+    "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+    "python": "3.12.7",
+    "torch": "2.9.1+rocm7.2.0.git7e1940d4"
+  },
+  "format": "ospedit.student_architecture_sweep.v1",
+  "frozen_test_records_processed": 0,
+  "manifest": "/tmp/ospedit-real-sample/protocol_v02_within_family_probe_v1.jsonl",
+  "manifest_fingerprint": "e9f5aca3c94ebe80b6ee813f9a780bc96f5a8f8021849af419f866f093da7968",
+  "purpose": "fixed_budget_development_architecture_comparison",
+  "runs": [
+    {
+      "architecture": "gated_transformer",
+      "checkpoint": "/tmp/ospedit-real-sample/protocol_v02_within_family_gated_esm2_v1/gated_transformer_seed0.pt",
+      "checkpoint_sha256": "9ce7ed83da6989a3e57c08fa52438e726f492db7ad34882c7aaae94625cef128",
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.3480561349685325,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.2853098108251679,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.20348072602148004,
+          "mutation_site_backbone_error": 0.26560543219895844,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 5.3493109566701305e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.5383805526813884,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 53.43482909405021
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.027732311586444403,
+          "distance_change_error": 0.3530949737245672,
+          "edit_energy_precision": 0.44097751851087996,
+          "edit_energy_recall": 0.012003625411584498,
+          "local_backbone_error": 0.28554687884257124,
+          "local_distance_change_cosine": 0.10245447432770863,
+          "local_distance_change_error": 0.20347671714466528,
+          "mutation_site_backbone_error": 0.2672126639832815,
+          "predicted_distance_change_norm": 3.7814303696236875,
+          "remote_scaffold_drift": 0.09250989354405037,
+          "remote_scaffold_frame_drift": 0.09289261064978174,
+          "remote_target_error": 0.5827012437189564,
+          "stable_predicted_displacement": 0.0008754832627884084,
+          "true_distance_change_norm": 53.43482909405021
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.005038838756034725,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.012003625411584498,
+          "local_backbone_error": 0.00023706801740336347,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -4.008876814759477e-06,
+          "mutation_site_backbone_error": 0.0016072317843230377,
+          "predicted_distance_change_norm": 3.7814303696236875,
+          "remote_scaffold_drift": 0.09250989354404503,
+          "remote_scaffold_frame_drift": 0.09289261064978174,
+          "remote_target_error": 0.04432069103756797,
+          "stable_predicted_displacement": 0.0008754832627884084,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "dev_report": "/tmp/ospedit-real-sample/protocol_v02_within_family_gated_esm2_v1/gated_transformer_seed0_dev.json",
+      "dev_report_sha256": "eed24142162f227c17eaf1e03e3290607d92d0139b0e206ae1e96e4fb80b84ce",
+      "epochs": 98,
+      "loss_final": 0.010603662571763076,
+      "loss_history": [
+        0.016862011889720127,
+        0.014715951133338321,
+        0.014054139560256671,
+        0.013823644251614396,
+        0.01371821494750394,
+        0.013661304555070173,
+        0.013626204856943028,
+        0.013603207166953426,
+        0.013585558182158921,
+        0.013533743524425922,
+        0.013592281985135438,
+        0.013564064777003497,
+        0.013557853042988831,
+        0.013550068740894657,
+        0.01354001874521297,
+        0.013475670237514552,
+        0.012883729960271416,
+        0.012161338972671527,
+        0.011865139562966457,
+        0.011437453807351025,
+        0.011326691605467608,
+        0.011309638979987035,
+        0.01127350011019088,
+        0.011202512179604836,
+        0.011097881391227324,
+        0.011019625643206786,
+        0.010891500517269984,
+        0.010892405608400522,
+        0.010869307407119777,
+        0.010887056256049417,
+        0.010842455134277569,
+        0.010797644965754848,
+        0.01079250830823892,
+        0.010796228574488649,
+        0.010748186472078992,
+        0.01071494026675484,
+        0.010709660588569628,
+        0.010714136896341288,
+        0.010714209239975188,
+        0.010719391288552692,
+        0.010712901156188713,
+        0.010720611115377525,
+        0.010713194774628695,
+        0.010708744753679235,
+        0.01071222148675588,
+        0.010712251771716788,
+        0.010714058137333874,
+        0.010711678714869777,
+        0.010711520484619541,
+        0.010713204175165933,
+        0.01072492007652828,
+        0.010735979981594332,
+        0.01075594173461367,
+        0.010738199736402344,
+        0.010735364311888892,
+        0.010714939062583854,
+        0.010717742452672811,
+        0.010712064417020883,
+        0.010707797004013427,
+        0.010713980244569635,
+        0.010725072776646508,
+        0.01075260447881495,
+        0.01080451583685418,
+        0.010781269523350703,
+        0.010768636964510532,
+        0.010743661176497376,
+        0.010753480991600858,
+        0.010766008427001199,
+        0.010768161016636036,
+        0.010748271479517117,
+        0.010734741746192513,
+        0.010727833595107464,
+        0.010762864203570643,
+        0.011021008861765344,
+        0.011663828037853818,
+        0.012497343677548796,
+        0.011599024602118233,
+        0.010846505265767014,
+        0.010736677098369304,
+        0.010720788111535108,
+        0.010715787933198348,
+        0.010710405362866974,
+        0.010710201888691194,
+        0.01071359246230309,
+        0.010712250494786227,
+        0.010709640902657865,
+        0.010711273777107837,
+        0.010697029005111998,
+        0.0106974340560555,
+        0.010661926977465756,
+        0.010655436943731425,
+        0.010708019703694541,
+        0.01069060339674858,
+        0.010631130655787678,
+        0.010621735980546672,
+        0.010610673401970416,
+        0.010599729829361118,
+        0.010603662571763076
+      ],
+      "loss_initial": 0.016862011889720127,
+      "loss_minimum": 0.010599729829361118,
+      "optimizer_steps": 3528,
+      "parameter_count": 48103,
+      "seed": 0,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.17156916174661424,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.23667139075426247,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.16379034352241814,
+          "mutation_site_backbone_error": 0.3719921301860757,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 6.206889449519908e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.273143718430464,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.1702577522830902,
+          "distance_change_error": 0.16809797028208884,
+          "edit_energy_precision": 0.5551857853194607,
+          "edit_energy_recall": 0.015442544171434733,
+          "local_backbone_error": 0.23018898938393345,
+          "local_distance_change_cosine": 0.20261766980872498,
+          "local_distance_change_error": 0.15872077265278145,
+          "mutation_site_backbone_error": 0.29186707249478705,
+          "predicted_distance_change_norm": 4.389005301351302,
+          "remote_scaffold_drift": 0.09273489121441175,
+          "remote_scaffold_frame_drift": 0.09307306072140457,
+          "remote_target_error": 0.256964829797906,
+          "stable_predicted_displacement": 4.866272674323454e-05,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": -0.0034711914645254027,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.015442544171434733,
+          "local_backbone_error": -0.006482401370329016,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -0.0050695708696366915,
+          "mutation_site_backbone_error": -0.08012505769128864,
+          "predicted_distance_change_norm": 4.389005301351302,
+          "remote_scaffold_drift": 0.09273489121440555,
+          "remote_scaffold_frame_drift": 0.09307306072140457,
+          "remote_target_error": -0.016178888632557953,
+          "stable_predicted_displacement": 4.866272674323454e-05,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "train_command_seconds_including_evaluation": 102.1578894359991
+    },
+    {
+      "architecture": "gated_transformer",
+      "checkpoint": "/tmp/ospedit-real-sample/protocol_v02_within_family_gated_esm2_v1/gated_transformer_seed1.pt",
+      "checkpoint_sha256": "f68b424317a7aa6873689550d514ac4fc031fe0d6940d6d5ac52a24bac86e9b5",
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.3480561349685325,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.2853098108251679,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.20348072602148004,
+          "mutation_site_backbone_error": 0.26560543219895844,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 5.3493109566701305e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.5383805526813884,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 53.43482909405021
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.025347889281586246,
+          "distance_change_error": 0.3524487757874344,
+          "edit_energy_precision": 0.45330136922365305,
+          "edit_energy_recall": 0.011216803035283449,
+          "local_backbone_error": 0.2855740457949431,
+          "local_distance_change_cosine": 0.040058775197871856,
+          "local_distance_change_error": 0.2034738480670088,
+          "mutation_site_backbone_error": 0.26721707506699804,
+          "predicted_distance_change_norm": 3.685577971950104,
+          "remote_scaffold_drift": 0.09276826895796707,
+          "remote_scaffold_frame_drift": 0.09316139567199093,
+          "remote_target_error": 0.5828860927796436,
+          "stable_predicted_displacement": 0.0010900874610959615,
+          "true_distance_change_norm": 53.43482909405021
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.004392640818901894,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.011216803035283449,
+          "local_backbone_error": 0.0002642349697752344,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -6.8779544712405105e-06,
+          "mutation_site_backbone_error": 0.0016116428680396089,
+          "predicted_distance_change_norm": 3.685577971950104,
+          "remote_scaffold_drift": 0.09276826895796172,
+          "remote_scaffold_frame_drift": 0.09316139567199093,
+          "remote_target_error": 0.04450554009825525,
+          "stable_predicted_displacement": 0.0010900874610959615,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "dev_report": "/tmp/ospedit-real-sample/protocol_v02_within_family_gated_esm2_v1/gated_transformer_seed1_dev.json",
+      "dev_report_sha256": "726609d2585d014039cf4da55ab4eae0f88c29765635a8ce0fca8a49269db3cd",
+      "epochs": 98,
+      "loss_final": 0.010715469808524681,
+      "loss_history": [
+        0.017063224558821984,
+        0.01473320422681152,
+        0.014001658451484723,
+        0.013765990596665587,
+        0.01354711176504174,
+        0.01361005251318501,
+        0.013468507615066806,
+        0.01337321292036601,
+        0.012507512040934267,
+        0.011941061650254091,
+        0.01161375641580283,
+        0.011396038216642208,
+        0.011266977825370204,
+        0.011240256309974939,
+        0.011151442157925986,
+        0.011052936759369913,
+        0.010893673374084756,
+        0.010946420520162469,
+        0.011355367470564993,
+        0.011126558519511795,
+        0.010933914917081388,
+        0.01103104162110766,
+        0.012208040224828033,
+        0.011849838977569662,
+        0.011015960936169399,
+        0.010852432623828968,
+        0.010841962707571737,
+        0.010739414417104045,
+        0.010721936225713257,
+        0.010744170356499834,
+        0.010746153516164567,
+        0.010743422332678974,
+        0.010760032968391897,
+        0.010759866513884239,
+        0.010747705051875932,
+        0.01074345234762101,
+        0.01072213837849429,
+        0.010719347758115165,
+        0.010719705360922186,
+        0.010718660699138936,
+        0.010717322028439311,
+        0.010715442293682523,
+        0.010717488193121325,
+        0.010721974278971579,
+        0.010721994511388604,
+        0.010720033940742724,
+        0.010713884721351659,
+        0.010713029139474707,
+        0.010715689549316367,
+        0.010715341714482443,
+        0.01071459279127238,
+        0.010730884540357187,
+        0.010756619224088758,
+        0.01079464517857155,
+        0.010793103625878252,
+        0.01078671017886437,
+        0.010780327932783015,
+        0.010772745389355501,
+        0.010761980336408468,
+        0.010785657358711533,
+        0.01080573753481278,
+        0.010789631142769294,
+        0.010761781875367483,
+        0.010742020701905454,
+        0.010725431621216962,
+        0.010713177168023927,
+        0.010708745324033467,
+        0.010708174122555647,
+        0.010708219662774354,
+        0.010708822157741653,
+        0.010709920532260893,
+        0.010710620449471107,
+        0.010714101196046814,
+        0.01071217287729572,
+        0.010710719343478559,
+        0.0107113211027657,
+        0.010714773644495936,
+        0.01071729205149394,
+        0.010718948811700102,
+        0.010731729581392655,
+        0.010744332543254131,
+        0.010751395211829932,
+        0.01076812117753434,
+        0.010779407225830559,
+        0.010779299525893293,
+        0.010785809383782584,
+        0.010782234865473583,
+        0.01077073636366145,
+        0.01075631501306715,
+        0.010742282321088068,
+        0.010728890955457851,
+        0.010714471328052847,
+        0.01070628066291748,
+        0.010704214507212682,
+        0.010704383449693624,
+        0.010706237096908607,
+        0.010710840554060673,
+        0.010715469808524681
+      ],
+      "loss_initial": 0.017063224558821984,
+      "loss_minimum": 0.010704214507212682,
+      "optimizer_steps": 3528,
+      "parameter_count": 48103,
+      "seed": 1,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.17156916174661424,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.23667139075426247,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.16379034352241814,
+          "mutation_site_backbone_error": 0.3719921301860757,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 6.206889449519908e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.273143718430464,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.16495074802736467,
+          "distance_change_error": 0.16952118030480484,
+          "edit_energy_precision": 0.5879034703735454,
+          "edit_energy_recall": 0.011541803083169943,
+          "local_backbone_error": 0.23593667562077936,
+          "local_distance_change_cosine": 0.20902656831402788,
+          "local_distance_change_error": 0.16375769941302198,
+          "mutation_site_backbone_error": 0.3703958707600413,
+          "predicted_distance_change_norm": 3.264561108979639,
+          "remote_scaffold_drift": 0.09272180173714095,
+          "remote_scaffold_frame_drift": 0.09308891327619026,
+          "remote_target_error": 0.2571877191586655,
+          "stable_predicted_displacement": 6.453861925058668e-05,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": -0.002047981441809399,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.011541803083169943,
+          "local_backbone_error": -0.0007347151334831103,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -3.264410939615714e-05,
+          "mutation_site_backbone_error": -0.0015962594260343632,
+          "predicted_distance_change_norm": 3.264561108979639,
+          "remote_scaffold_drift": 0.09272180173713475,
+          "remote_scaffold_frame_drift": 0.09308891327619026,
+          "remote_target_error": -0.01595599927179847,
+          "stable_predicted_displacement": 6.453861925058668e-05,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "train_command_seconds_including_evaluation": 103.02355041913688
+    },
+    {
+      "architecture": "gated_transformer",
+      "checkpoint": "/tmp/ospedit-real-sample/protocol_v02_within_family_gated_esm2_v1/gated_transformer_seed2.pt",
+      "checkpoint_sha256": "8b028a1ebe56555c7f56cad26431898de30201d9905b2e6af9fb152fac777151",
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.3480561349685325,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.2853098108251679,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.20348072602148004,
+          "mutation_site_backbone_error": 0.26560543219895844,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 5.3493109566701305e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.5383805526813884,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 53.43482909405021
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.027472007204833587,
+          "distance_change_error": 0.3524192505390612,
+          "edit_energy_precision": 0.43718671780993884,
+          "edit_energy_recall": 0.01021568504624223,
+          "local_backbone_error": 0.28561792665594876,
+          "local_distance_change_cosine": -0.016886958592597322,
+          "local_distance_change_error": 0.20348326903488334,
+          "mutation_site_backbone_error": 0.2668337368156813,
+          "predicted_distance_change_norm": 3.8134637329017758,
+          "remote_scaffold_drift": 0.08771470518473096,
+          "remote_scaffold_frame_drift": 0.08809921519203853,
+          "remote_target_error": 0.5778689097488922,
+          "stable_predicted_displacement": 0.00251935586030983,
+          "true_distance_change_norm": 53.43482909405021
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.004363115570528708,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.01021568504624223,
+          "local_backbone_error": 0.0003081158307808862,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 2.5430134032999874e-06,
+          "mutation_site_backbone_error": 0.0012283046167228528,
+          "predicted_distance_change_norm": 3.8134637329017758,
+          "remote_scaffold_drift": 0.08771470518472561,
+          "remote_scaffold_frame_drift": 0.08809921519203853,
+          "remote_target_error": 0.039488357067503754,
+          "stable_predicted_displacement": 0.00251935586030983,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "dev_report": "/tmp/ospedit-real-sample/protocol_v02_within_family_gated_esm2_v1/gated_transformer_seed2_dev.json",
+      "dev_report_sha256": "6047e009d8f9ea24b6d3dd79569d90608cd0c20e76ea7fb14490d6968fce9f29",
+      "epochs": 98,
+      "loss_final": 0.010812736538355239,
+      "loss_history": [
+        0.016901829034193523,
+        0.014694596301220978,
+        0.014058816047812192,
+        0.013829619067514108,
+        0.013722829291913917,
+        0.013664026232112924,
+        0.013627748256516902,
+        0.013598372630238172,
+        0.013508184771732582,
+        0.013593864379799925,
+        0.013264352298089458,
+        0.012620731454161514,
+        0.01198680245902829,
+        0.012023078297918093,
+        0.011448679198413933,
+        0.011244553588363083,
+        0.011146849286483808,
+        0.01178943340265606,
+        0.011606093662622798,
+        0.012150132965568142,
+        0.01108373327103133,
+        0.010973692745513594,
+        0.010902785624138132,
+        0.010783354934473108,
+        0.010807258261290068,
+        0.010841532675031986,
+        0.010780147343919251,
+        0.010724797889350966,
+        0.01075373309868155,
+        0.010704652525115913,
+        0.010662298856510056,
+        0.010644982611766964,
+        0.010729510612792283,
+        0.010729033665686276,
+        0.010718051779096842,
+        0.010700410556940673,
+        0.01066259392812046,
+        0.010651588181240691,
+        0.010661950385838281,
+        0.010566716454276402,
+        0.010644526801317826,
+        0.01068865121002697,
+        0.01071680419328105,
+        0.010694430338238211,
+        0.010642090414573127,
+        0.01083771776918891,
+        0.010729650797859196,
+        0.010708224814960785,
+        0.010697065910790116,
+        0.01069633620217145,
+        0.010688447899156017,
+        0.010676203635133183,
+        0.010658482302258361,
+        0.010683341104999676,
+        0.010715469849350888,
+        0.010832305859771118,
+        0.010803875648788461,
+        0.010732985100831784,
+        0.010684519460482989,
+        0.010635532889460187,
+        0.01060661930710517,
+        0.010590487874045115,
+        0.010637629446541218,
+        0.010594388425993707,
+        0.010601482054173376,
+        0.010743962207117066,
+        0.010839533830827955,
+        0.010813913299999613,
+        0.010827586279548187,
+        0.01084345047962011,
+        0.010809538273557942,
+        0.01076583111676478,
+        0.010748923115897924,
+        0.010724040118980661,
+        0.010716642353751618,
+        0.010712610181750884,
+        0.010712120956062185,
+        0.010713399865279725,
+        0.010708150702056527,
+        0.010706560891574353,
+        0.01070554489989364,
+        0.010706174490122875,
+        0.010708842865925463,
+        0.010712646696952611,
+        0.010713322921219515,
+        0.010717840924674723,
+        0.010722934415551007,
+        0.0107323995196364,
+        0.010727472250032911,
+        0.010721111987044828,
+        0.010713039936995806,
+        0.010711737240651727,
+        0.010708168466307042,
+        0.010708957852330059,
+        0.010713420086378593,
+        0.010740065410371043,
+        0.010779584445925947,
+        0.010812736538355239
+      ],
+      "loss_initial": 0.016901829034193523,
+      "loss_minimum": 0.010566716454276402,
+      "optimizer_steps": 3528,
+      "parameter_count": 48103,
+      "seed": 2,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.17156916174661424,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.23667139075426247,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.16379034352241814,
+          "mutation_site_backbone_error": 0.3719921301860757,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 6.206889449519908e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.273143718430464,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.14181192641164497,
+          "distance_change_error": 0.1696037419635965,
+          "edit_energy_precision": 0.5393888096240664,
+          "edit_energy_recall": 0.016710292712130228,
+          "local_backbone_error": 0.23595582528531908,
+          "local_distance_change_cosine": 0.06538573293265844,
+          "local_distance_change_error": 0.1637463963369709,
+          "mutation_site_backbone_error": 0.3707702170326745,
+          "predicted_distance_change_norm": 3.534572910448717,
+          "remote_scaffold_drift": 0.0880378087346039,
+          "remote_scaffold_frame_drift": 0.08841746943296186,
+          "remote_target_error": 0.25697129830320653,
+          "stable_predicted_displacement": 0.00042679342619700013,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": -0.00196541978301773,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.016710292712130228,
+          "local_backbone_error": -0.0007155654689433855,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -4.394718544722953e-05,
+          "mutation_site_backbone_error": -0.0012219131534011995,
+          "predicted_distance_change_norm": 3.534572910448717,
+          "remote_scaffold_drift": 0.0880378087345977,
+          "remote_scaffold_frame_drift": 0.08841746943296186,
+          "remote_target_error": -0.016172420127257447,
+          "stable_predicted_displacement": 0.00042679342619700013,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "train_command_seconds_including_evaluation": 102.70462864497676
+    }
+  ],
+  "selection_policy": {
+    "copy_parent_noninferiority_required": true,
+    "primary_metric": "dev_family_macro_local_backbone_error",
+    "secondary_metrics": [
+      "mutation_site_backbone_error",
+      "distance_change_error",
+      "distance_change_cosine",
+      "local_distance_change_error",
+      "local_distance_change_cosine",
+      "remote_target_error",
+      "remote_scaffold_drift"
+    ],
+    "test_metrics_used": false
+  },
+  "selection_used_observed_response": false
+}

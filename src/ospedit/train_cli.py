@@ -16,7 +16,7 @@ from .data import (
 )
 from .experiment import evaluate_manifest_batched
 from .models import CopyParentEditor, StudentEditor
-from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
+from .student import GatedParentEditStudent, HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
 from .sequence_context import SequenceContextCache
 from .student_training import (
@@ -37,12 +37,12 @@ def main() -> None:
     parser.add_argument("--split", choices=("train", "dev", "test"), default="train")
     parser.add_argument("--eval-split", choices=("train", "dev", "test"), default=None)
     parser.add_argument("--epochs", type=int, default=1)
-    parser.add_argument("--batch-size", type=int, default=1)
+    parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--eval-batch-size", type=int, default=None)
     parser.add_argument("--hidden-dim", type=int, default=None)
     parser.add_argument(
         "--student-architecture",
-        choices=("transformer", "spatial_graph", "spatial_graph_global"),
+        choices=("transformer", "gated_transformer", "spatial_graph", "spatial_graph_global"),
         default="transformer",
     )
     parser.add_argument("--spatial-neighbors", type=int, default=24)
@@ -101,6 +101,7 @@ def main() -> None:
         default=0.0,
         help="Weight for mutation-anchored neighbor displacement-change vectors",
     )
+    parser.add_argument("--gate-sparsity-weight", type=float, default=0.0)
     parser.add_argument(
         "--family-balanced-loss",
         action="store_true",
@@ -166,6 +167,12 @@ def main() -> None:
     parser.add_argument(
         "--sequence-context-cache",
         help="Frozen per-residue sequence-context NPZ built for this manifest",
+    )
+    parser.add_argument(
+        "--sequence-context-mode",
+        choices=("none", "parent", "parent_edit"),
+        default="parent_edit",
+        help="Ablate cached context channels while preserving model input dimensions",
     )
     parser.add_argument("--no-gradient-clip", action="store_true")
     parser.add_argument("--seed", type=int, default=0)
@@ -267,6 +274,16 @@ def main() -> None:
             blocks=blocks,
             max_normalized_delta=max_normalized_delta,
         )
+    elif architecture == "gated_transformer":
+        model = GatedParentEditStudent(
+            parent_dim=parent_dim,
+            edit_dim=edit_dim,
+            hidden_dim=hidden_dim,
+            blocks=blocks,
+            heads=heads,
+            max_normalized_delta=max_normalized_delta,
+            use_positional_encoding=use_positional_encoding,
+        )
     else:
         model = ParentEditStudent(
             parent_dim=parent_dim,
@@ -314,13 +331,21 @@ def main() -> None:
             raise SystemExit(
                 f"resume checkpoint ablate_target_residue={saved_target_ablation} does not match requested {args.ablate_target_residue}"
             )
-        saved_context_fingerprint = resume_config.get("sequence_context_fingerprint")
+        saved_context_fingerprint = resume_config.get(
+            "sequence_context_encoder_fingerprint",
+            resume_config.get("sequence_context_fingerprint"),
+        )
         requested_context_fingerprint = (
-            sequence_context.fingerprint if sequence_context is not None else None
+            sequence_context.encoder_fingerprint if sequence_context is not None else None
         )
         if saved_context_fingerprint != requested_context_fingerprint:
             raise SystemExit(
-                "resume checkpoint sequence context fingerprint does not match requested cache"
+                "resume checkpoint sequence context encoder fingerprint does not match requested cache"
+            )
+        saved_context_mode = resume_config.get("sequence_context_mode", "parent_edit")
+        if saved_context_mode != args.sequence_context_mode:
+            raise SystemExit(
+                f"resume checkpoint sequence_context_mode={saved_context_mode} does not match requested {args.sequence_context_mode}"
             )
         saved_radius = resume_config.get("neighborhood_radius")
         if saved_radius is not None and not np.isclose(float(saved_radius), args.neighborhood_radius):
@@ -363,6 +388,7 @@ def main() -> None:
             ("neighborhood_loss_weight", args.neighborhood_loss_weight),
             ("local_distance_loss_weight", args.local_distance_loss_weight),
             ("mutation_vector_loss_weight", args.mutation_vector_loss_weight),
+            ("gate_sparsity_weight", args.gate_sparsity_weight),
             ("delta_loss_beta", args.delta_loss_beta),
         ):
             saved = resume_config.get(key)
@@ -409,6 +435,7 @@ def main() -> None:
         neighborhood_loss_weight=args.neighborhood_loss_weight,
         local_distance_loss_weight=args.local_distance_loss_weight,
         mutation_vector_loss_weight=args.mutation_vector_loss_weight,
+        gate_sparsity_weight=args.gate_sparsity_weight,
         neighborhood_radius=args.neighborhood_radius,
         distill_weight=args.distill_weight,
         teacher_cache=teacher_cache,
@@ -420,6 +447,7 @@ def main() -> None:
         include_biochemical=args.biochemical_edit_features,
         include_target_residue=not args.ablate_target_residue,
         sequence_context=sequence_context,
+        sequence_context_mode=args.sequence_context_mode,
         target_localization_radius=args.target_localization_radius,
         target_localization_transition=args.target_localization_transition,
     )
@@ -442,6 +470,7 @@ def main() -> None:
                 include_biochemical=args.biochemical_edit_features,
                 include_target_residue=not args.ablate_target_residue,
                 sequence_context=sequence_context,
+                sequence_context_mode=args.sequence_context_mode,
                 output_localization_radius=args.target_localization_radius,
                 output_localization_transition=args.target_localization_transition,
             ),
@@ -492,12 +521,16 @@ def main() -> None:
             "max_normalized_delta": max_normalized_delta,
             "manifest_fingerprint": manifest_fingerprint(records),
             "teacher_cache_fingerprint": teacher_cache_fingerprint,
-            "sequence_context_fingerprint": (
-                sequence_context.fingerprint if sequence_context is not None else None
+            "sequence_context_encoder_fingerprint": (
+                sequence_context.encoder_fingerprint if sequence_context is not None else None
+            ),
+            "sequence_context_cache_snapshot_fingerprint": (
+                sequence_context.cache_snapshot_fingerprint if sequence_context is not None else None
             ),
             "sequence_context_model_id": (
                 sequence_context.model_id if sequence_context is not None else None
             ),
+            "sequence_context_mode": args.sequence_context_mode,
             "sequence_context_dim": (
                 sequence_context.embedding_dim if sequence_context is not None else 0
             ),

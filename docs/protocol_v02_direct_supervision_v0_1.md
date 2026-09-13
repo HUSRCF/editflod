@@ -622,3 +622,29 @@ The cache builder is `scripts/build_sequence_context_cache.py`, and the optional
 training/evaluation flag is `--sequence-context-cache`. The context provider is
 an experiment dependency (`ospedit[sequence-context]`); model weights remain
 outside the repository.
+
+### Context ablation and learned edit gate
+
+The matched context ablation used the same 36/12 within-family split, three
+seeds, architecture, and 98-epoch budget. With ESM channels held at the same
+input dimension, the no-context, parent-only, and parent-plus-edit conditions
+gave local errors of 0.30524, 0.30521, and 0.29326 Angstrom respectively. The
+parent-plus-edit condition also gave the best global distance cosine (0.04006)
+and local distance-change cosine (0.00088), while the no-context condition gave
+the best mutation-site error (0.23685 versus 0.24110). Thus the edit difference
+helps neighborhood coordination but does not improve the site metric.
+
+The first learned-gate Transformer used the parent-plus-edit context and a
+fixed gate sparsity weight of 0.02. It reached local error 0.28558, site error
+0.26709, global distance cosine 0.02685, local distance cosine 0.04188, edit
+energy precision 0.44382, edit energy recall 0.01115, and stable-residue
+predicted displacement 0.00149 Angstrom. This is a useful preservation-response
+diagnostic, not yet a successful editor: the response recall is very low and
+the direct remote frame drift is 0.09138 Angstrom. The gate needs calibration
+and a stronger response objective before any frozen test evaluation.
+
+Training performance was separately benchmarked on the same GPU and model:
+pre-converted device-resident batches reduced 10-epoch training from 7.06 s at
+batch 1 to 2.01 s at batch 8 and 1.90 s at batch 16. The training CLI default
+batch size is now 4 and the architecture sweep default is 8; historical runs
+remain reproducible because their batch size is recorded explicitly.

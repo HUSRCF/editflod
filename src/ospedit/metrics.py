@@ -98,6 +98,15 @@ def _cosine_similarity(predicted: np.ndarray, target: np.ndarray) -> float:
     return float(np.dot(predicted, target) / denominator) if denominator > 1e-12 else float("nan")
 
 
+def _ca_displacement_energy(
+    parent: np.ndarray, other: np.ndarray, ca_atom_index: int
+) -> np.ndarray:
+    parent_ca = parent[:, ca_atom_index, :]
+    other_ca = other[:, ca_atom_index, :]
+    values = np.linalg.norm(other_ca - parent_ca, axis=-1)
+    return np.where(np.isfinite(values), values, 0.0)
+
+
 def region_masks(pair: StructurePair, local_radius: float = 10.0, remote_min_distance: float = 15.0) -> dict[str, np.ndarray]:
     ca = pair.parent_coords[:, pair.ca_atom_index, :]
     valid = np.isfinite(ca).all(axis=-1)
@@ -228,6 +237,12 @@ def evaluate_pair(
     remote_pred_delta, remote_true_delta = _masked_distance_change_values(
         predicted_coords, pair.mutant_coords, pair.parent_coords, pair.ca_atom_index, remote
     )
+    true_energy = _ca_displacement_energy(pair.parent_coords, pair.mutant_coords, pair.ca_atom_index)
+    predicted_energy = _ca_displacement_energy(pair.parent_coords, predicted_coords, pair.ca_atom_index)
+    response_mask = true_energy >= 0.25
+    predicted_total = float(np.sum(predicted_energy))
+    response_predicted = float(np.sum(predicted_energy[response_mask]))
+    response_true_total = float(np.sum(true_energy))
     geometry_violations, geometry_checked = backbone_geometry_violations(predicted_coords, pair.atom_names)
     angle_violations, angle_checked = backbone_angle_violations(predicted_coords, pair.atom_names)
     clash_violations, clash_checked = backbone_clash_violations(predicted_coords, pair.atom_names)
@@ -250,6 +265,10 @@ def evaluate_pair(
         "remote_distance_change_error": remote_delta_error,
         "local_distance_change_cosine": _cosine_similarity(local_pred_delta, local_true_delta),
         "remote_distance_change_cosine": _cosine_similarity(remote_pred_delta, remote_true_delta),
+        "edit_energy_precision": response_predicted / predicted_total if predicted_total > 1e-12 else float("nan"),
+        "edit_energy_recall": response_predicted / response_true_total if response_true_total > 1e-12 else float("nan"),
+        "stable_predicted_displacement": float(np.mean(predicted_energy[~response_mask])) if np.any(~response_mask) else float("nan"),
+        "response_threshold_angstrom": 0.25,
         "backbone_geometry_violations": float(geometry_violations / geometry_checked) if geometry_checked else float("nan"),
         "backbone_geometry_checked_bonds": float(geometry_checked),
         "backbone_angle_violations": float(angle_violations / angle_checked) if angle_checked else float("nan"),

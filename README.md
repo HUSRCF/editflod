@@ -763,8 +763,18 @@ ospedit-train \
   --manifest data/manifest/pairs.jsonl \
   --split train \
   --output checkpoints/student_epoch_1.pt \
-  --epochs 1 --batch-size 1 --grad-accumulation-steps 16
+  --epochs 1 --batch-size 4 --grad-accumulation-steps 16
 ```
+
+For the learned preservation-response editor, use
+`--student-architecture gated_transformer` and optionally add
+`--gate-sparsity-weight`. The gate is a per-residue learned edit mask; it is
+an experimental architecture and does not impose a fixed distance cutoff.
+When using cached ESM2 context, `--sequence-context-mode` accepts `none`,
+`parent`, or `parent_edit` for matched context ablations. The training loop
+materializes batches on the selected device, so batch sizes 4--8 are generally
+more efficient than the historical batch-size-1 configuration when memory
+allows.
 
 Use `--no-gradient-clip` to disable clipping, or set an explicit
 `--gradient-clip-norm`; the selected value is stored in the checkpoint config.

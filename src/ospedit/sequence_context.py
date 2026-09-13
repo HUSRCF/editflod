@@ -9,7 +9,7 @@ from typing import Mapping
 import numpy as np
 
 
-SEQUENCE_CONTEXT_FORMAT = "ospedit.sequence_context.v1"
+SEQUENCE_CONTEXT_FORMAT = "ospedit.sequence_context.v2"
 
 
 def sequence_sha256(sequence: str) -> str:
@@ -20,8 +20,15 @@ def _array_sha256(array: np.ndarray) -> str:
     return hashlib.sha256(np.ascontiguousarray(array).tobytes()).hexdigest()
 
 
-def _metadata_fingerprint(metadata: Mapping[str, object]) -> str:
-    payload = {key: value for key, value in metadata.items() if key != "fingerprint"}
+def _fingerprint_payload(metadata: Mapping[str, object], *, include_entries: bool) -> dict[str, object]:
+    keys = {"format", "model_id", "model_revision", "embedding_dim", "representation_layer", "special_token_policy"}
+    if include_entries:
+        keys |= {"sequence_count", "entries"}
+    return {key: metadata[key] for key in sorted(keys) if key in metadata}
+
+
+def _metadata_fingerprint(metadata: Mapping[str, object], *, include_entries: bool) -> str:
+    payload = _fingerprint_payload(metadata, include_entries=include_entries)
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
 
@@ -46,7 +53,19 @@ class SequenceContextCache:
 
     @property
     def fingerprint(self) -> str:
-        return str(self.metadata["fingerprint"])
+        return self.cache_snapshot_fingerprint
+
+    @property
+    def encoder_fingerprint(self) -> str:
+        if "encoder_fingerprint" in self.metadata:
+            return str(self.metadata["encoder_fingerprint"])
+        legacy = dict(self.metadata)
+        legacy["format"] = SEQUENCE_CONTEXT_FORMAT
+        return _metadata_fingerprint(legacy, include_entries=False)
+
+    @property
+    def cache_snapshot_fingerprint(self) -> str:
+        return str(self.metadata.get("cache_snapshot_fingerprint", self.metadata["fingerprint"]))
 
     def get(self, sequence: str) -> np.ndarray:
         key = sequence_sha256(sequence)
@@ -68,11 +87,18 @@ class SequenceContextCache:
             if "metadata_json" not in payload:
                 raise ValueError("sequence context cache is missing metadata_json")
             metadata = json.loads(str(payload["metadata_json"].item()))
-            if metadata.get("format") != SEQUENCE_CONTEXT_FORMAT:
+            if metadata.get("format") not in {"ospedit.sequence_context.v1", SEQUENCE_CONTEXT_FORMAT}:
                 raise ValueError(
                     f"unsupported sequence context format: {metadata.get('format')!r}"
                 )
-            if metadata.get("fingerprint") != _metadata_fingerprint(metadata):
+            if metadata.get("format") == "ospedit.sequence_context.v1":
+                valid_fingerprint = metadata.get("fingerprint") == _metadata_fingerprint(metadata, include_entries=True)
+            else:
+                valid_fingerprint = (
+                    metadata.get("encoder_fingerprint") == _metadata_fingerprint(metadata, include_entries=False)
+                    and metadata.get("cache_snapshot_fingerprint") == _metadata_fingerprint(metadata, include_entries=True)
+                )
+            if not valid_fingerprint:
                 raise ValueError("sequence context metadata fingerprint mismatch")
             embedding_dim = int(metadata.get("embedding_dim", 0))
             if embedding_dim <= 0:
@@ -109,6 +135,8 @@ def write_sequence_context_cache(
     *,
     model_id: str,
     model_revision: str | None = None,
+    representation_layer: str = "last_hidden_state",
+    special_token_policy: str = "attention_mask_and_special_tokens_mask",
 ) -> dict[str, object]:
     """Write deterministic metadata and float32 embeddings to a compressed NPZ."""
     if not embeddings:
@@ -144,11 +172,15 @@ def write_sequence_context_cache(
         "format": SEQUENCE_CONTEXT_FORMAT,
         "model_id": model_id,
         "model_revision": model_revision,
+        "representation_layer": representation_layer,
+        "special_token_policy": special_token_policy,
         "embedding_dim": dimensions.pop(),
         "sequence_count": len(entries),
         "entries": entries,
     }
-    metadata["fingerprint"] = _metadata_fingerprint(metadata)
+    metadata["encoder_fingerprint"] = _metadata_fingerprint(metadata, include_entries=False)
+    metadata["cache_snapshot_fingerprint"] = _metadata_fingerprint(metadata, include_entries=True)
+    metadata["fingerprint"] = metadata["cache_snapshot_fingerprint"]
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(

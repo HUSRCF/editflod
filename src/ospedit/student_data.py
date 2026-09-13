@@ -73,13 +73,22 @@ def parent_local_features(pair: StructurePair, *, include_geometry: bool = False
 def sequence_context_features(
     pair: StructurePair,
     cache: SequenceContextCache,
+    mode: str = "parent_edit",
 ) -> tuple[np.ndarray, np.ndarray]:
     """Return cacheable parent context and candidate-specific mutant difference."""
     parent = cache.get(pair.parent_sequence)
     mutant = cache.get(pair.mutant_sequence)
     if parent.shape != mutant.shape or parent.shape[0] != pair.length:
         raise ValueError(f"sequence context does not match pair {pair.pair_id}")
-    return parent, mutant - parent
+    if mode not in {"none", "parent", "parent_edit"}:
+        raise ValueError("sequence context mode must be none, parent, or parent_edit")
+    if mode == "none":
+        parent = np.zeros_like(parent)
+    if mode != "parent_edit":
+        edit = np.zeros_like(parent)
+    else:
+        edit = mutant - parent
+    return parent, edit
 
 
 def parent_residue_mask(pair: StructurePair) -> np.ndarray:
@@ -229,6 +238,7 @@ class PairDataset:
         include_biochemical: bool = False,
         include_target_residue: bool = True,
         sequence_context: SequenceContextCache | None = None,
+        sequence_context_mode: str = "parent_edit",
         target_localization_radius: float | None = None,
         target_localization_transition: float = 5.0,
     ):
@@ -255,9 +265,12 @@ class PairDataset:
         self.include_biochemical = bool(include_biochemical)
         self.include_target_residue = bool(include_target_residue)
         self.sequence_context = sequence_context
+        if sequence_context_mode not in {"none", "parent", "parent_edit"}:
+            raise ValueError("sequence context mode must be none, parent, or parent_edit")
+        self.sequence_context_mode = sequence_context_mode
         if sequence_context is not None:
             for record in self.records:
-                sequence_context_features(record.pair, sequence_context)
+                sequence_context_features(record.pair, sequence_context, sequence_context_mode)
         if target_localization_radius is not None and target_localization_radius <= 0:
             raise ValueError("target_localization_radius must be positive or None")
         if target_localization_transition <= 0:
@@ -339,7 +352,7 @@ class PairDataset:
         )
         if self.sequence_context is not None:
             parent_context, edit_context = sequence_context_features(
-                record.pair, self.sequence_context
+                record.pair, self.sequence_context, self.sequence_context_mode
             )
             parent_features = np.concatenate((parent_features, parent_context), axis=-1)
             edit = np.concatenate((edit, edit_context), axis=-1)

@@ -175,6 +175,73 @@ if nn is not None:
                 output = output * residue_mask[:, :, None].to(output.dtype)
             return output
 
+
+    class GatedParentEditStudent(nn.Module):
+        """Transformer editor with a learned per-residue edit gate."""
+
+        def __init__(
+            self,
+            parent_dim: int,
+            edit_dim: int = 41,
+            hidden_dim: int = 256,
+            blocks: int = 4,
+            heads: int = 8,
+            max_normalized_delta: float | None = None,
+            use_positional_encoding: bool = True,
+            initial_gate: float = 0.25,
+        ):
+            super().__init__()
+            if hidden_dim % heads:
+                raise ValueError("hidden_dim must be divisible by heads")
+            if not 0.0 < initial_gate < 1.0:
+                raise ValueError("initial_gate must be strictly between zero and one")
+            self.max_normalized_delta = max_normalized_delta
+            self.use_positional_encoding = bool(use_positional_encoding)
+            self.input_projection = nn.Linear(parent_dim + edit_dim, hidden_dim)
+            layer = nn.TransformerEncoderLayer(
+                d_model=hidden_dim,
+                nhead=heads,
+                dim_feedforward=4 * hidden_dim,
+                batch_first=True,
+                norm_first=True,
+            )
+            self.context = nn.TransformerEncoder(layer, num_layers=blocks)
+            self.output_projection = nn.Sequential(nn.LayerNorm(hidden_dim), nn.Linear(hidden_dim, 6))
+            self.gate_projection = nn.Sequential(nn.LayerNorm(hidden_dim), nn.Linear(hidden_dim, 1))
+            nn.init.zeros_(self.output_projection[-1].weight)
+            nn.init.zeros_(self.output_projection[-1].bias)
+            gate_logit = float(np.log(initial_gate / (1.0 - initial_gate)))
+            nn.init.zeros_(self.gate_projection[-1].weight)
+            nn.init.constant_(self.gate_projection[-1].bias, gate_logit)
+            self.last_gate: Tensor | None = None
+
+        def forward(
+            self,
+            parent_features: Tensor,
+            edit_features: Tensor,
+            residue_mask: Tensor | None = None,
+        ) -> Tensor:
+            if parent_features.ndim != 3 or edit_features.ndim != 3:
+                raise ValueError("student inputs must have shape (batch, length, features)")
+            hidden = self.input_projection(torch.cat((parent_features, edit_features), dim=-1))
+            if self.use_positional_encoding:
+                hidden = hidden + _sinusoidal_positions(
+                    hidden.shape[1], hidden.shape[2], device=hidden.device, dtype=hidden.dtype
+                )[None]
+            padding_mask = None if residue_mask is None else ~residue_mask.to(dtype=torch.bool)
+            hidden = self.context(hidden, src_key_padding_mask=padding_mask)
+            delta = self.output_projection(hidden)
+            if self.max_normalized_delta is not None:
+                delta = torch.tanh(delta) * self.max_normalized_delta
+            gate = torch.sigmoid(self.gate_projection(hidden)).squeeze(-1)
+            edit_mask = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
+            gate = gate * edit_mask[:, None].to(gate.dtype)
+            if residue_mask is not None:
+                gate = gate * residue_mask.to(gate.dtype)
+                delta = delta * residue_mask[:, :, None].to(delta.dtype)
+            self.last_gate = gate
+            return delta * gate[:, :, None]
+
     class SpatialGraphStudent(nn.Module):
         """One-pass editor with explicit invariant parent spatial relations."""
 
@@ -322,6 +389,9 @@ if nn is not None:
             return output
 
 else:
+
+    class GatedParentEditStudent:  # type: ignore[no-redef]
+        pass
 
     class ParentEditStudent:  # type: ignore[no-redef]
         def __init__(self, *args, **kwargs):

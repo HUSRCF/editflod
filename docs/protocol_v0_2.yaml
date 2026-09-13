@@ -615,3 +615,41 @@ background_control_gate:
         - local_direction_cosine_is_positive
         - local_error_remains_worse_than_copy
         - remote_scaffold_drift_remains_nonzero
+  context_ablation:
+    reports:
+      none: reports/protocol_v02_student_within_family_esm2_ablation_none_v1.json
+      parent: reports/protocol_v02_student_within_family_esm2_ablation_parent_v1.json
+      parent_edit: reports/protocol_v02_student_within_family_esm2_ablation_parent_edit_v1.json
+    fixed_budget: {epochs: 98, seeds: [0, 1, 2], device: cuda, hidden_dim: 32, blocks: 2, heads: 4}
+    dev_family_macro:
+      none: {local_error: 0.3052390048592825, site_error: 0.2368467864902726, distance_cosine: 0.00986814837430025, local_distance_cosine: -0.10650687193703802}
+      parent: {local_error: 0.30521275763794126, site_error: 0.2361417045285635, distance_cosine: 0.03225566884393779, local_distance_cosine: -0.08239303183623368}
+      parent_edit: {local_error: 0.29325761871178296, site_error: 0.24110053285036467, distance_cosine: 0.04005582767391445, local_distance_cosine: 0.0008784502844224618}
+    interpretation:
+      - parent_plus_edit_improves_neighborhood_and_direction_metrics
+      - no_context_has_best_mutation_site_error
+      - edit_difference_is_not_yet_a_generalized_site_response_signal
+  learned_edit_gate:
+    report: reports/protocol_v02_student_within_family_gated_esm2_v1.json
+    architecture: gated_transformer
+    context_mode: parent_edit
+    gate_sparsity_weight: 0.02
+    dev_family_macro:
+      local_error: 0.28557961709782104
+      site_error: 0.26708782528865355
+      distance_cosine: 0.026850736024288075
+      local_distance_cosine: 0.04187543031099439
+      edit_energy_precision: 0.4438218685148239
+      edit_energy_recall: 0.011145371164370059
+      stable_predicted_displacement: 0.0014949755280647334
+      remote_scaffold_frame_drift: 0.09138440717127039
+    decision:
+      probe_passed: false
+      frozen_dev_run_performed: false
+      next_intervention: calibrate_gate_response_recall_and_remote_frame_drift
+  training_performance:
+    device: cuda
+    benchmark: {records: 36, epochs: 10, hidden_dim: 32, blocks: 2, heads: 4}
+    seconds_by_batch_size: {1: 7.058, 4: 2.189, 8: 2.005, 16: 1.899}
+    default_batch_size: {train_cli: 4, architecture_sweep: 8}
+    optimization: resident_device_batch_tensors

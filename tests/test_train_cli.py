@@ -10,7 +10,7 @@ torch = pytest.importorskip("torch")
 
 from ospedit.cli import main as eval_main
 from ospedit.data import PairRecord, StructurePair, structure_pair_payload, write_manifest
-from ospedit.sequence_context import write_sequence_context_cache
+from ospedit.sequence_context import SequenceContextCache, write_sequence_context_cache
 from ospedit.train_cli import main
 
 
@@ -257,10 +257,11 @@ def test_context_checkpoint_requires_matching_cache(tmp_path, monkeypatch):
         },
         model_id="test/model",
     )
-    with pytest.raises(ValueError, match="fingerprint"):
-        _student_editor(
-            str(checkpoint), pair, "cpu", sequence_context_cache=str(other)
-        )
+    other_editor = _student_editor(
+        str(checkpoint), pair, "cpu", sequence_context_cache=str(other)
+    )
+    assert other_editor.sequence_context is not None
+    assert other_editor.sequence_context.encoder_fingerprint == SequenceContextCache.load(cache).encoder_fingerprint
 
 
 def test_eval_cli_rejects_manifest_append_without_output(monkeypatch):

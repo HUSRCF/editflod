@@ -116,6 +116,7 @@ def predict_student(
     include_biochemical: bool = False,
     include_target_residue: bool = True,
     sequence_context: SequenceContextCache | None = None,
+    sequence_context_mode: str = "parent_edit",
     output_localization_radius: float | None = None,
     output_localization_transition: float = 5.0,
 ) -> np.ndarray:
@@ -135,7 +136,7 @@ def predict_student(
         include_target_residue=include_target_residue,
     )
     if sequence_context is not None:
-        parent_context, edit_context = sequence_context_features(pair, sequence_context)
+        parent_context, edit_context = sequence_context_features(pair, sequence_context, sequence_context_mode)
         parent_features = np.concatenate((parent_features, parent_context), axis=-1)
         parent = torch.as_tensor(parent_features[None], dtype=torch.float32, device=device)
         edit = torch.cat(
@@ -194,6 +195,7 @@ def predict_student_batch(
     include_biochemical: bool = False,
     include_target_residue: bool = True,
     sequence_context: SequenceContextCache | None = None,
+    sequence_context_mode: str = "parent_edit",
     output_localization_radius: float | None = None,
     output_localization_transition: float = 5.0,
 ) -> list[np.ndarray]:
@@ -209,7 +211,7 @@ def predict_student_batch(
     use_geometry = parent_cache.include_geometry if parent_cache is not None else include_geometry
     feature_rows = [parent_cache.get(pair) if parent_cache is not None else parent_local_features(pair, include_geometry=use_geometry) for pair in pairs]
     context_rows = (
-        [sequence_context_features(pair, sequence_context) for pair in pairs]
+        [sequence_context_features(pair, sequence_context, sequence_context_mode) for pair in pairs]
         if sequence_context is not None
         else None
     )

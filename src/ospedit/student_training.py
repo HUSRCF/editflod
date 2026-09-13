@@ -253,6 +253,7 @@ def train_student(
     neighborhood_loss_weight: float = 0.0,
     local_distance_loss_weight: float = 0.0,
     mutation_vector_loss_weight: float = 0.0,
+    gate_sparsity_weight: float = 0.0,
     translation_scale: float = 1.0,
     distill_weight: float = 0.0,
 ) -> list[float]:
@@ -275,19 +276,30 @@ def train_student(
         raise ValueError("local_distance_loss_weight must be non-negative")
     if mutation_vector_loss_weight < 0:
         raise ValueError("mutation_vector_loss_weight must be non-negative")
+    if gate_sparsity_weight < 0:
+        raise ValueError("gate_sparsity_weight must be non-negative")
     if distill_weight < 0:
         raise ValueError("distill_weight must be non-negative")
     materialized_batches = list(batches)
     if not materialized_batches:
         raise ValueError("batches must not be empty")
     model.to(device)
+    tensor_batches: list[dict[str, Any]] = []
+    for source_batch in materialized_batches:
+        tensor_batch: dict[str, Any] = dict(source_batch)
+        for key, value in source_batch.items():
+            if isinstance(value, np.ndarray):
+                dtype = torch.bool if key == "edge_mask" else torch.float32
+                tensor_batch[key] = torch.as_tensor(value, dtype=dtype, device=device)
+        tensor_batches.append(tensor_batch)
+    forward_parameters = inspect.signature(model.forward).parameters
     history: list[float] = []
     for _ in range(epochs):
         model.train()
         total = 0.0
         count = 0
         optimizer.zero_grad(set_to_none=True)
-        for batch in materialized_batches:
+        for batch in tensor_batches:
             parent = torch.as_tensor(batch["parent_features"], dtype=torch.float32, device=device)
             edit = torch.as_tensor(batch["edit_features"], dtype=torch.float32, device=device)
             target = torch.as_tensor(batch["target_delta"], dtype=torch.float32, device=device)
@@ -296,7 +308,6 @@ def train_student(
             neighborhood_values = batch.get("neighborhood_mask", np.zeros(loss_mask.shape, dtype=np.float32))
             neighborhood = torch.as_tensor(neighborhood_values, dtype=torch.float32, device=device)
             sample_weights = torch.as_tensor(batch["sample_weight"], dtype=torch.float32, device=device)
-            forward_parameters = inspect.signature(model.forward).parameters
             model_kwargs: dict[str, Any] = {"residue_mask": input_mask}
             if "edge_features" in forward_parameters:
                 if "edge_features" not in batch or "edge_mask" not in batch:
@@ -358,6 +369,13 @@ def train_student(
                         sample_weights=sample_weights,
                     )
                 )
+            if gate_sparsity_weight:
+                gate = getattr(model, "last_gate", None)
+                if gate is None:
+                    raise ValueError("gate_sparsity_weight requires a gated student model")
+                loss = loss + gate_sparsity_weight * (
+                    gate * input_mask
+                ).sum() / input_mask.sum().clamp_min(1.0)
             if delta_norm_weight:
                 loss = loss + delta_norm_weight * masked_prediction_norm_loss(prediction, input_mask)
             window_start = (count // grad_accumulation_steps) * grad_accumulation_steps
@@ -399,6 +417,7 @@ def train_records(
     neighborhood_loss_weight: float = 0.0,
     local_distance_loss_weight: float = 0.0,
     mutation_vector_loss_weight: float = 0.0,
+    gate_sparsity_weight: float = 0.0,
     distill_weight: float = 0.0,
     teacher_cache: TeacherCache | None = None,
     teacher_noise_level: float | None = None,
@@ -409,6 +428,7 @@ def train_records(
     include_biochemical: bool = False,
     include_target_residue: bool = True,
     sequence_context: SequenceContextCache | None = None,
+    sequence_context_mode: str = "parent_edit",
     target_localization_radius: float | None = None,
     target_localization_transition: float = 5.0,
 ) -> list[float]:
@@ -441,6 +461,7 @@ def train_records(
         include_biochemical=include_biochemical,
         include_target_residue=include_target_residue,
         sequence_context=sequence_context,
+        sequence_context_mode=sequence_context_mode,
         target_localization_radius=target_localization_radius,
         target_localization_transition=target_localization_transition,
     )
@@ -460,6 +481,7 @@ def train_records(
         neighborhood_loss_weight=neighborhood_loss_weight,
         local_distance_loss_weight=local_distance_loss_weight,
         mutation_vector_loss_weight=mutation_vector_loss_weight,
+        gate_sparsity_weight=gate_sparsity_weight,
         translation_scale=translation_scale,
         distill_weight=distill_weight,
     )

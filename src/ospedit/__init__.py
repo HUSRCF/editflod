@@ -6,7 +6,7 @@ from .models import ConditionalDifferenceEditor, CopyParentEditor, FieldModel, I
 from .metrics import evaluate_pair
 from .diagnostics import assess_teacher_admission, condition_response_diagnostic, condition_response_repeat_error
 from .noise import SharedNoise, make_shared_noise
-from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent, encode_edit_features
+from .student import GatedParentEditStudent, HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent, encode_edit_features
 from .student_data import PairDataset, collate_pair_records, iter_pair_batches, parent_local_features, parent_residue_mask, parent_spatial_graph, target_local_delta
 from .sequence_context import SEQUENCE_CONTEXT_FORMAT, SequenceContextCache, sequence_sha256, write_sequence_context_cache
 from .student_training import LOSS_SCHEMA_VERSION, load_student_checkpoint, masked_delta_loss, masked_prediction_norm_loss, save_student_checkpoint, supervised_delta_loss, train_records, train_student, validate_student_checkpoint_config
@@ -46,6 +46,7 @@ __all__ = [
     "SharedNoise",
     "make_shared_noise",
     "ParentEditStudent",
+    "GatedParentEditStudent",
     "SpatialGraphStudent",
     "HybridSpatialGraphStudent",
     "encode_edit_features",

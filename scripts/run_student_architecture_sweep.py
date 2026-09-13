@@ -18,7 +18,7 @@ from ospedit.data import file_sha256, json_safe, load_manifest, manifest_fingerp
 
 
 REPORT_FORMAT = "ospedit.student_architecture_sweep.v1"
-ARCHITECTURES = ("transformer", "spatial_graph")
+ARCHITECTURES = ("transformer", "gated_transformer", "spatial_graph")
 PRIMARY_METRICS = (
     "local_backbone_error",
     "mutation_site_backbone_error",
@@ -28,8 +28,12 @@ PRIMARY_METRICS = (
     "local_distance_change_cosine",
     "remote_target_error",
     "remote_scaffold_drift",
+    "remote_scaffold_frame_drift",
     "predicted_distance_change_norm",
     "true_distance_change_norm",
+    "edit_energy_precision",
+    "edit_energy_recall",
+    "stable_predicted_displacement",
 )
 
 
@@ -139,7 +143,7 @@ def main() -> None:
     )
     parser.add_argument("--seeds", type=int, nargs="+", default=(0, 1, 2))
     parser.add_argument("--epochs", type=int, default=64)
-    parser.add_argument("--batch-size", type=int, default=1)
+    parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--hidden-dim", type=int, default=32)
     parser.add_argument("--blocks", type=int, default=2)
     parser.add_argument("--heads", type=int, default=4)
@@ -150,8 +154,10 @@ def main() -> None:
     parser.add_argument("--neighborhood-loss-weight", type=float, default=0.0)
     parser.add_argument("--local-distance-loss-weight", type=float, default=0.0)
     parser.add_argument("--mutation-vector-loss-weight", type=float, default=0.0)
+    parser.add_argument("--gate-sparsity-weight", type=float, default=0.0)
     parser.add_argument("--biochemical-edit-features", action="store_true")
     parser.add_argument("--sequence-context-cache")
+    parser.add_argument("--sequence-context-mode", choices=("none", "parent", "parent_edit"), default="parent_edit")
     parser.add_argument("--max-normalized-delta", type=float)
     parser.add_argument("--target-localization-radius", type=float)
     parser.add_argument("--target-localization-transition", type=float, default=5.0)
@@ -174,6 +180,7 @@ def main() -> None:
         or args.neighborhood_loss_weight < 0
         or args.local_distance_loss_weight < 0
         or args.mutation_vector_loss_weight < 0
+        or args.gate_sparsity_weight < 0
     ):
         parser.error("regional loss weights must be non-negative")
     if args.max_normalized_delta is not None and args.max_normalized_delta <= 0:
@@ -264,6 +271,8 @@ def main() -> None:
                 str(args.local_distance_loss_weight),
                 "--mutation-vector-loss-weight",
                 str(args.mutation_vector_loss_weight),
+                "--gate-sparsity-weight",
+                str(args.gate_sparsity_weight),
                 "--family-balanced-loss",
                 "--endpoint-group-balanced-loss",
                 "--seed",
@@ -292,6 +301,7 @@ def main() -> None:
                 train_command.extend(
                     ("--sequence-context-cache", args.sequence_context_cache)
                 )
+                train_command.extend(("--sequence-context-mode", args.sequence_context_mode))
             started = time.perf_counter()
             train_result = _last_json(_run(train_command).stdout)
             train_command_seconds = time.perf_counter() - started
@@ -322,6 +332,7 @@ def main() -> None:
                 dev_command.extend(
                     ("--sequence-context-cache", args.sequence_context_cache)
                 )
+                dev_command.extend(("--sequence-context-mode", args.sequence_context_mode))
             _run(dev_command)
             dev_result = _load_json(dev_path)
 
@@ -410,12 +421,14 @@ def main() -> None:
             "neighborhood_loss_weight": args.neighborhood_loss_weight,
             "local_distance_loss_weight": args.local_distance_loss_weight,
             "mutation_vector_loss_weight": args.mutation_vector_loss_weight,
+            "gate_sparsity_weight": args.gate_sparsity_weight,
             "biochemical_edit_features": args.biochemical_edit_features,
             "sequence_context_cache": (
                 str(Path(args.sequence_context_cache).resolve())
                 if args.sequence_context_cache
                 else None
             ),
+            "sequence_context_mode": args.sequence_context_mode,
             "max_normalized_delta": args.max_normalized_delta,
             "target_localization_radius": args.target_localization_radius,
             "target_localization_transition": args.target_localization_transition,

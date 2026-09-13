@@ -19,7 +19,7 @@ from .data import (
 from .experiment import evaluate_editor, evaluate_manifest_batched
 from .metrics import METRIC_SCHEMA_VERSION
 from .models import CopyParentEditor, StudentEditor
-from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
+from .student import GatedParentEditStudent, HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
 from .sequence_context import SequenceContextCache
 from .student_training import (
@@ -36,6 +36,7 @@ def _student_editor(
     output_localization_radius: float | None = None,
     output_localization_transition: float | None = None,
     sequence_context_cache: str | None = None,
+    sequence_context_mode: str = "parent_edit",
 ) -> StudentEditor:
     try:
         import torch
@@ -44,15 +45,18 @@ def _student_editor(
     payload = torch.load(checkpoint, map_location=device, weights_only=False)
     config = dict(payload.get("config", {}))
     context = None
-    expected_context_fingerprint = config.get("sequence_context_fingerprint")
+    expected_context_fingerprint = config.get(
+        "sequence_context_encoder_fingerprint",
+        config.get("sequence_context_fingerprint"),
+    )
     if expected_context_fingerprint is not None:
         if sequence_context_cache is None:
             raise ValueError(
                 "student checkpoint requires --sequence-context-cache for inference"
             )
         context = SequenceContextCache.load(sequence_context_cache)
-        if context.fingerprint != expected_context_fingerprint:
-            raise ValueError("sequence context cache fingerprint does not match checkpoint")
+        if context.encoder_fingerprint != expected_context_fingerprint:
+            raise ValueError("sequence context encoder fingerprint does not match checkpoint")
         if context.embedding_dim != int(config.get("sequence_context_dim", 0)):
             raise ValueError("sequence context dimension does not match checkpoint")
     elif sequence_context_cache is not None:
@@ -109,6 +113,16 @@ def _student_editor(
             blocks=int(config.get("blocks", 4)),
             max_normalized_delta=config.get("max_normalized_delta"),
         )
+    elif architecture == "gated_transformer":
+        model = GatedParentEditStudent(
+            parent_dim=int(config.get("parent_dim", inferred_parent_dim)),
+            edit_dim=edit_dim,
+            hidden_dim=int(config.get("hidden_dim", 256)),
+            blocks=int(config.get("blocks", 4)),
+            heads=int(config.get("heads", 8)),
+            max_normalized_delta=config.get("max_normalized_delta"),
+            use_positional_encoding=use_positional_encoding,
+        )
     else:
         model = ParentEditStudent(
             parent_dim=int(
@@ -138,6 +152,7 @@ def _student_editor(
         include_biochemical=include_biochemical,
         include_target_residue=include_target_residue,
         sequence_context=context,
+        sequence_context_mode=config.get("sequence_context_mode", sequence_context_mode),
         output_localization_radius=localization_radius,
         output_localization_transition=localization_transition,
     )
@@ -169,6 +184,11 @@ def main() -> None:
     parser.add_argument(
         "--sequence-context-cache",
         help="Frozen sequence-context NPZ required by context-trained students",
+    )
+    parser.add_argument(
+        "--sequence-context-mode",
+        choices=("none", "parent", "parent_edit"),
+        default="parent_edit",
     )
     parser.add_argument("--student-update-scale", type=float, default=1.0)
     parser.add_argument("--student-output-localization-radius", type=float)
@@ -235,6 +255,7 @@ def main() -> None:
                 args.student_output_localization_radius,
                 args.student_output_localization_transition,
                 args.sequence_context_cache,
+                args.sequence_context_mode,
             )
         else:
             editor = CopyParentEditor()
@@ -315,6 +336,7 @@ def main() -> None:
             args.student_output_localization_radius,
             args.student_output_localization_transition,
             args.sequence_context_cache,
+            args.sequence_context_mode,
         )
     else:
         editor = CopyParentEditor()

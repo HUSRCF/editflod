@@ -83,6 +83,7 @@ class StudentEditor:
     include_biochemical: bool = False
     include_target_residue: bool = True
     sequence_context: SequenceContextCache | None = None
+    sequence_context_mode: str = "parent_edit"
     output_localization_radius: float | None = None
     output_localization_transition: float = 5.0
 
@@ -105,6 +106,7 @@ class StudentEditor:
             include_biochemical=self.include_biochemical,
             include_target_residue=self.include_target_residue,
             sequence_context=self.sequence_context,
+            sequence_context_mode=self.sequence_context_mode,
             output_localization_radius=self.output_localization_radius,
             output_localization_transition=self.output_localization_transition,
         )
@@ -124,6 +126,7 @@ class StudentEditor:
             include_biochemical=self.include_biochemical,
             include_target_residue=self.include_target_residue,
             sequence_context=self.sequence_context,
+            sequence_context_mode=self.sequence_context_mode,
             output_localization_radius=self.output_localization_radius,
             output_localization_transition=self.output_localization_transition,
         )
