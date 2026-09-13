@@ -340,11 +340,12 @@ def evaluate_manifest_batched(
         batch_count += 1
         if any(record.pair.parent_sequence != record.pair.mutant_sequence for record in group):
             conditional_batch_count += 1
-        for record, prediction in zip(group, predictions, strict=True):
+        for local_index, (record, prediction) in enumerate(
+            zip(group, predictions, strict=True)
+        ):
             metrics = evaluate_pair(record.pair, prediction)
             gates = getattr(editor, "last_gates", None)
             if gates is not None:
-                row_index = len(rows)
                 true_ca = np.linalg.norm(
                     record.pair.mutant_coords[:, record.pair.ca_atom_index]
                     - record.pair.parent_coords[:, record.pair.ca_atom_index],
@@ -352,7 +353,7 @@ def evaluate_manifest_batched(
                 )
                 metrics.update(
                     gate_localization_metrics(
-                        gates[row_index][: record.pair.length], true_ca
+                        gates[local_index][: record.pair.length], true_ca
                     )
                 )
             rows.append({
