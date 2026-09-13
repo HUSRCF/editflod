@@ -29,7 +29,16 @@ further; it did not provide evidence of selective localization.
 
 The response loss itself is not an immediate source of non-finite values in
 the short unbounded run, and the current clamp-based bound is stable in the
-short bounded run. Neither run supports continuing a sparsity-weight sweep:
+short bounded run. A later 30-epoch isolation reproduced the failure only for
+CUDA with response loss enabled: the same balanced configuration without the
+response loss completed on CUDA, and the response-loss configuration completed
+on CPU. With CUDA, the first non-finite gradient was reported at
+`epoch=28, batch=1` in `context.layers.1.norm2.weight`. This identifies an
+interaction between the response-loss backward path and the CUDA Transformer
+kernel/precision path, rather than a bound-only failure or an unconditional
+ROCm failure.
+
+Neither run supports continuing a sparsity-weight sweep:
 the gate remains close to a uniform multiplier. The next experiment should
 use direct gate targets together with explicit delta-scale control, then
 evaluate gate AUPRC/AUROC and response/stable gate separation on held-out
