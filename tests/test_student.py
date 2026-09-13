@@ -84,6 +84,7 @@ def test_gate_localization_metrics_distinguish_response_and_stable():
     assert metrics["gate_stable_mean"] == pytest.approx(0.15)
     assert metrics["gate_auprc"] == pytest.approx(1.0)
     assert metrics["gate_auroc"] == pytest.approx(1.0)
+    assert metrics["gate_auprc"] == pytest.approx(1.0)
 
 
 def test_student_positional_encoding_preserves_shape_and_is_optional():

@@ -491,7 +491,14 @@ def evaluate_editor(pair: StructurePair, editor: Editor, method: str | None = No
         if getattr(editor, "use_reported_runtime", False) and "end_to_end_seconds" in runtime:
             stats.total_seconds = float(runtime["end_to_end_seconds"])
     name = method or type(editor).__name__
-    return EvaluationResult(name, evaluate_pair(pair, prediction), stats)
+    metrics = evaluate_pair(pair, prediction)
+    gates = getattr(editor, "last_gates", None)
+    if gates is not None:
+        parent_ca = pair.parent_coords[:, pair.ca_atom_index, :]
+        mutant_ca = pair.mutant_coords[:, pair.ca_atom_index, :]
+        displacement = np.linalg.norm(mutant_ca - parent_ca, axis=-1)
+        metrics.update(gate_localization_metrics(gates, displacement))
+    return EvaluationResult(name, metrics, stats)
 
 
 def evaluate_records(records: Iterable[PairRecord], editor: Editor, method: str | None = None) -> list[EvaluationResult]:

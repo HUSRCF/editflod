@@ -310,6 +310,9 @@ def evaluate_pair(
         "local_distance_change_cosine": _cosine_similarity(local_pred_delta, local_true_delta),
         "remote_distance_change_cosine": _cosine_similarity(remote_pred_delta, remote_true_delta),
         "edit_energy_precision": response_predicted / predicted_total if predicted_total > 1e-12 else float("nan"),
+        # Kept for report compatibility; this is energy coverage, not a
+        # residue-classification recall.
+        "response_energy_coverage": response_predicted / response_true_total if response_true_total > 1e-12 else float("nan"),
         "edit_energy_recall": response_predicted / response_true_total if response_true_total > 1e-12 else float("nan"),
         "stable_predicted_displacement": float(np.mean(predicted_energy[~response_mask])) if np.any(~response_mask) else float("nan"),
         "response_threshold_angstrom": 0.25,
