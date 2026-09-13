@@ -404,7 +404,11 @@ def train_student(
             is_window_end = (count + 1) % grad_accumulation_steps == 0 or count + 1 == len(materialized_batches)
             if is_window_end:
                 if gradient_clip_norm is not None:
-                    torch.nn.utils.clip_grad_norm_(model.parameters(), gradient_clip_norm)
+                    # Fail at the first non-finite gradient instead of allowing
+                    # NaNs to enter the optimizer and surfacing only at eval.
+                    torch.nn.utils.clip_grad_norm_(
+                        model.parameters(), gradient_clip_norm, error_if_nonfinite=True
+                    )
                 optimizer.step()
                 optimizer.zero_grad(set_to_none=True)
             total += float(loss.detach().cpu())
