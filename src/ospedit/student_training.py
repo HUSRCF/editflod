@@ -411,8 +411,15 @@ def train_student(
                             model.parameters(), gradient_clip_norm, error_if_nonfinite=True
                         )
                     except RuntimeError as exc:
+                        bad_parameters = [
+                            name
+                            for name, parameter in model.named_parameters()
+                            if parameter.grad is not None and not torch.isfinite(parameter.grad).all()
+                        ]
                         raise RuntimeError(
-                            f"non-finite student gradient at epoch={epoch_index} batch={batch_index}"
+                            "non-finite student gradient at "
+                            f"epoch={epoch_index} batch={batch_index}; "
+                            f"parameters={bad_parameters}"
                         ) from exc
                 optimizer.step()
                 optimizer.zero_grad(set_to_none=True)
