@@ -648,3 +648,25 @@ pre-converted device-resident batches reduced 10-epoch training from 7.06 s at
 batch 1 to 2.01 s at batch 8 and 1.90 s at batch 16. The training CLI default
 batch size is now 4 and the architecture sweep default is 8; historical runs
 remain reproducible because their batch size is recorded explicitly.
+
+### AMD/ROCm parallel gate sweep
+
+The gate sparsity diagnostic was repeated in parallel on two AMD Radeon Pro
+W7900 devices using the remote BIO and AIAA environments. The original
+learning rate and batch size were numerically unstable on ROCm: both devices
+completed training but produced non-finite deltas during evaluation. A short
+smoke run showed that `learning_rate=1e-4` and `batch_size=4` were stable; the
+formal sweep therefore used that configuration, three seeds, and the same
+36/12 within-family split. The reports are
+`protocol_v02_student_within_family_gated_esm2_rocm_w005_v1.json` and
+`protocol_v02_student_within_family_gated_esm2_rocm_w02_v1.json`.
+
+On development, gate sparsity `0.005` achieved local error 0.29160 Angstrom,
+site error 0.26919 Angstrom, distance-change cosine -0.00101, edit-energy
+precision 0.25340, recall 0.06029, stable displacement 0.06742 Angstrom, and
+remote frame drift 0.07824 Angstrom. Increasing sparsity to `0.02` reduced
+stable displacement to 0.03610 Angstrom and remote frame drift to 0.04782
+Angstrom, while reducing response recall to 0.03094; local error was 0.28774
+Angstrom and site error 0.26926 Angstrom. Neither configuration is promoted
+to frozen evaluation. The result supports a preservation-response tradeoff,
+but not yet a calibrated learned edit mask.

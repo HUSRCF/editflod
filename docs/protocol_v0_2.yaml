@@ -653,3 +653,38 @@ background_control_gate:
     seconds_by_batch_size: {1: 7.058, 4: 2.189, 8: 2.005, 16: 1.899}
     default_batch_size: {train_cli: 4, architecture_sweep: 8}
     optimization: resident_device_batch_tensors
+  amd_rocm_gate_sweep:
+    host: Precision
+    gpus: [AMD_Radeon_Pro_W7900_0, AMD_Radeon_Pro_W7900_1]
+    environments: {gpu0: BIO, gpu1: AIAA}
+    reports:
+      sparsity_0_005: reports/protocol_v02_student_within_family_gated_esm2_rocm_w005_v1.json
+      sparsity_0_02: reports/protocol_v02_student_within_family_gated_esm2_rocm_w02_v1.json
+    fixed_budget: {epochs: 98, seeds: [0, 1, 2], batch_size: 4, learning_rate: 0.0001, device: cuda}
+    dev_family_macro:
+      sparsity_0_005:
+        local_error: 0.2916029233745219
+        site_error: 0.269193207623462
+        distance_cosine: -0.0010069670476623028
+        edit_energy_precision: 0.25339546562502174
+        edit_energy_recall: 0.06029221253791541
+        stable_predicted_displacement: 0.06742097262094898
+        remote_scaffold_frame_drift: 0.07824198703105327
+      sparsity_0_02:
+        local_error: 0.28774046304587036
+        site_error: 0.269257766587322
+        distance_cosine: 0.022491198790774995
+        edit_energy_precision: 0.24869204423916025
+        edit_energy_recall: 0.03094014823486992
+        stable_predicted_displacement: 0.03609833007852449
+        remote_scaffold_frame_drift: 0.0478247476214298
+    decision:
+      probe_passed: false
+      frozen_dev_run_performed: false
+      selected_as_default: false
+      next_intervention: calibrate_gate_response_recall_and_remote_frame_drift
+      rationale:
+        - stronger_sparsity_reduces_unnecessary_displacement
+        - stronger_sparsity_also_reduces_response_recall
+        - rocm_batch_8_produced_nonfinite_evaluation_deltas
+        - batch_4_learning_rate_1e-4_was_stable

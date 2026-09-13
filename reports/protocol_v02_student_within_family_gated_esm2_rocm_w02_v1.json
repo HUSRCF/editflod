@@ -1,0 +1,1155 @@
+{
+  "aggregate": {
+    "gated_transformer": {
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.3480561349685325,
+            "std": 0.0
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.2853098108251679,
+            "std": 0.0
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.20348072602148004,
+            "std": 0.0
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.26560543219895844,
+            "std": 0.0
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 5.3493109566701305e-15,
+            "std": 0.0
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.5383805526813884,
+            "std": 0.0
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 53.4348290940502,
+            "std": 0.0
+          }
+        },
+        "student_family_macro": {
+          "distance_change_cosine": {
+            "count": 3,
+            "mean": 0.022491198790774995,
+            "std": 0.009916267858831977
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.3538630914884475,
+            "std": 0.0037795958709132133
+          },
+          "edit_energy_precision": {
+            "count": 3,
+            "mean": 0.24869204423916025,
+            "std": 0.010508625174377836
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.03094014823486992,
+            "std": 0.016594968395730655
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.28774046304587036,
+            "std": 0.0034668625224170235
+          },
+          "local_distance_change_cosine": {
+            "count": 3,
+            "mean": 0.017157127417613844,
+            "std": 0.10356613396598148
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.21003877450034994,
+            "std": 0.006415079206026229
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.269257766587322,
+            "std": 0.01049683836839365
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 5.049049645796061,
+            "std": 2.380845510750617
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.0475465888626375,
+            "std": 0.016071268624665833
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0478247476214298,
+            "std": 0.016168348094491806
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.5432646466984331,
+            "std": 0.002384073252807791
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.03609833007852449,
+            "std": 0.016706183843885516
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 53.4348290940502,
+            "std": 0.0
+          }
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.005806956519914992,
+            "std": 0.0037795958709132133
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.03094014823486992,
+            "std": 0.016594968395730655
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.0024306522207024894,
+            "std": 0.0034668625224170235
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.006558048478869936,
+            "std": 0.006415079206026228
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.0036523343883635615,
+            "std": 0.01049683836839365
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 5.049049645796061,
+            "std": 2.380845510750617
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.047546588862632154,
+            "std": 0.016071268624665833
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0478247476214298,
+            "std": 0.016168348094491806
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.004884094017044778,
+            "std": 0.002384073252807791
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.03609833007852449,
+            "std": 0.016706183843885516
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          }
+        }
+      },
+      "parameter_count": [
+        48103
+      ],
+      "runs": 3,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.17156916174661427,
+            "std": 2.7755575615628914e-17
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.23667139075426247,
+            "std": 0.0
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.16379034352241814,
+            "std": 0.0
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.37199213018607563,
+            "std": 5.551115123125783e-17
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 6.206889449519908e-15,
+            "std": 0.0
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.273143718430464,
+            "std": 0.0
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 26.246870825942082,
+            "std": 0.0
+          }
+        },
+        "student_family_macro": {
+          "distance_change_cosine": {
+            "count": 3,
+            "mean": 0.30968079402429377,
+            "std": 0.10097615569131455
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": 0.15625209746559734,
+            "std": 0.009854901149648222
+          },
+          "edit_energy_precision": {
+            "count": 3,
+            "mean": 0.2846281451817356,
+            "std": 0.02892987498693077
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.07110060097506597,
+            "std": 0.04041112265296819
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": 0.22053571406916186,
+            "std": 0.011059205916900823
+          },
+          "local_distance_change_cosine": {
+            "count": 3,
+            "mean": 0.38618501861787635,
+            "std": 0.12388793036099369
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": 0.14656367412201274,
+            "std": 0.010811548471699642
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": 0.319117028727643,
+            "std": 0.026077038380719883
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 5.229902843489222,
+            "std": 2.4287233761368947
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.04777394278250053,
+            "std": 0.016278183968953395
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.047941615930737376,
+            "std": 0.01631555741195346
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": 0.2613674628282102,
+            "std": 0.005698700829527578
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.03265587817269026,
+            "std": 0.014501025115240143
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 26.246870825942082,
+            "std": 0.0
+          }
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "distance_change_error": {
+            "count": 3,
+            "mean": -0.015317064281016868,
+            "std": 0.009854901149648222
+          },
+          "edit_energy_precision": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "edit_energy_recall": {
+            "count": 3,
+            "mean": 0.07110060097506597,
+            "std": 0.04041112265296819
+          },
+          "local_backbone_error": {
+            "count": 3,
+            "mean": -0.016135676685100585,
+            "std": 0.011059205916900823
+          },
+          "local_distance_change_cosine": {
+            "count": 0,
+            "mean": null,
+            "std": null
+          },
+          "local_distance_change_error": {
+            "count": 3,
+            "mean": -0.017226669400405386,
+            "std": 0.010811548471699642
+          },
+          "mutation_site_backbone_error": {
+            "count": 3,
+            "mean": -0.05287510145843268,
+            "std": 0.026077038380719883
+          },
+          "predicted_distance_change_norm": {
+            "count": 3,
+            "mean": 5.229902843489222,
+            "std": 2.4287233761368947
+          },
+          "remote_scaffold_drift": {
+            "count": 3,
+            "mean": 0.047773942782494326,
+            "std": 0.016278183968953395
+          },
+          "remote_scaffold_frame_drift": {
+            "count": 3,
+            "mean": 0.047941615930737376,
+            "std": 0.01631555741195346
+          },
+          "remote_target_error": {
+            "count": 3,
+            "mean": -0.01177625560225378,
+            "std": 0.005698700829527578
+          },
+          "stable_predicted_displacement": {
+            "count": 3,
+            "mean": 0.03265587817269026,
+            "std": 0.014501025115240143
+          },
+          "true_distance_change_norm": {
+            "count": 3,
+            "mean": 0.0,
+            "std": 0.0
+          }
+        }
+      }
+    }
+  },
+  "configuration": {
+    "architectures": [
+      "gated_transformer"
+    ],
+    "batch_size": 4,
+    "biochemical_edit_features": false,
+    "blocks": 2,
+    "dev_records": 12,
+    "device": "cuda",
+    "endpoint_group_balanced_loss": true,
+    "epochs": 98,
+    "family_balanced_loss": true,
+    "gate_sparsity_weight": 0.02,
+    "gradient_clip_norm": 1.0,
+    "heads": 4,
+    "hidden_dim": 32,
+    "learning_rate": 0.0001,
+    "local_distance_loss_weight": 0.0,
+    "max_normalized_delta": null,
+    "mutation_loss_weight": 0.0,
+    "mutation_vector_loss_weight": 0.0,
+    "neighborhood_loss_weight": 0.0,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "sequence_context_cache": "/media/990Pro/ospedit/protocol_v02_esm2_t6_context_v2.npz",
+    "sequence_context_mode": "parent_edit",
+    "spatial_neighbors": 24,
+    "target_localization_radius": null,
+    "target_localization_transition": 5.0,
+    "teacher_distillation": false,
+    "train_records": 36,
+    "verify_checksums": false,
+    "within_family_probe": true
+  },
+  "environment": {
+    "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+    "python": "3.12.7",
+    "torch": "2.12.1+rocm7.2"
+  },
+  "format": "ospedit.student_architecture_sweep.v1",
+  "frozen_test_records_processed": 0,
+  "manifest": "/media/990Pro/ospedit/protocol_v02_within_family_probe_v1.jsonl",
+  "manifest_fingerprint": "e9f5aca3c94ebe80b6ee813f9a780bc96f5a8f8021849af419f866f093da7968",
+  "purpose": "fixed_budget_development_architecture_comparison",
+  "runs": [
+    {
+      "architecture": "gated_transformer",
+      "checkpoint": "/media/990Pro/ospedit/results/gate_w02/gated_transformer_seed0.pt",
+      "checkpoint_sha256": "945cb2682849d0c45f7be17f0ca3b2c6e1fdf8dd2953940a3d07222395c4c424",
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.3480561349685325,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.2853098108251679,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.20348072602148004,
+          "mutation_site_backbone_error": 0.26560543219895844,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 5.3493109566701305e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.5383805526813884,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 53.4348290940502
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.03650023565162279,
+          "distance_change_error": 0.3565415380629701,
+          "edit_energy_precision": 0.2635372548008477,
+          "edit_energy_recall": 0.04646408379494829,
+          "local_backbone_error": 0.28660702425089923,
+          "local_distance_change_cosine": -0.12388363675163971,
+          "local_distance_change_error": 0.21825701263417271,
+          "mutation_site_backbone_error": 0.26716752512330116,
+          "predicted_distance_change_norm": 7.287176291383307,
+          "remote_scaffold_drift": 0.06152982537660648,
+          "remote_scaffold_frame_drift": 0.06168267240272977,
+          "remote_target_error": 0.5443971203531884,
+          "stable_predicted_displacement": 0.048847511408634574,
+          "true_distance_change_norm": 53.4348290940502
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.008485403094437627,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.04646408379494829,
+          "local_backbone_error": 0.0012972134257313583,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.014776286612692674,
+          "mutation_site_backbone_error": 0.0015620929243427284,
+          "predicted_distance_change_norm": 7.287176291383307,
+          "remote_scaffold_drift": 0.06152982537660113,
+          "remote_scaffold_frame_drift": 0.06168267240272977,
+          "remote_target_error": 0.006016567671800033,
+          "stable_predicted_displacement": 0.048847511408634574,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "dev_report": "/media/990Pro/ospedit/results/gate_w02/gated_transformer_seed0_dev.json",
+      "dev_report_sha256": "04a6825e374eb8465eca56e70ced559d52ee79d605ef431f59530343e6dd65c9",
+      "epochs": 98,
+      "loss_final": 0.011648500454612076,
+      "loss_history": [
+        0.0185050955042243,
+        0.018455411773175,
+        0.018378085042867396,
+        0.01830890816118982,
+        0.018211231360005006,
+        0.018120087424500123,
+        0.018032400713612635,
+        0.01794878983249267,
+        0.017864145442015596,
+        0.017781999427825212,
+        0.017700245345218316,
+        0.01761984136990375,
+        0.017539612897154357,
+        0.017464338698320918,
+        0.017391802329156134,
+        0.017314695494456425,
+        0.01724757719784975,
+        0.01717019288076295,
+        0.01710545075022512,
+        0.01703788743664821,
+        0.016969725334395964,
+        0.0169047591690388,
+        0.016834925084064405,
+        0.016773833634538785,
+        0.016701926063332293,
+        0.01664310701501866,
+        0.016573930599002376,
+        0.016521297628059983,
+        0.01643815626286798,
+        0.016386224086292915,
+        0.01631110440939665,
+        0.016253139306273725,
+        0.016169277718290687,
+        0.016104159902574286,
+        0.016013252186692424,
+        0.01595293008722365,
+        0.015855195155988138,
+        0.015779328480776813,
+        0.015702033311956458,
+        0.015613457058659859,
+        0.015509400051087141,
+        0.015420645915178789,
+        0.0153498326221274,
+        0.015226759508045183,
+        0.015164109205620157,
+        0.015086434859161576,
+        0.014994022772750921,
+        0.014891930209058855,
+        0.014797643551396,
+        0.014715561617372764,
+        0.014656999200168584,
+        0.0145409288816154,
+        0.014451562737425169,
+        0.014411226561706927,
+        0.014389373543154862,
+        0.014269186701211665,
+        0.014313792266572515,
+        0.014104082093884548,
+        0.014050220423895452,
+        0.013997190942366919,
+        0.013921262153113881,
+        0.013874859393884739,
+        0.01377539541054931,
+        0.013727537925458617,
+        0.013696674102296432,
+        0.013558460606469048,
+        0.013530053845089342,
+        0.013431702688750293,
+        0.01335894396632082,
+        0.013322319447373351,
+        0.013222033882306682,
+        0.013184689580359392,
+        0.013124433708273701,
+        0.01303391823441618,
+        0.013010170647046633,
+        0.012864313812719451,
+        0.012904247915786173,
+        0.012783994199708104,
+        0.012770525464374159,
+        0.01269951043650508,
+        0.01264905303509699,
+        0.012514228466898203,
+        0.012493328217210041,
+        0.012365708515668908,
+        0.012383108557615843,
+        0.012276947343101105,
+        0.01236730992483596,
+        0.012210686716975437,
+        0.012173999928765826,
+        0.012133828467792936,
+        0.012120769255691104,
+        0.012005523558602564,
+        0.011898483007421924,
+        0.01186392044958969,
+        0.011827230595776604,
+        0.011733277442140711,
+        0.011758960641196204,
+        0.011648500454612076
+      ],
+      "loss_initial": 0.0185050955042243,
+      "loss_minimum": 0.011648500454612076,
+      "optimizer_steps": 882,
+      "parameter_count": 48103,
+      "seed": 0,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.17156916174661424,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.23667139075426247,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.16379034352241814,
+          "mutation_site_backbone_error": 0.3719921301860757,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 6.206889449519908e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.273143718430464,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.4064118908097462,
+          "distance_change_error": 0.1457013763175387,
+          "edit_energy_precision": 0.3180272478240308,
+          "edit_energy_recall": 0.11457558951398926,
+          "local_backbone_error": 0.2068961038360908,
+          "local_distance_change_cosine": 0.4963864501903281,
+          "local_distance_change_error": 0.13432164611052497,
+          "mutation_site_backbone_error": 0.285249481990269,
+          "predicted_distance_change_norm": 7.510588682701552,
+          "remote_scaffold_drift": 0.06197949313808074,
+          "remote_scaffold_frame_drift": 0.06201047154980098,
+          "remote_target_error": 0.2556897448390003,
+          "stable_predicted_displacement": 0.04479249812227601,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": -0.02586778542907553,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.11457558951398926,
+          "local_backbone_error": -0.02977528691817166,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -0.029468697411893174,
+          "mutation_site_backbone_error": -0.08674264819580668,
+          "predicted_distance_change_norm": 7.510588682701552,
+          "remote_scaffold_drift": 0.06197949313807453,
+          "remote_scaffold_frame_drift": 0.06201047154980098,
+          "remote_target_error": -0.017453973591463667,
+          "stable_predicted_displacement": 0.04479249812227601,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "train_command_seconds_including_evaluation": 96.61865871399641
+    },
+    {
+      "architecture": "gated_transformer",
+      "checkpoint": "/media/990Pro/ospedit/results/gate_w02/gated_transformer_seed1.pt",
+      "checkpoint_sha256": "70d0f6e0ea6618df8897db4d5d97889c1da4cef8b57cc9a17679ed52cb36d8b6",
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.3480561349685325,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.2853098108251679,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.20348072602148004,
+          "mutation_site_backbone_error": 0.26560543219895844,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 5.3493109566701305e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.5383805526813884,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 53.4348290940502
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.014931057245540325,
+          "distance_change_error": 0.3565297963560221,
+          "edit_energy_precision": 0.24066810949976353,
+          "edit_energy_recall": 0.03842104870945557,
+          "local_backbone_error": 0.2924381860741399,
+          "local_distance_change_cosine": 0.053478923436378424,
+          "local_distance_change_error": 0.20925761025753425,
+          "mutation_site_backbone_error": 0.28303075405201145,
+          "predicted_distance_change_norm": 6.108455936705218,
+          "remote_scaffold_drift": 0.05607206876397683,
+          "remote_scaffold_frame_drift": 0.05664671094084076,
+          "remote_target_error": 0.5454486526745357,
+          "stable_predicted_displacement": 0.046949843137107344,
+          "true_distance_change_norm": 53.4348290940502
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.008473661387489617,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.03842104870945557,
+          "local_backbone_error": 0.00712837524897203,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.005776884236054214,
+          "mutation_site_backbone_error": 0.01742532185305301,
+          "predicted_distance_change_norm": 6.108455936705218,
+          "remote_scaffold_drift": 0.05607206876397148,
+          "remote_scaffold_frame_drift": 0.05664671094084076,
+          "remote_target_error": 0.007068099993147281,
+          "stable_predicted_displacement": 0.046949843137107344,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "dev_report": "/media/990Pro/ospedit/results/gate_w02/gated_transformer_seed1_dev.json",
+      "dev_report_sha256": "79ae802d4c491c6061f076383962a725a1401a9a01330ab5f77fdc57913e4fb0",
+      "epochs": 98,
+      "loss_final": 0.012086164464967119,
+      "loss_history": [
+        0.018503098645144038,
+        0.018418783115016088,
+        0.018333168907297984,
+        0.018253571664293606,
+        0.01816371838665671,
+        0.01808017259463668,
+        0.017987503928856716,
+        0.017903436078793473,
+        0.017811317565954395,
+        0.017731448997639947,
+        0.01764425981996788,
+        0.017564687153531447,
+        0.017480988055467606,
+        0.017404871992766857,
+        0.01732090348377824,
+        0.017243958388765652,
+        0.01716941807212101,
+        0.01709743935821785,
+        0.01702296045712299,
+        0.01695602133663164,
+        0.016877985714624327,
+        0.016811951011833217,
+        0.01673420885991719,
+        0.01666421541530225,
+        0.016594584824310407,
+        0.016532326996740367,
+        0.016450716389550105,
+        0.016393137267894216,
+        0.016321851044065423,
+        0.016257517608917423,
+        0.016182809887039993,
+        0.01611909816145069,
+        0.01605236820048756,
+        0.01600233690502743,
+        0.015914317323929734,
+        0.015860958982052073,
+        0.015788057767268684,
+        0.015730225739793643,
+        0.015648214793246653,
+        0.015588226702271236,
+        0.015521628135401342,
+        0.015452950649584333,
+        0.015365472296252847,
+        0.015300675916175047,
+        0.015222626841730542,
+        0.015151285669869848,
+        0.015097807678911421,
+        0.015011805601211058,
+        0.014966947957873344,
+        0.014862500286350647,
+        0.014833933984239897,
+        0.014723952393978834,
+        0.014654504419821832,
+        0.014570194581109617,
+        0.014510974650167756,
+        0.01446097820169396,
+        0.014413949438474245,
+        0.014329806306502886,
+        0.014256711557714475,
+        0.0141647443589237,
+        0.014095654426556494,
+        0.01405481872562733,
+        0.014017255537004935,
+        0.013952706112629838,
+        0.013935282231412001,
+        0.013805719221838646,
+        0.013918300366236104,
+        0.013661191229605012,
+        0.013632041867822409,
+        0.013597668898809288,
+        0.013491826287160317,
+        0.013438736399014791,
+        0.013353226758125756,
+        0.013340578362759616,
+        0.013282952985415855,
+        0.013226769605858458,
+        0.01313759671110246,
+        0.013113331981003284,
+        0.013195815211575892,
+        0.013017776448072659,
+        0.013274775559289588,
+        0.01290658012860351,
+        0.012959643732756376,
+        0.012856034561991692,
+        0.012877504237824015,
+        0.012765655992552638,
+        0.012883738743969135,
+        0.012795659998017881,
+        0.012635253059367338,
+        0.012654790266727408,
+        0.012504586975814568,
+        0.0124925064543883,
+        0.01237100039401816,
+        0.012328828296934565,
+        0.012247752087811628,
+        0.012224769064535698,
+        0.012176978738150664,
+        0.012086164464967119
+      ],
+      "loss_initial": 0.018503098645144038,
+      "loss_minimum": 0.012086164464967119,
+      "optimizer_steps": 882,
+      "parameter_count": 48103,
+      "seed": 1,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.17156916174661424,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.23667139075426247,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.16379034352241814,
+          "mutation_site_backbone_error": 0.3719921301860757,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 6.206889449519908e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.273143718430464,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.3522910512795939,
+          "distance_change_error": 0.1536413736217462,
+          "edit_energy_precision": 0.2883927443964944,
+          "edit_energy_recall": 0.08148836592269428,
+          "local_backbone_error": 0.2207275611452412,
+          "local_distance_change_cosine": 0.4490421863885892,
+          "local_distance_change_error": 0.14475159710607238,
+          "mutation_site_backbone_error": 0.32341118760228205,
+          "predicted_distance_change_norm": 6.31372267282994,
+          "remote_scaffold_drift": 0.05635940091225476,
+          "remote_scaffold_frame_drift": 0.05674532553289578,
+          "remote_target_error": 0.25925299712692257,
+          "stable_predicted_displacement": 0.04090351861129034,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": -0.017927788124868033,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.08148836592269428,
+          "local_backbone_error": -0.01594382960902127,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -0.01903874641634576,
+          "mutation_site_backbone_error": -0.04858094258379364,
+          "predicted_distance_change_norm": 6.31372267282994,
+          "remote_scaffold_drift": 0.05635940091224855,
+          "remote_scaffold_frame_drift": 0.05674532553289578,
+          "remote_target_error": -0.013890721303541409,
+          "stable_predicted_displacement": 0.04090351861129034,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "train_command_seconds_including_evaluation": 96.92460345599102
+    },
+    {
+      "architecture": "gated_transformer",
+      "checkpoint": "/media/990Pro/ospedit/results/gate_w02/gated_transformer_seed2.pt",
+      "checkpoint_sha256": "904db303528d5ca192a2c31704ae8f0d2aa4e4eddd0305425108c77114d6cbae",
+      "dev": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.3480561349685325,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.2853098108251679,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.20348072602148004,
+          "mutation_site_backbone_error": 0.26560543219895844,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 5.3493109566701305e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.5383805526813884,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 53.4348290940502
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.016042303475161876,
+          "distance_change_error": 0.3485179400463502,
+          "edit_energy_precision": 0.24187076841686952,
+          "edit_energy_recall": 0.0079353122002059,
+          "local_backbone_error": 0.28417617881257196,
+          "local_distance_change_cosine": 0.12187609556810283,
+          "local_distance_change_error": 0.20260170060934296,
+          "mutation_site_backbone_error": 0.2575750205866534,
+          "predicted_distance_change_norm": 1.7515167092996602,
+          "remote_scaffold_drift": 0.025037872447329204,
+          "remote_scaffold_frame_drift": 0.02514485952071885,
+          "remote_target_error": 0.5399481670675754,
+          "stable_predicted_displacement": 0.012497635689831543,
+          "true_distance_change_norm": 53.4348290940502
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.00046180507781773406,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0079353122002059,
+          "local_backbone_error": -0.0011336320125959198,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -0.00087902541213708,
+          "mutation_site_backbone_error": -0.008030411612305055,
+          "predicted_distance_change_norm": 1.7515167092996602,
+          "remote_scaffold_drift": 0.025037872447323854,
+          "remote_scaffold_frame_drift": 0.02514485952071885,
+          "remote_target_error": 0.0015676143861870218,
+          "stable_predicted_displacement": 0.012497635689831543,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "dev_report": "/media/990Pro/ospedit/results/gate_w02/gated_transformer_seed2_dev.json",
+      "dev_report_sha256": "473ba7d042b22093601f22f4a1ababe61f1418d2608c815fe4c5a757fa958766",
+      "epochs": 98,
+      "loss_final": 0.013795154971174069,
+      "loss_history": [
+        0.01850596023723483,
+        0.01844802384989129,
+        0.018394473784913618,
+        0.018339305081301265,
+        0.018250433262437582,
+        0.018164717074897554,
+        0.01808094336754746,
+        0.018001208030101325,
+        0.01791752569584383,
+        0.017840067338612344,
+        0.017760964524414804,
+        0.017681368264473148,
+        0.017603788421385817,
+        0.0175315048545599,
+        0.01746124629345205,
+        0.01738907867628667,
+        0.017316689404348534,
+        0.017251332497431174,
+        0.0171838301854829,
+        0.017117217027892668,
+        0.01705446844506595,
+        0.0169981079072588,
+        0.01693376050227218,
+        0.016873997480918963,
+        0.016817184889482126,
+        0.016761590105791885,
+        0.01670389746626218,
+        0.01665066850061218,
+        0.016597351680199306,
+        0.016543066180828545,
+        0.016489360947161913,
+        0.016447283793240786,
+        0.01639191485527489,
+        0.01634452636871073,
+        0.016295313317742612,
+        0.01625114648292462,
+        0.016206155298277736,
+        0.016166997633667454,
+        0.016118526122429304,
+        0.01607715475579931,
+        0.01603513614585002,
+        0.015997109494896397,
+        0.015948049232570663,
+        0.015914454124867916,
+        0.01587782538909879,
+        0.015836789686646726,
+        0.01579541355992357,
+        0.015763327143051557,
+        0.015728061760051384,
+        0.015690062350283068,
+        0.015653273530511394,
+        0.015617842579053508,
+        0.015584484001414644,
+        0.015549559456606707,
+        0.015517108944348164,
+        0.015478834613329835,
+        0.015449062196744813,
+        0.015415599129887091,
+        0.015380673032874862,
+        0.015349165614073476,
+        0.015317199234333303,
+        0.015280208834964368,
+        0.015247096126485202,
+        0.015205127394033803,
+        0.015168374145610465,
+        0.015132440745623576,
+        0.015095674303463764,
+        0.015053154046957692,
+        0.015022884614558684,
+        0.014976716108827127,
+        0.014935927336207695,
+        0.014899171397296919,
+        0.014841083230243789,
+        0.014805135782808065,
+        0.014751036884263158,
+        0.01471457045732273,
+        0.014652583049610257,
+        0.014602289095314013,
+        0.014564499077904556,
+        0.014523300730312863,
+        0.014474147827261023,
+        0.014424703756554259,
+        0.014387520392321877,
+        0.014341802750196721,
+        0.01430252347038024,
+        0.014265829981822107,
+        0.014225563008545173,
+        0.014182890532538295,
+        0.01413733848474092,
+        0.01409827053753866,
+        0.014050356345251203,
+        0.014017812131593624,
+        0.013974189473729994,
+        0.013941949414503243,
+        0.013918524996067086,
+        0.013875034844709767,
+        0.013819229840818379,
+        0.013795154971174069
+      ],
+      "loss_initial": 0.01850596023723483,
+      "loss_minimum": 0.013795154971174069,
+      "optimizer_steps": 882,
+      "parameter_count": 48103,
+      "seed": 2,
+      "train": {
+        "copy_parent_family_macro": {
+          "distance_change_cosine": null,
+          "distance_change_error": 0.17156916174661424,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.0,
+          "local_backbone_error": 0.23667139075426247,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": 0.16379034352241814,
+          "mutation_site_backbone_error": 0.3719921301860757,
+          "predicted_distance_change_norm": 0.0,
+          "remote_scaffold_drift": 6.206889449519908e-15,
+          "remote_scaffold_frame_drift": 0.0,
+          "remote_target_error": 0.273143718430464,
+          "stable_predicted_displacement": 0.0,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_family_macro": {
+          "distance_change_cosine": 0.17033943998354117,
+          "distance_change_error": 0.1694135424575072,
+          "edit_energy_precision": 0.24746444332468165,
+          "edit_energy_recall": 0.017237847488514355,
+          "local_backbone_error": 0.23398347722615365,
+          "local_distance_change_cosine": 0.21312641927471182,
+          "local_distance_change_error": 0.16061777914944092,
+          "mutation_site_backbone_error": 0.34869041659037797,
+          "predicted_distance_change_norm": 1.8653971749361737,
+          "remote_scaffold_drift": 0.024982934297166103,
+          "remote_scaffold_frame_drift": 0.025069050709515366,
+          "remote_target_error": 0.2691596465187077,
+          "stable_predicted_displacement": 0.012271617784504427,
+          "true_distance_change_norm": 26.246870825942082
+        },
+        "student_minus_copy": {
+          "distance_change_cosine": null,
+          "distance_change_error": -0.0021556192891070414,
+          "edit_energy_precision": null,
+          "edit_energy_recall": 0.017237847488514355,
+          "local_backbone_error": -0.0026879135281088207,
+          "local_distance_change_cosine": null,
+          "local_distance_change_error": -0.0031725643729772213,
+          "mutation_site_backbone_error": -0.023301713595697715,
+          "predicted_distance_change_norm": 1.8653971749361737,
+          "remote_scaffold_drift": 0.024982934297159896,
+          "remote_scaffold_frame_drift": 0.025069050709515366,
+          "remote_target_error": -0.0039840719117562595,
+          "stable_predicted_displacement": 0.012271617784504427,
+          "true_distance_change_norm": 0.0
+        }
+      },
+      "train_command_seconds_including_evaluation": 96.10289967001881
+    }
+  ],
+  "selection_policy": {
+    "copy_parent_noninferiority_required": true,
+    "primary_metric": "dev_family_macro_local_backbone_error",
+    "secondary_metrics": [
+      "mutation_site_backbone_error",
+      "distance_change_error",
+      "distance_change_cosine",
+      "local_distance_change_error",
+      "local_distance_change_cosine",
+      "remote_target_error",
+      "remote_scaffold_drift"
+    ],
+    "test_metrics_used": false
+  },
+  "selection_used_observed_response": false
+}
