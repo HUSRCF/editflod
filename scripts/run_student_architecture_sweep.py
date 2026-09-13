@@ -32,8 +32,13 @@ PRIMARY_METRICS = (
     "predicted_distance_change_norm",
     "true_distance_change_norm",
     "edit_energy_precision",
+    "response_energy_coverage",
     "edit_energy_recall",
     "stable_predicted_displacement",
+    "gate_response_mean",
+    "gate_stable_mean",
+    "gate_auprc",
+    "gate_auroc",
 )
 
 
