@@ -168,7 +168,9 @@ if nn is not None:
             hidden = self.context(hidden, src_key_padding_mask=padding_mask)
             delta = self.output_projection(hidden)
             if self.max_normalized_delta is not None:
-                delta = torch.tanh(delta) * self.max_normalized_delta
+                delta = torch.clamp(
+                    delta, -self.max_normalized_delta, self.max_normalized_delta
+                )
             edit_mask = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
             output = delta * edit_mask[:, None, None].to(delta.dtype)
             if residue_mask is not None:
@@ -233,7 +235,9 @@ if nn is not None:
             hidden = self.context(hidden, src_key_padding_mask=padding_mask)
             delta = self.output_projection(hidden)
             if self.max_normalized_delta is not None:
-                delta = torch.tanh(delta) * self.max_normalized_delta
+                delta = torch.clamp(
+                    delta, -self.max_normalized_delta, self.max_normalized_delta
+                )
             gate_logits = self.gate_projection(hidden).squeeze(-1)
             gate = torch.sigmoid(gate_logits)
             edit_mask = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
@@ -294,7 +298,9 @@ if nn is not None:
                 hidden = block(hidden, edge_features, edge_mask)
             delta = self.output_projection(hidden)
             if self.max_normalized_delta is not None:
-                delta = torch.tanh(delta) * self.max_normalized_delta
+                delta = torch.clamp(
+                    delta, -self.max_normalized_delta, self.max_normalized_delta
+                )
             has_edit = edit_features[..., EDIT_MASK_INDEX].abs().sum(dim=1) > 0
             output = delta * has_edit[:, None, None].to(delta.dtype)
             if residue_mask is not None:
