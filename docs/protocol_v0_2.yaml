@@ -152,6 +152,7 @@ artifacts:
     student_distance_loss_generalization: reports/protocol_v02_student_distance_loss_generalization_v1.json
     student_within_family_vector_loss_transformer_sweep: reports/protocol_v02_student_within_family_vector_loss_transformer_sweep_v1.json
     student_within_family_vector_loss_generalization: reports/protocol_v02_student_within_family_vector_loss_generalization_v1.json
+    student_within_family_esm2_context_transformer_sweep: reports/protocol_v02_student_within_family_esm2_context_transformer_sweep_v1.json
     endpoint_mutation_annotations: reports/protocol_v02_endpoint_mutation_annotations_v1.json
     manifest_endpoint_groups: reports/protocol_v02_manifest_endpoint_groups_v1.json
     signal_diagnostic: reports/protocol_v02_background_signal_diagnostic_v1.json
@@ -591,3 +592,26 @@ background_control_gate:
         - local_distance_direction_worsens
         - endpoint_vector_targets_may_expose_local_nuisance_motion
         - stop_manual_loss_expansion_and_test_transferable_context
+  frozen_esm2_sequence_context:
+    model_id: facebook/esm2_t6_8M_UR50D
+    model_revision: c731040fcd8d73dceaa04b0a8e6329b345b0f5df
+    embedding_dim: 320
+    cache_fingerprint: f61fae5a66d3e1d543f1b7b1abc3c2246994989cfc6981f552a512d28dab10be
+    cache_path_external: /tmp/ospedit-real-sample/protocol_v02_esm2_t6_context_v1.npz
+    within_family_transformer_dev_family_macro:
+      local_backbone_error_angstrom: {mean: 0.29214923306013624, std: 0.006232730784131641}
+      local_error_minus_copy_angstrom: {mean: 0.006839422234968344, std: 0.00623273078413164}
+      mutation_site_backbone_error_angstrom: {mean: 0.2432967240267092, std: 0.018174618712619446}
+      mutation_site_error_minus_copy_angstrom: {mean: -0.022308708172249263, std: 0.018174618712619443}
+      distance_change_cosine: {mean: 0.037594313199444694, std: 0.01278072319411762}
+      remote_scaffold_drift: {mean: 0.007990152690299455, std: 0.0014640447910874942}
+    decision:
+      probe_passed: false
+      frozen_dev_run_performed: false
+      selected_as_default: false
+      next_intervention: improve_context_conditioning_or_reduce_edit_drift
+      rationale:
+        - mutation_site_error_improves_relative_to_copy
+        - local_direction_cosine_is_positive
+        - local_error_remains_worse_than_copy
+        - remote_scaffold_drift_remains_nonzero

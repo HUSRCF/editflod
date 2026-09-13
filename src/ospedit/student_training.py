@@ -16,6 +16,7 @@ except ImportError:  # pragma: no cover
 from .student_data import PairDataset, iter_pair_batches
 from .student import EDIT_MASK_INDEX
 from .teacher_cache import TeacherCache
+from .sequence_context import SequenceContextCache
 
 
 LOSS_SCHEMA_VERSION = "ospedit.student_loss.v3"
@@ -407,6 +408,7 @@ def train_records(
     endpoint_group_balanced_loss: bool = False,
     include_biochemical: bool = False,
     include_target_residue: bool = True,
+    sequence_context: SequenceContextCache | None = None,
     target_localization_radius: float | None = None,
     target_localization_transition: float = 5.0,
 ) -> list[float]:
@@ -438,6 +440,7 @@ def train_records(
         endpoint_group_balanced_loss=endpoint_group_balanced_loss,
         include_biochemical=include_biochemical,
         include_target_residue=include_target_residue,
+        sequence_context=sequence_context,
         target_localization_radius=target_localization_radius,
         target_localization_transition=target_localization_transition,
     )

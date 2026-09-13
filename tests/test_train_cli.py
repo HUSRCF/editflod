@@ -1,3 +1,5 @@
+# ruff: noqa: E402
+
 import json
 import sys
 
@@ -8,6 +10,7 @@ torch = pytest.importorskip("torch")
 
 from ospedit.cli import main as eval_main
 from ospedit.data import PairRecord, StructurePair, structure_pair_payload, write_manifest
+from ospedit.sequence_context import write_sequence_context_cache
 from ospedit.train_cli import main
 
 
@@ -170,6 +173,94 @@ def test_old_checkpoint_defaults_to_pre_position_behavior(tmp_path):
     save_student_checkpoint(model, path, config={"parent_dim": 16, "hidden_dim": 32, "blocks": 1, "heads": 4})
     loaded = _student_editor(str(path), pair, "cpu")
     assert loaded.model.use_positional_encoding is False
+
+
+def test_student_editor_moves_loaded_model_to_requested_device(tmp_path):
+    from ospedit.cli import _student_editor
+    from ospedit.student import ParentEditStudent
+    from ospedit.student_training import save_student_checkpoint
+
+    coords = np.zeros((2, 4, 3), dtype=float)
+    pair = StructurePair("device", "AA", "AY", coords, coords.copy(), (1,))
+    model = ParentEditStudent(parent_dim=16, hidden_dim=32, blocks=1, heads=4)
+    path = tmp_path / "device.pt"
+    save_student_checkpoint(
+        model,
+        path,
+        config={"parent_dim": 16, "hidden_dim": 32, "blocks": 1, "heads": 4},
+    )
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    loaded = _student_editor(str(path), pair, device)
+
+    assert next(loaded.model.parameters()).device.type == device
+
+
+def test_context_checkpoint_requires_matching_cache(tmp_path, monkeypatch):
+    from ospedit.cli import _student_editor
+
+    residue = np.array(
+        [[-1.0, 0.5, 0.0], [0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [1.0, 1.0, 0.0]]
+    )
+    coords = np.repeat(residue[None], 2, axis=0)
+    coords[1, :, 1] += 4.0
+    pair = StructurePair("context", "AA", "AY", coords, coords.copy(), (1,))
+    manifest = tmp_path / "context.jsonl"
+    write_manifest([PairRecord(pair, "parent", "family", "train")], manifest)
+    cache = tmp_path / "context.npz"
+    write_sequence_context_cache(
+        cache,
+        {
+            "AA": np.zeros((2, 3), dtype=np.float32),
+            "AY": np.ones((2, 3), dtype=np.float32),
+        },
+        model_id="test/model",
+    )
+    checkpoint = tmp_path / "context.pt"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "ospedit-train",
+            "--manifest",
+            str(manifest),
+            "--output",
+            str(checkpoint),
+            "--epochs",
+            "1",
+            "--hidden-dim",
+            "16",
+            "--blocks",
+            "1",
+            "--heads",
+            "4",
+            "--sequence-context-cache",
+            str(cache),
+        ],
+    )
+    main()
+
+    payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
+    assert payload["config"]["parent_dim"] == 19
+    assert payload["config"]["edit_dim"] == 44
+    assert payload["config"]["sequence_context_dim"] == 3
+    assert _student_editor(str(checkpoint), pair, "cpu", sequence_context_cache=str(cache))
+    with pytest.raises(ValueError, match="requires --sequence-context-cache"):
+        _student_editor(str(checkpoint), pair, "cpu")
+
+    other = tmp_path / "other.npz"
+    write_sequence_context_cache(
+        other,
+        {
+            "AA": np.ones((2, 3), dtype=np.float32),
+            "AY": np.zeros((2, 3), dtype=np.float32),
+        },
+        model_id="test/model",
+    )
+    with pytest.raises(ValueError, match="fingerprint"):
+        _student_editor(
+            str(checkpoint), pair, "cpu", sequence_context_cache=str(other)
+        )
 
 
 def test_eval_cli_rejects_manifest_append_without_output(monkeypatch):

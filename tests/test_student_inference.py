@@ -1,9 +1,12 @@
+# ruff: noqa: E402
+
 import numpy as np
 import pytest
 
 torch = pytest.importorskip("torch")
 
 from ospedit.data import StructurePair
+from ospedit.sequence_context import SequenceContextCache, write_sequence_context_cache
 from ospedit.student_inference import (
     ParentContextCache,
     apply_student_delta,
@@ -83,6 +86,16 @@ class EditSpyStudent(torch.nn.Module):
     def forward(self, parent, edit, residue_mask=None):
         self.edit = edit.detach().cpu()
         return torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype, device=parent.device)
+
+
+class InputDimensionSpyStudent(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.shapes = None
+
+    def forward(self, parent, edit, residue_mask=None):
+        self.shapes = (tuple(parent.shape), tuple(edit.shape))
+        return torch.zeros((parent.shape[0], parent.shape[1], 6), dtype=parent.dtype)
 
 
 def test_predict_student_zero_delta_preserves_parent():
@@ -194,6 +207,28 @@ def test_predict_student_can_ablate_target_identity_but_keep_mutation_position()
     predict_student(model, make_pair(), include_target_residue=False)
     assert torch.equal(model.edit[..., 20:40], torch.zeros_like(model.edit[..., 20:40]))
     assert model.edit[0, :, 40].tolist() == [0.0, 1.0]
+
+
+def test_sequence_context_dimensions_match_single_and_batch_inference(tmp_path):
+    pair = make_pair()
+    path = tmp_path / "context.npz"
+    write_sequence_context_cache(
+        path,
+        {
+            pair.parent_sequence: np.zeros((pair.length, 3), dtype=np.float32),
+            pair.mutant_sequence: np.ones((pair.length, 3), dtype=np.float32),
+        },
+        model_id="test/model",
+    )
+    context = SequenceContextCache.load(path)
+
+    single_model = InputDimensionSpyStudent()
+    predict_student(single_model, pair, sequence_context=context)
+    batch_model = InputDimensionSpyStudent()
+    predict_student_batch(batch_model, [pair], sequence_context=context)
+
+    assert single_model.shapes == ((1, 2, 19), (1, 2, 44))
+    assert batch_model.shapes == single_model.shapes
 
 
 def test_geometry_cached_predictions_match_uncached_and_are_order_independent():

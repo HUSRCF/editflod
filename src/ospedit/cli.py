@@ -21,6 +21,7 @@ from .metrics import METRIC_SCHEMA_VERSION
 from .models import CopyParentEditor, StudentEditor
 from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
+from .sequence_context import SequenceContextCache
 from .student_training import (
     load_student_checkpoint,
     validate_student_checkpoint_config,
@@ -34,6 +35,7 @@ def _student_editor(
     update_scale: float = 1.0,
     output_localization_radius: float | None = None,
     output_localization_transition: float | None = None,
+    sequence_context_cache: str | None = None,
 ) -> StudentEditor:
     try:
         import torch
@@ -41,6 +43,20 @@ def _student_editor(
         raise ValueError("student evaluation requires torch; install ospedit[torch]") from error
     payload = torch.load(checkpoint, map_location=device, weights_only=False)
     config = dict(payload.get("config", {}))
+    context = None
+    expected_context_fingerprint = config.get("sequence_context_fingerprint")
+    if expected_context_fingerprint is not None:
+        if sequence_context_cache is None:
+            raise ValueError(
+                "student checkpoint requires --sequence-context-cache for inference"
+            )
+        context = SequenceContextCache.load(sequence_context_cache)
+        if context.fingerprint != expected_context_fingerprint:
+            raise ValueError("sequence context cache fingerprint does not match checkpoint")
+        if context.embedding_dim != int(config.get("sequence_context_dim", 0)):
+            raise ValueError("sequence context dimension does not match checkpoint")
+    elif sequence_context_cache is not None:
+        raise ValueError("checkpoint was trained without sequence context")
     include_geometry = bool(config.get("geometry_features", False))
     include_biochemical = bool(config.get("biochemical_edit_features", False))
     include_target_residue = not bool(config.get("ablate_target_residue", False))
@@ -55,9 +71,12 @@ def _student_editor(
     # Checkpoints written before positional encoding was introduced must keep
     # their original behavior instead of silently changing at evaluation.
     use_positional_encoding = not bool(config["no_positional_encoding"]) if "no_positional_encoding" in config else False
+    inferred_parent_dim = parent_local_features(
+        pair, include_geometry=include_geometry
+    ).shape[-1] + (context.embedding_dim if context is not None else 0)
     validate_student_checkpoint_config(
         config,
-        parent_dim=parent_local_features(pair, include_geometry=include_geometry).shape[-1],
+        parent_dim=inferred_parent_dim,
         edit_dim=edit_dim,
     )
     architecture = str(config.get("student_architecture", "transformer"))
@@ -106,6 +125,7 @@ def _student_editor(
             use_positional_encoding=use_positional_encoding,
         )
     load_student_checkpoint(model, checkpoint, map_location=device)
+    model.to(device)
     return StudentEditor(
         model,
         device=device,
@@ -117,6 +137,7 @@ def _student_editor(
         update_scale=update_scale,
         include_biochemical=include_biochemical,
         include_target_residue=include_target_residue,
+        sequence_context=context,
         output_localization_radius=localization_radius,
         output_localization_transition=localization_transition,
     )
@@ -145,6 +166,10 @@ def main() -> None:
         help="Student manifest inference batch size",
     )
     parser.add_argument("--student-checkpoint", help="Student .pt checkpoint for --editor student")
+    parser.add_argument(
+        "--sequence-context-cache",
+        help="Frozen sequence-context NPZ required by context-trained students",
+    )
     parser.add_argument("--student-update-scale", type=float, default=1.0)
     parser.add_argument("--student-output-localization-radius", type=float)
     parser.add_argument("--student-output-localization-transition", type=float)
@@ -209,6 +234,7 @@ def main() -> None:
                 args.student_update_scale,
                 args.student_output_localization_radius,
                 args.student_output_localization_transition,
+                args.sequence_context_cache,
             )
         else:
             editor = CopyParentEditor()
@@ -288,6 +314,7 @@ def main() -> None:
             args.student_update_scale,
             args.student_output_localization_radius,
             args.student_output_localization_transition,
+            args.sequence_context_cache,
         )
     else:
         editor = CopyParentEditor()

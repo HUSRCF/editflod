@@ -18,6 +18,7 @@ from .experiment import evaluate_manifest_batched
 from .models import CopyParentEditor, StudentEditor
 from .student import HybridSpatialGraphStudent, ParentEditStudent, SpatialGraphStudent
 from .student_data import parent_local_features
+from .sequence_context import SequenceContextCache
 from .student_training import (
     LOSS_SCHEMA_VERSION,
     load_student_checkpoint,
@@ -162,6 +163,10 @@ def main() -> None:
         help="Optional tanh bound for each predicted normalized delta channel",
     )
     parser.add_argument("--no-positional-encoding", action="store_true")
+    parser.add_argument(
+        "--sequence-context-cache",
+        help="Frozen per-residue sequence-context NPZ built for this manifest",
+    )
     parser.add_argument("--no-gradient-clip", action="store_true")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--device", default="cpu")
@@ -207,8 +212,23 @@ def main() -> None:
     if args.distill_weight and teacher_cache is None:
         raise SystemExit("--distill-weight requires --teacher-cache")
     teacher_cache_fingerprint = teacher_cache.metadata.get("manifest_fingerprint") if teacher_cache is not None else None
+    sequence_context = None
+    if args.sequence_context_cache:
+        try:
+            sequence_context = SequenceContextCache.load(args.sequence_context_cache)
+        except (FileNotFoundError, KeyError, ValueError) as error:
+            raise SystemExit(f"sequence context cache validation failed: {error}") from error
+        try:
+            for record in records:
+                sequence_context.get(record.pair.parent_sequence)
+                sequence_context.get(record.pair.mutant_sequence)
+        except (KeyError, ValueError) as error:
+            raise SystemExit(f"sequence context cache does not cover manifest: {error}") from error
     parent_dim = int(parent_local_features(selected[0].pair, include_geometry=args.geometry_features).shape[-1])
     edit_dim = 48 if args.biochemical_edit_features else 41
+    if sequence_context is not None:
+        parent_dim += sequence_context.embedding_dim
+        edit_dim += sequence_context.embedding_dim
     resume_payload = None
     if args.resume:
         resume_payload = torch.load(args.resume, map_location="cpu", weights_only=False)
@@ -293,6 +313,14 @@ def main() -> None:
         if saved_target_ablation != args.ablate_target_residue:
             raise SystemExit(
                 f"resume checkpoint ablate_target_residue={saved_target_ablation} does not match requested {args.ablate_target_residue}"
+            )
+        saved_context_fingerprint = resume_config.get("sequence_context_fingerprint")
+        requested_context_fingerprint = (
+            sequence_context.fingerprint if sequence_context is not None else None
+        )
+        if saved_context_fingerprint != requested_context_fingerprint:
+            raise SystemExit(
+                "resume checkpoint sequence context fingerprint does not match requested cache"
             )
         saved_radius = resume_config.get("neighborhood_radius")
         if saved_radius is not None and not np.isclose(float(saved_radius), args.neighborhood_radius):
@@ -391,6 +419,7 @@ def main() -> None:
         endpoint_group_balanced_loss=args.endpoint_group_balanced_loss,
         include_biochemical=args.biochemical_edit_features,
         include_target_residue=not args.ablate_target_residue,
+        sequence_context=sequence_context,
         target_localization_radius=args.target_localization_radius,
         target_localization_transition=args.target_localization_transition,
     )
@@ -412,6 +441,7 @@ def main() -> None:
                 spatial_neighbors=args.spatial_neighbors,
                 include_biochemical=args.biochemical_edit_features,
                 include_target_residue=not args.ablate_target_residue,
+                sequence_context=sequence_context,
                 output_localization_radius=args.target_localization_radius,
                 output_localization_transition=args.target_localization_transition,
             ),
@@ -462,6 +492,15 @@ def main() -> None:
             "max_normalized_delta": max_normalized_delta,
             "manifest_fingerprint": manifest_fingerprint(records),
             "teacher_cache_fingerprint": teacher_cache_fingerprint,
+            "sequence_context_fingerprint": (
+                sequence_context.fingerprint if sequence_context is not None else None
+            ),
+            "sequence_context_model_id": (
+                sequence_context.model_id if sequence_context is not None else None
+            ),
+            "sequence_context_dim": (
+                sequence_context.embedding_dim if sequence_context is not None else 0
+            ),
             "evaluation": evaluation_payload,
         },
     )

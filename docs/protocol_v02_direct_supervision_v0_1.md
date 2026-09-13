@@ -601,3 +601,24 @@ show sparse directed-edit coverage, while fixed physicochemical descriptors did
 not transfer reliably. The next model experiment should add a frozen pretrained
 sequence context through an explicit cache, first testing whether it improves
 unseen-edit behavior without changing the geometry decoder or evaluation gate.
+
+### Frozen ESM2 sequence context
+
+The first transferable-context probe used `facebook/esm2_t6_8M_UR50D` (320
+per-residue channels, revision `c731040fcd8d73dceaa04b0a8e6329b345b0f5df`) as a
+frozen feature provider. A versioned NPZ cache stores parent embeddings and the
+candidate-specific mutant-minus-parent embedding difference; the checkpoint
+records the cache fingerprint and refuses mismatched inference caches.
+
+On the same 36-record within-family diagnostic split and the same 98-epoch,
+three-seed Transformer budget, the context probe reached local error 0.29215
+Angstrom versus 0.28531 for copying the parent (delta +0.00684), while the
+mutation-site error was 0.24330 versus 0.26561 (delta -0.02231). Distance-change
+cosine was 0.03759 and remote scaffold drift 0.00799. This is a directional
+signal at the mutation site, but it fails the pre-registered local copy gate;
+the frozen unseen-family run was not performed.
+
+The cache builder is `scripts/build_sequence_context_cache.py`, and the optional
+training/evaluation flag is `--sequence-context-cache`. The context provider is
+an experiment dependency (`ospedit[sequence-context]`); model weights remain
+outside the repository.

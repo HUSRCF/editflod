@@ -151,6 +151,7 @@ def main() -> None:
     parser.add_argument("--local-distance-loss-weight", type=float, default=0.0)
     parser.add_argument("--mutation-vector-loss-weight", type=float, default=0.0)
     parser.add_argument("--biochemical-edit-features", action="store_true")
+    parser.add_argument("--sequence-context-cache")
     parser.add_argument("--max-normalized-delta", type=float)
     parser.add_argument("--target-localization-radius", type=float)
     parser.add_argument("--target-localization-transition", type=float, default=5.0)
@@ -287,6 +288,10 @@ def main() -> None:
                 train_command.append("--allow-split-overlap")
             if args.biochemical_edit_features:
                 train_command.append("--biochemical-edit-features")
+            if args.sequence_context_cache:
+                train_command.extend(
+                    ("--sequence-context-cache", args.sequence_context_cache)
+                )
             started = time.perf_counter()
             train_result = _last_json(_run(train_command).stdout)
             train_command_seconds = time.perf_counter() - started
@@ -313,6 +318,10 @@ def main() -> None:
             ]
             if args.within_family_probe:
                 dev_command.append("--allow-split-overlap")
+            if args.sequence_context_cache:
+                dev_command.extend(
+                    ("--sequence-context-cache", args.sequence_context_cache)
+                )
             _run(dev_command)
             dev_result = _load_json(dev_path)
 
@@ -402,6 +411,11 @@ def main() -> None:
             "local_distance_loss_weight": args.local_distance_loss_weight,
             "mutation_vector_loss_weight": args.mutation_vector_loss_weight,
             "biochemical_edit_features": args.biochemical_edit_features,
+            "sequence_context_cache": (
+                str(Path(args.sequence_context_cache).resolve())
+                if args.sequence_context_cache
+                else None
+            ),
             "max_normalized_delta": args.max_normalized_delta,
             "target_localization_radius": args.target_localization_radius,
             "target_localization_transition": args.target_localization_transition,

@@ -4,6 +4,7 @@ import numpy as np
 import pytest
 
 from ospedit.data import PairRecord, StructurePair
+from ospedit.sequence_context import SequenceContextCache, write_sequence_context_cache
 from ospedit.student_data import PairDataset, collate_pair_records, iter_pair_batches, mutation_neighborhood_mask, parent_local_features, parent_residue_mask, parent_spatial_graph, target_local_delta
 
 
@@ -35,6 +36,26 @@ def test_pair_dataset_records_custom_neighborhood_radius():
     pair = StructurePair("radius", "AA", "AY", parent, parent.copy(), (1,))
     item = PairDataset([PairRecord(pair, "parent", "family", "dev")], neighborhood_radius=0.1)[0]
     assert item["neighborhood_mask"].tolist() == [0.0, 1.0]
+
+
+def test_pair_dataset_separates_parent_and_edit_sequence_context(tmp_path):
+    record = make_record()
+    path = tmp_path / "context.npz"
+    parent = np.arange(6, dtype=np.float32).reshape(2, 3)
+    mutant = parent + 2.0
+    write_sequence_context_cache(
+        path,
+        {record.pair.parent_sequence: parent, record.pair.mutant_sequence: mutant},
+        model_id="test/model",
+    )
+    item = PairDataset(
+        [record], sequence_context=SequenceContextCache.load(path)
+    )[0]
+
+    assert item["parent_features"].shape == (2, 19)
+    assert item["edit_features"].shape == (2, 44)
+    assert np.array_equal(item["parent_features"][:, -3:], parent)
+    assert np.array_equal(item["edit_features"][:, -3:], mutant - parent)
 
 
 def test_parent_residue_mask_excludes_degenerate_frames():

@@ -14,6 +14,7 @@ from .student_inference import (
     predict_student,
     predict_student_batch,
 )
+from .sequence_context import SequenceContextCache
 
 
 class FieldModel(Protocol):
@@ -81,6 +82,7 @@ class StudentEditor:
     update_scale: float = 1.0
     include_biochemical: bool = False
     include_target_residue: bool = True
+    sequence_context: SequenceContextCache | None = None
     output_localization_radius: float | None = None
     output_localization_transition: float = 5.0
 
@@ -102,6 +104,7 @@ class StudentEditor:
             update_scale=self.update_scale,
             include_biochemical=self.include_biochemical,
             include_target_residue=self.include_target_residue,
+            sequence_context=self.sequence_context,
             output_localization_radius=self.output_localization_radius,
             output_localization_transition=self.output_localization_transition,
         )
@@ -120,6 +123,7 @@ class StudentEditor:
             update_scale=self.update_scale,
             include_biochemical=self.include_biochemical,
             include_target_residue=self.include_target_residue,
+            sequence_context=self.sequence_context,
             output_localization_radius=self.output_localization_radius,
             output_localization_transition=self.output_localization_transition,
         )

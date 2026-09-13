@@ -19,6 +19,7 @@ ospedit-split-manifest = "ospedit.split_cli:main"
 
 [project.optional-dependencies]
 torch = ["torch>=2.0"]
+sequence-context = ["torch>=2.0", "transformers>=4.30"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

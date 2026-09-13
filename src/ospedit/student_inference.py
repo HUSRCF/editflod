@@ -10,6 +10,7 @@ import numpy as np
 
 from .data import StructurePair
 from .geometry import apply_local_frame_update
+from .sequence_context import SequenceContextCache
 from .student import BIOCHEMICAL_GROUPS, encode_edit_features
 from .student_data import (
     edit_geometry_features,
@@ -18,6 +19,7 @@ from .student_data import (
     parent_local_features,
     parent_residue_mask,
     parent_spatial_graph,
+    sequence_context_features,
 )
 
 
@@ -113,6 +115,7 @@ def predict_student(
     update_scale: float = 1.0,
     include_biochemical: bool = False,
     include_target_residue: bool = True,
+    sequence_context: SequenceContextCache | None = None,
     output_localization_radius: float | None = None,
     output_localization_transition: float = 5.0,
 ) -> np.ndarray:
@@ -130,7 +133,15 @@ def predict_student(
         [pair.mutant_sequence],
         include_biochemical=include_biochemical,
         include_target_residue=include_target_residue,
-    ).to(device=device)
+    )
+    if sequence_context is not None:
+        parent_context, edit_context = sequence_context_features(pair, sequence_context)
+        parent_features = np.concatenate((parent_features, parent_context), axis=-1)
+        parent = torch.as_tensor(parent_features[None], dtype=torch.float32, device=device)
+        edit = torch.cat(
+            (edit, torch.as_tensor(edit_context[None], dtype=torch.float32)), dim=-1
+        )
+    edit = edit.to(device=device)
     was_training = bool(model.training)
     model.eval()
     try:
@@ -182,6 +193,7 @@ def predict_student_batch(
     update_scale: float = 1.0,
     include_biochemical: bool = False,
     include_target_residue: bool = True,
+    sequence_context: SequenceContextCache | None = None,
     output_localization_radius: float | None = None,
     output_localization_transition: float = 5.0,
 ) -> list[np.ndarray]:
@@ -196,21 +208,36 @@ def predict_student_batch(
         raise ImportError("student inference requires torch; install ospedit[torch]") from error
     use_geometry = parent_cache.include_geometry if parent_cache is not None else include_geometry
     feature_rows = [parent_cache.get(pair) if parent_cache is not None else parent_local_features(pair, include_geometry=use_geometry) for pair in pairs]
+    context_rows = (
+        [sequence_context_features(pair, sequence_context) for pair in pairs]
+        if sequence_context is not None
+        else None
+    )
+    if context_rows is not None:
+        feature_rows = [
+            np.concatenate((features, contexts[0]), axis=-1)
+            for features, contexts in zip(feature_rows, context_rows, strict=True)
+        ]
     max_length = max(pair.length for pair in pairs)
     parent_values = np.zeros((len(pairs), max_length, feature_rows[0].shape[-1]), dtype=np.float32)
-    edit_dim = 41 + (len(BIOCHEMICAL_GROUPS) if include_biochemical else 0)
+    base_edit_dim = 41 + (len(BIOCHEMICAL_GROUPS) if include_biochemical else 0)
+    edit_dim = base_edit_dim
+    if sequence_context is not None:
+        edit_dim += sequence_context.embedding_dim
     edit_values = np.zeros((len(pairs), max_length, edit_dim), dtype=np.float32)
     mask_values = np.zeros((len(pairs), max_length), dtype=bool)
     edge_values = np.zeros((len(pairs), max_length, max_length, 16), dtype=np.float32) if include_spatial_graph else None
     edge_masks = np.zeros((len(pairs), max_length, max_length), dtype=bool) if include_spatial_graph else None
     for index, (pair, features) in enumerate(zip(pairs, feature_rows, strict=True)):
         parent_values[index, : pair.length] = features
-        edit_values[index, : pair.length] = encode_edit_features(
+        edit_values[index, : pair.length, :base_edit_dim] = encode_edit_features(
             [pair.parent_sequence],
             [pair.mutant_sequence],
             include_biochemical=include_biochemical,
             include_target_residue=include_target_residue,
         )[0].numpy()
+        if context_rows is not None:
+            edit_values[index, : pair.length, base_edit_dim:] = context_rows[index][1]
         mask_values[index, : pair.length] = parent_residue_mask(pair)
         if edge_values is not None and edge_masks is not None:
             pair_edges, pair_edge_mask = parent_spatial_graph(pair, spatial_neighbors=spatial_neighbors)

@@ -8,6 +8,7 @@ import numpy as np
 from .data import PairRecord, StructurePair
 from .endpoint_groups import endpoint_group_key
 from .geometry import local_frame_difference, residue_frames_masked
+from .sequence_context import SequenceContextCache
 from .student import encode_edit_features
 
 
@@ -67,6 +68,18 @@ def parent_local_features(pair: StructurePair, *, include_geometry: bool = False
     if include_geometry:
         features[:, -2:] = edit_geometry_features(pair)
     return features
+
+
+def sequence_context_features(
+    pair: StructurePair,
+    cache: SequenceContextCache,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Return cacheable parent context and candidate-specific mutant difference."""
+    parent = cache.get(pair.parent_sequence)
+    mutant = cache.get(pair.mutant_sequence)
+    if parent.shape != mutant.shape or parent.shape[0] != pair.length:
+        raise ValueError(f"sequence context does not match pair {pair.pair_id}")
+    return parent, mutant - parent
 
 
 def parent_residue_mask(pair: StructurePair) -> np.ndarray:
@@ -215,6 +228,7 @@ class PairDataset:
         endpoint_group_balanced_loss: bool = False,
         include_biochemical: bool = False,
         include_target_residue: bool = True,
+        sequence_context: SequenceContextCache | None = None,
         target_localization_radius: float | None = None,
         target_localization_transition: float = 5.0,
     ):
@@ -240,6 +254,10 @@ class PairDataset:
         self.endpoint_group_balanced_loss = bool(endpoint_group_balanced_loss)
         self.include_biochemical = bool(include_biochemical)
         self.include_target_residue = bool(include_target_residue)
+        self.sequence_context = sequence_context
+        if sequence_context is not None:
+            for record in self.records:
+                sequence_context_features(record.pair, sequence_context)
         if target_localization_radius is not None and target_localization_radius <= 0:
             raise ValueError("target_localization_radius must be positive or None")
         if target_localization_transition <= 0:
@@ -316,9 +334,18 @@ class PairDataset:
             include_biochemical=self.include_biochemical,
             include_target_residue=self.include_target_residue,
         )[0].numpy()
+        parent_features = parent_local_features(
+            record.pair, include_geometry=self.include_geometry
+        )
+        if self.sequence_context is not None:
+            parent_context, edit_context = sequence_context_features(
+                record.pair, self.sequence_context
+            )
+            parent_features = np.concatenate((parent_features, parent_context), axis=-1)
+            edit = np.concatenate((edit, edit_context), axis=-1)
         item = {
             "pair_id": record.pair.pair_id,
-            "parent_features": parent_local_features(record.pair, include_geometry=self.include_geometry),
+            "parent_features": parent_features,
             "edit_features": edit,
             "target_delta": target,
             "parent_frame_origins": parent_origins.astype(np.float32),
